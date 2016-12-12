@@ -1,0 +1,1214 @@
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.loadNewPWM,"ax",%progbits
+  19              		.align	2
+  20              		.global	loadNewPWM
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	loadNewPWM, %function
+  24              	loadNewPWM:
+  25              	.LFB63:
+  26              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** 
+  13:main.c        **** #include "project.h"
+  14:main.c        **** 
+  15:main.c        **** #define FREQ        99
+  16:main.c        **** #define STARTA      1
+  17:main.c        **** #define PWM_WIDTH   48
+  18:main.c        **** #define PWM_STEP    4
+  19:main.c        **** 
+  20:main.c        **** ////////////////////////////////////////////////////////////////
+  21:main.c        **** ////////////////////////////////////////////////////////////////
+  22:main.c        **** 
+  23:main.c        **** void loadNewPWM(unsigned char pwmPct)
+  24:main.c        **** {
+  27              		.loc 1 24 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              	.LVL0:
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 2
+
+
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  36 0002 0446     		mov	r4, r0
+  37              	.LVL1:
+  38              	.L2:
+  25:main.c        ****     while ((Status_Reg_1_Read() & 0x1) == 0x1);
+  39              		.loc 1 25 0 discriminator 1
+  40 0004 FFF7FEFF 		bl	Status_Reg_1_Read
+  41              	.LVL2:
+  42 0008 10F0010F 		tst	r0, #1
+  43 000c FAD1     		bne	.L2
+  26:main.c        ****     EndPWMA_Write(STARTA+pwmPct-1);
+  44              		.loc 1 26 0
+  45 000e 2046     		mov	r0, r4
+  46 0010 FFF7FEFF 		bl	EndPWMA_Write
+  47              	.LVL3:
+  48              	.L3:
+  27:main.c        ****     while ((Status_Reg_1_Read() & 0x2) == 0x0);
+  49              		.loc 1 27 0 discriminator 1
+  50 0014 FFF7FEFF 		bl	Status_Reg_1_Read
+  51              	.LVL4:
+  52 0018 10F0020F 		tst	r0, #2
+  53 001c FAD0     		beq	.L3
+  54              	.L4:
+  28:main.c        ****     while ((Status_Reg_1_Read() & 0x2) == 0x2);
+  55              		.loc 1 28 0 discriminator 1
+  56 001e FFF7FEFF 		bl	Status_Reg_1_Read
+  57              	.LVL5:
+  58 0022 10F0020F 		tst	r0, #2
+  59 0026 FAD1     		bne	.L4
+  29:main.c        ****     EndPWMB_Write(pwmPct+STARTA+(FREQ/2));    
+  60              		.loc 1 29 0
+  61 0028 04F13200 		add	r0, r4, #50
+  62 002c C0B2     		uxtb	r0, r0
+  63 002e FFF7FEFF 		bl	EndPWMB_Write
+  64              	.LVL6:
+  65              	.L5:
+  30:main.c        ****     while ((Status_Reg_1_Read() & 0x1) == 0x0);
+  66              		.loc 1 30 0 discriminator 1
+  67 0032 FFF7FEFF 		bl	Status_Reg_1_Read
+  68              	.LVL7:
+  69 0036 10F0010F 		tst	r0, #1
+  70 003a FAD0     		beq	.L5
+  31:main.c        **** }
+  71              		.loc 1 31 0
+  72 003c 10BD     		pop	{r4, pc}
+  73              		.cfi_endproc
+  74              	.LFE63:
+  75              		.size	loadNewPWM, .-loadNewPWM
+  76 003e 00BF     		.section	.text.toggleLED,"ax",%progbits
+  77              		.align	2
+  78              		.global	toggleLED
+  79              		.thumb
+  80              		.thumb_func
+  81              		.type	toggleLED, %function
+  82              	toggleLED:
+  83              	.LFB64:
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 3
+
+
+  32:main.c        **** 
+  33:main.c        **** ////////////////////////////////////////////////////////////////
+  34:main.c        **** // toggleLED()  Does not work in Rev X1
+  35:main.c        **** ////////////////////////////////////////////////////////////////
+  36:main.c        **** 
+  37:main.c        **** void toggleLED(void)
+  38:main.c        **** {
+  84              		.loc 1 38 0
+  85              		.cfi_startproc
+  86              		@ args = 0, pretend = 0, frame = 0
+  87              		@ frame_needed = 0, uses_anonymous_args = 0
+  88 0000 08B5     		push	{r3, lr}
+  89              		.cfi_def_cfa_offset 8
+  90              		.cfi_offset 3, -8
+  91              		.cfi_offset 14, -4
+  39:main.c        ****     Control_Reg_1_Write(Control_Reg_1_Read() | 0x02);
+  92              		.loc 1 39 0
+  93 0002 FFF7FEFF 		bl	Control_Reg_1_Read
+  94              	.LVL8:
+  95 0006 40F00200 		orr	r0, r0, #2
+  96 000a C0B2     		uxtb	r0, r0
+  97 000c FFF7FEFF 		bl	Control_Reg_1_Write
+  98              	.LVL9:
+  40:main.c        ****     CyDelay(250);
+  99              		.loc 1 40 0
+ 100 0010 FA20     		movs	r0, #250
+ 101 0012 FFF7FEFF 		bl	CyDelay
+ 102              	.LVL10:
+  41:main.c        ****     Control_Reg_1_Write(Control_Reg_1_Read() & 0xfd);    
+ 103              		.loc 1 41 0
+ 104 0016 FFF7FEFF 		bl	Control_Reg_1_Read
+ 105              	.LVL11:
+ 106 001a 00F0FD00 		and	r0, r0, #253
+ 107 001e FFF7FEFF 		bl	Control_Reg_1_Write
+ 108              	.LVL12:
+ 109 0022 08BD     		pop	{r3, pc}
+ 110              		.cfi_endproc
+ 111              	.LFE64:
+ 112              		.size	toggleLED, .-toggleLED
+ 113              		.section	.text.main,"ax",%progbits
+ 114              		.align	2
+ 115              		.global	main
+ 116              		.thumb
+ 117              		.thumb_func
+ 118              		.type	main, %function
+ 119              	main:
+ 120              	.LFB65:
+  42:main.c        **** }
+  43:main.c        **** 
+  44:main.c        **** ////////////////////////////////////////////////////////////////
+  45:main.c        **** ////////////////////////////////////////////////////////////////
+  46:main.c        **** 
+  47:main.c        **** int main(void)
+  48:main.c        **** {
+ 121              		.loc 1 48 0
+ 122              		.cfi_startproc
+ 123              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 4
+
+
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125 0000 10B5     		push	{r4, lr}
+ 126              		.cfi_def_cfa_offset 8
+ 127              		.cfi_offset 4, -8
+ 128              		.cfi_offset 14, -4
+  49:main.c        **** 	CyGlobalIntEnable; /* Enable global interrupts. */
+ 129              		.loc 1 49 0
+ 130              	@ 49 "main.c" 1
+ 131 0002 62B6     		CPSIE   i
+ 132              	@ 0 "" 2
+  50:main.c        ****     toggleLED();
+ 133              		.loc 1 50 0
+ 134              		.thumb
+ 135 0004 FFF7FEFF 		bl	toggleLED
+ 136              	.LVL13:
+  51:main.c        **** 	Freq_Write(FREQ);
+ 137              		.loc 1 51 0
+ 138 0008 6320     		movs	r0, #99
+ 139 000a FFF7FEFF 		bl	Freq_Write
+ 140              	.LVL14:
+  52:main.c        **** 	StartPWMA_Write(STARTA);
+ 141              		.loc 1 52 0
+ 142 000e 0120     		movs	r0, #1
+ 143 0010 FFF7FEFF 		bl	StartPWMA_Write
+ 144              	.LVL15:
+  53:main.c        **** 	StartPWMB_Write(STARTA+(FREQ/2));
+ 145              		.loc 1 53 0
+ 146 0014 3220     		movs	r0, #50
+ 147 0016 FFF7FEFF 		bl	StartPWMB_Write
+ 148              	.LVL16:
+  54:main.c        **** 	EndPWMA_Write(STARTA+PWM_WIDTH-1);
+ 149              		.loc 1 54 0
+ 150 001a 3020     		movs	r0, #48
+ 151 001c FFF7FEFF 		bl	EndPWMA_Write
+ 152              	.LVL17:
+  55:main.c        **** 	EndPWMB_Write(PWM_WIDTH+STARTA+(FREQ/2));
+ 153              		.loc 1 55 0
+ 154 0020 6220     		movs	r0, #98
+ 155 0022 FFF7FEFF 		bl	EndPWMB_Write
+ 156              	.LVL18:
+  56:main.c        **** 	
+  57:main.c        ****     unsigned char srInit = Status_Reg_1_Read() & 0x4;
+ 157              		.loc 1 57 0
+ 158 0026 FFF7FEFF 		bl	Status_Reg_1_Read
+ 159              	.LVL19:
+ 160 002a 00F00400 		and	r0, r0, #4
+ 161 002e C4B2     		uxtb	r4, r0
+ 162              	.LVL20:
+ 163              	.L11:
+  58:main.c        **** 	for(;;)
+  59:main.c        **** 	{
+  60:main.c        ****         if ((Status_Reg_1_Read()& 0x4) != srInit)
+ 164              		.loc 1 60 0
+ 165 0030 FFF7FEFF 		bl	Status_Reg_1_Read
+ 166              	.LVL21:
+ 167 0034 00F00400 		and	r0, r0, #4
+ 168 0038 C0B2     		uxtb	r0, r0
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 5
+
+
+ 169 003a 8442     		cmp	r4, r0
+ 170 003c F8D0     		beq	.L11
+  61:main.c        ****         {
+  62:main.c        ****             toggleLED();
+ 171              		.loc 1 62 0
+ 172 003e FFF7FEFF 		bl	toggleLED
+ 173              	.LVL22:
+  63:main.c        ****             if ((Status_Reg_1_Read()&4) == 4)
+ 174              		.loc 1 63 0
+ 175 0042 FFF7FEFF 		bl	Status_Reg_1_Read
+ 176              	.LVL23:
+ 177 0046 10F0040F 		tst	r0, #4
+ 178 004a 04D0     		beq	.L12
+  64:main.c        ****             {
+  65:main.c        ****                 Control_Reg_1_Write(0);
+ 179              		.loc 1 65 0
+ 180 004c 0020     		movs	r0, #0
+ 181 004e FFF7FEFF 		bl	Control_Reg_1_Write
+ 182              	.LVL24:
+  66:main.c        ****                 //Clock_2_StopBlock();
+  67:main.c        ****                 srInit = 4;
+ 183              		.loc 1 67 0
+ 184 0052 0424     		movs	r4, #4
+ 185 0054 ECE7     		b	.L11
+ 186              	.LVL25:
+ 187              	.L12:
+  68:main.c        ****             }
+  69:main.c        ****             else
+  70:main.c        ****             {
+  71:main.c        ****                 Control_Reg_1_Write(1);  
+ 188              		.loc 1 71 0
+ 189 0056 0120     		movs	r0, #1
+ 190 0058 FFF7FEFF 		bl	Control_Reg_1_Write
+ 191              	.LVL26:
+  72:main.c        ****                 //Clock_2_Start();
+  73:main.c        ****                 srInit = 0;
+ 192              		.loc 1 73 0
+ 193 005c 0024     		movs	r4, #0
+ 194 005e E7E7     		b	.L11
+ 195              		.cfi_endproc
+ 196              	.LFE65:
+ 197              		.size	main, .-main
+ 198              		.text
+ 199              	.Letext0:
+ 200              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 201              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 202              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 203              		.file 5 "Generated_Source\\PSoC5/EndPWMA.h"
+ 204              		.file 6 "Generated_Source\\PSoC5/EndPWMB.h"
+ 205              		.file 7 "Generated_Source\\PSoC5/Status_Reg_1.h"
+ 206              		.file 8 "Generated_Source\\PSoC5/Control_Reg_1.h"
+ 207              		.file 9 "Generated_Source\\PSoC5/CyLib.h"
+ 208              		.file 10 "Generated_Source\\PSoC5/Freq.h"
+ 209              		.file 11 "Generated_Source\\PSoC5/StartPWMA.h"
+ 210              		.file 12 "Generated_Source\\PSoC5/core_cm3.h"
+ 211              		.file 13 "Generated_Source\\PSoC5/StartPWMB.h"
+ 212              		.section	.debug_info,"",%progbits
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 6
+
+
+ 213              	.Ldebug_info0:
+ 214 0000 E6020000 		.4byte	0x2e6
+ 215 0004 0400     		.2byte	0x4
+ 216 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 217 000a 04       		.byte	0x4
+ 218 000b 01       		.uleb128 0x1
+ 219 000c FD000000 		.4byte	.LASF27
+ 220 0010 01       		.byte	0x1
+ 221 0011 00020000 		.4byte	.LASF28
+ 222 0015 0E000000 		.4byte	.LASF29
+ 223 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 224 001d 00000000 		.4byte	0
+ 225 0021 00000000 		.4byte	.Ldebug_line0
+ 226 0025 02       		.uleb128 0x2
+ 227 0026 01       		.byte	0x1
+ 228 0027 06       		.byte	0x6
+ 229 0028 30020000 		.4byte	.LASF0
+ 230 002c 02       		.uleb128 0x2
+ 231 002d 01       		.byte	0x1
+ 232 002e 08       		.byte	0x8
+ 233 002f 98000000 		.4byte	.LASF1
+ 234 0033 02       		.uleb128 0x2
+ 235 0034 02       		.byte	0x2
+ 236 0035 05       		.byte	0x5
+ 237 0036 17020000 		.4byte	.LASF2
+ 238 003a 02       		.uleb128 0x2
+ 239 003b 02       		.byte	0x2
+ 240 003c 07       		.byte	0x7
+ 241 003d 3C020000 		.4byte	.LASF3
+ 242 0041 03       		.uleb128 0x3
+ 243 0042 6E000000 		.4byte	.LASF9
+ 244 0046 02       		.byte	0x2
+ 245 0047 3F       		.byte	0x3f
+ 246 0048 4C000000 		.4byte	0x4c
+ 247 004c 02       		.uleb128 0x2
+ 248 004d 04       		.byte	0x4
+ 249 004e 05       		.byte	0x5
+ 250 004f 27020000 		.4byte	.LASF4
+ 251 0053 02       		.uleb128 0x2
+ 252 0054 04       		.byte	0x4
+ 253 0055 07       		.byte	0x7
+ 254 0056 B6000000 		.4byte	.LASF5
+ 255 005a 02       		.uleb128 0x2
+ 256 005b 08       		.byte	0x8
+ 257 005c 05       		.byte	0x5
+ 258 005d E0010000 		.4byte	.LASF6
+ 259 0061 02       		.uleb128 0x2
+ 260 0062 08       		.byte	0x8
+ 261 0063 07       		.byte	0x7
+ 262 0064 9F010000 		.4byte	.LASF7
+ 263 0068 04       		.uleb128 0x4
+ 264 0069 04       		.byte	0x4
+ 265 006a 05       		.byte	0x5
+ 266 006b 696E7400 		.ascii	"int\000"
+ 267 006f 02       		.uleb128 0x2
+ 268 0070 04       		.byte	0x4
+ 269 0071 07       		.byte	0x7
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 7
+
+
+ 270 0072 8B010000 		.4byte	.LASF8
+ 271 0076 03       		.uleb128 0x3
+ 272 0077 CF010000 		.4byte	.LASF10
+ 273 007b 03       		.byte	0x3
+ 274 007c 2C       		.byte	0x2c
+ 275 007d 41000000 		.4byte	0x41
+ 276 0081 05       		.uleb128 0x5
+ 277 0082 21020000 		.4byte	.LASF11
+ 278 0086 04       		.byte	0x4
+ 279 0087 9201     		.2byte	0x192
+ 280 0089 2C000000 		.4byte	0x2c
+ 281 008d 05       		.uleb128 0x5
+ 282 008e F6000000 		.4byte	.LASF12
+ 283 0092 04       		.byte	0x4
+ 284 0093 9401     		.2byte	0x194
+ 285 0095 53000000 		.4byte	0x53
+ 286 0099 02       		.uleb128 0x2
+ 287 009a 04       		.byte	0x4
+ 288 009b 04       		.byte	0x4
+ 289 009c 92000000 		.4byte	.LASF13
+ 290 00a0 02       		.uleb128 0x2
+ 291 00a1 08       		.byte	0x8
+ 292 00a2 04       		.byte	0x4
+ 293 00a3 E5000000 		.4byte	.LASF14
+ 294 00a7 02       		.uleb128 0x2
+ 295 00a8 01       		.byte	0x1
+ 296 00a9 08       		.byte	0x8
+ 297 00aa 07020000 		.4byte	.LASF15
+ 298 00ae 02       		.uleb128 0x2
+ 299 00af 04       		.byte	0x4
+ 300 00b0 07       		.byte	0x7
+ 301 00b1 D7010000 		.4byte	.LASF16
+ 302 00b5 06       		.uleb128 0x6
+ 303 00b6 0C020000 		.4byte	.LASF17
+ 304 00ba 01       		.byte	0x1
+ 305 00bb 17       		.byte	0x17
+ 306 00bc 00000000 		.4byte	.LFB63
+ 307 00c0 3E000000 		.4byte	.LFE63-.LFB63
+ 308 00c4 01       		.uleb128 0x1
+ 309 00c5 9C       		.byte	0x9c
+ 310 00c6 26010000 		.4byte	0x126
+ 311 00ca 07       		.uleb128 0x7
+ 312 00cb 98010000 		.4byte	.LASF30
+ 313 00cf 01       		.byte	0x1
+ 314 00d0 17       		.byte	0x17
+ 315 00d1 2C000000 		.4byte	0x2c
+ 316 00d5 00000000 		.4byte	.LLST0
+ 317 00d9 08       		.uleb128 0x8
+ 318 00da 08000000 		.4byte	.LVL2
+ 319 00de 60020000 		.4byte	0x260
+ 320 00e2 09       		.uleb128 0x9
+ 321 00e3 14000000 		.4byte	.LVL3
+ 322 00e7 6B020000 		.4byte	0x26b
+ 323 00eb F6000000 		.4byte	0xf6
+ 324 00ef 0A       		.uleb128 0xa
+ 325 00f0 01       		.uleb128 0x1
+ 326 00f1 50       		.byte	0x50
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 8
+
+
+ 327 00f2 02       		.uleb128 0x2
+ 328 00f3 74       		.byte	0x74
+ 329 00f4 00       		.sleb128 0
+ 330 00f5 00       		.byte	0
+ 331 00f6 08       		.uleb128 0x8
+ 332 00f7 18000000 		.4byte	.LVL4
+ 333 00fb 60020000 		.4byte	0x260
+ 334 00ff 08       		.uleb128 0x8
+ 335 0100 22000000 		.4byte	.LVL5
+ 336 0104 60020000 		.4byte	0x260
+ 337 0108 09       		.uleb128 0x9
+ 338 0109 32000000 		.4byte	.LVL6
+ 339 010d 7C020000 		.4byte	0x27c
+ 340 0111 1C010000 		.4byte	0x11c
+ 341 0115 0A       		.uleb128 0xa
+ 342 0116 01       		.uleb128 0x1
+ 343 0117 50       		.byte	0x50
+ 344 0118 02       		.uleb128 0x2
+ 345 0119 74       		.byte	0x74
+ 346 011a 32       		.sleb128 50
+ 347 011b 00       		.byte	0
+ 348 011c 08       		.uleb128 0x8
+ 349 011d 36000000 		.4byte	.LVL7
+ 350 0121 60020000 		.4byte	0x260
+ 351 0125 00       		.byte	0
+ 352 0126 06       		.uleb128 0x6
+ 353 0127 EC000000 		.4byte	.LASF18
+ 354 012b 01       		.byte	0x1
+ 355 012c 25       		.byte	0x25
+ 356 012d 00000000 		.4byte	.LFB64
+ 357 0131 24000000 		.4byte	.LFE64-.LFB64
+ 358 0135 01       		.uleb128 0x1
+ 359 0136 9C       		.byte	0x9c
+ 360 0137 74010000 		.4byte	0x174
+ 361 013b 08       		.uleb128 0x8
+ 362 013c 06000000 		.4byte	.LVL8
+ 363 0140 8D020000 		.4byte	0x28d
+ 364 0144 08       		.uleb128 0x8
+ 365 0145 10000000 		.4byte	.LVL9
+ 366 0149 98020000 		.4byte	0x298
+ 367 014d 09       		.uleb128 0x9
+ 368 014e 16000000 		.4byte	.LVL10
+ 369 0152 A9020000 		.4byte	0x2a9
+ 370 0156 61010000 		.4byte	0x161
+ 371 015a 0A       		.uleb128 0xa
+ 372 015b 01       		.uleb128 0x1
+ 373 015c 50       		.byte	0x50
+ 374 015d 02       		.uleb128 0x2
+ 375 015e 08       		.byte	0x8
+ 376 015f FA       		.byte	0xfa
+ 377 0160 00       		.byte	0
+ 378 0161 08       		.uleb128 0x8
+ 379 0162 1A000000 		.4byte	.LVL11
+ 380 0166 8D020000 		.4byte	0x28d
+ 381 016a 08       		.uleb128 0x8
+ 382 016b 22000000 		.4byte	.LVL12
+ 383 016f 98020000 		.4byte	0x298
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 9
+
+
+ 384 0173 00       		.byte	0
+ 385 0174 0B       		.uleb128 0xb
+ 386 0175 CA010000 		.4byte	.LASF31
+ 387 0179 01       		.byte	0x1
+ 388 017a 2F       		.byte	0x2f
+ 389 017b 68000000 		.4byte	0x68
+ 390 017f 00000000 		.4byte	.LFB65
+ 391 0183 60000000 		.4byte	.LFE65-.LFB65
+ 392 0187 01       		.uleb128 0x1
+ 393 0188 9C       		.byte	0x9c
+ 394 0189 4F020000 		.4byte	0x24f
+ 395 018d 0C       		.uleb128 0xc
+ 396 018e 8B000000 		.4byte	.LASF32
+ 397 0192 01       		.byte	0x1
+ 398 0193 39       		.byte	0x39
+ 399 0194 2C000000 		.4byte	0x2c
+ 400 0198 21000000 		.4byte	.LLST1
+ 401 019c 08       		.uleb128 0x8
+ 402 019d 08000000 		.4byte	.LVL13
+ 403 01a1 26010000 		.4byte	0x126
+ 404 01a5 09       		.uleb128 0x9
+ 405 01a6 0E000000 		.4byte	.LVL14
+ 406 01aa BA020000 		.4byte	0x2ba
+ 407 01ae B9010000 		.4byte	0x1b9
+ 408 01b2 0A       		.uleb128 0xa
+ 409 01b3 01       		.uleb128 0x1
+ 410 01b4 50       		.byte	0x50
+ 411 01b5 02       		.uleb128 0x2
+ 412 01b6 08       		.byte	0x8
+ 413 01b7 63       		.byte	0x63
+ 414 01b8 00       		.byte	0
+ 415 01b9 09       		.uleb128 0x9
+ 416 01ba 14000000 		.4byte	.LVL15
+ 417 01be CB020000 		.4byte	0x2cb
+ 418 01c2 CC010000 		.4byte	0x1cc
+ 419 01c6 0A       		.uleb128 0xa
+ 420 01c7 01       		.uleb128 0x1
+ 421 01c8 50       		.byte	0x50
+ 422 01c9 01       		.uleb128 0x1
+ 423 01ca 31       		.byte	0x31
+ 424 01cb 00       		.byte	0
+ 425 01cc 09       		.uleb128 0x9
+ 426 01cd 1A000000 		.4byte	.LVL16
+ 427 01d1 DC020000 		.4byte	0x2dc
+ 428 01d5 E0010000 		.4byte	0x1e0
+ 429 01d9 0A       		.uleb128 0xa
+ 430 01da 01       		.uleb128 0x1
+ 431 01db 50       		.byte	0x50
+ 432 01dc 02       		.uleb128 0x2
+ 433 01dd 08       		.byte	0x8
+ 434 01de 32       		.byte	0x32
+ 435 01df 00       		.byte	0
+ 436 01e0 09       		.uleb128 0x9
+ 437 01e1 20000000 		.4byte	.LVL17
+ 438 01e5 6B020000 		.4byte	0x26b
+ 439 01e9 F4010000 		.4byte	0x1f4
+ 440 01ed 0A       		.uleb128 0xa
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 10
+
+
+ 441 01ee 01       		.uleb128 0x1
+ 442 01ef 50       		.byte	0x50
+ 443 01f0 02       		.uleb128 0x2
+ 444 01f1 08       		.byte	0x8
+ 445 01f2 30       		.byte	0x30
+ 446 01f3 00       		.byte	0
+ 447 01f4 09       		.uleb128 0x9
+ 448 01f5 26000000 		.4byte	.LVL18
+ 449 01f9 7C020000 		.4byte	0x27c
+ 450 01fd 08020000 		.4byte	0x208
+ 451 0201 0A       		.uleb128 0xa
+ 452 0202 01       		.uleb128 0x1
+ 453 0203 50       		.byte	0x50
+ 454 0204 02       		.uleb128 0x2
+ 455 0205 08       		.byte	0x8
+ 456 0206 62       		.byte	0x62
+ 457 0207 00       		.byte	0
+ 458 0208 08       		.uleb128 0x8
+ 459 0209 2A000000 		.4byte	.LVL19
+ 460 020d 60020000 		.4byte	0x260
+ 461 0211 08       		.uleb128 0x8
+ 462 0212 34000000 		.4byte	.LVL21
+ 463 0216 60020000 		.4byte	0x260
+ 464 021a 08       		.uleb128 0x8
+ 465 021b 42000000 		.4byte	.LVL22
+ 466 021f 26010000 		.4byte	0x126
+ 467 0223 08       		.uleb128 0x8
+ 468 0224 46000000 		.4byte	.LVL23
+ 469 0228 60020000 		.4byte	0x260
+ 470 022c 09       		.uleb128 0x9
+ 471 022d 52000000 		.4byte	.LVL24
+ 472 0231 98020000 		.4byte	0x298
+ 473 0235 3F020000 		.4byte	0x23f
+ 474 0239 0A       		.uleb128 0xa
+ 475 023a 01       		.uleb128 0x1
+ 476 023b 50       		.byte	0x50
+ 477 023c 01       		.uleb128 0x1
+ 478 023d 30       		.byte	0x30
+ 479 023e 00       		.byte	0
+ 480 023f 0D       		.uleb128 0xd
+ 481 0240 5C000000 		.4byte	.LVL26
+ 482 0244 98020000 		.4byte	0x298
+ 483 0248 0A       		.uleb128 0xa
+ 484 0249 01       		.uleb128 0x1
+ 485 024a 50       		.byte	0x50
+ 486 024b 01       		.uleb128 0x1
+ 487 024c 31       		.byte	0x31
+ 488 024d 00       		.byte	0
+ 489 024e 00       		.byte	0
+ 490 024f 0E       		.uleb128 0xe
+ 491 0250 D8000000 		.4byte	.LASF33
+ 492 0254 0C       		.byte	0xc
+ 493 0255 9606     		.2byte	0x696
+ 494 0257 5B020000 		.4byte	0x25b
+ 495 025b 0F       		.uleb128 0xf
+ 496 025c 76000000 		.4byte	0x76
+ 497 0260 10       		.uleb128 0x10
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 11
+
+
+ 498 0261 EE010000 		.4byte	.LASF21
+ 499 0265 07       		.byte	0x7
+ 500 0266 28       		.byte	0x28
+ 501 0267 81000000 		.4byte	0x81
+ 502 026b 11       		.uleb128 0x11
+ 503 026c 4F020000 		.4byte	.LASF19
+ 504 0270 05       		.byte	0x5
+ 505 0271 27       		.byte	0x27
+ 506 0272 7C020000 		.4byte	0x27c
+ 507 0276 12       		.uleb128 0x12
+ 508 0277 81000000 		.4byte	0x81
+ 509 027b 00       		.byte	0
+ 510 027c 11       		.uleb128 0x11
+ 511 027d 00000000 		.4byte	.LASF20
+ 512 0281 06       		.byte	0x6
+ 513 0282 27       		.byte	0x27
+ 514 0283 8D020000 		.4byte	0x28d
+ 515 0287 12       		.uleb128 0x12
+ 516 0288 81000000 		.4byte	0x81
+ 517 028c 00       		.byte	0
+ 518 028d 10       		.uleb128 0x10
+ 519 028e 78000000 		.4byte	.LASF22
+ 520 0292 08       		.byte	0x8
+ 521 0293 28       		.byte	0x28
+ 522 0294 81000000 		.4byte	0x81
+ 523 0298 11       		.uleb128 0x11
+ 524 0299 B6010000 		.4byte	.LASF23
+ 525 029d 08       		.byte	0x8
+ 526 029e 27       		.byte	0x27
+ 527 029f A9020000 		.4byte	0x2a9
+ 528 02a3 12       		.uleb128 0x12
+ 529 02a4 81000000 		.4byte	0x81
+ 530 02a8 00       		.byte	0
+ 531 02a9 11       		.uleb128 0x11
+ 532 02aa 68020000 		.4byte	.LASF24
+ 533 02ae 09       		.byte	0x9
+ 534 02af 76       		.byte	0x76
+ 535 02b0 BA020000 		.4byte	0x2ba
+ 536 02b4 12       		.uleb128 0x12
+ 537 02b5 8D000000 		.4byte	0x8d
+ 538 02b9 00       		.byte	0
+ 539 02ba 11       		.uleb128 0x11
+ 540 02bb 5D020000 		.4byte	.LASF25
+ 541 02bf 0A       		.byte	0xa
+ 542 02c0 27       		.byte	0x27
+ 543 02c1 CB020000 		.4byte	0x2cb
+ 544 02c5 12       		.uleb128 0x12
+ 545 02c6 81000000 		.4byte	0x81
+ 546 02ca 00       		.byte	0
+ 547 02cb 11       		.uleb128 0x11
+ 548 02cc C8000000 		.4byte	.LASF26
+ 549 02d0 0B       		.byte	0xb
+ 550 02d1 27       		.byte	0x27
+ 551 02d2 DC020000 		.4byte	0x2dc
+ 552 02d6 12       		.uleb128 0x12
+ 553 02d7 81000000 		.4byte	0x81
+ 554 02db 00       		.byte	0
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 12
+
+
+ 555 02dc 13       		.uleb128 0x13
+ 556 02dd A6000000 		.4byte	.LASF34
+ 557 02e1 0D       		.byte	0xd
+ 558 02e2 27       		.byte	0x27
+ 559 02e3 12       		.uleb128 0x12
+ 560 02e4 81000000 		.4byte	0x81
+ 561 02e8 00       		.byte	0
+ 562 02e9 00       		.byte	0
+ 563              		.section	.debug_abbrev,"",%progbits
+ 564              	.Ldebug_abbrev0:
+ 565 0000 01       		.uleb128 0x1
+ 566 0001 11       		.uleb128 0x11
+ 567 0002 01       		.byte	0x1
+ 568 0003 25       		.uleb128 0x25
+ 569 0004 0E       		.uleb128 0xe
+ 570 0005 13       		.uleb128 0x13
+ 571 0006 0B       		.uleb128 0xb
+ 572 0007 03       		.uleb128 0x3
+ 573 0008 0E       		.uleb128 0xe
+ 574 0009 1B       		.uleb128 0x1b
+ 575 000a 0E       		.uleb128 0xe
+ 576 000b 55       		.uleb128 0x55
+ 577 000c 17       		.uleb128 0x17
+ 578 000d 11       		.uleb128 0x11
+ 579 000e 01       		.uleb128 0x1
+ 580 000f 10       		.uleb128 0x10
+ 581 0010 17       		.uleb128 0x17
+ 582 0011 00       		.byte	0
+ 583 0012 00       		.byte	0
+ 584 0013 02       		.uleb128 0x2
+ 585 0014 24       		.uleb128 0x24
+ 586 0015 00       		.byte	0
+ 587 0016 0B       		.uleb128 0xb
+ 588 0017 0B       		.uleb128 0xb
+ 589 0018 3E       		.uleb128 0x3e
+ 590 0019 0B       		.uleb128 0xb
+ 591 001a 03       		.uleb128 0x3
+ 592 001b 0E       		.uleb128 0xe
+ 593 001c 00       		.byte	0
+ 594 001d 00       		.byte	0
+ 595 001e 03       		.uleb128 0x3
+ 596 001f 16       		.uleb128 0x16
+ 597 0020 00       		.byte	0
+ 598 0021 03       		.uleb128 0x3
+ 599 0022 0E       		.uleb128 0xe
+ 600 0023 3A       		.uleb128 0x3a
+ 601 0024 0B       		.uleb128 0xb
+ 602 0025 3B       		.uleb128 0x3b
+ 603 0026 0B       		.uleb128 0xb
+ 604 0027 49       		.uleb128 0x49
+ 605 0028 13       		.uleb128 0x13
+ 606 0029 00       		.byte	0
+ 607 002a 00       		.byte	0
+ 608 002b 04       		.uleb128 0x4
+ 609 002c 24       		.uleb128 0x24
+ 610 002d 00       		.byte	0
+ 611 002e 0B       		.uleb128 0xb
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 13
+
+
+ 612 002f 0B       		.uleb128 0xb
+ 613 0030 3E       		.uleb128 0x3e
+ 614 0031 0B       		.uleb128 0xb
+ 615 0032 03       		.uleb128 0x3
+ 616 0033 08       		.uleb128 0x8
+ 617 0034 00       		.byte	0
+ 618 0035 00       		.byte	0
+ 619 0036 05       		.uleb128 0x5
+ 620 0037 16       		.uleb128 0x16
+ 621 0038 00       		.byte	0
+ 622 0039 03       		.uleb128 0x3
+ 623 003a 0E       		.uleb128 0xe
+ 624 003b 3A       		.uleb128 0x3a
+ 625 003c 0B       		.uleb128 0xb
+ 626 003d 3B       		.uleb128 0x3b
+ 627 003e 05       		.uleb128 0x5
+ 628 003f 49       		.uleb128 0x49
+ 629 0040 13       		.uleb128 0x13
+ 630 0041 00       		.byte	0
+ 631 0042 00       		.byte	0
+ 632 0043 06       		.uleb128 0x6
+ 633 0044 2E       		.uleb128 0x2e
+ 634 0045 01       		.byte	0x1
+ 635 0046 3F       		.uleb128 0x3f
+ 636 0047 19       		.uleb128 0x19
+ 637 0048 03       		.uleb128 0x3
+ 638 0049 0E       		.uleb128 0xe
+ 639 004a 3A       		.uleb128 0x3a
+ 640 004b 0B       		.uleb128 0xb
+ 641 004c 3B       		.uleb128 0x3b
+ 642 004d 0B       		.uleb128 0xb
+ 643 004e 27       		.uleb128 0x27
+ 644 004f 19       		.uleb128 0x19
+ 645 0050 11       		.uleb128 0x11
+ 646 0051 01       		.uleb128 0x1
+ 647 0052 12       		.uleb128 0x12
+ 648 0053 06       		.uleb128 0x6
+ 649 0054 40       		.uleb128 0x40
+ 650 0055 18       		.uleb128 0x18
+ 651 0056 9742     		.uleb128 0x2117
+ 652 0058 19       		.uleb128 0x19
+ 653 0059 01       		.uleb128 0x1
+ 654 005a 13       		.uleb128 0x13
+ 655 005b 00       		.byte	0
+ 656 005c 00       		.byte	0
+ 657 005d 07       		.uleb128 0x7
+ 658 005e 05       		.uleb128 0x5
+ 659 005f 00       		.byte	0
+ 660 0060 03       		.uleb128 0x3
+ 661 0061 0E       		.uleb128 0xe
+ 662 0062 3A       		.uleb128 0x3a
+ 663 0063 0B       		.uleb128 0xb
+ 664 0064 3B       		.uleb128 0x3b
+ 665 0065 0B       		.uleb128 0xb
+ 666 0066 49       		.uleb128 0x49
+ 667 0067 13       		.uleb128 0x13
+ 668 0068 02       		.uleb128 0x2
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 14
+
+
+ 669 0069 17       		.uleb128 0x17
+ 670 006a 00       		.byte	0
+ 671 006b 00       		.byte	0
+ 672 006c 08       		.uleb128 0x8
+ 673 006d 898201   		.uleb128 0x4109
+ 674 0070 00       		.byte	0
+ 675 0071 11       		.uleb128 0x11
+ 676 0072 01       		.uleb128 0x1
+ 677 0073 31       		.uleb128 0x31
+ 678 0074 13       		.uleb128 0x13
+ 679 0075 00       		.byte	0
+ 680 0076 00       		.byte	0
+ 681 0077 09       		.uleb128 0x9
+ 682 0078 898201   		.uleb128 0x4109
+ 683 007b 01       		.byte	0x1
+ 684 007c 11       		.uleb128 0x11
+ 685 007d 01       		.uleb128 0x1
+ 686 007e 31       		.uleb128 0x31
+ 687 007f 13       		.uleb128 0x13
+ 688 0080 01       		.uleb128 0x1
+ 689 0081 13       		.uleb128 0x13
+ 690 0082 00       		.byte	0
+ 691 0083 00       		.byte	0
+ 692 0084 0A       		.uleb128 0xa
+ 693 0085 8A8201   		.uleb128 0x410a
+ 694 0088 00       		.byte	0
+ 695 0089 02       		.uleb128 0x2
+ 696 008a 18       		.uleb128 0x18
+ 697 008b 9142     		.uleb128 0x2111
+ 698 008d 18       		.uleb128 0x18
+ 699 008e 00       		.byte	0
+ 700 008f 00       		.byte	0
+ 701 0090 0B       		.uleb128 0xb
+ 702 0091 2E       		.uleb128 0x2e
+ 703 0092 01       		.byte	0x1
+ 704 0093 3F       		.uleb128 0x3f
+ 705 0094 19       		.uleb128 0x19
+ 706 0095 03       		.uleb128 0x3
+ 707 0096 0E       		.uleb128 0xe
+ 708 0097 3A       		.uleb128 0x3a
+ 709 0098 0B       		.uleb128 0xb
+ 710 0099 3B       		.uleb128 0x3b
+ 711 009a 0B       		.uleb128 0xb
+ 712 009b 27       		.uleb128 0x27
+ 713 009c 19       		.uleb128 0x19
+ 714 009d 49       		.uleb128 0x49
+ 715 009e 13       		.uleb128 0x13
+ 716 009f 11       		.uleb128 0x11
+ 717 00a0 01       		.uleb128 0x1
+ 718 00a1 12       		.uleb128 0x12
+ 719 00a2 06       		.uleb128 0x6
+ 720 00a3 40       		.uleb128 0x40
+ 721 00a4 18       		.uleb128 0x18
+ 722 00a5 9742     		.uleb128 0x2117
+ 723 00a7 19       		.uleb128 0x19
+ 724 00a8 01       		.uleb128 0x1
+ 725 00a9 13       		.uleb128 0x13
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 15
+
+
+ 726 00aa 00       		.byte	0
+ 727 00ab 00       		.byte	0
+ 728 00ac 0C       		.uleb128 0xc
+ 729 00ad 34       		.uleb128 0x34
+ 730 00ae 00       		.byte	0
+ 731 00af 03       		.uleb128 0x3
+ 732 00b0 0E       		.uleb128 0xe
+ 733 00b1 3A       		.uleb128 0x3a
+ 734 00b2 0B       		.uleb128 0xb
+ 735 00b3 3B       		.uleb128 0x3b
+ 736 00b4 0B       		.uleb128 0xb
+ 737 00b5 49       		.uleb128 0x49
+ 738 00b6 13       		.uleb128 0x13
+ 739 00b7 02       		.uleb128 0x2
+ 740 00b8 17       		.uleb128 0x17
+ 741 00b9 00       		.byte	0
+ 742 00ba 00       		.byte	0
+ 743 00bb 0D       		.uleb128 0xd
+ 744 00bc 898201   		.uleb128 0x4109
+ 745 00bf 01       		.byte	0x1
+ 746 00c0 11       		.uleb128 0x11
+ 747 00c1 01       		.uleb128 0x1
+ 748 00c2 31       		.uleb128 0x31
+ 749 00c3 13       		.uleb128 0x13
+ 750 00c4 00       		.byte	0
+ 751 00c5 00       		.byte	0
+ 752 00c6 0E       		.uleb128 0xe
+ 753 00c7 34       		.uleb128 0x34
+ 754 00c8 00       		.byte	0
+ 755 00c9 03       		.uleb128 0x3
+ 756 00ca 0E       		.uleb128 0xe
+ 757 00cb 3A       		.uleb128 0x3a
+ 758 00cc 0B       		.uleb128 0xb
+ 759 00cd 3B       		.uleb128 0x3b
+ 760 00ce 05       		.uleb128 0x5
+ 761 00cf 49       		.uleb128 0x49
+ 762 00d0 13       		.uleb128 0x13
+ 763 00d1 3F       		.uleb128 0x3f
+ 764 00d2 19       		.uleb128 0x19
+ 765 00d3 3C       		.uleb128 0x3c
+ 766 00d4 19       		.uleb128 0x19
+ 767 00d5 00       		.byte	0
+ 768 00d6 00       		.byte	0
+ 769 00d7 0F       		.uleb128 0xf
+ 770 00d8 35       		.uleb128 0x35
+ 771 00d9 00       		.byte	0
+ 772 00da 49       		.uleb128 0x49
+ 773 00db 13       		.uleb128 0x13
+ 774 00dc 00       		.byte	0
+ 775 00dd 00       		.byte	0
+ 776 00de 10       		.uleb128 0x10
+ 777 00df 2E       		.uleb128 0x2e
+ 778 00e0 00       		.byte	0
+ 779 00e1 3F       		.uleb128 0x3f
+ 780 00e2 19       		.uleb128 0x19
+ 781 00e3 03       		.uleb128 0x3
+ 782 00e4 0E       		.uleb128 0xe
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 16
+
+
+ 783 00e5 3A       		.uleb128 0x3a
+ 784 00e6 0B       		.uleb128 0xb
+ 785 00e7 3B       		.uleb128 0x3b
+ 786 00e8 0B       		.uleb128 0xb
+ 787 00e9 27       		.uleb128 0x27
+ 788 00ea 19       		.uleb128 0x19
+ 789 00eb 49       		.uleb128 0x49
+ 790 00ec 13       		.uleb128 0x13
+ 791 00ed 3C       		.uleb128 0x3c
+ 792 00ee 19       		.uleb128 0x19
+ 793 00ef 00       		.byte	0
+ 794 00f0 00       		.byte	0
+ 795 00f1 11       		.uleb128 0x11
+ 796 00f2 2E       		.uleb128 0x2e
+ 797 00f3 01       		.byte	0x1
+ 798 00f4 3F       		.uleb128 0x3f
+ 799 00f5 19       		.uleb128 0x19
+ 800 00f6 03       		.uleb128 0x3
+ 801 00f7 0E       		.uleb128 0xe
+ 802 00f8 3A       		.uleb128 0x3a
+ 803 00f9 0B       		.uleb128 0xb
+ 804 00fa 3B       		.uleb128 0x3b
+ 805 00fb 0B       		.uleb128 0xb
+ 806 00fc 27       		.uleb128 0x27
+ 807 00fd 19       		.uleb128 0x19
+ 808 00fe 3C       		.uleb128 0x3c
+ 809 00ff 19       		.uleb128 0x19
+ 810 0100 01       		.uleb128 0x1
+ 811 0101 13       		.uleb128 0x13
+ 812 0102 00       		.byte	0
+ 813 0103 00       		.byte	0
+ 814 0104 12       		.uleb128 0x12
+ 815 0105 05       		.uleb128 0x5
+ 816 0106 00       		.byte	0
+ 817 0107 49       		.uleb128 0x49
+ 818 0108 13       		.uleb128 0x13
+ 819 0109 00       		.byte	0
+ 820 010a 00       		.byte	0
+ 821 010b 13       		.uleb128 0x13
+ 822 010c 2E       		.uleb128 0x2e
+ 823 010d 01       		.byte	0x1
+ 824 010e 3F       		.uleb128 0x3f
+ 825 010f 19       		.uleb128 0x19
+ 826 0110 03       		.uleb128 0x3
+ 827 0111 0E       		.uleb128 0xe
+ 828 0112 3A       		.uleb128 0x3a
+ 829 0113 0B       		.uleb128 0xb
+ 830 0114 3B       		.uleb128 0x3b
+ 831 0115 0B       		.uleb128 0xb
+ 832 0116 27       		.uleb128 0x27
+ 833 0117 19       		.uleb128 0x19
+ 834 0118 3C       		.uleb128 0x3c
+ 835 0119 19       		.uleb128 0x19
+ 836 011a 00       		.byte	0
+ 837 011b 00       		.byte	0
+ 838 011c 00       		.byte	0
+ 839              		.section	.debug_loc,"",%progbits
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 17
+
+
+ 840              	.Ldebug_loc0:
+ 841              	.LLST0:
+ 842 0000 00000000 		.4byte	.LVL0
+ 843 0004 04000000 		.4byte	.LVL1
+ 844 0008 0100     		.2byte	0x1
+ 845 000a 50       		.byte	0x50
+ 846 000b 04000000 		.4byte	.LVL1
+ 847 000f 3E000000 		.4byte	.LFE63
+ 848 0013 0400     		.2byte	0x4
+ 849 0015 F3       		.byte	0xf3
+ 850 0016 01       		.uleb128 0x1
+ 851 0017 50       		.byte	0x50
+ 852 0018 9F       		.byte	0x9f
+ 853 0019 00000000 		.4byte	0
+ 854 001d 00000000 		.4byte	0
+ 855              	.LLST1:
+ 856 0021 30000000 		.4byte	.LVL20
+ 857 0025 52000000 		.4byte	.LVL24
+ 858 0029 0100     		.2byte	0x1
+ 859 002b 54       		.byte	0x54
+ 860 002c 52000000 		.4byte	.LVL24
+ 861 0030 56000000 		.4byte	.LVL25
+ 862 0034 0200     		.2byte	0x2
+ 863 0036 34       		.byte	0x34
+ 864 0037 9F       		.byte	0x9f
+ 865 0038 56000000 		.4byte	.LVL25
+ 866 003c 5C000000 		.4byte	.LVL26
+ 867 0040 0100     		.2byte	0x1
+ 868 0042 54       		.byte	0x54
+ 869 0043 5C000000 		.4byte	.LVL26
+ 870 0047 60000000 		.4byte	.LFE65
+ 871 004b 0200     		.2byte	0x2
+ 872 004d 30       		.byte	0x30
+ 873 004e 9F       		.byte	0x9f
+ 874 004f 00000000 		.4byte	0
+ 875 0053 00000000 		.4byte	0
+ 876              		.section	.debug_aranges,"",%progbits
+ 877 0000 2C000000 		.4byte	0x2c
+ 878 0004 0200     		.2byte	0x2
+ 879 0006 00000000 		.4byte	.Ldebug_info0
+ 880 000a 04       		.byte	0x4
+ 881 000b 00       		.byte	0
+ 882 000c 0000     		.2byte	0
+ 883 000e 0000     		.2byte	0
+ 884 0010 00000000 		.4byte	.LFB63
+ 885 0014 3E000000 		.4byte	.LFE63-.LFB63
+ 886 0018 00000000 		.4byte	.LFB64
+ 887 001c 24000000 		.4byte	.LFE64-.LFB64
+ 888 0020 00000000 		.4byte	.LFB65
+ 889 0024 60000000 		.4byte	.LFE65-.LFB65
+ 890 0028 00000000 		.4byte	0
+ 891 002c 00000000 		.4byte	0
+ 892              		.section	.debug_ranges,"",%progbits
+ 893              	.Ldebug_ranges0:
+ 894 0000 00000000 		.4byte	.LFB63
+ 895 0004 3E000000 		.4byte	.LFE63
+ 896 0008 00000000 		.4byte	.LFB64
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 18
+
+
+ 897 000c 24000000 		.4byte	.LFE64
+ 898 0010 00000000 		.4byte	.LFB65
+ 899 0014 60000000 		.4byte	.LFE65
+ 900 0018 00000000 		.4byte	0
+ 901 001c 00000000 		.4byte	0
+ 902              		.section	.debug_line,"",%progbits
+ 903              	.Ldebug_line0:
+ 904 0000 15020000 		.section	.debug_str,"MS",%progbits,1
+ 904      0200B901 
+ 904      00000201 
+ 904      FB0E0D00 
+ 904      01010101 
+ 905              	.LASF20:
+ 906 0000 456E6450 		.ascii	"EndPWMB_Write\000"
+ 906      574D425F 
+ 906      57726974 
+ 906      6500
+ 907              	.LASF29:
+ 908 000e 433A5C55 		.ascii	"C:\\Users\\doug_000\\Documents\\GitHub\\ODAS\\ODAS-"
+ 908      73657273 
+ 908      5C646F75 
+ 908      675F3030 
+ 908      305C446F 
+ 909 003b 50534F43 		.ascii	"PSOC5\\ODAS-PSOC5-01\\ODAS-PSOC5\\ODAS-PSOC5-01.cyd"
+ 909      355C4F44 
+ 909      41532D50 
+ 909      534F4335 
+ 909      2D30315C 
+ 910 006b 736E00   		.ascii	"sn\000"
+ 911              	.LASF9:
+ 912 006e 5F5F696E 		.ascii	"__int32_t\000"
+ 912      7433325F 
+ 912      7400
+ 913              	.LASF22:
+ 914 0078 436F6E74 		.ascii	"Control_Reg_1_Read\000"
+ 914      726F6C5F 
+ 914      5265675F 
+ 914      315F5265 
+ 914      616400
+ 915              	.LASF32:
+ 916 008b 7372496E 		.ascii	"srInit\000"
+ 916      697400
+ 917              	.LASF13:
+ 918 0092 666C6F61 		.ascii	"float\000"
+ 918      7400
+ 919              	.LASF1:
+ 920 0098 756E7369 		.ascii	"unsigned char\000"
+ 920      676E6564 
+ 920      20636861 
+ 920      7200
+ 921              	.LASF34:
+ 922 00a6 53746172 		.ascii	"StartPWMB_Write\000"
+ 922      7450574D 
+ 922      425F5772 
+ 922      69746500 
+ 923              	.LASF5:
+ 924 00b6 6C6F6E67 		.ascii	"long unsigned int\000"
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 19
+
+
+ 924      20756E73 
+ 924      69676E65 
+ 924      6420696E 
+ 924      7400
+ 925              	.LASF26:
+ 926 00c8 53746172 		.ascii	"StartPWMA_Write\000"
+ 926      7450574D 
+ 926      415F5772 
+ 926      69746500 
+ 927              	.LASF33:
+ 928 00d8 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 928      52784275 
+ 928      66666572 
+ 928      00
+ 929              	.LASF14:
+ 930 00e5 646F7562 		.ascii	"double\000"
+ 930      6C6500
+ 931              	.LASF18:
+ 932 00ec 746F6767 		.ascii	"toggleLED\000"
+ 932      6C654C45 
+ 932      4400
+ 933              	.LASF12:
+ 934 00f6 75696E74 		.ascii	"uint32\000"
+ 934      333200
+ 935              	.LASF27:
+ 936 00fd 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 936      4320342E 
+ 936      392E3320 
+ 936      32303135 
+ 936      30333033 
+ 937 0130 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 937      20726576 
+ 937      6973696F 
+ 937      6E203232 
+ 937      31323230 
+ 938 0163 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 938      66756E63 
+ 938      74696F6E 
+ 938      2D736563 
+ 938      74696F6E 
+ 939              	.LASF8:
+ 940 018b 756E7369 		.ascii	"unsigned int\000"
+ 940      676E6564 
+ 940      20696E74 
+ 940      00
+ 941              	.LASF30:
+ 942 0198 70776D50 		.ascii	"pwmPct\000"
+ 942      637400
+ 943              	.LASF7:
+ 944 019f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 944      206C6F6E 
+ 944      6720756E 
+ 944      7369676E 
+ 944      65642069 
+ 945              	.LASF23:
+ 946 01b6 436F6E74 		.ascii	"Control_Reg_1_Write\000"
+ 946      726F6C5F 
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 20
+
+
+ 946      5265675F 
+ 946      315F5772 
+ 946      69746500 
+ 947              	.LASF31:
+ 948 01ca 6D61696E 		.ascii	"main\000"
+ 948      00
+ 949              	.LASF10:
+ 950 01cf 696E7433 		.ascii	"int32_t\000"
+ 950      325F7400 
+ 951              	.LASF16:
+ 952 01d7 73697A65 		.ascii	"sizetype\000"
+ 952      74797065 
+ 952      00
+ 953              	.LASF6:
+ 954 01e0 6C6F6E67 		.ascii	"long long int\000"
+ 954      206C6F6E 
+ 954      6720696E 
+ 954      7400
+ 955              	.LASF21:
+ 956 01ee 53746174 		.ascii	"Status_Reg_1_Read\000"
+ 956      75735F52 
+ 956      65675F31 
+ 956      5F526561 
+ 956      6400
+ 957              	.LASF28:
+ 958 0200 6D61696E 		.ascii	"main.c\000"
+ 958      2E6300
+ 959              	.LASF15:
+ 960 0207 63686172 		.ascii	"char\000"
+ 960      00
+ 961              	.LASF17:
+ 962 020c 6C6F6164 		.ascii	"loadNewPWM\000"
+ 962      4E657750 
+ 962      574D00
+ 963              	.LASF2:
+ 964 0217 73686F72 		.ascii	"short int\000"
+ 964      7420696E 
+ 964      7400
+ 965              	.LASF11:
+ 966 0221 75696E74 		.ascii	"uint8\000"
+ 966      3800
+ 967              	.LASF4:
+ 968 0227 6C6F6E67 		.ascii	"long int\000"
+ 968      20696E74 
+ 968      00
+ 969              	.LASF0:
+ 970 0230 7369676E 		.ascii	"signed char\000"
+ 970      65642063 
+ 970      68617200 
+ 971              	.LASF3:
+ 972 023c 73686F72 		.ascii	"short unsigned int\000"
+ 972      7420756E 
+ 972      7369676E 
+ 972      65642069 
+ 972      6E7400
+ 973              	.LASF19:
+ 974 024f 456E6450 		.ascii	"EndPWMA_Write\000"
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccauuwMn.s 			page 21
+
+
+ 974      574D415F 
+ 974      57726974 
+ 974      6500
+ 975              	.LASF25:
+ 976 025d 46726571 		.ascii	"Freq_Write\000"
+ 976      5F577269 
+ 976      746500
+ 977              	.LASF24:
+ 978 0268 43794465 		.ascii	"CyDelay\000"
+ 978      6C617900 
+ 979              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
