@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc9yDtMg.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
   29:Generated_Source\PSoC5/Status_Reg_1.c **** *
   30:Generated_Source\PSoC5/Status_Reg_1.c **** * Parameters:
   31:Generated_Source\PSoC5/Status_Reg_1.c **** *  None.
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc9yDtMg.s 			page 2
 
 
   32:Generated_Source\PSoC5/Status_Reg_1.c **** *
@@ -83,7 +83,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
   37              	.L3:
   38 0006 00BF     		.align	2
   39              	.L2:
-  40 0008 66640040 		.word	1073767526
+  40 0008 65640040 		.word	1073767525
   41              		.cfi_endproc
   42              	.LFE0:
   43              		.size	Status_Reg_1_Read, .-Status_Reg_1_Read
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
   54              		@ args = 0, pretend = 0, frame = 0
   55              		@ frame_needed = 0, uses_anonymous_args = 0
   56 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 3
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc9yDtMg.s 			page 3
 
 
   57              		.cfi_def_cfa_offset 8
@@ -143,7 +143,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
   72              	.L7:
   73 0016 00BF     		.align	2
   74              	.L6:
-  75 0018 96640040 		.word	1073767574
+  75 0018 95640040 		.word	1073767573
   76              		.cfi_endproc
   77              	.LFE1:
   78              		.size	Status_Reg_1_InterruptEnable, .-Status_Reg_1_InterruptEnable
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
   88              		.cfi_startproc
   89              		@ args = 0, pretend = 0, frame = 0
   90              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 4
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc9yDtMg.s 			page 4
 
 
   91 0000 08B5     		push	{r3, lr}
@@ -204,7 +204,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  107              	.L11:
  108 0016 00BF     		.align	2
  109              	.L10:
- 110 0018 96640040 		.word	1073767574
+ 110 0018 95640040 		.word	1073767573
  111              		.cfi_endproc
  112              	.LFE2:
  113              		.size	Status_Reg_1_InterruptDisable, .-Status_Reg_1_InterruptDisable
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  122              		.loc 1 104 0
  123              		.cfi_startproc
  124              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 5
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc9yDtMg.s 			page 5
 
 
  125              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -247,7 +247,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  105:Generated_Source\PSoC5/Status_Reg_1.c ****     #if(Status_Reg_1_INPUTS < 8u)
  106:Generated_Source\PSoC5/Status_Reg_1.c ****     	mask &= ((uint8)(1u << Status_Reg_1_INPUTS) - 1u);
  128              		.loc 1 106 0
- 129 0000 00F00700 		and	r0, r0, #7
+ 129 0000 00F00F00 		and	r0, r0, #15
  130              	.LVL5:
  107:Generated_Source\PSoC5/Status_Reg_1.c **** 	#endif /* End Status_Reg_1_INPUTS < 8u */
  108:Generated_Source\PSoC5/Status_Reg_1.c ****     Status_Reg_1_Status_Mask = mask;
@@ -258,7 +258,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  135              	.L14:
  136 000a 00BF     		.align	2
  137              	.L13:
- 138 000c 86640040 		.word	1073767558
+ 138 000c 85640040 		.word	1073767557
  139              		.cfi_endproc
  140              	.LFE3:
  141              		.size	Status_Reg_1_WriteMask, .-Status_Reg_1_WriteMask
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  155              		.loc 1 128 0
  156 0000 014B     		ldr	r3, .L16
  157 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 6
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc9yDtMg.s 			page 6
 
 
  129:Generated_Source\PSoC5/Status_Reg_1.c **** }
@@ -307,7 +307,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  160              	.L17:
  161 0006 00BF     		.align	2
  162              	.L16:
- 163 0008 86640040 		.word	1073767558
+ 163 0008 85640040 		.word	1073767557
  164              		.cfi_endproc
  165              	.LFE4:
  166              		.size	Status_Reg_1_ReadMask, .-Status_Reg_1_ReadMask
@@ -340,7 +340,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  193 0033 02       		.uleb128 0x2
  194 0034 02       		.byte	0x2
  195 0035 05       		.byte	0x5
- 196 0036 52020000 		.4byte	.LASF2
+ 196 0036 54020000 		.4byte	.LASF2
  197 003a 02       		.uleb128 0x2
  198 003b 02       		.byte	0x2
  199 003c 07       		.byte	0x7
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  211 0051 05       		.byte	0x5
  212 0052 00000000 		.4byte	.LASF6
  213 0056 02       		.uleb128 0x2
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 7
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc9yDtMg.s 			page 7
 
 
  214 0057 08       		.byte	0x8
@@ -380,7 +380,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  230 0077 02       		.uleb128 0x2
  231 0078 04       		.byte	0x4
  232 0079 04       		.byte	0x4
- 233 007a 35020000 		.4byte	.LASF9
+ 233 007a 37020000 		.4byte	.LASF9
  234 007e 02       		.uleb128 0x2
  235 007f 08       		.byte	0x8
  236 0080 04       		.byte	0x4
@@ -390,7 +390,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  240 0087 08       		.byte	0x8
  241 0088 5B010000 		.4byte	.LASF11
  242 008c 04       		.uleb128 0x4
- 243 008d 5C020000 		.4byte	.LASF13
+ 243 008d 5E020000 		.4byte	.LASF13
  244 0091 02       		.byte	0x2
  245 0092 3C02     		.2byte	0x23c
  246 0094 98000000 		.4byte	0x98
@@ -399,7 +399,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  249 009d 02       		.uleb128 0x2
  250 009e 04       		.byte	0x4
  251 009f 07       		.byte	0x7
- 252 00a0 61020000 		.4byte	.LASF14
+ 252 00a0 63020000 		.4byte	.LASF14
  253 00a4 06       		.uleb128 0x6
  254 00a5 44000000 		.4byte	.LASF19
  255 00a9 01       		.byte	0x1
@@ -418,11 +418,11 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  268 00c8 01       		.uleb128 0x1
  269 00c9 9C       		.byte	0x9c
  270 00ca F0000000 		.4byte	0xf0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 8
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc9yDtMg.s 			page 8
 
 
  271 00ce 08       		.uleb128 0x8
- 272 00cf 6A020000 		.4byte	.LASF17
+ 272 00cf 6C020000 		.4byte	.LASF17
  273 00d3 01       		.byte	0x1
  274 00d4 3B       		.byte	0x3b
  275 00d5 6B000000 		.4byte	0x6b
@@ -444,7 +444,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  291 0100 9C       		.byte	0x9c
  292 0101 27010000 		.4byte	0x127
  293 0105 08       		.uleb128 0x8
- 294 0106 6A020000 		.4byte	.LASF17
+ 294 0106 6C020000 		.4byte	.LASF17
  295 010a 01       		.byte	0x1
  296 010b 52       		.byte	0x52
  297 010c 6B000000 		.4byte	0x6b
@@ -457,7 +457,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  304 0122 6C010000 		.4byte	0x16c
  305 0126 00       		.byte	0
  306 0127 07       		.uleb128 0x7
- 307 0128 3B020000 		.4byte	.LASF18
+ 307 0128 3D020000 		.4byte	.LASF18
  308 012c 01       		.byte	0x1
  309 012d 67       		.byte	0x67
  310 012e 00000000 		.4byte	.LFB3
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  325 0152 7E       		.byte	0x7e
  326 0153 6B000000 		.4byte	0x6b
  327 0157 00000000 		.4byte	.LFB4
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 9
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc9yDtMg.s 			page 9
 
 
  328 015b 0C000000 		.4byte	.LFE4-.LFB4
@@ -490,7 +490,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  334 0167 7D       		.byte	0x7d
  335 0168 6B000000 		.4byte	0x6b
  336 016c 0C       		.uleb128 0xc
- 337 016d 1F020000 		.4byte	.LASF26
+ 337 016d 21020000 		.4byte	.LASF26
  338 0171 03       		.byte	0x3
  339 0172 7E       		.byte	0x7e
  340 0173 0D       		.uleb128 0xd
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  382 0024 0B       		.uleb128 0xb
  383 0025 03       		.uleb128 0x3
  384 0026 08       		.uleb128 0x8
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 10
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc9yDtMg.s 			page 10
 
 
  385 0027 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  439 005e 3A       		.uleb128 0x3a
  440 005f 0B       		.uleb128 0xb
  441 0060 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 11
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc9yDtMg.s 			page 11
 
 
  442 0061 0B       		.uleb128 0xb
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  496 009a 0B       		.uleb128 0xb
  497 009b 2E       		.uleb128 0x2e
  498 009c 00       		.byte	0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 12
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc9yDtMg.s 			page 12
 
 
  499 009d 3F       		.uleb128 0x3f
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  553 001d 50       		.byte	0x50
  554 001e 00000000 		.4byte	0
  555 0022 00000000 		.4byte	0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 13
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc9yDtMg.s 			page 13
 
 
  556              	.LLST2:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  605      206C6F6E 
  605      6720696E 
  605      7400
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 14
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc9yDtMg.s 			page 14
 
 
  606              	.LASF3:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  624      31323230 
  625 0102 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  625      66756E63 
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 15
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc9yDtMg.s 			page 15
 
 
  625      74696F6E 
@@ -885,48 +885,49 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 1
  643      75726365 
  643      5C50536F 
  644              	.LASF23:
- 645 01bf 433A5C55 		.ascii	"C:\\Users\\doug_000\\Documents\\GitHub\\ODAS\\ODAS-"
+ 645 01bf 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
  645      73657273 
- 645      5C646F75 
- 645      675F3030 
- 645      305C446F 
- 646 01ec 50534F43 		.ascii	"PSOC5\\ODAS-PSOC5-01\\ODAS-PSOC5\\ODAS-PSOC5-03.cyd"
- 646      355C4F44 
- 646      41532D50 
- 646      534F4335 
- 646      2D30315C 
- 647 021c 736E00   		.ascii	"sn\000"
+ 645      5C444769 
+ 645      6C6C696C 
+ 645      616E645C 
+ 646 01ec 532D5053 		.ascii	"S-PSOC5\\ODAS-PSOC5-01\\ODAS-PSOC5\\ODAS-PSOC5-03.c"
+ 646      4F43355C 
+ 646      4F444153 
+ 646      2D50534F 
+ 646      43352D30 
+ 647 021c 7964736E 		.ascii	"ydsn\000"
+ 647      00
  648              	.LASF26:
- 649 021f 43794578 		.ascii	"CyExitCriticalSection\000"
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccLR9trV.s 			page 16
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc9yDtMg.s 			page 16
 
 
+ 649 0221 43794578 		.ascii	"CyExitCriticalSection\000"
  649      69744372 
  649      69746963 
  649      616C5365 
  649      6374696F 
  650              	.LASF9:
- 651 0235 666C6F61 		.ascii	"float\000"
+ 651 0237 666C6F61 		.ascii	"float\000"
  651      7400
  652              	.LASF18:
- 653 023b 53746174 		.ascii	"Status_Reg_1_WriteMask\000"
+ 653 023d 53746174 		.ascii	"Status_Reg_1_WriteMask\000"
  653      75735F52 
  653      65675F31 
  653      5F577269 
  653      74654D61 
  654              	.LASF2:
- 655 0252 73686F72 		.ascii	"short int\000"
+ 655 0254 73686F72 		.ascii	"short int\000"
  655      7420696E 
  655      7400
  656              	.LASF13:
- 657 025c 72656738 		.ascii	"reg8\000"
+ 657 025e 72656738 		.ascii	"reg8\000"
  657      00
  658              	.LASF14:
- 659 0261 73697A65 		.ascii	"sizetype\000"
+ 659 0263 73697A65 		.ascii	"sizetype\000"
  659      74797065 
  659      00
  660              	.LASF17:
- 661 026a 696E7465 		.ascii	"interruptState\000"
+ 661 026c 696E7465 		.ascii	"interruptState\000"
  661      72727570 
  661      74537461 
  661      746500

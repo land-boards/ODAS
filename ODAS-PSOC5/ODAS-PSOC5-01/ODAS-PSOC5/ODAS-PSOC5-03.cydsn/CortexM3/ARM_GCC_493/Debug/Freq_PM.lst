@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccYDPHHP.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
   29:Generated_Source\PSoC5/Freq_PM.c **** *
   30:Generated_Source\PSoC5/Freq_PM.c **** * Summary:
   31:Generated_Source\PSoC5/Freq_PM.c **** *  Saves the control register value.
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccYDPHHP.s 			page 2
 
 
   32:Generated_Source\PSoC5/Freq_PM.c **** *
@@ -86,7 +86,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
   38              	.L3:
   39 000a 00BF     		.align	2
   40              	.L2:
-  41 000c 73640040 		.word	1073767539
+  41 000c 74640040 		.word	1073767540
   42 0010 00000000 		.word	.LANCHOR0
   43              		.cfi_endproc
   44              	.LFE0:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
   59:Generated_Source\PSoC5/Freq_PM.c **** *
   60:Generated_Source\PSoC5/Freq_PM.c **** *******************************************************************************/
   61:Generated_Source\PSoC5/Freq_PM.c **** void Freq_RestoreConfig(void) 
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 3
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccYDPHHP.s 			page 3
 
 
   62:Generated_Source\PSoC5/Freq_PM.c **** {
@@ -138,7 +138,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
   66 000a 00BF     		.align	2
   67              	.L5:
   68 000c 00000000 		.word	.LANCHOR0
-  69 0010 73640040 		.word	1073767539
+  69 0010 74640040 		.word	1073767540
   70              		.cfi_endproc
   71              	.LFE1:
   72              		.size	Freq_RestoreConfig, .-Freq_RestoreConfig
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
   87              		.cfi_offset 3, -8
   88              		.cfi_offset 14, -4
   83:Generated_Source\PSoC5/Freq_PM.c ****     Freq_SaveConfig();
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 4
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccYDPHHP.s 			page 4
 
 
   89              		.loc 1 83 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
  123              		.size	Freq_backup, 1
  124              	Freq_backup:
  125 0000 00       		.space	1
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 5
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccYDPHHP.s 			page 5
 
 
  126 0001 000000   		.text
@@ -252,45 +252,45 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
  134 0006 00000000 		.4byte	.Ldebug_abbrev0
  135 000a 04       		.byte	0x4
  136 000b 01       		.uleb128 0x1
- 137 000c E5000000 		.4byte	.LASF19
+ 137 000c 85000000 		.4byte	.LASF19
  138 0010 01       		.byte	0x1
- 139 0011 AA010000 		.4byte	.LASF20
- 140 0015 21000000 		.4byte	.LASF21
+ 139 0011 4A010000 		.4byte	.LASF20
+ 140 0015 8E010000 		.4byte	.LASF21
  141 0019 00000000 		.4byte	.Ldebug_ranges0+0
  142 001d 00000000 		.4byte	0
  143 0021 00000000 		.4byte	.Ldebug_line0
  144 0025 02       		.uleb128 0x2
  145 0026 01       		.byte	0x1
  146 0027 06       		.byte	0x6
- 147 0028 F7010000 		.4byte	.LASF0
+ 147 0028 F9010000 		.4byte	.LASF0
  148 002c 02       		.uleb128 0x2
  149 002d 01       		.byte	0x1
  150 002e 08       		.byte	0x8
- 151 002f 81000000 		.4byte	.LASF1
+ 151 002f 21000000 		.4byte	.LASF1
  152 0033 02       		.uleb128 0x2
  153 0034 02       		.byte	0x2
  154 0035 05       		.byte	0x5
- 155 0036 DE010000 		.4byte	.LASF2
+ 155 0036 7E010000 		.4byte	.LASF2
  156 003a 02       		.uleb128 0x2
  157 003b 02       		.byte	0x2
  158 003c 07       		.byte	0x7
- 159 003d A6000000 		.4byte	.LASF3
+ 159 003d 46000000 		.4byte	.LASF3
  160 0041 02       		.uleb128 0x2
  161 0042 04       		.byte	0x4
  162 0043 05       		.byte	0x5
- 163 0044 EE010000 		.4byte	.LASF4
+ 163 0044 F0010000 		.4byte	.LASF4
  164 0048 02       		.uleb128 0x2
  165 0049 04       		.byte	0x4
  166 004a 07       		.byte	0x7
- 167 004b 94000000 		.4byte	.LASF5
+ 167 004b 34000000 		.4byte	.LASF5
  168 004f 02       		.uleb128 0x2
  169 0050 08       		.byte	0x8
  170 0051 05       		.byte	0x5
- 171 0052 CB010000 		.4byte	.LASF6
+ 171 0052 6B010000 		.4byte	.LASF6
  172 0056 02       		.uleb128 0x2
  173 0057 08       		.byte	0x8
  174 0058 07       		.byte	0x7
- 175 0059 80010000 		.4byte	.LASF7
+ 175 0059 20010000 		.4byte	.LASF7
  176 005d 03       		.uleb128 0x3
  177 005e 04       		.byte	0x4
  178 005f 05       		.byte	0x5
@@ -298,12 +298,12 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
  180 0064 02       		.uleb128 0x2
  181 0065 04       		.byte	0x4
  182 0066 07       		.byte	0x7
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 6
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccYDPHHP.s 			page 6
 
 
- 183 0067 73010000 		.4byte	.LASF8
+ 183 0067 13010000 		.4byte	.LASF8
  184 006b 04       		.uleb128 0x4
- 185 006c E8010000 		.4byte	.LASF12
+ 185 006c 88010000 		.4byte	.LASF12
  186 0070 02       		.byte	0x2
  187 0071 9201     		.2byte	0x192
  188 0073 2C000000 		.4byte	0x2c
@@ -314,13 +314,13 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
  193 007e 02       		.uleb128 0x2
  194 007f 08       		.byte	0x8
  195 0080 04       		.byte	0x4
- 196 0081 D2000000 		.4byte	.LASF10
+ 196 0081 72000000 		.4byte	.LASF10
  197 0085 02       		.uleb128 0x2
  198 0086 01       		.byte	0x1
  199 0087 08       		.byte	0x8
- 200 0088 D9010000 		.4byte	.LASF11
+ 200 0088 79010000 		.4byte	.LASF11
  201 008c 04       		.uleb128 0x4
- 202 008d 8F000000 		.4byte	.LASF13
+ 202 008d 2F000000 		.4byte	.LASF13
  203 0091 02       		.byte	0x2
  204 0092 3C02     		.2byte	0x23c
  205 0094 98000000 		.4byte	0x98
@@ -332,14 +332,14 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
  211 00a0 1C       		.byte	0x1c
  212 00a1 B2000000 		.4byte	0xb2
  213 00a5 07       		.uleb128 0x7
- 214 00a6 C5000000 		.4byte	.LASF22
+ 214 00a6 65000000 		.4byte	.LASF22
  215 00aa 03       		.byte	0x3
  216 00ab 1E       		.byte	0x1e
  217 00ac 6B000000 		.4byte	0x6b
  218 00b0 00       		.byte	0
  219 00b1 00       		.byte	0
  220 00b2 08       		.uleb128 0x8
- 221 00b3 03020000 		.4byte	.LASF14
+ 221 00b3 05020000 		.4byte	.LASF14
  222 00b7 03       		.byte	0x3
  223 00b8 20       		.byte	0x20
  224 00b9 9D000000 		.4byte	0x9d
@@ -352,13 +352,13 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
  231 00cc 01       		.uleb128 0x1
  232 00cd 9C       		.byte	0x9c
  233 00ce 09       		.uleb128 0x9
- 234 00cf 97010000 		.4byte	.LASF16
+ 234 00cf 37010000 		.4byte	.LASF16
  235 00d3 01       		.byte	0x1
  236 00d4 3D       		.byte	0x3d
  237 00d5 00000000 		.4byte	.LFB1
  238 00d9 14000000 		.4byte	.LFE1-.LFB1
  239 00dd 01       		.uleb128 0x1
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 7
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccYDPHHP.s 			page 7
 
 
  240 00de 9C       		.byte	0x9c
@@ -376,7 +376,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
  252 00f9 BD000000 		.4byte	0xbd
  253 00fd 00       		.byte	0
  254 00fe 0A       		.uleb128 0xa
- 255 00ff D9000000 		.4byte	.LASF18
+ 255 00ff 79000000 		.4byte	.LASF18
  256 0103 01       		.byte	0x1
  257 0104 65       		.byte	0x65
  258 0105 00000000 		.4byte	.LFB3
@@ -389,7 +389,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
  265 0118 CE000000 		.4byte	0xce
  266 011c 00       		.byte	0
  267 011d 0C       		.uleb128 0xc
- 268 011e B9000000 		.4byte	.LASF23
+ 268 011e 59000000 		.4byte	.LASF23
  269 0122 01       		.byte	0x1
  270 0123 17       		.byte	0x17
  271 0124 B2000000 		.4byte	0xb2
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
  294 0010 17       		.uleb128 0x17
  295 0011 00       		.byte	0
  296 0012 00       		.byte	0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 8
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccYDPHHP.s 			page 8
 
 
  297 0013 02       		.uleb128 0x2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
  351 0049 00       		.byte	0
  352 004a 07       		.uleb128 0x7
  353 004b 0D       		.uleb128 0xd
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 9
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccYDPHHP.s 			page 9
 
 
  354 004c 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
  408 0083 03       		.uleb128 0x3
  409 0084 0E       		.uleb128 0xe
  410 0085 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 10
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccYDPHHP.s 			page 10
 
 
  411 0086 0B       		.uleb128 0xb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
  465 0020 00000000 		.4byte	.LFB2
  466 0024 08000000 		.4byte	.LFE2-.LFB2
  467 0028 00000000 		.4byte	.LFB3
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 11
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccYDPHHP.s 			page 11
 
 
  468 002c 08000000 		.4byte	.LFE3-.LFB3
@@ -635,124 +635,125 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 1
  490              	.LASF9:
  491 001b 666C6F61 		.ascii	"float\000"
  491      7400
- 492              	.LASF21:
- 493 0021 433A5C55 		.ascii	"C:\\Users\\doug_000\\Documents\\GitHub\\ODAS\\ODAS-"
- 493      73657273 
- 493      5C646F75 
- 493      675F3030 
- 493      305C446F 
- 494 004e 50534F43 		.ascii	"PSOC5\\ODAS-PSOC5-01\\ODAS-PSOC5\\ODAS-PSOC5-03.cyd"
- 494      355C4F44 
- 494      41532D50 
- 494      534F4335 
- 494      2D30315C 
- 495 007e 736E00   		.ascii	"sn\000"
- 496              	.LASF1:
- 497 0081 756E7369 		.ascii	"unsigned char\000"
- 497      676E6564 
- 497      20636861 
- 497      7200
- 498              	.LASF13:
- 499 008f 72656738 		.ascii	"reg8\000"
- 499      00
- 500              	.LASF5:
- 501 0094 6C6F6E67 		.ascii	"long unsigned int\000"
- 501      20756E73 
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 12
+ 492              	.LASF1:
+ 493 0021 756E7369 		.ascii	"unsigned char\000"
+ 493      676E6564 
+ 493      20636861 
+ 493      7200
+ 494              	.LASF13:
+ 495 002f 72656738 		.ascii	"reg8\000"
+ 495      00
+ 496              	.LASF5:
+ 497 0034 6C6F6E67 		.ascii	"long unsigned int\000"
+ 497      20756E73 
+ 497      69676E65 
+ 497      6420696E 
+ 497      7400
+ 498              	.LASF3:
+ 499 0046 73686F72 		.ascii	"short unsigned int\000"
+ 499      7420756E 
+ 499      7369676E 
+ 499      65642069 
+ 499      6E7400
+ 500              	.LASF23:
+ 501 0059 46726571 		.ascii	"Freq_backup\000"
+ 501      5F626163 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccYDPHHP.s 			page 12
 
 
- 501      69676E65 
- 501      6420696E 
- 501      7400
- 502              	.LASF3:
- 503 00a6 73686F72 		.ascii	"short unsigned int\000"
- 503      7420756E 
- 503      7369676E 
- 503      65642069 
- 503      6E7400
- 504              	.LASF23:
- 505 00b9 46726571 		.ascii	"Freq_backup\000"
- 505      5F626163 
- 505      6B757000 
- 506              	.LASF22:
- 507 00c5 636F6E74 		.ascii	"controlState\000"
- 507      726F6C53 
- 507      74617465 
- 507      00
- 508              	.LASF10:
- 509 00d2 646F7562 		.ascii	"double\000"
- 509      6C6500
- 510              	.LASF18:
- 511 00d9 46726571 		.ascii	"Freq_Wakeup\000"
- 511      5F57616B 
- 511      65757000 
- 512              	.LASF19:
- 513 00e5 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 513      4320342E 
- 513      392E3320 
- 513      32303135 
- 513      30333033 
- 514 0118 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 514      20726576 
- 514      6973696F 
- 514      6E203232 
- 514      31323230 
- 515 014b 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 515      66756E63 
- 515      74696F6E 
- 515      2D736563 
- 515      74696F6E 
- 516              	.LASF8:
- 517 0173 756E7369 		.ascii	"unsigned int\000"
- 517      676E6564 
- 517      20696E74 
- 517      00
- 518              	.LASF7:
- 519 0180 6C6F6E67 		.ascii	"long long unsigned int\000"
- 519      206C6F6E 
- 519      6720756E 
- 519      7369676E 
- 519      65642069 
- 520              	.LASF16:
- 521 0197 46726571 		.ascii	"Freq_RestoreConfig\000"
- 521      5F526573 
- 521      746F7265 
- 521      436F6E66 
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccvPPMol.s 			page 13
+ 501      6B757000 
+ 502              	.LASF22:
+ 503 0065 636F6E74 		.ascii	"controlState\000"
+ 503      726F6C53 
+ 503      74617465 
+ 503      00
+ 504              	.LASF10:
+ 505 0072 646F7562 		.ascii	"double\000"
+ 505      6C6500
+ 506              	.LASF18:
+ 507 0079 46726571 		.ascii	"Freq_Wakeup\000"
+ 507      5F57616B 
+ 507      65757000 
+ 508              	.LASF19:
+ 509 0085 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 509      4320342E 
+ 509      392E3320 
+ 509      32303135 
+ 509      30333033 
+ 510 00b8 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 510      20726576 
+ 510      6973696F 
+ 510      6E203232 
+ 510      31323230 
+ 511 00eb 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 511      66756E63 
+ 511      74696F6E 
+ 511      2D736563 
+ 511      74696F6E 
+ 512              	.LASF8:
+ 513 0113 756E7369 		.ascii	"unsigned int\000"
+ 513      676E6564 
+ 513      20696E74 
+ 513      00
+ 514              	.LASF7:
+ 515 0120 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 515      206C6F6E 
+ 515      6720756E 
+ 515      7369676E 
+ 515      65642069 
+ 516              	.LASF16:
+ 517 0137 46726571 		.ascii	"Freq_RestoreConfig\000"
+ 517      5F526573 
+ 517      746F7265 
+ 517      436F6E66 
+ 517      696700
+ 518              	.LASF20:
+ 519 014a 47656E65 		.ascii	"Generated_Source\\PSoC5\\Freq_PM.c\000"
+ 519      72617465 
+ 519      645F536F 
+ 519      75726365 
+ 519      5C50536F 
+ 520              	.LASF6:
+ 521 016b 6C6F6E67 		.ascii	"long long int\000"
+ 521      206C6F6E 
+ 521      6720696E 
+ 521      7400
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccYDPHHP.s 			page 13
 
 
- 521      696700
- 522              	.LASF20:
- 523 01aa 47656E65 		.ascii	"Generated_Source\\PSoC5\\Freq_PM.c\000"
- 523      72617465 
- 523      645F536F 
- 523      75726365 
- 523      5C50536F 
- 524              	.LASF6:
- 525 01cb 6C6F6E67 		.ascii	"long long int\000"
- 525      206C6F6E 
- 525      6720696E 
+ 522              	.LASF11:
+ 523 0179 63686172 		.ascii	"char\000"
+ 523      00
+ 524              	.LASF2:
+ 525 017e 73686F72 		.ascii	"short int\000"
+ 525      7420696E 
  525      7400
- 526              	.LASF11:
- 527 01d9 63686172 		.ascii	"char\000"
- 527      00
- 528              	.LASF2:
- 529 01de 73686F72 		.ascii	"short int\000"
- 529      7420696E 
- 529      7400
- 530              	.LASF12:
- 531 01e8 75696E74 		.ascii	"uint8\000"
- 531      3800
+ 526              	.LASF12:
+ 527 0188 75696E74 		.ascii	"uint8\000"
+ 527      3800
+ 528              	.LASF21:
+ 529 018e 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
+ 529      73657273 
+ 529      5C444769 
+ 529      6C6C696C 
+ 529      616E645C 
+ 530 01bb 532D5053 		.ascii	"S-PSOC5\\ODAS-PSOC5-01\\ODAS-PSOC5\\ODAS-PSOC5-03.c"
+ 530      4F43355C 
+ 530      4F444153 
+ 530      2D50534F 
+ 530      43352D30 
+ 531 01eb 7964736E 		.ascii	"ydsn\000"
+ 531      00
  532              	.LASF4:
- 533 01ee 6C6F6E67 		.ascii	"long int\000"
+ 533 01f0 6C6F6E67 		.ascii	"long int\000"
  533      20696E74 
  533      00
  534              	.LASF0:
- 535 01f7 7369676E 		.ascii	"signed char\000"
+ 535 01f9 7369676E 		.ascii	"signed char\000"
  535      65642063 
  535      68617200 
  536              	.LASF14:
- 537 0203 46726571 		.ascii	"Freq_BACKUP_STRUCT\000"
+ 537 0205 46726571 		.ascii	"Freq_BACKUP_STRUCT\000"
  537      5F424143 
  537      4B55505F 
  537      53545255 

@@ -3,11 +3,11 @@
 <!--This file is machine generated and read. It is not intended to be edited by hand.-->
 <!--Due to this, there is no schema for this file.-->
 <CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWorkspaceSerialize" version="5" xml_contents_version="3" name="ODAS-PSOC5" persistent="ODAS-PSOC5.cywrk" platform="NOT_USED">
-<current_project name=".\ODAS-PSOC5-03.cydsn\ODAS-PSOC5-03.cyprj" />
+<current_project name="..\..\..\..\..\MK48\XMTR\trunk\STAB\STAB-02-AB-Blink.cydsn\STAB-02-AB-Blink.cyprj" />
 <wrkspc_folders />
 <files />
 <projects>
-<v>.\ODAS-PSOC5-03.cydsn\ODAS-PSOC5-03.cyprj</v>
+<v>..\..\..\..\..\MK48\XMTR\trunk\STAB\STAB-02-AB-Blink.cydsn\STAB-02-AB-Blink.cyprj</v>
 </projects>
 <workspace_id v="cfa89912-057e-4e00-be07-4954b7a002a1" />
 <WriteAppVersionLastSavedWith v="4.0.0.432" />
