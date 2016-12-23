@@ -1,0 +1,20 @@
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFile Parser\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFile Parser\obj\Debug\HexFileParser_Psoc3_5lp.FormHexFileParser_Psoc3_5lp.resources
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFile Parser\obj\Debug\HexFileParser_PSoC3_5LP.Properties.Resources.resources
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFile Parser\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFile Parser\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFile Parser\bin\Debug\HexFileParser_PSoC3_5LP.exe.config
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFile Parser\bin\Debug\HexFileParser_PSoC3_5LP.exe
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFile Parser\bin\Debug\HexFileParser_PSoC3_5LP.pdb
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFile Parser\obj\Debug\HexFileParser_PSoC3_5LP.exe
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFile Parser\obj\Debug\HexFileParser_PSoC3_5LP.pdb
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFileParser_Psoc3_5lp\bin\Debug\HexFileParser_PSoC3_5LP.exe.config
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFileParser_Psoc3_5lp\obj\Debug\HexFileParser_PSoC3_5LP.exe
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFileParser_Psoc3_5lp\obj\Debug\HexFileParser_PSoC3_5LP.pdb
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFileParser_Psoc3_5lp\bin\Debug\HexFileParser_PSoC3_5LP.exe
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFileParser_Psoc3_5lp\bin\Debug\HexFileParser_PSoC3_5LP.pdb
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFileParser_Psoc3_5lp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFileParser_Psoc3_5lp\obj\Debug\HexFileParser_Psoc3_5lp.FormHexFileParser_Psoc3_5lp.resources
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFileParser_Psoc3_5lp\obj\Debug\HexFileParser_PSoC3_5LP.Properties.Resources.resources
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFileParser_Psoc3_5lp\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\vvsk\Documents\My Work\Q4 15\AN73054 Updates\Updated GUI\HexFileParser_Psoc3_5lp\HexFileParser_Psoc3_5lp\obj\Debug\GenerateResource.write.1.tlog

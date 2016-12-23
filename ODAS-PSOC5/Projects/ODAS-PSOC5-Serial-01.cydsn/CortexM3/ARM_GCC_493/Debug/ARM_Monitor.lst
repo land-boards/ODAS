@@ -1,0 +1,5047 @@
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"ARM_Monitor.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.countParms,"ax",%progbits
+  19              		.align	2
+  20              		.global	countParms
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	countParms, %function
+  24              	countParms:
+  25              	.LFB63:
+  26              		.file 1 "ARM_Monitor.c"
+   1:ARM_Monitor.c **** /* ========================================
+   2:ARM_Monitor.c ****  *
+   3:ARM_Monitor.c ****  * Copyright Land Boards, LLC, 2016
+   4:ARM_Monitor.c ****  * All Rights Reserved
+   5:ARM_Monitor.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:ARM_Monitor.c ****  *
+   7:ARM_Monitor.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:ARM_Monitor.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:ARM_Monitor.c ****  *
+  10:ARM_Monitor.c ****  * ========================================
+  11:ARM_Monitor.c **** */
+  12:ARM_Monitor.c **** 
+  13:ARM_Monitor.c **** #include "project.h"
+  14:ARM_Monitor.c **** #include "proEnv.h"
+  15:ARM_Monitor.c **** #include "ARM_Monitor.h"
+  16:ARM_Monitor.c **** #include "stringConvs.h"
+  17:ARM_Monitor.c **** #include "accessMemory.h"
+  18:ARM_Monitor.c **** #include <strings.h>
+  19:ARM_Monitor.c **** #undef DEBUG_ON_PC
+  20:ARM_Monitor.c **** #ifdef DEBUG_ON_PC
+  21:ARM_Monitor.c **** #include "pcSerialIO.h"
+  22:ARM_Monitor.c **** #include "mytypes.h"
+  23:ARM_Monitor.c **** #else
+  24:ARM_Monitor.c **** #include "serialIO.h"
+  25:ARM_Monitor.c **** #endif
+  26:ARM_Monitor.c **** char myStringInMemory[0x100];
+  27:ARM_Monitor.c **** 
+  28:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+  29:ARM_Monitor.c **** // countParms()
+  30:ARM_Monitor.c **** // Syntax of a line is
+  31:ARM_Monitor.c **** // X[aaaa][,dddd]]
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 2
+
+
+  32:ARM_Monitor.c **** // X = command
+  33:ARM_Monitor.c **** // aaaa is a hex value
+  34:ARM_Monitor.c **** // Returns the count of parameters on a line
+  35:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+  36:ARM_Monitor.c **** 
+  37:ARM_Monitor.c **** uint8 countParms(char * stringToParse)
+  38:ARM_Monitor.c **** {
+  27              		.loc 1 38 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              	.LVL0:
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  39:ARM_Monitor.c ****     if (findInString(stringToParse,',') == -1)
+  36              		.loc 1 39 0
+  37 0002 2C21     		movs	r1, #44
+  38 0004 FFF7FEFF 		bl	findInString
+  39              	.LVL1:
+  40 0008 B0F1FF3F 		cmp	r0, #-1
+  41 000c 01D1     		bne	.L3
+  40:ARM_Monitor.c ****         return(1);
+  42              		.loc 1 40 0
+  43 000e 0120     		movs	r0, #1
+  44 0010 08BD     		pop	{r3, pc}
+  45              	.L3:
+  41:ARM_Monitor.c ****     else
+  42:ARM_Monitor.c ****         return(2);
+  46              		.loc 1 42 0
+  47 0012 0220     		movs	r0, #2
+  43:ARM_Monitor.c **** }
+  48              		.loc 1 43 0
+  49 0014 08BD     		pop	{r3, pc}
+  50              		.cfi_endproc
+  51              	.LFE63:
+  52              		.size	countParms, .-countParms
+  53 0016 00BF     		.section	.text.extractParm,"ax",%progbits
+  54              		.align	2
+  55              		.global	extractParm
+  56              		.thumb
+  57              		.thumb_func
+  58              		.type	extractParm, %function
+  59              	extractParm:
+  60              	.LFB64:
+  44:ARM_Monitor.c **** 
+  45:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+  46:ARM_Monitor.c **** // uint32 extractParm(char * stringToParse, uint8 parmNumber)
+  47:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+  48:ARM_Monitor.c **** 
+  49:ARM_Monitor.c **** uint32 extractParm(char * stringToParse, uint8 parmNumber)
+  50:ARM_Monitor.c **** {
+  61              		.loc 1 50 0
+  62              		.cfi_startproc
+  63              		@ args = 0, pretend = 0, frame = 8
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 3
+
+
+  65              	.LVL2:
+  66 0000 10B5     		push	{r4, lr}
+  67              		.cfi_def_cfa_offset 8
+  68              		.cfi_offset 4, -8
+  69              		.cfi_offset 14, -4
+  70 0002 82B0     		sub	sp, sp, #8
+  71              		.cfi_def_cfa_offset 16
+  72 0004 0446     		mov	r4, r0
+  51:ARM_Monitor.c ****     //writeLine("extractParm: got here");
+  52:ARM_Monitor.c ****     char numberString[5];
+  53:ARM_Monitor.c ****     //writeLine("extractParm: copy string");
+  54:ARM_Monitor.c ****     //writeLine(stringToParse);
+  55:ARM_Monitor.c ****     if (parmNumber == 0)
+  73              		.loc 1 55 0
+  74 0006 B1B9     		cbnz	r1, .L6
+  75              	.LBB2:
+  56:ARM_Monitor.c ****     {
+  57:ARM_Monitor.c ****         strcpy(numberString,stringToParse);
+  76              		.loc 1 57 0
+  77 0008 6846     		mov	r0, sp
+  78              	.LVL3:
+  79 000a 2146     		mov	r1, r4
+  80              	.LVL4:
+  81 000c FFF7FEFF 		bl	strcpy
+  82              	.LVL5:
+  58:ARM_Monitor.c ****         uint8 lineoff=0;
+  83              		.loc 1 58 0
+  84 0010 0023     		movs	r3, #0
+  59:ARM_Monitor.c ****         while ((numberString[lineoff] != ',') && (numberString[lineoff] != 0))
+  85              		.loc 1 59 0
+  86 0012 01E0     		b	.L7
+  87              	.LVL6:
+  88              	.L9:
+  60:ARM_Monitor.c ****             lineoff++;
+  89              		.loc 1 60 0
+  90 0014 0133     		adds	r3, r3, #1
+  91              	.LVL7:
+  92 0016 DBB2     		uxtb	r3, r3
+  93              	.LVL8:
+  94              	.L7:
+  59:ARM_Monitor.c ****         while ((numberString[lineoff] != ',') && (numberString[lineoff] != 0))
+  95              		.loc 1 59 0
+  96 0018 1946     		mov	r1, r3
+  97 001a 02AA     		add	r2, sp, #8
+  98 001c 1A44     		add	r2, r2, r3
+  99 001e 12F8082C 		ldrb	r2, [r2, #-8]	@ zero_extendqisi2
+ 100 0022 2C2A     		cmp	r2, #44
+ 101 0024 01D0     		beq	.L8
+  59:ARM_Monitor.c ****         while ((numberString[lineoff] != ',') && (numberString[lineoff] != 0))
+ 102              		.loc 1 59 0 is_stmt 0 discriminator 1
+ 103 0026 002A     		cmp	r2, #0
+ 104 0028 F4D1     		bne	.L9
+ 105              	.L8:
+  61:ARM_Monitor.c ****         numberString[lineoff] = 0;
+ 106              		.loc 1 61 0 is_stmt 1
+ 107 002a 02AB     		add	r3, sp, #8
+ 108              	.LVL9:
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 4
+
+
+ 109 002c 1944     		add	r1, r1, r3
+ 110 002e 0023     		movs	r3, #0
+ 111 0030 01F8083C 		strb	r3, [r1, #-8]
+ 112              	.LBE2:
+ 113 0034 0BE0     		b	.L10
+ 114              	.LVL10:
+ 115              	.L6:
+  62:ARM_Monitor.c ****     }
+  63:ARM_Monitor.c ****     else if (parmNumber == 1)
+ 116              		.loc 1 63 0
+ 117 0036 0129     		cmp	r1, #1
+ 118 0038 09D1     		bne	.L10
+ 119              	.LBB3:
+  64:ARM_Monitor.c ****     {
+  65:ARM_Monitor.c ****         uint8 parmOffset;
+  66:ARM_Monitor.c ****         parmOffset = findInString(stringToParse,',');
+ 120              		.loc 1 66 0
+ 121 003a 2C21     		movs	r1, #44
+ 122              	.LVL11:
+ 123 003c FFF7FEFF 		bl	findInString
+ 124              	.LVL12:
+  67:ARM_Monitor.c ****         parmOffset += 1;
+ 125              		.loc 1 67 0
+ 126 0040 0130     		adds	r0, r0, #1
+ 127              	.LVL13:
+ 128 0042 00F0FF01 		and	r1, r0, #255
+ 129              	.LVL14:
+  68:ARM_Monitor.c ****         strcpy(numberString,&stringToParse[parmOffset]);
+ 130              		.loc 1 68 0
+ 131 0046 6846     		mov	r0, sp
+ 132 0048 2144     		add	r1, r1, r4
+ 133              	.LVL15:
+ 134 004a FFF7FEFF 		bl	strcpy
+ 135              	.LVL16:
+ 136              	.L10:
+ 137              	.LBE3:
+  69:ARM_Monitor.c ****     }
+  70:ARM_Monitor.c ****     //writeLineNoLF("extractParm: done returning value:");
+  71:ARM_Monitor.c ****     //writeLine(numberString);
+  72:ARM_Monitor.c ****     return(stringToLong(numberString));
+ 138              		.loc 1 72 0
+ 139 004e 6846     		mov	r0, sp
+ 140 0050 FFF7FEFF 		bl	stringToLong
+ 141              	.LVL17:
+  73:ARM_Monitor.c **** }
+ 142              		.loc 1 73 0
+ 143 0054 02B0     		add	sp, sp, #8
+ 144              		.cfi_def_cfa_offset 8
+ 145              		@ sp needed
+ 146 0056 10BD     		pop	{r4, pc}
+ 147              		.cfi_endproc
+ 148              	.LFE64:
+ 149              		.size	extractParm, .-extractParm
+ 150              		.section	.text.checkParmCount,"ax",%progbits
+ 151              		.align	2
+ 152              		.global	checkParmCount
+ 153              		.thumb
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 5
+
+
+ 154              		.thumb_func
+ 155              		.type	checkParmCount, %function
+ 156              	checkParmCount:
+ 157              	.LFB65:
+  74:ARM_Monitor.c **** 
+  75:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+  76:ARM_Monitor.c **** // int8 checkParmCount(char * rxBuff, uint8 expectedParmCount)
+  77:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+  78:ARM_Monitor.c **** 
+  79:ARM_Monitor.c **** int8 checkParmCount(char * rxBuff, uint8 expectedParmCount)
+  80:ARM_Monitor.c **** {
+ 158              		.loc 1 80 0
+ 159              		.cfi_startproc
+ 160              		@ args = 0, pretend = 0, frame = 0
+ 161              		@ frame_needed = 0, uses_anonymous_args = 0
+ 162              	.LVL18:
+ 163 0000 38B5     		push	{r3, r4, r5, lr}
+ 164              		.cfi_def_cfa_offset 16
+ 165              		.cfi_offset 3, -16
+ 166              		.cfi_offset 4, -12
+ 167              		.cfi_offset 5, -8
+ 168              		.cfi_offset 14, -4
+ 169 0002 0546     		mov	r5, r0
+ 170 0004 0C46     		mov	r4, r1
+  81:ARM_Monitor.c ****     //writeLine("checkParmCount: got here");
+  82:ARM_Monitor.c ****     if (countParms(rxBuff) != expectedParmCount)
+ 171              		.loc 1 82 0
+ 172 0006 FFF7FEFF 		bl	countParms
+ 173              	.LVL19:
+ 174 000a A042     		cmp	r0, r4
+ 175 000c 07D0     		beq	.L14
+  83:ARM_Monitor.c ****     {
+  84:ARM_Monitor.c ****         writeLineNoLF("checkParmCount: Parameter error: ");
+ 176              		.loc 1 84 0
+ 177 000e 0548     		ldr	r0, .L16
+ 178 0010 FFF7FEFF 		bl	writeLineNoLF
+ 179              	.LVL20:
+  85:ARM_Monitor.c ****         writeLine(rxBuff);
+ 180              		.loc 1 85 0
+ 181 0014 2846     		mov	r0, r5
+ 182 0016 FFF7FEFF 		bl	writeLine
+ 183              	.LVL21:
+  86:ARM_Monitor.c ****         return -1;
+ 184              		.loc 1 86 0
+ 185 001a FF20     		movs	r0, #255
+ 186 001c 00E0     		b	.L13
+ 187              	.L14:
+  87:ARM_Monitor.c ****     }
+  88:ARM_Monitor.c ****     return 0;
+ 188              		.loc 1 88 0
+ 189 001e 0020     		movs	r0, #0
+ 190              	.L13:
+  89:ARM_Monitor.c **** }
+ 191              		.loc 1 89 0
+ 192 0020 40B2     		sxtb	r0, r0
+ 193 0022 38BD     		pop	{r3, r4, r5, pc}
+ 194              	.LVL22:
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 6
+
+
+ 195              	.L17:
+ 196              		.align	2
+ 197              	.L16:
+ 198 0024 00000000 		.word	.LC0
+ 199              		.cfi_endproc
+ 200              	.LFE65:
+ 201              		.size	checkParmCount, .-checkParmCount
+ 202              		.section	.text.dumpMem,"ax",%progbits
+ 203              		.align	2
+ 204              		.global	dumpMem
+ 205              		.thumb
+ 206              		.thumb_func
+ 207              		.type	dumpMem, %function
+ 208              	dumpMem:
+ 209              	.LFB66:
+  90:ARM_Monitor.c **** 
+  91:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+  92:ARM_Monitor.c **** // void dumpMem(uint32)
+  93:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+  94:ARM_Monitor.c **** 
+  95:ARM_Monitor.c **** void dumpMem(uint32 dumpStart)
+  96:ARM_Monitor.c **** {
+ 210              		.loc 1 96 0
+ 211              		.cfi_startproc
+ 212              		@ args = 0, pretend = 0, frame = 16
+ 213              		@ frame_needed = 0, uses_anonymous_args = 0
+ 214              	.LVL23:
+ 215 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 216              		.cfi_def_cfa_offset 20
+ 217              		.cfi_offset 4, -20
+ 218              		.cfi_offset 5, -16
+ 219              		.cfi_offset 6, -12
+ 220              		.cfi_offset 7, -8
+ 221              		.cfi_offset 14, -4
+ 222 0002 85B0     		sub	sp, sp, #20
+ 223              		.cfi_def_cfa_offset 40
+ 224 0004 0646     		mov	r6, r0
+ 225              	.LVL24:
+  97:ARM_Monitor.c ****     char numberString[9];
+  98:ARM_Monitor.c ****     uint32 dumpLongAddress;
+  99:ARM_Monitor.c ****     uint32 dumpByteAddress;
+ 100:ARM_Monitor.c ****     uint32 lineOffRow;
+ 101:ARM_Monitor.c ****     uint32 lineOff;
+ 102:ARM_Monitor.c ****     //writeLine("dumpMem: got here");
+ 103:ARM_Monitor.c ****     dumpLongAddress = dumpStart;
+ 104:ARM_Monitor.c ****     dumpByteAddress = dumpStart;
+ 105:ARM_Monitor.c ****     //writeLine("dumpMem: looping");
+ 106:ARM_Monitor.c ****    writeLine("Enter to continue, any other key to stop");
+ 226              		.loc 1 106 0
+ 227 0006 2048     		ldr	r0, .L29
+ 228              	.LVL25:
+ 229 0008 FFF7FEFF 		bl	writeLine
+ 230              	.LVL26:
+ 104:ARM_Monitor.c ****     //writeLine("dumpMem: looping");
+ 231              		.loc 1 104 0
+ 232 000c 3546     		mov	r5, r6
+ 233              	.LVL27:
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 7
+
+
+ 234              	.L26:
+ 107:ARM_Monitor.c ****    while(1)
+ 108:ARM_Monitor.c ****     {
+ 109:ARM_Monitor.c ****         for (lineOffRow = 0; lineOffRow < 16;  lineOffRow++) 
+ 235              		.loc 1 109 0
+ 236 000e 0027     		movs	r7, #0
+ 237 0010 31E0     		b	.L19
+ 238              	.LVL28:
+ 239              	.L25:
+ 110:ARM_Monitor.c ****         {
+ 111:ARM_Monitor.c ****             longToString(dumpLongAddress,&numberString[0]);
+ 240              		.loc 1 111 0
+ 241 0012 3046     		mov	r0, r6
+ 242 0014 01A9     		add	r1, sp, #4
+ 243 0016 FFF7FEFF 		bl	longToString
+ 244              	.LVL29:
+ 112:ARM_Monitor.c ****             writeLineNoLF(numberString);
+ 245              		.loc 1 112 0
+ 246 001a 01A8     		add	r0, sp, #4
+ 247 001c FFF7FEFF 		bl	writeLineNoLF
+ 248              	.LVL30:
+ 113:ARM_Monitor.c ****             writeLineNoLF(" ");
+ 249              		.loc 1 113 0
+ 250 0020 1A48     		ldr	r0, .L29+4
+ 251 0022 FFF7FEFF 		bl	writeLineNoLF
+ 252              	.LVL31:
+ 114:ARM_Monitor.c ****             for (lineOff = 0; lineOff < 4; lineOff++)
+ 253              		.loc 1 114 0
+ 254 0026 0024     		movs	r4, #0
+ 255 0028 0DE0     		b	.L20
+ 256              	.LVL32:
+ 257              	.L21:
+ 115:ARM_Monitor.c ****             {
+ 116:ARM_Monitor.c ****                 longToString(readLong(dumpLongAddress+(4*lineOff)),&numberString[0]);
+ 258              		.loc 1 116 0 discriminator 3
+ 259 002a 06EB8400 		add	r0, r6, r4, lsl #2
+ 260 002e FFF7FEFF 		bl	readLong
+ 261              	.LVL33:
+ 262 0032 01A9     		add	r1, sp, #4
+ 263 0034 FFF7FEFF 		bl	longToString
+ 264              	.LVL34:
+ 117:ARM_Monitor.c ****                 writeLineNoLF(numberString);
+ 265              		.loc 1 117 0 discriminator 3
+ 266 0038 01A8     		add	r0, sp, #4
+ 267 003a FFF7FEFF 		bl	writeLineNoLF
+ 268              	.LVL35:
+ 118:ARM_Monitor.c ****                 writeLineNoLF(" ");
+ 269              		.loc 1 118 0 discriminator 3
+ 270 003e 1348     		ldr	r0, .L29+4
+ 271 0040 FFF7FEFF 		bl	writeLineNoLF
+ 272              	.LVL36:
+ 114:ARM_Monitor.c ****             {
+ 273              		.loc 1 114 0 discriminator 3
+ 274 0044 0134     		adds	r4, r4, #1
+ 275              	.LVL37:
+ 276              	.L20:
+ 114:ARM_Monitor.c ****             {
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 8
+
+
+ 277              		.loc 1 114 0 is_stmt 0 discriminator 1
+ 278 0046 032C     		cmp	r4, #3
+ 279 0048 EFD9     		bls	.L21
+ 119:ARM_Monitor.c ****             }
+ 120:ARM_Monitor.c ****             dumpLongAddress += 16;
+ 280              		.loc 1 120 0 is_stmt 1
+ 281 004a 1036     		adds	r6, r6, #16
+ 282              	.LVL38:
+ 121:ARM_Monitor.c ****             for (lineOff = 0; lineOff < 16; lineOff++)
+ 283              		.loc 1 121 0
+ 284 004c 0024     		movs	r4, #0
+ 285 004e 0BE0     		b	.L22
+ 286              	.LVL39:
+ 287              	.L24:
+ 288              	.LBB4:
+ 122:ARM_Monitor.c ****             {
+ 123:ARM_Monitor.c ****                 char rdChar = readByte(dumpByteAddress+lineOff);
+ 289              		.loc 1 123 0
+ 290 0050 2819     		adds	r0, r5, r4
+ 291 0052 FFF7FEFF 		bl	readByte
+ 292              	.LVL40:
+ 124:ARM_Monitor.c ****                 if ((rdChar < 0x20) || (rdChar >= 0x7e))
+ 293              		.loc 1 124 0
+ 294 0056 A0F12003 		sub	r3, r0, #32
+ 295 005a DBB2     		uxtb	r3, r3
+ 296 005c 5D2B     		cmp	r3, #93
+ 297 005e 00D9     		bls	.L23
+ 125:ARM_Monitor.c ****                     rdChar = '.';
+ 298              		.loc 1 125 0
+ 299 0060 2E20     		movs	r0, #46
+ 300              	.LVL41:
+ 301              	.L23:
+ 126:ARM_Monitor.c ****                 outSingleChar(rdChar);
+ 302              		.loc 1 126 0 discriminator 2
+ 303 0062 FFF7FEFF 		bl	outSingleChar
+ 304              	.LVL42:
+ 305              	.LBE4:
+ 121:ARM_Monitor.c ****             {
+ 306              		.loc 1 121 0 discriminator 2
+ 307 0066 0134     		adds	r4, r4, #1
+ 308              	.LVL43:
+ 309              	.L22:
+ 121:ARM_Monitor.c ****             {
+ 310              		.loc 1 121 0 is_stmt 0 discriminator 1
+ 311 0068 0F2C     		cmp	r4, #15
+ 312 006a F1D9     		bls	.L24
+ 127:ARM_Monitor.c ****             }
+ 128:ARM_Monitor.c ****             dumpByteAddress += 16;
+ 313              		.loc 1 128 0 is_stmt 1 discriminator 2
+ 314 006c 1035     		adds	r5, r5, #16
+ 315              	.LVL44:
+ 129:ARM_Monitor.c ****             writeLine(" ");
+ 316              		.loc 1 129 0 discriminator 2
+ 317 006e 0748     		ldr	r0, .L29+4
+ 318 0070 FFF7FEFF 		bl	writeLine
+ 319              	.LVL45:
+ 109:ARM_Monitor.c ****         {
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 9
+
+
+ 320              		.loc 1 109 0 discriminator 2
+ 321 0074 0137     		adds	r7, r7, #1
+ 322              	.LVL46:
+ 323              	.L19:
+ 109:ARM_Monitor.c ****         {
+ 324              		.loc 1 109 0 is_stmt 0 discriminator 1
+ 325 0076 0F2F     		cmp	r7, #15
+ 326 0078 CBD9     		bls	.L25
+ 130:ARM_Monitor.c ****         }
+ 131:ARM_Monitor.c ****         if (getSingleChar() != 0x0d)
+ 327              		.loc 1 131 0 is_stmt 1
+ 328 007a FFF7FEFF 		bl	getSingleChar
+ 329              	.LVL47:
+ 330 007e 0D28     		cmp	r0, #13
+ 331 0080 C5D0     		beq	.L26
+ 132:ARM_Monitor.c ****             return;
+ 133:ARM_Monitor.c ****     }
+ 134:ARM_Monitor.c **** }
+ 332              		.loc 1 134 0
+ 333 0082 05B0     		add	sp, sp, #20
+ 334              		.cfi_def_cfa_offset 20
+ 335              		@ sp needed
+ 336 0084 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 337              	.LVL48:
+ 338              	.L30:
+ 339 0086 00BF     		.align	2
+ 340              	.L29:
+ 341 0088 24000000 		.word	.LC1
+ 342 008c 50000000 		.word	.LC2
+ 343              		.cfi_endproc
+ 344              	.LFE66:
+ 345              		.size	dumpMem, .-dumpMem
+ 346              		.section	.text.readMemByte,"ax",%progbits
+ 347              		.align	2
+ 348              		.global	readMemByte
+ 349              		.thumb
+ 350              		.thumb_func
+ 351              		.type	readMemByte, %function
+ 352              	readMemByte:
+ 353              	.LFB67:
+ 135:ARM_Monitor.c **** 
+ 136:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+ 137:ARM_Monitor.c **** // void readMemByte(uint32 readAddress)
+ 138:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+ 139:ARM_Monitor.c **** 
+ 140:ARM_Monitor.c **** void readMemByte(uint32 readAddress)
+ 141:ARM_Monitor.c **** {
+ 354              		.loc 1 141 0
+ 355              		.cfi_startproc
+ 356              		@ args = 0, pretend = 0, frame = 16
+ 357              		@ frame_needed = 0, uses_anonymous_args = 0
+ 358              	.LVL49:
+ 359 0000 30B5     		push	{r4, r5, lr}
+ 360              		.cfi_def_cfa_offset 12
+ 361              		.cfi_offset 4, -12
+ 362              		.cfi_offset 5, -8
+ 363              		.cfi_offset 14, -4
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 10
+
+
+ 364 0002 85B0     		sub	sp, sp, #20
+ 365              		.cfi_def_cfa_offset 32
+ 366 0004 0446     		mov	r4, r0
+ 142:ARM_Monitor.c ****     char numberString[9];
+ 143:ARM_Monitor.c ****     writeLine("");
+ 367              		.loc 1 143 0
+ 368 0006 1048     		ldr	r0, .L35
+ 369              	.LVL50:
+ 370 0008 FFF7FEFF 		bl	writeLine
+ 371              	.LVL51:
+ 372              	.L33:
+ 373              	.LBB5:
+ 144:ARM_Monitor.c ****     while(1)
+ 145:ARM_Monitor.c ****     {
+ 146:ARM_Monitor.c ****         uint8 valRead = readByte(readAddress);
+ 374              		.loc 1 146 0
+ 375 000c 2046     		mov	r0, r4
+ 376 000e FFF7FEFF 		bl	readByte
+ 377              	.LVL52:
+ 378 0012 0546     		mov	r5, r0
+ 379              	.LVL53:
+ 147:ARM_Monitor.c ****         longToString(readAddress,&numberString[0]);
+ 380              		.loc 1 147 0
+ 381 0014 2046     		mov	r0, r4
+ 382 0016 01A9     		add	r1, sp, #4
+ 383 0018 FFF7FEFF 		bl	longToString
+ 384              	.LVL54:
+ 148:ARM_Monitor.c ****         writeLineNoLF(numberString);
+ 385              		.loc 1 148 0
+ 386 001c 01A8     		add	r0, sp, #4
+ 387 001e FFF7FEFF 		bl	writeLineNoLF
+ 388              	.LVL55:
+ 149:ARM_Monitor.c ****         writeLineNoLF(" ");
+ 389              		.loc 1 149 0
+ 390 0022 0A48     		ldr	r0, .L35+4
+ 391 0024 FFF7FEFF 		bl	writeLineNoLF
+ 392              	.LVL56:
+ 150:ARM_Monitor.c ****         //writeLine("readMem: got here");
+ 151:ARM_Monitor.c ****         byteToString(valRead,&numberString[0]);
+ 393              		.loc 1 151 0
+ 394 0028 2846     		mov	r0, r5
+ 395 002a 01A9     		add	r1, sp, #4
+ 396 002c FFF7FEFF 		bl	byteToString
+ 397              	.LVL57:
+ 152:ARM_Monitor.c ****         writeLine(numberString);
+ 398              		.loc 1 152 0
+ 399 0030 01A8     		add	r0, sp, #4
+ 400 0032 FFF7FEFF 		bl	writeLine
+ 401              	.LVL58:
+ 153:ARM_Monitor.c ****         if (getSingleChar() != 0x0d)
+ 402              		.loc 1 153 0
+ 403 0036 FFF7FEFF 		bl	getSingleChar
+ 404              	.LVL59:
+ 405 003a 0D28     		cmp	r0, #13
+ 406 003c 01D1     		bne	.L31
+ 154:ARM_Monitor.c ****             return;
+ 155:ARM_Monitor.c ****         readAddress += 1;
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 11
+
+
+ 407              		.loc 1 155 0
+ 408 003e 0134     		adds	r4, r4, #1
+ 409              	.LVL60:
+ 410              	.LBE5:
+ 156:ARM_Monitor.c ****     }
+ 411              		.loc 1 156 0
+ 412 0040 E4E7     		b	.L33
+ 413              	.L31:
+ 157:ARM_Monitor.c **** }
+ 414              		.loc 1 157 0
+ 415 0042 05B0     		add	sp, sp, #20
+ 416              		.cfi_def_cfa_offset 12
+ 417              		@ sp needed
+ 418 0044 30BD     		pop	{r4, r5, pc}
+ 419              	.LVL61:
+ 420              	.L36:
+ 421 0046 00BF     		.align	2
+ 422              	.L35:
+ 423 0048 54000000 		.word	.LC3
+ 424 004c 50000000 		.word	.LC2
+ 425              		.cfi_endproc
+ 426              	.LFE67:
+ 427              		.size	readMemByte, .-readMemByte
+ 428              		.section	.text.readMemShort,"ax",%progbits
+ 429              		.align	2
+ 430              		.global	readMemShort
+ 431              		.thumb
+ 432              		.thumb_func
+ 433              		.type	readMemShort, %function
+ 434              	readMemShort:
+ 435              	.LFB68:
+ 158:ARM_Monitor.c **** 
+ 159:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+ 160:ARM_Monitor.c **** // void readMemShort(uint32 readAddress)
+ 161:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+ 162:ARM_Monitor.c **** 
+ 163:ARM_Monitor.c **** void readMemShort(uint32 readAddress)
+ 164:ARM_Monitor.c **** {
+ 436              		.loc 1 164 0
+ 437              		.cfi_startproc
+ 438              		@ args = 0, pretend = 0, frame = 16
+ 439              		@ frame_needed = 0, uses_anonymous_args = 0
+ 440              	.LVL62:
+ 441 0000 10B5     		push	{r4, lr}
+ 442              		.cfi_def_cfa_offset 8
+ 443              		.cfi_offset 4, -8
+ 444              		.cfi_offset 14, -4
+ 445 0002 84B0     		sub	sp, sp, #16
+ 446              		.cfi_def_cfa_offset 24
+ 447 0004 0446     		mov	r4, r0
+ 165:ARM_Monitor.c ****     char numberString[9];
+ 166:ARM_Monitor.c ****     writeLine("");
+ 448              		.loc 1 166 0
+ 449 0006 0F48     		ldr	r0, .L41
+ 450              	.LVL63:
+ 451 0008 FFF7FEFF 		bl	writeLine
+ 452              	.LVL64:
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 12
+
+
+ 453              	.L39:
+ 454              	.LBB6:
+ 167:ARM_Monitor.c ****     while(1)
+ 168:ARM_Monitor.c ****     {
+ 169:ARM_Monitor.c ****         longToString(readAddress,&numberString[0]);
+ 455              		.loc 1 169 0
+ 456 000c 2046     		mov	r0, r4
+ 457 000e 01A9     		add	r1, sp, #4
+ 458 0010 FFF7FEFF 		bl	longToString
+ 459              	.LVL65:
+ 170:ARM_Monitor.c ****         writeLineNoLF(numberString);
+ 460              		.loc 1 170 0
+ 461 0014 01A8     		add	r0, sp, #4
+ 462 0016 FFF7FEFF 		bl	writeLineNoLF
+ 463              	.LVL66:
+ 171:ARM_Monitor.c ****         writeLineNoLF(" ");
+ 464              		.loc 1 171 0
+ 465 001a 0B48     		ldr	r0, .L41+4
+ 466 001c FFF7FEFF 		bl	writeLineNoLF
+ 467              	.LVL67:
+ 172:ARM_Monitor.c ****         uint16 valRead = readShort(readAddress);
+ 468              		.loc 1 172 0
+ 469 0020 2046     		mov	r0, r4
+ 470 0022 FFF7FEFF 		bl	readShort
+ 471              	.LVL68:
+ 173:ARM_Monitor.c ****         //writeLine("readMem: got here");
+ 174:ARM_Monitor.c ****         shortToString(valRead,&numberString[0]);
+ 472              		.loc 1 174 0
+ 473 0026 01A9     		add	r1, sp, #4
+ 474 0028 FFF7FEFF 		bl	shortToString
+ 475              	.LVL69:
+ 175:ARM_Monitor.c ****         writeLine(numberString);
+ 476              		.loc 1 175 0
+ 477 002c 01A8     		add	r0, sp, #4
+ 478 002e FFF7FEFF 		bl	writeLine
+ 479              	.LVL70:
+ 176:ARM_Monitor.c ****         if (getSingleChar() != 0x0d)
+ 480              		.loc 1 176 0
+ 481 0032 FFF7FEFF 		bl	getSingleChar
+ 482              	.LVL71:
+ 483 0036 0D28     		cmp	r0, #13
+ 484 0038 01D1     		bne	.L37
+ 177:ARM_Monitor.c ****             return;
+ 178:ARM_Monitor.c ****         readAddress += 2;
+ 485              		.loc 1 178 0
+ 486 003a 0234     		adds	r4, r4, #2
+ 487              	.LVL72:
+ 488              	.LBE6:
+ 179:ARM_Monitor.c ****     }
+ 489              		.loc 1 179 0
+ 490 003c E6E7     		b	.L39
+ 491              	.L37:
+ 180:ARM_Monitor.c **** }
+ 492              		.loc 1 180 0
+ 493 003e 04B0     		add	sp, sp, #16
+ 494              		.cfi_def_cfa_offset 8
+ 495              		@ sp needed
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 13
+
+
+ 496 0040 10BD     		pop	{r4, pc}
+ 497              	.LVL73:
+ 498              	.L42:
+ 499 0042 00BF     		.align	2
+ 500              	.L41:
+ 501 0044 54000000 		.word	.LC3
+ 502 0048 50000000 		.word	.LC2
+ 503              		.cfi_endproc
+ 504              	.LFE68:
+ 505              		.size	readMemShort, .-readMemShort
+ 506              		.section	.text.readMemLong,"ax",%progbits
+ 507              		.align	2
+ 508              		.global	readMemLong
+ 509              		.thumb
+ 510              		.thumb_func
+ 511              		.type	readMemLong, %function
+ 512              	readMemLong:
+ 513              	.LFB69:
+ 181:ARM_Monitor.c **** 
+ 182:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+ 183:ARM_Monitor.c **** // void readMemLong(uint32 readAddress)
+ 184:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+ 185:ARM_Monitor.c **** 
+ 186:ARM_Monitor.c **** void readMemLong(uint32 readAddress)
+ 187:ARM_Monitor.c **** {
+ 514              		.loc 1 187 0
+ 515              		.cfi_startproc
+ 516              		@ args = 0, pretend = 0, frame = 16
+ 517              		@ frame_needed = 0, uses_anonymous_args = 0
+ 518              	.LVL74:
+ 519 0000 10B5     		push	{r4, lr}
+ 520              		.cfi_def_cfa_offset 8
+ 521              		.cfi_offset 4, -8
+ 522              		.cfi_offset 14, -4
+ 523 0002 84B0     		sub	sp, sp, #16
+ 524              		.cfi_def_cfa_offset 24
+ 525 0004 0446     		mov	r4, r0
+ 188:ARM_Monitor.c ****     char numberString[9];
+ 189:ARM_Monitor.c ****     writeLine("");
+ 526              		.loc 1 189 0
+ 527 0006 0F48     		ldr	r0, .L47
+ 528              	.LVL75:
+ 529 0008 FFF7FEFF 		bl	writeLine
+ 530              	.LVL76:
+ 531              	.L45:
+ 532              	.LBB7:
+ 190:ARM_Monitor.c ****     while(1)
+ 191:ARM_Monitor.c ****     {
+ 192:ARM_Monitor.c ****         longToString(readAddress,&numberString[0]);
+ 533              		.loc 1 192 0
+ 534 000c 2046     		mov	r0, r4
+ 535 000e 01A9     		add	r1, sp, #4
+ 536 0010 FFF7FEFF 		bl	longToString
+ 537              	.LVL77:
+ 193:ARM_Monitor.c ****         writeLineNoLF(numberString);
+ 538              		.loc 1 193 0
+ 539 0014 01A8     		add	r0, sp, #4
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 14
+
+
+ 540 0016 FFF7FEFF 		bl	writeLineNoLF
+ 541              	.LVL78:
+ 194:ARM_Monitor.c ****         writeLineNoLF(" ");
+ 542              		.loc 1 194 0
+ 543 001a 0B48     		ldr	r0, .L47+4
+ 544 001c FFF7FEFF 		bl	writeLineNoLF
+ 545              	.LVL79:
+ 195:ARM_Monitor.c ****         uint32 valRead = readLong(readAddress);
+ 546              		.loc 1 195 0
+ 547 0020 2046     		mov	r0, r4
+ 548 0022 FFF7FEFF 		bl	readLong
+ 549              	.LVL80:
+ 196:ARM_Monitor.c ****         //writeLine("readMem: got here");
+ 197:ARM_Monitor.c ****         longToString(valRead,&numberString[0]);
+ 550              		.loc 1 197 0
+ 551 0026 01A9     		add	r1, sp, #4
+ 552 0028 FFF7FEFF 		bl	longToString
+ 553              	.LVL81:
+ 198:ARM_Monitor.c ****         writeLine(numberString);
+ 554              		.loc 1 198 0
+ 555 002c 01A8     		add	r0, sp, #4
+ 556 002e FFF7FEFF 		bl	writeLine
+ 557              	.LVL82:
+ 199:ARM_Monitor.c ****         if (getSingleChar() != 0x0d)
+ 558              		.loc 1 199 0
+ 559 0032 FFF7FEFF 		bl	getSingleChar
+ 560              	.LVL83:
+ 561 0036 0D28     		cmp	r0, #13
+ 562 0038 01D1     		bne	.L43
+ 200:ARM_Monitor.c ****             return;
+ 201:ARM_Monitor.c ****         readAddress += 4;
+ 563              		.loc 1 201 0
+ 564 003a 0434     		adds	r4, r4, #4
+ 565              	.LVL84:
+ 566              	.LBE7:
+ 202:ARM_Monitor.c ****     }
+ 567              		.loc 1 202 0
+ 568 003c E6E7     		b	.L45
+ 569              	.L43:
+ 203:ARM_Monitor.c **** }
+ 570              		.loc 1 203 0
+ 571 003e 04B0     		add	sp, sp, #16
+ 572              		.cfi_def_cfa_offset 8
+ 573              		@ sp needed
+ 574 0040 10BD     		pop	{r4, pc}
+ 575              	.LVL85:
+ 576              	.L48:
+ 577 0042 00BF     		.align	2
+ 578              	.L47:
+ 579 0044 54000000 		.word	.LC3
+ 580 0048 50000000 		.word	.LC2
+ 581              		.cfi_endproc
+ 582              	.LFE69:
+ 583              		.size	readMemLong, .-readMemLong
+ 584              		.section	.text.writeMemLong,"ax",%progbits
+ 585              		.align	2
+ 586              		.global	writeMemLong
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 15
+
+
+ 587              		.thumb
+ 588              		.thumb_func
+ 589              		.type	writeMemLong, %function
+ 590              	writeMemLong:
+ 591              	.LFB70:
+ 204:ARM_Monitor.c **** 
+ 205:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+ 206:ARM_Monitor.c **** // void writeMemLong(uint32 writeAddress, uint32 writeData)
+ 207:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+ 208:ARM_Monitor.c **** 
+ 209:ARM_Monitor.c **** void writeMemLong(uint32 writeAddress, uint32 writeData)
+ 210:ARM_Monitor.c **** {
+ 592              		.loc 1 210 0
+ 593              		.cfi_startproc
+ 594              		@ args = 0, pretend = 0, frame = 16
+ 595              		@ frame_needed = 0, uses_anonymous_args = 0
+ 596              	.LVL86:
+ 597 0000 30B5     		push	{r4, r5, lr}
+ 598              		.cfi_def_cfa_offset 12
+ 599              		.cfi_offset 4, -12
+ 600              		.cfi_offset 5, -8
+ 601              		.cfi_offset 14, -4
+ 602 0002 85B0     		sub	sp, sp, #20
+ 603              		.cfi_def_cfa_offset 32
+ 604 0004 0546     		mov	r5, r0
+ 605 0006 0C46     		mov	r4, r1
+ 211:ARM_Monitor.c ****     char numberString[9];
+ 212:ARM_Monitor.c ****     writeLineNoLF("writeMem: writing - address=");
+ 606              		.loc 1 212 0
+ 607 0008 0C48     		ldr	r0, .L51
+ 608              	.LVL87:
+ 609 000a FFF7FEFF 		bl	writeLineNoLF
+ 610              	.LVL88:
+ 213:ARM_Monitor.c ****     longToString(writeAddress,&numberString[0]);
+ 611              		.loc 1 213 0
+ 612 000e 2846     		mov	r0, r5
+ 613 0010 01A9     		add	r1, sp, #4
+ 614 0012 FFF7FEFF 		bl	longToString
+ 615              	.LVL89:
+ 214:ARM_Monitor.c ****     writeLineNoLF(numberString);
+ 616              		.loc 1 214 0
+ 617 0016 01A8     		add	r0, sp, #4
+ 618 0018 FFF7FEFF 		bl	writeLineNoLF
+ 619              	.LVL90:
+ 215:ARM_Monitor.c ****     writeLineNoLF(", data=");
+ 620              		.loc 1 215 0
+ 621 001c 0848     		ldr	r0, .L51+4
+ 622 001e FFF7FEFF 		bl	writeLineNoLF
+ 623              	.LVL91:
+ 216:ARM_Monitor.c ****     longToString(writeData,&numberString[0]);
+ 624              		.loc 1 216 0
+ 625 0022 2046     		mov	r0, r4
+ 626 0024 01A9     		add	r1, sp, #4
+ 627 0026 FFF7FEFF 		bl	longToString
+ 628              	.LVL92:
+ 217:ARM_Monitor.c ****     writeLine(numberString);
+ 629              		.loc 1 217 0
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 16
+
+
+ 630 002a 01A8     		add	r0, sp, #4
+ 631 002c FFF7FEFF 		bl	writeLine
+ 632              	.LVL93:
+ 218:ARM_Monitor.c ****     writeLong(writeAddress,writeData);
+ 633              		.loc 1 218 0
+ 634 0030 2846     		mov	r0, r5
+ 635 0032 2146     		mov	r1, r4
+ 636 0034 FFF7FEFF 		bl	writeLong
+ 637              	.LVL94:
+ 219:ARM_Monitor.c **** }
+ 638              		.loc 1 219 0
+ 639 0038 05B0     		add	sp, sp, #20
+ 640              		.cfi_def_cfa_offset 12
+ 641              		@ sp needed
+ 642 003a 30BD     		pop	{r4, r5, pc}
+ 643              	.LVL95:
+ 644              	.L52:
+ 645              		.align	2
+ 646              	.L51:
+ 647 003c 58000000 		.word	.LC4
+ 648 0040 78000000 		.word	.LC5
+ 649              		.cfi_endproc
+ 650              	.LFE70:
+ 651              		.size	writeMemLong, .-writeMemLong
+ 652              		.section	.text.writeMemShort,"ax",%progbits
+ 653              		.align	2
+ 654              		.global	writeMemShort
+ 655              		.thumb
+ 656              		.thumb_func
+ 657              		.type	writeMemShort, %function
+ 658              	writeMemShort:
+ 659              	.LFB71:
+ 220:ARM_Monitor.c **** 
+ 221:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+ 222:ARM_Monitor.c **** // void writeMemShort(uint32 writeAddress, uint32 writeData)
+ 223:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+ 224:ARM_Monitor.c **** 
+ 225:ARM_Monitor.c **** void writeMemShort(uint32 writeAddress, uint16 writeData)
+ 226:ARM_Monitor.c **** {
+ 660              		.loc 1 226 0
+ 661              		.cfi_startproc
+ 662              		@ args = 0, pretend = 0, frame = 16
+ 663              		@ frame_needed = 0, uses_anonymous_args = 0
+ 664              	.LVL96:
+ 665 0000 30B5     		push	{r4, r5, lr}
+ 666              		.cfi_def_cfa_offset 12
+ 667              		.cfi_offset 4, -12
+ 668              		.cfi_offset 5, -8
+ 669              		.cfi_offset 14, -4
+ 670 0002 85B0     		sub	sp, sp, #20
+ 671              		.cfi_def_cfa_offset 32
+ 672 0004 0546     		mov	r5, r0
+ 673 0006 0C46     		mov	r4, r1
+ 227:ARM_Monitor.c ****     char numberString[9];
+ 228:ARM_Monitor.c ****     writeLineNoLF("writeMem: writing - address=");
+ 674              		.loc 1 228 0
+ 675 0008 0C48     		ldr	r0, .L55
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 17
+
+
+ 676              	.LVL97:
+ 677 000a FFF7FEFF 		bl	writeLineNoLF
+ 678              	.LVL98:
+ 229:ARM_Monitor.c ****     longToString(writeAddress,&numberString[0]);
+ 679              		.loc 1 229 0
+ 680 000e 2846     		mov	r0, r5
+ 681 0010 01A9     		add	r1, sp, #4
+ 682 0012 FFF7FEFF 		bl	longToString
+ 683              	.LVL99:
+ 230:ARM_Monitor.c ****     writeLineNoLF(numberString);
+ 684              		.loc 1 230 0
+ 685 0016 01A8     		add	r0, sp, #4
+ 686 0018 FFF7FEFF 		bl	writeLineNoLF
+ 687              	.LVL100:
+ 231:ARM_Monitor.c ****     writeLineNoLF(", data=");
+ 688              		.loc 1 231 0
+ 689 001c 0848     		ldr	r0, .L55+4
+ 690 001e FFF7FEFF 		bl	writeLineNoLF
+ 691              	.LVL101:
+ 232:ARM_Monitor.c ****     longToString(writeData,&numberString[0]);
+ 692              		.loc 1 232 0
+ 693 0022 2046     		mov	r0, r4
+ 694 0024 01A9     		add	r1, sp, #4
+ 695 0026 FFF7FEFF 		bl	longToString
+ 696              	.LVL102:
+ 233:ARM_Monitor.c ****     writeLine(numberString);
+ 697              		.loc 1 233 0
+ 698 002a 01A8     		add	r0, sp, #4
+ 699 002c FFF7FEFF 		bl	writeLine
+ 700              	.LVL103:
+ 234:ARM_Monitor.c ****     writeLong(writeAddress,writeData);
+ 701              		.loc 1 234 0
+ 702 0030 2846     		mov	r0, r5
+ 703 0032 2146     		mov	r1, r4
+ 704 0034 FFF7FEFF 		bl	writeLong
+ 705              	.LVL104:
+ 235:ARM_Monitor.c **** }
+ 706              		.loc 1 235 0
+ 707 0038 05B0     		add	sp, sp, #20
+ 708              		.cfi_def_cfa_offset 12
+ 709              		@ sp needed
+ 710 003a 30BD     		pop	{r4, r5, pc}
+ 711              	.LVL105:
+ 712              	.L56:
+ 713              		.align	2
+ 714              	.L55:
+ 715 003c 58000000 		.word	.LC4
+ 716 0040 78000000 		.word	.LC5
+ 717              		.cfi_endproc
+ 718              	.LFE71:
+ 719              		.size	writeMemShort, .-writeMemShort
+ 720              		.section	.text.writeMemByte,"ax",%progbits
+ 721              		.align	2
+ 722              		.global	writeMemByte
+ 723              		.thumb
+ 724              		.thumb_func
+ 725              		.type	writeMemByte, %function
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 18
+
+
+ 726              	writeMemByte:
+ 727              	.LFB72:
+ 236:ARM_Monitor.c **** 
+ 237:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+ 238:ARM_Monitor.c **** // void writeMemByte(uint32 writeAddress, uint32 writeData)
+ 239:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+ 240:ARM_Monitor.c **** 
+ 241:ARM_Monitor.c **** void writeMemByte(uint32 writeAddress, uint8 writeData)
+ 242:ARM_Monitor.c **** {
+ 728              		.loc 1 242 0
+ 729              		.cfi_startproc
+ 730              		@ args = 0, pretend = 0, frame = 16
+ 731              		@ frame_needed = 0, uses_anonymous_args = 0
+ 732              	.LVL106:
+ 733 0000 30B5     		push	{r4, r5, lr}
+ 734              		.cfi_def_cfa_offset 12
+ 735              		.cfi_offset 4, -12
+ 736              		.cfi_offset 5, -8
+ 737              		.cfi_offset 14, -4
+ 738 0002 85B0     		sub	sp, sp, #20
+ 739              		.cfi_def_cfa_offset 32
+ 740 0004 0546     		mov	r5, r0
+ 741 0006 0C46     		mov	r4, r1
+ 243:ARM_Monitor.c ****     char numberString[9];
+ 244:ARM_Monitor.c ****     writeLineNoLF("writeMem: writing - address=");
+ 742              		.loc 1 244 0
+ 743 0008 0C48     		ldr	r0, .L59
+ 744              	.LVL107:
+ 745 000a FFF7FEFF 		bl	writeLineNoLF
+ 746              	.LVL108:
+ 245:ARM_Monitor.c ****     longToString(writeAddress,&numberString[0]);
+ 747              		.loc 1 245 0
+ 748 000e 2846     		mov	r0, r5
+ 749 0010 01A9     		add	r1, sp, #4
+ 750 0012 FFF7FEFF 		bl	longToString
+ 751              	.LVL109:
+ 246:ARM_Monitor.c ****     writeLineNoLF(numberString);
+ 752              		.loc 1 246 0
+ 753 0016 01A8     		add	r0, sp, #4
+ 754 0018 FFF7FEFF 		bl	writeLineNoLF
+ 755              	.LVL110:
+ 247:ARM_Monitor.c ****     writeLineNoLF(", data=");
+ 756              		.loc 1 247 0
+ 757 001c 0848     		ldr	r0, .L59+4
+ 758 001e FFF7FEFF 		bl	writeLineNoLF
+ 759              	.LVL111:
+ 248:ARM_Monitor.c ****     longToString(writeData,&numberString[0]);
+ 760              		.loc 1 248 0
+ 761 0022 2046     		mov	r0, r4
+ 762 0024 01A9     		add	r1, sp, #4
+ 763 0026 FFF7FEFF 		bl	longToString
+ 764              	.LVL112:
+ 249:ARM_Monitor.c ****     writeLine(numberString);
+ 765              		.loc 1 249 0
+ 766 002a 01A8     		add	r0, sp, #4
+ 767 002c FFF7FEFF 		bl	writeLine
+ 768              	.LVL113:
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 19
+
+
+ 250:ARM_Monitor.c ****     writeLong(writeAddress,writeData);
+ 769              		.loc 1 250 0
+ 770 0030 2846     		mov	r0, r5
+ 771 0032 2146     		mov	r1, r4
+ 772 0034 FFF7FEFF 		bl	writeLong
+ 773              	.LVL114:
+ 251:ARM_Monitor.c **** }
+ 774              		.loc 1 251 0
+ 775 0038 05B0     		add	sp, sp, #20
+ 776              		.cfi_def_cfa_offset 12
+ 777              		@ sp needed
+ 778 003a 30BD     		pop	{r4, r5, pc}
+ 779              	.LVL115:
+ 780              	.L60:
+ 781              		.align	2
+ 782              	.L59:
+ 783 003c 58000000 		.word	.LC4
+ 784 0040 78000000 		.word	.LC5
+ 785              		.cfi_endproc
+ 786              	.LFE72:
+ 787              		.size	writeMemByte, .-writeMemByte
+ 788              		.section	.text.goCommand,"ax",%progbits
+ 789              		.align	2
+ 790              		.global	goCommand
+ 791              		.thumb
+ 792              		.thumb_func
+ 793              		.type	goCommand, %function
+ 794              	goCommand:
+ 795              	.LFB73:
+ 252:ARM_Monitor.c **** 
+ 253:ARM_Monitor.c **** 
+ 254:ARM_Monitor.c **** 
+ 255:ARM_Monitor.c **** void goCommand(uint32 goAddress)
+ 256:ARM_Monitor.c **** {
+ 796              		.loc 1 256 0
+ 797              		.cfi_startproc
+ 798              		@ args = 0, pretend = 0, frame = 0
+ 799              		@ frame_needed = 0, uses_anonymous_args = 0
+ 800              	.LVL116:
+ 801 0000 08B5     		push	{r3, lr}
+ 802              		.cfi_def_cfa_offset 8
+ 803              		.cfi_offset 3, -8
+ 804              		.cfi_offset 14, -4
+ 257:ARM_Monitor.c ****     writeLine(&myStringInMemory[0]);
+ 805              		.loc 1 257 0
+ 806 0002 0248     		ldr	r0, .L63
+ 807              	.LVL117:
+ 808 0004 FFF7FEFF 		bl	writeLine
+ 809              	.LVL118:
+ 810 0008 08BD     		pop	{r3, pc}
+ 811              	.L64:
+ 812 000a 00BF     		.align	2
+ 813              	.L63:
+ 814 000c 00000000 		.word	myStringInMemory
+ 815              		.cfi_endproc
+ 816              	.LFE73:
+ 817              		.size	goCommand, .-goCommand
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 20
+
+
+ 818              		.section	.text.disassemble,"ax",%progbits
+ 819              		.align	2
+ 820              		.global	disassemble
+ 821              		.thumb
+ 822              		.thumb_func
+ 823              		.type	disassemble, %function
+ 824              	disassemble:
+ 825              	.LFB74:
+ 258:ARM_Monitor.c **** }
+ 259:ARM_Monitor.c **** 
+ 260:ARM_Monitor.c **** void disassemble(uint32 disassembleAddress)
+ 261:ARM_Monitor.c **** {
+ 826              		.loc 1 261 0
+ 827              		.cfi_startproc
+ 828              		@ args = 0, pretend = 0, frame = 0
+ 829              		@ frame_needed = 0, uses_anonymous_args = 0
+ 830              		@ link register save eliminated.
+ 831              	.LVL119:
+ 262:ARM_Monitor.c ****     myStringInMemory[0] = 0x34;
+ 832              		.loc 1 262 0
+ 833 0000 3422     		movs	r2, #52
+ 834 0002 014B     		ldr	r3, .L66
+ 835 0004 1A70     		strb	r2, [r3]
+ 836 0006 7047     		bx	lr
+ 837              	.L67:
+ 838              		.align	2
+ 839              	.L66:
+ 840 0008 00000000 		.word	myStringInMemory
+ 841              		.cfi_endproc
+ 842              	.LFE74:
+ 843              		.size	disassemble, .-disassemble
+ 844              		.section	.text.ARM_Monitor,"ax",%progbits
+ 845              		.align	2
+ 846              		.global	ARM_Monitor
+ 847              		.thumb
+ 848              		.thumb_func
+ 849              		.type	ARM_Monitor, %function
+ 850              	ARM_Monitor:
+ 851              	.LFB75:
+ 263:ARM_Monitor.c **** }
+ 264:ARM_Monitor.c **** 
+ 265:ARM_Monitor.c ****     
+ 266:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+ 267:ARM_Monitor.c **** // void ARM_Monitor(void)
+ 268:ARM_Monitor.c **** ////////////////////////////////////////////////////////////////
+ 269:ARM_Monitor.c **** 
+ 270:ARM_Monitor.c **** void ARM_Monitor(void)
+ 271:ARM_Monitor.c **** {
+ 852              		.loc 1 271 0
+ 853              		.cfi_startproc
+ 854              		@ args = 0, pretend = 0, frame = 80
+ 855              		@ frame_needed = 0, uses_anonymous_args = 0
+ 856 0000 10B5     		push	{r4, lr}
+ 857              		.cfi_def_cfa_offset 8
+ 858              		.cfi_offset 4, -8
+ 859              		.cfi_offset 14, -4
+ 860 0002 94B0     		sub	sp, sp, #80
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 21
+
+
+ 861              		.cfi_def_cfa_offset 88
+ 272:ARM_Monitor.c ****     char8 rxBufferPtr[MAXLINELENGTH];
+ 273:ARM_Monitor.c ****     writeLine("ARM PsOC Monitor v0.0.2 (? for a list of commands)");
+ 862              		.loc 1 273 0
+ 863 0004 7548     		ldr	r0, .L91
+ 864 0006 FFF7FEFF 		bl	writeLine
+ 865              	.LVL120:
+ 274:ARM_Monitor.c ****     readLine(rxBufferPtr);
+ 866              		.loc 1 274 0
+ 867 000a 6846     		mov	r0, sp
+ 868 000c FFF7FEFF 		bl	readLine
+ 869              	.LVL121:
+ 275:ARM_Monitor.c ****     writeLine("");
+ 870              		.loc 1 275 0
+ 871 0010 7348     		ldr	r0, .L91+4
+ 872 0012 FFF7FEFF 		bl	writeLine
+ 873              	.LVL122:
+ 276:ARM_Monitor.c ****     switch (rxBufferPtr[0])
+ 874              		.loc 1 276 0
+ 875 0016 9DF80030 		ldrb	r3, [sp]	@ zero_extendqisi2
+ 876 001a 3F3B     		subs	r3, r3, #63
+ 877 001c 382B     		cmp	r3, #56
+ 878 001e 00F2D780 		bhi	.L69
+ 879 0022 DFE803F0 		tbb	[pc, r3]
+ 880              	.L71:
+ 881 0026 1D       		.byte	(.L70-.L71)/2
+ 882 0027 D5       		.byte	(.L69-.L71)/2
+ 883 0028 C7       		.byte	(.L72-.L71)/2
+ 884 0029 D5       		.byte	(.L69-.L71)/2
+ 885 002a D5       		.byte	(.L69-.L71)/2
+ 886 002b 2D       		.byte	(.L73-.L71)/2
+ 887 002c D5       		.byte	(.L69-.L71)/2
+ 888 002d D5       		.byte	(.L69-.L71)/2
+ 889 002e B9       		.byte	(.L74-.L71)/2
+ 890 002f 1D       		.byte	(.L70-.L71)/2
+ 891 0030 D5       		.byte	(.L69-.L71)/2
+ 892 0031 D5       		.byte	(.L69-.L71)/2
+ 893 0032 D5       		.byte	(.L69-.L71)/2
+ 894 0033 D5       		.byte	(.L69-.L71)/2
+ 895 0034 D5       		.byte	(.L69-.L71)/2
+ 896 0035 D5       		.byte	(.L69-.L71)/2
+ 897 0036 D5       		.byte	(.L69-.L71)/2
+ 898 0037 D5       		.byte	(.L69-.L71)/2
+ 899 0038 D5       		.byte	(.L69-.L71)/2
+ 900 0039 3D       		.byte	(.L75-.L71)/2
+ 901 003a D5       		.byte	(.L69-.L71)/2
+ 902 003b D5       		.byte	(.L69-.L71)/2
+ 903 003c D5       		.byte	(.L69-.L71)/2
+ 904 003d D5       		.byte	(.L69-.L71)/2
+ 905 003e 70       		.byte	(.L76-.L71)/2
+ 906 003f D5       		.byte	(.L69-.L71)/2
+ 907 0040 D5       		.byte	(.L69-.L71)/2
+ 908 0041 D5       		.byte	(.L69-.L71)/2
+ 909 0042 D5       		.byte	(.L69-.L71)/2
+ 910 0043 D5       		.byte	(.L69-.L71)/2
+ 911 0044 D5       		.byte	(.L69-.L71)/2
+ 912 0045 D5       		.byte	(.L69-.L71)/2
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 22
+
+
+ 913 0046 D5       		.byte	(.L69-.L71)/2
+ 914 0047 D5       		.byte	(.L69-.L71)/2
+ 915 0048 C7       		.byte	(.L72-.L71)/2
+ 916 0049 D5       		.byte	(.L69-.L71)/2
+ 917 004a D5       		.byte	(.L69-.L71)/2
+ 918 004b 2D       		.byte	(.L73-.L71)/2
+ 919 004c D5       		.byte	(.L69-.L71)/2
+ 920 004d D5       		.byte	(.L69-.L71)/2
+ 921 004e B9       		.byte	(.L74-.L71)/2
+ 922 004f 1D       		.byte	(.L70-.L71)/2
+ 923 0050 D5       		.byte	(.L69-.L71)/2
+ 924 0051 D5       		.byte	(.L69-.L71)/2
+ 925 0052 D5       		.byte	(.L69-.L71)/2
+ 926 0053 D5       		.byte	(.L69-.L71)/2
+ 927 0054 D5       		.byte	(.L69-.L71)/2
+ 928 0055 D5       		.byte	(.L69-.L71)/2
+ 929 0056 D5       		.byte	(.L69-.L71)/2
+ 930 0057 D5       		.byte	(.L69-.L71)/2
+ 931 0058 D5       		.byte	(.L69-.L71)/2
+ 932 0059 3D       		.byte	(.L75-.L71)/2
+ 933 005a D5       		.byte	(.L69-.L71)/2
+ 934 005b D5       		.byte	(.L69-.L71)/2
+ 935 005c D5       		.byte	(.L69-.L71)/2
+ 936 005d D5       		.byte	(.L69-.L71)/2
+ 937 005e 70       		.byte	(.L76-.L71)/2
+ 938 005f 00       		.p2align 1
+ 939              	.L70:
+ 277:ARM_Monitor.c ****     {
+ 278:ARM_Monitor.c ****       case '?':
+ 279:ARM_Monitor.c ****       case 'H':
+ 280:ARM_Monitor.c ****       case 'h':
+ 281:ARM_Monitor.c ****         writeLine("RSADDR - Read/Modify byte/short/long data at address");
+ 940              		.loc 1 281 0
+ 941 0060 6048     		ldr	r0, .L91+8
+ 942 0062 FFF7FEFF 		bl	writeLine
+ 943              	.LVL123:
+ 282:ARM_Monitor.c ****         writeLine("WSADDR,DATA - Write byte/short/long address with data");
+ 944              		.loc 1 282 0
+ 945 0066 6048     		ldr	r0, .L91+12
+ 946 0068 FFF7FEFF 		bl	writeLine
+ 947              	.LVL124:
+ 283:ARM_Monitor.c ****         writeLine("Daddress - Dump starting at address");
+ 948              		.loc 1 283 0
+ 949 006c 5F48     		ldr	r0, .L91+16
+ 950 006e FFF7FEFF 		bl	writeLine
+ 951              	.LVL125:
+ 284:ARM_Monitor.c ****         writeLine("Gaddress - Go start executing at address");
+ 952              		.loc 1 284 0
+ 953 0072 5F48     		ldr	r0, .L91+20
+ 954 0074 FFF7FEFF 		bl	writeLine
+ 955              	.LVL126:
+ 285:ARM_Monitor.c ****         writeLine("Aaddress - disAssemble code at address");
+ 956              		.loc 1 285 0
+ 957 0078 5E48     		ldr	r0, .L91+24
+ 958 007a FFF7FEFF 		bl	writeLine
+ 959              	.LVL127:
+ 286:ARM_Monitor.c ****         break;
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 23
+
+
+ 960              		.loc 1 286 0
+ 961 007e AAE0     		b	.L68
+ 962              	.L73:
+ 287:ARM_Monitor.c ****       case 'D':
+ 288:ARM_Monitor.c ****       case 'd':
+ 289:ARM_Monitor.c ****         if (checkParmCount(rxBufferPtr,1) == -1)
+ 963              		.loc 1 289 0
+ 964 0080 6846     		mov	r0, sp
+ 965 0082 0121     		movs	r1, #1
+ 966 0084 FFF7FEFF 		bl	checkParmCount
+ 967              	.LVL128:
+ 968 0088 B0F1FF3F 		cmp	r0, #-1
+ 969 008c 00F0A380 		beq	.L68
+ 290:ARM_Monitor.c ****             break;
+ 291:ARM_Monitor.c ****         else
+ 292:ARM_Monitor.c ****             dumpMem(extractParm(&rxBufferPtr[1],0));
+ 970              		.loc 1 292 0
+ 971 0090 0DF10100 		add	r0, sp, #1
+ 972 0094 0021     		movs	r1, #0
+ 973 0096 FFF7FEFF 		bl	extractParm
+ 974              	.LVL129:
+ 975 009a FFF7FEFF 		bl	dumpMem
+ 976              	.LVL130:
+ 293:ARM_Monitor.c ****         break;
+ 977              		.loc 1 293 0
+ 978 009e 9AE0     		b	.L68
+ 979              	.L75:
+ 294:ARM_Monitor.c ****       case 'R':
+ 295:ARM_Monitor.c ****       case 'r':
+ 296:ARM_Monitor.c ****         if (checkParmCount(&rxBufferPtr[2],1) == -1)
+ 980              		.loc 1 296 0
+ 981 00a0 0DF10200 		add	r0, sp, #2
+ 982 00a4 0121     		movs	r1, #1
+ 983 00a6 FFF7FEFF 		bl	checkParmCount
+ 984              	.LVL131:
+ 985 00aa B0F1FF3F 		cmp	r0, #-1
+ 986 00ae 00F09280 		beq	.L68
+ 297:ARM_Monitor.c ****             break;
+ 298:ARM_Monitor.c ****         else
+ 299:ARM_Monitor.c ****         {
+ 300:ARM_Monitor.c ****             if ((rxBufferPtr[1]=='B') || (rxBufferPtr[1]=='b'))
+ 987              		.loc 1 300 0
+ 988 00b2 9DF80130 		ldrb	r3, [sp, #1]	@ zero_extendqisi2
+ 989 00b6 422B     		cmp	r3, #66
+ 990 00b8 01D0     		beq	.L78
+ 991              		.loc 1 300 0 is_stmt 0 discriminator 1
+ 992 00ba 622B     		cmp	r3, #98
+ 993 00bc 07D1     		bne	.L79
+ 994              	.L78:
+ 301:ARM_Monitor.c ****                 readMemByte(extractParm(&rxBufferPtr[2],0));
+ 995              		.loc 1 301 0 is_stmt 1
+ 996 00be 0DF10200 		add	r0, sp, #2
+ 997 00c2 0021     		movs	r1, #0
+ 998 00c4 FFF7FEFF 		bl	extractParm
+ 999              	.LVL132:
+ 1000 00c8 FFF7FEFF 		bl	readMemByte
+ 1001              	.LVL133:
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 24
+
+
+ 1002 00cc 83E0     		b	.L68
+ 1003              	.L79:
+ 302:ARM_Monitor.c ****             else if ((rxBufferPtr[1]=='S') || (rxBufferPtr[1]=='s'))
+ 1004              		.loc 1 302 0
+ 1005 00ce 532B     		cmp	r3, #83
+ 1006 00d0 01D0     		beq	.L80
+ 1007              		.loc 1 302 0 is_stmt 0 discriminator 1
+ 1008 00d2 732B     		cmp	r3, #115
+ 1009 00d4 07D1     		bne	.L81
+ 1010              	.L80:
+ 303:ARM_Monitor.c ****                 readMemShort(extractParm(&rxBufferPtr[2],0));
+ 1011              		.loc 1 303 0 is_stmt 1
+ 1012 00d6 0DF10200 		add	r0, sp, #2
+ 1013 00da 0021     		movs	r1, #0
+ 1014 00dc FFF7FEFF 		bl	extractParm
+ 1015              	.LVL134:
+ 1016 00e0 FFF7FEFF 		bl	readMemShort
+ 1017              	.LVL135:
+ 1018 00e4 77E0     		b	.L68
+ 1019              	.L81:
+ 304:ARM_Monitor.c ****             else if ((rxBufferPtr[1]=='L') || (rxBufferPtr[1]=='l'))
+ 1020              		.loc 1 304 0
+ 1021 00e6 4C2B     		cmp	r3, #76
+ 1022 00e8 01D0     		beq	.L82
+ 1023              		.loc 1 304 0 is_stmt 0 discriminator 1
+ 1024 00ea 6C2B     		cmp	r3, #108
+ 1025 00ec 07D1     		bne	.L83
+ 1026              	.L82:
+ 305:ARM_Monitor.c ****                 readMemLong(extractParm(&rxBufferPtr[2],0));
+ 1027              		.loc 1 305 0 is_stmt 1
+ 1028 00ee 0DF10200 		add	r0, sp, #2
+ 1029 00f2 0021     		movs	r1, #0
+ 1030 00f4 FFF7FEFF 		bl	extractParm
+ 1031              	.LVL136:
+ 1032 00f8 FFF7FEFF 		bl	readMemLong
+ 1033              	.LVL137:
+ 1034 00fc 6BE0     		b	.L68
+ 1035              	.L83:
+ 306:ARM_Monitor.c ****             else
+ 307:ARM_Monitor.c ****                 writeLine("RSADDR - Read Byte/Short/Long data at ADDRess");
+ 1036              		.loc 1 307 0
+ 1037 00fe 3E48     		ldr	r0, .L91+28
+ 1038 0100 FFF7FEFF 		bl	writeLine
+ 1039              	.LVL138:
+ 1040 0104 67E0     		b	.L68
+ 1041              	.L76:
+ 308:ARM_Monitor.c ****         }
+ 309:ARM_Monitor.c ****         break;
+ 310:ARM_Monitor.c ****       case 'W':
+ 311:ARM_Monitor.c ****       case 'w':
+ 312:ARM_Monitor.c ****         if (checkParmCount(rxBufferPtr,2) == -1)
+ 1042              		.loc 1 312 0
+ 1043 0106 6846     		mov	r0, sp
+ 1044 0108 0221     		movs	r1, #2
+ 1045 010a FFF7FEFF 		bl	checkParmCount
+ 1046              	.LVL139:
+ 1047 010e B0F1FF3F 		cmp	r0, #-1
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 25
+
+
+ 1048 0112 60D0     		beq	.L68
+ 313:ARM_Monitor.c ****             break;
+ 314:ARM_Monitor.c ****         else
+ 315:ARM_Monitor.c ****         {
+ 316:ARM_Monitor.c ****             writeLine("got write command");
+ 1049              		.loc 1 316 0
+ 1050 0114 3948     		ldr	r0, .L91+32
+ 1051 0116 FFF7FEFF 		bl	writeLine
+ 1052              	.LVL140:
+ 317:ARM_Monitor.c ****             if ((rxBufferPtr[1]=='B') || (rxBufferPtr[1]=='b'))
+ 1053              		.loc 1 317 0
+ 1054 011a 9DF80130 		ldrb	r3, [sp, #1]	@ zero_extendqisi2
+ 1055 011e 422B     		cmp	r3, #66
+ 1056 0120 01D0     		beq	.L84
+ 1057              		.loc 1 317 0 is_stmt 0 discriminator 1
+ 1058 0122 622B     		cmp	r3, #98
+ 1059 0124 0ED1     		bne	.L85
+ 1060              	.L84:
+ 318:ARM_Monitor.c ****                 writeMemByte(extractParm(&rxBufferPtr[2],0),extractParm(rxBufferPtr,1));
+ 1061              		.loc 1 318 0 is_stmt 1
+ 1062 0126 0DF10200 		add	r0, sp, #2
+ 1063 012a 0021     		movs	r1, #0
+ 1064 012c FFF7FEFF 		bl	extractParm
+ 1065              	.LVL141:
+ 1066 0130 0446     		mov	r4, r0
+ 1067 0132 6846     		mov	r0, sp
+ 1068 0134 0121     		movs	r1, #1
+ 1069 0136 FFF7FEFF 		bl	extractParm
+ 1070              	.LVL142:
+ 1071 013a C1B2     		uxtb	r1, r0
+ 1072 013c 2046     		mov	r0, r4
+ 1073 013e FFF7FEFF 		bl	writeMemByte
+ 1074              	.LVL143:
+ 1075 0142 48E0     		b	.L68
+ 1076              	.L85:
+ 319:ARM_Monitor.c ****             else if ((rxBufferPtr[1]=='S') || (rxBufferPtr[1]=='s'))
+ 1077              		.loc 1 319 0
+ 1078 0144 532B     		cmp	r3, #83
+ 1079 0146 01D0     		beq	.L86
+ 1080              		.loc 1 319 0 is_stmt 0 discriminator 1
+ 1081 0148 732B     		cmp	r3, #115
+ 1082 014a 0ED1     		bne	.L87
+ 1083              	.L86:
+ 320:ARM_Monitor.c ****                 writeMemShort(extractParm(&rxBufferPtr[2],0),extractParm(rxBufferPtr,1));
+ 1084              		.loc 1 320 0 is_stmt 1
+ 1085 014c 0DF10200 		add	r0, sp, #2
+ 1086 0150 0021     		movs	r1, #0
+ 1087 0152 FFF7FEFF 		bl	extractParm
+ 1088              	.LVL144:
+ 1089 0156 0446     		mov	r4, r0
+ 1090 0158 6846     		mov	r0, sp
+ 1091 015a 0121     		movs	r1, #1
+ 1092 015c FFF7FEFF 		bl	extractParm
+ 1093              	.LVL145:
+ 1094 0160 81B2     		uxth	r1, r0
+ 1095 0162 2046     		mov	r0, r4
+ 1096 0164 FFF7FEFF 		bl	writeMemShort
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 26
+
+
+ 1097              	.LVL146:
+ 1098 0168 35E0     		b	.L68
+ 1099              	.L87:
+ 321:ARM_Monitor.c ****             else if ((rxBufferPtr[1]=='L') || (rxBufferPtr[1]=='l'))
+ 1100              		.loc 1 321 0
+ 1101 016a 4C2B     		cmp	r3, #76
+ 1102 016c 01D0     		beq	.L88
+ 1103              		.loc 1 321 0 is_stmt 0 discriminator 1
+ 1104 016e 6C2B     		cmp	r3, #108
+ 1105 0170 0ED1     		bne	.L89
+ 1106              	.L88:
+ 322:ARM_Monitor.c ****                 writeMemLong(extractParm(&rxBufferPtr[2],0),extractParm(rxBufferPtr,1));
+ 1107              		.loc 1 322 0 is_stmt 1
+ 1108 0172 0DF10200 		add	r0, sp, #2
+ 1109 0176 0021     		movs	r1, #0
+ 1110 0178 FFF7FEFF 		bl	extractParm
+ 1111              	.LVL147:
+ 1112 017c 0446     		mov	r4, r0
+ 1113 017e 6846     		mov	r0, sp
+ 1114 0180 0121     		movs	r1, #1
+ 1115 0182 FFF7FEFF 		bl	extractParm
+ 1116              	.LVL148:
+ 1117 0186 0146     		mov	r1, r0
+ 1118 0188 2046     		mov	r0, r4
+ 1119 018a FFF7FEFF 		bl	writeMemLong
+ 1120              	.LVL149:
+ 1121 018e 22E0     		b	.L68
+ 1122              	.L89:
+ 323:ARM_Monitor.c ****             else
+ 324:ARM_Monitor.c ****                 writeLine("WSADDR,DATA - Write Byte/Short/Long ADDRess with DATA");
+ 1123              		.loc 1 324 0
+ 1124 0190 1B48     		ldr	r0, .L91+36
+ 1125 0192 FFF7FEFF 		bl	writeLine
+ 1126              	.LVL150:
+ 1127 0196 1EE0     		b	.L68
+ 1128              	.L74:
+ 325:ARM_Monitor.c ****         }
+ 326:ARM_Monitor.c ****         break;
+ 327:ARM_Monitor.c ****       case 'G':
+ 328:ARM_Monitor.c ****       case 'g':
+ 329:ARM_Monitor.c ****         if (checkParmCount(rxBufferPtr,1) == -1)
+ 1129              		.loc 1 329 0
+ 1130 0198 6846     		mov	r0, sp
+ 1131 019a 0121     		movs	r1, #1
+ 1132 019c FFF7FEFF 		bl	checkParmCount
+ 1133              	.LVL151:
+ 1134 01a0 B0F1FF3F 		cmp	r0, #-1
+ 1135 01a4 17D0     		beq	.L68
+ 330:ARM_Monitor.c ****             break;
+ 331:ARM_Monitor.c ****         else
+ 332:ARM_Monitor.c ****             goCommand(extractParm(rxBufferPtr,0));
+ 1136              		.loc 1 332 0
+ 1137 01a6 6846     		mov	r0, sp
+ 1138 01a8 0021     		movs	r1, #0
+ 1139 01aa FFF7FEFF 		bl	extractParm
+ 1140              	.LVL152:
+ 1141 01ae FFF7FEFF 		bl	goCommand
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 27
+
+
+ 1142              	.LVL153:
+ 333:ARM_Monitor.c ****         break;
+ 1143              		.loc 1 333 0
+ 1144 01b2 10E0     		b	.L68
+ 1145              	.L72:
+ 334:ARM_Monitor.c ****       case 'A':
+ 335:ARM_Monitor.c ****       case 'a':
+ 336:ARM_Monitor.c ****         if (checkParmCount(rxBufferPtr,1) == -1)
+ 1146              		.loc 1 336 0
+ 1147 01b4 6846     		mov	r0, sp
+ 1148 01b6 0121     		movs	r1, #1
+ 1149 01b8 FFF7FEFF 		bl	checkParmCount
+ 1150              	.LVL154:
+ 1151 01bc B0F1FF3F 		cmp	r0, #-1
+ 1152 01c0 09D0     		beq	.L68
+ 337:ARM_Monitor.c ****             break;
+ 338:ARM_Monitor.c ****         else
+ 339:ARM_Monitor.c ****             disassemble(extractParm(rxBufferPtr,0));
+ 1153              		.loc 1 339 0
+ 1154 01c2 6846     		mov	r0, sp
+ 1155 01c4 0021     		movs	r1, #0
+ 1156 01c6 FFF7FEFF 		bl	extractParm
+ 1157              	.LVL155:
+ 1158 01ca FFF7FEFF 		bl	disassemble
+ 1159              	.LVL156:
+ 340:ARM_Monitor.c ****         break;
+ 1160              		.loc 1 340 0
+ 1161 01ce 02E0     		b	.L68
+ 1162              	.L69:
+ 341:ARM_Monitor.c ****       default:
+ 342:ARM_Monitor.c ****         writeLine("Unrecognized command, ? to list commands");
+ 1163              		.loc 1 342 0
+ 1164 01d0 0C48     		ldr	r0, .L91+40
+ 1165 01d2 FFF7FEFF 		bl	writeLine
+ 1166              	.LVL157:
+ 1167              	.L68:
+ 343:ARM_Monitor.c ****         break;
+ 344:ARM_Monitor.c ****     }
+ 345:ARM_Monitor.c **** //        if (rxBufferPtr[0] == 'R')
+ 346:ARM_Monitor.c **** //           writeLine("Read");
+ 347:ARM_Monitor.c **** //        Control_Reg_1_Write(buffLen);         /* Number of character */
+ 348:ARM_Monitor.c **** //        blinkLED(5);
+ 349:ARM_Monitor.c **** //        writeLine(rxBufferPtr);
+ 350:ARM_Monitor.c ****    
+ 351:ARM_Monitor.c **** }
+ 1168              		.loc 1 351 0
+ 1169 01d6 14B0     		add	sp, sp, #80
+ 1170              		.cfi_def_cfa_offset 8
+ 1171              		@ sp needed
+ 1172 01d8 10BD     		pop	{r4, pc}
+ 1173              	.L92:
+ 1174 01da 00BF     		.align	2
+ 1175              	.L91:
+ 1176 01dc 80000000 		.word	.LC6
+ 1177 01e0 54000000 		.word	.LC3
+ 1178 01e4 B4000000 		.word	.LC7
+ 1179 01e8 EC000000 		.word	.LC8
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 28
+
+
+ 1180 01ec 24010000 		.word	.LC9
+ 1181 01f0 48010000 		.word	.LC10
+ 1182 01f4 74010000 		.word	.LC11
+ 1183 01f8 9C010000 		.word	.LC12
+ 1184 01fc CC010000 		.word	.LC13
+ 1185 0200 E0010000 		.word	.LC14
+ 1186 0204 18020000 		.word	.LC15
+ 1187              		.cfi_endproc
+ 1188              	.LFE75:
+ 1189              		.size	ARM_Monitor, .-ARM_Monitor
+ 1190              		.comm	myStringInMemory,256,4
+ 1191              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 1192              		.align	2
+ 1193              	.LC0:
+ 1194 0000 63686563 		.ascii	"checkParmCount: Parameter error: \000"
+ 1194      6B506172 
+ 1194      6D436F75 
+ 1194      6E743A20 
+ 1194      50617261 
+ 1195 0022 0000     		.space	2
+ 1196              	.LC1:
+ 1197 0024 456E7465 		.ascii	"Enter to continue, any other key to stop\000"
+ 1197      7220746F 
+ 1197      20636F6E 
+ 1197      74696E75 
+ 1197      652C2061 
+ 1198 004d 000000   		.space	3
+ 1199              	.LC2:
+ 1200 0050 2000     		.ascii	" \000"
+ 1201 0052 0000     		.space	2
+ 1202              	.LC3:
+ 1203 0054 00       		.ascii	"\000"
+ 1204 0055 000000   		.space	3
+ 1205              	.LC4:
+ 1206 0058 77726974 		.ascii	"writeMem: writing - address=\000"
+ 1206      654D656D 
+ 1206      3A207772 
+ 1206      6974696E 
+ 1206      67202D20 
+ 1207 0075 000000   		.space	3
+ 1208              	.LC5:
+ 1209 0078 2C206461 		.ascii	", data=\000"
+ 1209      74613D00 
+ 1210              	.LC6:
+ 1211 0080 41524D20 		.ascii	"ARM PsOC Monitor v0.0.2 (? for a list of commands)\000"
+ 1211      50734F43 
+ 1211      204D6F6E 
+ 1211      69746F72 
+ 1211      2076302E 
+ 1212 00b3 00       		.space	1
+ 1213              	.LC7:
+ 1214 00b4 52534144 		.ascii	"RSADDR - Read/Modify byte/short/long data at addres"
+ 1214      4452202D 
+ 1214      20526561 
+ 1214      642F4D6F 
+ 1214      64696679 
+ 1215 00e7 7300     		.ascii	"s\000"
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 29
+
+
+ 1216 00e9 000000   		.space	3
+ 1217              	.LC8:
+ 1218 00ec 57534144 		.ascii	"WSADDR,DATA - Write byte/short/long address with da"
+ 1218      44522C44 
+ 1218      41544120 
+ 1218      2D205772 
+ 1218      69746520 
+ 1219 011f 746100   		.ascii	"ta\000"
+ 1220 0122 0000     		.space	2
+ 1221              	.LC9:
+ 1222 0124 44616464 		.ascii	"Daddress - Dump starting at address\000"
+ 1222      72657373 
+ 1222      202D2044 
+ 1222      756D7020 
+ 1222      73746172 
+ 1223              	.LC10:
+ 1224 0148 47616464 		.ascii	"Gaddress - Go start executing at address\000"
+ 1224      72657373 
+ 1224      202D2047 
+ 1224      6F207374 
+ 1224      61727420 
+ 1225 0171 000000   		.space	3
+ 1226              	.LC11:
+ 1227 0174 41616464 		.ascii	"Aaddress - disAssemble code at address\000"
+ 1227      72657373 
+ 1227      202D2064 
+ 1227      69734173 
+ 1227      73656D62 
+ 1228 019b 00       		.space	1
+ 1229              	.LC12:
+ 1230 019c 52534144 		.ascii	"RSADDR - Read Byte/Short/Long data at ADDRess\000"
+ 1230      4452202D 
+ 1230      20526561 
+ 1230      64204279 
+ 1230      74652F53 
+ 1231 01ca 0000     		.space	2
+ 1232              	.LC13:
+ 1233 01cc 676F7420 		.ascii	"got write command\000"
+ 1233      77726974 
+ 1233      6520636F 
+ 1233      6D6D616E 
+ 1233      6400
+ 1234 01de 0000     		.space	2
+ 1235              	.LC14:
+ 1236 01e0 57534144 		.ascii	"WSADDR,DATA - Write Byte/Short/Long ADDRess with DA"
+ 1236      44522C44 
+ 1236      41544120 
+ 1236      2D205772 
+ 1236      69746520 
+ 1237 0213 544100   		.ascii	"TA\000"
+ 1238 0216 0000     		.space	2
+ 1239              	.LC15:
+ 1240 0218 556E7265 		.ascii	"Unrecognized command, ? to list commands\000"
+ 1240      636F676E 
+ 1240      697A6564 
+ 1240      20636F6D 
+ 1240      6D616E64 
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 30
+
+
+ 1241 0241 000000   		.text
+ 1242              	.Letext0:
+ 1243              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 1244              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 1245              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 1246              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 1247              		.file 6 "stringConvs.h"
+ 1248              		.file 7 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 1249              		.file 8 "serialIO.h"
+ 1250              		.file 9 "accessMemory.h"
+ 1251              		.section	.debug_info,"",%progbits
+ 1252              	.Ldebug_info0:
+ 1253 0000 9C0E0000 		.4byte	0xe9c
+ 1254 0004 0400     		.2byte	0x4
+ 1255 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1256 000a 04       		.byte	0x4
+ 1257 000b 01       		.uleb128 0x1
+ 1258 000c 6D020000 		.4byte	.LASF69
+ 1259 0010 01       		.byte	0x1
+ 1260 0011 D2000000 		.4byte	.LASF70
+ 1261 0015 4D010000 		.4byte	.LASF71
+ 1262 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 1263 001d 00000000 		.4byte	0
+ 1264 0021 00000000 		.4byte	.Ldebug_line0
+ 1265 0025 02       		.uleb128 0x2
+ 1266 0026 01       		.byte	0x1
+ 1267 0027 06       		.byte	0x6
+ 1268 0028 F3010000 		.4byte	.LASF0
+ 1269 002c 02       		.uleb128 0x2
+ 1270 002d 01       		.byte	0x1
+ 1271 002e 08       		.byte	0x8
+ 1272 002f CC010000 		.4byte	.LASF1
+ 1273 0033 02       		.uleb128 0x2
+ 1274 0034 02       		.byte	0x2
+ 1275 0035 05       		.byte	0x5
+ 1276 0036 29000000 		.4byte	.LASF2
+ 1277 003a 02       		.uleb128 0x2
+ 1278 003b 02       		.byte	0x2
+ 1279 003c 07       		.byte	0x7
+ 1280 003d 42020000 		.4byte	.LASF3
+ 1281 0041 03       		.uleb128 0x3
+ 1282 0042 7F030000 		.4byte	.LASF9
+ 1283 0046 02       		.byte	0x2
+ 1284 0047 3F       		.byte	0x3f
+ 1285 0048 4C000000 		.4byte	0x4c
+ 1286 004c 02       		.uleb128 0x2
+ 1287 004d 04       		.byte	0x4
+ 1288 004e 05       		.byte	0x5
+ 1289 004f FF000000 		.4byte	.LASF4
+ 1290 0053 02       		.uleb128 0x2
+ 1291 0054 04       		.byte	0x4
+ 1292 0055 07       		.byte	0x7
+ 1293 0056 49030000 		.4byte	.LASF5
+ 1294 005a 02       		.uleb128 0x2
+ 1295 005b 08       		.byte	0x8
+ 1296 005c 05       		.byte	0x5
+ 1297 005d E0000000 		.4byte	.LASF6
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 31
+
+
+ 1298 0061 02       		.uleb128 0x2
+ 1299 0062 08       		.byte	0x8
+ 1300 0063 07       		.byte	0x7
+ 1301 0064 FF010000 		.4byte	.LASF7
+ 1302 0068 04       		.uleb128 0x4
+ 1303 0069 04       		.byte	0x4
+ 1304 006a 05       		.byte	0x5
+ 1305 006b 696E7400 		.ascii	"int\000"
+ 1306 006f 02       		.uleb128 0x2
+ 1307 0070 04       		.byte	0x4
+ 1308 0071 07       		.byte	0x7
+ 1309 0072 16020000 		.4byte	.LASF8
+ 1310 0076 03       		.uleb128 0x3
+ 1311 0077 09030000 		.4byte	.LASF10
+ 1312 007b 03       		.byte	0x3
+ 1313 007c 2C       		.byte	0x2c
+ 1314 007d 41000000 		.4byte	0x41
+ 1315 0081 05       		.uleb128 0x5
+ 1316 0082 B0000000 		.4byte	.LASF11
+ 1317 0086 04       		.byte	0x4
+ 1318 0087 9201     		.2byte	0x192
+ 1319 0089 2C000000 		.4byte	0x2c
+ 1320 008d 05       		.uleb128 0x5
+ 1321 008e 9C000000 		.4byte	.LASF12
+ 1322 0092 04       		.byte	0x4
+ 1323 0093 9301     		.2byte	0x193
+ 1324 0095 3A000000 		.4byte	0x3a
+ 1325 0099 05       		.uleb128 0x5
+ 1326 009a 42030000 		.4byte	.LASF13
+ 1327 009e 04       		.byte	0x4
+ 1328 009f 9401     		.2byte	0x194
+ 1329 00a1 53000000 		.4byte	0x53
+ 1330 00a5 05       		.uleb128 0x5
+ 1331 00a6 EE000000 		.4byte	.LASF14
+ 1332 00aa 04       		.byte	0x4
+ 1333 00ab 9501     		.2byte	0x195
+ 1334 00ad 25000000 		.4byte	0x25
+ 1335 00b1 02       		.uleb128 0x2
+ 1336 00b2 04       		.byte	0x4
+ 1337 00b3 04       		.byte	0x4
+ 1338 00b4 CC000000 		.4byte	.LASF15
+ 1339 00b8 02       		.uleb128 0x2
+ 1340 00b9 08       		.byte	0x8
+ 1341 00ba 04       		.byte	0x4
+ 1342 00bb 66030000 		.4byte	.LASF16
+ 1343 00bf 05       		.uleb128 0x5
+ 1344 00c0 50000000 		.4byte	.LASF17
+ 1345 00c4 04       		.byte	0x4
+ 1346 00c5 A301     		.2byte	0x1a3
+ 1347 00c7 CB000000 		.4byte	0xcb
+ 1348 00cb 02       		.uleb128 0x2
+ 1349 00cc 01       		.byte	0x1
+ 1350 00cd 08       		.byte	0x8
+ 1351 00ce 5D020000 		.4byte	.LASF18
+ 1352 00d2 02       		.uleb128 0x2
+ 1353 00d3 04       		.byte	0x4
+ 1354 00d4 07       		.byte	0x7
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 32
+
+
+ 1355 00d5 33000000 		.4byte	.LASF19
+ 1356 00d9 06       		.uleb128 0x6
+ 1357 00da 04       		.byte	0x4
+ 1358 00db CB000000 		.4byte	0xcb
+ 1359 00df 06       		.uleb128 0x6
+ 1360 00e0 04       		.byte	0x4
+ 1361 00e1 E5000000 		.4byte	0xe5
+ 1362 00e5 07       		.uleb128 0x7
+ 1363 00e6 CB000000 		.4byte	0xcb
+ 1364 00ea 08       		.uleb128 0x8
+ 1365 00eb 62020000 		.4byte	.LASF20
+ 1366 00ef 01       		.byte	0x1
+ 1367 00f0 25       		.byte	0x25
+ 1368 00f1 81000000 		.4byte	0x81
+ 1369 00f5 00000000 		.4byte	.LFB63
+ 1370 00f9 16000000 		.4byte	.LFE63-.LFB63
+ 1371 00fd 01       		.uleb128 0x1
+ 1372 00fe 9C       		.byte	0x9c
+ 1373 00ff 2A010000 		.4byte	0x12a
+ 1374 0103 09       		.uleb128 0x9
+ 1375 0104 FB020000 		.4byte	.LASF22
+ 1376 0108 01       		.byte	0x1
+ 1377 0109 25       		.byte	0x25
+ 1378 010a D9000000 		.4byte	0xd9
+ 1379 010e 00000000 		.4byte	.LLST0
+ 1380 0112 0A       		.uleb128 0xa
+ 1381 0113 08000000 		.4byte	.LVL1
+ 1382 0117 700D0000 		.4byte	0xd70
+ 1383 011b 0B       		.uleb128 0xb
+ 1384 011c 01       		.uleb128 0x1
+ 1385 011d 51       		.byte	0x51
+ 1386 011e 02       		.uleb128 0x2
+ 1387 011f 08       		.byte	0x8
+ 1388 0120 2C       		.byte	0x2c
+ 1389 0121 0B       		.uleb128 0xb
+ 1390 0122 01       		.uleb128 0x1
+ 1391 0123 50       		.byte	0x50
+ 1392 0124 03       		.uleb128 0x3
+ 1393 0125 F3       		.byte	0xf3
+ 1394 0126 01       		.uleb128 0x1
+ 1395 0127 50       		.byte	0x50
+ 1396 0128 00       		.byte	0
+ 1397 0129 00       		.byte	0
+ 1398 012a 08       		.uleb128 0x8
+ 1399 012b 24010000 		.4byte	.LASF21
+ 1400 012f 01       		.byte	0x1
+ 1401 0130 31       		.byte	0x31
+ 1402 0131 99000000 		.4byte	0x99
+ 1403 0135 00000000 		.4byte	.LFB64
+ 1404 0139 58000000 		.4byte	.LFE64-.LFB64
+ 1405 013d 01       		.uleb128 0x1
+ 1406 013e 9C       		.byte	0x9c
+ 1407 013f F4010000 		.4byte	0x1f4
+ 1408 0143 09       		.uleb128 0x9
+ 1409 0144 FB020000 		.4byte	.LASF22
+ 1410 0148 01       		.byte	0x1
+ 1411 0149 31       		.byte	0x31
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 33
+
+
+ 1412 014a D9000000 		.4byte	0xd9
+ 1413 014e 21000000 		.4byte	.LLST1
+ 1414 0152 09       		.uleb128 0x9
+ 1415 0153 89030000 		.4byte	.LASF23
+ 1416 0157 01       		.byte	0x1
+ 1417 0158 31       		.byte	0x31
+ 1418 0159 81000000 		.4byte	0x81
+ 1419 015d 55000000 		.4byte	.LLST2
+ 1420 0161 0C       		.uleb128 0xc
+ 1421 0162 B3030000 		.4byte	.LASF24
+ 1422 0166 01       		.byte	0x1
+ 1423 0167 34       		.byte	0x34
+ 1424 0168 F4010000 		.4byte	0x1f4
+ 1425 016c 02       		.uleb128 0x2
+ 1426 016d 91       		.byte	0x91
+ 1427 016e 70       		.sleb128 -16
+ 1428 016f 0D       		.uleb128 0xd
+ 1429 0170 08000000 		.4byte	.LBB2
+ 1430 0174 2C000000 		.4byte	.LBE2-.LBB2
+ 1431 0178 A2010000 		.4byte	0x1a2
+ 1432 017c 0E       		.uleb128 0xe
+ 1433 017d DD030000 		.4byte	.LASF25
+ 1434 0181 01       		.byte	0x1
+ 1435 0182 3A       		.byte	0x3a
+ 1436 0183 81000000 		.4byte	0x81
+ 1437 0187 8F000000 		.4byte	.LLST3
+ 1438 018b 0A       		.uleb128 0xa
+ 1439 018c 10000000 		.4byte	.LVL5
+ 1440 0190 8A0D0000 		.4byte	0xd8a
+ 1441 0194 0B       		.uleb128 0xb
+ 1442 0195 01       		.uleb128 0x1
+ 1443 0196 51       		.byte	0x51
+ 1444 0197 02       		.uleb128 0x2
+ 1445 0198 74       		.byte	0x74
+ 1446 0199 00       		.sleb128 0
+ 1447 019a 0B       		.uleb128 0xb
+ 1448 019b 01       		.uleb128 0x1
+ 1449 019c 50       		.byte	0x50
+ 1450 019d 02       		.uleb128 0x2
+ 1451 019e 7D       		.byte	0x7d
+ 1452 019f 00       		.sleb128 0
+ 1453 01a0 00       		.byte	0
+ 1454 01a1 00       		.byte	0
+ 1455 01a2 0D       		.uleb128 0xd
+ 1456 01a3 3A000000 		.4byte	.LBB3
+ 1457 01a7 14000000 		.4byte	.LBE3-.LBB3
+ 1458 01ab E3010000 		.4byte	0x1e3
+ 1459 01af 0E       		.uleb128 0xe
+ 1460 01b0 74030000 		.4byte	.LASF26
+ 1461 01b4 01       		.byte	0x1
+ 1462 01b5 41       		.byte	0x41
+ 1463 01b6 81000000 		.4byte	0x81
+ 1464 01ba B9000000 		.4byte	.LLST4
+ 1465 01be 0F       		.uleb128 0xf
+ 1466 01bf 40000000 		.4byte	.LVL12
+ 1467 01c3 700D0000 		.4byte	0xd70
+ 1468 01c7 D2010000 		.4byte	0x1d2
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 34
+
+
+ 1469 01cb 0B       		.uleb128 0xb
+ 1470 01cc 01       		.uleb128 0x1
+ 1471 01cd 51       		.byte	0x51
+ 1472 01ce 02       		.uleb128 0x2
+ 1473 01cf 08       		.byte	0x8
+ 1474 01d0 2C       		.byte	0x2c
+ 1475 01d1 00       		.byte	0
+ 1476 01d2 0A       		.uleb128 0xa
+ 1477 01d3 4E000000 		.4byte	.LVL16
+ 1478 01d7 8A0D0000 		.4byte	0xd8a
+ 1479 01db 0B       		.uleb128 0xb
+ 1480 01dc 01       		.uleb128 0x1
+ 1481 01dd 50       		.byte	0x50
+ 1482 01de 02       		.uleb128 0x2
+ 1483 01df 7D       		.byte	0x7d
+ 1484 01e0 00       		.sleb128 0
+ 1485 01e1 00       		.byte	0
+ 1486 01e2 00       		.byte	0
+ 1487 01e3 0A       		.uleb128 0xa
+ 1488 01e4 54000000 		.4byte	.LVL17
+ 1489 01e8 A40D0000 		.4byte	0xda4
+ 1490 01ec 0B       		.uleb128 0xb
+ 1491 01ed 01       		.uleb128 0x1
+ 1492 01ee 50       		.byte	0x50
+ 1493 01ef 02       		.uleb128 0x2
+ 1494 01f0 7D       		.byte	0x7d
+ 1495 01f1 00       		.sleb128 0
+ 1496 01f2 00       		.byte	0
+ 1497 01f3 00       		.byte	0
+ 1498 01f4 10       		.uleb128 0x10
+ 1499 01f5 CB000000 		.4byte	0xcb
+ 1500 01f9 04020000 		.4byte	0x204
+ 1501 01fd 11       		.uleb128 0x11
+ 1502 01fe D2000000 		.4byte	0xd2
+ 1503 0202 04       		.byte	0x4
+ 1504 0203 00       		.byte	0
+ 1505 0204 08       		.uleb128 0x8
+ 1506 0205 56000000 		.4byte	.LASF27
+ 1507 0209 01       		.byte	0x1
+ 1508 020a 4F       		.byte	0x4f
+ 1509 020b A5000000 		.4byte	0xa5
+ 1510 020f 00000000 		.4byte	.LFB65
+ 1511 0213 28000000 		.4byte	.LFE65-.LFB65
+ 1512 0217 01       		.uleb128 0x1
+ 1513 0218 9C       		.byte	0x9c
+ 1514 0219 77020000 		.4byte	0x277
+ 1515 021d 09       		.uleb128 0x9
+ 1516 021e C5010000 		.4byte	.LASF28
+ 1517 0222 01       		.byte	0x1
+ 1518 0223 4F       		.byte	0x4f
+ 1519 0224 D9000000 		.4byte	0xd9
+ 1520 0228 D7000000 		.4byte	.LLST5
+ 1521 022c 09       		.uleb128 0x9
+ 1522 022d 08010000 		.4byte	.LASF29
+ 1523 0231 01       		.byte	0x1
+ 1524 0232 4F       		.byte	0x4f
+ 1525 0233 81000000 		.4byte	0x81
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 35
+
+
+ 1526 0237 03010000 		.4byte	.LLST6
+ 1527 023b 0F       		.uleb128 0xf
+ 1528 023c 0A000000 		.4byte	.LVL19
+ 1529 0240 EA000000 		.4byte	0xea
+ 1530 0244 4F020000 		.4byte	0x24f
+ 1531 0248 0B       		.uleb128 0xb
+ 1532 0249 01       		.uleb128 0x1
+ 1533 024a 50       		.byte	0x50
+ 1534 024b 02       		.uleb128 0x2
+ 1535 024c 75       		.byte	0x75
+ 1536 024d 00       		.sleb128 0
+ 1537 024e 00       		.byte	0
+ 1538 024f 0F       		.uleb128 0xf
+ 1539 0250 14000000 		.4byte	.LVL20
+ 1540 0254 B90D0000 		.4byte	0xdb9
+ 1541 0258 66020000 		.4byte	0x266
+ 1542 025c 0B       		.uleb128 0xb
+ 1543 025d 01       		.uleb128 0x1
+ 1544 025e 50       		.byte	0x50
+ 1545 025f 05       		.uleb128 0x5
+ 1546 0260 03       		.byte	0x3
+ 1547 0261 00000000 		.4byte	.LC0
+ 1548 0265 00       		.byte	0
+ 1549 0266 0A       		.uleb128 0xa
+ 1550 0267 1A000000 		.4byte	.LVL21
+ 1551 026b CA0D0000 		.4byte	0xdca
+ 1552 026f 0B       		.uleb128 0xb
+ 1553 0270 01       		.uleb128 0x1
+ 1554 0271 50       		.byte	0x50
+ 1555 0272 02       		.uleb128 0x2
+ 1556 0273 75       		.byte	0x75
+ 1557 0274 00       		.sleb128 0
+ 1558 0275 00       		.byte	0
+ 1559 0276 00       		.byte	0
+ 1560 0277 12       		.uleb128 0x12
+ 1561 0278 7A000000 		.4byte	.LASF36
+ 1562 027c 01       		.byte	0x1
+ 1563 027d 5F       		.byte	0x5f
+ 1564 027e 00000000 		.4byte	.LFB66
+ 1565 0282 90000000 		.4byte	.LFE66-.LFB66
+ 1566 0286 01       		.uleb128 0x1
+ 1567 0287 9C       		.byte	0x9c
+ 1568 0288 F7030000 		.4byte	0x3f7
+ 1569 028c 09       		.uleb128 0x9
+ 1570 028d 3C000000 		.4byte	.LASF30
+ 1571 0291 01       		.byte	0x1
+ 1572 0292 5F       		.byte	0x5f
+ 1573 0293 99000000 		.4byte	0x99
+ 1574 0297 24010000 		.4byte	.LLST7
+ 1575 029b 0C       		.uleb128 0xc
+ 1576 029c B3030000 		.4byte	.LASF24
+ 1577 02a0 01       		.byte	0x1
+ 1578 02a1 61       		.byte	0x61
+ 1579 02a2 F7030000 		.4byte	0x3f7
+ 1580 02a6 02       		.uleb128 0x2
+ 1581 02a7 91       		.byte	0x91
+ 1582 02a8 5C       		.sleb128 -36
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 36
+
+
+ 1583 02a9 0E       		.uleb128 0xe
+ 1584 02aa C0030000 		.4byte	.LASF31
+ 1585 02ae 01       		.byte	0x1
+ 1586 02af 62       		.byte	0x62
+ 1587 02b0 99000000 		.4byte	0x99
+ 1588 02b4 50010000 		.4byte	.LLST8
+ 1589 02b8 0E       		.uleb128 0xe
+ 1590 02b9 3D010000 		.4byte	.LASF32
+ 1591 02bd 01       		.byte	0x1
+ 1592 02be 63       		.byte	0x63
+ 1593 02bf 99000000 		.4byte	0x99
+ 1594 02c3 6E010000 		.4byte	.LLST9
+ 1595 02c7 0E       		.uleb128 0xe
+ 1596 02c8 5B030000 		.4byte	.LASF33
+ 1597 02cc 01       		.byte	0x1
+ 1598 02cd 64       		.byte	0x64
+ 1599 02ce 99000000 		.4byte	0x99
+ 1600 02d2 97010000 		.4byte	.LLST10
+ 1601 02d6 0E       		.uleb128 0xe
+ 1602 02d7 55020000 		.4byte	.LASF34
+ 1603 02db 01       		.byte	0x1
+ 1604 02dc 65       		.byte	0x65
+ 1605 02dd 99000000 		.4byte	0x99
+ 1606 02e1 B6010000 		.4byte	.LLST11
+ 1607 02e5 0D       		.uleb128 0xd
+ 1608 02e6 50000000 		.4byte	.LBB4
+ 1609 02ea 16000000 		.4byte	.LBE4-.LBB4
+ 1610 02ee 22030000 		.4byte	0x322
+ 1611 02f2 0E       		.uleb128 0xe
+ 1612 02f3 6D030000 		.4byte	.LASF35
+ 1613 02f7 01       		.byte	0x1
+ 1614 02f8 7B       		.byte	0x7b
+ 1615 02f9 CB000000 		.4byte	0xcb
+ 1616 02fd EC010000 		.4byte	.LLST12
+ 1617 0301 0F       		.uleb128 0xf
+ 1618 0302 56000000 		.4byte	.LVL40
+ 1619 0306 DB0D0000 		.4byte	0xddb
+ 1620 030a 18030000 		.4byte	0x318
+ 1621 030e 0B       		.uleb128 0xb
+ 1622 030f 01       		.uleb128 0x1
+ 1623 0310 50       		.byte	0x50
+ 1624 0311 05       		.uleb128 0x5
+ 1625 0312 75       		.byte	0x75
+ 1626 0313 00       		.sleb128 0
+ 1627 0314 74       		.byte	0x74
+ 1628 0315 00       		.sleb128 0
+ 1629 0316 22       		.byte	0x22
+ 1630 0317 00       		.byte	0
+ 1631 0318 13       		.uleb128 0x13
+ 1632 0319 66000000 		.4byte	.LVL42
+ 1633 031d F00D0000 		.4byte	0xdf0
+ 1634 0321 00       		.byte	0
+ 1635 0322 0F       		.uleb128 0xf
+ 1636 0323 0C000000 		.4byte	.LVL26
+ 1637 0327 CA0D0000 		.4byte	0xdca
+ 1638 032b 39030000 		.4byte	0x339
+ 1639 032f 0B       		.uleb128 0xb
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 37
+
+
+ 1640 0330 01       		.uleb128 0x1
+ 1641 0331 50       		.byte	0x50
+ 1642 0332 05       		.uleb128 0x5
+ 1643 0333 03       		.byte	0x3
+ 1644 0334 24000000 		.4byte	.LC1
+ 1645 0338 00       		.byte	0
+ 1646 0339 0F       		.uleb128 0xf
+ 1647 033a 1A000000 		.4byte	.LVL29
+ 1648 033e 010E0000 		.4byte	0xe01
+ 1649 0342 53030000 		.4byte	0x353
+ 1650 0346 0B       		.uleb128 0xb
+ 1651 0347 01       		.uleb128 0x1
+ 1652 0348 51       		.byte	0x51
+ 1653 0349 02       		.uleb128 0x2
+ 1654 034a 91       		.byte	0x91
+ 1655 034b 5C       		.sleb128 -36
+ 1656 034c 0B       		.uleb128 0xb
+ 1657 034d 01       		.uleb128 0x1
+ 1658 034e 50       		.byte	0x50
+ 1659 034f 02       		.uleb128 0x2
+ 1660 0350 76       		.byte	0x76
+ 1661 0351 00       		.sleb128 0
+ 1662 0352 00       		.byte	0
+ 1663 0353 0F       		.uleb128 0xf
+ 1664 0354 20000000 		.4byte	.LVL30
+ 1665 0358 B90D0000 		.4byte	0xdb9
+ 1666 035c 67030000 		.4byte	0x367
+ 1667 0360 0B       		.uleb128 0xb
+ 1668 0361 01       		.uleb128 0x1
+ 1669 0362 50       		.byte	0x50
+ 1670 0363 02       		.uleb128 0x2
+ 1671 0364 91       		.byte	0x91
+ 1672 0365 5C       		.sleb128 -36
+ 1673 0366 00       		.byte	0
+ 1674 0367 0F       		.uleb128 0xf
+ 1675 0368 26000000 		.4byte	.LVL31
+ 1676 036c B90D0000 		.4byte	0xdb9
+ 1677 0370 7E030000 		.4byte	0x37e
+ 1678 0374 0B       		.uleb128 0xb
+ 1679 0375 01       		.uleb128 0x1
+ 1680 0376 50       		.byte	0x50
+ 1681 0377 05       		.uleb128 0x5
+ 1682 0378 03       		.byte	0x3
+ 1683 0379 50000000 		.4byte	.LC2
+ 1684 037d 00       		.byte	0
+ 1685 037e 0F       		.uleb128 0xf
+ 1686 037f 32000000 		.4byte	.LVL33
+ 1687 0383 170E0000 		.4byte	0xe17
+ 1688 0387 97030000 		.4byte	0x397
+ 1689 038b 0B       		.uleb128 0xb
+ 1690 038c 01       		.uleb128 0x1
+ 1691 038d 50       		.byte	0x50
+ 1692 038e 07       		.uleb128 0x7
+ 1693 038f 74       		.byte	0x74
+ 1694 0390 00       		.sleb128 0
+ 1695 0391 32       		.byte	0x32
+ 1696 0392 24       		.byte	0x24
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 38
+
+
+ 1697 0393 76       		.byte	0x76
+ 1698 0394 00       		.sleb128 0
+ 1699 0395 22       		.byte	0x22
+ 1700 0396 00       		.byte	0
+ 1701 0397 0F       		.uleb128 0xf
+ 1702 0398 38000000 		.4byte	.LVL34
+ 1703 039c 010E0000 		.4byte	0xe01
+ 1704 03a0 AB030000 		.4byte	0x3ab
+ 1705 03a4 0B       		.uleb128 0xb
+ 1706 03a5 01       		.uleb128 0x1
+ 1707 03a6 51       		.byte	0x51
+ 1708 03a7 02       		.uleb128 0x2
+ 1709 03a8 91       		.byte	0x91
+ 1710 03a9 5C       		.sleb128 -36
+ 1711 03aa 00       		.byte	0
+ 1712 03ab 0F       		.uleb128 0xf
+ 1713 03ac 3E000000 		.4byte	.LVL35
+ 1714 03b0 B90D0000 		.4byte	0xdb9
+ 1715 03b4 BF030000 		.4byte	0x3bf
+ 1716 03b8 0B       		.uleb128 0xb
+ 1717 03b9 01       		.uleb128 0x1
+ 1718 03ba 50       		.byte	0x50
+ 1719 03bb 02       		.uleb128 0x2
+ 1720 03bc 91       		.byte	0x91
+ 1721 03bd 5C       		.sleb128 -36
+ 1722 03be 00       		.byte	0
+ 1723 03bf 0F       		.uleb128 0xf
+ 1724 03c0 44000000 		.4byte	.LVL36
+ 1725 03c4 B90D0000 		.4byte	0xdb9
+ 1726 03c8 D6030000 		.4byte	0x3d6
+ 1727 03cc 0B       		.uleb128 0xb
+ 1728 03cd 01       		.uleb128 0x1
+ 1729 03ce 50       		.byte	0x50
+ 1730 03cf 05       		.uleb128 0x5
+ 1731 03d0 03       		.byte	0x3
+ 1732 03d1 50000000 		.4byte	.LC2
+ 1733 03d5 00       		.byte	0
+ 1734 03d6 0F       		.uleb128 0xf
+ 1735 03d7 74000000 		.4byte	.LVL45
+ 1736 03db CA0D0000 		.4byte	0xdca
+ 1737 03df ED030000 		.4byte	0x3ed
+ 1738 03e3 0B       		.uleb128 0xb
+ 1739 03e4 01       		.uleb128 0x1
+ 1740 03e5 50       		.byte	0x50
+ 1741 03e6 05       		.uleb128 0x5
+ 1742 03e7 03       		.byte	0x3
+ 1743 03e8 50000000 		.4byte	.LC2
+ 1744 03ec 00       		.byte	0
+ 1745 03ed 13       		.uleb128 0x13
+ 1746 03ee 7E000000 		.4byte	.LVL47
+ 1747 03f2 2C0E0000 		.4byte	0xe2c
+ 1748 03f6 00       		.byte	0
+ 1749 03f7 10       		.uleb128 0x10
+ 1750 03f8 CB000000 		.4byte	0xcb
+ 1751 03fc 07040000 		.4byte	0x407
+ 1752 0400 11       		.uleb128 0x11
+ 1753 0401 D2000000 		.4byte	0xd2
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 39
+
+
+ 1754 0405 08       		.byte	0x8
+ 1755 0406 00       		.byte	0
+ 1756 0407 12       		.uleb128 0x12
+ 1757 0408 F3000000 		.4byte	.LASF37
+ 1758 040c 01       		.byte	0x1
+ 1759 040d 8C       		.byte	0x8c
+ 1760 040e 00000000 		.4byte	.LFB67
+ 1761 0412 50000000 		.4byte	.LFE67-.LFB67
+ 1762 0416 01       		.uleb128 0x1
+ 1763 0417 9C       		.byte	0x9c
+ 1764 0418 FA040000 		.4byte	0x4fa
+ 1765 041c 09       		.uleb128 0x9
+ 1766 041d 90000000 		.4byte	.LASF38
+ 1767 0421 01       		.byte	0x1
+ 1768 0422 8C       		.byte	0x8c
+ 1769 0423 99000000 		.4byte	0x99
+ 1770 0427 FF010000 		.4byte	.LLST13
+ 1771 042b 0C       		.uleb128 0xc
+ 1772 042c B3030000 		.4byte	.LASF24
+ 1773 0430 01       		.byte	0x1
+ 1774 0431 8E       		.byte	0x8e
+ 1775 0432 F7030000 		.4byte	0x3f7
+ 1776 0436 02       		.uleb128 0x2
+ 1777 0437 91       		.byte	0x91
+ 1778 0438 64       		.sleb128 -28
+ 1779 0439 0D       		.uleb128 0xd
+ 1780 043a 0C000000 		.4byte	.LBB5
+ 1781 043e 34000000 		.4byte	.LBE5-.LBB5
+ 1782 0442 E6040000 		.4byte	0x4e6
+ 1783 0446 0E       		.uleb128 0xe
+ 1784 0447 3A020000 		.4byte	.LASF39
+ 1785 044b 01       		.byte	0x1
+ 1786 044c 92       		.byte	0x92
+ 1787 044d 81000000 		.4byte	0x81
+ 1788 0451 1D020000 		.4byte	.LLST14
+ 1789 0455 0F       		.uleb128 0xf
+ 1790 0456 12000000 		.4byte	.LVL52
+ 1791 045a DB0D0000 		.4byte	0xddb
+ 1792 045e 69040000 		.4byte	0x469
+ 1793 0462 0B       		.uleb128 0xb
+ 1794 0463 01       		.uleb128 0x1
+ 1795 0464 50       		.byte	0x50
+ 1796 0465 02       		.uleb128 0x2
+ 1797 0466 74       		.byte	0x74
+ 1798 0467 00       		.sleb128 0
+ 1799 0468 00       		.byte	0
+ 1800 0469 0F       		.uleb128 0xf
+ 1801 046a 1C000000 		.4byte	.LVL54
+ 1802 046e 010E0000 		.4byte	0xe01
+ 1803 0472 83040000 		.4byte	0x483
+ 1804 0476 0B       		.uleb128 0xb
+ 1805 0477 01       		.uleb128 0x1
+ 1806 0478 51       		.byte	0x51
+ 1807 0479 02       		.uleb128 0x2
+ 1808 047a 91       		.byte	0x91
+ 1809 047b 64       		.sleb128 -28
+ 1810 047c 0B       		.uleb128 0xb
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 40
+
+
+ 1811 047d 01       		.uleb128 0x1
+ 1812 047e 50       		.byte	0x50
+ 1813 047f 02       		.uleb128 0x2
+ 1814 0480 74       		.byte	0x74
+ 1815 0481 00       		.sleb128 0
+ 1816 0482 00       		.byte	0
+ 1817 0483 0F       		.uleb128 0xf
+ 1818 0484 22000000 		.4byte	.LVL55
+ 1819 0488 B90D0000 		.4byte	0xdb9
+ 1820 048c 97040000 		.4byte	0x497
+ 1821 0490 0B       		.uleb128 0xb
+ 1822 0491 01       		.uleb128 0x1
+ 1823 0492 50       		.byte	0x50
+ 1824 0493 02       		.uleb128 0x2
+ 1825 0494 91       		.byte	0x91
+ 1826 0495 64       		.sleb128 -28
+ 1827 0496 00       		.byte	0
+ 1828 0497 0F       		.uleb128 0xf
+ 1829 0498 28000000 		.4byte	.LVL56
+ 1830 049c B90D0000 		.4byte	0xdb9
+ 1831 04a0 AE040000 		.4byte	0x4ae
+ 1832 04a4 0B       		.uleb128 0xb
+ 1833 04a5 01       		.uleb128 0x1
+ 1834 04a6 50       		.byte	0x50
+ 1835 04a7 05       		.uleb128 0x5
+ 1836 04a8 03       		.byte	0x3
+ 1837 04a9 50000000 		.4byte	.LC2
+ 1838 04ad 00       		.byte	0
+ 1839 04ae 0F       		.uleb128 0xf
+ 1840 04af 30000000 		.4byte	.LVL57
+ 1841 04b3 370E0000 		.4byte	0xe37
+ 1842 04b7 C8040000 		.4byte	0x4c8
+ 1843 04bb 0B       		.uleb128 0xb
+ 1844 04bc 01       		.uleb128 0x1
+ 1845 04bd 51       		.byte	0x51
+ 1846 04be 02       		.uleb128 0x2
+ 1847 04bf 91       		.byte	0x91
+ 1848 04c0 64       		.sleb128 -28
+ 1849 04c1 0B       		.uleb128 0xb
+ 1850 04c2 01       		.uleb128 0x1
+ 1851 04c3 50       		.byte	0x50
+ 1852 04c4 02       		.uleb128 0x2
+ 1853 04c5 75       		.byte	0x75
+ 1854 04c6 00       		.sleb128 0
+ 1855 04c7 00       		.byte	0
+ 1856 04c8 0F       		.uleb128 0xf
+ 1857 04c9 36000000 		.4byte	.LVL58
+ 1858 04cd CA0D0000 		.4byte	0xdca
+ 1859 04d1 DC040000 		.4byte	0x4dc
+ 1860 04d5 0B       		.uleb128 0xb
+ 1861 04d6 01       		.uleb128 0x1
+ 1862 04d7 50       		.byte	0x50
+ 1863 04d8 02       		.uleb128 0x2
+ 1864 04d9 91       		.byte	0x91
+ 1865 04da 64       		.sleb128 -28
+ 1866 04db 00       		.byte	0
+ 1867 04dc 13       		.uleb128 0x13
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 41
+
+
+ 1868 04dd 3A000000 		.4byte	.LVL59
+ 1869 04e1 2C0E0000 		.4byte	0xe2c
+ 1870 04e5 00       		.byte	0
+ 1871 04e6 0A       		.uleb128 0xa
+ 1872 04e7 0C000000 		.4byte	.LVL51
+ 1873 04eb CA0D0000 		.4byte	0xdca
+ 1874 04ef 0B       		.uleb128 0xb
+ 1875 04f0 01       		.uleb128 0x1
+ 1876 04f1 50       		.byte	0x50
+ 1877 04f2 05       		.uleb128 0x5
+ 1878 04f3 03       		.byte	0x3
+ 1879 04f4 54000000 		.4byte	.LC3
+ 1880 04f8 00       		.byte	0
+ 1881 04f9 00       		.byte	0
+ 1882 04fa 12       		.uleb128 0x12
+ 1883 04fb 18030000 		.4byte	.LASF40
+ 1884 04ff 01       		.byte	0x1
+ 1885 0500 A3       		.byte	0xa3
+ 1886 0501 00000000 		.4byte	.LFB68
+ 1887 0505 4C000000 		.4byte	.LFE68-.LFB68
+ 1888 0509 01       		.uleb128 0x1
+ 1889 050a 9C       		.byte	0x9c
+ 1890 050b E7050000 		.4byte	0x5e7
+ 1891 050f 09       		.uleb128 0x9
+ 1892 0510 90000000 		.4byte	.LASF38
+ 1893 0514 01       		.byte	0x1
+ 1894 0515 A3       		.byte	0xa3
+ 1895 0516 99000000 		.4byte	0x99
+ 1896 051a 30020000 		.4byte	.LLST15
+ 1897 051e 0C       		.uleb128 0xc
+ 1898 051f B3030000 		.4byte	.LASF24
+ 1899 0523 01       		.byte	0x1
+ 1900 0524 A5       		.byte	0xa5
+ 1901 0525 F7030000 		.4byte	0x3f7
+ 1902 0529 02       		.uleb128 0x2
+ 1903 052a 91       		.byte	0x91
+ 1904 052b 6C       		.sleb128 -20
+ 1905 052c 0D       		.uleb128 0xd
+ 1906 052d 0C000000 		.4byte	.LBB6
+ 1907 0531 30000000 		.4byte	.LBE6-.LBB6
+ 1908 0535 D3050000 		.4byte	0x5d3
+ 1909 0539 0E       		.uleb128 0xe
+ 1910 053a 3A020000 		.4byte	.LASF39
+ 1911 053e 01       		.byte	0x1
+ 1912 053f AC       		.byte	0xac
+ 1913 0540 8D000000 		.4byte	0x8d
+ 1914 0544 4E020000 		.4byte	.LLST16
+ 1915 0548 0F       		.uleb128 0xf
+ 1916 0549 14000000 		.4byte	.LVL65
+ 1917 054d 010E0000 		.4byte	0xe01
+ 1918 0551 62050000 		.4byte	0x562
+ 1919 0555 0B       		.uleb128 0xb
+ 1920 0556 01       		.uleb128 0x1
+ 1921 0557 51       		.byte	0x51
+ 1922 0558 02       		.uleb128 0x2
+ 1923 0559 91       		.byte	0x91
+ 1924 055a 6C       		.sleb128 -20
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 42
+
+
+ 1925 055b 0B       		.uleb128 0xb
+ 1926 055c 01       		.uleb128 0x1
+ 1927 055d 50       		.byte	0x50
+ 1928 055e 02       		.uleb128 0x2
+ 1929 055f 74       		.byte	0x74
+ 1930 0560 00       		.sleb128 0
+ 1931 0561 00       		.byte	0
+ 1932 0562 0F       		.uleb128 0xf
+ 1933 0563 1A000000 		.4byte	.LVL66
+ 1934 0567 B90D0000 		.4byte	0xdb9
+ 1935 056b 76050000 		.4byte	0x576
+ 1936 056f 0B       		.uleb128 0xb
+ 1937 0570 01       		.uleb128 0x1
+ 1938 0571 50       		.byte	0x50
+ 1939 0572 02       		.uleb128 0x2
+ 1940 0573 91       		.byte	0x91
+ 1941 0574 6C       		.sleb128 -20
+ 1942 0575 00       		.byte	0
+ 1943 0576 0F       		.uleb128 0xf
+ 1944 0577 20000000 		.4byte	.LVL67
+ 1945 057b B90D0000 		.4byte	0xdb9
+ 1946 057f 8D050000 		.4byte	0x58d
+ 1947 0583 0B       		.uleb128 0xb
+ 1948 0584 01       		.uleb128 0x1
+ 1949 0585 50       		.byte	0x50
+ 1950 0586 05       		.uleb128 0x5
+ 1951 0587 03       		.byte	0x3
+ 1952 0588 50000000 		.4byte	.LC2
+ 1953 058c 00       		.byte	0
+ 1954 058d 0F       		.uleb128 0xf
+ 1955 058e 26000000 		.4byte	.LVL68
+ 1956 0592 4D0E0000 		.4byte	0xe4d
+ 1957 0596 A1050000 		.4byte	0x5a1
+ 1958 059a 0B       		.uleb128 0xb
+ 1959 059b 01       		.uleb128 0x1
+ 1960 059c 50       		.byte	0x50
+ 1961 059d 02       		.uleb128 0x2
+ 1962 059e 74       		.byte	0x74
+ 1963 059f 00       		.sleb128 0
+ 1964 05a0 00       		.byte	0
+ 1965 05a1 0F       		.uleb128 0xf
+ 1966 05a2 2C000000 		.4byte	.LVL69
+ 1967 05a6 620E0000 		.4byte	0xe62
+ 1968 05aa B5050000 		.4byte	0x5b5
+ 1969 05ae 0B       		.uleb128 0xb
+ 1970 05af 01       		.uleb128 0x1
+ 1971 05b0 51       		.byte	0x51
+ 1972 05b1 02       		.uleb128 0x2
+ 1973 05b2 91       		.byte	0x91
+ 1974 05b3 6C       		.sleb128 -20
+ 1975 05b4 00       		.byte	0
+ 1976 05b5 0F       		.uleb128 0xf
+ 1977 05b6 32000000 		.4byte	.LVL70
+ 1978 05ba CA0D0000 		.4byte	0xdca
+ 1979 05be C9050000 		.4byte	0x5c9
+ 1980 05c2 0B       		.uleb128 0xb
+ 1981 05c3 01       		.uleb128 0x1
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 43
+
+
+ 1982 05c4 50       		.byte	0x50
+ 1983 05c5 02       		.uleb128 0x2
+ 1984 05c6 91       		.byte	0x91
+ 1985 05c7 6C       		.sleb128 -20
+ 1986 05c8 00       		.byte	0
+ 1987 05c9 13       		.uleb128 0x13
+ 1988 05ca 36000000 		.4byte	.LVL71
+ 1989 05ce 2C0E0000 		.4byte	0xe2c
+ 1990 05d2 00       		.byte	0
+ 1991 05d3 0A       		.uleb128 0xa
+ 1992 05d4 0C000000 		.4byte	.LVL64
+ 1993 05d8 CA0D0000 		.4byte	0xdca
+ 1994 05dc 0B       		.uleb128 0xb
+ 1995 05dd 01       		.uleb128 0x1
+ 1996 05de 50       		.byte	0x50
+ 1997 05df 05       		.uleb128 0x5
+ 1998 05e0 03       		.byte	0x3
+ 1999 05e1 54000000 		.4byte	.LC3
+ 2000 05e5 00       		.byte	0
+ 2001 05e6 00       		.byte	0
+ 2002 05e7 12       		.uleb128 0x12
+ 2003 05e8 DA010000 		.4byte	.LASF41
+ 2004 05ec 01       		.byte	0x1
+ 2005 05ed BA       		.byte	0xba
+ 2006 05ee 00000000 		.4byte	.LFB69
+ 2007 05f2 4C000000 		.4byte	.LFE69-.LFB69
+ 2008 05f6 01       		.uleb128 0x1
+ 2009 05f7 9C       		.byte	0x9c
+ 2010 05f8 D4060000 		.4byte	0x6d4
+ 2011 05fc 09       		.uleb128 0x9
+ 2012 05fd 90000000 		.4byte	.LASF38
+ 2013 0601 01       		.byte	0x1
+ 2014 0602 BA       		.byte	0xba
+ 2015 0603 99000000 		.4byte	0x99
+ 2016 0607 61020000 		.4byte	.LLST17
+ 2017 060b 0C       		.uleb128 0xc
+ 2018 060c B3030000 		.4byte	.LASF24
+ 2019 0610 01       		.byte	0x1
+ 2020 0611 BC       		.byte	0xbc
+ 2021 0612 F7030000 		.4byte	0x3f7
+ 2022 0616 02       		.uleb128 0x2
+ 2023 0617 91       		.byte	0x91
+ 2024 0618 6C       		.sleb128 -20
+ 2025 0619 0D       		.uleb128 0xd
+ 2026 061a 0C000000 		.4byte	.LBB7
+ 2027 061e 30000000 		.4byte	.LBE7-.LBB7
+ 2028 0622 C0060000 		.4byte	0x6c0
+ 2029 0626 0E       		.uleb128 0xe
+ 2030 0627 3A020000 		.4byte	.LASF39
+ 2031 062b 01       		.byte	0x1
+ 2032 062c C3       		.byte	0xc3
+ 2033 062d 99000000 		.4byte	0x99
+ 2034 0631 7F020000 		.4byte	.LLST18
+ 2035 0635 0F       		.uleb128 0xf
+ 2036 0636 14000000 		.4byte	.LVL77
+ 2037 063a 010E0000 		.4byte	0xe01
+ 2038 063e 4F060000 		.4byte	0x64f
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 44
+
+
+ 2039 0642 0B       		.uleb128 0xb
+ 2040 0643 01       		.uleb128 0x1
+ 2041 0644 51       		.byte	0x51
+ 2042 0645 02       		.uleb128 0x2
+ 2043 0646 91       		.byte	0x91
+ 2044 0647 6C       		.sleb128 -20
+ 2045 0648 0B       		.uleb128 0xb
+ 2046 0649 01       		.uleb128 0x1
+ 2047 064a 50       		.byte	0x50
+ 2048 064b 02       		.uleb128 0x2
+ 2049 064c 74       		.byte	0x74
+ 2050 064d 00       		.sleb128 0
+ 2051 064e 00       		.byte	0
+ 2052 064f 0F       		.uleb128 0xf
+ 2053 0650 1A000000 		.4byte	.LVL78
+ 2054 0654 B90D0000 		.4byte	0xdb9
+ 2055 0658 63060000 		.4byte	0x663
+ 2056 065c 0B       		.uleb128 0xb
+ 2057 065d 01       		.uleb128 0x1
+ 2058 065e 50       		.byte	0x50
+ 2059 065f 02       		.uleb128 0x2
+ 2060 0660 91       		.byte	0x91
+ 2061 0661 6C       		.sleb128 -20
+ 2062 0662 00       		.byte	0
+ 2063 0663 0F       		.uleb128 0xf
+ 2064 0664 20000000 		.4byte	.LVL79
+ 2065 0668 B90D0000 		.4byte	0xdb9
+ 2066 066c 7A060000 		.4byte	0x67a
+ 2067 0670 0B       		.uleb128 0xb
+ 2068 0671 01       		.uleb128 0x1
+ 2069 0672 50       		.byte	0x50
+ 2070 0673 05       		.uleb128 0x5
+ 2071 0674 03       		.byte	0x3
+ 2072 0675 50000000 		.4byte	.LC2
+ 2073 0679 00       		.byte	0
+ 2074 067a 0F       		.uleb128 0xf
+ 2075 067b 26000000 		.4byte	.LVL80
+ 2076 067f 170E0000 		.4byte	0xe17
+ 2077 0683 8E060000 		.4byte	0x68e
+ 2078 0687 0B       		.uleb128 0xb
+ 2079 0688 01       		.uleb128 0x1
+ 2080 0689 50       		.byte	0x50
+ 2081 068a 02       		.uleb128 0x2
+ 2082 068b 74       		.byte	0x74
+ 2083 068c 00       		.sleb128 0
+ 2084 068d 00       		.byte	0
+ 2085 068e 0F       		.uleb128 0xf
+ 2086 068f 2C000000 		.4byte	.LVL81
+ 2087 0693 010E0000 		.4byte	0xe01
+ 2088 0697 A2060000 		.4byte	0x6a2
+ 2089 069b 0B       		.uleb128 0xb
+ 2090 069c 01       		.uleb128 0x1
+ 2091 069d 51       		.byte	0x51
+ 2092 069e 02       		.uleb128 0x2
+ 2093 069f 91       		.byte	0x91
+ 2094 06a0 6C       		.sleb128 -20
+ 2095 06a1 00       		.byte	0
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 45
+
+
+ 2096 06a2 0F       		.uleb128 0xf
+ 2097 06a3 32000000 		.4byte	.LVL82
+ 2098 06a7 CA0D0000 		.4byte	0xdca
+ 2099 06ab B6060000 		.4byte	0x6b6
+ 2100 06af 0B       		.uleb128 0xb
+ 2101 06b0 01       		.uleb128 0x1
+ 2102 06b1 50       		.byte	0x50
+ 2103 06b2 02       		.uleb128 0x2
+ 2104 06b3 91       		.byte	0x91
+ 2105 06b4 6C       		.sleb128 -20
+ 2106 06b5 00       		.byte	0
+ 2107 06b6 13       		.uleb128 0x13
+ 2108 06b7 36000000 		.4byte	.LVL83
+ 2109 06bb 2C0E0000 		.4byte	0xe2c
+ 2110 06bf 00       		.byte	0
+ 2111 06c0 0A       		.uleb128 0xa
+ 2112 06c1 0C000000 		.4byte	.LVL76
+ 2113 06c5 CA0D0000 		.4byte	0xdca
+ 2114 06c9 0B       		.uleb128 0xb
+ 2115 06ca 01       		.uleb128 0x1
+ 2116 06cb 50       		.byte	0x50
+ 2117 06cc 05       		.uleb128 0x5
+ 2118 06cd 03       		.byte	0x3
+ 2119 06ce 54000000 		.4byte	.LC3
+ 2120 06d2 00       		.byte	0
+ 2121 06d3 00       		.byte	0
+ 2122 06d4 12       		.uleb128 0x12
+ 2123 06d5 94030000 		.4byte	.LASF42
+ 2124 06d9 01       		.byte	0x1
+ 2125 06da D1       		.byte	0xd1
+ 2126 06db 00000000 		.4byte	.LFB70
+ 2127 06df 44000000 		.4byte	.LFE70-.LFB70
+ 2128 06e3 01       		.uleb128 0x1
+ 2129 06e4 9C       		.byte	0x9c
+ 2130 06e5 B6070000 		.4byte	0x7b6
+ 2131 06e9 09       		.uleb128 0x9
+ 2132 06ea 23020000 		.4byte	.LASF43
+ 2133 06ee 01       		.byte	0x1
+ 2134 06ef D1       		.byte	0xd1
+ 2135 06f0 99000000 		.4byte	0x99
+ 2136 06f4 92020000 		.4byte	.LLST19
+ 2137 06f8 09       		.uleb128 0x9
+ 2138 06f9 1A010000 		.4byte	.LASF44
+ 2139 06fd 01       		.byte	0x1
+ 2140 06fe D1       		.byte	0xd1
+ 2141 06ff 99000000 		.4byte	0x99
+ 2142 0703 BE020000 		.4byte	.LLST20
+ 2143 0707 0C       		.uleb128 0xc
+ 2144 0708 B3030000 		.4byte	.LASF24
+ 2145 070c 01       		.byte	0x1
+ 2146 070d D3       		.byte	0xd3
+ 2147 070e F7030000 		.4byte	0x3f7
+ 2148 0712 02       		.uleb128 0x2
+ 2149 0713 91       		.byte	0x91
+ 2150 0714 64       		.sleb128 -28
+ 2151 0715 0F       		.uleb128 0xf
+ 2152 0716 0E000000 		.4byte	.LVL88
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 46
+
+
+ 2153 071a B90D0000 		.4byte	0xdb9
+ 2154 071e 2C070000 		.4byte	0x72c
+ 2155 0722 0B       		.uleb128 0xb
+ 2156 0723 01       		.uleb128 0x1
+ 2157 0724 50       		.byte	0x50
+ 2158 0725 05       		.uleb128 0x5
+ 2159 0726 03       		.byte	0x3
+ 2160 0727 58000000 		.4byte	.LC4
+ 2161 072b 00       		.byte	0
+ 2162 072c 0F       		.uleb128 0xf
+ 2163 072d 16000000 		.4byte	.LVL89
+ 2164 0731 010E0000 		.4byte	0xe01
+ 2165 0735 46070000 		.4byte	0x746
+ 2166 0739 0B       		.uleb128 0xb
+ 2167 073a 01       		.uleb128 0x1
+ 2168 073b 51       		.byte	0x51
+ 2169 073c 02       		.uleb128 0x2
+ 2170 073d 91       		.byte	0x91
+ 2171 073e 64       		.sleb128 -28
+ 2172 073f 0B       		.uleb128 0xb
+ 2173 0740 01       		.uleb128 0x1
+ 2174 0741 50       		.byte	0x50
+ 2175 0742 02       		.uleb128 0x2
+ 2176 0743 75       		.byte	0x75
+ 2177 0744 00       		.sleb128 0
+ 2178 0745 00       		.byte	0
+ 2179 0746 0F       		.uleb128 0xf
+ 2180 0747 1C000000 		.4byte	.LVL90
+ 2181 074b B90D0000 		.4byte	0xdb9
+ 2182 074f 5A070000 		.4byte	0x75a
+ 2183 0753 0B       		.uleb128 0xb
+ 2184 0754 01       		.uleb128 0x1
+ 2185 0755 50       		.byte	0x50
+ 2186 0756 02       		.uleb128 0x2
+ 2187 0757 91       		.byte	0x91
+ 2188 0758 64       		.sleb128 -28
+ 2189 0759 00       		.byte	0
+ 2190 075a 0F       		.uleb128 0xf
+ 2191 075b 22000000 		.4byte	.LVL91
+ 2192 075f B90D0000 		.4byte	0xdb9
+ 2193 0763 71070000 		.4byte	0x771
+ 2194 0767 0B       		.uleb128 0xb
+ 2195 0768 01       		.uleb128 0x1
+ 2196 0769 50       		.byte	0x50
+ 2197 076a 05       		.uleb128 0x5
+ 2198 076b 03       		.byte	0x3
+ 2199 076c 78000000 		.4byte	.LC5
+ 2200 0770 00       		.byte	0
+ 2201 0771 0F       		.uleb128 0xf
+ 2202 0772 2A000000 		.4byte	.LVL92
+ 2203 0776 010E0000 		.4byte	0xe01
+ 2204 077a 8B070000 		.4byte	0x78b
+ 2205 077e 0B       		.uleb128 0xb
+ 2206 077f 01       		.uleb128 0x1
+ 2207 0780 51       		.byte	0x51
+ 2208 0781 02       		.uleb128 0x2
+ 2209 0782 91       		.byte	0x91
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 47
+
+
+ 2210 0783 64       		.sleb128 -28
+ 2211 0784 0B       		.uleb128 0xb
+ 2212 0785 01       		.uleb128 0x1
+ 2213 0786 50       		.byte	0x50
+ 2214 0787 02       		.uleb128 0x2
+ 2215 0788 74       		.byte	0x74
+ 2216 0789 00       		.sleb128 0
+ 2217 078a 00       		.byte	0
+ 2218 078b 0F       		.uleb128 0xf
+ 2219 078c 30000000 		.4byte	.LVL93
+ 2220 0790 CA0D0000 		.4byte	0xdca
+ 2221 0794 9F070000 		.4byte	0x79f
+ 2222 0798 0B       		.uleb128 0xb
+ 2223 0799 01       		.uleb128 0x1
+ 2224 079a 50       		.byte	0x50
+ 2225 079b 02       		.uleb128 0x2
+ 2226 079c 91       		.byte	0x91
+ 2227 079d 64       		.sleb128 -28
+ 2228 079e 00       		.byte	0
+ 2229 079f 0A       		.uleb128 0xa
+ 2230 07a0 38000000 		.4byte	.LVL94
+ 2231 07a4 780E0000 		.4byte	0xe78
+ 2232 07a8 0B       		.uleb128 0xb
+ 2233 07a9 01       		.uleb128 0x1
+ 2234 07aa 51       		.byte	0x51
+ 2235 07ab 02       		.uleb128 0x2
+ 2236 07ac 74       		.byte	0x74
+ 2237 07ad 00       		.sleb128 0
+ 2238 07ae 0B       		.uleb128 0xb
+ 2239 07af 01       		.uleb128 0x1
+ 2240 07b0 50       		.byte	0x50
+ 2241 07b1 02       		.uleb128 0x2
+ 2242 07b2 75       		.byte	0x75
+ 2243 07b3 00       		.sleb128 0
+ 2244 07b4 00       		.byte	0
+ 2245 07b5 00       		.byte	0
+ 2246 07b6 12       		.uleb128 0x12
+ 2247 07b7 E5030000 		.4byte	.LASF45
+ 2248 07bb 01       		.byte	0x1
+ 2249 07bc E1       		.byte	0xe1
+ 2250 07bd 00000000 		.4byte	.LFB71
+ 2251 07c1 44000000 		.4byte	.LFE71-.LFB71
+ 2252 07c5 01       		.uleb128 0x1
+ 2253 07c6 9C       		.byte	0x9c
+ 2254 07c7 98080000 		.4byte	0x898
+ 2255 07cb 09       		.uleb128 0x9
+ 2256 07cc 23020000 		.4byte	.LASF43
+ 2257 07d0 01       		.byte	0x1
+ 2258 07d1 E1       		.byte	0xe1
+ 2259 07d2 99000000 		.4byte	0x99
+ 2260 07d6 EA020000 		.4byte	.LLST21
+ 2261 07da 09       		.uleb128 0x9
+ 2262 07db 1A010000 		.4byte	.LASF44
+ 2263 07df 01       		.byte	0x1
+ 2264 07e0 E1       		.byte	0xe1
+ 2265 07e1 8D000000 		.4byte	0x8d
+ 2266 07e5 16030000 		.4byte	.LLST22
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 48
+
+
+ 2267 07e9 0C       		.uleb128 0xc
+ 2268 07ea B3030000 		.4byte	.LASF24
+ 2269 07ee 01       		.byte	0x1
+ 2270 07ef E3       		.byte	0xe3
+ 2271 07f0 F7030000 		.4byte	0x3f7
+ 2272 07f4 02       		.uleb128 0x2
+ 2273 07f5 91       		.byte	0x91
+ 2274 07f6 64       		.sleb128 -28
+ 2275 07f7 0F       		.uleb128 0xf
+ 2276 07f8 0E000000 		.4byte	.LVL98
+ 2277 07fc B90D0000 		.4byte	0xdb9
+ 2278 0800 0E080000 		.4byte	0x80e
+ 2279 0804 0B       		.uleb128 0xb
+ 2280 0805 01       		.uleb128 0x1
+ 2281 0806 50       		.byte	0x50
+ 2282 0807 05       		.uleb128 0x5
+ 2283 0808 03       		.byte	0x3
+ 2284 0809 58000000 		.4byte	.LC4
+ 2285 080d 00       		.byte	0
+ 2286 080e 0F       		.uleb128 0xf
+ 2287 080f 16000000 		.4byte	.LVL99
+ 2288 0813 010E0000 		.4byte	0xe01
+ 2289 0817 28080000 		.4byte	0x828
+ 2290 081b 0B       		.uleb128 0xb
+ 2291 081c 01       		.uleb128 0x1
+ 2292 081d 51       		.byte	0x51
+ 2293 081e 02       		.uleb128 0x2
+ 2294 081f 91       		.byte	0x91
+ 2295 0820 64       		.sleb128 -28
+ 2296 0821 0B       		.uleb128 0xb
+ 2297 0822 01       		.uleb128 0x1
+ 2298 0823 50       		.byte	0x50
+ 2299 0824 02       		.uleb128 0x2
+ 2300 0825 75       		.byte	0x75
+ 2301 0826 00       		.sleb128 0
+ 2302 0827 00       		.byte	0
+ 2303 0828 0F       		.uleb128 0xf
+ 2304 0829 1C000000 		.4byte	.LVL100
+ 2305 082d B90D0000 		.4byte	0xdb9
+ 2306 0831 3C080000 		.4byte	0x83c
+ 2307 0835 0B       		.uleb128 0xb
+ 2308 0836 01       		.uleb128 0x1
+ 2309 0837 50       		.byte	0x50
+ 2310 0838 02       		.uleb128 0x2
+ 2311 0839 91       		.byte	0x91
+ 2312 083a 64       		.sleb128 -28
+ 2313 083b 00       		.byte	0
+ 2314 083c 0F       		.uleb128 0xf
+ 2315 083d 22000000 		.4byte	.LVL101
+ 2316 0841 B90D0000 		.4byte	0xdb9
+ 2317 0845 53080000 		.4byte	0x853
+ 2318 0849 0B       		.uleb128 0xb
+ 2319 084a 01       		.uleb128 0x1
+ 2320 084b 50       		.byte	0x50
+ 2321 084c 05       		.uleb128 0x5
+ 2322 084d 03       		.byte	0x3
+ 2323 084e 78000000 		.4byte	.LC5
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 49
+
+
+ 2324 0852 00       		.byte	0
+ 2325 0853 0F       		.uleb128 0xf
+ 2326 0854 2A000000 		.4byte	.LVL102
+ 2327 0858 010E0000 		.4byte	0xe01
+ 2328 085c 6D080000 		.4byte	0x86d
+ 2329 0860 0B       		.uleb128 0xb
+ 2330 0861 01       		.uleb128 0x1
+ 2331 0862 51       		.byte	0x51
+ 2332 0863 02       		.uleb128 0x2
+ 2333 0864 91       		.byte	0x91
+ 2334 0865 64       		.sleb128 -28
+ 2335 0866 0B       		.uleb128 0xb
+ 2336 0867 01       		.uleb128 0x1
+ 2337 0868 50       		.byte	0x50
+ 2338 0869 02       		.uleb128 0x2
+ 2339 086a 74       		.byte	0x74
+ 2340 086b 00       		.sleb128 0
+ 2341 086c 00       		.byte	0
+ 2342 086d 0F       		.uleb128 0xf
+ 2343 086e 30000000 		.4byte	.LVL103
+ 2344 0872 CA0D0000 		.4byte	0xdca
+ 2345 0876 81080000 		.4byte	0x881
+ 2346 087a 0B       		.uleb128 0xb
+ 2347 087b 01       		.uleb128 0x1
+ 2348 087c 50       		.byte	0x50
+ 2349 087d 02       		.uleb128 0x2
+ 2350 087e 91       		.byte	0x91
+ 2351 087f 64       		.sleb128 -28
+ 2352 0880 00       		.byte	0
+ 2353 0881 0A       		.uleb128 0xa
+ 2354 0882 38000000 		.4byte	.LVL104
+ 2355 0886 780E0000 		.4byte	0xe78
+ 2356 088a 0B       		.uleb128 0xb
+ 2357 088b 01       		.uleb128 0x1
+ 2358 088c 51       		.byte	0x51
+ 2359 088d 02       		.uleb128 0x2
+ 2360 088e 74       		.byte	0x74
+ 2361 088f 00       		.sleb128 0
+ 2362 0890 0B       		.uleb128 0xb
+ 2363 0891 01       		.uleb128 0x1
+ 2364 0892 50       		.byte	0x50
+ 2365 0893 02       		.uleb128 0x2
+ 2366 0894 75       		.byte	0x75
+ 2367 0895 00       		.sleb128 0
+ 2368 0896 00       		.byte	0
+ 2369 0897 00       		.byte	0
+ 2370 0898 12       		.uleb128 0x12
+ 2371 0899 07040000 		.4byte	.LASF46
+ 2372 089d 01       		.byte	0x1
+ 2373 089e F1       		.byte	0xf1
+ 2374 089f 00000000 		.4byte	.LFB72
+ 2375 08a3 44000000 		.4byte	.LFE72-.LFB72
+ 2376 08a7 01       		.uleb128 0x1
+ 2377 08a8 9C       		.byte	0x9c
+ 2378 08a9 7A090000 		.4byte	0x97a
+ 2379 08ad 09       		.uleb128 0x9
+ 2380 08ae 23020000 		.4byte	.LASF43
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 50
+
+
+ 2381 08b2 01       		.byte	0x1
+ 2382 08b3 F1       		.byte	0xf1
+ 2383 08b4 99000000 		.4byte	0x99
+ 2384 08b8 37030000 		.4byte	.LLST23
+ 2385 08bc 09       		.uleb128 0x9
+ 2386 08bd 1A010000 		.4byte	.LASF44
+ 2387 08c1 01       		.byte	0x1
+ 2388 08c2 F1       		.byte	0xf1
+ 2389 08c3 81000000 		.4byte	0x81
+ 2390 08c7 63030000 		.4byte	.LLST24
+ 2391 08cb 0C       		.uleb128 0xc
+ 2392 08cc B3030000 		.4byte	.LASF24
+ 2393 08d0 01       		.byte	0x1
+ 2394 08d1 F3       		.byte	0xf3
+ 2395 08d2 F7030000 		.4byte	0x3f7
+ 2396 08d6 02       		.uleb128 0x2
+ 2397 08d7 91       		.byte	0x91
+ 2398 08d8 64       		.sleb128 -28
+ 2399 08d9 0F       		.uleb128 0xf
+ 2400 08da 0E000000 		.4byte	.LVL108
+ 2401 08de B90D0000 		.4byte	0xdb9
+ 2402 08e2 F0080000 		.4byte	0x8f0
+ 2403 08e6 0B       		.uleb128 0xb
+ 2404 08e7 01       		.uleb128 0x1
+ 2405 08e8 50       		.byte	0x50
+ 2406 08e9 05       		.uleb128 0x5
+ 2407 08ea 03       		.byte	0x3
+ 2408 08eb 58000000 		.4byte	.LC4
+ 2409 08ef 00       		.byte	0
+ 2410 08f0 0F       		.uleb128 0xf
+ 2411 08f1 16000000 		.4byte	.LVL109
+ 2412 08f5 010E0000 		.4byte	0xe01
+ 2413 08f9 0A090000 		.4byte	0x90a
+ 2414 08fd 0B       		.uleb128 0xb
+ 2415 08fe 01       		.uleb128 0x1
+ 2416 08ff 51       		.byte	0x51
+ 2417 0900 02       		.uleb128 0x2
+ 2418 0901 91       		.byte	0x91
+ 2419 0902 64       		.sleb128 -28
+ 2420 0903 0B       		.uleb128 0xb
+ 2421 0904 01       		.uleb128 0x1
+ 2422 0905 50       		.byte	0x50
+ 2423 0906 02       		.uleb128 0x2
+ 2424 0907 75       		.byte	0x75
+ 2425 0908 00       		.sleb128 0
+ 2426 0909 00       		.byte	0
+ 2427 090a 0F       		.uleb128 0xf
+ 2428 090b 1C000000 		.4byte	.LVL110
+ 2429 090f B90D0000 		.4byte	0xdb9
+ 2430 0913 1E090000 		.4byte	0x91e
+ 2431 0917 0B       		.uleb128 0xb
+ 2432 0918 01       		.uleb128 0x1
+ 2433 0919 50       		.byte	0x50
+ 2434 091a 02       		.uleb128 0x2
+ 2435 091b 91       		.byte	0x91
+ 2436 091c 64       		.sleb128 -28
+ 2437 091d 00       		.byte	0
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 51
+
+
+ 2438 091e 0F       		.uleb128 0xf
+ 2439 091f 22000000 		.4byte	.LVL111
+ 2440 0923 B90D0000 		.4byte	0xdb9
+ 2441 0927 35090000 		.4byte	0x935
+ 2442 092b 0B       		.uleb128 0xb
+ 2443 092c 01       		.uleb128 0x1
+ 2444 092d 50       		.byte	0x50
+ 2445 092e 05       		.uleb128 0x5
+ 2446 092f 03       		.byte	0x3
+ 2447 0930 78000000 		.4byte	.LC5
+ 2448 0934 00       		.byte	0
+ 2449 0935 0F       		.uleb128 0xf
+ 2450 0936 2A000000 		.4byte	.LVL112
+ 2451 093a 010E0000 		.4byte	0xe01
+ 2452 093e 4F090000 		.4byte	0x94f
+ 2453 0942 0B       		.uleb128 0xb
+ 2454 0943 01       		.uleb128 0x1
+ 2455 0944 51       		.byte	0x51
+ 2456 0945 02       		.uleb128 0x2
+ 2457 0946 91       		.byte	0x91
+ 2458 0947 64       		.sleb128 -28
+ 2459 0948 0B       		.uleb128 0xb
+ 2460 0949 01       		.uleb128 0x1
+ 2461 094a 50       		.byte	0x50
+ 2462 094b 02       		.uleb128 0x2
+ 2463 094c 74       		.byte	0x74
+ 2464 094d 00       		.sleb128 0
+ 2465 094e 00       		.byte	0
+ 2466 094f 0F       		.uleb128 0xf
+ 2467 0950 30000000 		.4byte	.LVL113
+ 2468 0954 CA0D0000 		.4byte	0xdca
+ 2469 0958 63090000 		.4byte	0x963
+ 2470 095c 0B       		.uleb128 0xb
+ 2471 095d 01       		.uleb128 0x1
+ 2472 095e 50       		.byte	0x50
+ 2473 095f 02       		.uleb128 0x2
+ 2474 0960 91       		.byte	0x91
+ 2475 0961 64       		.sleb128 -28
+ 2476 0962 00       		.byte	0
+ 2477 0963 0A       		.uleb128 0xa
+ 2478 0964 38000000 		.4byte	.LVL114
+ 2479 0968 780E0000 		.4byte	0xe78
+ 2480 096c 0B       		.uleb128 0xb
+ 2481 096d 01       		.uleb128 0x1
+ 2482 096e 51       		.byte	0x51
+ 2483 096f 02       		.uleb128 0x2
+ 2484 0970 74       		.byte	0x74
+ 2485 0971 00       		.sleb128 0
+ 2486 0972 0B       		.uleb128 0xb
+ 2487 0973 01       		.uleb128 0x1
+ 2488 0974 50       		.byte	0x50
+ 2489 0975 02       		.uleb128 0x2
+ 2490 0976 75       		.byte	0x75
+ 2491 0977 00       		.sleb128 0
+ 2492 0978 00       		.byte	0
+ 2493 0979 00       		.byte	0
+ 2494 097a 12       		.uleb128 0x12
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 52
+
+
+ 2495 097b 30020000 		.4byte	.LASF47
+ 2496 097f 01       		.byte	0x1
+ 2497 0980 FF       		.byte	0xff
+ 2498 0981 00000000 		.4byte	.LFB73
+ 2499 0985 10000000 		.4byte	.LFE73-.LFB73
+ 2500 0989 01       		.uleb128 0x1
+ 2501 098a 9C       		.byte	0x9c
+ 2502 098b B2090000 		.4byte	0x9b2
+ 2503 098f 09       		.uleb128 0x9
+ 2504 0990 46000000 		.4byte	.LASF48
+ 2505 0994 01       		.byte	0x1
+ 2506 0995 FF       		.byte	0xff
+ 2507 0996 99000000 		.4byte	0x99
+ 2508 099a 84030000 		.4byte	.LLST25
+ 2509 099e 0A       		.uleb128 0xa
+ 2510 099f 08000000 		.4byte	.LVL118
+ 2511 09a3 CA0D0000 		.4byte	0xdca
+ 2512 09a7 0B       		.uleb128 0xb
+ 2513 09a8 01       		.uleb128 0x1
+ 2514 09a9 50       		.byte	0x50
+ 2515 09aa 05       		.uleb128 0x5
+ 2516 09ab 03       		.byte	0x3
+ 2517 09ac 00000000 		.4byte	myStringInMemory
+ 2518 09b0 00       		.byte	0
+ 2519 09b1 00       		.byte	0
+ 2520 09b2 14       		.uleb128 0x14
+ 2521 09b3 B6000000 		.4byte	.LASF49
+ 2522 09b7 01       		.byte	0x1
+ 2523 09b8 0401     		.2byte	0x104
+ 2524 09ba 00000000 		.4byte	.LFB74
+ 2525 09be 0C000000 		.4byte	.LFE74-.LFB74
+ 2526 09c2 01       		.uleb128 0x1
+ 2527 09c3 9C       		.byte	0x9c
+ 2528 09c4 D7090000 		.4byte	0x9d7
+ 2529 09c8 15       		.uleb128 0x15
+ 2530 09c9 B2010000 		.4byte	.LASF50
+ 2531 09cd 01       		.byte	0x1
+ 2532 09ce 0401     		.2byte	0x104
+ 2533 09d0 99000000 		.4byte	0x99
+ 2534 09d4 01       		.uleb128 0x1
+ 2535 09d5 50       		.byte	0x50
+ 2536 09d6 00       		.byte	0
+ 2537 09d7 14       		.uleb128 0x14
+ 2538 09d8 65000000 		.4byte	.LASF51
+ 2539 09dc 01       		.byte	0x1
+ 2540 09dd 0E01     		.2byte	0x10e
+ 2541 09df 00000000 		.4byte	.LFB75
+ 2542 09e3 08020000 		.4byte	.LFE75-.LFB75
+ 2543 09e7 01       		.uleb128 0x1
+ 2544 09e8 9C       		.byte	0x9c
+ 2545 09e9 2E0D0000 		.4byte	0xd2e
+ 2546 09ed 16       		.uleb128 0x16
+ 2547 09ee 25030000 		.4byte	.LASF52
+ 2548 09f2 01       		.byte	0x1
+ 2549 09f3 1001     		.2byte	0x110
+ 2550 09f5 2E0D0000 		.4byte	0xd2e
+ 2551 09f9 03       		.uleb128 0x3
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 53
+
+
+ 2552 09fa 91       		.byte	0x91
+ 2553 09fb A87F     		.sleb128 -88
+ 2554 09fd 0F       		.uleb128 0xf
+ 2555 09fe 0A000000 		.4byte	.LVL120
+ 2556 0a02 CA0D0000 		.4byte	0xdca
+ 2557 0a06 140A0000 		.4byte	0xa14
+ 2558 0a0a 0B       		.uleb128 0xb
+ 2559 0a0b 01       		.uleb128 0x1
+ 2560 0a0c 50       		.byte	0x50
+ 2561 0a0d 05       		.uleb128 0x5
+ 2562 0a0e 03       		.byte	0x3
+ 2563 0a0f 80000000 		.4byte	.LC6
+ 2564 0a13 00       		.byte	0
+ 2565 0a14 0F       		.uleb128 0xf
+ 2566 0a15 10000000 		.4byte	.LVL121
+ 2567 0a19 8E0E0000 		.4byte	0xe8e
+ 2568 0a1d 280A0000 		.4byte	0xa28
+ 2569 0a21 0B       		.uleb128 0xb
+ 2570 0a22 01       		.uleb128 0x1
+ 2571 0a23 50       		.byte	0x50
+ 2572 0a24 02       		.uleb128 0x2
+ 2573 0a25 7D       		.byte	0x7d
+ 2574 0a26 00       		.sleb128 0
+ 2575 0a27 00       		.byte	0
+ 2576 0a28 0F       		.uleb128 0xf
+ 2577 0a29 16000000 		.4byte	.LVL122
+ 2578 0a2d CA0D0000 		.4byte	0xdca
+ 2579 0a31 3F0A0000 		.4byte	0xa3f
+ 2580 0a35 0B       		.uleb128 0xb
+ 2581 0a36 01       		.uleb128 0x1
+ 2582 0a37 50       		.byte	0x50
+ 2583 0a38 05       		.uleb128 0x5
+ 2584 0a39 03       		.byte	0x3
+ 2585 0a3a 54000000 		.4byte	.LC3
+ 2586 0a3e 00       		.byte	0
+ 2587 0a3f 0F       		.uleb128 0xf
+ 2588 0a40 66000000 		.4byte	.LVL123
+ 2589 0a44 CA0D0000 		.4byte	0xdca
+ 2590 0a48 560A0000 		.4byte	0xa56
+ 2591 0a4c 0B       		.uleb128 0xb
+ 2592 0a4d 01       		.uleb128 0x1
+ 2593 0a4e 50       		.byte	0x50
+ 2594 0a4f 05       		.uleb128 0x5
+ 2595 0a50 03       		.byte	0x3
+ 2596 0a51 B4000000 		.4byte	.LC7
+ 2597 0a55 00       		.byte	0
+ 2598 0a56 0F       		.uleb128 0xf
+ 2599 0a57 6C000000 		.4byte	.LVL124
+ 2600 0a5b CA0D0000 		.4byte	0xdca
+ 2601 0a5f 6D0A0000 		.4byte	0xa6d
+ 2602 0a63 0B       		.uleb128 0xb
+ 2603 0a64 01       		.uleb128 0x1
+ 2604 0a65 50       		.byte	0x50
+ 2605 0a66 05       		.uleb128 0x5
+ 2606 0a67 03       		.byte	0x3
+ 2607 0a68 EC000000 		.4byte	.LC8
+ 2608 0a6c 00       		.byte	0
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 54
+
+
+ 2609 0a6d 0F       		.uleb128 0xf
+ 2610 0a6e 72000000 		.4byte	.LVL125
+ 2611 0a72 CA0D0000 		.4byte	0xdca
+ 2612 0a76 840A0000 		.4byte	0xa84
+ 2613 0a7a 0B       		.uleb128 0xb
+ 2614 0a7b 01       		.uleb128 0x1
+ 2615 0a7c 50       		.byte	0x50
+ 2616 0a7d 05       		.uleb128 0x5
+ 2617 0a7e 03       		.byte	0x3
+ 2618 0a7f 24010000 		.4byte	.LC9
+ 2619 0a83 00       		.byte	0
+ 2620 0a84 0F       		.uleb128 0xf
+ 2621 0a85 78000000 		.4byte	.LVL126
+ 2622 0a89 CA0D0000 		.4byte	0xdca
+ 2623 0a8d 9B0A0000 		.4byte	0xa9b
+ 2624 0a91 0B       		.uleb128 0xb
+ 2625 0a92 01       		.uleb128 0x1
+ 2626 0a93 50       		.byte	0x50
+ 2627 0a94 05       		.uleb128 0x5
+ 2628 0a95 03       		.byte	0x3
+ 2629 0a96 48010000 		.4byte	.LC10
+ 2630 0a9a 00       		.byte	0
+ 2631 0a9b 0F       		.uleb128 0xf
+ 2632 0a9c 7E000000 		.4byte	.LVL127
+ 2633 0aa0 CA0D0000 		.4byte	0xdca
+ 2634 0aa4 B20A0000 		.4byte	0xab2
+ 2635 0aa8 0B       		.uleb128 0xb
+ 2636 0aa9 01       		.uleb128 0x1
+ 2637 0aaa 50       		.byte	0x50
+ 2638 0aab 05       		.uleb128 0x5
+ 2639 0aac 03       		.byte	0x3
+ 2640 0aad 74010000 		.4byte	.LC11
+ 2641 0ab1 00       		.byte	0
+ 2642 0ab2 0F       		.uleb128 0xf
+ 2643 0ab3 88000000 		.4byte	.LVL128
+ 2644 0ab7 04020000 		.4byte	0x204
+ 2645 0abb CB0A0000 		.4byte	0xacb
+ 2646 0abf 0B       		.uleb128 0xb
+ 2647 0ac0 01       		.uleb128 0x1
+ 2648 0ac1 51       		.byte	0x51
+ 2649 0ac2 01       		.uleb128 0x1
+ 2650 0ac3 31       		.byte	0x31
+ 2651 0ac4 0B       		.uleb128 0xb
+ 2652 0ac5 01       		.uleb128 0x1
+ 2653 0ac6 50       		.byte	0x50
+ 2654 0ac7 02       		.uleb128 0x2
+ 2655 0ac8 7D       		.byte	0x7d
+ 2656 0ac9 00       		.sleb128 0
+ 2657 0aca 00       		.byte	0
+ 2658 0acb 0F       		.uleb128 0xf
+ 2659 0acc 9A000000 		.4byte	.LVL129
+ 2660 0ad0 2A010000 		.4byte	0x12a
+ 2661 0ad4 E50A0000 		.4byte	0xae5
+ 2662 0ad8 0B       		.uleb128 0xb
+ 2663 0ad9 01       		.uleb128 0x1
+ 2664 0ada 51       		.byte	0x51
+ 2665 0adb 01       		.uleb128 0x1
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 55
+
+
+ 2666 0adc 30       		.byte	0x30
+ 2667 0add 0B       		.uleb128 0xb
+ 2668 0ade 01       		.uleb128 0x1
+ 2669 0adf 50       		.byte	0x50
+ 2670 0ae0 03       		.uleb128 0x3
+ 2671 0ae1 91       		.byte	0x91
+ 2672 0ae2 A97F     		.sleb128 -87
+ 2673 0ae4 00       		.byte	0
+ 2674 0ae5 13       		.uleb128 0x13
+ 2675 0ae6 9E000000 		.4byte	.LVL130
+ 2676 0aea 77020000 		.4byte	0x277
+ 2677 0aee 0F       		.uleb128 0xf
+ 2678 0aef AA000000 		.4byte	.LVL131
+ 2679 0af3 04020000 		.4byte	0x204
+ 2680 0af7 080B0000 		.4byte	0xb08
+ 2681 0afb 0B       		.uleb128 0xb
+ 2682 0afc 01       		.uleb128 0x1
+ 2683 0afd 51       		.byte	0x51
+ 2684 0afe 01       		.uleb128 0x1
+ 2685 0aff 31       		.byte	0x31
+ 2686 0b00 0B       		.uleb128 0xb
+ 2687 0b01 01       		.uleb128 0x1
+ 2688 0b02 50       		.byte	0x50
+ 2689 0b03 03       		.uleb128 0x3
+ 2690 0b04 91       		.byte	0x91
+ 2691 0b05 AA7F     		.sleb128 -86
+ 2692 0b07 00       		.byte	0
+ 2693 0b08 0F       		.uleb128 0xf
+ 2694 0b09 C8000000 		.4byte	.LVL132
+ 2695 0b0d 2A010000 		.4byte	0x12a
+ 2696 0b11 220B0000 		.4byte	0xb22
+ 2697 0b15 0B       		.uleb128 0xb
+ 2698 0b16 01       		.uleb128 0x1
+ 2699 0b17 51       		.byte	0x51
+ 2700 0b18 01       		.uleb128 0x1
+ 2701 0b19 30       		.byte	0x30
+ 2702 0b1a 0B       		.uleb128 0xb
+ 2703 0b1b 01       		.uleb128 0x1
+ 2704 0b1c 50       		.byte	0x50
+ 2705 0b1d 03       		.uleb128 0x3
+ 2706 0b1e 91       		.byte	0x91
+ 2707 0b1f AA7F     		.sleb128 -86
+ 2708 0b21 00       		.byte	0
+ 2709 0b22 13       		.uleb128 0x13
+ 2710 0b23 CC000000 		.4byte	.LVL133
+ 2711 0b27 07040000 		.4byte	0x407
+ 2712 0b2b 0F       		.uleb128 0xf
+ 2713 0b2c E0000000 		.4byte	.LVL134
+ 2714 0b30 2A010000 		.4byte	0x12a
+ 2715 0b34 450B0000 		.4byte	0xb45
+ 2716 0b38 0B       		.uleb128 0xb
+ 2717 0b39 01       		.uleb128 0x1
+ 2718 0b3a 51       		.byte	0x51
+ 2719 0b3b 01       		.uleb128 0x1
+ 2720 0b3c 30       		.byte	0x30
+ 2721 0b3d 0B       		.uleb128 0xb
+ 2722 0b3e 01       		.uleb128 0x1
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 56
+
+
+ 2723 0b3f 50       		.byte	0x50
+ 2724 0b40 03       		.uleb128 0x3
+ 2725 0b41 91       		.byte	0x91
+ 2726 0b42 AA7F     		.sleb128 -86
+ 2727 0b44 00       		.byte	0
+ 2728 0b45 13       		.uleb128 0x13
+ 2729 0b46 E4000000 		.4byte	.LVL135
+ 2730 0b4a FA040000 		.4byte	0x4fa
+ 2731 0b4e 0F       		.uleb128 0xf
+ 2732 0b4f F8000000 		.4byte	.LVL136
+ 2733 0b53 2A010000 		.4byte	0x12a
+ 2734 0b57 680B0000 		.4byte	0xb68
+ 2735 0b5b 0B       		.uleb128 0xb
+ 2736 0b5c 01       		.uleb128 0x1
+ 2737 0b5d 51       		.byte	0x51
+ 2738 0b5e 01       		.uleb128 0x1
+ 2739 0b5f 30       		.byte	0x30
+ 2740 0b60 0B       		.uleb128 0xb
+ 2741 0b61 01       		.uleb128 0x1
+ 2742 0b62 50       		.byte	0x50
+ 2743 0b63 03       		.uleb128 0x3
+ 2744 0b64 91       		.byte	0x91
+ 2745 0b65 AA7F     		.sleb128 -86
+ 2746 0b67 00       		.byte	0
+ 2747 0b68 13       		.uleb128 0x13
+ 2748 0b69 FC000000 		.4byte	.LVL137
+ 2749 0b6d E7050000 		.4byte	0x5e7
+ 2750 0b71 0F       		.uleb128 0xf
+ 2751 0b72 04010000 		.4byte	.LVL138
+ 2752 0b76 CA0D0000 		.4byte	0xdca
+ 2753 0b7a 880B0000 		.4byte	0xb88
+ 2754 0b7e 0B       		.uleb128 0xb
+ 2755 0b7f 01       		.uleb128 0x1
+ 2756 0b80 50       		.byte	0x50
+ 2757 0b81 05       		.uleb128 0x5
+ 2758 0b82 03       		.byte	0x3
+ 2759 0b83 9C010000 		.4byte	.LC12
+ 2760 0b87 00       		.byte	0
+ 2761 0b88 0F       		.uleb128 0xf
+ 2762 0b89 0E010000 		.4byte	.LVL139
+ 2763 0b8d 04020000 		.4byte	0x204
+ 2764 0b91 A10B0000 		.4byte	0xba1
+ 2765 0b95 0B       		.uleb128 0xb
+ 2766 0b96 01       		.uleb128 0x1
+ 2767 0b97 51       		.byte	0x51
+ 2768 0b98 01       		.uleb128 0x1
+ 2769 0b99 32       		.byte	0x32
+ 2770 0b9a 0B       		.uleb128 0xb
+ 2771 0b9b 01       		.uleb128 0x1
+ 2772 0b9c 50       		.byte	0x50
+ 2773 0b9d 02       		.uleb128 0x2
+ 2774 0b9e 7D       		.byte	0x7d
+ 2775 0b9f 00       		.sleb128 0
+ 2776 0ba0 00       		.byte	0
+ 2777 0ba1 0F       		.uleb128 0xf
+ 2778 0ba2 1A010000 		.4byte	.LVL140
+ 2779 0ba6 CA0D0000 		.4byte	0xdca
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 57
+
+
+ 2780 0baa B80B0000 		.4byte	0xbb8
+ 2781 0bae 0B       		.uleb128 0xb
+ 2782 0baf 01       		.uleb128 0x1
+ 2783 0bb0 50       		.byte	0x50
+ 2784 0bb1 05       		.uleb128 0x5
+ 2785 0bb2 03       		.byte	0x3
+ 2786 0bb3 CC010000 		.4byte	.LC13
+ 2787 0bb7 00       		.byte	0
+ 2788 0bb8 0F       		.uleb128 0xf
+ 2789 0bb9 30010000 		.4byte	.LVL141
+ 2790 0bbd 2A010000 		.4byte	0x12a
+ 2791 0bc1 D20B0000 		.4byte	0xbd2
+ 2792 0bc5 0B       		.uleb128 0xb
+ 2793 0bc6 01       		.uleb128 0x1
+ 2794 0bc7 51       		.byte	0x51
+ 2795 0bc8 01       		.uleb128 0x1
+ 2796 0bc9 30       		.byte	0x30
+ 2797 0bca 0B       		.uleb128 0xb
+ 2798 0bcb 01       		.uleb128 0x1
+ 2799 0bcc 50       		.byte	0x50
+ 2800 0bcd 03       		.uleb128 0x3
+ 2801 0bce 91       		.byte	0x91
+ 2802 0bcf AA7F     		.sleb128 -86
+ 2803 0bd1 00       		.byte	0
+ 2804 0bd2 0F       		.uleb128 0xf
+ 2805 0bd3 3A010000 		.4byte	.LVL142
+ 2806 0bd7 2A010000 		.4byte	0x12a
+ 2807 0bdb EB0B0000 		.4byte	0xbeb
+ 2808 0bdf 0B       		.uleb128 0xb
+ 2809 0be0 01       		.uleb128 0x1
+ 2810 0be1 51       		.byte	0x51
+ 2811 0be2 01       		.uleb128 0x1
+ 2812 0be3 31       		.byte	0x31
+ 2813 0be4 0B       		.uleb128 0xb
+ 2814 0be5 01       		.uleb128 0x1
+ 2815 0be6 50       		.byte	0x50
+ 2816 0be7 02       		.uleb128 0x2
+ 2817 0be8 7D       		.byte	0x7d
+ 2818 0be9 00       		.sleb128 0
+ 2819 0bea 00       		.byte	0
+ 2820 0beb 0F       		.uleb128 0xf
+ 2821 0bec 42010000 		.4byte	.LVL143
+ 2822 0bf0 98080000 		.4byte	0x898
+ 2823 0bf4 FF0B0000 		.4byte	0xbff
+ 2824 0bf8 0B       		.uleb128 0xb
+ 2825 0bf9 01       		.uleb128 0x1
+ 2826 0bfa 50       		.byte	0x50
+ 2827 0bfb 02       		.uleb128 0x2
+ 2828 0bfc 74       		.byte	0x74
+ 2829 0bfd 00       		.sleb128 0
+ 2830 0bfe 00       		.byte	0
+ 2831 0bff 0F       		.uleb128 0xf
+ 2832 0c00 56010000 		.4byte	.LVL144
+ 2833 0c04 2A010000 		.4byte	0x12a
+ 2834 0c08 190C0000 		.4byte	0xc19
+ 2835 0c0c 0B       		.uleb128 0xb
+ 2836 0c0d 01       		.uleb128 0x1
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 58
+
+
+ 2837 0c0e 51       		.byte	0x51
+ 2838 0c0f 01       		.uleb128 0x1
+ 2839 0c10 30       		.byte	0x30
+ 2840 0c11 0B       		.uleb128 0xb
+ 2841 0c12 01       		.uleb128 0x1
+ 2842 0c13 50       		.byte	0x50
+ 2843 0c14 03       		.uleb128 0x3
+ 2844 0c15 91       		.byte	0x91
+ 2845 0c16 AA7F     		.sleb128 -86
+ 2846 0c18 00       		.byte	0
+ 2847 0c19 0F       		.uleb128 0xf
+ 2848 0c1a 60010000 		.4byte	.LVL145
+ 2849 0c1e 2A010000 		.4byte	0x12a
+ 2850 0c22 320C0000 		.4byte	0xc32
+ 2851 0c26 0B       		.uleb128 0xb
+ 2852 0c27 01       		.uleb128 0x1
+ 2853 0c28 51       		.byte	0x51
+ 2854 0c29 01       		.uleb128 0x1
+ 2855 0c2a 31       		.byte	0x31
+ 2856 0c2b 0B       		.uleb128 0xb
+ 2857 0c2c 01       		.uleb128 0x1
+ 2858 0c2d 50       		.byte	0x50
+ 2859 0c2e 02       		.uleb128 0x2
+ 2860 0c2f 7D       		.byte	0x7d
+ 2861 0c30 00       		.sleb128 0
+ 2862 0c31 00       		.byte	0
+ 2863 0c32 0F       		.uleb128 0xf
+ 2864 0c33 68010000 		.4byte	.LVL146
+ 2865 0c37 B6070000 		.4byte	0x7b6
+ 2866 0c3b 460C0000 		.4byte	0xc46
+ 2867 0c3f 0B       		.uleb128 0xb
+ 2868 0c40 01       		.uleb128 0x1
+ 2869 0c41 50       		.byte	0x50
+ 2870 0c42 02       		.uleb128 0x2
+ 2871 0c43 74       		.byte	0x74
+ 2872 0c44 00       		.sleb128 0
+ 2873 0c45 00       		.byte	0
+ 2874 0c46 0F       		.uleb128 0xf
+ 2875 0c47 7C010000 		.4byte	.LVL147
+ 2876 0c4b 2A010000 		.4byte	0x12a
+ 2877 0c4f 600C0000 		.4byte	0xc60
+ 2878 0c53 0B       		.uleb128 0xb
+ 2879 0c54 01       		.uleb128 0x1
+ 2880 0c55 51       		.byte	0x51
+ 2881 0c56 01       		.uleb128 0x1
+ 2882 0c57 30       		.byte	0x30
+ 2883 0c58 0B       		.uleb128 0xb
+ 2884 0c59 01       		.uleb128 0x1
+ 2885 0c5a 50       		.byte	0x50
+ 2886 0c5b 03       		.uleb128 0x3
+ 2887 0c5c 91       		.byte	0x91
+ 2888 0c5d AA7F     		.sleb128 -86
+ 2889 0c5f 00       		.byte	0
+ 2890 0c60 0F       		.uleb128 0xf
+ 2891 0c61 86010000 		.4byte	.LVL148
+ 2892 0c65 2A010000 		.4byte	0x12a
+ 2893 0c69 790C0000 		.4byte	0xc79
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 59
+
+
+ 2894 0c6d 0B       		.uleb128 0xb
+ 2895 0c6e 01       		.uleb128 0x1
+ 2896 0c6f 51       		.byte	0x51
+ 2897 0c70 01       		.uleb128 0x1
+ 2898 0c71 31       		.byte	0x31
+ 2899 0c72 0B       		.uleb128 0xb
+ 2900 0c73 01       		.uleb128 0x1
+ 2901 0c74 50       		.byte	0x50
+ 2902 0c75 02       		.uleb128 0x2
+ 2903 0c76 7D       		.byte	0x7d
+ 2904 0c77 00       		.sleb128 0
+ 2905 0c78 00       		.byte	0
+ 2906 0c79 0F       		.uleb128 0xf
+ 2907 0c7a 8E010000 		.4byte	.LVL149
+ 2908 0c7e D4060000 		.4byte	0x6d4
+ 2909 0c82 8D0C0000 		.4byte	0xc8d
+ 2910 0c86 0B       		.uleb128 0xb
+ 2911 0c87 01       		.uleb128 0x1
+ 2912 0c88 50       		.byte	0x50
+ 2913 0c89 02       		.uleb128 0x2
+ 2914 0c8a 74       		.byte	0x74
+ 2915 0c8b 00       		.sleb128 0
+ 2916 0c8c 00       		.byte	0
+ 2917 0c8d 0F       		.uleb128 0xf
+ 2918 0c8e 96010000 		.4byte	.LVL150
+ 2919 0c92 CA0D0000 		.4byte	0xdca
+ 2920 0c96 A40C0000 		.4byte	0xca4
+ 2921 0c9a 0B       		.uleb128 0xb
+ 2922 0c9b 01       		.uleb128 0x1
+ 2923 0c9c 50       		.byte	0x50
+ 2924 0c9d 05       		.uleb128 0x5
+ 2925 0c9e 03       		.byte	0x3
+ 2926 0c9f E0010000 		.4byte	.LC14
+ 2927 0ca3 00       		.byte	0
+ 2928 0ca4 0F       		.uleb128 0xf
+ 2929 0ca5 A0010000 		.4byte	.LVL151
+ 2930 0ca9 04020000 		.4byte	0x204
+ 2931 0cad BD0C0000 		.4byte	0xcbd
+ 2932 0cb1 0B       		.uleb128 0xb
+ 2933 0cb2 01       		.uleb128 0x1
+ 2934 0cb3 51       		.byte	0x51
+ 2935 0cb4 01       		.uleb128 0x1
+ 2936 0cb5 31       		.byte	0x31
+ 2937 0cb6 0B       		.uleb128 0xb
+ 2938 0cb7 01       		.uleb128 0x1
+ 2939 0cb8 50       		.byte	0x50
+ 2940 0cb9 02       		.uleb128 0x2
+ 2941 0cba 7D       		.byte	0x7d
+ 2942 0cbb 00       		.sleb128 0
+ 2943 0cbc 00       		.byte	0
+ 2944 0cbd 0F       		.uleb128 0xf
+ 2945 0cbe AE010000 		.4byte	.LVL152
+ 2946 0cc2 2A010000 		.4byte	0x12a
+ 2947 0cc6 D60C0000 		.4byte	0xcd6
+ 2948 0cca 0B       		.uleb128 0xb
+ 2949 0ccb 01       		.uleb128 0x1
+ 2950 0ccc 51       		.byte	0x51
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 60
+
+
+ 2951 0ccd 01       		.uleb128 0x1
+ 2952 0cce 30       		.byte	0x30
+ 2953 0ccf 0B       		.uleb128 0xb
+ 2954 0cd0 01       		.uleb128 0x1
+ 2955 0cd1 50       		.byte	0x50
+ 2956 0cd2 02       		.uleb128 0x2
+ 2957 0cd3 7D       		.byte	0x7d
+ 2958 0cd4 00       		.sleb128 0
+ 2959 0cd5 00       		.byte	0
+ 2960 0cd6 13       		.uleb128 0x13
+ 2961 0cd7 B2010000 		.4byte	.LVL153
+ 2962 0cdb 7A090000 		.4byte	0x97a
+ 2963 0cdf 0F       		.uleb128 0xf
+ 2964 0ce0 BC010000 		.4byte	.LVL154
+ 2965 0ce4 04020000 		.4byte	0x204
+ 2966 0ce8 F80C0000 		.4byte	0xcf8
+ 2967 0cec 0B       		.uleb128 0xb
+ 2968 0ced 01       		.uleb128 0x1
+ 2969 0cee 51       		.byte	0x51
+ 2970 0cef 01       		.uleb128 0x1
+ 2971 0cf0 31       		.byte	0x31
+ 2972 0cf1 0B       		.uleb128 0xb
+ 2973 0cf2 01       		.uleb128 0x1
+ 2974 0cf3 50       		.byte	0x50
+ 2975 0cf4 02       		.uleb128 0x2
+ 2976 0cf5 7D       		.byte	0x7d
+ 2977 0cf6 00       		.sleb128 0
+ 2978 0cf7 00       		.byte	0
+ 2979 0cf8 0F       		.uleb128 0xf
+ 2980 0cf9 CA010000 		.4byte	.LVL155
+ 2981 0cfd 2A010000 		.4byte	0x12a
+ 2982 0d01 110D0000 		.4byte	0xd11
+ 2983 0d05 0B       		.uleb128 0xb
+ 2984 0d06 01       		.uleb128 0x1
+ 2985 0d07 51       		.byte	0x51
+ 2986 0d08 01       		.uleb128 0x1
+ 2987 0d09 30       		.byte	0x30
+ 2988 0d0a 0B       		.uleb128 0xb
+ 2989 0d0b 01       		.uleb128 0x1
+ 2990 0d0c 50       		.byte	0x50
+ 2991 0d0d 02       		.uleb128 0x2
+ 2992 0d0e 7D       		.byte	0x7d
+ 2993 0d0f 00       		.sleb128 0
+ 2994 0d10 00       		.byte	0
+ 2995 0d11 13       		.uleb128 0x13
+ 2996 0d12 CE010000 		.4byte	.LVL156
+ 2997 0d16 B2090000 		.4byte	0x9b2
+ 2998 0d1a 0A       		.uleb128 0xa
+ 2999 0d1b D6010000 		.4byte	.LVL157
+ 3000 0d1f CA0D0000 		.4byte	0xdca
+ 3001 0d23 0B       		.uleb128 0xb
+ 3002 0d24 01       		.uleb128 0x1
+ 3003 0d25 50       		.byte	0x50
+ 3004 0d26 05       		.uleb128 0x5
+ 3005 0d27 03       		.byte	0x3
+ 3006 0d28 18020000 		.4byte	.LC15
+ 3007 0d2c 00       		.byte	0
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 61
+
+
+ 3008 0d2d 00       		.byte	0
+ 3009 0d2e 10       		.uleb128 0x10
+ 3010 0d2f BF000000 		.4byte	0xbf
+ 3011 0d33 3E0D0000 		.4byte	0xd3e
+ 3012 0d37 11       		.uleb128 0x11
+ 3013 0d38 D2000000 		.4byte	0xd2
+ 3014 0d3c 4F       		.byte	0x4f
+ 3015 0d3d 00       		.byte	0
+ 3016 0d3e 17       		.uleb128 0x17
+ 3017 0d3f D0030000 		.4byte	.LASF53
+ 3018 0d43 05       		.byte	0x5
+ 3019 0d44 9606     		.2byte	0x696
+ 3020 0d46 4A0D0000 		.4byte	0xd4a
+ 3021 0d4a 18       		.uleb128 0x18
+ 3022 0d4b 76000000 		.4byte	0x76
+ 3023 0d4f 10       		.uleb128 0x10
+ 3024 0d50 CB000000 		.4byte	0xcb
+ 3025 0d54 5F0D0000 		.4byte	0xd5f
+ 3026 0d58 11       		.uleb128 0x11
+ 3027 0d59 D2000000 		.4byte	0xd2
+ 3028 0d5d FF       		.byte	0xff
+ 3029 0d5e 00       		.byte	0
+ 3030 0d5f 19       		.uleb128 0x19
+ 3031 0d60 31030000 		.4byte	.LASF54
+ 3032 0d64 01       		.byte	0x1
+ 3033 0d65 1A       		.byte	0x1a
+ 3034 0d66 4F0D0000 		.4byte	0xd4f
+ 3035 0d6a 05       		.uleb128 0x5
+ 3036 0d6b 03       		.byte	0x3
+ 3037 0d6c 00000000 		.4byte	myStringInMemory
+ 3038 0d70 1A       		.uleb128 0x1a
+ 3039 0d71 30010000 		.4byte	.LASF55
+ 3040 0d75 06       		.byte	0x6
+ 3041 0d76 14       		.byte	0x14
+ 3042 0d77 A5000000 		.4byte	0xa5
+ 3043 0d7b 8A0D0000 		.4byte	0xd8a
+ 3044 0d7f 1B       		.uleb128 0x1b
+ 3045 0d80 D9000000 		.4byte	0xd9
+ 3046 0d84 1B       		.uleb128 0x1b
+ 3047 0d85 CB000000 		.4byte	0xcb
+ 3048 0d89 00       		.byte	0
+ 3049 0d8a 1A       		.uleb128 0x1a
+ 3050 0d8b 11030000 		.4byte	.LASF56
+ 3051 0d8f 07       		.byte	0x7
+ 3052 0d90 1E       		.byte	0x1e
+ 3053 0d91 D9000000 		.4byte	0xd9
+ 3054 0d95 A40D0000 		.4byte	0xda4
+ 3055 0d99 1B       		.uleb128 0x1b
+ 3056 0d9a D9000000 		.4byte	0xd9
+ 3057 0d9e 1B       		.uleb128 0x1b
+ 3058 0d9f DF000000 		.4byte	0xdf
+ 3059 0da3 00       		.byte	0
+ 3060 0da4 1A       		.uleb128 0x1a
+ 3061 0da5 A3000000 		.4byte	.LASF57
+ 3062 0da9 06       		.byte	0x6
+ 3063 0daa 13       		.byte	0x13
+ 3064 0dab 99000000 		.4byte	0x99
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 62
+
+
+ 3065 0daf B90D0000 		.4byte	0xdb9
+ 3066 0db3 1B       		.uleb128 0x1b
+ 3067 0db4 D9000000 		.4byte	0xd9
+ 3068 0db8 00       		.byte	0
+ 3069 0db9 1C       		.uleb128 0x1c
+ 3070 0dba 1B000000 		.4byte	.LASF58
+ 3071 0dbe 08       		.byte	0x8
+ 3072 0dbf 16       		.byte	0x16
+ 3073 0dc0 CA0D0000 		.4byte	0xdca
+ 3074 0dc4 1B       		.uleb128 0x1b
+ 3075 0dc5 D9000000 		.4byte	0xd9
+ 3076 0dc9 00       		.byte	0
+ 3077 0dca 1C       		.uleb128 0x1c
+ 3078 0dcb FD030000 		.4byte	.LASF59
+ 3079 0dcf 08       		.byte	0x8
+ 3080 0dd0 17       		.byte	0x17
+ 3081 0dd1 DB0D0000 		.4byte	0xddb
+ 3082 0dd5 1B       		.uleb128 0x1b
+ 3083 0dd6 D9000000 		.4byte	0xd9
+ 3084 0dda 00       		.byte	0
+ 3085 0ddb 1A       		.uleb128 0x1a
+ 3086 0ddc A1030000 		.4byte	.LASF60
+ 3087 0de0 09       		.byte	0x9
+ 3088 0de1 16       		.byte	0x16
+ 3089 0de2 81000000 		.4byte	0x81
+ 3090 0de6 F00D0000 		.4byte	0xdf0
+ 3091 0dea 1B       		.uleb128 0x1b
+ 3092 0deb 99000000 		.4byte	0x99
+ 3093 0def 00       		.byte	0
+ 3094 0df0 1C       		.uleb128 0x1c
+ 3095 0df1 82000000 		.4byte	.LASF61
+ 3096 0df5 08       		.byte	0x8
+ 3097 0df6 15       		.byte	0x15
+ 3098 0df7 010E0000 		.4byte	0xe01
+ 3099 0dfb 1B       		.uleb128 0x1b
+ 3100 0dfc BF000000 		.4byte	0xbf
+ 3101 0e00 00       		.byte	0
+ 3102 0e01 1C       		.uleb128 0x1c
+ 3103 0e02 E6010000 		.4byte	.LASF62
+ 3104 0e06 06       		.byte	0x6
+ 3105 0e07 15       		.byte	0x15
+ 3106 0e08 170E0000 		.4byte	0xe17
+ 3107 0e0c 1B       		.uleb128 0x1b
+ 3108 0e0d 99000000 		.4byte	0x99
+ 3109 0e11 1B       		.uleb128 0x1b
+ 3110 0e12 D9000000 		.4byte	0xd9
+ 3111 0e16 00       		.byte	0
+ 3112 0e17 1A       		.uleb128 0x1a
+ 3113 0e18 71000000 		.4byte	.LASF63
+ 3114 0e1c 09       		.byte	0x9
+ 3115 0e1d 14       		.byte	0x14
+ 3116 0e1e 99000000 		.4byte	0x99
+ 3117 0e22 2C0E0000 		.4byte	0xe2c
+ 3118 0e26 1B       		.uleb128 0x1b
+ 3119 0e27 99000000 		.4byte	0x99
+ 3120 0e2b 00       		.byte	0
+ 3121 0e2c 1D       		.uleb128 0x1d
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 63
+
+
+ 3122 0e2d 0D000000 		.4byte	.LASF72
+ 3123 0e31 08       		.byte	0x8
+ 3124 0e32 18       		.byte	0x18
+ 3125 0e33 BF000000 		.4byte	0xbf
+ 3126 0e37 1C       		.uleb128 0x1c
+ 3127 0e38 00000000 		.4byte	.LASF64
+ 3128 0e3c 06       		.byte	0x6
+ 3129 0e3d 17       		.byte	0x17
+ 3130 0e3e 4D0E0000 		.4byte	0xe4d
+ 3131 0e42 1B       		.uleb128 0x1b
+ 3132 0e43 81000000 		.4byte	0x81
+ 3133 0e47 1B       		.uleb128 0x1b
+ 3134 0e48 D9000000 		.4byte	0xd9
+ 3135 0e4c 00       		.byte	0
+ 3136 0e4d 1A       		.uleb128 0x1a
+ 3137 0e4e F3030000 		.4byte	.LASF65
+ 3138 0e52 09       		.byte	0x9
+ 3139 0e53 15       		.byte	0x15
+ 3140 0e54 8D000000 		.4byte	0x8d
+ 3141 0e58 620E0000 		.4byte	0xe62
+ 3142 0e5c 1B       		.uleb128 0x1b
+ 3143 0e5d 99000000 		.4byte	0x99
+ 3144 0e61 00       		.byte	0
+ 3145 0e62 1C       		.uleb128 0x1c
+ 3146 0e63 A4010000 		.4byte	.LASF66
+ 3147 0e67 06       		.byte	0x6
+ 3148 0e68 16       		.byte	0x16
+ 3149 0e69 780E0000 		.4byte	0xe78
+ 3150 0e6d 1B       		.uleb128 0x1b
+ 3151 0e6e 8D000000 		.4byte	0x8d
+ 3152 0e72 1B       		.uleb128 0x1b
+ 3153 0e73 D9000000 		.4byte	0xd9
+ 3154 0e77 00       		.byte	0
+ 3155 0e78 1C       		.uleb128 0x1c
+ 3156 0e79 C2000000 		.4byte	.LASF67
+ 3157 0e7d 09       		.byte	0x9
+ 3158 0e7e 13       		.byte	0x13
+ 3159 0e7f 8E0E0000 		.4byte	0xe8e
+ 3160 0e83 1B       		.uleb128 0x1b
+ 3161 0e84 99000000 		.4byte	0x99
+ 3162 0e88 1B       		.uleb128 0x1b
+ 3163 0e89 99000000 		.4byte	0x99
+ 3164 0e8d 00       		.byte	0
+ 3165 0e8e 1E       		.uleb128 0x1e
+ 3166 0e8f AA030000 		.4byte	.LASF68
+ 3167 0e93 08       		.byte	0x8
+ 3168 0e94 19       		.byte	0x19
+ 3169 0e95 81000000 		.4byte	0x81
+ 3170 0e99 1B       		.uleb128 0x1b
+ 3171 0e9a D9000000 		.4byte	0xd9
+ 3172 0e9e 00       		.byte	0
+ 3173 0e9f 00       		.byte	0
+ 3174              		.section	.debug_abbrev,"",%progbits
+ 3175              	.Ldebug_abbrev0:
+ 3176 0000 01       		.uleb128 0x1
+ 3177 0001 11       		.uleb128 0x11
+ 3178 0002 01       		.byte	0x1
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 64
+
+
+ 3179 0003 25       		.uleb128 0x25
+ 3180 0004 0E       		.uleb128 0xe
+ 3181 0005 13       		.uleb128 0x13
+ 3182 0006 0B       		.uleb128 0xb
+ 3183 0007 03       		.uleb128 0x3
+ 3184 0008 0E       		.uleb128 0xe
+ 3185 0009 1B       		.uleb128 0x1b
+ 3186 000a 0E       		.uleb128 0xe
+ 3187 000b 55       		.uleb128 0x55
+ 3188 000c 17       		.uleb128 0x17
+ 3189 000d 11       		.uleb128 0x11
+ 3190 000e 01       		.uleb128 0x1
+ 3191 000f 10       		.uleb128 0x10
+ 3192 0010 17       		.uleb128 0x17
+ 3193 0011 00       		.byte	0
+ 3194 0012 00       		.byte	0
+ 3195 0013 02       		.uleb128 0x2
+ 3196 0014 24       		.uleb128 0x24
+ 3197 0015 00       		.byte	0
+ 3198 0016 0B       		.uleb128 0xb
+ 3199 0017 0B       		.uleb128 0xb
+ 3200 0018 3E       		.uleb128 0x3e
+ 3201 0019 0B       		.uleb128 0xb
+ 3202 001a 03       		.uleb128 0x3
+ 3203 001b 0E       		.uleb128 0xe
+ 3204 001c 00       		.byte	0
+ 3205 001d 00       		.byte	0
+ 3206 001e 03       		.uleb128 0x3
+ 3207 001f 16       		.uleb128 0x16
+ 3208 0020 00       		.byte	0
+ 3209 0021 03       		.uleb128 0x3
+ 3210 0022 0E       		.uleb128 0xe
+ 3211 0023 3A       		.uleb128 0x3a
+ 3212 0024 0B       		.uleb128 0xb
+ 3213 0025 3B       		.uleb128 0x3b
+ 3214 0026 0B       		.uleb128 0xb
+ 3215 0027 49       		.uleb128 0x49
+ 3216 0028 13       		.uleb128 0x13
+ 3217 0029 00       		.byte	0
+ 3218 002a 00       		.byte	0
+ 3219 002b 04       		.uleb128 0x4
+ 3220 002c 24       		.uleb128 0x24
+ 3221 002d 00       		.byte	0
+ 3222 002e 0B       		.uleb128 0xb
+ 3223 002f 0B       		.uleb128 0xb
+ 3224 0030 3E       		.uleb128 0x3e
+ 3225 0031 0B       		.uleb128 0xb
+ 3226 0032 03       		.uleb128 0x3
+ 3227 0033 08       		.uleb128 0x8
+ 3228 0034 00       		.byte	0
+ 3229 0035 00       		.byte	0
+ 3230 0036 05       		.uleb128 0x5
+ 3231 0037 16       		.uleb128 0x16
+ 3232 0038 00       		.byte	0
+ 3233 0039 03       		.uleb128 0x3
+ 3234 003a 0E       		.uleb128 0xe
+ 3235 003b 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 65
+
+
+ 3236 003c 0B       		.uleb128 0xb
+ 3237 003d 3B       		.uleb128 0x3b
+ 3238 003e 05       		.uleb128 0x5
+ 3239 003f 49       		.uleb128 0x49
+ 3240 0040 13       		.uleb128 0x13
+ 3241 0041 00       		.byte	0
+ 3242 0042 00       		.byte	0
+ 3243 0043 06       		.uleb128 0x6
+ 3244 0044 0F       		.uleb128 0xf
+ 3245 0045 00       		.byte	0
+ 3246 0046 0B       		.uleb128 0xb
+ 3247 0047 0B       		.uleb128 0xb
+ 3248 0048 49       		.uleb128 0x49
+ 3249 0049 13       		.uleb128 0x13
+ 3250 004a 00       		.byte	0
+ 3251 004b 00       		.byte	0
+ 3252 004c 07       		.uleb128 0x7
+ 3253 004d 26       		.uleb128 0x26
+ 3254 004e 00       		.byte	0
+ 3255 004f 49       		.uleb128 0x49
+ 3256 0050 13       		.uleb128 0x13
+ 3257 0051 00       		.byte	0
+ 3258 0052 00       		.byte	0
+ 3259 0053 08       		.uleb128 0x8
+ 3260 0054 2E       		.uleb128 0x2e
+ 3261 0055 01       		.byte	0x1
+ 3262 0056 3F       		.uleb128 0x3f
+ 3263 0057 19       		.uleb128 0x19
+ 3264 0058 03       		.uleb128 0x3
+ 3265 0059 0E       		.uleb128 0xe
+ 3266 005a 3A       		.uleb128 0x3a
+ 3267 005b 0B       		.uleb128 0xb
+ 3268 005c 3B       		.uleb128 0x3b
+ 3269 005d 0B       		.uleb128 0xb
+ 3270 005e 27       		.uleb128 0x27
+ 3271 005f 19       		.uleb128 0x19
+ 3272 0060 49       		.uleb128 0x49
+ 3273 0061 13       		.uleb128 0x13
+ 3274 0062 11       		.uleb128 0x11
+ 3275 0063 01       		.uleb128 0x1
+ 3276 0064 12       		.uleb128 0x12
+ 3277 0065 06       		.uleb128 0x6
+ 3278 0066 40       		.uleb128 0x40
+ 3279 0067 18       		.uleb128 0x18
+ 3280 0068 9742     		.uleb128 0x2117
+ 3281 006a 19       		.uleb128 0x19
+ 3282 006b 01       		.uleb128 0x1
+ 3283 006c 13       		.uleb128 0x13
+ 3284 006d 00       		.byte	0
+ 3285 006e 00       		.byte	0
+ 3286 006f 09       		.uleb128 0x9
+ 3287 0070 05       		.uleb128 0x5
+ 3288 0071 00       		.byte	0
+ 3289 0072 03       		.uleb128 0x3
+ 3290 0073 0E       		.uleb128 0xe
+ 3291 0074 3A       		.uleb128 0x3a
+ 3292 0075 0B       		.uleb128 0xb
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 66
+
+
+ 3293 0076 3B       		.uleb128 0x3b
+ 3294 0077 0B       		.uleb128 0xb
+ 3295 0078 49       		.uleb128 0x49
+ 3296 0079 13       		.uleb128 0x13
+ 3297 007a 02       		.uleb128 0x2
+ 3298 007b 17       		.uleb128 0x17
+ 3299 007c 00       		.byte	0
+ 3300 007d 00       		.byte	0
+ 3301 007e 0A       		.uleb128 0xa
+ 3302 007f 898201   		.uleb128 0x4109
+ 3303 0082 01       		.byte	0x1
+ 3304 0083 11       		.uleb128 0x11
+ 3305 0084 01       		.uleb128 0x1
+ 3306 0085 31       		.uleb128 0x31
+ 3307 0086 13       		.uleb128 0x13
+ 3308 0087 00       		.byte	0
+ 3309 0088 00       		.byte	0
+ 3310 0089 0B       		.uleb128 0xb
+ 3311 008a 8A8201   		.uleb128 0x410a
+ 3312 008d 00       		.byte	0
+ 3313 008e 02       		.uleb128 0x2
+ 3314 008f 18       		.uleb128 0x18
+ 3315 0090 9142     		.uleb128 0x2111
+ 3316 0092 18       		.uleb128 0x18
+ 3317 0093 00       		.byte	0
+ 3318 0094 00       		.byte	0
+ 3319 0095 0C       		.uleb128 0xc
+ 3320 0096 34       		.uleb128 0x34
+ 3321 0097 00       		.byte	0
+ 3322 0098 03       		.uleb128 0x3
+ 3323 0099 0E       		.uleb128 0xe
+ 3324 009a 3A       		.uleb128 0x3a
+ 3325 009b 0B       		.uleb128 0xb
+ 3326 009c 3B       		.uleb128 0x3b
+ 3327 009d 0B       		.uleb128 0xb
+ 3328 009e 49       		.uleb128 0x49
+ 3329 009f 13       		.uleb128 0x13
+ 3330 00a0 02       		.uleb128 0x2
+ 3331 00a1 18       		.uleb128 0x18
+ 3332 00a2 00       		.byte	0
+ 3333 00a3 00       		.byte	0
+ 3334 00a4 0D       		.uleb128 0xd
+ 3335 00a5 0B       		.uleb128 0xb
+ 3336 00a6 01       		.byte	0x1
+ 3337 00a7 11       		.uleb128 0x11
+ 3338 00a8 01       		.uleb128 0x1
+ 3339 00a9 12       		.uleb128 0x12
+ 3340 00aa 06       		.uleb128 0x6
+ 3341 00ab 01       		.uleb128 0x1
+ 3342 00ac 13       		.uleb128 0x13
+ 3343 00ad 00       		.byte	0
+ 3344 00ae 00       		.byte	0
+ 3345 00af 0E       		.uleb128 0xe
+ 3346 00b0 34       		.uleb128 0x34
+ 3347 00b1 00       		.byte	0
+ 3348 00b2 03       		.uleb128 0x3
+ 3349 00b3 0E       		.uleb128 0xe
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 67
+
+
+ 3350 00b4 3A       		.uleb128 0x3a
+ 3351 00b5 0B       		.uleb128 0xb
+ 3352 00b6 3B       		.uleb128 0x3b
+ 3353 00b7 0B       		.uleb128 0xb
+ 3354 00b8 49       		.uleb128 0x49
+ 3355 00b9 13       		.uleb128 0x13
+ 3356 00ba 02       		.uleb128 0x2
+ 3357 00bb 17       		.uleb128 0x17
+ 3358 00bc 00       		.byte	0
+ 3359 00bd 00       		.byte	0
+ 3360 00be 0F       		.uleb128 0xf
+ 3361 00bf 898201   		.uleb128 0x4109
+ 3362 00c2 01       		.byte	0x1
+ 3363 00c3 11       		.uleb128 0x11
+ 3364 00c4 01       		.uleb128 0x1
+ 3365 00c5 31       		.uleb128 0x31
+ 3366 00c6 13       		.uleb128 0x13
+ 3367 00c7 01       		.uleb128 0x1
+ 3368 00c8 13       		.uleb128 0x13
+ 3369 00c9 00       		.byte	0
+ 3370 00ca 00       		.byte	0
+ 3371 00cb 10       		.uleb128 0x10
+ 3372 00cc 01       		.uleb128 0x1
+ 3373 00cd 01       		.byte	0x1
+ 3374 00ce 49       		.uleb128 0x49
+ 3375 00cf 13       		.uleb128 0x13
+ 3376 00d0 01       		.uleb128 0x1
+ 3377 00d1 13       		.uleb128 0x13
+ 3378 00d2 00       		.byte	0
+ 3379 00d3 00       		.byte	0
+ 3380 00d4 11       		.uleb128 0x11
+ 3381 00d5 21       		.uleb128 0x21
+ 3382 00d6 00       		.byte	0
+ 3383 00d7 49       		.uleb128 0x49
+ 3384 00d8 13       		.uleb128 0x13
+ 3385 00d9 2F       		.uleb128 0x2f
+ 3386 00da 0B       		.uleb128 0xb
+ 3387 00db 00       		.byte	0
+ 3388 00dc 00       		.byte	0
+ 3389 00dd 12       		.uleb128 0x12
+ 3390 00de 2E       		.uleb128 0x2e
+ 3391 00df 01       		.byte	0x1
+ 3392 00e0 3F       		.uleb128 0x3f
+ 3393 00e1 19       		.uleb128 0x19
+ 3394 00e2 03       		.uleb128 0x3
+ 3395 00e3 0E       		.uleb128 0xe
+ 3396 00e4 3A       		.uleb128 0x3a
+ 3397 00e5 0B       		.uleb128 0xb
+ 3398 00e6 3B       		.uleb128 0x3b
+ 3399 00e7 0B       		.uleb128 0xb
+ 3400 00e8 27       		.uleb128 0x27
+ 3401 00e9 19       		.uleb128 0x19
+ 3402 00ea 11       		.uleb128 0x11
+ 3403 00eb 01       		.uleb128 0x1
+ 3404 00ec 12       		.uleb128 0x12
+ 3405 00ed 06       		.uleb128 0x6
+ 3406 00ee 40       		.uleb128 0x40
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 68
+
+
+ 3407 00ef 18       		.uleb128 0x18
+ 3408 00f0 9742     		.uleb128 0x2117
+ 3409 00f2 19       		.uleb128 0x19
+ 3410 00f3 01       		.uleb128 0x1
+ 3411 00f4 13       		.uleb128 0x13
+ 3412 00f5 00       		.byte	0
+ 3413 00f6 00       		.byte	0
+ 3414 00f7 13       		.uleb128 0x13
+ 3415 00f8 898201   		.uleb128 0x4109
+ 3416 00fb 00       		.byte	0
+ 3417 00fc 11       		.uleb128 0x11
+ 3418 00fd 01       		.uleb128 0x1
+ 3419 00fe 31       		.uleb128 0x31
+ 3420 00ff 13       		.uleb128 0x13
+ 3421 0100 00       		.byte	0
+ 3422 0101 00       		.byte	0
+ 3423 0102 14       		.uleb128 0x14
+ 3424 0103 2E       		.uleb128 0x2e
+ 3425 0104 01       		.byte	0x1
+ 3426 0105 3F       		.uleb128 0x3f
+ 3427 0106 19       		.uleb128 0x19
+ 3428 0107 03       		.uleb128 0x3
+ 3429 0108 0E       		.uleb128 0xe
+ 3430 0109 3A       		.uleb128 0x3a
+ 3431 010a 0B       		.uleb128 0xb
+ 3432 010b 3B       		.uleb128 0x3b
+ 3433 010c 05       		.uleb128 0x5
+ 3434 010d 27       		.uleb128 0x27
+ 3435 010e 19       		.uleb128 0x19
+ 3436 010f 11       		.uleb128 0x11
+ 3437 0110 01       		.uleb128 0x1
+ 3438 0111 12       		.uleb128 0x12
+ 3439 0112 06       		.uleb128 0x6
+ 3440 0113 40       		.uleb128 0x40
+ 3441 0114 18       		.uleb128 0x18
+ 3442 0115 9742     		.uleb128 0x2117
+ 3443 0117 19       		.uleb128 0x19
+ 3444 0118 01       		.uleb128 0x1
+ 3445 0119 13       		.uleb128 0x13
+ 3446 011a 00       		.byte	0
+ 3447 011b 00       		.byte	0
+ 3448 011c 15       		.uleb128 0x15
+ 3449 011d 05       		.uleb128 0x5
+ 3450 011e 00       		.byte	0
+ 3451 011f 03       		.uleb128 0x3
+ 3452 0120 0E       		.uleb128 0xe
+ 3453 0121 3A       		.uleb128 0x3a
+ 3454 0122 0B       		.uleb128 0xb
+ 3455 0123 3B       		.uleb128 0x3b
+ 3456 0124 05       		.uleb128 0x5
+ 3457 0125 49       		.uleb128 0x49
+ 3458 0126 13       		.uleb128 0x13
+ 3459 0127 02       		.uleb128 0x2
+ 3460 0128 18       		.uleb128 0x18
+ 3461 0129 00       		.byte	0
+ 3462 012a 00       		.byte	0
+ 3463 012b 16       		.uleb128 0x16
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 69
+
+
+ 3464 012c 34       		.uleb128 0x34
+ 3465 012d 00       		.byte	0
+ 3466 012e 03       		.uleb128 0x3
+ 3467 012f 0E       		.uleb128 0xe
+ 3468 0130 3A       		.uleb128 0x3a
+ 3469 0131 0B       		.uleb128 0xb
+ 3470 0132 3B       		.uleb128 0x3b
+ 3471 0133 05       		.uleb128 0x5
+ 3472 0134 49       		.uleb128 0x49
+ 3473 0135 13       		.uleb128 0x13
+ 3474 0136 02       		.uleb128 0x2
+ 3475 0137 18       		.uleb128 0x18
+ 3476 0138 00       		.byte	0
+ 3477 0139 00       		.byte	0
+ 3478 013a 17       		.uleb128 0x17
+ 3479 013b 34       		.uleb128 0x34
+ 3480 013c 00       		.byte	0
+ 3481 013d 03       		.uleb128 0x3
+ 3482 013e 0E       		.uleb128 0xe
+ 3483 013f 3A       		.uleb128 0x3a
+ 3484 0140 0B       		.uleb128 0xb
+ 3485 0141 3B       		.uleb128 0x3b
+ 3486 0142 05       		.uleb128 0x5
+ 3487 0143 49       		.uleb128 0x49
+ 3488 0144 13       		.uleb128 0x13
+ 3489 0145 3F       		.uleb128 0x3f
+ 3490 0146 19       		.uleb128 0x19
+ 3491 0147 3C       		.uleb128 0x3c
+ 3492 0148 19       		.uleb128 0x19
+ 3493 0149 00       		.byte	0
+ 3494 014a 00       		.byte	0
+ 3495 014b 18       		.uleb128 0x18
+ 3496 014c 35       		.uleb128 0x35
+ 3497 014d 00       		.byte	0
+ 3498 014e 49       		.uleb128 0x49
+ 3499 014f 13       		.uleb128 0x13
+ 3500 0150 00       		.byte	0
+ 3501 0151 00       		.byte	0
+ 3502 0152 19       		.uleb128 0x19
+ 3503 0153 34       		.uleb128 0x34
+ 3504 0154 00       		.byte	0
+ 3505 0155 03       		.uleb128 0x3
+ 3506 0156 0E       		.uleb128 0xe
+ 3507 0157 3A       		.uleb128 0x3a
+ 3508 0158 0B       		.uleb128 0xb
+ 3509 0159 3B       		.uleb128 0x3b
+ 3510 015a 0B       		.uleb128 0xb
+ 3511 015b 49       		.uleb128 0x49
+ 3512 015c 13       		.uleb128 0x13
+ 3513 015d 3F       		.uleb128 0x3f
+ 3514 015e 19       		.uleb128 0x19
+ 3515 015f 02       		.uleb128 0x2
+ 3516 0160 18       		.uleb128 0x18
+ 3517 0161 00       		.byte	0
+ 3518 0162 00       		.byte	0
+ 3519 0163 1A       		.uleb128 0x1a
+ 3520 0164 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 70
+
+
+ 3521 0165 01       		.byte	0x1
+ 3522 0166 3F       		.uleb128 0x3f
+ 3523 0167 19       		.uleb128 0x19
+ 3524 0168 03       		.uleb128 0x3
+ 3525 0169 0E       		.uleb128 0xe
+ 3526 016a 3A       		.uleb128 0x3a
+ 3527 016b 0B       		.uleb128 0xb
+ 3528 016c 3B       		.uleb128 0x3b
+ 3529 016d 0B       		.uleb128 0xb
+ 3530 016e 27       		.uleb128 0x27
+ 3531 016f 19       		.uleb128 0x19
+ 3532 0170 49       		.uleb128 0x49
+ 3533 0171 13       		.uleb128 0x13
+ 3534 0172 3C       		.uleb128 0x3c
+ 3535 0173 19       		.uleb128 0x19
+ 3536 0174 01       		.uleb128 0x1
+ 3537 0175 13       		.uleb128 0x13
+ 3538 0176 00       		.byte	0
+ 3539 0177 00       		.byte	0
+ 3540 0178 1B       		.uleb128 0x1b
+ 3541 0179 05       		.uleb128 0x5
+ 3542 017a 00       		.byte	0
+ 3543 017b 49       		.uleb128 0x49
+ 3544 017c 13       		.uleb128 0x13
+ 3545 017d 00       		.byte	0
+ 3546 017e 00       		.byte	0
+ 3547 017f 1C       		.uleb128 0x1c
+ 3548 0180 2E       		.uleb128 0x2e
+ 3549 0181 01       		.byte	0x1
+ 3550 0182 3F       		.uleb128 0x3f
+ 3551 0183 19       		.uleb128 0x19
+ 3552 0184 03       		.uleb128 0x3
+ 3553 0185 0E       		.uleb128 0xe
+ 3554 0186 3A       		.uleb128 0x3a
+ 3555 0187 0B       		.uleb128 0xb
+ 3556 0188 3B       		.uleb128 0x3b
+ 3557 0189 0B       		.uleb128 0xb
+ 3558 018a 27       		.uleb128 0x27
+ 3559 018b 19       		.uleb128 0x19
+ 3560 018c 3C       		.uleb128 0x3c
+ 3561 018d 19       		.uleb128 0x19
+ 3562 018e 01       		.uleb128 0x1
+ 3563 018f 13       		.uleb128 0x13
+ 3564 0190 00       		.byte	0
+ 3565 0191 00       		.byte	0
+ 3566 0192 1D       		.uleb128 0x1d
+ 3567 0193 2E       		.uleb128 0x2e
+ 3568 0194 00       		.byte	0
+ 3569 0195 3F       		.uleb128 0x3f
+ 3570 0196 19       		.uleb128 0x19
+ 3571 0197 03       		.uleb128 0x3
+ 3572 0198 0E       		.uleb128 0xe
+ 3573 0199 3A       		.uleb128 0x3a
+ 3574 019a 0B       		.uleb128 0xb
+ 3575 019b 3B       		.uleb128 0x3b
+ 3576 019c 0B       		.uleb128 0xb
+ 3577 019d 27       		.uleb128 0x27
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 71
+
+
+ 3578 019e 19       		.uleb128 0x19
+ 3579 019f 49       		.uleb128 0x49
+ 3580 01a0 13       		.uleb128 0x13
+ 3581 01a1 3C       		.uleb128 0x3c
+ 3582 01a2 19       		.uleb128 0x19
+ 3583 01a3 00       		.byte	0
+ 3584 01a4 00       		.byte	0
+ 3585 01a5 1E       		.uleb128 0x1e
+ 3586 01a6 2E       		.uleb128 0x2e
+ 3587 01a7 01       		.byte	0x1
+ 3588 01a8 3F       		.uleb128 0x3f
+ 3589 01a9 19       		.uleb128 0x19
+ 3590 01aa 03       		.uleb128 0x3
+ 3591 01ab 0E       		.uleb128 0xe
+ 3592 01ac 3A       		.uleb128 0x3a
+ 3593 01ad 0B       		.uleb128 0xb
+ 3594 01ae 3B       		.uleb128 0x3b
+ 3595 01af 0B       		.uleb128 0xb
+ 3596 01b0 27       		.uleb128 0x27
+ 3597 01b1 19       		.uleb128 0x19
+ 3598 01b2 49       		.uleb128 0x49
+ 3599 01b3 13       		.uleb128 0x13
+ 3600 01b4 3C       		.uleb128 0x3c
+ 3601 01b5 19       		.uleb128 0x19
+ 3602 01b6 00       		.byte	0
+ 3603 01b7 00       		.byte	0
+ 3604 01b8 00       		.byte	0
+ 3605              		.section	.debug_loc,"",%progbits
+ 3606              	.Ldebug_loc0:
+ 3607              	.LLST0:
+ 3608 0000 00000000 		.4byte	.LVL0
+ 3609 0004 07000000 		.4byte	.LVL1-1
+ 3610 0008 0100     		.2byte	0x1
+ 3611 000a 50       		.byte	0x50
+ 3612 000b 07000000 		.4byte	.LVL1-1
+ 3613 000f 16000000 		.4byte	.LFE63
+ 3614 0013 0400     		.2byte	0x4
+ 3615 0015 F3       		.byte	0xf3
+ 3616 0016 01       		.uleb128 0x1
+ 3617 0017 50       		.byte	0x50
+ 3618 0018 9F       		.byte	0x9f
+ 3619 0019 00000000 		.4byte	0
+ 3620 001d 00000000 		.4byte	0
+ 3621              	.LLST1:
+ 3622 0021 00000000 		.4byte	.LVL2
+ 3623 0025 0A000000 		.4byte	.LVL3
+ 3624 0029 0100     		.2byte	0x1
+ 3625 002b 50       		.byte	0x50
+ 3626 002c 0A000000 		.4byte	.LVL3
+ 3627 0030 36000000 		.4byte	.LVL10
+ 3628 0034 0100     		.2byte	0x1
+ 3629 0036 54       		.byte	0x54
+ 3630 0037 36000000 		.4byte	.LVL10
+ 3631 003b 3F000000 		.4byte	.LVL12-1
+ 3632 003f 0100     		.2byte	0x1
+ 3633 0041 50       		.byte	0x50
+ 3634 0042 3F000000 		.4byte	.LVL12-1
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 72
+
+
+ 3635 0046 58000000 		.4byte	.LFE64
+ 3636 004a 0100     		.2byte	0x1
+ 3637 004c 54       		.byte	0x54
+ 3638 004d 00000000 		.4byte	0
+ 3639 0051 00000000 		.4byte	0
+ 3640              	.LLST2:
+ 3641 0055 00000000 		.4byte	.LVL2
+ 3642 0059 0C000000 		.4byte	.LVL4
+ 3643 005d 0100     		.2byte	0x1
+ 3644 005f 51       		.byte	0x51
+ 3645 0060 0C000000 		.4byte	.LVL4
+ 3646 0064 36000000 		.4byte	.LVL10
+ 3647 0068 0400     		.2byte	0x4
+ 3648 006a F3       		.byte	0xf3
+ 3649 006b 01       		.uleb128 0x1
+ 3650 006c 51       		.byte	0x51
+ 3651 006d 9F       		.byte	0x9f
+ 3652 006e 36000000 		.4byte	.LVL10
+ 3653 0072 3C000000 		.4byte	.LVL11
+ 3654 0076 0100     		.2byte	0x1
+ 3655 0078 51       		.byte	0x51
+ 3656 0079 3C000000 		.4byte	.LVL11
+ 3657 007d 58000000 		.4byte	.LFE64
+ 3658 0081 0400     		.2byte	0x4
+ 3659 0083 F3       		.byte	0xf3
+ 3660 0084 01       		.uleb128 0x1
+ 3661 0085 51       		.byte	0x51
+ 3662 0086 9F       		.byte	0x9f
+ 3663 0087 00000000 		.4byte	0
+ 3664 008b 00000000 		.4byte	0
+ 3665              	.LLST3:
+ 3666 008f 10000000 		.4byte	.LVL5
+ 3667 0093 14000000 		.4byte	.LVL6
+ 3668 0097 0200     		.2byte	0x2
+ 3669 0099 30       		.byte	0x30
+ 3670 009a 9F       		.byte	0x9f
+ 3671 009b 14000000 		.4byte	.LVL6
+ 3672 009f 16000000 		.4byte	.LVL7
+ 3673 00a3 0100     		.2byte	0x1
+ 3674 00a5 53       		.byte	0x53
+ 3675 00a6 18000000 		.4byte	.LVL8
+ 3676 00aa 2C000000 		.4byte	.LVL9
+ 3677 00ae 0100     		.2byte	0x1
+ 3678 00b0 53       		.byte	0x53
+ 3679 00b1 00000000 		.4byte	0
+ 3680 00b5 00000000 		.4byte	0
+ 3681              	.LLST4:
+ 3682 00b9 40000000 		.4byte	.LVL12
+ 3683 00bd 42000000 		.4byte	.LVL13
+ 3684 00c1 0100     		.2byte	0x1
+ 3685 00c3 50       		.byte	0x50
+ 3686 00c4 46000000 		.4byte	.LVL14
+ 3687 00c8 4A000000 		.4byte	.LVL15
+ 3688 00cc 0100     		.2byte	0x1
+ 3689 00ce 51       		.byte	0x51
+ 3690 00cf 00000000 		.4byte	0
+ 3691 00d3 00000000 		.4byte	0
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 73
+
+
+ 3692              	.LLST5:
+ 3693 00d7 00000000 		.4byte	.LVL18
+ 3694 00db 09000000 		.4byte	.LVL19-1
+ 3695 00df 0100     		.2byte	0x1
+ 3696 00e1 50       		.byte	0x50
+ 3697 00e2 09000000 		.4byte	.LVL19-1
+ 3698 00e6 24000000 		.4byte	.LVL22
+ 3699 00ea 0100     		.2byte	0x1
+ 3700 00ec 55       		.byte	0x55
+ 3701 00ed 24000000 		.4byte	.LVL22
+ 3702 00f1 28000000 		.4byte	.LFE65
+ 3703 00f5 0400     		.2byte	0x4
+ 3704 00f7 F3       		.byte	0xf3
+ 3705 00f8 01       		.uleb128 0x1
+ 3706 00f9 50       		.byte	0x50
+ 3707 00fa 9F       		.byte	0x9f
+ 3708 00fb 00000000 		.4byte	0
+ 3709 00ff 00000000 		.4byte	0
+ 3710              	.LLST6:
+ 3711 0103 00000000 		.4byte	.LVL18
+ 3712 0107 09000000 		.4byte	.LVL19-1
+ 3713 010b 0100     		.2byte	0x1
+ 3714 010d 51       		.byte	0x51
+ 3715 010e 09000000 		.4byte	.LVL19-1
+ 3716 0112 28000000 		.4byte	.LFE65
+ 3717 0116 0400     		.2byte	0x4
+ 3718 0118 F3       		.byte	0xf3
+ 3719 0119 01       		.uleb128 0x1
+ 3720 011a 51       		.byte	0x51
+ 3721 011b 9F       		.byte	0x9f
+ 3722 011c 00000000 		.4byte	0
+ 3723 0120 00000000 		.4byte	0
+ 3724              	.LLST7:
+ 3725 0124 00000000 		.4byte	.LVL23
+ 3726 0128 08000000 		.4byte	.LVL25
+ 3727 012c 0100     		.2byte	0x1
+ 3728 012e 50       		.byte	0x50
+ 3729 012f 08000000 		.4byte	.LVL25
+ 3730 0133 0E000000 		.4byte	.LVL27
+ 3731 0137 0100     		.2byte	0x1
+ 3732 0139 56       		.byte	0x56
+ 3733 013a 0E000000 		.4byte	.LVL27
+ 3734 013e 90000000 		.4byte	.LFE66
+ 3735 0142 0400     		.2byte	0x4
+ 3736 0144 F3       		.byte	0xf3
+ 3737 0145 01       		.uleb128 0x1
+ 3738 0146 50       		.byte	0x50
+ 3739 0147 9F       		.byte	0x9f
+ 3740 0148 00000000 		.4byte	0
+ 3741 014c 00000000 		.4byte	0
+ 3742              	.LLST8:
+ 3743 0150 06000000 		.4byte	.LVL24
+ 3744 0154 08000000 		.4byte	.LVL25
+ 3745 0158 0100     		.2byte	0x1
+ 3746 015a 50       		.byte	0x50
+ 3747 015b 08000000 		.4byte	.LVL25
+ 3748 015f 86000000 		.4byte	.LVL48
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 74
+
+
+ 3749 0163 0100     		.2byte	0x1
+ 3750 0165 56       		.byte	0x56
+ 3751 0166 00000000 		.4byte	0
+ 3752 016a 00000000 		.4byte	0
+ 3753              	.LLST9:
+ 3754 016e 06000000 		.4byte	.LVL24
+ 3755 0172 08000000 		.4byte	.LVL25
+ 3756 0176 0100     		.2byte	0x1
+ 3757 0178 50       		.byte	0x50
+ 3758 0179 08000000 		.4byte	.LVL25
+ 3759 017d 0E000000 		.4byte	.LVL27
+ 3760 0181 0100     		.2byte	0x1
+ 3761 0183 56       		.byte	0x56
+ 3762 0184 0E000000 		.4byte	.LVL27
+ 3763 0188 86000000 		.4byte	.LVL48
+ 3764 018c 0100     		.2byte	0x1
+ 3765 018e 55       		.byte	0x55
+ 3766 018f 00000000 		.4byte	0
+ 3767 0193 00000000 		.4byte	0
+ 3768              	.LLST10:
+ 3769 0197 0E000000 		.4byte	.LVL27
+ 3770 019b 12000000 		.4byte	.LVL28
+ 3771 019f 0200     		.2byte	0x2
+ 3772 01a1 30       		.byte	0x30
+ 3773 01a2 9F       		.byte	0x9f
+ 3774 01a3 12000000 		.4byte	.LVL28
+ 3775 01a7 86000000 		.4byte	.LVL48
+ 3776 01ab 0100     		.2byte	0x1
+ 3777 01ad 57       		.byte	0x57
+ 3778 01ae 00000000 		.4byte	0
+ 3779 01b2 00000000 		.4byte	0
+ 3780              	.LLST11:
+ 3781 01b6 26000000 		.4byte	.LVL31
+ 3782 01ba 2A000000 		.4byte	.LVL32
+ 3783 01be 0200     		.2byte	0x2
+ 3784 01c0 30       		.byte	0x30
+ 3785 01c1 9F       		.byte	0x9f
+ 3786 01c2 2A000000 		.4byte	.LVL32
+ 3787 01c6 4C000000 		.4byte	.LVL38
+ 3788 01ca 0100     		.2byte	0x1
+ 3789 01cc 54       		.byte	0x54
+ 3790 01cd 4C000000 		.4byte	.LVL38
+ 3791 01d1 50000000 		.4byte	.LVL39
+ 3792 01d5 0200     		.2byte	0x2
+ 3793 01d7 30       		.byte	0x30
+ 3794 01d8 9F       		.byte	0x9f
+ 3795 01d9 50000000 		.4byte	.LVL39
+ 3796 01dd 76000000 		.4byte	.LVL46
+ 3797 01e1 0100     		.2byte	0x1
+ 3798 01e3 54       		.byte	0x54
+ 3799 01e4 00000000 		.4byte	0
+ 3800 01e8 00000000 		.4byte	0
+ 3801              	.LLST12:
+ 3802 01ec 56000000 		.4byte	.LVL40
+ 3803 01f0 65000000 		.4byte	.LVL42-1
+ 3804 01f4 0100     		.2byte	0x1
+ 3805 01f6 50       		.byte	0x50
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 75
+
+
+ 3806 01f7 00000000 		.4byte	0
+ 3807 01fb 00000000 		.4byte	0
+ 3808              	.LLST13:
+ 3809 01ff 00000000 		.4byte	.LVL49
+ 3810 0203 08000000 		.4byte	.LVL50
+ 3811 0207 0100     		.2byte	0x1
+ 3812 0209 50       		.byte	0x50
+ 3813 020a 08000000 		.4byte	.LVL50
+ 3814 020e 46000000 		.4byte	.LVL61
+ 3815 0212 0100     		.2byte	0x1
+ 3816 0214 54       		.byte	0x54
+ 3817 0215 00000000 		.4byte	0
+ 3818 0219 00000000 		.4byte	0
+ 3819              	.LLST14:
+ 3820 021d 14000000 		.4byte	.LVL53
+ 3821 0221 46000000 		.4byte	.LVL61
+ 3822 0225 0100     		.2byte	0x1
+ 3823 0227 55       		.byte	0x55
+ 3824 0228 00000000 		.4byte	0
+ 3825 022c 00000000 		.4byte	0
+ 3826              	.LLST15:
+ 3827 0230 00000000 		.4byte	.LVL62
+ 3828 0234 08000000 		.4byte	.LVL63
+ 3829 0238 0100     		.2byte	0x1
+ 3830 023a 50       		.byte	0x50
+ 3831 023b 08000000 		.4byte	.LVL63
+ 3832 023f 42000000 		.4byte	.LVL73
+ 3833 0243 0100     		.2byte	0x1
+ 3834 0245 54       		.byte	0x54
+ 3835 0246 00000000 		.4byte	0
+ 3836 024a 00000000 		.4byte	0
+ 3837              	.LLST16:
+ 3838 024e 26000000 		.4byte	.LVL68
+ 3839 0252 2B000000 		.4byte	.LVL69-1
+ 3840 0256 0100     		.2byte	0x1
+ 3841 0258 50       		.byte	0x50
+ 3842 0259 00000000 		.4byte	0
+ 3843 025d 00000000 		.4byte	0
+ 3844              	.LLST17:
+ 3845 0261 00000000 		.4byte	.LVL74
+ 3846 0265 08000000 		.4byte	.LVL75
+ 3847 0269 0100     		.2byte	0x1
+ 3848 026b 50       		.byte	0x50
+ 3849 026c 08000000 		.4byte	.LVL75
+ 3850 0270 42000000 		.4byte	.LVL85
+ 3851 0274 0100     		.2byte	0x1
+ 3852 0276 54       		.byte	0x54
+ 3853 0277 00000000 		.4byte	0
+ 3854 027b 00000000 		.4byte	0
+ 3855              	.LLST18:
+ 3856 027f 26000000 		.4byte	.LVL80
+ 3857 0283 2B000000 		.4byte	.LVL81-1
+ 3858 0287 0100     		.2byte	0x1
+ 3859 0289 50       		.byte	0x50
+ 3860 028a 00000000 		.4byte	0
+ 3861 028e 00000000 		.4byte	0
+ 3862              	.LLST19:
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 76
+
+
+ 3863 0292 00000000 		.4byte	.LVL86
+ 3864 0296 0A000000 		.4byte	.LVL87
+ 3865 029a 0100     		.2byte	0x1
+ 3866 029c 50       		.byte	0x50
+ 3867 029d 0A000000 		.4byte	.LVL87
+ 3868 02a1 3C000000 		.4byte	.LVL95
+ 3869 02a5 0100     		.2byte	0x1
+ 3870 02a7 55       		.byte	0x55
+ 3871 02a8 3C000000 		.4byte	.LVL95
+ 3872 02ac 44000000 		.4byte	.LFE70
+ 3873 02b0 0400     		.2byte	0x4
+ 3874 02b2 F3       		.byte	0xf3
+ 3875 02b3 01       		.uleb128 0x1
+ 3876 02b4 50       		.byte	0x50
+ 3877 02b5 9F       		.byte	0x9f
+ 3878 02b6 00000000 		.4byte	0
+ 3879 02ba 00000000 		.4byte	0
+ 3880              	.LLST20:
+ 3881 02be 00000000 		.4byte	.LVL86
+ 3882 02c2 0D000000 		.4byte	.LVL88-1
+ 3883 02c6 0100     		.2byte	0x1
+ 3884 02c8 51       		.byte	0x51
+ 3885 02c9 0D000000 		.4byte	.LVL88-1
+ 3886 02cd 3C000000 		.4byte	.LVL95
+ 3887 02d1 0100     		.2byte	0x1
+ 3888 02d3 54       		.byte	0x54
+ 3889 02d4 3C000000 		.4byte	.LVL95
+ 3890 02d8 44000000 		.4byte	.LFE70
+ 3891 02dc 0400     		.2byte	0x4
+ 3892 02de F3       		.byte	0xf3
+ 3893 02df 01       		.uleb128 0x1
+ 3894 02e0 51       		.byte	0x51
+ 3895 02e1 9F       		.byte	0x9f
+ 3896 02e2 00000000 		.4byte	0
+ 3897 02e6 00000000 		.4byte	0
+ 3898              	.LLST21:
+ 3899 02ea 00000000 		.4byte	.LVL96
+ 3900 02ee 0A000000 		.4byte	.LVL97
+ 3901 02f2 0100     		.2byte	0x1
+ 3902 02f4 50       		.byte	0x50
+ 3903 02f5 0A000000 		.4byte	.LVL97
+ 3904 02f9 3C000000 		.4byte	.LVL105
+ 3905 02fd 0100     		.2byte	0x1
+ 3906 02ff 55       		.byte	0x55
+ 3907 0300 3C000000 		.4byte	.LVL105
+ 3908 0304 44000000 		.4byte	.LFE71
+ 3909 0308 0400     		.2byte	0x4
+ 3910 030a F3       		.byte	0xf3
+ 3911 030b 01       		.uleb128 0x1
+ 3912 030c 50       		.byte	0x50
+ 3913 030d 9F       		.byte	0x9f
+ 3914 030e 00000000 		.4byte	0
+ 3915 0312 00000000 		.4byte	0
+ 3916              	.LLST22:
+ 3917 0316 00000000 		.4byte	.LVL96
+ 3918 031a 0D000000 		.4byte	.LVL98-1
+ 3919 031e 0100     		.2byte	0x1
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 77
+
+
+ 3920 0320 51       		.byte	0x51
+ 3921 0321 0D000000 		.4byte	.LVL98-1
+ 3922 0325 44000000 		.4byte	.LFE71
+ 3923 0329 0400     		.2byte	0x4
+ 3924 032b F3       		.byte	0xf3
+ 3925 032c 01       		.uleb128 0x1
+ 3926 032d 51       		.byte	0x51
+ 3927 032e 9F       		.byte	0x9f
+ 3928 032f 00000000 		.4byte	0
+ 3929 0333 00000000 		.4byte	0
+ 3930              	.LLST23:
+ 3931 0337 00000000 		.4byte	.LVL106
+ 3932 033b 0A000000 		.4byte	.LVL107
+ 3933 033f 0100     		.2byte	0x1
+ 3934 0341 50       		.byte	0x50
+ 3935 0342 0A000000 		.4byte	.LVL107
+ 3936 0346 3C000000 		.4byte	.LVL115
+ 3937 034a 0100     		.2byte	0x1
+ 3938 034c 55       		.byte	0x55
+ 3939 034d 3C000000 		.4byte	.LVL115
+ 3940 0351 44000000 		.4byte	.LFE72
+ 3941 0355 0400     		.2byte	0x4
+ 3942 0357 F3       		.byte	0xf3
+ 3943 0358 01       		.uleb128 0x1
+ 3944 0359 50       		.byte	0x50
+ 3945 035a 9F       		.byte	0x9f
+ 3946 035b 00000000 		.4byte	0
+ 3947 035f 00000000 		.4byte	0
+ 3948              	.LLST24:
+ 3949 0363 00000000 		.4byte	.LVL106
+ 3950 0367 0D000000 		.4byte	.LVL108-1
+ 3951 036b 0100     		.2byte	0x1
+ 3952 036d 51       		.byte	0x51
+ 3953 036e 0D000000 		.4byte	.LVL108-1
+ 3954 0372 44000000 		.4byte	.LFE72
+ 3955 0376 0400     		.2byte	0x4
+ 3956 0378 F3       		.byte	0xf3
+ 3957 0379 01       		.uleb128 0x1
+ 3958 037a 51       		.byte	0x51
+ 3959 037b 9F       		.byte	0x9f
+ 3960 037c 00000000 		.4byte	0
+ 3961 0380 00000000 		.4byte	0
+ 3962              	.LLST25:
+ 3963 0384 00000000 		.4byte	.LVL116
+ 3964 0388 04000000 		.4byte	.LVL117
+ 3965 038c 0100     		.2byte	0x1
+ 3966 038e 50       		.byte	0x50
+ 3967 038f 04000000 		.4byte	.LVL117
+ 3968 0393 10000000 		.4byte	.LFE73
+ 3969 0397 0400     		.2byte	0x4
+ 3970 0399 F3       		.byte	0xf3
+ 3971 039a 01       		.uleb128 0x1
+ 3972 039b 50       		.byte	0x50
+ 3973 039c 9F       		.byte	0x9f
+ 3974 039d 00000000 		.4byte	0
+ 3975 03a1 00000000 		.4byte	0
+ 3976              		.section	.debug_aranges,"",%progbits
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 78
+
+
+ 3977 0000 7C000000 		.4byte	0x7c
+ 3978 0004 0200     		.2byte	0x2
+ 3979 0006 00000000 		.4byte	.Ldebug_info0
+ 3980 000a 04       		.byte	0x4
+ 3981 000b 00       		.byte	0
+ 3982 000c 0000     		.2byte	0
+ 3983 000e 0000     		.2byte	0
+ 3984 0010 00000000 		.4byte	.LFB63
+ 3985 0014 16000000 		.4byte	.LFE63-.LFB63
+ 3986 0018 00000000 		.4byte	.LFB64
+ 3987 001c 58000000 		.4byte	.LFE64-.LFB64
+ 3988 0020 00000000 		.4byte	.LFB65
+ 3989 0024 28000000 		.4byte	.LFE65-.LFB65
+ 3990 0028 00000000 		.4byte	.LFB66
+ 3991 002c 90000000 		.4byte	.LFE66-.LFB66
+ 3992 0030 00000000 		.4byte	.LFB67
+ 3993 0034 50000000 		.4byte	.LFE67-.LFB67
+ 3994 0038 00000000 		.4byte	.LFB68
+ 3995 003c 4C000000 		.4byte	.LFE68-.LFB68
+ 3996 0040 00000000 		.4byte	.LFB69
+ 3997 0044 4C000000 		.4byte	.LFE69-.LFB69
+ 3998 0048 00000000 		.4byte	.LFB70
+ 3999 004c 44000000 		.4byte	.LFE70-.LFB70
+ 4000 0050 00000000 		.4byte	.LFB71
+ 4001 0054 44000000 		.4byte	.LFE71-.LFB71
+ 4002 0058 00000000 		.4byte	.LFB72
+ 4003 005c 44000000 		.4byte	.LFE72-.LFB72
+ 4004 0060 00000000 		.4byte	.LFB73
+ 4005 0064 10000000 		.4byte	.LFE73-.LFB73
+ 4006 0068 00000000 		.4byte	.LFB74
+ 4007 006c 0C000000 		.4byte	.LFE74-.LFB74
+ 4008 0070 00000000 		.4byte	.LFB75
+ 4009 0074 08020000 		.4byte	.LFE75-.LFB75
+ 4010 0078 00000000 		.4byte	0
+ 4011 007c 00000000 		.4byte	0
+ 4012              		.section	.debug_ranges,"",%progbits
+ 4013              	.Ldebug_ranges0:
+ 4014 0000 00000000 		.4byte	.LFB63
+ 4015 0004 16000000 		.4byte	.LFE63
+ 4016 0008 00000000 		.4byte	.LFB64
+ 4017 000c 58000000 		.4byte	.LFE64
+ 4018 0010 00000000 		.4byte	.LFB65
+ 4019 0014 28000000 		.4byte	.LFE65
+ 4020 0018 00000000 		.4byte	.LFB66
+ 4021 001c 90000000 		.4byte	.LFE66
+ 4022 0020 00000000 		.4byte	.LFB67
+ 4023 0024 50000000 		.4byte	.LFE67
+ 4024 0028 00000000 		.4byte	.LFB68
+ 4025 002c 4C000000 		.4byte	.LFE68
+ 4026 0030 00000000 		.4byte	.LFB69
+ 4027 0034 4C000000 		.4byte	.LFE69
+ 4028 0038 00000000 		.4byte	.LFB70
+ 4029 003c 44000000 		.4byte	.LFE70
+ 4030 0040 00000000 		.4byte	.LFB71
+ 4031 0044 44000000 		.4byte	.LFE71
+ 4032 0048 00000000 		.4byte	.LFB72
+ 4033 004c 44000000 		.4byte	.LFE72
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 79
+
+
+ 4034 0050 00000000 		.4byte	.LFB73
+ 4035 0054 10000000 		.4byte	.LFE73
+ 4036 0058 00000000 		.4byte	.LFB74
+ 4037 005c 0C000000 		.4byte	.LFE74
+ 4038 0060 00000000 		.4byte	.LFB75
+ 4039 0064 08020000 		.4byte	.LFE75
+ 4040 0068 00000000 		.4byte	0
+ 4041 006c 00000000 		.4byte	0
+ 4042              		.section	.debug_line,"",%progbits
+ 4043              	.Ldebug_line0:
+ 4044 0000 62030000 		.section	.debug_str,"MS",%progbits,1
+ 4044      02008B01 
+ 4044      00000201 
+ 4044      FB0E0D00 
+ 4044      01010101 
+ 4045              	.LASF64:
+ 4046 0000 62797465 		.ascii	"byteToString\000"
+ 4046      546F5374 
+ 4046      72696E67 
+ 4046      00
+ 4047              	.LASF72:
+ 4048 000d 67657453 		.ascii	"getSingleChar\000"
+ 4048      696E676C 
+ 4048      65436861 
+ 4048      7200
+ 4049              	.LASF58:
+ 4050 001b 77726974 		.ascii	"writeLineNoLF\000"
+ 4050      654C696E 
+ 4050      654E6F4C 
+ 4050      4600
+ 4051              	.LASF2:
+ 4052 0029 73686F72 		.ascii	"short int\000"
+ 4052      7420696E 
+ 4052      7400
+ 4053              	.LASF19:
+ 4054 0033 73697A65 		.ascii	"sizetype\000"
+ 4054      74797065 
+ 4054      00
+ 4055              	.LASF30:
+ 4056 003c 64756D70 		.ascii	"dumpStart\000"
+ 4056      53746172 
+ 4056      7400
+ 4057              	.LASF48:
+ 4058 0046 676F4164 		.ascii	"goAddress\000"
+ 4058      64726573 
+ 4058      7300
+ 4059              	.LASF17:
+ 4060 0050 63686172 		.ascii	"char8\000"
+ 4060      3800
+ 4061              	.LASF27:
+ 4062 0056 63686563 		.ascii	"checkParmCount\000"
+ 4062      6B506172 
+ 4062      6D436F75 
+ 4062      6E7400
+ 4063              	.LASF51:
+ 4064 0065 41524D5F 		.ascii	"ARM_Monitor\000"
+ 4064      4D6F6E69 
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 80
+
+
+ 4064      746F7200 
+ 4065              	.LASF63:
+ 4066 0071 72656164 		.ascii	"readLong\000"
+ 4066      4C6F6E67 
+ 4066      00
+ 4067              	.LASF36:
+ 4068 007a 64756D70 		.ascii	"dumpMem\000"
+ 4068      4D656D00 
+ 4069              	.LASF61:
+ 4070 0082 6F757453 		.ascii	"outSingleChar\000"
+ 4070      696E676C 
+ 4070      65436861 
+ 4070      7200
+ 4071              	.LASF38:
+ 4072 0090 72656164 		.ascii	"readAddress\000"
+ 4072      41646472 
+ 4072      65737300 
+ 4073              	.LASF12:
+ 4074 009c 75696E74 		.ascii	"uint16\000"
+ 4074      313600
+ 4075              	.LASF57:
+ 4076 00a3 73747269 		.ascii	"stringToLong\000"
+ 4076      6E67546F 
+ 4076      4C6F6E67 
+ 4076      00
+ 4077              	.LASF11:
+ 4078 00b0 75696E74 		.ascii	"uint8\000"
+ 4078      3800
+ 4079              	.LASF49:
+ 4080 00b6 64697361 		.ascii	"disassemble\000"
+ 4080      7373656D 
+ 4080      626C6500 
+ 4081              	.LASF67:
+ 4082 00c2 77726974 		.ascii	"writeLong\000"
+ 4082      654C6F6E 
+ 4082      6700
+ 4083              	.LASF15:
+ 4084 00cc 666C6F61 		.ascii	"float\000"
+ 4084      7400
+ 4085              	.LASF70:
+ 4086 00d2 41524D5F 		.ascii	"ARM_Monitor.c\000"
+ 4086      4D6F6E69 
+ 4086      746F722E 
+ 4086      6300
+ 4087              	.LASF6:
+ 4088 00e0 6C6F6E67 		.ascii	"long long int\000"
+ 4088      206C6F6E 
+ 4088      6720696E 
+ 4088      7400
+ 4089              	.LASF14:
+ 4090 00ee 696E7438 		.ascii	"int8\000"
+ 4090      00
+ 4091              	.LASF37:
+ 4092 00f3 72656164 		.ascii	"readMemByte\000"
+ 4092      4D656D42 
+ 4092      79746500 
+ 4093              	.LASF4:
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 81
+
+
+ 4094 00ff 6C6F6E67 		.ascii	"long int\000"
+ 4094      20696E74 
+ 4094      00
+ 4095              	.LASF29:
+ 4096 0108 65787065 		.ascii	"expectedParmCount\000"
+ 4096      63746564 
+ 4096      5061726D 
+ 4096      436F756E 
+ 4096      7400
+ 4097              	.LASF44:
+ 4098 011a 77726974 		.ascii	"writeData\000"
+ 4098      65446174 
+ 4098      6100
+ 4099              	.LASF21:
+ 4100 0124 65787472 		.ascii	"extractParm\000"
+ 4100      61637450 
+ 4100      61726D00 
+ 4101              	.LASF55:
+ 4102 0130 66696E64 		.ascii	"findInString\000"
+ 4102      496E5374 
+ 4102      72696E67 
+ 4102      00
+ 4103              	.LASF32:
+ 4104 013d 64756D70 		.ascii	"dumpByteAddress\000"
+ 4104      42797465 
+ 4104      41646472 
+ 4104      65737300 
+ 4105              	.LASF71:
+ 4106 014d 433A5C55 		.ascii	"C:\\Users\\doug_000\\Documents\\GitHub\\ODAS\\ODAS-"
+ 4106      73657273 
+ 4106      5C646F75 
+ 4106      675F3030 
+ 4106      305C446F 
+ 4107 017a 50534F43 		.ascii	"PSOC5\\Projects\\ODAS-PSOC5-Serial-01.cydsn\000"
+ 4107      355C5072 
+ 4107      6F6A6563 
+ 4107      74735C4F 
+ 4107      4441532D 
+ 4108              	.LASF66:
+ 4109 01a4 73686F72 		.ascii	"shortToString\000"
+ 4109      74546F53 
+ 4109      7472696E 
+ 4109      6700
+ 4110              	.LASF50:
+ 4111 01b2 64697361 		.ascii	"disassembleAddress\000"
+ 4111      7373656D 
+ 4111      626C6541 
+ 4111      64647265 
+ 4111      737300
+ 4112              	.LASF28:
+ 4113 01c5 72784275 		.ascii	"rxBuff\000"
+ 4113      666600
+ 4114              	.LASF1:
+ 4115 01cc 756E7369 		.ascii	"unsigned char\000"
+ 4115      676E6564 
+ 4115      20636861 
+ 4115      7200
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 82
+
+
+ 4116              	.LASF41:
+ 4117 01da 72656164 		.ascii	"readMemLong\000"
+ 4117      4D656D4C 
+ 4117      6F6E6700 
+ 4118              	.LASF62:
+ 4119 01e6 6C6F6E67 		.ascii	"longToString\000"
+ 4119      546F5374 
+ 4119      72696E67 
+ 4119      00
+ 4120              	.LASF0:
+ 4121 01f3 7369676E 		.ascii	"signed char\000"
+ 4121      65642063 
+ 4121      68617200 
+ 4122              	.LASF7:
+ 4123 01ff 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 4123      206C6F6E 
+ 4123      6720756E 
+ 4123      7369676E 
+ 4123      65642069 
+ 4124              	.LASF8:
+ 4125 0216 756E7369 		.ascii	"unsigned int\000"
+ 4125      676E6564 
+ 4125      20696E74 
+ 4125      00
+ 4126              	.LASF43:
+ 4127 0223 77726974 		.ascii	"writeAddress\000"
+ 4127      65416464 
+ 4127      72657373 
+ 4127      00
+ 4128              	.LASF47:
+ 4129 0230 676F436F 		.ascii	"goCommand\000"
+ 4129      6D6D616E 
+ 4129      6400
+ 4130              	.LASF39:
+ 4131 023a 76616C52 		.ascii	"valRead\000"
+ 4131      65616400 
+ 4132              	.LASF3:
+ 4133 0242 73686F72 		.ascii	"short unsigned int\000"
+ 4133      7420756E 
+ 4133      7369676E 
+ 4133      65642069 
+ 4133      6E7400
+ 4134              	.LASF34:
+ 4135 0255 6C696E65 		.ascii	"lineOff\000"
+ 4135      4F666600 
+ 4136              	.LASF18:
+ 4137 025d 63686172 		.ascii	"char\000"
+ 4137      00
+ 4138              	.LASF20:
+ 4139 0262 636F756E 		.ascii	"countParms\000"
+ 4139      74506172 
+ 4139      6D7300
+ 4140              	.LASF69:
+ 4141 026d 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 4141      4320342E 
+ 4141      392E3320 
+ 4141      32303135 
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 83
+
+
+ 4141      30333033 
+ 4142 02a0 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 4142      20726576 
+ 4142      6973696F 
+ 4142      6E203232 
+ 4142      31323230 
+ 4143 02d3 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 4143      66756E63 
+ 4143      74696F6E 
+ 4143      2D736563 
+ 4143      74696F6E 
+ 4144              	.LASF22:
+ 4145 02fb 73747269 		.ascii	"stringToParse\000"
+ 4145      6E67546F 
+ 4145      50617273 
+ 4145      6500
+ 4146              	.LASF10:
+ 4147 0309 696E7433 		.ascii	"int32_t\000"
+ 4147      325F7400 
+ 4148              	.LASF56:
+ 4149 0311 73747263 		.ascii	"strcpy\000"
+ 4149      707900
+ 4150              	.LASF40:
+ 4151 0318 72656164 		.ascii	"readMemShort\000"
+ 4151      4D656D53 
+ 4151      686F7274 
+ 4151      00
+ 4152              	.LASF52:
+ 4153 0325 72784275 		.ascii	"rxBufferPtr\000"
+ 4153      66666572 
+ 4153      50747200 
+ 4154              	.LASF54:
+ 4155 0331 6D795374 		.ascii	"myStringInMemory\000"
+ 4155      72696E67 
+ 4155      496E4D65 
+ 4155      6D6F7279 
+ 4155      00
+ 4156              	.LASF13:
+ 4157 0342 75696E74 		.ascii	"uint32\000"
+ 4157      333200
+ 4158              	.LASF5:
+ 4159 0349 6C6F6E67 		.ascii	"long unsigned int\000"
+ 4159      20756E73 
+ 4159      69676E65 
+ 4159      6420696E 
+ 4159      7400
+ 4160              	.LASF33:
+ 4161 035b 6C696E65 		.ascii	"lineOffRow\000"
+ 4161      4F666652 
+ 4161      6F7700
+ 4162              	.LASF16:
+ 4163 0366 646F7562 		.ascii	"double\000"
+ 4163      6C6500
+ 4164              	.LASF35:
+ 4165 036d 72644368 		.ascii	"rdChar\000"
+ 4165      617200
+ 4166              	.LASF26:
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 84
+
+
+ 4167 0374 7061726D 		.ascii	"parmOffset\000"
+ 4167      4F666673 
+ 4167      657400
+ 4168              	.LASF9:
+ 4169 037f 5F5F696E 		.ascii	"__int32_t\000"
+ 4169      7433325F 
+ 4169      7400
+ 4170              	.LASF23:
+ 4171 0389 7061726D 		.ascii	"parmNumber\000"
+ 4171      4E756D62 
+ 4171      657200
+ 4172              	.LASF42:
+ 4173 0394 77726974 		.ascii	"writeMemLong\000"
+ 4173      654D656D 
+ 4173      4C6F6E67 
+ 4173      00
+ 4174              	.LASF60:
+ 4175 03a1 72656164 		.ascii	"readByte\000"
+ 4175      42797465 
+ 4175      00
+ 4176              	.LASF68:
+ 4177 03aa 72656164 		.ascii	"readLine\000"
+ 4177      4C696E65 
+ 4177      00
+ 4178              	.LASF24:
+ 4179 03b3 6E756D62 		.ascii	"numberString\000"
+ 4179      65725374 
+ 4179      72696E67 
+ 4179      00
+ 4180              	.LASF31:
+ 4181 03c0 64756D70 		.ascii	"dumpLongAddress\000"
+ 4181      4C6F6E67 
+ 4181      41646472 
+ 4181      65737300 
+ 4182              	.LASF53:
+ 4183 03d0 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 4183      52784275 
+ 4183      66666572 
+ 4183      00
+ 4184              	.LASF25:
+ 4185 03dd 6C696E65 		.ascii	"lineoff\000"
+ 4185      6F666600 
+ 4186              	.LASF45:
+ 4187 03e5 77726974 		.ascii	"writeMemShort\000"
+ 4187      654D656D 
+ 4187      53686F72 
+ 4187      7400
+ 4188              	.LASF65:
+ 4189 03f3 72656164 		.ascii	"readShort\000"
+ 4189      53686F72 
+ 4189      7400
+ 4190              	.LASF59:
+ 4191 03fd 77726974 		.ascii	"writeLine\000"
+ 4191      654C696E 
+ 4191      6500
+ 4192              	.LASF46:
+ 4193 0407 77726974 		.ascii	"writeMemByte\000"
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 85
+
+
+ 4193      654D656D 
+ 4193      42797465 
+ 4193      00
+ 4194              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

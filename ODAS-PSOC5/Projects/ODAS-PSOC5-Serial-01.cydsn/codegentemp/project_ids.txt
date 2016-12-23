@@ -1,0 +1,5 @@
+C:\Users\doug_000\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-Serial-01.cydsn\ODAS-PSOC5-Serial-01.cyprj|6c81ad13-f1d5-406d-8cbf-416cdee987ac
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|adaa4465-43d3-433d-b6af-54e7652150d2
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|b2e9c7f6-b4b5-4b33-a6c4-3392fe5ea85d
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|241f4094-55e8-46e7-830c-548f2ef8514e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|3e8b0d2c-f6c9-47e3-99f3-936d4ecf9c69

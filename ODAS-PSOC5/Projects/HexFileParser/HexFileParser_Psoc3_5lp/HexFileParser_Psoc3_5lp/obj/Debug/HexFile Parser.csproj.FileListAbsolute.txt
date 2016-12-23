@@ -1,0 +1,15 @@
+C:\Documents and Settings\vvsk\My Documents\My Work\Q4 11\PSoC 5 HSSP Work\HexFile Parser\HexFile Parser\bin\Debug\HexFile Parser.exe.config
+C:\Documents and Settings\vvsk\My Documents\My Work\Q4 11\PSoC 5 HSSP Work\HexFile Parser\HexFile Parser\bin\Debug\HexFile Parser.exe
+C:\Documents and Settings\vvsk\My Documents\My Work\Q4 11\PSoC 5 HSSP Work\HexFile Parser\HexFile Parser\bin\Debug\HexFile Parser.pdb
+C:\Documents and Settings\vvsk\My Documents\My Work\Q4 11\PSoC 5 HSSP Work\HexFile Parser\HexFile Parser\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\vvsk\My Documents\My Work\Q4 11\PSoC 5 HSSP Work\HexFile Parser\HexFile Parser\obj\Debug\HexFile_Parser.FormHexFileParser.resources
+C:\Documents and Settings\vvsk\My Documents\My Work\Q4 11\PSoC 5 HSSP Work\HexFile Parser\HexFile Parser\obj\Debug\HexFile_Parser.Properties.Resources.resources
+C:\Documents and Settings\vvsk\My Documents\My Work\Q4 11\PSoC 5 HSSP Work\HexFile Parser\HexFile Parser\obj\Debug\HexFile Parser.csproj.GenerateResource.Cache
+C:\Documents and Settings\vvsk\My Documents\My Work\Q4 11\PSoC 5 HSSP Work\HexFile Parser\HexFile Parser\obj\Debug\HexFile Parser.exe
+C:\Documents and Settings\vvsk\My Documents\My Work\Q4 11\PSoC 5 HSSP Work\HexFile Parser\HexFile Parser\obj\Debug\HexFile Parser.pdb
+C:\Documents and Settings\vvsk\My Documents\My Work\Q4 11\PSoC 5 HSSP Work\AN Projects\C# Application\HexFile Parser\HexFile Parser\bin\Debug\HexFile Parser.exe.config
+C:\Documents and Settings\vvsk\My Documents\My Work\Q4 11\PSoC 5 HSSP Work\AN Projects\C# Application\HexFile Parser\HexFile Parser\obj\Debug\HexFile Parser.exe
+C:\Documents and Settings\vvsk\My Documents\My Work\Q4 11\PSoC 5 HSSP Work\AN Projects\C# Application\HexFile Parser\HexFile Parser\obj\Debug\HexFile Parser.pdb
+C:\Documents and Settings\vvsk\My Documents\My Work\Q4 11\MTRB Tests\Test Controller Reset\HexFile Parser\HexFile Parser\bin\Debug\HexFile Parser.exe.config
+C:\Documents and Settings\vvsk\My Documents\My Work\Q4 11\MTRB Tests\Test Controller Reset\HexFile Parser\HexFile Parser\obj\Debug\HexFile Parser.exe
+C:\Documents and Settings\vvsk\My Documents\My Work\Q4 11\MTRB Tests\Test Controller Reset\HexFile Parser\HexFile Parser\obj\Debug\HexFile Parser.pdb
