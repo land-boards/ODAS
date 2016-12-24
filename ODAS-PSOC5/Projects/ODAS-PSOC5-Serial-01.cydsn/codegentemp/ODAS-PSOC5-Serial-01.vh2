@@ -2,7 +2,7 @@
 --	Conversion of ODAS-PSOC5-Serial-01.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Dec 20 15:15:28 2016
+--	Fri Dec 23 22:55:09 2016
 --
 
 USE cypress.cypress.all;
@@ -14,7 +14,7 @@ END top_RTL;
 ARCHITECTURE R_T_L OF top_RTL IS
 SIGNAL Net_919 : bit;
 SIGNAL tmpOE__P1_05_net_0 : bit;
-SIGNAL Net_357 : bit;
+SIGNAL Net_1076 : bit;
 SIGNAL tmpFB_0__P1_05_net_0 : bit;
 SIGNAL tmpIO_0__P1_05_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_05_net_0 : bit;
@@ -22,10 +22,8 @@ SIGNAL zero : bit;
 SIGNAL one : bit;
 SIGNAL tmpINTERRUPT_0__P1_05_net_0 : bit;
 SIGNAL Net_1010 : bit;
-SIGNAL Net_16_4 : bit;
-SIGNAL Net_18 : bit;
-SIGNAL \BasicCounter_1:add_vi_vv_MODGEN_1_4\ : bit;
 SIGNAL Net_16_3 : bit;
+SIGNAL Net_18 : bit;
 SIGNAL \BasicCounter_1:add_vi_vv_MODGEN_1_3\ : bit;
 SIGNAL Net_16_2 : bit;
 SIGNAL \BasicCounter_1:add_vi_vv_MODGEN_1_2\ : bit;
@@ -93,7 +91,6 @@ SIGNAL \BasicCounter_1:MODULE_1:g2:a0:a_7\ : bit;
 SIGNAL \BasicCounter_1:MODULE_1:g2:a0:a_6\ : bit;
 SIGNAL \BasicCounter_1:MODULE_1:g2:a0:a_5\ : bit;
 SIGNAL \BasicCounter_1:MODULE_1:g2:a0:a_4\ : bit;
-SIGNAL \BasicCounter_1:MODIN1_4\ : bit;
 SIGNAL \BasicCounter_1:MODULE_1:g2:a0:a_3\ : bit;
 SIGNAL \BasicCounter_1:MODIN1_3\ : bit;
 SIGNAL \BasicCounter_1:MODULE_1:g2:a0:a_2\ : bit;
@@ -188,6 +185,7 @@ SIGNAL \BasicCounter_1:add_vi_vv_MODGEN_1_6\ : bit;
 SIGNAL \BasicCounter_1:MODULE_1:g2:a0:s_6\ : bit;
 SIGNAL \BasicCounter_1:add_vi_vv_MODGEN_1_5\ : bit;
 SIGNAL \BasicCounter_1:MODULE_1:g2:a0:s_5\ : bit;
+SIGNAL \BasicCounter_1:add_vi_vv_MODGEN_1_4\ : bit;
 SIGNAL \BasicCounter_1:MODULE_1:g2:a0:s_4\ : bit;
 SIGNAL \BasicCounter_1:MODULE_1:g2:a0:s_3\ : bit;
 SIGNAL \BasicCounter_1:MODULE_1:g2:a0:s_2\ : bit;
@@ -236,7 +234,7 @@ SIGNAL tmpIO_0__P1_06_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_06_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__P1_06_net_0 : bit;
 SIGNAL tmpOE__P1_07_net_0 : bit;
-SIGNAL Net_358 : bit;
+SIGNAL Net_1077 : bit;
 SIGNAL tmpFB_0__P1_07_net_0 : bit;
 SIGNAL tmpIO_0__P1_07_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_07_net_0 : bit;
@@ -261,28 +259,12 @@ SIGNAL \demux_1:tmp__demux_1_4_reg\ : bit;
 SIGNAL \demux_1:tmp__demux_1_5_reg\ : bit;
 SIGNAL \demux_1:tmp__demux_1_6_reg\ : bit;
 SIGNAL \demux_1:tmp__demux_1_7_reg\ : bit;
-SIGNAL \demux_1:tmp__demux_1_8_reg\ : bit;
-SIGNAL \demux_1:tmp__demux_1_9_reg\ : bit;
-SIGNAL \demux_1:tmp__demux_1_10_reg\ : bit;
-SIGNAL \demux_1:tmp__demux_1_11_reg\ : bit;
-SIGNAL \demux_1:tmp__demux_1_12_reg\ : bit;
-SIGNAL \demux_1:tmp__demux_1_13_reg\ : bit;
-SIGNAL \demux_1:tmp__demux_1_14_reg\ : bit;
-SIGNAL \demux_1:tmp__demux_1_15_reg\ : bit;
-SIGNAL Net_934 : bit;
-SIGNAL Net_935 : bit;
-SIGNAL Net_361 : bit;
-SIGNAL Net_362 : bit;
+SIGNAL Net_1078 : bit;
+SIGNAL Net_1079 : bit;
+SIGNAL Net_1080 : bit;
+SIGNAL Net_1081 : bit;
 SIGNAL Net_363 : bit;
 SIGNAL Net_364 : bit;
-SIGNAL Net_365 : bit;
-SIGNAL Net_366 : bit;
-SIGNAL Net_942 : bit;
-SIGNAL Net_943 : bit;
-SIGNAL Net_369 : bit;
-SIGNAL Net_370 : bit;
-SIGNAL Net_371 : bit;
-SIGNAL Net_108 : bit;
 SIGNAL tmpOE__P1_09_net_0 : bit;
 SIGNAL tmpFB_0__P1_09_net_0 : bit;
 SIGNAL tmpIO_0__P1_09_net_0 : bit;
@@ -328,6 +310,7 @@ SIGNAL tmpIO_0__P1_16_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_16_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__P1_16_net_0 : bit;
 SIGNAL tmpOE__P1_17_net_0 : bit;
+SIGNAL Net_1069 : bit;
 SIGNAL tmpFB_0__P1_17_net_0 : bit;
 SIGNAL tmpIO_0__P1_17_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_17_net_0 : bit;
@@ -339,6 +322,7 @@ SIGNAL tmpIO_0__P1_18_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_18_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__P1_18_net_0 : bit;
 SIGNAL tmpOE__P1_19_net_0 : bit;
+SIGNAL Net_1070 : bit;
 SIGNAL tmpFB_0__P1_19_net_0 : bit;
 SIGNAL tmpIO_0__P1_19_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_19_net_0 : bit;
@@ -350,7 +334,7 @@ SIGNAL tmpIO_0__P1_20_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_20_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__P1_20_net_0 : bit;
 SIGNAL tmpOE__P1_32_net_0 : bit;
-SIGNAL Net_914 : bit;
+SIGNAL Net_1047 : bit;
 SIGNAL tmpFB_0__P1_32_net_0 : bit;
 SIGNAL tmpIO_0__P1_32_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_32_net_0 : bit;
@@ -362,56 +346,61 @@ SIGNAL tmpIO_0__P1_31_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_31_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__P1_31_net_0 : bit;
 SIGNAL tmpOE__P1_30_net_0 : bit;
-SIGNAL Net_913 : bit;
+SIGNAL Net_1046 : bit;
 SIGNAL tmpFB_0__P1_30_net_0 : bit;
 SIGNAL tmpIO_0__P1_30_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_30_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__P1_30_net_0 : bit;
 SIGNAL tmpOE__P1_29_net_0 : bit;
+SIGNAL Net_1075 : bit;
 SIGNAL tmpFB_0__P1_29_net_0 : bit;
 SIGNAL tmpIO_0__P1_29_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_29_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__P1_29_net_0 : bit;
 SIGNAL tmpOE__P1_28_net_0 : bit;
-SIGNAL Net_912 : bit;
+SIGNAL Net_1045 : bit;
 SIGNAL tmpFB_0__P1_28_net_0 : bit;
 SIGNAL tmpIO_0__P1_28_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_28_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__P1_28_net_0 : bit;
 SIGNAL tmpOE__P1_27_net_0 : bit;
+SIGNAL Net_1074 : bit;
 SIGNAL tmpFB_0__P1_27_net_0 : bit;
 SIGNAL tmpIO_0__P1_27_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_27_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__P1_27_net_0 : bit;
 SIGNAL tmpOE__P1_26_net_0 : bit;
-SIGNAL Net_911 : bit;
+SIGNAL Net_1044 : bit;
 SIGNAL tmpFB_0__P1_26_net_0 : bit;
 SIGNAL tmpIO_0__P1_26_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_26_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__P1_26_net_0 : bit;
 SIGNAL tmpOE__P1_25_net_0 : bit;
+SIGNAL Net_1073 : bit;
 SIGNAL tmpFB_0__P1_25_net_0 : bit;
 SIGNAL tmpIO_0__P1_25_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_25_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__P1_25_net_0 : bit;
 SIGNAL tmpOE__P1_24_net_0 : bit;
-SIGNAL Net_910 : bit;
+SIGNAL Net_1043 : bit;
 SIGNAL tmpFB_0__P1_24_net_0 : bit;
 SIGNAL tmpIO_0__P1_24_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_24_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__P1_24_net_0 : bit;
 SIGNAL tmpOE__P1_23_net_0 : bit;
+SIGNAL Net_1072 : bit;
 SIGNAL tmpFB_0__P1_23_net_0 : bit;
 SIGNAL tmpIO_0__P1_23_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_23_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__P1_23_net_0 : bit;
 SIGNAL tmpOE__P1_22_net_0 : bit;
-SIGNAL Net_909 : bit;
+SIGNAL Net_1042 : bit;
 SIGNAL tmpFB_0__P1_22_net_0 : bit;
 SIGNAL tmpIO_0__P1_22_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_22_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__P1_22_net_0 : bit;
 SIGNAL tmpOE__P1_21_net_0 : bit;
+SIGNAL Net_1071 : bit;
 SIGNAL tmpFB_0__P1_21_net_0 : bit;
 SIGNAL tmpIO_0__P1_21_net_0 : bit;
 TERMINAL tmpSIOVREF__P1_21_net_0 : bit;
@@ -424,24 +413,8 @@ SIGNAL \demux_2:tmp__demux_2_4_reg\ : bit;
 SIGNAL \demux_2:tmp__demux_2_5_reg\ : bit;
 SIGNAL \demux_2:tmp__demux_2_6_reg\ : bit;
 SIGNAL \demux_2:tmp__demux_2_7_reg\ : bit;
-SIGNAL \demux_2:tmp__demux_2_8_reg\ : bit;
-SIGNAL \demux_2:tmp__demux_2_9_reg\ : bit;
-SIGNAL \demux_2:tmp__demux_2_10_reg\ : bit;
-SIGNAL \demux_2:tmp__demux_2_11_reg\ : bit;
-SIGNAL \demux_2:tmp__demux_2_12_reg\ : bit;
-SIGNAL \demux_2:tmp__demux_2_13_reg\ : bit;
-SIGNAL \demux_2:tmp__demux_2_14_reg\ : bit;
-SIGNAL \demux_2:tmp__demux_2_15_reg\ : bit;
-SIGNAL Net_1042 : bit;
-SIGNAL Net_1043 : bit;
-SIGNAL Net_1044 : bit;
-SIGNAL Net_1045 : bit;
-SIGNAL Net_1046 : bit;
-SIGNAL Net_1047 : bit;
 SIGNAL Net_1048 : bit;
 SIGNAL Net_1049 : bit;
-SIGNAL Net_1036 : bit;
-SIGNAL Net_1060 : bit;
 SIGNAL tmpOE__P1_34_net_0 : bit;
 SIGNAL tmpFB_0__P1_34_net_0 : bit;
 SIGNAL tmpIO_0__P1_34_net_0 : bit;
@@ -816,7 +789,6 @@ SIGNAL \Control_Reg_1:control_3\ : bit;
 SIGNAL \Control_Reg_1:control_2\ : bit;
 SIGNAL \Control_Reg_1:control_1\ : bit;
 SIGNAL \Control_Reg_1:control_0\ : bit;
-SIGNAL Net_16_4D : bit;
 SIGNAL Net_16_3D : bit;
 SIGNAL Net_16_2D : bit;
 SIGNAL Net_16_1D : bit;
@@ -856,12 +828,6 @@ Net_919 <=  ('1') ;
 
 zero <=  ('0') ;
 
-Net_16_4D <= ((not Net_16_4 and Net_16_3 and Net_16_2 and Net_16_1 and Net_16_0)
-	OR (not Net_16_0 and Net_16_4)
-	OR (not Net_16_1 and Net_16_4)
-	OR (not Net_16_2 and Net_16_4)
-	OR (not Net_16_3 and Net_16_4));
-
 Net_16_3D <= ((not Net_16_3 and Net_16_2 and Net_16_1 and Net_16_0)
 	OR (not Net_16_0 and Net_16_3)
 	OR (not Net_16_1 and Net_16_3)
@@ -876,45 +842,31 @@ Net_16_1D <= ((not Net_16_0 and Net_16_1)
 
 Net_16_0D <= (not Net_16_0);
 
-Net_357 <= ((not Net_16_4 and not Net_16_3 and not Net_16_2 and not Net_16_1 and not Net_16_0));
+Net_1076 <= ((not Net_16_3 and not Net_16_2 and not Net_16_1 and not Net_16_0));
 
-Net_358 <= ((not Net_16_4 and not Net_16_3 and not Net_16_2 and not Net_16_1 and Net_16_0));
+Net_1077 <= ((not Net_16_3 and not Net_16_2 and not Net_16_1 and Net_16_0));
 
-Net_934 <= ((not Net_16_4 and not Net_16_3 and not Net_16_2 and not Net_16_0 and Net_16_1));
+Net_1078 <= ((not Net_16_3 and not Net_16_2 and not Net_16_0 and Net_16_1));
 
-Net_935 <= ((not Net_16_4 and not Net_16_3 and not Net_16_2 and Net_16_1 and Net_16_0));
+Net_1079 <= ((not Net_16_3 and not Net_16_2 and Net_16_1 and Net_16_0));
 
-Net_361 <= ((not Net_16_4 and not Net_16_3 and not Net_16_1 and not Net_16_0 and Net_16_2));
+Net_1080 <= ((not Net_16_3 and not Net_16_1 and not Net_16_0 and Net_16_2));
 
-Net_362 <= ((not Net_16_4 and not Net_16_3 and not Net_16_1 and Net_16_2 and Net_16_0));
+Net_1081 <= ((not Net_16_3 and not Net_16_1 and Net_16_2 and Net_16_0));
 
-Net_363 <= ((not Net_16_4 and not Net_16_3 and not Net_16_0 and Net_16_2 and Net_16_1));
+Net_1042 <= ((not Net_16_2 and not Net_16_1 and not Net_16_0 and Net_16_3));
 
-Net_364 <= ((not Net_16_4 and not Net_16_3 and Net_16_2 and Net_16_1 and Net_16_0));
+Net_1043 <= ((not Net_16_2 and not Net_16_1 and Net_16_3 and Net_16_0));
 
-Net_365 <= ((not Net_16_4 and not Net_16_2 and not Net_16_1 and not Net_16_0 and Net_16_3));
+Net_1044 <= ((not Net_16_2 and not Net_16_0 and Net_16_3 and Net_16_1));
 
-Net_366 <= ((not Net_16_4 and not Net_16_2 and not Net_16_1 and Net_16_3 and Net_16_0));
+Net_1045 <= ((not Net_16_2 and Net_16_3 and Net_16_1 and Net_16_0));
 
-Net_942 <= ((not Net_16_4 and not Net_16_2 and not Net_16_0 and Net_16_3 and Net_16_1));
+Net_1046 <= ((not Net_16_1 and not Net_16_0 and Net_16_3 and Net_16_2));
 
-Net_943 <= ((not Net_16_4 and not Net_16_2 and Net_16_3 and Net_16_1 and Net_16_0));
+Net_1047 <= ((not Net_16_1 and Net_16_3 and Net_16_2 and Net_16_0));
 
-Net_369 <= ((not Net_16_4 and not Net_16_1 and not Net_16_0 and Net_16_3 and Net_16_2));
-
-Net_909 <= ((not Net_16_2 and not Net_16_1 and not Net_16_0 and Net_16_4 and Net_16_3));
-
-Net_910 <= ((not Net_16_2 and not Net_16_1 and Net_16_4 and Net_16_3 and Net_16_0));
-
-Net_911 <= ((not Net_16_2 and not Net_16_0 and Net_16_4 and Net_16_3 and Net_16_1));
-
-Net_912 <= ((not Net_16_2 and Net_16_4 and Net_16_3 and Net_16_1 and Net_16_0));
-
-Net_913 <= ((not Net_16_1 and not Net_16_0 and Net_16_4 and Net_16_3 and Net_16_2));
-
-Net_914 <= ((not Net_16_1 and Net_16_4 and Net_16_3 and Net_16_2 and Net_16_0));
-
-Net_1036 <= ((not Net_16_0 and Net_16_4 and Net_16_3 and Net_16_2 and Net_16_1));
+Net_1048 <= ((not Net_16_0 and Net_16_3 and Net_16_2 and Net_16_1));
 
 Net_1012 <= (not \UART_1:BUART:txn\);
 
@@ -1146,7 +1098,7 @@ P1_05:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_357,
+		y=>Net_1076,
 		fb=>(tmpFB_0__P1_05_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_05_net_0),
@@ -1305,7 +1257,7 @@ P1_07:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_358,
+		y=>Net_1077,
 		fb=>(tmpFB_0__P1_07_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_07_net_0),
@@ -1515,7 +1467,7 @@ P1_09:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_934,
+		y=>Net_1078,
 		fb=>(tmpFB_0__P1_09_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_09_net_0),
@@ -1655,7 +1607,7 @@ P1_11:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_935,
+		y=>Net_1079,
 		fb=>(tmpFB_0__P1_11_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_11_net_0),
@@ -1795,7 +1747,7 @@ P1_13:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_361,
+		y=>Net_1080,
 		fb=>(tmpFB_0__P1_13_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_13_net_0),
@@ -1935,7 +1887,7 @@ P1_15:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_362,
+		y=>Net_1081,
 		fb=>(tmpFB_0__P1_15_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_15_net_0),
@@ -2075,7 +2027,7 @@ P1_17:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_363,
+		y=>zero,
 		fb=>(tmpFB_0__P1_17_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_17_net_0),
@@ -2215,7 +2167,7 @@ P1_19:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_364,
+		y=>zero,
 		fb=>(tmpFB_0__P1_19_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_19_net_0),
@@ -2355,7 +2307,7 @@ P1_32:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_914,
+		y=>Net_1047,
 		fb=>(tmpFB_0__P1_32_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_32_net_0),
@@ -2495,7 +2447,7 @@ P1_30:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_913,
+		y=>Net_1046,
 		fb=>(tmpFB_0__P1_30_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_30_net_0),
@@ -2565,7 +2517,7 @@ P1_29:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_369,
+		y=>zero,
 		fb=>(tmpFB_0__P1_29_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_29_net_0),
@@ -2635,7 +2587,7 @@ P1_28:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_912,
+		y=>Net_1045,
 		fb=>(tmpFB_0__P1_28_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_28_net_0),
@@ -2705,7 +2657,7 @@ P1_27:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_943,
+		y=>zero,
 		fb=>(tmpFB_0__P1_27_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_27_net_0),
@@ -2775,7 +2727,7 @@ P1_26:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_911,
+		y=>Net_1044,
 		fb=>(tmpFB_0__P1_26_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_26_net_0),
@@ -2845,7 +2797,7 @@ P1_25:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_942,
+		y=>zero,
 		fb=>(tmpFB_0__P1_25_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_25_net_0),
@@ -2915,7 +2867,7 @@ P1_24:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_910,
+		y=>Net_1043,
 		fb=>(tmpFB_0__P1_24_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_24_net_0),
@@ -2985,7 +2937,7 @@ P1_23:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_366,
+		y=>zero,
 		fb=>(tmpFB_0__P1_23_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_23_net_0),
@@ -3055,7 +3007,7 @@ P1_22:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_909,
+		y=>Net_1042,
 		fb=>(tmpFB_0__P1_22_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_22_net_0),
@@ -3125,7 +3077,7 @@ P1_21:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_365,
+		y=>zero,
 		fb=>(tmpFB_0__P1_21_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_21_net_0),
@@ -3195,7 +3147,7 @@ P1_34:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_1036,
+		y=>Net_1048,
 		fb=>(tmpFB_0__P1_34_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_34_net_0),
@@ -3603,10 +3555,6 @@ LED:cy_psoc3_pins_v1_10
 		clock=>zero,
 		control=>(Net_908, Net_907, Net_906, Net_905,
 			Net_904, Net_903, Net_902, Net_901));
-Net_16_4:cy_dff
-	PORT MAP(d=>Net_16_4D,
-		clk=>Net_1010,
-		q=>Net_16_4);
 Net_16_3:cy_dff
 	PORT MAP(d=>Net_16_3D,
 		clk=>Net_1010,

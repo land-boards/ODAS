@@ -1,6 +1,6 @@
 // ======================================================================
 // ODAS-PSOC5-Serial-01.v generated from TopDesign.cysch
-// 12/20/2016 at 15:15
+// 12/23/2016 at 22:55
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -316,8 +316,24 @@ module top ;
           wire  Net_1026;
           wire  Net_1025;
           wire  Net_1024;
-          wire  Net_1060;
           wire  Net_1049;
+          wire  Net_1071;
+          wire  Net_1072;
+          wire  Net_1073;
+          wire  Net_1074;
+          wire  Net_1075;
+          wire  Net_1070;
+          wire  Net_1069;
+          wire  Net_364;
+          wire  Net_363;
+          wire  Net_1081;
+          wire  Net_1080;
+          wire  Net_1079;
+          wire  Net_1078;
+          wire  Net_1017;
+          wire  Net_1077;
+          wire  Net_15;
+          wire  Net_1076;
           wire  Net_1048;
           wire  Net_1047;
           wire  Net_1046;
@@ -325,11 +341,6 @@ module top ;
           wire  Net_1044;
           wire  Net_1043;
           wire  Net_1042;
-          wire  Net_108;
-          wire  Net_371;
-          wire  Net_370;
-          wire  Net_1017;
-          wire  Net_15;
           wire  Net_908;
           wire  Net_907;
           wire  Net_906;
@@ -340,29 +351,9 @@ module top ;
           wire  Net_901;
           wire  Net_1012;
           wire  Net_1039;
-          wire  Net_1036;
           wire  Net_1010;
           wire  Net_54;
-          wire  Net_914;
-          wire  Net_913;
-          wire  Net_912;
-          wire  Net_911;
-          wire  Net_910;
-          wire  Net_909;
-          wire  Net_369;
-          wire  Net_943;
-          wire  Net_942;
-          wire  Net_366;
-          wire  Net_365;
-          wire  Net_364;
-          wire  Net_363;
-          wire  Net_362;
-          wire  Net_361;
-          wire  Net_935;
-          wire  Net_934;
-          wire  Net_358;
-          wire  Net_357;
-          wire [4:0] Net_16;
+          wire [3:0] Net_16;
           wire  Net_18;
           wire  Net_919;
 
@@ -429,7 +420,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_05
 		 (.oe(tmpOE__P1_05_net),
-		  .y({Net_357}),
+		  .y({Net_1076}),
 		  .fb({tmpFB_0__P1_05_net[0:0]}),
 		  .io({tmpIO_0__P1_05_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_05_net),
@@ -457,10 +448,10 @@ module top ;
 
     BasicCounter_v1_0 BasicCounter_1 (
         .en(Net_919),
-        .cnt(Net_16[4:0]),
+        .cnt(Net_16[3:0]),
         .reset(Net_18),
         .clock(Net_1010));
-    defparam BasicCounter_1.Width = 5;
+    defparam BasicCounter_1.Width = 4;
 
     assign Net_18 = 1'h0;
 
@@ -600,7 +591,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_07
 		 (.oe(tmpOE__P1_07_net),
-		  .y({Net_358}),
+		  .y({Net_1077}),
 		  .fb({tmpFB_0__P1_07_net[0:0]}),
 		  .io({tmpIO_0__P1_07_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_07_net),
@@ -774,18 +765,10 @@ module top ;
         reg  tmp__demux_1_5_reg;
         reg  tmp__demux_1_6_reg;
         reg  tmp__demux_1_7_reg;
-        reg  tmp__demux_1_8_reg;
-        reg  tmp__demux_1_9_reg;
-        reg  tmp__demux_1_10_reg;
-        reg  tmp__demux_1_11_reg;
-        reg  tmp__demux_1_12_reg;
-        reg  tmp__demux_1_13_reg;
-        reg  tmp__demux_1_14_reg;
-        reg  tmp__demux_1_15_reg;
         always @(Net_54 or Net_16)
         begin
-            case (Net_16[3:0])
-                4'b0000:
+            case (Net_16[2:0])
+                3'b000:
                 begin
                     tmp__demux_1_0_reg = Net_54;
                     tmp__demux_1_1_reg = 1'b0;
@@ -795,16 +778,8 @@ module top ;
                     tmp__demux_1_5_reg = 1'b0;
                     tmp__demux_1_6_reg = 1'b0;
                     tmp__demux_1_7_reg = 1'b0;
-                    tmp__demux_1_8_reg = 1'b0;
-                    tmp__demux_1_9_reg = 1'b0;
-                    tmp__demux_1_10_reg = 1'b0;
-                    tmp__demux_1_11_reg = 1'b0;
-                    tmp__demux_1_12_reg = 1'b0;
-                    tmp__demux_1_13_reg = 1'b0;
-                    tmp__demux_1_14_reg = 1'b0;
-                    tmp__demux_1_15_reg = 1'b0;
                 end
-                4'b0001:
+                3'b001:
                 begin
                     tmp__demux_1_0_reg = 1'b0;
                     tmp__demux_1_1_reg = Net_54;
@@ -814,16 +789,8 @@ module top ;
                     tmp__demux_1_5_reg = 1'b0;
                     tmp__demux_1_6_reg = 1'b0;
                     tmp__demux_1_7_reg = 1'b0;
-                    tmp__demux_1_8_reg = 1'b0;
-                    tmp__demux_1_9_reg = 1'b0;
-                    tmp__demux_1_10_reg = 1'b0;
-                    tmp__demux_1_11_reg = 1'b0;
-                    tmp__demux_1_12_reg = 1'b0;
-                    tmp__demux_1_13_reg = 1'b0;
-                    tmp__demux_1_14_reg = 1'b0;
-                    tmp__demux_1_15_reg = 1'b0;
                 end
-                4'b0010:
+                3'b010:
                 begin
                     tmp__demux_1_0_reg = 1'b0;
                     tmp__demux_1_1_reg = 1'b0;
@@ -833,16 +800,8 @@ module top ;
                     tmp__demux_1_5_reg = 1'b0;
                     tmp__demux_1_6_reg = 1'b0;
                     tmp__demux_1_7_reg = 1'b0;
-                    tmp__demux_1_8_reg = 1'b0;
-                    tmp__demux_1_9_reg = 1'b0;
-                    tmp__demux_1_10_reg = 1'b0;
-                    tmp__demux_1_11_reg = 1'b0;
-                    tmp__demux_1_12_reg = 1'b0;
-                    tmp__demux_1_13_reg = 1'b0;
-                    tmp__demux_1_14_reg = 1'b0;
-                    tmp__demux_1_15_reg = 1'b0;
                 end
-                4'b0011:
+                3'b011:
                 begin
                     tmp__demux_1_0_reg = 1'b0;
                     tmp__demux_1_1_reg = 1'b0;
@@ -852,16 +811,8 @@ module top ;
                     tmp__demux_1_5_reg = 1'b0;
                     tmp__demux_1_6_reg = 1'b0;
                     tmp__demux_1_7_reg = 1'b0;
-                    tmp__demux_1_8_reg = 1'b0;
-                    tmp__demux_1_9_reg = 1'b0;
-                    tmp__demux_1_10_reg = 1'b0;
-                    tmp__demux_1_11_reg = 1'b0;
-                    tmp__demux_1_12_reg = 1'b0;
-                    tmp__demux_1_13_reg = 1'b0;
-                    tmp__demux_1_14_reg = 1'b0;
-                    tmp__demux_1_15_reg = 1'b0;
                 end
-                4'b0100:
+                3'b100:
                 begin
                     tmp__demux_1_0_reg = 1'b0;
                     tmp__demux_1_1_reg = 1'b0;
@@ -871,16 +822,8 @@ module top ;
                     tmp__demux_1_5_reg = 1'b0;
                     tmp__demux_1_6_reg = 1'b0;
                     tmp__demux_1_7_reg = 1'b0;
-                    tmp__demux_1_8_reg = 1'b0;
-                    tmp__demux_1_9_reg = 1'b0;
-                    tmp__demux_1_10_reg = 1'b0;
-                    tmp__demux_1_11_reg = 1'b0;
-                    tmp__demux_1_12_reg = 1'b0;
-                    tmp__demux_1_13_reg = 1'b0;
-                    tmp__demux_1_14_reg = 1'b0;
-                    tmp__demux_1_15_reg = 1'b0;
                 end
-                4'b0101:
+                3'b101:
                 begin
                     tmp__demux_1_0_reg = 1'b0;
                     tmp__demux_1_1_reg = 1'b0;
@@ -890,16 +833,8 @@ module top ;
                     tmp__demux_1_5_reg = Net_54;
                     tmp__demux_1_6_reg = 1'b0;
                     tmp__demux_1_7_reg = 1'b0;
-                    tmp__demux_1_8_reg = 1'b0;
-                    tmp__demux_1_9_reg = 1'b0;
-                    tmp__demux_1_10_reg = 1'b0;
-                    tmp__demux_1_11_reg = 1'b0;
-                    tmp__demux_1_12_reg = 1'b0;
-                    tmp__demux_1_13_reg = 1'b0;
-                    tmp__demux_1_14_reg = 1'b0;
-                    tmp__demux_1_15_reg = 1'b0;
                 end
-                4'b0110:
+                3'b110:
                 begin
                     tmp__demux_1_0_reg = 1'b0;
                     tmp__demux_1_1_reg = 1'b0;
@@ -909,16 +844,8 @@ module top ;
                     tmp__demux_1_5_reg = 1'b0;
                     tmp__demux_1_6_reg = Net_54;
                     tmp__demux_1_7_reg = 1'b0;
-                    tmp__demux_1_8_reg = 1'b0;
-                    tmp__demux_1_9_reg = 1'b0;
-                    tmp__demux_1_10_reg = 1'b0;
-                    tmp__demux_1_11_reg = 1'b0;
-                    tmp__demux_1_12_reg = 1'b0;
-                    tmp__demux_1_13_reg = 1'b0;
-                    tmp__demux_1_14_reg = 1'b0;
-                    tmp__demux_1_15_reg = 1'b0;
                 end
-                4'b0111:
+                3'b111:
                 begin
                     tmp__demux_1_0_reg = 1'b0;
                     tmp__demux_1_1_reg = 1'b0;
@@ -928,185 +855,17 @@ module top ;
                     tmp__demux_1_5_reg = 1'b0;
                     tmp__demux_1_6_reg = 1'b0;
                     tmp__demux_1_7_reg = Net_54;
-                    tmp__demux_1_8_reg = 1'b0;
-                    tmp__demux_1_9_reg = 1'b0;
-                    tmp__demux_1_10_reg = 1'b0;
-                    tmp__demux_1_11_reg = 1'b0;
-                    tmp__demux_1_12_reg = 1'b0;
-                    tmp__demux_1_13_reg = 1'b0;
-                    tmp__demux_1_14_reg = 1'b0;
-                    tmp__demux_1_15_reg = 1'b0;
-                end
-                4'b1000:
-                begin
-                    tmp__demux_1_0_reg = 1'b0;
-                    tmp__demux_1_1_reg = 1'b0;
-                    tmp__demux_1_2_reg = 1'b0;
-                    tmp__demux_1_3_reg = 1'b0;
-                    tmp__demux_1_4_reg = 1'b0;
-                    tmp__demux_1_5_reg = 1'b0;
-                    tmp__demux_1_6_reg = 1'b0;
-                    tmp__demux_1_7_reg = 1'b0;
-                    tmp__demux_1_8_reg = Net_54;
-                    tmp__demux_1_9_reg = 1'b0;
-                    tmp__demux_1_10_reg = 1'b0;
-                    tmp__demux_1_11_reg = 1'b0;
-                    tmp__demux_1_12_reg = 1'b0;
-                    tmp__demux_1_13_reg = 1'b0;
-                    tmp__demux_1_14_reg = 1'b0;
-                    tmp__demux_1_15_reg = 1'b0;
-                end
-                4'b1001:
-                begin
-                    tmp__demux_1_0_reg = 1'b0;
-                    tmp__demux_1_1_reg = 1'b0;
-                    tmp__demux_1_2_reg = 1'b0;
-                    tmp__demux_1_3_reg = 1'b0;
-                    tmp__demux_1_4_reg = 1'b0;
-                    tmp__demux_1_5_reg = 1'b0;
-                    tmp__demux_1_6_reg = 1'b0;
-                    tmp__demux_1_7_reg = 1'b0;
-                    tmp__demux_1_8_reg = 1'b0;
-                    tmp__demux_1_9_reg = Net_54;
-                    tmp__demux_1_10_reg = 1'b0;
-                    tmp__demux_1_11_reg = 1'b0;
-                    tmp__demux_1_12_reg = 1'b0;
-                    tmp__demux_1_13_reg = 1'b0;
-                    tmp__demux_1_14_reg = 1'b0;
-                    tmp__demux_1_15_reg = 1'b0;
-                end
-                4'b1010:
-                begin
-                    tmp__demux_1_0_reg = 1'b0;
-                    tmp__demux_1_1_reg = 1'b0;
-                    tmp__demux_1_2_reg = 1'b0;
-                    tmp__demux_1_3_reg = 1'b0;
-                    tmp__demux_1_4_reg = 1'b0;
-                    tmp__demux_1_5_reg = 1'b0;
-                    tmp__demux_1_6_reg = 1'b0;
-                    tmp__demux_1_7_reg = 1'b0;
-                    tmp__demux_1_8_reg = 1'b0;
-                    tmp__demux_1_9_reg = 1'b0;
-                    tmp__demux_1_10_reg = Net_54;
-                    tmp__demux_1_11_reg = 1'b0;
-                    tmp__demux_1_12_reg = 1'b0;
-                    tmp__demux_1_13_reg = 1'b0;
-                    tmp__demux_1_14_reg = 1'b0;
-                    tmp__demux_1_15_reg = 1'b0;
-                end
-                4'b1011:
-                begin
-                    tmp__demux_1_0_reg = 1'b0;
-                    tmp__demux_1_1_reg = 1'b0;
-                    tmp__demux_1_2_reg = 1'b0;
-                    tmp__demux_1_3_reg = 1'b0;
-                    tmp__demux_1_4_reg = 1'b0;
-                    tmp__demux_1_5_reg = 1'b0;
-                    tmp__demux_1_6_reg = 1'b0;
-                    tmp__demux_1_7_reg = 1'b0;
-                    tmp__demux_1_8_reg = 1'b0;
-                    tmp__demux_1_9_reg = 1'b0;
-                    tmp__demux_1_10_reg = 1'b0;
-                    tmp__demux_1_11_reg = Net_54;
-                    tmp__demux_1_12_reg = 1'b0;
-                    tmp__demux_1_13_reg = 1'b0;
-                    tmp__demux_1_14_reg = 1'b0;
-                    tmp__demux_1_15_reg = 1'b0;
-                end
-                4'b1100:
-                begin
-                    tmp__demux_1_0_reg = 1'b0;
-                    tmp__demux_1_1_reg = 1'b0;
-                    tmp__demux_1_2_reg = 1'b0;
-                    tmp__demux_1_3_reg = 1'b0;
-                    tmp__demux_1_4_reg = 1'b0;
-                    tmp__demux_1_5_reg = 1'b0;
-                    tmp__demux_1_6_reg = 1'b0;
-                    tmp__demux_1_7_reg = 1'b0;
-                    tmp__demux_1_8_reg = 1'b0;
-                    tmp__demux_1_9_reg = 1'b0;
-                    tmp__demux_1_10_reg = 1'b0;
-                    tmp__demux_1_11_reg = 1'b0;
-                    tmp__demux_1_12_reg = Net_54;
-                    tmp__demux_1_13_reg = 1'b0;
-                    tmp__demux_1_14_reg = 1'b0;
-                    tmp__demux_1_15_reg = 1'b0;
-                end
-                4'b1101:
-                begin
-                    tmp__demux_1_0_reg = 1'b0;
-                    tmp__demux_1_1_reg = 1'b0;
-                    tmp__demux_1_2_reg = 1'b0;
-                    tmp__demux_1_3_reg = 1'b0;
-                    tmp__demux_1_4_reg = 1'b0;
-                    tmp__demux_1_5_reg = 1'b0;
-                    tmp__demux_1_6_reg = 1'b0;
-                    tmp__demux_1_7_reg = 1'b0;
-                    tmp__demux_1_8_reg = 1'b0;
-                    tmp__demux_1_9_reg = 1'b0;
-                    tmp__demux_1_10_reg = 1'b0;
-                    tmp__demux_1_11_reg = 1'b0;
-                    tmp__demux_1_12_reg = 1'b0;
-                    tmp__demux_1_13_reg = Net_54;
-                    tmp__demux_1_14_reg = 1'b0;
-                    tmp__demux_1_15_reg = 1'b0;
-                end
-                4'b1110:
-                begin
-                    tmp__demux_1_0_reg = 1'b0;
-                    tmp__demux_1_1_reg = 1'b0;
-                    tmp__demux_1_2_reg = 1'b0;
-                    tmp__demux_1_3_reg = 1'b0;
-                    tmp__demux_1_4_reg = 1'b0;
-                    tmp__demux_1_5_reg = 1'b0;
-                    tmp__demux_1_6_reg = 1'b0;
-                    tmp__demux_1_7_reg = 1'b0;
-                    tmp__demux_1_8_reg = 1'b0;
-                    tmp__demux_1_9_reg = 1'b0;
-                    tmp__demux_1_10_reg = 1'b0;
-                    tmp__demux_1_11_reg = 1'b0;
-                    tmp__demux_1_12_reg = 1'b0;
-                    tmp__demux_1_13_reg = 1'b0;
-                    tmp__demux_1_14_reg = Net_54;
-                    tmp__demux_1_15_reg = 1'b0;
-                end
-                4'b1111:
-                begin
-                    tmp__demux_1_0_reg = 1'b0;
-                    tmp__demux_1_1_reg = 1'b0;
-                    tmp__demux_1_2_reg = 1'b0;
-                    tmp__demux_1_3_reg = 1'b0;
-                    tmp__demux_1_4_reg = 1'b0;
-                    tmp__demux_1_5_reg = 1'b0;
-                    tmp__demux_1_6_reg = 1'b0;
-                    tmp__demux_1_7_reg = 1'b0;
-                    tmp__demux_1_8_reg = 1'b0;
-                    tmp__demux_1_9_reg = 1'b0;
-                    tmp__demux_1_10_reg = 1'b0;
-                    tmp__demux_1_11_reg = 1'b0;
-                    tmp__demux_1_12_reg = 1'b0;
-                    tmp__demux_1_13_reg = 1'b0;
-                    tmp__demux_1_14_reg = 1'b0;
-                    tmp__demux_1_15_reg = Net_54;
                 end
             endcase
         end
-        assign Net_357 = tmp__demux_1_0_reg;
-        assign Net_358 = tmp__demux_1_1_reg;
-        assign Net_934 = tmp__demux_1_2_reg;
-        assign Net_935 = tmp__demux_1_3_reg;
-        assign Net_361 = tmp__demux_1_4_reg;
-        assign Net_362 = tmp__demux_1_5_reg;
+        assign Net_1076 = tmp__demux_1_0_reg;
+        assign Net_1077 = tmp__demux_1_1_reg;
+        assign Net_1078 = tmp__demux_1_2_reg;
+        assign Net_1079 = tmp__demux_1_3_reg;
+        assign Net_1080 = tmp__demux_1_4_reg;
+        assign Net_1081 = tmp__demux_1_5_reg;
         assign Net_363 = tmp__demux_1_6_reg;
         assign Net_364 = tmp__demux_1_7_reg;
-        assign Net_365 = tmp__demux_1_8_reg;
-        assign Net_366 = tmp__demux_1_9_reg;
-        assign Net_942 = tmp__demux_1_10_reg;
-        assign Net_943 = tmp__demux_1_11_reg;
-        assign Net_369 = tmp__demux_1_12_reg;
-        assign Net_370 = tmp__demux_1_13_reg;
-        assign Net_371 = tmp__demux_1_14_reg;
-        assign Net_108 = tmp__demux_1_15_reg;
     end
     // -- De Mux end --
 
@@ -1171,7 +930,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_09
 		 (.oe(tmpOE__P1_09_net),
-		  .y({Net_934}),
+		  .y({Net_1078}),
 		  .fb({tmpFB_0__P1_09_net[0:0]}),
 		  .io({tmpIO_0__P1_09_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_09_net),
@@ -1321,7 +1080,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_11
 		 (.oe(tmpOE__P1_11_net),
-		  .y({Net_935}),
+		  .y({Net_1079}),
 		  .fb({tmpFB_0__P1_11_net[0:0]}),
 		  .io({tmpIO_0__P1_11_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_11_net),
@@ -1471,7 +1230,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_13
 		 (.oe(tmpOE__P1_13_net),
-		  .y({Net_361}),
+		  .y({Net_1080}),
 		  .fb({tmpFB_0__P1_13_net[0:0]}),
 		  .io({tmpIO_0__P1_13_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_13_net),
@@ -1621,7 +1380,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_15
 		 (.oe(tmpOE__P1_15_net),
-		  .y({Net_362}),
+		  .y({Net_1081}),
 		  .fb({tmpFB_0__P1_15_net[0:0]}),
 		  .io({tmpIO_0__P1_15_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_15_net),
@@ -1771,7 +1530,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_17
 		 (.oe(tmpOE__P1_17_net),
-		  .y({Net_363}),
+		  .y({Net_1069}),
 		  .fb({tmpFB_0__P1_17_net[0:0]}),
 		  .io({tmpIO_0__P1_17_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_17_net),
@@ -1921,7 +1680,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_19
 		 (.oe(tmpOE__P1_19_net),
-		  .y({Net_364}),
+		  .y({Net_1070}),
 		  .fb({tmpFB_0__P1_19_net[0:0]}),
 		  .io({tmpIO_0__P1_19_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_19_net),
@@ -2071,7 +1830,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_32
 		 (.oe(tmpOE__P1_32_net),
-		  .y({Net_914}),
+		  .y({Net_1047}),
 		  .fb({tmpFB_0__P1_32_net[0:0]}),
 		  .io({tmpIO_0__P1_32_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_32_net),
@@ -2221,7 +1980,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_30
 		 (.oe(tmpOE__P1_30_net),
-		  .y({Net_913}),
+		  .y({Net_1046}),
 		  .fb({tmpFB_0__P1_30_net[0:0]}),
 		  .io({tmpIO_0__P1_30_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_30_net),
@@ -2296,7 +2055,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_29
 		 (.oe(tmpOE__P1_29_net),
-		  .y({Net_369}),
+		  .y({Net_1075}),
 		  .fb({tmpFB_0__P1_29_net[0:0]}),
 		  .io({tmpIO_0__P1_29_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_29_net),
@@ -2371,7 +2130,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_28
 		 (.oe(tmpOE__P1_28_net),
-		  .y({Net_912}),
+		  .y({Net_1045}),
 		  .fb({tmpFB_0__P1_28_net[0:0]}),
 		  .io({tmpIO_0__P1_28_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_28_net),
@@ -2446,7 +2205,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_27
 		 (.oe(tmpOE__P1_27_net),
-		  .y({Net_943}),
+		  .y({Net_1074}),
 		  .fb({tmpFB_0__P1_27_net[0:0]}),
 		  .io({tmpIO_0__P1_27_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_27_net),
@@ -2521,7 +2280,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_26
 		 (.oe(tmpOE__P1_26_net),
-		  .y({Net_911}),
+		  .y({Net_1044}),
 		  .fb({tmpFB_0__P1_26_net[0:0]}),
 		  .io({tmpIO_0__P1_26_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_26_net),
@@ -2596,7 +2355,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_25
 		 (.oe(tmpOE__P1_25_net),
-		  .y({Net_942}),
+		  .y({Net_1073}),
 		  .fb({tmpFB_0__P1_25_net[0:0]}),
 		  .io({tmpIO_0__P1_25_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_25_net),
@@ -2671,7 +2430,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_24
 		 (.oe(tmpOE__P1_24_net),
-		  .y({Net_910}),
+		  .y({Net_1043}),
 		  .fb({tmpFB_0__P1_24_net[0:0]}),
 		  .io({tmpIO_0__P1_24_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_24_net),
@@ -2746,7 +2505,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_23
 		 (.oe(tmpOE__P1_23_net),
-		  .y({Net_366}),
+		  .y({Net_1072}),
 		  .fb({tmpFB_0__P1_23_net[0:0]}),
 		  .io({tmpIO_0__P1_23_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_23_net),
@@ -2821,7 +2580,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_22
 		 (.oe(tmpOE__P1_22_net),
-		  .y({Net_909}),
+		  .y({Net_1042}),
 		  .fb({tmpFB_0__P1_22_net[0:0]}),
 		  .io({tmpIO_0__P1_22_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_22_net),
@@ -2896,7 +2655,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_21
 		 (.oe(tmpOE__P1_21_net),
-		  .y({Net_365}),
+		  .y({Net_1071}),
 		  .fb({tmpFB_0__P1_21_net[0:0]}),
 		  .io({tmpIO_0__P1_21_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_21_net),
@@ -2921,20 +2680,12 @@ module top ;
         reg  tmp__demux_2_5_reg;
         reg  tmp__demux_2_6_reg;
         reg  tmp__demux_2_7_reg;
-        reg  tmp__demux_2_8_reg;
-        reg  tmp__demux_2_9_reg;
-        reg  tmp__demux_2_10_reg;
-        reg  tmp__demux_2_11_reg;
-        reg  tmp__demux_2_12_reg;
-        reg  tmp__demux_2_13_reg;
-        reg  tmp__demux_2_14_reg;
-        reg  tmp__demux_2_15_reg;
         always @(Net_16 or Net_16)
         begin
-            case (Net_16[3:0])
-                4'b0000:
+            case (Net_16[2:0])
+                3'b000:
                 begin
-                    tmp__demux_2_0_reg = Net_16[4];
+                    tmp__demux_2_0_reg = Net_16[3];
                     tmp__demux_2_1_reg = 1'b0;
                     tmp__demux_2_2_reg = 1'b0;
                     tmp__demux_2_3_reg = 1'b0;
@@ -2942,111 +2693,63 @@ module top ;
                     tmp__demux_2_5_reg = 1'b0;
                     tmp__demux_2_6_reg = 1'b0;
                     tmp__demux_2_7_reg = 1'b0;
-                    tmp__demux_2_8_reg = 1'b0;
-                    tmp__demux_2_9_reg = 1'b0;
-                    tmp__demux_2_10_reg = 1'b0;
-                    tmp__demux_2_11_reg = 1'b0;
-                    tmp__demux_2_12_reg = 1'b0;
-                    tmp__demux_2_13_reg = 1'b0;
-                    tmp__demux_2_14_reg = 1'b0;
-                    tmp__demux_2_15_reg = 1'b0;
                 end
-                4'b0001:
+                3'b001:
                 begin
                     tmp__demux_2_0_reg = 1'b0;
-                    tmp__demux_2_1_reg = Net_16[4];
+                    tmp__demux_2_1_reg = Net_16[3];
                     tmp__demux_2_2_reg = 1'b0;
                     tmp__demux_2_3_reg = 1'b0;
                     tmp__demux_2_4_reg = 1'b0;
                     tmp__demux_2_5_reg = 1'b0;
                     tmp__demux_2_6_reg = 1'b0;
                     tmp__demux_2_7_reg = 1'b0;
-                    tmp__demux_2_8_reg = 1'b0;
-                    tmp__demux_2_9_reg = 1'b0;
-                    tmp__demux_2_10_reg = 1'b0;
-                    tmp__demux_2_11_reg = 1'b0;
-                    tmp__demux_2_12_reg = 1'b0;
-                    tmp__demux_2_13_reg = 1'b0;
-                    tmp__demux_2_14_reg = 1'b0;
-                    tmp__demux_2_15_reg = 1'b0;
                 end
-                4'b0010:
+                3'b010:
                 begin
                     tmp__demux_2_0_reg = 1'b0;
                     tmp__demux_2_1_reg = 1'b0;
-                    tmp__demux_2_2_reg = Net_16[4];
+                    tmp__demux_2_2_reg = Net_16[3];
                     tmp__demux_2_3_reg = 1'b0;
                     tmp__demux_2_4_reg = 1'b0;
                     tmp__demux_2_5_reg = 1'b0;
                     tmp__demux_2_6_reg = 1'b0;
                     tmp__demux_2_7_reg = 1'b0;
-                    tmp__demux_2_8_reg = 1'b0;
-                    tmp__demux_2_9_reg = 1'b0;
-                    tmp__demux_2_10_reg = 1'b0;
-                    tmp__demux_2_11_reg = 1'b0;
-                    tmp__demux_2_12_reg = 1'b0;
-                    tmp__demux_2_13_reg = 1'b0;
-                    tmp__demux_2_14_reg = 1'b0;
-                    tmp__demux_2_15_reg = 1'b0;
                 end
-                4'b0011:
+                3'b011:
                 begin
                     tmp__demux_2_0_reg = 1'b0;
                     tmp__demux_2_1_reg = 1'b0;
                     tmp__demux_2_2_reg = 1'b0;
-                    tmp__demux_2_3_reg = Net_16[4];
+                    tmp__demux_2_3_reg = Net_16[3];
                     tmp__demux_2_4_reg = 1'b0;
                     tmp__demux_2_5_reg = 1'b0;
                     tmp__demux_2_6_reg = 1'b0;
                     tmp__demux_2_7_reg = 1'b0;
-                    tmp__demux_2_8_reg = 1'b0;
-                    tmp__demux_2_9_reg = 1'b0;
-                    tmp__demux_2_10_reg = 1'b0;
-                    tmp__demux_2_11_reg = 1'b0;
-                    tmp__demux_2_12_reg = 1'b0;
-                    tmp__demux_2_13_reg = 1'b0;
-                    tmp__demux_2_14_reg = 1'b0;
-                    tmp__demux_2_15_reg = 1'b0;
                 end
-                4'b0100:
+                3'b100:
                 begin
                     tmp__demux_2_0_reg = 1'b0;
                     tmp__demux_2_1_reg = 1'b0;
                     tmp__demux_2_2_reg = 1'b0;
                     tmp__demux_2_3_reg = 1'b0;
-                    tmp__demux_2_4_reg = Net_16[4];
+                    tmp__demux_2_4_reg = Net_16[3];
                     tmp__demux_2_5_reg = 1'b0;
                     tmp__demux_2_6_reg = 1'b0;
                     tmp__demux_2_7_reg = 1'b0;
-                    tmp__demux_2_8_reg = 1'b0;
-                    tmp__demux_2_9_reg = 1'b0;
-                    tmp__demux_2_10_reg = 1'b0;
-                    tmp__demux_2_11_reg = 1'b0;
-                    tmp__demux_2_12_reg = 1'b0;
-                    tmp__demux_2_13_reg = 1'b0;
-                    tmp__demux_2_14_reg = 1'b0;
-                    tmp__demux_2_15_reg = 1'b0;
                 end
-                4'b0101:
+                3'b101:
                 begin
                     tmp__demux_2_0_reg = 1'b0;
                     tmp__demux_2_1_reg = 1'b0;
                     tmp__demux_2_2_reg = 1'b0;
                     tmp__demux_2_3_reg = 1'b0;
                     tmp__demux_2_4_reg = 1'b0;
-                    tmp__demux_2_5_reg = Net_16[4];
+                    tmp__demux_2_5_reg = Net_16[3];
                     tmp__demux_2_6_reg = 1'b0;
                     tmp__demux_2_7_reg = 1'b0;
-                    tmp__demux_2_8_reg = 1'b0;
-                    tmp__demux_2_9_reg = 1'b0;
-                    tmp__demux_2_10_reg = 1'b0;
-                    tmp__demux_2_11_reg = 1'b0;
-                    tmp__demux_2_12_reg = 1'b0;
-                    tmp__demux_2_13_reg = 1'b0;
-                    tmp__demux_2_14_reg = 1'b0;
-                    tmp__demux_2_15_reg = 1'b0;
                 end
-                4'b0110:
+                3'b110:
                 begin
                     tmp__demux_2_0_reg = 1'b0;
                     tmp__demux_2_1_reg = 1'b0;
@@ -3054,18 +2757,10 @@ module top ;
                     tmp__demux_2_3_reg = 1'b0;
                     tmp__demux_2_4_reg = 1'b0;
                     tmp__demux_2_5_reg = 1'b0;
-                    tmp__demux_2_6_reg = Net_16[4];
+                    tmp__demux_2_6_reg = Net_16[3];
                     tmp__demux_2_7_reg = 1'b0;
-                    tmp__demux_2_8_reg = 1'b0;
-                    tmp__demux_2_9_reg = 1'b0;
-                    tmp__demux_2_10_reg = 1'b0;
-                    tmp__demux_2_11_reg = 1'b0;
-                    tmp__demux_2_12_reg = 1'b0;
-                    tmp__demux_2_13_reg = 1'b0;
-                    tmp__demux_2_14_reg = 1'b0;
-                    tmp__demux_2_15_reg = 1'b0;
                 end
-                4'b0111:
+                3'b111:
                 begin
                     tmp__demux_2_0_reg = 1'b0;
                     tmp__demux_2_1_reg = 1'b0;
@@ -3074,167 +2769,7 @@ module top ;
                     tmp__demux_2_4_reg = 1'b0;
                     tmp__demux_2_5_reg = 1'b0;
                     tmp__demux_2_6_reg = 1'b0;
-                    tmp__demux_2_7_reg = Net_16[4];
-                    tmp__demux_2_8_reg = 1'b0;
-                    tmp__demux_2_9_reg = 1'b0;
-                    tmp__demux_2_10_reg = 1'b0;
-                    tmp__demux_2_11_reg = 1'b0;
-                    tmp__demux_2_12_reg = 1'b0;
-                    tmp__demux_2_13_reg = 1'b0;
-                    tmp__demux_2_14_reg = 1'b0;
-                    tmp__demux_2_15_reg = 1'b0;
-                end
-                4'b1000:
-                begin
-                    tmp__demux_2_0_reg = 1'b0;
-                    tmp__demux_2_1_reg = 1'b0;
-                    tmp__demux_2_2_reg = 1'b0;
-                    tmp__demux_2_3_reg = 1'b0;
-                    tmp__demux_2_4_reg = 1'b0;
-                    tmp__demux_2_5_reg = 1'b0;
-                    tmp__demux_2_6_reg = 1'b0;
-                    tmp__demux_2_7_reg = 1'b0;
-                    tmp__demux_2_8_reg = Net_16[4];
-                    tmp__demux_2_9_reg = 1'b0;
-                    tmp__demux_2_10_reg = 1'b0;
-                    tmp__demux_2_11_reg = 1'b0;
-                    tmp__demux_2_12_reg = 1'b0;
-                    tmp__demux_2_13_reg = 1'b0;
-                    tmp__demux_2_14_reg = 1'b0;
-                    tmp__demux_2_15_reg = 1'b0;
-                end
-                4'b1001:
-                begin
-                    tmp__demux_2_0_reg = 1'b0;
-                    tmp__demux_2_1_reg = 1'b0;
-                    tmp__demux_2_2_reg = 1'b0;
-                    tmp__demux_2_3_reg = 1'b0;
-                    tmp__demux_2_4_reg = 1'b0;
-                    tmp__demux_2_5_reg = 1'b0;
-                    tmp__demux_2_6_reg = 1'b0;
-                    tmp__demux_2_7_reg = 1'b0;
-                    tmp__demux_2_8_reg = 1'b0;
-                    tmp__demux_2_9_reg = Net_16[4];
-                    tmp__demux_2_10_reg = 1'b0;
-                    tmp__demux_2_11_reg = 1'b0;
-                    tmp__demux_2_12_reg = 1'b0;
-                    tmp__demux_2_13_reg = 1'b0;
-                    tmp__demux_2_14_reg = 1'b0;
-                    tmp__demux_2_15_reg = 1'b0;
-                end
-                4'b1010:
-                begin
-                    tmp__demux_2_0_reg = 1'b0;
-                    tmp__demux_2_1_reg = 1'b0;
-                    tmp__demux_2_2_reg = 1'b0;
-                    tmp__demux_2_3_reg = 1'b0;
-                    tmp__demux_2_4_reg = 1'b0;
-                    tmp__demux_2_5_reg = 1'b0;
-                    tmp__demux_2_6_reg = 1'b0;
-                    tmp__demux_2_7_reg = 1'b0;
-                    tmp__demux_2_8_reg = 1'b0;
-                    tmp__demux_2_9_reg = 1'b0;
-                    tmp__demux_2_10_reg = Net_16[4];
-                    tmp__demux_2_11_reg = 1'b0;
-                    tmp__demux_2_12_reg = 1'b0;
-                    tmp__demux_2_13_reg = 1'b0;
-                    tmp__demux_2_14_reg = 1'b0;
-                    tmp__demux_2_15_reg = 1'b0;
-                end
-                4'b1011:
-                begin
-                    tmp__demux_2_0_reg = 1'b0;
-                    tmp__demux_2_1_reg = 1'b0;
-                    tmp__demux_2_2_reg = 1'b0;
-                    tmp__demux_2_3_reg = 1'b0;
-                    tmp__demux_2_4_reg = 1'b0;
-                    tmp__demux_2_5_reg = 1'b0;
-                    tmp__demux_2_6_reg = 1'b0;
-                    tmp__demux_2_7_reg = 1'b0;
-                    tmp__demux_2_8_reg = 1'b0;
-                    tmp__demux_2_9_reg = 1'b0;
-                    tmp__demux_2_10_reg = 1'b0;
-                    tmp__demux_2_11_reg = Net_16[4];
-                    tmp__demux_2_12_reg = 1'b0;
-                    tmp__demux_2_13_reg = 1'b0;
-                    tmp__demux_2_14_reg = 1'b0;
-                    tmp__demux_2_15_reg = 1'b0;
-                end
-                4'b1100:
-                begin
-                    tmp__demux_2_0_reg = 1'b0;
-                    tmp__demux_2_1_reg = 1'b0;
-                    tmp__demux_2_2_reg = 1'b0;
-                    tmp__demux_2_3_reg = 1'b0;
-                    tmp__demux_2_4_reg = 1'b0;
-                    tmp__demux_2_5_reg = 1'b0;
-                    tmp__demux_2_6_reg = 1'b0;
-                    tmp__demux_2_7_reg = 1'b0;
-                    tmp__demux_2_8_reg = 1'b0;
-                    tmp__demux_2_9_reg = 1'b0;
-                    tmp__demux_2_10_reg = 1'b0;
-                    tmp__demux_2_11_reg = 1'b0;
-                    tmp__demux_2_12_reg = Net_16[4];
-                    tmp__demux_2_13_reg = 1'b0;
-                    tmp__demux_2_14_reg = 1'b0;
-                    tmp__demux_2_15_reg = 1'b0;
-                end
-                4'b1101:
-                begin
-                    tmp__demux_2_0_reg = 1'b0;
-                    tmp__demux_2_1_reg = 1'b0;
-                    tmp__demux_2_2_reg = 1'b0;
-                    tmp__demux_2_3_reg = 1'b0;
-                    tmp__demux_2_4_reg = 1'b0;
-                    tmp__demux_2_5_reg = 1'b0;
-                    tmp__demux_2_6_reg = 1'b0;
-                    tmp__demux_2_7_reg = 1'b0;
-                    tmp__demux_2_8_reg = 1'b0;
-                    tmp__demux_2_9_reg = 1'b0;
-                    tmp__demux_2_10_reg = 1'b0;
-                    tmp__demux_2_11_reg = 1'b0;
-                    tmp__demux_2_12_reg = 1'b0;
-                    tmp__demux_2_13_reg = Net_16[4];
-                    tmp__demux_2_14_reg = 1'b0;
-                    tmp__demux_2_15_reg = 1'b0;
-                end
-                4'b1110:
-                begin
-                    tmp__demux_2_0_reg = 1'b0;
-                    tmp__demux_2_1_reg = 1'b0;
-                    tmp__demux_2_2_reg = 1'b0;
-                    tmp__demux_2_3_reg = 1'b0;
-                    tmp__demux_2_4_reg = 1'b0;
-                    tmp__demux_2_5_reg = 1'b0;
-                    tmp__demux_2_6_reg = 1'b0;
-                    tmp__demux_2_7_reg = 1'b0;
-                    tmp__demux_2_8_reg = 1'b0;
-                    tmp__demux_2_9_reg = 1'b0;
-                    tmp__demux_2_10_reg = 1'b0;
-                    tmp__demux_2_11_reg = 1'b0;
-                    tmp__demux_2_12_reg = 1'b0;
-                    tmp__demux_2_13_reg = 1'b0;
-                    tmp__demux_2_14_reg = Net_16[4];
-                    tmp__demux_2_15_reg = 1'b0;
-                end
-                4'b1111:
-                begin
-                    tmp__demux_2_0_reg = 1'b0;
-                    tmp__demux_2_1_reg = 1'b0;
-                    tmp__demux_2_2_reg = 1'b0;
-                    tmp__demux_2_3_reg = 1'b0;
-                    tmp__demux_2_4_reg = 1'b0;
-                    tmp__demux_2_5_reg = 1'b0;
-                    tmp__demux_2_6_reg = 1'b0;
-                    tmp__demux_2_7_reg = 1'b0;
-                    tmp__demux_2_8_reg = 1'b0;
-                    tmp__demux_2_9_reg = 1'b0;
-                    tmp__demux_2_10_reg = 1'b0;
-                    tmp__demux_2_11_reg = 1'b0;
-                    tmp__demux_2_12_reg = 1'b0;
-                    tmp__demux_2_13_reg = 1'b0;
-                    tmp__demux_2_14_reg = 1'b0;
-                    tmp__demux_2_15_reg = Net_16[4];
+                    tmp__demux_2_7_reg = Net_16[3];
                 end
             endcase
         end
@@ -3246,14 +2781,6 @@ module top ;
         assign Net_1047 = tmp__demux_2_5_reg;
         assign Net_1048 = tmp__demux_2_6_reg;
         assign Net_1049 = tmp__demux_2_7_reg;
-        assign Net_909 = tmp__demux_2_8_reg;
-        assign Net_910 = tmp__demux_2_9_reg;
-        assign Net_911 = tmp__demux_2_10_reg;
-        assign Net_912 = tmp__demux_2_11_reg;
-        assign Net_913 = tmp__demux_2_12_reg;
-        assign Net_914 = tmp__demux_2_13_reg;
-        assign Net_1036 = tmp__demux_2_14_reg;
-        assign Net_1060 = tmp__demux_2_15_reg;
     end
     // -- De Mux end --
 
@@ -3318,7 +2845,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_34
 		 (.oe(tmpOE__P1_34_net),
-		  .y({Net_1036}),
+		  .y({Net_1048}),
 		  .fb({tmpFB_0__P1_34_net[0:0]}),
 		  .io({tmpIO_0__P1_34_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_34_net),
@@ -3408,7 +2935,7 @@ module top ;
 	assign tmpOE__LED_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 
-    assign Net_54 = ~Net_16[4];
+    assign Net_54 = ~Net_16[3];
 
     UART_v2_50_0 UART_1 (
         .cts_n(1'b0),
@@ -3462,6 +2989,20 @@ module top ;
     defparam Control_Reg_1.BusDisplay = 0;
     defparam Control_Reg_1.ExtrReset = 0;
     defparam Control_Reg_1.NumOutputs = 8;
+
+    assign Net_1069 = 1'h0;
+
+    assign Net_1070 = 1'h0;
+
+    assign Net_1071 = 1'h0;
+
+    assign Net_1072 = 1'h0;
+
+    assign Net_1073 = 1'h0;
+
+    assign Net_1074 = 1'h0;
+
+    assign Net_1075 = 1'h0;
 
 
 

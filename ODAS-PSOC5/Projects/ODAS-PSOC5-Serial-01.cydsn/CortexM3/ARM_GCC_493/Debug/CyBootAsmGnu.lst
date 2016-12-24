@@ -12405,15 +12405,15 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  1054              	.set P1_34__SLW, CYREG_PRT3_SLW
  1055              	
  1056              	/* UART_1_BUART */
- 1057              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_CONTROL_AUX_CTL_REG, CYREG_B1_UDB07_08_ACTL
- 1058              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_CONTROL_CONTROL_REG, CYREG_B1_UDB07_08_CTL
- 1059              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_CONTROL_COUNT_REG, CYREG_B1_UDB07_08_CTL
- 1060              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_COUNT_CONTROL_REG, CYREG_B1_UDB07_08_CTL
- 1061              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_COUNT_COUNT_REG, CYREG_B1_UDB07_08_CTL
- 1062              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_MASK_MASK_REG, CYREG_B1_UDB07_08_MSK
- 1063              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_MASK_PERIOD_REG, CYREG_B1_UDB07_08_MSK
- 1064              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_PERIOD_MASK_REG, CYREG_B1_UDB07_08_MSK
- 1065              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_PERIOD_PERIOD_REG, CYREG_B1_UDB07_08_MSK
+ 1057              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_CONTROL_AUX_CTL_REG, CYREG_B0_UDB07_08_ACTL
+ 1058              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_CONTROL_CONTROL_REG, CYREG_B0_UDB07_08_CTL
+ 1059              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_CONTROL_COUNT_REG, CYREG_B0_UDB07_08_CTL
+ 1060              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_COUNT_CONTROL_REG, CYREG_B0_UDB07_08_CTL
+ 1061              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_COUNT_COUNT_REG, CYREG_B0_UDB07_08_CTL
+ 1062              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_MASK_MASK_REG, CYREG_B0_UDB07_08_MSK
+ 1063              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_MASK_PERIOD_REG, CYREG_B0_UDB07_08_MSK
+ 1064              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_PERIOD_MASK_REG, CYREG_B0_UDB07_08_MSK
+ 1065              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__16BIT_PERIOD_PERIOD_REG, CYREG_B0_UDB07_08_MSK
  1066              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__2__MASK, 0x04
  1067              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__2__POS, 2
  1068              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__3__MASK, 0x08
@@ -12423,129 +12423,129 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
 
  1070              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__4__MASK, 0x10
  1071              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__4__POS, 4
- 1072              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__CONTROL_AUX_CTL_REG, CYREG_B1_UDB07_ACTL
- 1073              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__CONTROL_REG, CYREG_B1_UDB07_CTL
- 1074              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__CONTROL_ST_REG, CYREG_B1_UDB07_ST_CTL
- 1075              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__COUNT_REG, CYREG_B1_UDB07_CTL
- 1076              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__COUNT_ST_REG, CYREG_B1_UDB07_ST_CTL
+ 1072              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__CONTROL_AUX_CTL_REG, CYREG_B0_UDB07_ACTL
+ 1073              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__CONTROL_REG, CYREG_B0_UDB07_CTL
+ 1074              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__CONTROL_ST_REG, CYREG_B0_UDB07_ST_CTL
+ 1075              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__COUNT_REG, CYREG_B0_UDB07_CTL
+ 1076              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__COUNT_ST_REG, CYREG_B0_UDB07_ST_CTL
  1077              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__MASK, 0x1C
- 1078              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__MASK_CTL_AUX_CTL_REG, CYREG_B1_UDB07_MSK_ACTL
- 1079              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__PER_CTL_AUX_CTL_REG, CYREG_B1_UDB07_MSK_ACTL
- 1080              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__PERIOD_REG, CYREG_B1_UDB07_MSK
- 1081              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_CONTROL_AUX_CTL_REG, CYREG_B0_UDB04_05_ACTL
- 1082              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_CONTROL_CONTROL_REG, CYREG_B0_UDB04_05_CTL
- 1083              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_CONTROL_COUNT_REG, CYREG_B0_UDB04_05_CTL
- 1084              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_COUNT_CONTROL_REG, CYREG_B0_UDB04_05_CTL
- 1085              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_COUNT_COUNT_REG, CYREG_B0_UDB04_05_CTL
- 1086              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_MASK_MASK_REG, CYREG_B0_UDB04_05_MSK
- 1087              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_MASK_PERIOD_REG, CYREG_B0_UDB04_05_MSK
- 1088              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_PERIOD_MASK_REG, CYREG_B0_UDB04_05_MSK
- 1089              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_PERIOD_PERIOD_REG, CYREG_B0_UDB04_05_MSK
- 1090              	.set UART_1_BUART_sRX_RxBitCounter__CONTROL_AUX_CTL_REG, CYREG_B0_UDB04_ACTL
- 1091              	.set UART_1_BUART_sRX_RxBitCounter__CONTROL_REG, CYREG_B0_UDB04_CTL
- 1092              	.set UART_1_BUART_sRX_RxBitCounter__CONTROL_ST_REG, CYREG_B0_UDB04_ST_CTL
- 1093              	.set UART_1_BUART_sRX_RxBitCounter__COUNT_REG, CYREG_B0_UDB04_CTL
- 1094              	.set UART_1_BUART_sRX_RxBitCounter__COUNT_ST_REG, CYREG_B0_UDB04_ST_CTL
- 1095              	.set UART_1_BUART_sRX_RxBitCounter__MASK_CTL_AUX_CTL_REG, CYREG_B0_UDB04_MSK_ACTL
- 1096              	.set UART_1_BUART_sRX_RxBitCounter__PER_CTL_AUX_CTL_REG, CYREG_B0_UDB04_MSK_ACTL
- 1097              	.set UART_1_BUART_sRX_RxBitCounter__PERIOD_REG, CYREG_B0_UDB04_MSK
- 1098              	.set UART_1_BUART_sRX_RxBitCounter_ST__16BIT_STATUS_AUX_CTL_REG, CYREG_B0_UDB04_05_ACTL
- 1099              	.set UART_1_BUART_sRX_RxBitCounter_ST__16BIT_STATUS_REG, CYREG_B0_UDB04_05_ST
- 1100              	.set UART_1_BUART_sRX_RxBitCounter_ST__MASK_REG, CYREG_B0_UDB04_MSK
- 1101              	.set UART_1_BUART_sRX_RxBitCounter_ST__MASK_ST_AUX_CTL_REG, CYREG_B0_UDB04_MSK_ACTL
- 1102              	.set UART_1_BUART_sRX_RxBitCounter_ST__PER_ST_AUX_CTL_REG, CYREG_B0_UDB04_MSK_ACTL
- 1103              	.set UART_1_BUART_sRX_RxBitCounter_ST__STATUS_AUX_CTL_REG, CYREG_B0_UDB04_ACTL
- 1104              	.set UART_1_BUART_sRX_RxBitCounter_ST__STATUS_CNT_REG, CYREG_B0_UDB04_ST_CTL
- 1105              	.set UART_1_BUART_sRX_RxBitCounter_ST__STATUS_CONTROL_REG, CYREG_B0_UDB04_ST_CTL
- 1106              	.set UART_1_BUART_sRX_RxBitCounter_ST__STATUS_REG, CYREG_B0_UDB04_ST
- 1107              	.set UART_1_BUART_sRX_RxShifter_u0__16BIT_A0_REG, CYREG_B0_UDB04_05_A0
- 1108              	.set UART_1_BUART_sRX_RxShifter_u0__16BIT_A1_REG, CYREG_B0_UDB04_05_A1
- 1109              	.set UART_1_BUART_sRX_RxShifter_u0__16BIT_D0_REG, CYREG_B0_UDB04_05_D0
- 1110              	.set UART_1_BUART_sRX_RxShifter_u0__16BIT_D1_REG, CYREG_B0_UDB04_05_D1
- 1111              	.set UART_1_BUART_sRX_RxShifter_u0__16BIT_DP_AUX_CTL_REG, CYREG_B0_UDB04_05_ACTL
- 1112              	.set UART_1_BUART_sRX_RxShifter_u0__16BIT_F0_REG, CYREG_B0_UDB04_05_F0
- 1113              	.set UART_1_BUART_sRX_RxShifter_u0__16BIT_F1_REG, CYREG_B0_UDB04_05_F1
- 1114              	.set UART_1_BUART_sRX_RxShifter_u0__A0_A1_REG, CYREG_B0_UDB04_A0_A1
- 1115              	.set UART_1_BUART_sRX_RxShifter_u0__A0_REG, CYREG_B0_UDB04_A0
- 1116              	.set UART_1_BUART_sRX_RxShifter_u0__A1_REG, CYREG_B0_UDB04_A1
- 1117              	.set UART_1_BUART_sRX_RxShifter_u0__D0_D1_REG, CYREG_B0_UDB04_D0_D1
- 1118              	.set UART_1_BUART_sRX_RxShifter_u0__D0_REG, CYREG_B0_UDB04_D0
- 1119              	.set UART_1_BUART_sRX_RxShifter_u0__D1_REG, CYREG_B0_UDB04_D1
- 1120              	.set UART_1_BUART_sRX_RxShifter_u0__DP_AUX_CTL_REG, CYREG_B0_UDB04_ACTL
- 1121              	.set UART_1_BUART_sRX_RxShifter_u0__F0_F1_REG, CYREG_B0_UDB04_F0_F1
- 1122              	.set UART_1_BUART_sRX_RxShifter_u0__F0_REG, CYREG_B0_UDB04_F0
- 1123              	.set UART_1_BUART_sRX_RxShifter_u0__F1_REG, CYREG_B0_UDB04_F1
- 1124              	.set UART_1_BUART_sRX_RxShifter_u0__MSK_DP_AUX_CTL_REG, CYREG_B0_UDB04_MSK_ACTL
- 1125              	.set UART_1_BUART_sRX_RxShifter_u0__PER_DP_AUX_CTL_REG, CYREG_B0_UDB04_MSK_ACTL
- 1126              	.set UART_1_BUART_sRX_RxSts__16BIT_STATUS_AUX_CTL_REG, CYREG_B0_UDB03_04_ACTL
+ 1078              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__MASK_CTL_AUX_CTL_REG, CYREG_B0_UDB07_MSK_ACTL
+ 1079              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__PER_CTL_AUX_CTL_REG, CYREG_B0_UDB07_MSK_ACTL
+ 1080              	.set UART_1_BUART_sCR_SyncCtl_CtrlReg__PERIOD_REG, CYREG_B0_UDB07_MSK
+ 1081              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_CONTROL_AUX_CTL_REG, CYREG_B1_UDB05_06_ACTL
+ 1082              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_CONTROL_CONTROL_REG, CYREG_B1_UDB05_06_CTL
+ 1083              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_CONTROL_COUNT_REG, CYREG_B1_UDB05_06_CTL
+ 1084              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_COUNT_CONTROL_REG, CYREG_B1_UDB05_06_CTL
+ 1085              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_COUNT_COUNT_REG, CYREG_B1_UDB05_06_CTL
+ 1086              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_MASK_MASK_REG, CYREG_B1_UDB05_06_MSK
+ 1087              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_MASK_PERIOD_REG, CYREG_B1_UDB05_06_MSK
+ 1088              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_PERIOD_MASK_REG, CYREG_B1_UDB05_06_MSK
+ 1089              	.set UART_1_BUART_sRX_RxBitCounter__16BIT_PERIOD_PERIOD_REG, CYREG_B1_UDB05_06_MSK
+ 1090              	.set UART_1_BUART_sRX_RxBitCounter__CONTROL_AUX_CTL_REG, CYREG_B1_UDB05_ACTL
+ 1091              	.set UART_1_BUART_sRX_RxBitCounter__CONTROL_REG, CYREG_B1_UDB05_CTL
+ 1092              	.set UART_1_BUART_sRX_RxBitCounter__CONTROL_ST_REG, CYREG_B1_UDB05_ST_CTL
+ 1093              	.set UART_1_BUART_sRX_RxBitCounter__COUNT_REG, CYREG_B1_UDB05_CTL
+ 1094              	.set UART_1_BUART_sRX_RxBitCounter__COUNT_ST_REG, CYREG_B1_UDB05_ST_CTL
+ 1095              	.set UART_1_BUART_sRX_RxBitCounter__MASK_CTL_AUX_CTL_REG, CYREG_B1_UDB05_MSK_ACTL
+ 1096              	.set UART_1_BUART_sRX_RxBitCounter__PER_CTL_AUX_CTL_REG, CYREG_B1_UDB05_MSK_ACTL
+ 1097              	.set UART_1_BUART_sRX_RxBitCounter__PERIOD_REG, CYREG_B1_UDB05_MSK
+ 1098              	.set UART_1_BUART_sRX_RxBitCounter_ST__16BIT_STATUS_AUX_CTL_REG, CYREG_B1_UDB05_06_ACTL
+ 1099              	.set UART_1_BUART_sRX_RxBitCounter_ST__16BIT_STATUS_REG, CYREG_B1_UDB05_06_ST
+ 1100              	.set UART_1_BUART_sRX_RxBitCounter_ST__MASK_REG, CYREG_B1_UDB05_MSK
+ 1101              	.set UART_1_BUART_sRX_RxBitCounter_ST__MASK_ST_AUX_CTL_REG, CYREG_B1_UDB05_MSK_ACTL
+ 1102              	.set UART_1_BUART_sRX_RxBitCounter_ST__PER_ST_AUX_CTL_REG, CYREG_B1_UDB05_MSK_ACTL
+ 1103              	.set UART_1_BUART_sRX_RxBitCounter_ST__STATUS_AUX_CTL_REG, CYREG_B1_UDB05_ACTL
+ 1104              	.set UART_1_BUART_sRX_RxBitCounter_ST__STATUS_CNT_REG, CYREG_B1_UDB05_ST_CTL
+ 1105              	.set UART_1_BUART_sRX_RxBitCounter_ST__STATUS_CONTROL_REG, CYREG_B1_UDB05_ST_CTL
+ 1106              	.set UART_1_BUART_sRX_RxBitCounter_ST__STATUS_REG, CYREG_B1_UDB05_ST
+ 1107              	.set UART_1_BUART_sRX_RxShifter_u0__16BIT_A0_REG, CYREG_B0_UDB06_07_A0
+ 1108              	.set UART_1_BUART_sRX_RxShifter_u0__16BIT_A1_REG, CYREG_B0_UDB06_07_A1
+ 1109              	.set UART_1_BUART_sRX_RxShifter_u0__16BIT_D0_REG, CYREG_B0_UDB06_07_D0
+ 1110              	.set UART_1_BUART_sRX_RxShifter_u0__16BIT_D1_REG, CYREG_B0_UDB06_07_D1
+ 1111              	.set UART_1_BUART_sRX_RxShifter_u0__16BIT_DP_AUX_CTL_REG, CYREG_B0_UDB06_07_ACTL
+ 1112              	.set UART_1_BUART_sRX_RxShifter_u0__16BIT_F0_REG, CYREG_B0_UDB06_07_F0
+ 1113              	.set UART_1_BUART_sRX_RxShifter_u0__16BIT_F1_REG, CYREG_B0_UDB06_07_F1
+ 1114              	.set UART_1_BUART_sRX_RxShifter_u0__A0_A1_REG, CYREG_B0_UDB06_A0_A1
+ 1115              	.set UART_1_BUART_sRX_RxShifter_u0__A0_REG, CYREG_B0_UDB06_A0
+ 1116              	.set UART_1_BUART_sRX_RxShifter_u0__A1_REG, CYREG_B0_UDB06_A1
+ 1117              	.set UART_1_BUART_sRX_RxShifter_u0__D0_D1_REG, CYREG_B0_UDB06_D0_D1
+ 1118              	.set UART_1_BUART_sRX_RxShifter_u0__D0_REG, CYREG_B0_UDB06_D0
+ 1119              	.set UART_1_BUART_sRX_RxShifter_u0__D1_REG, CYREG_B0_UDB06_D1
+ 1120              	.set UART_1_BUART_sRX_RxShifter_u0__DP_AUX_CTL_REG, CYREG_B0_UDB06_ACTL
+ 1121              	.set UART_1_BUART_sRX_RxShifter_u0__F0_F1_REG, CYREG_B0_UDB06_F0_F1
+ 1122              	.set UART_1_BUART_sRX_RxShifter_u0__F0_REG, CYREG_B0_UDB06_F0
+ 1123              	.set UART_1_BUART_sRX_RxShifter_u0__F1_REG, CYREG_B0_UDB06_F1
+ 1124              	.set UART_1_BUART_sRX_RxSts__16BIT_STATUS_AUX_CTL_REG, CYREG_B1_UDB06_07_ACTL
+ 1125              	.set UART_1_BUART_sRX_RxSts__16BIT_STATUS_REG, CYREG_B1_UDB06_07_ST
+ 1126              	.set UART_1_BUART_sRX_RxSts__2__MASK, 0x04
 ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 209
 
 
- 1127              	.set UART_1_BUART_sRX_RxSts__16BIT_STATUS_REG, CYREG_B0_UDB03_04_ST
- 1128              	.set UART_1_BUART_sRX_RxSts__2__MASK, 0x04
- 1129              	.set UART_1_BUART_sRX_RxSts__2__POS, 2
- 1130              	.set UART_1_BUART_sRX_RxSts__3__MASK, 0x08
- 1131              	.set UART_1_BUART_sRX_RxSts__3__POS, 3
- 1132              	.set UART_1_BUART_sRX_RxSts__4__MASK, 0x10
- 1133              	.set UART_1_BUART_sRX_RxSts__4__POS, 4
- 1134              	.set UART_1_BUART_sRX_RxSts__5__MASK, 0x20
- 1135              	.set UART_1_BUART_sRX_RxSts__5__POS, 5
- 1136              	.set UART_1_BUART_sRX_RxSts__MASK, 0x3C
- 1137              	.set UART_1_BUART_sRX_RxSts__MASK_REG, CYREG_B0_UDB03_MSK
- 1138              	.set UART_1_BUART_sRX_RxSts__STATUS_AUX_CTL_REG, CYREG_B0_UDB03_ACTL
- 1139              	.set UART_1_BUART_sRX_RxSts__STATUS_REG, CYREG_B0_UDB03_ST
- 1140              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__16BIT_A0_REG, CYREG_B1_UDB04_05_A0
- 1141              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__16BIT_A1_REG, CYREG_B1_UDB04_05_A1
- 1142              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__16BIT_D0_REG, CYREG_B1_UDB04_05_D0
- 1143              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__16BIT_D1_REG, CYREG_B1_UDB04_05_D1
- 1144              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__16BIT_DP_AUX_CTL_REG, CYREG_B1_UDB04_05_ACTL
- 1145              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__16BIT_F0_REG, CYREG_B1_UDB04_05_F0
- 1146              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__16BIT_F1_REG, CYREG_B1_UDB04_05_F1
- 1147              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__A0_A1_REG, CYREG_B1_UDB04_A0_A1
- 1148              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__A0_REG, CYREG_B1_UDB04_A0
- 1149              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__A1_REG, CYREG_B1_UDB04_A1
- 1150              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__D0_D1_REG, CYREG_B1_UDB04_D0_D1
- 1151              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__D0_REG, CYREG_B1_UDB04_D0
- 1152              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__D1_REG, CYREG_B1_UDB04_D1
- 1153              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__DP_AUX_CTL_REG, CYREG_B1_UDB04_ACTL
- 1154              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__F0_F1_REG, CYREG_B1_UDB04_F0_F1
- 1155              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__F0_REG, CYREG_B1_UDB04_F0
- 1156              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__F1_REG, CYREG_B1_UDB04_F1
- 1157              	.set UART_1_BUART_sTX_TxShifter_u0__16BIT_A0_REG, CYREG_B1_UDB07_08_A0
- 1158              	.set UART_1_BUART_sTX_TxShifter_u0__16BIT_A1_REG, CYREG_B1_UDB07_08_A1
- 1159              	.set UART_1_BUART_sTX_TxShifter_u0__16BIT_D0_REG, CYREG_B1_UDB07_08_D0
- 1160              	.set UART_1_BUART_sTX_TxShifter_u0__16BIT_D1_REG, CYREG_B1_UDB07_08_D1
- 1161              	.set UART_1_BUART_sTX_TxShifter_u0__16BIT_DP_AUX_CTL_REG, CYREG_B1_UDB07_08_ACTL
- 1162              	.set UART_1_BUART_sTX_TxShifter_u0__16BIT_F0_REG, CYREG_B1_UDB07_08_F0
- 1163              	.set UART_1_BUART_sTX_TxShifter_u0__16BIT_F1_REG, CYREG_B1_UDB07_08_F1
- 1164              	.set UART_1_BUART_sTX_TxShifter_u0__A0_A1_REG, CYREG_B1_UDB07_A0_A1
- 1165              	.set UART_1_BUART_sTX_TxShifter_u0__A0_REG, CYREG_B1_UDB07_A0
- 1166              	.set UART_1_BUART_sTX_TxShifter_u0__A1_REG, CYREG_B1_UDB07_A1
- 1167              	.set UART_1_BUART_sTX_TxShifter_u0__D0_D1_REG, CYREG_B1_UDB07_D0_D1
- 1168              	.set UART_1_BUART_sTX_TxShifter_u0__D0_REG, CYREG_B1_UDB07_D0
- 1169              	.set UART_1_BUART_sTX_TxShifter_u0__D1_REG, CYREG_B1_UDB07_D1
- 1170              	.set UART_1_BUART_sTX_TxShifter_u0__DP_AUX_CTL_REG, CYREG_B1_UDB07_ACTL
- 1171              	.set UART_1_BUART_sTX_TxShifter_u0__F0_F1_REG, CYREG_B1_UDB07_F0_F1
- 1172              	.set UART_1_BUART_sTX_TxShifter_u0__F0_REG, CYREG_B1_UDB07_F0
- 1173              	.set UART_1_BUART_sTX_TxShifter_u0__F1_REG, CYREG_B1_UDB07_F1
- 1174              	.set UART_1_BUART_sTX_TxShifter_u0__MSK_DP_AUX_CTL_REG, CYREG_B1_UDB07_MSK_ACTL
- 1175              	.set UART_1_BUART_sTX_TxShifter_u0__PER_DP_AUX_CTL_REG, CYREG_B1_UDB07_MSK_ACTL
- 1176              	.set UART_1_BUART_sTX_TxSts__0__MASK, 0x01
- 1177              	.set UART_1_BUART_sTX_TxSts__0__POS, 0
- 1178              	.set UART_1_BUART_sTX_TxSts__1__MASK, 0x02
- 1179              	.set UART_1_BUART_sTX_TxSts__1__POS, 1
- 1180              	.set UART_1_BUART_sTX_TxSts__16BIT_STATUS_AUX_CTL_REG, CYREG_B0_UDB07_08_ACTL
- 1181              	.set UART_1_BUART_sTX_TxSts__16BIT_STATUS_REG, CYREG_B0_UDB07_08_ST
- 1182              	.set UART_1_BUART_sTX_TxSts__2__MASK, 0x04
- 1183              	.set UART_1_BUART_sTX_TxSts__2__POS, 2
+ 1127              	.set UART_1_BUART_sRX_RxSts__2__POS, 2
+ 1128              	.set UART_1_BUART_sRX_RxSts__3__MASK, 0x08
+ 1129              	.set UART_1_BUART_sRX_RxSts__3__POS, 3
+ 1130              	.set UART_1_BUART_sRX_RxSts__4__MASK, 0x10
+ 1131              	.set UART_1_BUART_sRX_RxSts__4__POS, 4
+ 1132              	.set UART_1_BUART_sRX_RxSts__5__MASK, 0x20
+ 1133              	.set UART_1_BUART_sRX_RxSts__5__POS, 5
+ 1134              	.set UART_1_BUART_sRX_RxSts__MASK, 0x3C
+ 1135              	.set UART_1_BUART_sRX_RxSts__MASK_REG, CYREG_B1_UDB06_MSK
+ 1136              	.set UART_1_BUART_sRX_RxSts__STATUS_AUX_CTL_REG, CYREG_B1_UDB06_ACTL
+ 1137              	.set UART_1_BUART_sRX_RxSts__STATUS_REG, CYREG_B1_UDB06_ST
+ 1138              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__16BIT_A0_REG, CYREG_B0_UDB04_05_A0
+ 1139              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__16BIT_A1_REG, CYREG_B0_UDB04_05_A1
+ 1140              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__16BIT_D0_REG, CYREG_B0_UDB04_05_D0
+ 1141              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__16BIT_D1_REG, CYREG_B0_UDB04_05_D1
+ 1142              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__16BIT_DP_AUX_CTL_REG, CYREG_B0_UDB04_05_ACTL
+ 1143              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__16BIT_F0_REG, CYREG_B0_UDB04_05_F0
+ 1144              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__16BIT_F1_REG, CYREG_B0_UDB04_05_F1
+ 1145              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__A0_A1_REG, CYREG_B0_UDB04_A0_A1
+ 1146              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__A0_REG, CYREG_B0_UDB04_A0
+ 1147              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__A1_REG, CYREG_B0_UDB04_A1
+ 1148              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__D0_D1_REG, CYREG_B0_UDB04_D0_D1
+ 1149              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__D0_REG, CYREG_B0_UDB04_D0
+ 1150              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__D1_REG, CYREG_B0_UDB04_D1
+ 1151              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__DP_AUX_CTL_REG, CYREG_B0_UDB04_ACTL
+ 1152              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__F0_F1_REG, CYREG_B0_UDB04_F0_F1
+ 1153              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__F0_REG, CYREG_B0_UDB04_F0
+ 1154              	.set UART_1_BUART_sTX_sCLOCK_TxBitClkGen__F1_REG, CYREG_B0_UDB04_F1
+ 1155              	.set UART_1_BUART_sTX_TxShifter_u0__16BIT_A0_REG, CYREG_B1_UDB07_08_A0
+ 1156              	.set UART_1_BUART_sTX_TxShifter_u0__16BIT_A1_REG, CYREG_B1_UDB07_08_A1
+ 1157              	.set UART_1_BUART_sTX_TxShifter_u0__16BIT_D0_REG, CYREG_B1_UDB07_08_D0
+ 1158              	.set UART_1_BUART_sTX_TxShifter_u0__16BIT_D1_REG, CYREG_B1_UDB07_08_D1
+ 1159              	.set UART_1_BUART_sTX_TxShifter_u0__16BIT_DP_AUX_CTL_REG, CYREG_B1_UDB07_08_ACTL
+ 1160              	.set UART_1_BUART_sTX_TxShifter_u0__16BIT_F0_REG, CYREG_B1_UDB07_08_F0
+ 1161              	.set UART_1_BUART_sTX_TxShifter_u0__16BIT_F1_REG, CYREG_B1_UDB07_08_F1
+ 1162              	.set UART_1_BUART_sTX_TxShifter_u0__A0_A1_REG, CYREG_B1_UDB07_A0_A1
+ 1163              	.set UART_1_BUART_sTX_TxShifter_u0__A0_REG, CYREG_B1_UDB07_A0
+ 1164              	.set UART_1_BUART_sTX_TxShifter_u0__A1_REG, CYREG_B1_UDB07_A1
+ 1165              	.set UART_1_BUART_sTX_TxShifter_u0__D0_D1_REG, CYREG_B1_UDB07_D0_D1
+ 1166              	.set UART_1_BUART_sTX_TxShifter_u0__D0_REG, CYREG_B1_UDB07_D0
+ 1167              	.set UART_1_BUART_sTX_TxShifter_u0__D1_REG, CYREG_B1_UDB07_D1
+ 1168              	.set UART_1_BUART_sTX_TxShifter_u0__DP_AUX_CTL_REG, CYREG_B1_UDB07_ACTL
+ 1169              	.set UART_1_BUART_sTX_TxShifter_u0__F0_F1_REG, CYREG_B1_UDB07_F0_F1
+ 1170              	.set UART_1_BUART_sTX_TxShifter_u0__F0_REG, CYREG_B1_UDB07_F0
+ 1171              	.set UART_1_BUART_sTX_TxShifter_u0__F1_REG, CYREG_B1_UDB07_F1
+ 1172              	.set UART_1_BUART_sTX_TxSts__0__MASK, 0x01
+ 1173              	.set UART_1_BUART_sTX_TxSts__0__POS, 0
+ 1174              	.set UART_1_BUART_sTX_TxSts__1__MASK, 0x02
+ 1175              	.set UART_1_BUART_sTX_TxSts__1__POS, 1
+ 1176              	.set UART_1_BUART_sTX_TxSts__16BIT_STATUS_AUX_CTL_REG, CYREG_B0_UDB07_08_ACTL
+ 1177              	.set UART_1_BUART_sTX_TxSts__16BIT_STATUS_REG, CYREG_B0_UDB07_08_ST
+ 1178              	.set UART_1_BUART_sTX_TxSts__2__MASK, 0x04
+ 1179              	.set UART_1_BUART_sTX_TxSts__2__POS, 2
+ 1180              	.set UART_1_BUART_sTX_TxSts__3__MASK, 0x08
+ 1181              	.set UART_1_BUART_sTX_TxSts__3__POS, 3
+ 1182              	.set UART_1_BUART_sTX_TxSts__MASK, 0x0F
+ 1183              	.set UART_1_BUART_sTX_TxSts__MASK_REG, CYREG_B0_UDB07_MSK
 ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 210
 
 
- 1184              	.set UART_1_BUART_sTX_TxSts__3__MASK, 0x08
- 1185              	.set UART_1_BUART_sTX_TxSts__3__POS, 3
- 1186              	.set UART_1_BUART_sTX_TxSts__MASK, 0x0F
- 1187              	.set UART_1_BUART_sTX_TxSts__MASK_REG, CYREG_B0_UDB07_MSK
- 1188              	.set UART_1_BUART_sTX_TxSts__STATUS_AUX_CTL_REG, CYREG_B0_UDB07_ACTL
+ 1184              	.set UART_1_BUART_sTX_TxSts__MASK_ST_AUX_CTL_REG, CYREG_B0_UDB07_MSK_ACTL
+ 1185              	.set UART_1_BUART_sTX_TxSts__PER_ST_AUX_CTL_REG, CYREG_B0_UDB07_MSK_ACTL
+ 1186              	.set UART_1_BUART_sTX_TxSts__STATUS_AUX_CTL_REG, CYREG_B0_UDB07_ACTL
+ 1187              	.set UART_1_BUART_sTX_TxSts__STATUS_CNT_REG, CYREG_B0_UDB07_ST_CTL
+ 1188              	.set UART_1_BUART_sTX_TxSts__STATUS_CONTROL_REG, CYREG_B0_UDB07_ST_CTL
  1189              	.set UART_1_BUART_sTX_TxSts__STATUS_REG, CYREG_B0_UDB07_ST
  1190              	
  1191              	/* UART_1_IntClock */
@@ -12575,15 +12575,15 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  1215              	.set Control_Reg_1_Sync_ctrl_reg__0__POS, 0
  1216              	.set Control_Reg_1_Sync_ctrl_reg__1__MASK, 0x02
  1217              	.set Control_Reg_1_Sync_ctrl_reg__1__POS, 1
- 1218              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_CONTROL_AUX_CTL_REG, CYREG_B0_UDB06_07_ACTL
- 1219              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_CONTROL_CONTROL_REG, CYREG_B0_UDB06_07_CTL
- 1220              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_CONTROL_COUNT_REG, CYREG_B0_UDB06_07_CTL
- 1221              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_COUNT_CONTROL_REG, CYREG_B0_UDB06_07_CTL
- 1222              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_COUNT_COUNT_REG, CYREG_B0_UDB06_07_CTL
- 1223              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_MASK_MASK_REG, CYREG_B0_UDB06_07_MSK
- 1224              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_MASK_PERIOD_REG, CYREG_B0_UDB06_07_MSK
- 1225              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_PERIOD_MASK_REG, CYREG_B0_UDB06_07_MSK
- 1226              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_PERIOD_PERIOD_REG, CYREG_B0_UDB06_07_MSK
+ 1218              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_CONTROL_AUX_CTL_REG, CYREG_B0_UDB05_06_ACTL
+ 1219              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_CONTROL_CONTROL_REG, CYREG_B0_UDB05_06_CTL
+ 1220              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_CONTROL_COUNT_REG, CYREG_B0_UDB05_06_CTL
+ 1221              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_COUNT_CONTROL_REG, CYREG_B0_UDB05_06_CTL
+ 1222              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_COUNT_COUNT_REG, CYREG_B0_UDB05_06_CTL
+ 1223              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_MASK_MASK_REG, CYREG_B0_UDB05_06_MSK
+ 1224              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_MASK_PERIOD_REG, CYREG_B0_UDB05_06_MSK
+ 1225              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_PERIOD_MASK_REG, CYREG_B0_UDB05_06_MSK
+ 1226              	.set Control_Reg_1_Sync_ctrl_reg__16BIT_PERIOD_PERIOD_REG, CYREG_B0_UDB05_06_MSK
  1227              	.set Control_Reg_1_Sync_ctrl_reg__2__MASK, 0x04
  1228              	.set Control_Reg_1_Sync_ctrl_reg__2__POS, 2
  1229              	.set Control_Reg_1_Sync_ctrl_reg__3__MASK, 0x08
@@ -12596,18 +12596,18 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  1236              	.set Control_Reg_1_Sync_ctrl_reg__6__POS, 6
  1237              	.set Control_Reg_1_Sync_ctrl_reg__7__MASK, 0x80
  1238              	.set Control_Reg_1_Sync_ctrl_reg__7__POS, 7
- 1239              	.set Control_Reg_1_Sync_ctrl_reg__CONTROL_AUX_CTL_REG, CYREG_B0_UDB06_ACTL
- 1240              	.set Control_Reg_1_Sync_ctrl_reg__CONTROL_REG, CYREG_B0_UDB06_CTL
+ 1239              	.set Control_Reg_1_Sync_ctrl_reg__CONTROL_AUX_CTL_REG, CYREG_B0_UDB05_ACTL
+ 1240              	.set Control_Reg_1_Sync_ctrl_reg__CONTROL_REG, CYREG_B0_UDB05_CTL
 ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 211
 
 
- 1241              	.set Control_Reg_1_Sync_ctrl_reg__CONTROL_ST_REG, CYREG_B0_UDB06_ST_CTL
- 1242              	.set Control_Reg_1_Sync_ctrl_reg__COUNT_REG, CYREG_B0_UDB06_CTL
- 1243              	.set Control_Reg_1_Sync_ctrl_reg__COUNT_ST_REG, CYREG_B0_UDB06_ST_CTL
+ 1241              	.set Control_Reg_1_Sync_ctrl_reg__CONTROL_ST_REG, CYREG_B0_UDB05_ST_CTL
+ 1242              	.set Control_Reg_1_Sync_ctrl_reg__COUNT_REG, CYREG_B0_UDB05_CTL
+ 1243              	.set Control_Reg_1_Sync_ctrl_reg__COUNT_ST_REG, CYREG_B0_UDB05_ST_CTL
  1244              	.set Control_Reg_1_Sync_ctrl_reg__MASK, 0xFF
- 1245              	.set Control_Reg_1_Sync_ctrl_reg__MASK_CTL_AUX_CTL_REG, CYREG_B0_UDB06_MSK_ACTL
- 1246              	.set Control_Reg_1_Sync_ctrl_reg__PER_CTL_AUX_CTL_REG, CYREG_B0_UDB06_MSK_ACTL
- 1247              	.set Control_Reg_1_Sync_ctrl_reg__PERIOD_REG, CYREG_B0_UDB06_MSK
+ 1245              	.set Control_Reg_1_Sync_ctrl_reg__MASK_CTL_AUX_CTL_REG, CYREG_B0_UDB05_MSK_ACTL
+ 1246              	.set Control_Reg_1_Sync_ctrl_reg__PER_CTL_AUX_CTL_REG, CYREG_B0_UDB05_MSK_ACTL
+ 1247              	.set Control_Reg_1_Sync_ctrl_reg__PERIOD_REG, CYREG_B0_UDB05_MSK
  1248              	
  1249              	/* Miscellaneous */
  1250              	.set BCLK__BUS_CLK__HZ, 32000000

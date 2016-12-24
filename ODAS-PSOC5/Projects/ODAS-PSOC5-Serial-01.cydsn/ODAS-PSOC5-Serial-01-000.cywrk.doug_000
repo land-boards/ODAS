@@ -18,7 +18,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Source Files\serialIO.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\TopDesign">
 <ExpandedNodeIds>
 <v>ODAS-PSOC5-Serial-01-000</v>
 <v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01</v>
@@ -203,7 +203,44 @@
 <v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Generated_Source\PSoC5\cymetadata.c</v>
 <v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Generated_Source\PSoC5\project.h</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>ODAS-PSOC5-Serial-01-000</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\TopDesign</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Header Files</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Header Files\ODAS-PSOC5-Serial-01.cydwr</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Header Files\ODAS-PSOC5-Serial-01.cydwr\Pins</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Header Files\ODAS-PSOC5-Serial-01.cydwr\Analog</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Header Files\ODAS-PSOC5-Serial-01.cydwr\Clocks</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Header Files\ODAS-PSOC5-Serial-01.cydwr\Interrupts</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Header Files\ODAS-PSOC5-Serial-01.cydwr\DMA</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Header Files\ODAS-PSOC5-Serial-01.cydwr\System</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Header Files\ODAS-PSOC5-Serial-01.cydwr\Directives</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Header Files\ODAS-PSOC5-Serial-01.cydwr\Flash Security</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Header Files\ODAS-PSOC5-Serial-01.cydwr\EEPROM</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Header Files\cyapicallbacks.h</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Source Files</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Source Files\accessMemory.c</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Source Files\accessMemory.h</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Source Files\ARM_Monitor.c</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Source Files\ARM_Monitor.h</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Source Files\main.c</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Source Files\proEnv.h</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Source Files\serialIO.c</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Source Files\serialIO.h</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Source Files\stringConvs.c</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Source Files\stringConvs.h</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Generated_Source</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Generated_Source\PSoC5</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Generated_Source\PSoC5\Clock_1</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Generated_Source\PSoC5\Control_Reg_1</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Generated_Source\PSoC5\Control_Reg_1\Control_Reg_1.c</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Generated_Source\PSoC5\Control_Reg_1\Control_Reg_1.h</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Generated_Source\PSoC5\Control_Reg_1\Control_Reg_1_PM.c</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Generated_Source\PSoC5\cy_boot</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Generated_Source\PSoC5\LED</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\Generated_Source\PSoC5\LED\LED.c</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\TopDesign\TopDesign.cysch">
 <ExpandedNodeIds>
@@ -212,7 +249,12 @@
 <v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\TopDesign</v>
 <v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\TopDesign\TopDesign.cysch</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>ODAS-PSOC5-Serial-01-000</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\TopDesign</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\ODAS-PSOC5-Serial-01.rpt">
 <ExpandedNodeIds>
@@ -283,7 +325,10 @@
 <v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\ODAS-PSOC5-Serial-01.rpt</v>
 <v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\ODAS-PSOC5-Serial-01_timing.html</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>ODAS-PSOC5-Serial-01-000</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
 <TreeKeysV2>
@@ -310,7 +355,25 @@
 <v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\not_v1_0.pdf</v>
 <v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\UART_v2_50.pdf</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>ODAS-PSOC5-Serial-01-000</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\PSoC 5LP Architecture TRM</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\CY8C52LP Family Datasheet</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\System Reference Guides</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\System Reference Guides\cy_boot_v5_50</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\BasicCounter_v1_0.pdf</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\cy_clock_v2_20.pdf</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\cy_constant_v1_0</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\cy_pins_v2_20</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\CyControlReg_v1_80.pdf</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\demux_v1_10</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\demux_v1_10\demux_v1_10.pdf</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\not_v1_0.pdf</v>
+<v>ODAS-PSOC5-Serial-01-000\ODAS-PSOC5-Serial-01\UART_v2_50.pdf</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
 </CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
@@ -326,6 +389,7 @@
 <name v=".\stringConvs.c" />
 <name v=".\proEnv.h" />
 <name v=".\serialIO.h" />
+<name v=".\TopDesign\TopDesign.cysch" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -333,7 +397,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="819, 417" SelectedTabbedMdiWindow="115011af-d502-4f78-be5b-3e5484da1dcf"><DocumentWindow Key="2c3642bf-be01-4cd4-a43b-8b9e01b4b980" Guid="4ddf6c37-0dde-4e20-a9d3-87cf4e2183db" /><DocumentWindow Key="71ebdff7-c99d-479b-85ff-1121145afd07" Guid="8fd8ecca-8a6f-4296-9db9-7d30a39b3f11" /><DocumentWindow Key="2c3f50e2-6eef-4edf-a66a-8be99b8101e3" Guid="ccddcf47-7df8-4c3a-9fe6-10b0ae0493eb" /><DocumentWindow Key="a922b6ce-48a0-4d53-aaa4-2a3417b01086" Guid="115011af-d502-4f78-be5b-3e5484da1dcf" /><DocumentWindow Key="c651eca2-ea13-4fb6-9076-03b616260908" Guid="121c610a-278a-45b3-bc6a-ef23ba9e09dc" /><DocumentWindow Key="a39634be-3325-4cfc-8244-35b389f60a62" Guid="90cefd6e-1879-4203-992d-42a6f7970afb" /><DocumentWindow Key="9e34e8fb-eff2-4dbc-8fff-6140d8e7dbb2" Guid="fdce161a-d55c-4a9f-aa89-d3ee6ff42f21" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1110, 465" SelectedTabbedMdiWindow="2df50b4f-a001-4e8e-99c2-0bd68e7f154f"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="c7066b00-f048-4027-94a4-c536df40d18a" /><DocumentWindow Key="83e97cc3-0056-4647-b681-9bbf9d36449a" Guid="ebb0597c-9a89-4947-b59e-008e32d46298" /><DocumentWindow Key="21600f33-da22-48ac-897d-333bf9d34998" Guid="2df50b4f-a001-4e8e-99c2-0bd68e7f154f" /><DocumentWindow Key="3bbdbab9-558c-48a9-b036-c824276ed540" Guid="87927281-c924-4e24-8ed9-f73ea9d5c7ac" /><DocumentWindow Key="8ea7954e-87f2-475a-a4fc-241ccfdd50d1" Guid="0307f8bf-8de0-450a-9057-ad35ec5fe413" /><DocumentWindow Key="5746fa05-9df1-47e5-be8f-b69365e6ae26" Guid="7b770023-b252-4521-ac46-d4f67efb6730" /><DocumentWindow Key="d956f555-096c-4b77-a9ee-ecff302b7d5f" Guid="cb0ab1e8-0809-4c38-93c2-54461596f907" /><DocumentWindow Key="d9460595-a624-499e-ab67-8fa0a7fed44d" Guid="96e26fe4-f28c-47f1-82c8-2aac73619c35" /><DocumentWindow Key="aa9239f9-4021-45d0-a509-1f792d471e6c" Guid="e2537024-4ad5-4a63-a1bb-ee2232db1738" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

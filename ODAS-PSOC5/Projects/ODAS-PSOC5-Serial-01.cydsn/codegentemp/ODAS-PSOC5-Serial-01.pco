@@ -1,5 +1,5 @@
 # ODAS-PSOC5-Serial-01
-# 2016-12-20 20:15:32Z
+# 2016-12-24 03:55:16Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -25,7 +25,7 @@ dont_use_location abufcell -1 -1 0
 dont_use_location abufcell -1 -1 2
 dont_use_location abufcell -1 -1 1
 dont_use_location abufcell -1 -1 3
-set_location "\UART_1:BUART:txn_split\" 2 1 1 0
+set_location "\UART_1:BUART:txn_split\" 2 2 1 0
 set_location "ClockBlock" clockblockcell -1 -1 0
 set_io "P1_05(0)" iocell 4 7
 set_io "P1_06(0)" iocell 4 6
@@ -58,67 +58,59 @@ set_io "P1_22(0)" iocell 12 2
 set_io "P1_21(0)" iocell 12 3
 set_io "P1_34(0)" iocell 3 0
 set_io "LED(0)" iocell 5 4
-set_location "Net_357" 3 1 1 3
-set_location "Net_358" 3 2 0 1
-set_location "Net_934" 3 2 0 0
-set_location "Net_935" 3 1 1 1
-set_location "Net_361" 3 1 1 0
-set_location "Net_362" 3 4 0 1
-set_location "Net_363" 3 4 0 2
-set_location "Net_364" 3 2 0 2
-set_location "Net_365" 2 4 0 1
-set_location "Net_366" 3 4 1 0
-set_location "Net_942" 3 4 1 1
-set_location "Net_943" 3 0 0 1
-set_location "Net_369" 3 0 0 3
-set_location "Net_909" 3 4 1 2
-set_location "Net_910" 3 4 0 3
-set_location "Net_911" 3 0 1 1
-set_location "Net_912" 3 0 0 2
-set_location "Net_913" 3 0 0 0
-set_location "Net_914" 3 0 1 3
-set_location "Net_1036" 3 0 1 0
-set_location "Net_1012" 3 0 1 2
-set_location "\UART_1:BUART:counter_load_not\" 2 0 0 2
-set_location "\UART_1:BUART:tx_status_0\" 2 0 1 2
-set_location "\UART_1:BUART:tx_status_2\" 2 4 0 2
-set_location "\UART_1:BUART:rx_counter_load\" 2 3 0 1
-set_location "\UART_1:BUART:rx_postpoll\" 3 1 0 1
-set_location "\UART_1:BUART:rx_status_4\" 3 3 1 3
-set_location "\UART_1:BUART:rx_status_5\" 2 4 0 3
-set_location "\UART_1:BUART:sCR_SyncCtl:CtrlReg\" 2 1 6
+set_location "Net_1076" 3 3 0 0
+set_location "Net_1077" 2 2 0 3
+set_location "Net_1078" 3 3 0 2
+set_location "Net_1079" 2 2 0 2
+set_location "Net_1080" 3 3 0 1
+set_location "Net_1081" 3 3 0 3
+set_location "Net_1042" 2 2 0 1
+set_location "Net_1043" 3 2 0 0
+set_location "Net_1044" 3 1 1 1
+set_location "Net_1045" 3 1 1 0
+set_location "Net_1046" 2 1 1 0
+set_location "Net_1047" 3 1 1 2
+set_location "Net_1048" 3 1 1 3
+set_location "Net_1012" 2 0 1 2
+set_location "\UART_1:BUART:counter_load_not\" 2 3 0 2
+set_location "\UART_1:BUART:tx_status_0\" 2 3 1 2
+set_location "\UART_1:BUART:tx_status_2\" 2 1 0 1
+set_location "\UART_1:BUART:rx_counter_load\" 3 0 0 1
+set_location "\UART_1:BUART:rx_postpoll\" 2 1 0 2
+set_location "\UART_1:BUART:rx_status_4\" 3 2 1 0
+set_location "\UART_1:BUART:rx_status_5\" 3 2 1 1
+set_location "\UART_1:BUART:sCR_SyncCtl:CtrlReg\" 2 2 6
 set_location "\UART_1:BUART:sTX:TxShifter:u0\" 2 1 2
-set_location "\UART_1:BUART:sTX:sCLOCK:TxBitClkGen\" 2 0 2
+set_location "\UART_1:BUART:sTX:sCLOCK:TxBitClkGen\" 2 3 2
 set_location "\UART_1:BUART:sTX:TxSts\" 2 2 4
-set_location "\UART_1:BUART:sRX:RxShifter:u0\" 2 3 2
-set_location "\UART_1:BUART:sRX:RxBitCounter\" 2 3 7
-set_location "\UART_1:BUART:sRX:RxSts\" 2 4 4
-set_location "\Control_Reg_1:Sync:ctrl_reg\" 3 2 6
-set_location "Net_16_4" 3 2 0 3
-set_location "Net_16_3" 3 4 0 0
-set_location "Net_16_2" 2 4 0 0
-set_location "Net_16_1" 3 4 1 3
-set_location "Net_16_0" 2 1 1 1
-set_location "\UART_1:BUART:txn\" 2 1 0 0
-set_location "\UART_1:BUART:tx_state_1\" 2 0 0 3
-set_location "\UART_1:BUART:tx_state_0\" 2 0 1 0
-set_location "\UART_1:BUART:tx_state_2\" 2 0 0 1
-set_location "\UART_1:BUART:tx_bitclk\" 2 0 1 1
-set_location "\UART_1:BUART:tx_ctrl_mark_last\" 2 4 1 0
-set_location "\UART_1:BUART:tx_mark\" 2 0 0 0
-set_location "\UART_1:BUART:tx_parity_bit\" 2 2 1 0
-set_location "\UART_1:BUART:rx_state_1\" 2 3 0 3
-set_location "\UART_1:BUART:rx_state_0\" 2 3 1 1
-set_location "\UART_1:BUART:rx_load_fifo\" 2 3 0 2
-set_location "\UART_1:BUART:rx_state_3\" 2 3 1 0
-set_location "\UART_1:BUART:rx_state_2\" 2 3 0 0
-set_location "\UART_1:BUART:rx_bitclk_enable\" 2 2 1 3
-set_location "\UART_1:BUART:rx_state_stop1_reg\" 2 3 1 2
-set_location "\UART_1:BUART:pollcount_1\" 3 1 0 3
-set_location "\UART_1:BUART:pollcount_0\" 3 1 1 2
-set_location "\UART_1:BUART:rx_status_2\" 2 3 1 3
-set_location "\UART_1:BUART:rx_status_3\" 2 2 0 1
-set_location "\UART_1:BUART:rx_markspace_pre\" 2 2 0 2
-set_location "\UART_1:BUART:rx_parity_error_pre\" 2 4 1 3
-set_location "\UART_1:BUART:rx_last\" 3 1 0 2
-set_location "\UART_1:BUART:rx_parity_bit\" 2 2 0 0
+set_location "\UART_1:BUART:sRX:RxShifter:u0\" 3 2 2
+set_location "\UART_1:BUART:sRX:RxBitCounter\" 3 0 7
+set_location "\UART_1:BUART:sRX:RxSts\" 3 1 4
+set_location "\Control_Reg_1:Sync:ctrl_reg\" 3 3 6
+set_location "Net_16_3" 3 2 0 3
+set_location "Net_16_2" 3 2 0 1
+set_location "Net_16_1" 3 2 0 2
+set_location "Net_16_0" 3 2 1 3
+set_location "\UART_1:BUART:txn\" 2 2 0 0
+set_location "\UART_1:BUART:tx_state_1\" 2 3 0 3
+set_location "\UART_1:BUART:tx_state_0\" 2 3 1 0
+set_location "\UART_1:BUART:tx_state_2\" 2 3 0 1
+set_location "\UART_1:BUART:tx_bitclk\" 2 3 1 1
+set_location "\UART_1:BUART:tx_ctrl_mark_last\" 2 0 0 0
+set_location "\UART_1:BUART:tx_mark\" 2 3 0 0
+set_location "\UART_1:BUART:tx_parity_bit\" 2 0 1 0
+set_location "\UART_1:BUART:rx_state_1\" 3 0 0 3
+set_location "\UART_1:BUART:rx_state_0\" 3 0 1 1
+set_location "\UART_1:BUART:rx_load_fifo\" 3 0 0 2
+set_location "\UART_1:BUART:rx_state_3\" 3 0 1 0
+set_location "\UART_1:BUART:rx_state_2\" 3 0 0 0
+set_location "\UART_1:BUART:rx_bitclk_enable\" 2 1 1 2
+set_location "\UART_1:BUART:rx_state_stop1_reg\" 3 0 1 2
+set_location "\UART_1:BUART:pollcount_1\" 2 1 1 1
+set_location "\UART_1:BUART:pollcount_0\" 2 1 0 0
+set_location "\UART_1:BUART:rx_status_2\" 3 3 1 1
+set_location "\UART_1:BUART:rx_status_3\" 3 1 0 1
+set_location "\UART_1:BUART:rx_markspace_pre\" 3 1 0 3
+set_location "\UART_1:BUART:rx_parity_error_pre\" 3 3 1 0
+set_location "\UART_1:BUART:rx_last\" 2 1 1 3
+set_location "\UART_1:BUART:rx_parity_bit\" 3 1 0 0

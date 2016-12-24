@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
   29:ARM_Monitor.c **** // countParms()
   30:ARM_Monitor.c **** // Syntax of a line is
   31:ARM_Monitor.c **** // X[aaaa][,dddd]]
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 2
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 2
 
 
   32:ARM_Monitor.c **** // X = command
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
   62              		.cfi_startproc
   63              		@ args = 0, pretend = 0, frame = 8
   64              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 3
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 3
 
 
   65              	.LVL2:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  106              		.loc 1 61 0 is_stmt 1
  107 002a 02AB     		add	r3, sp, #8
  108              	.LVL9:
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 4
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 4
 
 
  109 002c 1944     		add	r1, r1, r3
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  151              		.align	2
  152              		.global	checkParmCount
  153              		.thumb
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 5
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 5
 
 
  154              		.thumb_func
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  192 0020 40B2     		sxtb	r0, r0
  193 0022 38BD     		pop	{r3, r4, r5, pc}
  194              	.LVL22:
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 6
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 6
 
 
  195              	.L17:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  231              		.loc 1 104 0
  232 000c 3546     		mov	r5, r6
  233              	.LVL27:
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 7
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 7
 
 
  234              	.L26:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  275              	.LVL37:
  276              	.L20:
  114:ARM_Monitor.c ****             {
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 8
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 8
 
 
  277              		.loc 1 114 0 is_stmt 0 discriminator 1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  318 0070 FFF7FEFF 		bl	writeLine
  319              	.LVL45:
  109:ARM_Monitor.c ****         {
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 9
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 9
 
 
  320              		.loc 1 109 0 discriminator 2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  361              		.cfi_offset 4, -12
  362              		.cfi_offset 5, -8
  363              		.cfi_offset 14, -4
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 10
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 10
 
 
  364 0002 85B0     		sub	sp, sp, #20
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  406 003c 01D1     		bne	.L31
  154:ARM_Monitor.c ****             return;
  155:ARM_Monitor.c ****         readAddress += 1;
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 11
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 11
 
 
  407              		.loc 1 155 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  450              	.LVL63:
  451 0008 FFF7FEFF 		bl	writeLine
  452              	.LVL64:
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 12
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 12
 
 
  453              	.L39:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  493 003e 04B0     		add	sp, sp, #16
  494              		.cfi_def_cfa_offset 8
  495              		@ sp needed
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 13
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 13
 
 
  496 0040 10BD     		pop	{r4, pc}
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  193:ARM_Monitor.c ****         writeLineNoLF(numberString);
  538              		.loc 1 193 0
  539 0014 01A8     		add	r0, sp, #4
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 14
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 14
 
 
  540 0016 FFF7FEFF 		bl	writeLineNoLF
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  584              		.section	.text.writeMemLong,"ax",%progbits
  585              		.align	2
  586              		.global	writeMemLong
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 15
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 15
 
 
  587              		.thumb
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  628              	.LVL92:
  217:ARM_Monitor.c ****     writeLine(numberString);
  629              		.loc 1 217 0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 16
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 16
 
 
  630 002a 01A8     		add	r0, sp, #4
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  228:ARM_Monitor.c ****     writeLineNoLF("writeMem: writing - address=");
  674              		.loc 1 228 0
  675 0008 0C48     		ldr	r0, .L55
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 17
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 17
 
 
  676              	.LVL97:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  723              		.thumb
  724              		.thumb_func
  725              		.type	writeMemByte, %function
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 18
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 18
 
 
  726              	writeMemByte:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  766 002a 01A8     		add	r0, sp, #4
  767 002c FFF7FEFF 		bl	writeLine
  768              	.LVL113:
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 19
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 19
 
 
  250:ARM_Monitor.c ****     writeLong(writeAddress,writeData);
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  815              		.cfi_endproc
  816              	.LFE73:
  817              		.size	goCommand, .-goCommand
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 20
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 20
 
 
  818              		.section	.text.disassemble,"ax",%progbits
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  858              		.cfi_offset 4, -8
  859              		.cfi_offset 14, -4
  860 0002 94B0     		sub	sp, sp, #80
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 21
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 21
 
 
  861              		.cfi_def_cfa_offset 88
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  910 0043 D5       		.byte	(.L69-.L71)/2
  911 0044 D5       		.byte	(.L69-.L71)/2
  912 0045 D5       		.byte	(.L69-.L71)/2
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 22
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 22
 
 
  913 0046 D5       		.byte	(.L69-.L71)/2
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  958 007a FFF7FEFF 		bl	writeLine
  959              	.LVL127:
  286:ARM_Monitor.c ****         break;
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 23
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 23
 
 
  960              		.loc 1 286 0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  999              	.LVL132:
  1000 00c8 FFF7FEFF 		bl	readMemByte
  1001              	.LVL133:
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 24
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 24
 
 
  1002 00cc 83E0     		b	.L68
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1045 010a FFF7FEFF 		bl	checkParmCount
  1046              	.LVL139:
  1047 010e B0F1FF3F 		cmp	r0, #-1
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 25
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 25
 
 
  1048 0112 60D0     		beq	.L68
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1094 0160 81B2     		uxth	r1, r0
  1095 0162 2046     		mov	r0, r4
  1096 0164 FFF7FEFF 		bl	writeMemShort
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 26
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 26
 
 
  1097              	.LVL146:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1139 01aa FFF7FEFF 		bl	extractParm
  1140              	.LVL152:
  1141 01ae FFF7FEFF 		bl	goCommand
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 27
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 27
 
 
  1142              	.LVL153:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1177 01e0 54000000 		.word	.LC3
  1178 01e4 B4000000 		.word	.LC7
  1179 01e8 EC000000 		.word	.LC8
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 28
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 28
 
 
  1180 01ec 24010000 		.word	.LC9
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1214      642F4D6F 
  1214      64696679 
  1215 00e7 7300     		.ascii	"s\000"
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 29
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 29
 
 
  1216 00e9 000000   		.space	3
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1240      697A6564 
  1240      20636F6D 
  1240      6D616E64 
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 30
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 30
 
 
  1241 0241 000000   		.text
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1295 005b 08       		.byte	0x8
  1296 005c 05       		.byte	0x5
  1297 005d E0000000 		.4byte	.LASF6
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 31
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 31
 
 
  1298 0061 02       		.uleb128 0x2
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1352 00d2 02       		.uleb128 0x2
  1353 00d3 04       		.byte	0x4
  1354 00d4 07       		.byte	0x7
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 32
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 32
 
 
  1355 00d5 33000000 		.4byte	.LASF19
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1409 0144 FB020000 		.4byte	.LASF22
  1410 0148 01       		.byte	0x1
  1411 0149 31       		.byte	0x31
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 33
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 33
 
 
  1412 014a D9000000 		.4byte	0xd9
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1466 01bf 40000000 		.4byte	.LVL12
  1467 01c3 700D0000 		.4byte	0xd70
  1468 01c7 D2010000 		.4byte	0x1d2
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 34
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 34
 
 
  1469 01cb 0B       		.uleb128 0xb
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1523 0231 01       		.byte	0x1
  1524 0232 4F       		.byte	0x4f
  1525 0233 81000000 		.4byte	0x81
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 35
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 35
 
 
  1526 0237 03010000 		.4byte	.LLST6
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1580 02a6 02       		.uleb128 0x2
  1581 02a7 91       		.byte	0x91
  1582 02a8 5C       		.sleb128 -36
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 36
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 36
 
 
  1583 02a9 0E       		.uleb128 0xe
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1637 0327 CA0D0000 		.4byte	0xdca
  1638 032b 39030000 		.4byte	0x339
  1639 032f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 37
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 37
 
 
  1640 0330 01       		.uleb128 0x1
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1694 0390 00       		.sleb128 0
  1695 0391 32       		.byte	0x32
  1696 0392 24       		.byte	0x24
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 38
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 38
 
 
  1697 0393 76       		.byte	0x76
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1751 03fc 07040000 		.4byte	0x407
  1752 0400 11       		.uleb128 0x11
  1753 0401 D2000000 		.4byte	0xd2
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 39
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 39
 
 
  1754 0405 08       		.byte	0x8
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1808 047a 91       		.byte	0x91
  1809 047b 64       		.sleb128 -28
  1810 047c 0B       		.uleb128 0xb
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 40
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 40
 
 
  1811 047d 01       		.uleb128 0x1
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1865 04da 64       		.sleb128 -28
  1866 04db 00       		.byte	0
  1867 04dc 13       		.uleb128 0x13
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 41
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 41
 
 
  1868 04dd 3A000000 		.4byte	.LVL59
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1922 0558 02       		.uleb128 0x2
  1923 0559 91       		.byte	0x91
  1924 055a 6C       		.sleb128 -20
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 42
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 42
 
 
  1925 055b 0B       		.uleb128 0xb
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  1979 05be C9050000 		.4byte	0x5c9
  1980 05c2 0B       		.uleb128 0xb
  1981 05c3 01       		.uleb128 0x1
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 43
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 43
 
 
  1982 05c4 50       		.byte	0x50
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2036 0636 14000000 		.4byte	.LVL77
  2037 063a 010E0000 		.4byte	0xe01
  2038 063e 4F060000 		.4byte	0x64f
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 44
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 44
 
 
  2039 0642 0B       		.uleb128 0xb
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2093 069f 91       		.byte	0x91
  2094 06a0 6C       		.sleb128 -20
  2095 06a1 00       		.byte	0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 45
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 45
 
 
  2096 06a2 0F       		.uleb128 0xf
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2150 0714 64       		.sleb128 -28
  2151 0715 0F       		.uleb128 0xf
  2152 0716 0E000000 		.4byte	.LVL88
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 46
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 46
 
 
  2153 071a B90D0000 		.4byte	0xdb9
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2207 0780 51       		.byte	0x51
  2208 0781 02       		.uleb128 0x2
  2209 0782 91       		.byte	0x91
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 47
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 47
 
 
  2210 0783 64       		.sleb128 -28
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2264 07e0 E1       		.byte	0xe1
  2265 07e1 8D000000 		.4byte	0x8d
  2266 07e5 16030000 		.4byte	.LLST22
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 48
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 48
 
 
  2267 07e9 0C       		.uleb128 0xc
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2321 084c 05       		.uleb128 0x5
  2322 084d 03       		.byte	0x3
  2323 084e 78000000 		.4byte	.LC5
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 49
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 49
 
 
  2324 0852 00       		.byte	0
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2378 08a9 7A090000 		.4byte	0x97a
  2379 08ad 09       		.uleb128 0x9
  2380 08ae 23020000 		.4byte	.LASF43
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 50
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 50
 
 
  2381 08b2 01       		.byte	0x1
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2435 091b 91       		.byte	0x91
  2436 091c 64       		.sleb128 -28
  2437 091d 00       		.byte	0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 51
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 51
 
 
  2438 091e 0F       		.uleb128 0xf
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2492 0978 00       		.byte	0
  2493 0979 00       		.byte	0
  2494 097a 12       		.uleb128 0x12
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 52
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 52
 
 
  2495 097b 30020000 		.4byte	.LASF47
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2549 09f3 1001     		.2byte	0x110
  2550 09f5 2E0D0000 		.4byte	0xd2e
  2551 09f9 03       		.uleb128 0x3
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 53
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 53
 
 
  2552 09fa 91       		.byte	0x91
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2606 0a67 03       		.byte	0x3
  2607 0a68 EC000000 		.4byte	.LC8
  2608 0a6c 00       		.byte	0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 54
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 54
 
 
  2609 0a6d 0F       		.uleb128 0xf
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2663 0ad9 01       		.uleb128 0x1
  2664 0ada 51       		.byte	0x51
  2665 0adb 01       		.uleb128 0x1
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 55
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 55
 
 
  2666 0adc 30       		.byte	0x30
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2720 0b3c 30       		.byte	0x30
  2721 0b3d 0B       		.uleb128 0xb
  2722 0b3e 01       		.uleb128 0x1
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 56
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 56
 
 
  2723 0b3f 50       		.byte	0x50
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2777 0ba1 0F       		.uleb128 0xf
  2778 0ba2 1A010000 		.4byte	.LVL140
  2779 0ba6 CA0D0000 		.4byte	0xdca
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 57
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 57
 
 
  2780 0baa B80B0000 		.4byte	0xbb8
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2834 0c08 190C0000 		.4byte	0xc19
  2835 0c0c 0B       		.uleb128 0xb
  2836 0c0d 01       		.uleb128 0x1
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 58
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 58
 
 
  2837 0c0e 51       		.byte	0x51
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2891 0c61 86010000 		.4byte	.LVL148
  2892 0c65 2A010000 		.4byte	0x12a
  2893 0c69 790C0000 		.4byte	0xc79
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 59
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 59
 
 
  2894 0c6d 0B       		.uleb128 0xb
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  2948 0cca 0B       		.uleb128 0xb
  2949 0ccb 01       		.uleb128 0x1
  2950 0ccc 51       		.byte	0x51
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 60
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 60
 
 
  2951 0ccd 01       		.uleb128 0x1
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3005 0d27 03       		.byte	0x3
  3006 0d28 18020000 		.4byte	.LC15
  3007 0d2c 00       		.byte	0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 61
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 61
 
 
  3008 0d2d 00       		.byte	0
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3062 0da9 06       		.byte	0x6
  3063 0daa 13       		.byte	0x13
  3064 0dab 99000000 		.4byte	0x99
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 62
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 62
 
 
  3065 0daf B90D0000 		.4byte	0xdb9
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3119 0e27 99000000 		.4byte	0x99
  3120 0e2b 00       		.byte	0
  3121 0e2c 1D       		.uleb128 0x1d
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 63
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 63
 
 
  3122 0e2d 0D000000 		.4byte	.LASF72
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3176 0000 01       		.uleb128 0x1
  3177 0001 11       		.uleb128 0x11
  3178 0002 01       		.byte	0x1
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 64
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 64
 
 
  3179 0003 25       		.uleb128 0x25
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3233 0039 03       		.uleb128 0x3
  3234 003a 0E       		.uleb128 0xe
  3235 003b 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 65
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 65
 
 
  3236 003c 0B       		.uleb128 0xb
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3290 0073 0E       		.uleb128 0xe
  3291 0074 3A       		.uleb128 0x3a
  3292 0075 0B       		.uleb128 0xb
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 66
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 66
 
 
  3293 0076 3B       		.uleb128 0x3b
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3347 00b1 00       		.byte	0
  3348 00b2 03       		.uleb128 0x3
  3349 00b3 0E       		.uleb128 0xe
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 67
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 67
 
 
  3350 00b4 3A       		.uleb128 0x3a
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3404 00ec 12       		.uleb128 0x12
  3405 00ed 06       		.uleb128 0x6
  3406 00ee 40       		.uleb128 0x40
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 68
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 68
 
 
  3407 00ef 18       		.uleb128 0x18
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3461 0129 00       		.byte	0
  3462 012a 00       		.byte	0
  3463 012b 16       		.uleb128 0x16
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 69
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 69
 
 
  3464 012c 34       		.uleb128 0x34
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3518 0162 00       		.byte	0
  3519 0163 1A       		.uleb128 0x1a
  3520 0164 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 70
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 70
 
 
  3521 0165 01       		.byte	0x1
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3575 019b 3B       		.uleb128 0x3b
  3576 019c 0B       		.uleb128 0xb
  3577 019d 27       		.uleb128 0x27
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 71
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 71
 
 
  3578 019e 19       		.uleb128 0x19
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3632 003f 0100     		.2byte	0x1
  3633 0041 50       		.byte	0x50
  3634 0042 3F000000 		.4byte	.LVL12-1
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 72
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 72
 
 
  3635 0046 58000000 		.4byte	.LFE64
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3689 00ce 51       		.byte	0x51
  3690 00cf 00000000 		.4byte	0
  3691 00d3 00000000 		.4byte	0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 73
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 73
 
 
  3692              	.LLST5:
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3746 015a 50       		.byte	0x50
  3747 015b 08000000 		.4byte	.LVL25
  3748 015f 86000000 		.4byte	.LVL48
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 74
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 74
 
 
  3749 0163 0100     		.2byte	0x1
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3803 01f0 65000000 		.4byte	.LVL42-1
  3804 01f4 0100     		.2byte	0x1
  3805 01f6 50       		.byte	0x50
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 75
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 75
 
 
  3806 01f7 00000000 		.4byte	0
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3860 028a 00000000 		.4byte	0
  3861 028e 00000000 		.4byte	0
  3862              	.LLST19:
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 76
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 76
 
 
  3863 0292 00000000 		.4byte	.LVL86
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3917 0316 00000000 		.4byte	.LVL96
  3918 031a 0D000000 		.4byte	.LVL98-1
  3919 031e 0100     		.2byte	0x1
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 77
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 77
 
 
  3920 0320 51       		.byte	0x51
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  3974 039d 00000000 		.4byte	0
  3975 03a1 00000000 		.4byte	0
  3976              		.section	.debug_aranges,"",%progbits
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 78
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 78
 
 
  3977 0000 7C000000 		.4byte	0x7c
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  4031 0044 44000000 		.4byte	.LFE71
  4032 0048 00000000 		.4byte	.LFB72
  4033 004c 44000000 		.4byte	.LFE72
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 79
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 79
 
 
  4034 0050 00000000 		.4byte	.LFB73
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  4063              	.LASF51:
  4064 0065 41524D5F 		.ascii	"ARM_Monitor\000"
  4064      4D6F6E69 
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 80
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 80
 
 
  4064      746F7200 
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  4092      4D656D42 
  4092      79746500 
  4093              	.LASF4:
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 81
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 81
 
 
  4094 00ff 6C6F6E67 		.ascii	"long int\000"
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  4115      676E6564 
  4115      20636861 
  4115      7200
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 82
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 82
 
 
  4116              	.LASF41:
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  4141      4320342E 
  4141      392E3320 
  4141      32303135 
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 83
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 83
 
 
  4141      30333033 
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  4165 036d 72644368 		.ascii	"rdChar\000"
  4165      617200
  4166              	.LASF26:
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 84
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 84
 
 
  4167 0374 7061726D 		.ascii	"parmOffset\000"
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 1
  4191      6500
  4192              	.LASF46:
  4193 0407 77726974 		.ascii	"writeMemByte\000"
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccigWOLe.s 			page 85
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccVCb6w5.s 			page 85
 
 
  4193      654D656D 

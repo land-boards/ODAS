@@ -114,7 +114,7 @@ void writeLong(uint32 writeAddress, uint32 writeData)
 void writeShort(uint32 writeAddress, uint16 writeData)
 {
 #ifndef DEBUG_ON_PC
-    uint32 * wrAdr;
+    uint16 * wrAdr;
     wrAdr = (uint16 *) writeAddress;
     *wrAdr = writeData;
     return;
@@ -133,7 +133,7 @@ void writeShort(uint32 writeAddress, uint16 writeData)
 void writeByte(uint32 writeAddress, uint8 writeData)
 {
 #ifndef DEBUG_ON_PC
-    uint32 * wrAdr;
+    uint8 * wrAdr;
     wrAdr = (uint8 *) writeAddress;
     *wrAdr = writeData;
     return;

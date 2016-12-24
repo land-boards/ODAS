@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
   32              	.LVL0:
   24:stringConvs.c ****     char * stringPointer = stringToParse;
   25:stringConvs.c ****     int8 offset = 0;
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 2
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 2
 
 
   33              		.loc 1 25 0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
   76              	.LFB64:
   36:stringConvs.c **** 
   37:stringConvs.c **** ////////////////////////////////////////////////////////////////
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 3
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 3
 
 
   38:stringConvs.c **** // uint8 charToNibble(char)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
   50:stringConvs.c ****     return(0);
  118              		.loc 1 50 0
  119 002e 0020     		movs	r0, #0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 4
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 4
 
 
  120              	.LVL14:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  157 000c FFF7FEFF 		bl	charToNibble
  158              	.LVL18:
  159 0010 2B18     		adds	r3, r5, r0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 5
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 5
 
 
  160              	.LVL19:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  196              		.loc 1 83 0
  197 0002 0022     		movs	r2, #0
   79:stringConvs.c ****     uint32 nibbleVal;
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 6
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 6
 
 
  198              		.loc 1 79 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  241 002a 072A     		cmp	r2, #7
  242 002c EED9     		bls	.L19
   92:stringConvs.c ****     }
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 7
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 7
 
 
   93:stringConvs.c ****     resultString[8] = 0;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  280 0006 4FF47045 		mov	r5, #61440
  281              		.loc 1 107 0
  282 000a 0EE0     		b	.L22
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 8
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 8
 
 
  283              	.LVL38:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  118:stringConvs.c **** }
  325              		.loc 1 118 0
  326 0032 30BC     		pop	{r4, r5}
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 9
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 9
 
 
  327              		.cfi_restore 5
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  364              		.loc 1 133 0
  365 000a 00EA0502 		and	r2, r0, r5
  366 000e E240     		lsrs	r2, r2, r4
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 10
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 10
 
 
  367              	.LVL53:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  410              	.LVL64:
  411 0032 7047     		bx	lr
  412              		.cfi_endproc
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 11
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 11
 
 
  413              	.LFE68:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  467 005d 4B020000 		.4byte	.LASF6
  468 0061 02       		.uleb128 0x2
  469 0062 08       		.byte	0x8
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 12
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 12
 
 
  470 0063 07       		.byte	0x7
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  524 00d3 07       		.uleb128 0x7
  525 00d4 94000000 		.4byte	.LASF23
  526 00d8 01       		.byte	0x1
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 13
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 13
 
 
  527 00d9 16       		.byte	0x16
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  581 0157 99000000 		.4byte	0x99
  582 015b 00000000 		.4byte	.LFB65
  583 015f 20000000 		.4byte	.LFE65-.LFB65
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 14
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 14
 
 
  584 0163 01       		.uleb128 0x1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  638 01de 0A       		.uleb128 0xa
  639 01df 07000000 		.4byte	.LASF32
  640 01e3 01       		.byte	0x1
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 15
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 15
 
 
  641 01e4 4F       		.byte	0x4f
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  695 025f 68       		.byte	0x68
  696 0260 99000000 		.4byte	0x99
  697 0264 4E020000 		.4byte	.LLST13
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 16
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 16
 
 
  698 0268 0A       		.uleb128 0xa
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  752 02e3 00       		.byte	0
  753 02e4 0D       		.uleb128 0xd
  754 02e5 A1000000 		.4byte	.LASF43
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 17
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 17
 
 
  755 02e9 05       		.byte	0x5
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  809 002e 0B       		.uleb128 0xb
  810 002f 0B       		.uleb128 0xb
  811 0030 3E       		.uleb128 0x3e
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 18
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 18
 
 
  812 0031 0B       		.uleb128 0xb
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  866 0068 08       		.uleb128 0x8
  867 0069 05       		.uleb128 0x5
  868 006a 00       		.byte	0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 19
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 19
 
 
  869 006b 03       		.uleb128 0x3
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  923 00a3 3F       		.uleb128 0x3f
  924 00a4 19       		.uleb128 0x19
  925 00a5 03       		.uleb128 0x3
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 20
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 20
 
 
  926 00a6 0E       		.uleb128 0xe
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  980 0015 F3       		.byte	0xf3
  981 0016 01       		.uleb128 0x1
  982 0017 50       		.byte	0x50
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 21
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 21
 
 
  983 0018 9F       		.byte	0x9f
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  1037 009a 2C000000 		.4byte	.LVL12
  1038 009e 0100     		.2byte	0x1
  1039 00a0 50       		.byte	0x50
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 22
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 22
 
 
  1040 00a1 2C000000 		.4byte	.LVL12
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  1094 0128 0F000000 		.4byte	.LVL18-1
  1095 012c 0100     		.2byte	0x1
  1096 012e 53       		.byte	0x53
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 23
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 23
 
 
  1097 012f 12000000 		.4byte	.LVL19
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  1151 01b9 0300     		.2byte	0x3
  1152 01bb 73       		.byte	0x73
  1153 01bc 49       		.sleb128 -55
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 24
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 24
 
 
  1154 01bd 9F       		.byte	0x9f
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  1208 023b 26000000 		.4byte	.LVL46
  1209 023f 34000000 		.4byte	.LVL49
  1210 0243 0100     		.2byte	0x1
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 25
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 25
 
 
  1211 0245 54       		.byte	0x54
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  1265              	.LLST15:
  1266 02c3 02000000 		.4byte	.LVL51
  1267 02c7 0A000000 		.4byte	.LVL52
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 26
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 26
 
 
  1268 02cb 0300     		.2byte	0x3
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  1322 034b 1A       		.byte	0x1a
  1323 034c 74       		.byte	0x74
  1324 034d 00       		.sleb128 0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 27
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 27
 
 
  1325 034e 25       		.byte	0x25
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  1379 0028 00000000 		.4byte	.LFB68
  1380 002c 34000000 		.4byte	.LFE68
  1381 0030 00000000 		.4byte	0
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 28
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 28
 
 
  1382 0034 00000000 		.4byte	0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  1406              	.LASF20:
  1407 007d 76616C54 		.ascii	"valToFind\000"
  1407      6F46696E 
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 29
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 29
 
 
  1407      6400
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  1432      20726576 
  1432      6973696F 
  1432      6E203232 
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 30
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 30
 
 
  1432      31323230 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 1
  1454      74797065 
  1454      00
  1455              	.LASF6:
-ARM GAS  C:\Users\doug_000\AppData\Local\Temp\cc6qGgis.s 			page 31
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccs3SAK4.s 			page 31
 
 
  1456 024b 6C6F6E67 		.ascii	"long long int\000"
