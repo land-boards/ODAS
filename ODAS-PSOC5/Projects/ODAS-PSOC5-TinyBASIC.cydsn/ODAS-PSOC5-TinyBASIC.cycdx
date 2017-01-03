@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
+  <block name="P1_28" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_29" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_26" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_27" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_30" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_20" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_19" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_31" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_32" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_25" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="LED" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_34" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="not_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="demux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_23" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_24" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_21" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_22" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_18" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_07" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_06" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_33" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_08" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="cy_constant_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_05" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="cy_constant_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="BasicCounter_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Clock_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="demux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_15" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_14" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_17" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_16" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_13" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_10" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_09" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_12" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="P1_11" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+</blockRegMap>

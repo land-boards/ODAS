@@ -1,0 +1,52 @@
+# Project: ARMbug
+# Compiler: Default GCC compiler
+# Compiler Type: MingW 3
+# Makefile created by wxDev-C++ IDE 7.4.2.569 on 22/12/16 16:29
+
+WXLIBNAME = wxmsw29u
+CPP       = g++.exe
+CC        = gcc.exe
+WINDRES   = "windres.exe"
+OBJ       = Default\ Profile/main.o Default\ Profile/accessMemory.o Default\ Profile/ARM_Monitor.o Default\ Profile/pcSerialIO.o Default\ Profile/stringConvs.o
+LINKOBJ   = "Default Profile/main.o" "Default Profile/accessMemory.o" "Default Profile/ARM_Monitor.o" "Default Profile/pcSerialIO.o" "Default Profile/stringConvs.o"
+LIBS      = -L"C:/Program Files (x86)/Dev-Cpp/lib/wx/gcc_lib" -L"C:/Program Files (x86)/Dev-Cpp/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib"  -g3 
+INCS      = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
+CXXINCS   = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/" -I"C:/Program Files (x86)/Dev-Cpp/include/common"
+RCINCS    = --include-dir "C:/PROGRA~2/Dev-Cpp/include/common"
+BIN       = Default Profile/ODAS-PSOC5-Debugger.exe
+DEFINES   = 
+CXXFLAGS  = $(CXXINCS) $(DEFINES)   -g3
+CFLAGS    = $(INCS) $(DEFINES)   -g3
+GPROF     = gprof.exe
+ifeq ($(OS),Windows_NT)
+   RM = del /Q
+   FixPath = $(subst /,\,$1)
+else
+   RM = rm -f
+   FixPath = $1
+endif
+LINK      = g++.exe
+
+.PHONY: all all-before all-after clean clean-custom
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	$(RM) $(call FixPath,$(LINKOBJ)) "$(call FixPath,$(BIN))"
+
+$(BIN): $(OBJ)
+	$(LINK) $(LINKOBJ) -o "$(BIN)" $(LIBS) 
+
+Default\ Profile/main.o: $(GLOBALDEPS) main.cpp project.h proEnv.h mytypes.h proEnv.h mytypes.h ARM_Monitor.h project.h proEnv.h pcSerialIO.h proEnv.h project.h accessMemory.h project.h proEnv.h
+	$(CPP) -c main.cpp -o "Default Profile/main.o" $(CXXFLAGS)
+
+Default\ Profile/accessMemory.o: $(GLOBALDEPS) accessMemory.c project.h proEnv.h mytypes.h proEnv.h mytypes.h
+	$(CPP) -c accessMemory.c -o "Default Profile/accessMemory.o" $(CXXFLAGS)
+
+Default\ Profile/ARM_Monitor.o: $(GLOBALDEPS) ARM_Monitor.c project.h proEnv.h mytypes.h proEnv.h mytypes.h ARM_Monitor.h project.h proEnv.h stringConvs.h proEnv.h project.h accessMemory.h project.h proEnv.h pcSerialIO.h proEnv.h project.h
+	$(CPP) -c ARM_Monitor.c -o "Default Profile/ARM_Monitor.o" $(CXXFLAGS)
+
+Default\ Profile/pcSerialIO.o: $(GLOBALDEPS) pcSerialIO.c project.h proEnv.h mytypes.h proEnv.h pcSerialIO.h proEnv.h project.h
+	$(CPP) -c pcSerialIO.c -o "Default Profile/pcSerialIO.o" $(CXXFLAGS)
+
+Default\ Profile/stringConvs.o: $(GLOBALDEPS) stringConvs.c project.h proEnv.h mytypes.h proEnv.h stringConvs.h proEnv.h project.h
+	$(CPP) -c stringConvs.c -o "Default Profile/stringConvs.o" $(CXXFLAGS)

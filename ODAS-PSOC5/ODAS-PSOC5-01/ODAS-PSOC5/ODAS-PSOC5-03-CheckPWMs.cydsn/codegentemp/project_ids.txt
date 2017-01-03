@@ -1,6 +1,0 @@
-C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\ODAS-PSOC5-01\ODAS-PSOC5\ODAS-PSOC5-03-CheckPWMs.cydsn\ODAS-PSOC5-03-CheckPWMs.cyprj|9ba1713e-01e3-4e5b-9d1b-4e9c1eebac9d
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|4cab1822-983d-49f5-b89c-f3273d8bd088
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|0257b46b-fe6e-4c3b-ab39-f27dd7eefc24
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|d84cf0c2-8ea4-4b09-8138-6f02aa6def7b
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|9692e3d9-61a6-497f-8050-454eb6319a15
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|740de81d-7847-4fd5-8425-0e0bb820b949

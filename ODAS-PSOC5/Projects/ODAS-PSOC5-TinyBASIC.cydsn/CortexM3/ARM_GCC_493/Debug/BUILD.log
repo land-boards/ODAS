@@ -1,0 +1,21 @@
+--------------- Build Started: 12/20/2016 12:27:20 Project: ODAS-PSOC5-TinyBASIC, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+The code generation step is up to date.
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/TinyBasic.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c TinyBasic.c -o .\CortexM3\ARM_GCC_493\Debug\TinyBasic.o
+TinyBasic.c: In function 'DeHex':
+TinyBasic.c:347:24: warning: suggest parentheses around '&&' within '||' [-Wparentheses]
+   if (ch>'F' || ch>'9' && ch<'A') return -1;               /* not hex */
+                        ^
+TinyBasic.c: In function 'Interp':
+TinyBasic.c:1081:23: warning: suggest parentheses around '&&' within '||' [-Wparentheses]
+         if (ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z')
+                       ^
+TinyBasic.c: In function 'mainTinyBASIC':
+TinyBasic.c:1432:10: warning: suggest explicit braces to avoid ambiguous 'else' [-Wparentheses]
+       if (tmpFile != NULL) if (fseek(tmpFile,0,SEEK_END)==0) {
+          ^
+arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-TinyBASIC.a .\CortexM3\ARM_GCC_493\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_493\Debug\CyDmac.o .\CortexM3\ARM_GCC_493\Debug\CyFlash.o .\CortexM3\ARM_GCC_493\Debug\CyLib.o .\CortexM3\ARM_GCC_493\Debug\cyPm.o .\CortexM3\ARM_GCC_493\Debug\CySpc.o .\CortexM3\ARM_GCC_493\Debug\cyutils.o .\CortexM3\ARM_GCC_493\Debug\Clock_1.o .\CortexM3\ARM_GCC_493\Debug\P1_20.o .\CortexM3\ARM_GCC_493\Debug\P1_19.o .\CortexM3\ARM_GCC_493\Debug\P1_18.o .\CortexM3\ARM_GCC_493\Debug\P1_17.o .\CortexM3\ARM_GCC_493\Debug\P1_16.o .\CortexM3\ARM_GCC_493\Debug\P1_15.o .\CortexM3\ARM_GCC_493\Debug\P1_14.o .\CortexM3\ARM_GCC_493\Debug\P1_13.o .\CortexM3\ARM_GCC_493\Debug\P1_12.o .\CortexM3\ARM_GCC_493\Debug\P1_11.o .\CortexM3\ARM_GCC_493\Debug\P1_10.o .\CortexM3\ARM_GCC_493\Debug\P1_05.o .\CortexM3\ARM_GCC_493\Debug\P1_06.o .\CortexM3\ARM_GCC_493\Debug\P1_07.o .\CortexM3\ARM_GCC_493\Debug\P1_08.o .\CortexM3\ARM_GCC_493\Debug\P1_33.o .\CortexM3\ARM_GCC_493\Debug\P1_09.o .\CortexM3\ARM_GCC_493\Debug\P1_32.o .\CortexM3\ARM_GCC_493\Debug\P1_31.o .\CortexM3\ARM_GCC_493\Debug\P1_30.o .\CortexM3\ARM_GCC_493\Debug\P1_29.o .\CortexM3\ARM_GCC_493\Debug\P1_28.o .\CortexM3\ARM_GCC_493\Debug\P1_27.o .\CortexM3\ARM_GCC_493\Debug\P1_26.o .\CortexM3\ARM_GCC_493\Debug\P1_25.o .\CortexM3\ARM_GCC_493\Debug\P1_24.o .\CortexM3\ARM_GCC_493\Debug\P1_23.o .\CortexM3\ARM_GCC_493\Debug\P1_22.o .\CortexM3\ARM_GCC_493\Debug\P1_21.o .\CortexM3\ARM_GCC_493\Debug\P1_34.o .\CortexM3\ARM_GCC_493\Debug\LED.o .\CortexM3\ARM_GCC_493\Debug\CyBootAsmGnu.o
+arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-TinyBASIC.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-TinyBASIC.elf .\CortexM3\ARM_GCC_493\Debug\main.o .\CortexM3\ARM_GCC_493\Debug\TinyBasic.o .\CortexM3\ARM_GCC_493\Debug\cymetadata.o .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-TinyBASIC.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_493\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -g -ffunction-sections -Og -ffat-lto-objects -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_493\Debug/ODAS-PSOC5-TinyBASIC.map -T C:\Users\doug_000\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-TinyBASIC.cydsn\Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -Wl,--end-group
+ERROR: .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-TinyBASIC.elf section `.bss' will not fit in region `ram'ERROR: region RAM overflowed with stackERROR: region `ram' overflowed by 0 bytescollect2.exe: error: ld returned 1 exit status
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Build Failed: 12/20/2016 12:27:24 ---------------

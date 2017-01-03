@@ -1,0 +1,417 @@
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccuVEMrd.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.main,"ax",%progbits
+  19              		.align	2
+  20              		.global	main
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	main, %function
+  24              	main:
+  25              	.LFB63:
+  26              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** 
+  13:main.c        **** #include "project.h"
+  14:main.c        **** 
+  15:main.c        **** ////////////////////////////////////////////////////////////////
+  16:main.c        **** ////////////////////////////////////////////////////////////////
+  17:main.c        **** 
+  18:main.c        **** int main(void)
+  19:main.c        **** {
+  27              		.loc 1 19 0
+  28              		.cfi_startproc
+  29              		@ Volatile: function does not return.
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.L2:
+  20:main.c        ****     
+  21:main.c        **** while(1);
+  34              		.loc 1 21 0 discriminator 1
+  35 0000 FEE7     		b	.L2
+  36              		.cfi_endproc
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccuVEMrd.s 			page 2
+
+
+  37              	.LFE63:
+  38              		.size	main, .-main
+  39 0002 00BF     		.text
+  40              	.Letext0:
+  41              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+  42              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+  43              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
+  44              		.section	.debug_info,"",%progbits
+  45              	.Ldebug_info0:
+  46 0000 C0000000 		.4byte	0xc0
+  47 0004 0400     		.2byte	0x4
+  48 0006 00000000 		.4byte	.Ldebug_abbrev0
+  49 000a 04       		.byte	0x4
+  50 000b 01       		.uleb128 0x1
+  51 000c 63000000 		.4byte	.LASF15
+  52 0010 01       		.byte	0x1
+  53 0011 2E000000 		.4byte	.LASF16
+  54 0015 2D010000 		.4byte	.LASF17
+  55 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  56 001d 00000000 		.4byte	0
+  57 0021 00000000 		.4byte	.Ldebug_line0
+  58 0025 02       		.uleb128 0x2
+  59 0026 01       		.byte	0x1
+  60 0027 06       		.byte	0x6
+  61 0028 21010000 		.4byte	.LASF0
+  62 002c 02       		.uleb128 0x2
+  63 002d 01       		.byte	0x1
+  64 002e 08       		.byte	0x8
+  65 002f F1000000 		.4byte	.LASF1
+  66 0033 02       		.uleb128 0x2
+  67 0034 02       		.byte	0x2
+  68 0035 05       		.byte	0x5
+  69 0036 92010000 		.4byte	.LASF2
+  70 003a 02       		.uleb128 0x2
+  71 003b 02       		.byte	0x2
+  72 003c 07       		.byte	0x7
+  73 003d 0E000000 		.4byte	.LASF3
+  74 0041 03       		.uleb128 0x3
+  75 0042 82010000 		.4byte	.LASF9
+  76 0046 02       		.byte	0x2
+  77 0047 3F       		.byte	0x3f
+  78 0048 4C000000 		.4byte	0x4c
+  79 004c 02       		.uleb128 0x2
+  80 004d 04       		.byte	0x4
+  81 004e 05       		.byte	0x5
+  82 004f 04010000 		.4byte	.LASF4
+  83 0053 02       		.uleb128 0x2
+  84 0054 04       		.byte	0x4
+  85 0055 07       		.byte	0x7
+  86 0056 3A000000 		.4byte	.LASF5
+  87 005a 02       		.uleb128 0x2
+  88 005b 08       		.byte	0x8
+  89 005c 05       		.byte	0x5
+  90 005d 00000000 		.4byte	.LASF6
+  91 0061 02       		.uleb128 0x2
+  92 0062 08       		.byte	0x8
+  93 0063 07       		.byte	0x7
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccuVEMrd.s 			page 3
+
+
+  94 0064 4C000000 		.4byte	.LASF7
+  95 0068 04       		.uleb128 0x4
+  96 0069 04       		.byte	0x4
+  97 006a 05       		.byte	0x5
+  98 006b 696E7400 		.ascii	"int\000"
+  99 006f 02       		.uleb128 0x2
+ 100 0070 04       		.byte	0x4
+ 101 0071 07       		.byte	0x7
+ 102 0072 21000000 		.4byte	.LASF8
+ 103 0076 03       		.uleb128 0x3
+ 104 0077 9C010000 		.4byte	.LASF10
+ 105 007b 03       		.byte	0x3
+ 106 007c 2C       		.byte	0x2c
+ 107 007d 41000000 		.4byte	0x41
+ 108 0081 02       		.uleb128 0x2
+ 109 0082 04       		.byte	0x4
+ 110 0083 04       		.byte	0x4
+ 111 0084 8C010000 		.4byte	.LASF11
+ 112 0088 02       		.uleb128 0x2
+ 113 0089 08       		.byte	0x8
+ 114 008a 04       		.byte	0x4
+ 115 008b 0D010000 		.4byte	.LASF12
+ 116 008f 02       		.uleb128 0x2
+ 117 0090 01       		.byte	0x1
+ 118 0091 08       		.byte	0x8
+ 119 0092 FF000000 		.4byte	.LASF13
+ 120 0096 02       		.uleb128 0x2
+ 121 0097 04       		.byte	0x4
+ 122 0098 07       		.byte	0x7
+ 123 0099 A4010000 		.4byte	.LASF14
+ 124 009d 05       		.uleb128 0x5
+ 125 009e 35000000 		.4byte	.LASF18
+ 126 00a2 01       		.byte	0x1
+ 127 00a3 12       		.byte	0x12
+ 128 00a4 68000000 		.4byte	0x68
+ 129 00a8 00000000 		.4byte	.LFB63
+ 130 00ac 02000000 		.4byte	.LFE63-.LFB63
+ 131 00b0 01       		.uleb128 0x1
+ 132 00b1 9C       		.byte	0x9c
+ 133 00b2 06       		.uleb128 0x6
+ 134 00b3 14010000 		.4byte	.LASF19
+ 135 00b7 04       		.byte	0x4
+ 136 00b8 9606     		.2byte	0x696
+ 137 00ba BE000000 		.4byte	0xbe
+ 138 00be 07       		.uleb128 0x7
+ 139 00bf 76000000 		.4byte	0x76
+ 140 00c3 00       		.byte	0
+ 141              		.section	.debug_abbrev,"",%progbits
+ 142              	.Ldebug_abbrev0:
+ 143 0000 01       		.uleb128 0x1
+ 144 0001 11       		.uleb128 0x11
+ 145 0002 01       		.byte	0x1
+ 146 0003 25       		.uleb128 0x25
+ 147 0004 0E       		.uleb128 0xe
+ 148 0005 13       		.uleb128 0x13
+ 149 0006 0B       		.uleb128 0xb
+ 150 0007 03       		.uleb128 0x3
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccuVEMrd.s 			page 4
+
+
+ 151 0008 0E       		.uleb128 0xe
+ 152 0009 1B       		.uleb128 0x1b
+ 153 000a 0E       		.uleb128 0xe
+ 154 000b 55       		.uleb128 0x55
+ 155 000c 17       		.uleb128 0x17
+ 156 000d 11       		.uleb128 0x11
+ 157 000e 01       		.uleb128 0x1
+ 158 000f 10       		.uleb128 0x10
+ 159 0010 17       		.uleb128 0x17
+ 160 0011 00       		.byte	0
+ 161 0012 00       		.byte	0
+ 162 0013 02       		.uleb128 0x2
+ 163 0014 24       		.uleb128 0x24
+ 164 0015 00       		.byte	0
+ 165 0016 0B       		.uleb128 0xb
+ 166 0017 0B       		.uleb128 0xb
+ 167 0018 3E       		.uleb128 0x3e
+ 168 0019 0B       		.uleb128 0xb
+ 169 001a 03       		.uleb128 0x3
+ 170 001b 0E       		.uleb128 0xe
+ 171 001c 00       		.byte	0
+ 172 001d 00       		.byte	0
+ 173 001e 03       		.uleb128 0x3
+ 174 001f 16       		.uleb128 0x16
+ 175 0020 00       		.byte	0
+ 176 0021 03       		.uleb128 0x3
+ 177 0022 0E       		.uleb128 0xe
+ 178 0023 3A       		.uleb128 0x3a
+ 179 0024 0B       		.uleb128 0xb
+ 180 0025 3B       		.uleb128 0x3b
+ 181 0026 0B       		.uleb128 0xb
+ 182 0027 49       		.uleb128 0x49
+ 183 0028 13       		.uleb128 0x13
+ 184 0029 00       		.byte	0
+ 185 002a 00       		.byte	0
+ 186 002b 04       		.uleb128 0x4
+ 187 002c 24       		.uleb128 0x24
+ 188 002d 00       		.byte	0
+ 189 002e 0B       		.uleb128 0xb
+ 190 002f 0B       		.uleb128 0xb
+ 191 0030 3E       		.uleb128 0x3e
+ 192 0031 0B       		.uleb128 0xb
+ 193 0032 03       		.uleb128 0x3
+ 194 0033 08       		.uleb128 0x8
+ 195 0034 00       		.byte	0
+ 196 0035 00       		.byte	0
+ 197 0036 05       		.uleb128 0x5
+ 198 0037 2E       		.uleb128 0x2e
+ 199 0038 00       		.byte	0
+ 200 0039 3F       		.uleb128 0x3f
+ 201 003a 19       		.uleb128 0x19
+ 202 003b 03       		.uleb128 0x3
+ 203 003c 0E       		.uleb128 0xe
+ 204 003d 3A       		.uleb128 0x3a
+ 205 003e 0B       		.uleb128 0xb
+ 206 003f 3B       		.uleb128 0x3b
+ 207 0040 0B       		.uleb128 0xb
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccuVEMrd.s 			page 5
+
+
+ 208 0041 27       		.uleb128 0x27
+ 209 0042 19       		.uleb128 0x19
+ 210 0043 49       		.uleb128 0x49
+ 211 0044 13       		.uleb128 0x13
+ 212 0045 11       		.uleb128 0x11
+ 213 0046 01       		.uleb128 0x1
+ 214 0047 12       		.uleb128 0x12
+ 215 0048 06       		.uleb128 0x6
+ 216 0049 40       		.uleb128 0x40
+ 217 004a 18       		.uleb128 0x18
+ 218 004b 9742     		.uleb128 0x2117
+ 219 004d 19       		.uleb128 0x19
+ 220 004e 00       		.byte	0
+ 221 004f 00       		.byte	0
+ 222 0050 06       		.uleb128 0x6
+ 223 0051 34       		.uleb128 0x34
+ 224 0052 00       		.byte	0
+ 225 0053 03       		.uleb128 0x3
+ 226 0054 0E       		.uleb128 0xe
+ 227 0055 3A       		.uleb128 0x3a
+ 228 0056 0B       		.uleb128 0xb
+ 229 0057 3B       		.uleb128 0x3b
+ 230 0058 05       		.uleb128 0x5
+ 231 0059 49       		.uleb128 0x49
+ 232 005a 13       		.uleb128 0x13
+ 233 005b 3F       		.uleb128 0x3f
+ 234 005c 19       		.uleb128 0x19
+ 235 005d 3C       		.uleb128 0x3c
+ 236 005e 19       		.uleb128 0x19
+ 237 005f 00       		.byte	0
+ 238 0060 00       		.byte	0
+ 239 0061 07       		.uleb128 0x7
+ 240 0062 35       		.uleb128 0x35
+ 241 0063 00       		.byte	0
+ 242 0064 49       		.uleb128 0x49
+ 243 0065 13       		.uleb128 0x13
+ 244 0066 00       		.byte	0
+ 245 0067 00       		.byte	0
+ 246 0068 00       		.byte	0
+ 247              		.section	.debug_aranges,"",%progbits
+ 248 0000 1C000000 		.4byte	0x1c
+ 249 0004 0200     		.2byte	0x2
+ 250 0006 00000000 		.4byte	.Ldebug_info0
+ 251 000a 04       		.byte	0x4
+ 252 000b 00       		.byte	0
+ 253 000c 0000     		.2byte	0
+ 254 000e 0000     		.2byte	0
+ 255 0010 00000000 		.4byte	.LFB63
+ 256 0014 02000000 		.4byte	.LFE63-.LFB63
+ 257 0018 00000000 		.4byte	0
+ 258 001c 00000000 		.4byte	0
+ 259              		.section	.debug_ranges,"",%progbits
+ 260              	.Ldebug_ranges0:
+ 261 0000 00000000 		.4byte	.LFB63
+ 262 0004 02000000 		.4byte	.LFE63
+ 263 0008 00000000 		.4byte	0
+ 264 000c 00000000 		.4byte	0
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccuVEMrd.s 			page 6
+
+
+ 265              		.section	.debug_line,"",%progbits
+ 266              	.Ldebug_line0:
+ 267 0000 54010000 		.section	.debug_str,"MS",%progbits,1
+ 267      02003A01 
+ 267      00000201 
+ 267      FB0E0D00 
+ 267      01010101 
+ 268              	.LASF6:
+ 269 0000 6C6F6E67 		.ascii	"long long int\000"
+ 269      206C6F6E 
+ 269      6720696E 
+ 269      7400
+ 270              	.LASF3:
+ 271 000e 73686F72 		.ascii	"short unsigned int\000"
+ 271      7420756E 
+ 271      7369676E 
+ 271      65642069 
+ 271      6E7400
+ 272              	.LASF8:
+ 273 0021 756E7369 		.ascii	"unsigned int\000"
+ 273      676E6564 
+ 273      20696E74 
+ 273      00
+ 274              	.LASF16:
+ 275 002e 6D61696E 		.ascii	"main.c\000"
+ 275      2E6300
+ 276              	.LASF18:
+ 277 0035 6D61696E 		.ascii	"main\000"
+ 277      00
+ 278              	.LASF5:
+ 279 003a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 279      20756E73 
+ 279      69676E65 
+ 279      6420696E 
+ 279      7400
+ 280              	.LASF7:
+ 281 004c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 281      206C6F6E 
+ 281      6720756E 
+ 281      7369676E 
+ 281      65642069 
+ 282              	.LASF15:
+ 283 0063 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 283      4320342E 
+ 283      392E3320 
+ 283      32303135 
+ 283      30333033 
+ 284 0096 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 284      20726576 
+ 284      6973696F 
+ 284      6E203232 
+ 284      31323230 
+ 285 00c9 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 285      66756E63 
+ 285      74696F6E 
+ 285      2D736563 
+ 285      74696F6E 
+ARM GAS  C:\Users\doug_000\AppData\Local\Temp\ccuVEMrd.s 			page 7
+
+
+ 286              	.LASF1:
+ 287 00f1 756E7369 		.ascii	"unsigned char\000"
+ 287      676E6564 
+ 287      20636861 
+ 287      7200
+ 288              	.LASF13:
+ 289 00ff 63686172 		.ascii	"char\000"
+ 289      00
+ 290              	.LASF4:
+ 291 0104 6C6F6E67 		.ascii	"long int\000"
+ 291      20696E74 
+ 291      00
+ 292              	.LASF12:
+ 293 010d 646F7562 		.ascii	"double\000"
+ 293      6C6500
+ 294              	.LASF19:
+ 295 0114 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 295      52784275 
+ 295      66666572 
+ 295      00
+ 296              	.LASF0:
+ 297 0121 7369676E 		.ascii	"signed char\000"
+ 297      65642063 
+ 297      68617200 
+ 298              	.LASF17:
+ 299 012d 433A5C55 		.ascii	"C:\\Users\\doug_000\\Documents\\GitHub\\ODAS\\ODAS-"
+ 299      73657273 
+ 299      5C646F75 
+ 299      675F3030 
+ 299      305C446F 
+ 300 015a 50534F43 		.ascii	"PSOC5\\Projects\\ODAS-PSOC5-LEDS-01.cydsn\000"
+ 300      355C5072 
+ 300      6F6A6563 
+ 300      74735C4F 
+ 300      4441532D 
+ 301              	.LASF9:
+ 302 0182 5F5F696E 		.ascii	"__int32_t\000"
+ 302      7433325F 
+ 302      7400
+ 303              	.LASF11:
+ 304 018c 666C6F61 		.ascii	"float\000"
+ 304      7400
+ 305              	.LASF2:
+ 306 0192 73686F72 		.ascii	"short int\000"
+ 306      7420696E 
+ 306      7400
+ 307              	.LASF10:
+ 308 019c 696E7433 		.ascii	"int32_t\000"
+ 308      325F7400 
+ 309              	.LASF14:
+ 310 01a4 73697A65 		.ascii	"sizetype\000"
+ 310      74797065 
+ 310      00
+ 311              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
