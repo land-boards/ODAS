@@ -1,21 +1,367 @@
---------------- Build Started: 12/20/2016 12:27:20 Project: ODAS-PSOC5-TinyBASIC, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
-The code generation step is up to date.
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/TinyBasic.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c TinyBasic.c -o .\CortexM3\ARM_GCC_493\Debug\TinyBasic.o
-TinyBasic.c: In function 'DeHex':
-TinyBasic.c:347:24: warning: suggest parentheses around '&&' within '||' [-Wparentheses]
-   if (ch>'F' || ch>'9' && ch<'A') return -1;               /* not hex */
-                        ^
-TinyBasic.c: In function 'Interp':
-TinyBasic.c:1081:23: warning: suggest parentheses around '&&' within '||' [-Wparentheses]
-         if (ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z')
-                       ^
-TinyBasic.c: In function 'mainTinyBASIC':
-TinyBasic.c:1432:10: warning: suggest explicit braces to avoid ambiguous 'else' [-Wparentheses]
-       if (tmpFile != NULL) if (fseek(tmpFile,0,SEEK_END)==0) {
-          ^
-arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-TinyBASIC.a .\CortexM3\ARM_GCC_493\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_493\Debug\CyDmac.o .\CortexM3\ARM_GCC_493\Debug\CyFlash.o .\CortexM3\ARM_GCC_493\Debug\CyLib.o .\CortexM3\ARM_GCC_493\Debug\cyPm.o .\CortexM3\ARM_GCC_493\Debug\CySpc.o .\CortexM3\ARM_GCC_493\Debug\cyutils.o .\CortexM3\ARM_GCC_493\Debug\Clock_1.o .\CortexM3\ARM_GCC_493\Debug\P1_20.o .\CortexM3\ARM_GCC_493\Debug\P1_19.o .\CortexM3\ARM_GCC_493\Debug\P1_18.o .\CortexM3\ARM_GCC_493\Debug\P1_17.o .\CortexM3\ARM_GCC_493\Debug\P1_16.o .\CortexM3\ARM_GCC_493\Debug\P1_15.o .\CortexM3\ARM_GCC_493\Debug\P1_14.o .\CortexM3\ARM_GCC_493\Debug\P1_13.o .\CortexM3\ARM_GCC_493\Debug\P1_12.o .\CortexM3\ARM_GCC_493\Debug\P1_11.o .\CortexM3\ARM_GCC_493\Debug\P1_10.o .\CortexM3\ARM_GCC_493\Debug\P1_05.o .\CortexM3\ARM_GCC_493\Debug\P1_06.o .\CortexM3\ARM_GCC_493\Debug\P1_07.o .\CortexM3\ARM_GCC_493\Debug\P1_08.o .\CortexM3\ARM_GCC_493\Debug\P1_33.o .\CortexM3\ARM_GCC_493\Debug\P1_09.o .\CortexM3\ARM_GCC_493\Debug\P1_32.o .\CortexM3\ARM_GCC_493\Debug\P1_31.o .\CortexM3\ARM_GCC_493\Debug\P1_30.o .\CortexM3\ARM_GCC_493\Debug\P1_29.o .\CortexM3\ARM_GCC_493\Debug\P1_28.o .\CortexM3\ARM_GCC_493\Debug\P1_27.o .\CortexM3\ARM_GCC_493\Debug\P1_26.o .\CortexM3\ARM_GCC_493\Debug\P1_25.o .\CortexM3\ARM_GCC_493\Debug\P1_24.o .\CortexM3\ARM_GCC_493\Debug\P1_23.o .\CortexM3\ARM_GCC_493\Debug\P1_22.o .\CortexM3\ARM_GCC_493\Debug\P1_21.o .\CortexM3\ARM_GCC_493\Debug\P1_34.o .\CortexM3\ARM_GCC_493\Debug\LED.o .\CortexM3\ARM_GCC_493\Debug\CyBootAsmGnu.o
-arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-TinyBASIC.a
-arm-none-eabi-gcc.exe -Wl,--start-group -o .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-TinyBASIC.elf .\CortexM3\ARM_GCC_493\Debug\main.o .\CortexM3\ARM_GCC_493\Debug\TinyBasic.o .\CortexM3\ARM_GCC_493\Debug\cymetadata.o .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-TinyBASIC.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_493\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -g -ffunction-sections -Og -ffat-lto-objects -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_493\Debug/ODAS-PSOC5-TinyBASIC.map -T C:\Users\doug_000\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-TinyBASIC.cydsn\Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -Wl,--end-group
-ERROR: .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-TinyBASIC.elf section `.bss' will not fit in region `ram'ERROR: region RAM overflowed with stackERROR: region `ram' overflowed by 0 bytescollect2.exe: error: ld returned 1 exit status
-The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
---------------- Build Failed: 12/20/2016 12:27:24 ---------------
+--------------- Build Started: 01/04/2017 07:37:54 Project: ODAS-PSOC5-TinyBASIC, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\doug_000\AppData\Local\Cypress Semiconductor\PSoC Creator\4.0" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\ODAS-PSOC5-TinyBASIC.cyprj -d CY8C5267AXI-LP051 -s C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+ADD: sdb.M0025: error: No input on Instance "P1_34", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1051)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_456.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1051)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_456.2)
+ADD: sdb.M0025: error: No input on Instance "P1_20", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1056)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_60.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1056)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_60.2)
+ADD: sdb.M0025: error: No input on Instance "P1_25", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1042)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_100.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1042)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_100.2)
+ADD: sdb.M0025: error: No input on Instance "P1_27", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1044)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_98.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1044)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_98.2)
+ADD: sdb.M0025: error: No input on Instance "P1_41", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1076)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2055.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1076)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2055.2)
+ADD: sdb.M0025: error: No input on Instance "P1_30", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1048)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_95.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1048)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_95.2)
+ADD: sdb.M0025: error: No input on Instance "P1_16", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1069)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_52.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1069)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_52.2)
+ADD: sdb.M0025: error: No input on Instance "P1_18", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1066)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_58.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1066)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_58.2)
+ADD: sdb.M0025: error: No input on Instance "P1_05", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1067)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_7.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1067)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_7.2)
+ADD: sdb.M0025: error: No input on Instance "P1_06", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1065)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_22.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1065)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_22.2)
+ADD: sdb.M0025: error: No input on Instance "P1_08", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1063)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_24.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1063)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_24.2)
+ADD: sdb.M0025: error: No input on Instance "P1_11", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1060)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_43.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1060)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_43.2)
+ADD: sdb.M0025: error: No input on Instance "P1_09", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1059)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_41.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1059)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_41.2)
+ADD: sdb.M0025: error: No input on Instance "P1_13", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1045)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_49.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1045)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_49.2)
+ADD: sdb.M0025: error: No input on Instance "P1_24", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1055)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_101.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1055)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_101.2)
+ADD: sdb.M0025: error: No input on Instance "P1_36", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1075)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2054.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1075)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2054.2)
+ADD: sdb.M0025: error: No input on Instance "P1_26", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1043)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_99.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1043)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_99.2)
+ADD: sdb.M0025: error: No input on Instance "P1_31", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1046)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_94.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1046)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_94.2)
+ADD: sdb.M0025: error: No input on Instance "P1_28", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1047)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_97.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1047)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_97.2)
+ADD: sdb.M0025: error: No input on Instance "P1_33", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1050)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_92.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1050)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_92.2)
+ADD: sdb.M0025: error: No input on Instance "P1_32", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1049)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_93.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1049)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_93.2)
+ADD: sdb.M0025: error: No input on Instance "P1_19", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1057)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_59.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1057)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_59.2)
+ADD: sdb.M0025: error: No input on Instance "P1_17", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1068)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_57.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1068)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_57.2)
+ADD: sdb.M0025: error: No input on Instance "P1_07", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1064)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_23.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1064)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_23.2)
+ADD: sdb.M0025: error: No input on Instance "P1_29", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1052)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_96.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1052)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_96.2)
+ADD: sdb.M0025: error: No input on Instance "P1_10", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1062)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_42.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1062)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_42.2)
+ADD: sdb.M0025: error: No input on Instance "P1_12", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1058)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_44.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1058)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_44.2)
+ADD: sdb.M0025: error: No input on Instance "P1_14", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1070)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_50.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1070)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_50.2)
+ADD: sdb.M0025: error: No input on Instance "P1_15", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1061)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_51.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1061)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_51.2)
+ADD: sdb.M0025: error: No input on Instance "P1_23", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1041)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_102.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1041)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_102.2)
+ADD: sdb.M0025: error: No input on Instance "LED", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_989)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_1047.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_989)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_1047.2)
+ADD: sdb.M0025: error: No input on Instance "P1_01", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1071)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2050.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1071)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2050.2)
+ADD: sdb.M0025: error: No input on Instance "P1_02", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1072)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2051.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1072)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2051.2)
+ADD: sdb.M0025: error: No input on Instance "P1_03", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1073)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2052.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1073)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2052.2)
+ADD: sdb.M0025: error: No input on Instance "P1_04", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1074)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2053.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1074)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2053.2)
+ADD: sdb.M0025: error: No input on Instance "P1_40", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1081)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2060.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1081)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2060.2)
+ADD: sdb.M0025: error: No input on Instance "P1_39", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1083)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2062.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1083)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2062.2)
+ADD: sdb.M0025: error: No input on Instance "P1_38", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1084)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2063.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1084)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2063.2)
+ADD: sdb.M0025: error: No input on Instance "P1_37", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1085)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2064.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1085)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2064.2)
+ADD: sdb.M0025: error: No input on Instance "P1_35", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1086)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2065.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1086)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2065.2)
+ADD: sdb.M0025: error: No input on Instance "P1_46", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1102)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2081.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1102)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2081.2)
+ADD: sdb.M0025: error: No input on Instance "P1_47", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1103)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2082.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1103)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2082.2)
+ADD: sdb.M0025: error: No input on Instance "P1_48", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1104)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2083.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1104)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2083.2)
+ADD: sdb.M0025: error: No input on Instance "P1_49", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1105)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2084.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1105)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2084.2)
+ADD: sdb.M0025: error: No input on Instance "P1_50", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1106)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2085.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1106)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2085.2)
+ADD: sdb.M0025: error: No input on Instance "P1_42", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1098)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2077.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1098)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2077.2)
+ADD: sdb.M0025: error: No input on Instance "P1_43", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1099)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2078.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1099)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2078.2)
+ADD: sdb.M0025: error: No input on Instance "P1_44", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1100)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2079.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1100)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2079.2)
+ADD: sdb.M0025: error: No input on Instance "P1_45", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1101)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2080.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1101)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2080.2)
+ADD: sdb.M0025: error: No input on Instance "P1_61", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1117)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2096.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1117)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2096.2)
+ADD: sdb.M0025: error: No input on Instance "P1_60", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1116)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2095.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1116)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2095.2)
+ADD: sdb.M0025: error: No input on Instance "P1_59", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1115)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2094.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1115)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2094.2)
+ADD: sdb.M0025: error: No input on Instance "P1_58", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1114)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2093.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1114)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2093.2)
+ADD: sdb.M0025: error: No input on Instance "P1_57", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1113)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2092.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1113)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2092.2)
+ADD: sdb.M0025: error: No input on Instance "P1_56", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1112)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2091.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1112)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2091.2)
+ADD: sdb.M0025: error: No input on Instance "P1_55", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1111)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2090.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1111)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2090.2)
+ADD: sdb.M0025: error: No input on Instance "P1_54", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1110)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2089.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1110)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2089.2)
+ADD: sdb.M0025: error: No input on Instance "P1_53", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1109)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2088.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1109)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2088.2)
+ADD: sdb.M0025: error: No input on Instance "P1_52", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1108)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2087.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1108)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2087.2)
+ADD: sdb.M0025: error: No input on Instance "P1_51", terminal "y_0".
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1107)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2086.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1107)
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\TopDesign\TopDesign.cysch (Shape_2086.2)
+ADD: pft.M0074: information: A (re)build is required to use the analog device editor. Unable to load the necessary information from the cyfit file. Partial/wrong data will be displayed until this has been resolved.
+ * C:\Users\doug_000\Documents\GitHub\ODAS\OPSOC-95MM\ODAS-PSOC5-TinyBASIC.cydsn\ODAS-PSOC5-TinyBASIC.cydwr ()
+Error: fit.M0050: The fitter aborted due to errors, please address all errors and rebuild. (App=cydsfit)
+--------------- Build Failed: 01/04/2017 07:38:22 ---------------
