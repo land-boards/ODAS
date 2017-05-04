@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\dev\psoc3\AnalogDevice\PSoC35AnalogDevice.cylib\PSoC35AnalogDevice.cyprj|4c531c8e-b867-49de-aa97-d8baebfd13e6
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|a8aff796-081d-404b-b246-563424b9eb01
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|f2bb4ed7-5440-4088-ac46-dfcc39f10f1e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|60069ccb-7e5c-424a-9751-1eff796619e4
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|ba3fe875-5b8d-4836-986b-42dd6336bca8
+C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2C-01.cydsn\ODAS-PSOC5-I2C-01.cyprj|16d534f3-10ed-4b7b-a5d1-cb51cb23e119

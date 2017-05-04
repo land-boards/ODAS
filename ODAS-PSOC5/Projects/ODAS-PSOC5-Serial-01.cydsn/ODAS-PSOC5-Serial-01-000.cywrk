@@ -3,11 +3,11 @@
 <!--This file is machine generated and read. It is not intended to be edited by hand.-->
 <!--Due to this, there is no schema for this file.-->
 <CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWorkspaceSerialize" version="5" xml_contents_version="3" name="ODAS-PSOC5-Serial-01-000" persistent="ODAS-PSOC5-Serial-01-000.cywrk" platform="NOT_USED">
-<current_project name="..\ODAS-PSOC5-USB_Serial-01.cydsn\ODAS-PSOC5-USB_Serial-01.cyprj" />
+<current_project name="..\ODAS-PSOC5-I2CIO8-BlinkLED0.cydsn\ODAS-PSOC5-I2CIO8-BlinkLED0.cyprj" />
 <wrkspc_folders />
 <files />
 <projects>
-<v>..\ODAS-PSOC5-USB_Serial-01.cydsn\ODAS-PSOC5-USB_Serial-01.cyprj</v>
+<v>..\ODAS-PSOC5-I2CIO8-BlinkLED0.cydsn\ODAS-PSOC5-I2CIO8-BlinkLED0.cyprj</v>
 </projects>
 <workspace_id v="b0a3795d-84c8-4222-95b5-064c38d2d647" />
 <WriteAppVersionLastSavedWith v="4.0.0.432" />
