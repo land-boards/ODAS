@@ -1,6 +1,6 @@
 -- Project:   ODAS-PSOC5-LEDS-01
--- Generated: 12/20/2016 01:10:45
--- PSoC Creator  4.0
+-- Generated: 05/02/2017 19:13:23
+-- PSoC Creator  4.0 Update 1
 
 ENTITY \ODAS-PSOC5-LEDS-01\ IS
     PORT(
