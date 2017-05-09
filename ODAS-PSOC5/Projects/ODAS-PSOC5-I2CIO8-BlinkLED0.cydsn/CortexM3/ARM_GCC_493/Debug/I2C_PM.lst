@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
   29:Generated_Source\PSoC5/I2C_PM.c **** #endif /* (I2C_FF_IMPLEMENTED) */
   30:Generated_Source\PSoC5/I2C_PM.c **** 
   31:Generated_Source\PSoC5/I2C_PM.c **** #if (I2C_TIMEOUT_ENABLED)
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 2
 
 
   32:Generated_Source\PSoC5/I2C_PM.c ****     I2C_DEFAULT_TMOUT_PERIOD,
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
   32              		.loc 1 80 0
   33 0000 084B     		ldr	r3, .L2
   34 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 3
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 3
 
 
   35 0004 084B     		ldr	r3, .L2+4
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
   96:Generated_Source\PSoC5/I2C_PM.c ****     *  2) Wait unti I2C is ready go to Sleep; !!
   97:Generated_Source\PSoC5/I2C_PM.c ****     *  3) These bits are cleared on wake up.
   98:Generated_Source\PSoC5/I2C_PM.c ****     */
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 4
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 4
 
 
   99:Generated_Source\PSoC5/I2C_PM.c ****     /* Wait when block is ready for sleep */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
   74              		.loc 1 152 0
   75              		.cfi_startproc
   76              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 5
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 5
 
 
   77              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  112              	I2C_RestoreConfig:
  113              	.LFB2:
  172:Generated_Source\PSoC5/I2C_PM.c **** }
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 6
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 6
 
 
  173:Generated_Source\PSoC5/I2C_PM.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  126 000a 0DD0     		beq	.L10
  215:Generated_Source\PSoC5/I2C_PM.c ****     /* Low power mode was Sleep - backup regulator is enabled */
  216:Generated_Source\PSoC5/I2C_PM.c ****     {
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 7
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 7
 
 
  217:Generated_Source\PSoC5/I2C_PM.c ****         /* Enable backup regulator in active mode */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  155 0036 D978     		ldrb	r1, [r3, #3]	@ zero_extendqisi2
  156 0038 0C3A     		subs	r2, r2, #12
  157 003a 1170     		strb	r1, [r2]
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 8
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 8
 
 
  243:Generated_Source\PSoC5/I2C_PM.c ****         I2C_CLKDIV1_REG = I2C_backup.clkDiv1;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  269:Generated_Source\PSoC5/I2C_PM.c **** * Function Name: I2C_Wakeup
  270:Generated_Source\PSoC5/I2C_PM.c **** ********************************************************************************
  271:Generated_Source\PSoC5/I2C_PM.c **** *
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 9
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 9
 
 
  272:Generated_Source\PSoC5/I2C_PM.c **** * Summary:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  308:Generated_Source\PSoC5/I2C_PM.c ****         I2C_EnableInt();
  204              		.loc 1 308 0
  205 0010 4FF40042 		mov	r2, #32768
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 10
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 10
 
 
  206 0014 024B     		ldr	r3, .L18+4
@@ -578,27 +578,27 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  240 0006 00000000 		.4byte	.Ldebug_abbrev0
  241 000a 04       		.byte	0x4
  242 000b 01       		.uleb128 0x1
- 243 000c FA000000 		.4byte	.LASF29
+ 243 000c AE000000 		.4byte	.LASF29
  244 0010 01       		.byte	0x1
- 245 0011 65020000 		.4byte	.LASF30
- 246 0015 3D000000 		.4byte	.LASF31
+ 245 0011 6F020000 		.4byte	.LASF30
+ 246 0015 C2010000 		.4byte	.LASF31
  247 0019 00000000 		.4byte	.Ldebug_ranges0+0
  248 001d 00000000 		.4byte	0
  249 0021 00000000 		.4byte	.Ldebug_line0
  250 0025 02       		.uleb128 0x2
  251 0026 01       		.byte	0x1
  252 0027 06       		.byte	0x6
- 253 0028 47020000 		.4byte	.LASF0
+ 253 0028 51020000 		.4byte	.LASF0
  254 002c 02       		.uleb128 0x2
  255 002d 01       		.byte	0x1
  256 002e 08       		.byte	0x8
- 257 002f B0000000 		.4byte	.LASF1
+ 257 002f 5A000000 		.4byte	.LASF1
  258 0033 02       		.uleb128 0x2
  259 0034 02       		.byte	0x2
  260 0035 05       		.byte	0x5
- 261 0036 0E020000 		.4byte	.LASF2
+ 261 0036 96000000 		.4byte	.LASF2
  262 003a 02       		.uleb128 0x2
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 11
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 11
 
 
  263 003b 02       		.byte	0x2
@@ -607,19 +607,19 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  266 0041 02       		.uleb128 0x2
  267 0042 04       		.byte	0x4
  268 0043 05       		.byte	0x5
- 269 0044 1E020000 		.4byte	.LASF4
+ 269 0044 28020000 		.4byte	.LASF4
  270 0048 02       		.uleb128 0x2
  271 0049 04       		.byte	0x4
  272 004a 07       		.byte	0x7
- 273 004b C3000000 		.4byte	.LASF5
+ 273 004b 6D000000 		.4byte	.LASF5
  274 004f 02       		.uleb128 0x2
  275 0050 08       		.byte	0x8
  276 0051 05       		.byte	0x5
- 277 0052 E4010000 		.4byte	.LASF6
+ 277 0052 98010000 		.4byte	.LASF6
  278 0056 02       		.uleb128 0x2
  279 0057 08       		.byte	0x8
  280 0058 07       		.byte	0x7
- 281 0059 99000000 		.4byte	.LASF7
+ 281 0059 43000000 		.4byte	.LASF7
  282 005d 03       		.uleb128 0x3
  283 005e 04       		.byte	0x4
  284 005f 05       		.byte	0x5
@@ -627,38 +627,38 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  286 0064 02       		.uleb128 0x2
  287 0065 04       		.byte	0x4
  288 0066 07       		.byte	0x7
- 289 0067 91010000 		.4byte	.LASF8
+ 289 0067 45010000 		.4byte	.LASF8
  290 006b 04       		.uleb128 0x4
- 291 006c 18020000 		.4byte	.LASF9
+ 291 006c 22020000 		.4byte	.LASF9
  292 0070 02       		.byte	0x2
  293 0071 9201     		.2byte	0x192
  294 0073 2C000000 		.4byte	0x2c
  295 0077 04       		.uleb128 0x4
- 296 0078 EC000000 		.4byte	.LASF10
+ 296 0078 A0000000 		.4byte	.LASF10
  297 007c 02       		.byte	0x2
  298 007d 9301     		.2byte	0x193
  299 007f 3A000000 		.4byte	0x3a
  300 0083 04       		.uleb128 0x4
- 301 0084 F3000000 		.4byte	.LASF11
+ 301 0084 A7000000 		.4byte	.LASF11
  302 0088 02       		.byte	0x2
  303 0089 9401     		.2byte	0x194
  304 008b 48000000 		.4byte	0x48
  305 008f 02       		.uleb128 0x2
  306 0090 04       		.byte	0x4
  307 0091 04       		.byte	0x4
- 308 0092 93000000 		.4byte	.LASF12
+ 308 0092 3D000000 		.4byte	.LASF12
  309 0096 02       		.uleb128 0x2
  310 0097 08       		.byte	0x8
  311 0098 04       		.byte	0x4
- 312 0099 E5000000 		.4byte	.LASF13
+ 312 0099 8F000000 		.4byte	.LASF13
  313 009d 02       		.uleb128 0x2
  314 009e 01       		.byte	0x1
  315 009f 08       		.byte	0x8
- 316 00a0 F2010000 		.4byte	.LASF14
+ 316 00a0 A6010000 		.4byte	.LASF14
  317 00a4 04       		.uleb128 0x4
- 318 00a5 BE000000 		.4byte	.LASF15
+ 318 00a5 68000000 		.4byte	.LASF15
  319 00a9 02       		.byte	0x2
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 12
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 12
 
 
  320 00aa 3C02     		.2byte	0x23c
@@ -675,20 +675,20 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  331 00c6 02       		.uleb128 0x2
  332 00c7 04       		.byte	0x4
  333 00c8 07       		.byte	0x7
- 334 00c9 DB010000 		.4byte	.LASF17
+ 334 00c9 8F010000 		.4byte	.LASF17
  335 00cd 06       		.uleb128 0x6
  336 00ce 06       		.byte	0x6
  337 00cf 03       		.byte	0x3
  338 00d0 76       		.byte	0x76
  339 00d1 1E010000 		.4byte	0x11e
  340 00d5 07       		.uleb128 0x7
- 341 00d6 27020000 		.4byte	.LASF18
+ 341 00d6 31020000 		.4byte	.LASF18
  342 00da 03       		.byte	0x3
  343 00db 78       		.byte	0x78
  344 00dc 6B000000 		.4byte	0x6b
  345 00e0 00       		.byte	0
  346 00e1 07       		.uleb128 0x7
- 347 00e2 F7010000 		.4byte	.LASF19
+ 347 00e2 AB010000 		.4byte	.LASF19
  348 00e6 03       		.byte	0x3
  349 00e7 7B       		.byte	0x7b
  350 00e8 6B000000 		.4byte	0x6b
@@ -700,29 +700,29 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  356 00f4 6B000000 		.4byte	0x6b
  357 00f8 02       		.byte	0x2
  358 00f9 07       		.uleb128 0x7
- 359 00fa D5000000 		.4byte	.LASF20
+ 359 00fa 7F000000 		.4byte	.LASF20
  360 00fe 03       		.byte	0x3
  361 00ff 7D       		.byte	0x7d
  362 0100 6B000000 		.4byte	0x6b
  363 0104 03       		.byte	0x3
  364 0105 07       		.uleb128 0x7
- 365 0106 B4010000 		.4byte	.LASF21
+ 365 0106 68010000 		.4byte	.LASF21
  366 010a 03       		.byte	0x3
  367 010b 7E       		.byte	0x7e
  368 010c 6B000000 		.4byte	0x6b
  369 0110 04       		.byte	0x4
  370 0111 07       		.uleb128 0x7
- 371 0112 BC010000 		.4byte	.LASF22
+ 371 0112 70010000 		.4byte	.LASF22
  372 0116 03       		.byte	0x3
  373 0117 7F       		.byte	0x7f
  374 0118 6B000000 		.4byte	0x6b
  375 011c 05       		.byte	0x5
  376 011d 00       		.byte	0
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 13
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 13
 
 
  377 011e 09       		.uleb128 0x9
- 378 011f FC010000 		.4byte	.LASF23
+ 378 011f B0010000 		.4byte	.LASF23
  379 0123 03       		.byte	0x3
  380 0124 89       		.byte	0x89
  381 0125 CD000000 		.4byte	0xcd
@@ -751,7 +751,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  404 015d 29010000 		.4byte	0x129
  405 0161 00       		.byte	0
  406 0162 0B       		.uleb128 0xb
- 407 0163 53020000 		.4byte	.LASF25
+ 407 0163 5D020000 		.4byte	.LASF25
  408 0167 01       		.byte	0x1
  409 0168 D1       		.byte	0xd1
  410 0169 00000000 		.4byte	.LFB2
@@ -760,7 +760,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  413 0172 9C       		.byte	0x9c
  414 0173 99010000 		.4byte	0x199
  415 0177 0D       		.uleb128 0xd
- 416 0178 88010000 		.4byte	.LASF33
+ 416 0178 3C010000 		.4byte	.LASF33
  417 017c 01       		.byte	0x1
  418 017d D4       		.byte	0xd4
  419 017e 6B000000 		.4byte	0x6b
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  431 019f 2C01     		.2byte	0x12c
  432 01a1 00000000 		.4byte	.LFB3
  433 01a5 24000000 		.4byte	.LFE3-.LFB3
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 14
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 14
 
 
  434 01a9 01       		.uleb128 0x1
@@ -792,7 +792,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  442 01bd F6010000 		.4byte	0x1f6
  443 01c1 00       		.byte	0
  444 01c2 0F       		.uleb128 0xf
- 445 01c3 33020000 		.4byte	.LASF34
+ 445 01c3 3D020000 		.4byte	.LASF34
  446 01c7 01       		.byte	0x1
  447 01c8 11       		.byte	0x11
  448 01c9 1E010000 		.4byte	0x11e
@@ -800,16 +800,16 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  450 01ce 03       		.byte	0x3
  451 01cf 00000000 		.4byte	I2C_backup
  452 01d3 10       		.uleb128 0x10
- 453 01d4 3E020000 		.4byte	.LASF27
+ 453 01d4 48020000 		.4byte	.LASF27
  454 01d8 03       		.byte	0x3
  455 01d9 94       		.byte	0x94
  456 01da 11       		.uleb128 0x11
- 457 01db C4010000 		.4byte	.LASF35
+ 457 01db 78010000 		.4byte	.LASF35
  458 01df 04       		.byte	0x4
  459 01e0 7D       		.byte	0x7d
  460 01e1 6B000000 		.4byte	0x6b
  461 01e5 12       		.uleb128 0x12
- 462 01e6 9E010000 		.4byte	.LASF36
+ 462 01e6 52010000 		.4byte	.LASF36
  463 01ea 04       		.byte	0x4
  464 01eb 7E       		.byte	0x7e
  465 01ec F6010000 		.4byte	0x1f6
@@ -817,7 +817,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  467 01f1 6B000000 		.4byte	0x6b
  468 01f5 00       		.byte	0
  469 01f6 10       		.uleb128 0x10
- 470 01f7 DA000000 		.4byte	.LASF28
+ 470 01f7 84000000 		.4byte	.LASF28
  471 01fb 03       		.byte	0x3
  472 01fc 91       		.byte	0x91
  473 01fd 00       		.byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  488 000c 17       		.uleb128 0x17
  489 000d 11       		.uleb128 0x11
  490 000e 01       		.uleb128 0x1
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 15
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 15
 
 
  491 000f 10       		.uleb128 0x10
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  545 0045 0B       		.uleb128 0xb
  546 0046 01       		.uleb128 0x1
  547 0047 13       		.uleb128 0x13
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 16
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 16
 
 
  548 0048 00       		.byte	0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  602 007e 3B       		.uleb128 0x3b
  603 007f 0B       		.uleb128 0xb
  604 0080 27       		.uleb128 0x27
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 17
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 17
 
 
  605 0081 19       		.uleb128 0x19
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  659 00bb 49       		.uleb128 0x49
  660 00bc 13       		.uleb128 0x13
  661 00bd 02       		.uleb128 0x2
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 18
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 18
 
 
  662 00be 17       		.uleb128 0x17
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  716 00f5 3B       		.uleb128 0x3b
  717 00f6 0B       		.uleb128 0xb
  718 00f7 27       		.uleb128 0x27
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 19
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 19
 
 
  719 00f8 19       		.uleb128 0x19
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  773 0000 10000000 		.4byte	.LVL2
  774 0004 1D000000 		.4byte	.LVL3-1
  775 0008 0100     		.2byte	0x1
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 20
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 20
 
 
  776 000a 50       		.byte	0x50
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  819      7369676E 
  819      65642069 
  819      6E7400
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 21
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 21
 
 
  820              	.LASF32:
@@ -1206,163 +1206,164 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 1
  821      53617665 
  821      436F6E66 
  821      696700
- 822              	.LASF31:
- 823 003d 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
- 823      73657273 
- 823      5C444769 
- 823      6C6C696C 
- 823      616E645C 
- 824 006a 532D5053 		.ascii	"S-PSOC5\\Projects\\ODAS-PSOC5-I2C-01.cydsn\000"
- 824      4F43355C 
- 824      50726F6A 
- 824      65637473 
- 824      5C4F4441 
- 825              	.LASF12:
- 826 0093 666C6F61 		.ascii	"float\000"
- 826      7400
- 827              	.LASF7:
- 828 0099 6C6F6E67 		.ascii	"long long unsigned int\000"
- 828      206C6F6E 
- 828      6720756E 
- 828      7369676E 
- 828      65642069 
- 829              	.LASF1:
- 830 00b0 756E7369 		.ascii	"unsigned char\000"
- 830      676E6564 
- 830      20636861 
- 830      7200
- 831              	.LASF15:
- 832 00be 72656738 		.ascii	"reg8\000"
- 832      00
- 833              	.LASF5:
- 834 00c3 6C6F6E67 		.ascii	"long unsigned int\000"
- 834      20756E73 
- 834      69676E65 
- 834      6420696E 
- 834      7400
- 835              	.LASF20:
- 836 00d5 61646472 		.ascii	"addr\000"
- 836      00
- 837              	.LASF28:
- 838 00da 4932435F 		.ascii	"I2C_Enable\000"
- 838      456E6162 
- 838      6C6500
- 839              	.LASF13:
- 840 00e5 646F7562 		.ascii	"double\000"
- 840      6C6500
- 841              	.LASF10:
- 842 00ec 75696E74 		.ascii	"uint16\000"
- 842      313600
- 843              	.LASF11:
- 844 00f3 75696E74 		.ascii	"uint32\000"
- 844      333200
- 845              	.LASF29:
- 846 00fa 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 22
+ 822              	.LASF12:
+ 823 003d 666C6F61 		.ascii	"float\000"
+ 823      7400
+ 824              	.LASF7:
+ 825 0043 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 825      206C6F6E 
+ 825      6720756E 
+ 825      7369676E 
+ 825      65642069 
+ 826              	.LASF1:
+ 827 005a 756E7369 		.ascii	"unsigned char\000"
+ 827      676E6564 
+ 827      20636861 
+ 827      7200
+ 828              	.LASF15:
+ 829 0068 72656738 		.ascii	"reg8\000"
+ 829      00
+ 830              	.LASF5:
+ 831 006d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 831      20756E73 
+ 831      69676E65 
+ 831      6420696E 
+ 831      7400
+ 832              	.LASF20:
+ 833 007f 61646472 		.ascii	"addr\000"
+ 833      00
+ 834              	.LASF28:
+ 835 0084 4932435F 		.ascii	"I2C_Enable\000"
+ 835      456E6162 
+ 835      6C6500
+ 836              	.LASF13:
+ 837 008f 646F7562 		.ascii	"double\000"
+ 837      6C6500
+ 838              	.LASF2:
+ 839 0096 73686F72 		.ascii	"short int\000"
+ 839      7420696E 
+ 839      7400
+ 840              	.LASF10:
+ 841 00a0 75696E74 		.ascii	"uint16\000"
+ 841      313600
+ 842              	.LASF11:
+ 843 00a7 75696E74 		.ascii	"uint32\000"
+ 843      333200
+ 844              	.LASF29:
+ 845 00ae 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 845      4320342E 
+ 845      392E3320 
+ 845      32303135 
+ 845      30333033 
+ 846 00e1 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 846      20726576 
+ 846      6973696F 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 22
 
 
- 846      4320342E 
- 846      392E3320 
- 846      32303135 
- 846      30333033 
- 847 012d 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 847      20726576 
- 847      6973696F 
- 847      6E203232 
- 847      31323230 
- 848 0160 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 848      66756E63 
- 848      74696F6E 
- 848      2D736563 
- 848      74696F6E 
- 849              	.LASF33:
- 850 0188 696E7453 		.ascii	"intState\000"
- 850      74617465 
- 850      00
- 851              	.LASF8:
- 852 0191 756E7369 		.ascii	"unsigned int\000"
- 852      676E6564 
- 852      20696E74 
- 852      00
- 853              	.LASF36:
- 854 019e 43794578 		.ascii	"CyExitCriticalSection\000"
- 854      69744372 
- 854      69746963 
- 854      616C5365 
- 854      6374696F 
- 855              	.LASF21:
- 856 01b4 636C6B44 		.ascii	"clkDiv1\000"
- 856      69763100 
- 857              	.LASF22:
- 858 01bc 636C6B44 		.ascii	"clkDiv2\000"
- 858      69763200 
- 859              	.LASF35:
- 860 01c4 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 860      74657243 
- 860      72697469 
- 860      63616C53 
- 860      65637469 
- 861              	.LASF17:
- 862 01db 73697A65 		.ascii	"sizetype\000"
- 862      74797065 
- 862      00
- 863              	.LASF6:
- 864 01e4 6C6F6E67 		.ascii	"long long int\000"
- 864      206C6F6E 
- 864      6720696E 
- 864      7400
- 865              	.LASF14:
- 866 01f2 63686172 		.ascii	"char\000"
- 866      00
- 867              	.LASF19:
- 868 01f7 78636667 		.ascii	"xcfg\000"
- 868      00
- 869              	.LASF23:
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc8GS1av.s 			page 23
+ 846      6E203232 
+ 846      31323230 
+ 847 0114 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 847      66756E63 
+ 847      74696F6E 
+ 847      2D736563 
+ 847      74696F6E 
+ 848              	.LASF33:
+ 849 013c 696E7453 		.ascii	"intState\000"
+ 849      74617465 
+ 849      00
+ 850              	.LASF8:
+ 851 0145 756E7369 		.ascii	"unsigned int\000"
+ 851      676E6564 
+ 851      20696E74 
+ 851      00
+ 852              	.LASF36:
+ 853 0152 43794578 		.ascii	"CyExitCriticalSection\000"
+ 853      69744372 
+ 853      69746963 
+ 853      616C5365 
+ 853      6374696F 
+ 854              	.LASF21:
+ 855 0168 636C6B44 		.ascii	"clkDiv1\000"
+ 855      69763100 
+ 856              	.LASF22:
+ 857 0170 636C6B44 		.ascii	"clkDiv2\000"
+ 857      69763200 
+ 858              	.LASF35:
+ 859 0178 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 859      74657243 
+ 859      72697469 
+ 859      63616C53 
+ 859      65637469 
+ 860              	.LASF17:
+ 861 018f 73697A65 		.ascii	"sizetype\000"
+ 861      74797065 
+ 861      00
+ 862              	.LASF6:
+ 863 0198 6C6F6E67 		.ascii	"long long int\000"
+ 863      206C6F6E 
+ 863      6720696E 
+ 863      7400
+ 864              	.LASF14:
+ 865 01a6 63686172 		.ascii	"char\000"
+ 865      00
+ 866              	.LASF19:
+ 867 01ab 78636667 		.ascii	"xcfg\000"
+ 867      00
+ 868              	.LASF23:
+ 869 01b0 4932435F 		.ascii	"I2C_BACKUP_STRUCT\000"
+ 869      4241434B 
+ 869      55505F53 
+ 869      54525543 
+ 869      5400
+ 870              	.LASF31:
+ 871 01c2 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpHpVCJ.s 			page 23
 
 
- 870 01fc 4932435F 		.ascii	"I2C_BACKUP_STRUCT\000"
- 870      4241434B 
- 870      55505F53 
- 870      54525543 
- 870      5400
- 871              	.LASF2:
- 872 020e 73686F72 		.ascii	"short int\000"
- 872      7420696E 
- 872      7400
- 873              	.LASF9:
- 874 0218 75696E74 		.ascii	"uint8\000"
- 874      3800
- 875              	.LASF4:
- 876 021e 6C6F6E67 		.ascii	"long int\000"
- 876      20696E74 
- 876      00
- 877              	.LASF18:
- 878 0227 656E6162 		.ascii	"enableState\000"
- 878      6C655374 
- 878      61746500 
- 879              	.LASF34:
- 880 0233 4932435F 		.ascii	"I2C_backup\000"
- 880      6261636B 
- 880      757000
- 881              	.LASF27:
- 882 023e 4932435F 		.ascii	"I2C_Stop\000"
- 882      53746F70 
- 882      00
- 883              	.LASF0:
- 884 0247 7369676E 		.ascii	"signed char\000"
- 884      65642063 
- 884      68617200 
- 885              	.LASF25:
- 886 0253 4932435F 		.ascii	"I2C_RestoreConfig\000"
- 886      52657374 
- 886      6F726543 
- 886      6F6E6669 
- 886      6700
- 887              	.LASF30:
- 888 0265 47656E65 		.ascii	"Generated_Source\\PSoC5\\I2C_PM.c\000"
- 888      72617465 
- 888      645F536F 
- 888      75726365 
- 888      5C50536F 
- 889              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 871      73657273 
+ 871      5C444769 
+ 871      6C6C696C 
+ 871      616E645C 
+ 872 01ef 532D5053 		.ascii	"S-PSOC5\\Projects\\ODAS-PSOC5-I2CIO8-BlinkLED0.cyds"
+ 872      4F43355C 
+ 872      50726F6A 
+ 872      65637473 
+ 872      5C4F4441 
+ 873 0220 6E00     		.ascii	"n\000"
+ 874              	.LASF9:
+ 875 0222 75696E74 		.ascii	"uint8\000"
+ 875      3800
+ 876              	.LASF4:
+ 877 0228 6C6F6E67 		.ascii	"long int\000"
+ 877      20696E74 
+ 877      00
+ 878              	.LASF18:
+ 879 0231 656E6162 		.ascii	"enableState\000"
+ 879      6C655374 
+ 879      61746500 
+ 880              	.LASF34:
+ 881 023d 4932435F 		.ascii	"I2C_backup\000"
+ 881      6261636B 
+ 881      757000
+ 882              	.LASF27:
+ 883 0248 4932435F 		.ascii	"I2C_Stop\000"
+ 883      53746F70 
+ 883      00
+ 884              	.LASF0:
+ 885 0251 7369676E 		.ascii	"signed char\000"
+ 885      65642063 
+ 885      68617200 
+ 886              	.LASF25:
+ 887 025d 4932435F 		.ascii	"I2C_RestoreConfig\000"
+ 887      52657374 
+ 887      6F726543 
+ 887      6F6E6669 
+ 887      6700
+ 888              	.LASF30:
+ 889 026f 47656E65 		.ascii	"Generated_Source\\PSoC5\\I2C_PM.c\000"
+ 889      72617465 
+ 889      645F536F 
+ 889      75726365 
+ 889      5C50536F 
+ 890              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

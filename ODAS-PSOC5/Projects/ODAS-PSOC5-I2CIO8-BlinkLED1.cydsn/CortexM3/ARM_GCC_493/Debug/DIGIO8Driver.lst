@@ -1,0 +1,1096 @@
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"DIGIO8Driver.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.initDIGIO8Card,"ax",%progbits
+  19              		.align	2
+  20              		.global	initDIGIO8Card
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	initDIGIO8Card, %function
+  24              	initDIGIO8Card:
+  25              	.LFB63:
+  26              		.file 1 "DIGIO8Driver.c"
+   1:DIGIO8Driver.c **** /* ========================================
+   2:DIGIO8Driver.c ****  * DIGIO8Driver.c
+   3:DIGIO8Driver.c ****  * Copyright Land Boards LLC, 2017
+   4:DIGIO8Driver.c ****  * All Rights Reserved
+   5:DIGIO8Driver.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:DIGIO8Driver.c ****  *
+   7:DIGIO8Driver.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:DIGIO8Driver.c ****  * WHICH IS THE PROPERTY OF Land Boards, LLC.
+   9:DIGIO8Driver.c ****  *
+  10:DIGIO8Driver.c ****  * ========================================
+  11:DIGIO8Driver.c **** */
+  12:DIGIO8Driver.c **** 
+  13:DIGIO8Driver.c **** #include <project.h>
+  14:DIGIO8Driver.c **** 
+  15:DIGIO8Driver.c **** uint8 myWrBuffer[2];
+  16:DIGIO8Driver.c ****  
+  17:DIGIO8Driver.c **** #define MCP23008_IODIR_REGADR    0x00
+  18:DIGIO8Driver.c **** #define MCP23008_IPOL_REGADR     0x01
+  19:DIGIO8Driver.c **** #define MCP23008_GPINTEN_REGADR  0x02
+  20:DIGIO8Driver.c **** #define MCP23008_DEFVAL_REGADR   0x03
+  21:DIGIO8Driver.c **** #define MCP23008_INTCON_REGADR   0x04
+  22:DIGIO8Driver.c **** #define MCP23008_IOCON_REGADR    0x05
+  23:DIGIO8Driver.c **** #define MCP23008_GPPU_REGADR     0x06
+  24:DIGIO8Driver.c **** #define MCP23008_INTF_REGADR     0x07
+  25:DIGIO8Driver.c **** #define MCP23008_INTCAP_REGADR   0x08
+  26:DIGIO8Driver.c **** #define MCP23008_GPIO_REGADR     0x09
+  27:DIGIO8Driver.c **** #define MCP23008_OLAT_REGADR     0x0a
+  28:DIGIO8Driver.c **** 
+  29:DIGIO8Driver.c **** #define MCP23008_IODIR_DEFVAL    0xf0
+  30:DIGIO8Driver.c **** #define MCP23008_IOCON_DEFVAL    0x00
+  31:DIGIO8Driver.c **** 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 2
+
+
+  32:DIGIO8Driver.c **** //////////////////////////////////////////////////////////////////////////////
+  33:DIGIO8Driver.c **** // initDIGIO8Card(void) - 
+  34:DIGIO8Driver.c **** //////////////////////////////////////////////////////////////////////////////
+  35:DIGIO8Driver.c **** 
+  36:DIGIO8Driver.c **** void initDIGIO8Card(void)
+  37:DIGIO8Driver.c **** {
+  27              		.loc 1 37 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 38B5     		push	{r3, r4, r5, lr}
+  32              		.cfi_def_cfa_offset 16
+  33              		.cfi_offset 3, -16
+  34              		.cfi_offset 4, -12
+  35              		.cfi_offset 5, -8
+  36              		.cfi_offset 14, -4
+  38:DIGIO8Driver.c ****     myWrBuffer[0] = MCP23008_IOCON_REGADR;
+  37              		.loc 1 38 0
+  38 0002 0A4C     		ldr	r4, .L3
+  39 0004 0523     		movs	r3, #5
+  40 0006 2370     		strb	r3, [r4]
+  39:DIGIO8Driver.c ****     myWrBuffer[1] = MCP23008_IOCON_DEFVAL;
+  41              		.loc 1 39 0
+  42 0008 0025     		movs	r5, #0
+  43 000a 6570     		strb	r5, [r4, #1]
+  40:DIGIO8Driver.c ****     I2C_MasterWriteBuf(0x20, myWrBuffer, 2, I2C_MODE_COMPLETE_XFER);
+  44              		.loc 1 40 0
+  45 000c 2020     		movs	r0, #32
+  46 000e 2146     		mov	r1, r4
+  47 0010 0222     		movs	r2, #2
+  48 0012 2B46     		mov	r3, r5
+  49 0014 FFF7FEFF 		bl	I2C_MasterWriteBuf
+  50              	.LVL0:
+  41:DIGIO8Driver.c ****     // LEDs are outputs, jumpers are inputs
+  42:DIGIO8Driver.c ****     myWrBuffer[0] = MCP23008_IODIR_REGADR;
+  51              		.loc 1 42 0
+  52 0018 2570     		strb	r5, [r4]
+  43:DIGIO8Driver.c ****     myWrBuffer[1] = MCP23008_IODIR_DEFVAL;
+  53              		.loc 1 43 0
+  54 001a F023     		movs	r3, #240
+  55 001c 6370     		strb	r3, [r4, #1]
+  44:DIGIO8Driver.c ****     I2C_MasterWriteBuf(0x20, myWrBuffer, 2, I2C_MODE_COMPLETE_XFER);
+  56              		.loc 1 44 0
+  57 001e 2020     		movs	r0, #32
+  58 0020 2146     		mov	r1, r4
+  59 0022 0222     		movs	r2, #2
+  60 0024 2B46     		mov	r3, r5
+  61 0026 FFF7FEFF 		bl	I2C_MasterWriteBuf
+  62              	.LVL1:
+  63 002a 38BD     		pop	{r3, r4, r5, pc}
+  64              	.L4:
+  65              		.align	2
+  66              	.L3:
+  67 002c 00000000 		.word	myWrBuffer
+  68              		.cfi_endproc
+  69              	.LFE63:
+  70              		.size	initDIGIO8Card, .-initDIGIO8Card
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 3
+
+
+  71              		.section	.text.writeDIGIO8Card,"ax",%progbits
+  72              		.align	2
+  73              		.global	writeDIGIO8Card
+  74              		.thumb
+  75              		.thumb_func
+  76              		.type	writeDIGIO8Card, %function
+  77              	writeDIGIO8Card:
+  78              	.LFB64:
+  45:DIGIO8Driver.c **** }
+  46:DIGIO8Driver.c **** 
+  47:DIGIO8Driver.c **** //////////////////////////////////////////////////////////////////////////////
+  48:DIGIO8Driver.c **** // writeDIGIO8Card(uint8_t outData) - 
+  49:DIGIO8Driver.c **** //////////////////////////////////////////////////////////////////////////////
+  50:DIGIO8Driver.c **** 
+  51:DIGIO8Driver.c **** void writeDIGIO8Card(uint8 outData)
+  52:DIGIO8Driver.c **** {
+  79              		.loc 1 52 0
+  80              		.cfi_startproc
+  81              		@ args = 0, pretend = 0, frame = 0
+  82              		@ frame_needed = 0, uses_anonymous_args = 0
+  83              	.LVL2:
+  84 0000 08B5     		push	{r3, lr}
+  85              		.cfi_def_cfa_offset 8
+  86              		.cfi_offset 3, -8
+  87              		.cfi_offset 14, -4
+  53:DIGIO8Driver.c ****     myWrBuffer[0]= MCP23008_OLAT_REGADR;
+  88              		.loc 1 53 0
+  89 0002 0549     		ldr	r1, .L7
+  90 0004 0A23     		movs	r3, #10
+  91 0006 0B70     		strb	r3, [r1]
+  54:DIGIO8Driver.c ****     myWrBuffer[1] = outData;
+  92              		.loc 1 54 0
+  93 0008 4870     		strb	r0, [r1, #1]
+  55:DIGIO8Driver.c ****     I2C_MasterWriteBuf(0x20, myWrBuffer, 2, I2C_MODE_COMPLETE_XFER);
+  94              		.loc 1 55 0
+  95 000a 2020     		movs	r0, #32
+  96              	.LVL3:
+  97 000c 0222     		movs	r2, #2
+  98 000e 0023     		movs	r3, #0
+  99 0010 FFF7FEFF 		bl	I2C_MasterWriteBuf
+ 100              	.LVL4:
+ 101 0014 08BD     		pop	{r3, pc}
+ 102              	.L8:
+ 103 0016 00BF     		.align	2
+ 104              	.L7:
+ 105 0018 00000000 		.word	myWrBuffer
+ 106              		.cfi_endproc
+ 107              	.LFE64:
+ 108              		.size	writeDIGIO8Card, .-writeDIGIO8Card
+ 109              		.section	.text.readDIGIO8Card,"ax",%progbits
+ 110              		.align	2
+ 111              		.global	readDIGIO8Card
+ 112              		.thumb
+ 113              		.thumb_func
+ 114              		.type	readDIGIO8Card, %function
+ 115              	readDIGIO8Card:
+ 116              	.LFB65:
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 4
+
+
+  56:DIGIO8Driver.c **** }
+  57:DIGIO8Driver.c **** 
+  58:DIGIO8Driver.c **** //////////////////////////////////////////////////////////////////////////////
+  59:DIGIO8Driver.c **** // readDIGIO8Card(void)
+  60:DIGIO8Driver.c **** //////////////////////////////////////////////////////////////////////////////
+  61:DIGIO8Driver.c **** 
+  62:DIGIO8Driver.c **** uint8 rdBuff[4];
+  63:DIGIO8Driver.c **** 
+  64:DIGIO8Driver.c **** uint8 readDIGIO8Card(void)
+  65:DIGIO8Driver.c **** {
+ 117              		.loc 1 65 0
+ 118              		.cfi_startproc
+ 119              		@ args = 0, pretend = 0, frame = 8
+ 120              		@ frame_needed = 0, uses_anonymous_args = 0
+ 121 0000 00B5     		push	{lr}
+ 122              		.cfi_def_cfa_offset 4
+ 123              		.cfi_offset 14, -4
+ 124 0002 83B0     		sub	sp, sp, #12
+ 125              		.cfi_def_cfa_offset 16
+  66:DIGIO8Driver.c ****     uint8 myWrBuffer[2];
+  67:DIGIO8Driver.c ****     myWrBuffer[0] = MCP23008_GPIO_REGADR;
+ 126              		.loc 1 67 0
+ 127 0004 02A9     		add	r1, sp, #8
+ 128 0006 0923     		movs	r3, #9
+ 129 0008 01F8043D 		strb	r3, [r1, #-4]!
+  68:DIGIO8Driver.c ****     I2C_MasterWriteBuf(0x20, myWrBuffer, 1, I2C_MODE_COMPLETE_XFER);
+ 130              		.loc 1 68 0
+ 131 000c 2020     		movs	r0, #32
+ 132 000e 0122     		movs	r2, #1
+ 133 0010 0023     		movs	r3, #0
+ 134 0012 FFF7FEFF 		bl	I2C_MasterWriteBuf
+ 135              	.LVL5:
+  69:DIGIO8Driver.c ****     rdBuff[0] = I2C_MasterReadByte(I2C_ACK_DATA);
+ 136              		.loc 1 69 0
+ 137 0016 0120     		movs	r0, #1
+ 138 0018 FFF7FEFF 		bl	I2C_MasterReadByte
+ 139              	.LVL6:
+ 140 001c 024B     		ldr	r3, .L11
+ 141 001e 1870     		strb	r0, [r3]
+  70:DIGIO8Driver.c ****     return rdBuff[0]>>4;
+  71:DIGIO8Driver.c **** }
+ 142              		.loc 1 71 0
+ 143 0020 0009     		lsrs	r0, r0, #4
+ 144 0022 03B0     		add	sp, sp, #12
+ 145              		.cfi_def_cfa_offset 4
+ 146              		@ sp needed
+ 147 0024 5DF804FB 		ldr	pc, [sp], #4
+ 148              	.L12:
+ 149              		.align	2
+ 150              	.L11:
+ 151 0028 00000000 		.word	rdBuff
+ 152              		.cfi_endproc
+ 153              	.LFE65:
+ 154              		.size	readDIGIO8Card, .-readDIGIO8Card
+ 155              		.comm	rdBuff,4,4
+ 156              		.comm	myWrBuffer,2,4
+ 157              		.text
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 5
+
+
+ 158              	.Letext0:
+ 159              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 160              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 161              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 162              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 163              		.file 6 "Generated_Source\\PSoC5/I2C.h"
+ 164              		.section	.debug_info,"",%progbits
+ 165              	.Ldebug_info0:
+ 166 0000 33020000 		.4byte	0x233
+ 167 0004 0400     		.2byte	0x4
+ 168 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 169 000a 04       		.byte	0x4
+ 170 000b 01       		.uleb128 0x1
+ 171 000c 09010000 		.4byte	.LASF21
+ 172 0010 01       		.byte	0x1
+ 173 0011 43000000 		.4byte	.LASF22
+ 174 0015 96000000 		.4byte	.LASF23
+ 175 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 176 001d 00000000 		.4byte	0
+ 177 0021 00000000 		.4byte	.Ldebug_line0
+ 178 0025 02       		.uleb128 0x2
+ 179 0026 01       		.byte	0x1
+ 180 0027 06       		.byte	0x6
+ 181 0028 E5010000 		.4byte	.LASF0
+ 182 002c 02       		.uleb128 0x2
+ 183 002d 01       		.byte	0x1
+ 184 002e 08       		.byte	0x8
+ 185 002f 97010000 		.4byte	.LASF1
+ 186 0033 02       		.uleb128 0x2
+ 187 0034 02       		.byte	0x2
+ 188 0035 05       		.byte	0x5
+ 189 0036 01020000 		.4byte	.LASF2
+ 190 003a 02       		.uleb128 0x2
+ 191 003b 02       		.byte	0x2
+ 192 003c 07       		.byte	0x7
+ 193 003d 83000000 		.4byte	.LASF3
+ 194 0041 03       		.uleb128 0x3
+ 195 0042 F1010000 		.4byte	.LASF9
+ 196 0046 02       		.byte	0x2
+ 197 0047 3F       		.byte	0x3f
+ 198 0048 4C000000 		.4byte	0x4c
+ 199 004c 02       		.uleb128 0x2
+ 200 004d 04       		.byte	0x4
+ 201 004e 05       		.byte	0x5
+ 202 004f AD010000 		.4byte	.LASF4
+ 203 0053 02       		.uleb128 0x2
+ 204 0054 04       		.byte	0x4
+ 205 0055 07       		.byte	0x7
+ 206 0056 5A000000 		.4byte	.LASF5
+ 207 005a 02       		.uleb128 0x2
+ 208 005b 08       		.byte	0x8
+ 209 005c 05       		.byte	0x5
+ 210 005d 00000000 		.4byte	.LASF6
+ 211 0061 02       		.uleb128 0x2
+ 212 0062 08       		.byte	0x8
+ 213 0063 07       		.byte	0x7
+ 214 0064 6C000000 		.4byte	.LASF7
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 6
+
+
+ 215 0068 04       		.uleb128 0x4
+ 216 0069 04       		.byte	0x4
+ 217 006a 05       		.byte	0x5
+ 218 006b 696E7400 		.ascii	"int\000"
+ 219 006f 02       		.uleb128 0x2
+ 220 0070 04       		.byte	0x4
+ 221 0071 07       		.byte	0x7
+ 222 0072 1D000000 		.4byte	.LASF8
+ 223 0076 03       		.uleb128 0x3
+ 224 0077 52000000 		.4byte	.LASF10
+ 225 007b 03       		.byte	0x3
+ 226 007c 2C       		.byte	0x2c
+ 227 007d 41000000 		.4byte	0x41
+ 228 0081 05       		.uleb128 0x5
+ 229 0082 3D000000 		.4byte	.LASF11
+ 230 0086 04       		.byte	0x4
+ 231 0087 9201     		.2byte	0x192
+ 232 0089 2C000000 		.4byte	0x2c
+ 233 008d 02       		.uleb128 0x2
+ 234 008e 04       		.byte	0x4
+ 235 008f 04       		.byte	0x4
+ 236 0090 FB010000 		.4byte	.LASF12
+ 237 0094 02       		.uleb128 0x2
+ 238 0095 08       		.byte	0x8
+ 239 0096 04       		.byte	0x4
+ 240 0097 BF010000 		.4byte	.LASF13
+ 241 009b 02       		.uleb128 0x2
+ 242 009c 01       		.byte	0x1
+ 243 009d 08       		.byte	0x8
+ 244 009e 2A020000 		.4byte	.LASF14
+ 245 00a2 02       		.uleb128 0x2
+ 246 00a3 04       		.byte	0x4
+ 247 00a4 07       		.byte	0x7
+ 248 00a5 B6010000 		.4byte	.LASF15
+ 249 00a9 06       		.uleb128 0x6
+ 250 00aa 81000000 		.4byte	0x81
+ 251 00ae B9000000 		.4byte	0xb9
+ 252 00b2 07       		.uleb128 0x7
+ 253 00b3 A2000000 		.4byte	0xa2
+ 254 00b7 03       		.byte	0x3
+ 255 00b8 00       		.byte	0
+ 256 00b9 08       		.uleb128 0x8
+ 257 00ba 0E000000 		.4byte	.LASF16
+ 258 00be 01       		.byte	0x1
+ 259 00bf 24       		.byte	0x24
+ 260 00c0 00000000 		.4byte	.LFB63
+ 261 00c4 30000000 		.4byte	.LFE63-.LFB63
+ 262 00c8 01       		.uleb128 0x1
+ 263 00c9 9C       		.byte	0x9c
+ 264 00ca 15010000 		.4byte	0x115
+ 265 00ce 09       		.uleb128 0x9
+ 266 00cf 18000000 		.4byte	.LVL0
+ 267 00d3 FB010000 		.4byte	0x1fb
+ 268 00d7 F3000000 		.4byte	0xf3
+ 269 00db 0A       		.uleb128 0xa
+ 270 00dc 01       		.uleb128 0x1
+ 271 00dd 53       		.byte	0x53
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 7
+
+
+ 272 00de 02       		.uleb128 0x2
+ 273 00df 75       		.byte	0x75
+ 274 00e0 00       		.sleb128 0
+ 275 00e1 0A       		.uleb128 0xa
+ 276 00e2 01       		.uleb128 0x1
+ 277 00e3 52       		.byte	0x52
+ 278 00e4 01       		.uleb128 0x1
+ 279 00e5 32       		.byte	0x32
+ 280 00e6 0A       		.uleb128 0xa
+ 281 00e7 01       		.uleb128 0x1
+ 282 00e8 51       		.byte	0x51
+ 283 00e9 02       		.uleb128 0x2
+ 284 00ea 74       		.byte	0x74
+ 285 00eb 00       		.sleb128 0
+ 286 00ec 0A       		.uleb128 0xa
+ 287 00ed 01       		.uleb128 0x1
+ 288 00ee 50       		.byte	0x50
+ 289 00ef 02       		.uleb128 0x2
+ 290 00f0 08       		.byte	0x8
+ 291 00f1 20       		.byte	0x20
+ 292 00f2 00       		.byte	0
+ 293 00f3 0B       		.uleb128 0xb
+ 294 00f4 2A000000 		.4byte	.LVL1
+ 295 00f8 FB010000 		.4byte	0x1fb
+ 296 00fc 0A       		.uleb128 0xa
+ 297 00fd 01       		.uleb128 0x1
+ 298 00fe 53       		.byte	0x53
+ 299 00ff 02       		.uleb128 0x2
+ 300 0100 75       		.byte	0x75
+ 301 0101 00       		.sleb128 0
+ 302 0102 0A       		.uleb128 0xa
+ 303 0103 01       		.uleb128 0x1
+ 304 0104 52       		.byte	0x52
+ 305 0105 01       		.uleb128 0x1
+ 306 0106 32       		.byte	0x32
+ 307 0107 0A       		.uleb128 0xa
+ 308 0108 01       		.uleb128 0x1
+ 309 0109 51       		.byte	0x51
+ 310 010a 02       		.uleb128 0x2
+ 311 010b 74       		.byte	0x74
+ 312 010c 00       		.sleb128 0
+ 313 010d 0A       		.uleb128 0xa
+ 314 010e 01       		.uleb128 0x1
+ 315 010f 50       		.byte	0x50
+ 316 0110 02       		.uleb128 0x2
+ 317 0111 08       		.byte	0x8
+ 318 0112 20       		.byte	0x20
+ 319 0113 00       		.byte	0
+ 320 0114 00       		.byte	0
+ 321 0115 08       		.uleb128 0x8
+ 322 0116 1A020000 		.4byte	.LASF17
+ 323 011a 01       		.byte	0x1
+ 324 011b 33       		.byte	0x33
+ 325 011c 00000000 		.4byte	.LFB64
+ 326 0120 1C000000 		.4byte	.LFE64-.LFB64
+ 327 0124 01       		.uleb128 0x1
+ 328 0125 9C       		.byte	0x9c
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 8
+
+
+ 329 0126 5D010000 		.4byte	0x15d
+ 330 012a 0C       		.uleb128 0xc
+ 331 012b A5010000 		.4byte	.LASF24
+ 332 012f 01       		.byte	0x1
+ 333 0130 33       		.byte	0x33
+ 334 0131 81000000 		.4byte	0x81
+ 335 0135 00000000 		.4byte	.LLST0
+ 336 0139 0B       		.uleb128 0xb
+ 337 013a 14000000 		.4byte	.LVL4
+ 338 013e FB010000 		.4byte	0x1fb
+ 339 0142 0A       		.uleb128 0xa
+ 340 0143 01       		.uleb128 0x1
+ 341 0144 53       		.byte	0x53
+ 342 0145 01       		.uleb128 0x1
+ 343 0146 30       		.byte	0x30
+ 344 0147 0A       		.uleb128 0xa
+ 345 0148 01       		.uleb128 0x1
+ 346 0149 52       		.byte	0x52
+ 347 014a 01       		.uleb128 0x1
+ 348 014b 32       		.byte	0x32
+ 349 014c 0A       		.uleb128 0xa
+ 350 014d 01       		.uleb128 0x1
+ 351 014e 51       		.byte	0x51
+ 352 014f 05       		.uleb128 0x5
+ 353 0150 03       		.byte	0x3
+ 354 0151 00000000 		.4byte	myWrBuffer
+ 355 0155 0A       		.uleb128 0xa
+ 356 0156 01       		.uleb128 0x1
+ 357 0157 50       		.byte	0x50
+ 358 0158 02       		.uleb128 0x2
+ 359 0159 08       		.byte	0x8
+ 360 015a 20       		.byte	0x20
+ 361 015b 00       		.byte	0
+ 362 015c 00       		.byte	0
+ 363 015d 0D       		.uleb128 0xd
+ 364 015e 0B020000 		.4byte	.LASF25
+ 365 0162 01       		.byte	0x1
+ 366 0163 40       		.byte	0x40
+ 367 0164 81000000 		.4byte	0x81
+ 368 0168 00000000 		.4byte	.LFB65
+ 369 016c 2C000000 		.4byte	.LFE65-.LFB65
+ 370 0170 01       		.uleb128 0x1
+ 371 0171 9C       		.byte	0x9c
+ 372 0172 B8010000 		.4byte	0x1b8
+ 373 0176 0E       		.uleb128 0xe
+ 374 0177 CD010000 		.4byte	.LASF19
+ 375 017b 01       		.byte	0x1
+ 376 017c 42       		.byte	0x42
+ 377 017d B8010000 		.4byte	0x1b8
+ 378 0181 02       		.uleb128 0x2
+ 379 0182 91       		.byte	0x91
+ 380 0183 74       		.sleb128 -12
+ 381 0184 09       		.uleb128 0x9
+ 382 0185 16000000 		.4byte	.LVL5
+ 383 0189 FB010000 		.4byte	0x1fb
+ 384 018d A8010000 		.4byte	0x1a8
+ 385 0191 0A       		.uleb128 0xa
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 9
+
+
+ 386 0192 01       		.uleb128 0x1
+ 387 0193 53       		.byte	0x53
+ 388 0194 01       		.uleb128 0x1
+ 389 0195 30       		.byte	0x30
+ 390 0196 0A       		.uleb128 0xa
+ 391 0197 01       		.uleb128 0x1
+ 392 0198 52       		.byte	0x52
+ 393 0199 01       		.uleb128 0x1
+ 394 019a 31       		.byte	0x31
+ 395 019b 0A       		.uleb128 0xa
+ 396 019c 01       		.uleb128 0x1
+ 397 019d 51       		.byte	0x51
+ 398 019e 02       		.uleb128 0x2
+ 399 019f 91       		.byte	0x91
+ 400 01a0 74       		.sleb128 -12
+ 401 01a1 0A       		.uleb128 0xa
+ 402 01a2 01       		.uleb128 0x1
+ 403 01a3 50       		.byte	0x50
+ 404 01a4 02       		.uleb128 0x2
+ 405 01a5 08       		.byte	0x8
+ 406 01a6 20       		.byte	0x20
+ 407 01a7 00       		.byte	0
+ 408 01a8 0B       		.uleb128 0xb
+ 409 01a9 1C000000 		.4byte	.LVL6
+ 410 01ad 25020000 		.4byte	0x225
+ 411 01b1 0A       		.uleb128 0xa
+ 412 01b2 01       		.uleb128 0x1
+ 413 01b3 50       		.byte	0x50
+ 414 01b4 01       		.uleb128 0x1
+ 415 01b5 31       		.byte	0x31
+ 416 01b6 00       		.byte	0
+ 417 01b7 00       		.byte	0
+ 418 01b8 06       		.uleb128 0x6
+ 419 01b9 81000000 		.4byte	0x81
+ 420 01bd C8010000 		.4byte	0x1c8
+ 421 01c1 07       		.uleb128 0x7
+ 422 01c2 A2000000 		.4byte	0xa2
+ 423 01c6 01       		.byte	0x1
+ 424 01c7 00       		.byte	0
+ 425 01c8 0F       		.uleb128 0xf
+ 426 01c9 D8010000 		.4byte	.LASF18
+ 427 01cd 05       		.byte	0x5
+ 428 01ce 9606     		.2byte	0x696
+ 429 01d0 D4010000 		.4byte	0x1d4
+ 430 01d4 10       		.uleb128 0x10
+ 431 01d5 76000000 		.4byte	0x76
+ 432 01d9 11       		.uleb128 0x11
+ 433 01da CD010000 		.4byte	.LASF19
+ 434 01de 01       		.byte	0x1
+ 435 01df 0F       		.byte	0xf
+ 436 01e0 B8010000 		.4byte	0x1b8
+ 437 01e4 05       		.uleb128 0x5
+ 438 01e5 03       		.byte	0x3
+ 439 01e6 00000000 		.4byte	myWrBuffer
+ 440 01ea 11       		.uleb128 0x11
+ 441 01eb C6010000 		.4byte	.LASF20
+ 442 01ef 01       		.byte	0x1
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 10
+
+
+ 443 01f0 3E       		.byte	0x3e
+ 444 01f1 A9000000 		.4byte	0xa9
+ 445 01f5 05       		.uleb128 0x5
+ 446 01f6 03       		.byte	0x3
+ 447 01f7 00000000 		.4byte	rdBuff
+ 448 01fb 12       		.uleb128 0x12
+ 449 01fc 2A000000 		.4byte	.LASF26
+ 450 0200 06       		.byte	0x6
+ 451 0201 A7       		.byte	0xa7
+ 452 0202 81000000 		.4byte	0x81
+ 453 0206 1F020000 		.4byte	0x21f
+ 454 020a 13       		.uleb128 0x13
+ 455 020b 81000000 		.4byte	0x81
+ 456 020f 13       		.uleb128 0x13
+ 457 0210 1F020000 		.4byte	0x21f
+ 458 0214 13       		.uleb128 0x13
+ 459 0215 81000000 		.4byte	0x81
+ 460 0219 13       		.uleb128 0x13
+ 461 021a 81000000 		.4byte	0x81
+ 462 021e 00       		.byte	0
+ 463 021f 14       		.uleb128 0x14
+ 464 0220 04       		.byte	0x4
+ 465 0221 81000000 		.4byte	0x81
+ 466 0225 15       		.uleb128 0x15
+ 467 0226 F6000000 		.4byte	.LASF27
+ 468 022a 06       		.byte	0x6
+ 469 022b B7       		.byte	0xb7
+ 470 022c 81000000 		.4byte	0x81
+ 471 0230 13       		.uleb128 0x13
+ 472 0231 81000000 		.4byte	0x81
+ 473 0235 00       		.byte	0
+ 474 0236 00       		.byte	0
+ 475              		.section	.debug_abbrev,"",%progbits
+ 476              	.Ldebug_abbrev0:
+ 477 0000 01       		.uleb128 0x1
+ 478 0001 11       		.uleb128 0x11
+ 479 0002 01       		.byte	0x1
+ 480 0003 25       		.uleb128 0x25
+ 481 0004 0E       		.uleb128 0xe
+ 482 0005 13       		.uleb128 0x13
+ 483 0006 0B       		.uleb128 0xb
+ 484 0007 03       		.uleb128 0x3
+ 485 0008 0E       		.uleb128 0xe
+ 486 0009 1B       		.uleb128 0x1b
+ 487 000a 0E       		.uleb128 0xe
+ 488 000b 55       		.uleb128 0x55
+ 489 000c 17       		.uleb128 0x17
+ 490 000d 11       		.uleb128 0x11
+ 491 000e 01       		.uleb128 0x1
+ 492 000f 10       		.uleb128 0x10
+ 493 0010 17       		.uleb128 0x17
+ 494 0011 00       		.byte	0
+ 495 0012 00       		.byte	0
+ 496 0013 02       		.uleb128 0x2
+ 497 0014 24       		.uleb128 0x24
+ 498 0015 00       		.byte	0
+ 499 0016 0B       		.uleb128 0xb
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 11
+
+
+ 500 0017 0B       		.uleb128 0xb
+ 501 0018 3E       		.uleb128 0x3e
+ 502 0019 0B       		.uleb128 0xb
+ 503 001a 03       		.uleb128 0x3
+ 504 001b 0E       		.uleb128 0xe
+ 505 001c 00       		.byte	0
+ 506 001d 00       		.byte	0
+ 507 001e 03       		.uleb128 0x3
+ 508 001f 16       		.uleb128 0x16
+ 509 0020 00       		.byte	0
+ 510 0021 03       		.uleb128 0x3
+ 511 0022 0E       		.uleb128 0xe
+ 512 0023 3A       		.uleb128 0x3a
+ 513 0024 0B       		.uleb128 0xb
+ 514 0025 3B       		.uleb128 0x3b
+ 515 0026 0B       		.uleb128 0xb
+ 516 0027 49       		.uleb128 0x49
+ 517 0028 13       		.uleb128 0x13
+ 518 0029 00       		.byte	0
+ 519 002a 00       		.byte	0
+ 520 002b 04       		.uleb128 0x4
+ 521 002c 24       		.uleb128 0x24
+ 522 002d 00       		.byte	0
+ 523 002e 0B       		.uleb128 0xb
+ 524 002f 0B       		.uleb128 0xb
+ 525 0030 3E       		.uleb128 0x3e
+ 526 0031 0B       		.uleb128 0xb
+ 527 0032 03       		.uleb128 0x3
+ 528 0033 08       		.uleb128 0x8
+ 529 0034 00       		.byte	0
+ 530 0035 00       		.byte	0
+ 531 0036 05       		.uleb128 0x5
+ 532 0037 16       		.uleb128 0x16
+ 533 0038 00       		.byte	0
+ 534 0039 03       		.uleb128 0x3
+ 535 003a 0E       		.uleb128 0xe
+ 536 003b 3A       		.uleb128 0x3a
+ 537 003c 0B       		.uleb128 0xb
+ 538 003d 3B       		.uleb128 0x3b
+ 539 003e 05       		.uleb128 0x5
+ 540 003f 49       		.uleb128 0x49
+ 541 0040 13       		.uleb128 0x13
+ 542 0041 00       		.byte	0
+ 543 0042 00       		.byte	0
+ 544 0043 06       		.uleb128 0x6
+ 545 0044 01       		.uleb128 0x1
+ 546 0045 01       		.byte	0x1
+ 547 0046 49       		.uleb128 0x49
+ 548 0047 13       		.uleb128 0x13
+ 549 0048 01       		.uleb128 0x1
+ 550 0049 13       		.uleb128 0x13
+ 551 004a 00       		.byte	0
+ 552 004b 00       		.byte	0
+ 553 004c 07       		.uleb128 0x7
+ 554 004d 21       		.uleb128 0x21
+ 555 004e 00       		.byte	0
+ 556 004f 49       		.uleb128 0x49
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 12
+
+
+ 557 0050 13       		.uleb128 0x13
+ 558 0051 2F       		.uleb128 0x2f
+ 559 0052 0B       		.uleb128 0xb
+ 560 0053 00       		.byte	0
+ 561 0054 00       		.byte	0
+ 562 0055 08       		.uleb128 0x8
+ 563 0056 2E       		.uleb128 0x2e
+ 564 0057 01       		.byte	0x1
+ 565 0058 3F       		.uleb128 0x3f
+ 566 0059 19       		.uleb128 0x19
+ 567 005a 03       		.uleb128 0x3
+ 568 005b 0E       		.uleb128 0xe
+ 569 005c 3A       		.uleb128 0x3a
+ 570 005d 0B       		.uleb128 0xb
+ 571 005e 3B       		.uleb128 0x3b
+ 572 005f 0B       		.uleb128 0xb
+ 573 0060 27       		.uleb128 0x27
+ 574 0061 19       		.uleb128 0x19
+ 575 0062 11       		.uleb128 0x11
+ 576 0063 01       		.uleb128 0x1
+ 577 0064 12       		.uleb128 0x12
+ 578 0065 06       		.uleb128 0x6
+ 579 0066 40       		.uleb128 0x40
+ 580 0067 18       		.uleb128 0x18
+ 581 0068 9742     		.uleb128 0x2117
+ 582 006a 19       		.uleb128 0x19
+ 583 006b 01       		.uleb128 0x1
+ 584 006c 13       		.uleb128 0x13
+ 585 006d 00       		.byte	0
+ 586 006e 00       		.byte	0
+ 587 006f 09       		.uleb128 0x9
+ 588 0070 898201   		.uleb128 0x4109
+ 589 0073 01       		.byte	0x1
+ 590 0074 11       		.uleb128 0x11
+ 591 0075 01       		.uleb128 0x1
+ 592 0076 31       		.uleb128 0x31
+ 593 0077 13       		.uleb128 0x13
+ 594 0078 01       		.uleb128 0x1
+ 595 0079 13       		.uleb128 0x13
+ 596 007a 00       		.byte	0
+ 597 007b 00       		.byte	0
+ 598 007c 0A       		.uleb128 0xa
+ 599 007d 8A8201   		.uleb128 0x410a
+ 600 0080 00       		.byte	0
+ 601 0081 02       		.uleb128 0x2
+ 602 0082 18       		.uleb128 0x18
+ 603 0083 9142     		.uleb128 0x2111
+ 604 0085 18       		.uleb128 0x18
+ 605 0086 00       		.byte	0
+ 606 0087 00       		.byte	0
+ 607 0088 0B       		.uleb128 0xb
+ 608 0089 898201   		.uleb128 0x4109
+ 609 008c 01       		.byte	0x1
+ 610 008d 11       		.uleb128 0x11
+ 611 008e 01       		.uleb128 0x1
+ 612 008f 31       		.uleb128 0x31
+ 613 0090 13       		.uleb128 0x13
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 13
+
+
+ 614 0091 00       		.byte	0
+ 615 0092 00       		.byte	0
+ 616 0093 0C       		.uleb128 0xc
+ 617 0094 05       		.uleb128 0x5
+ 618 0095 00       		.byte	0
+ 619 0096 03       		.uleb128 0x3
+ 620 0097 0E       		.uleb128 0xe
+ 621 0098 3A       		.uleb128 0x3a
+ 622 0099 0B       		.uleb128 0xb
+ 623 009a 3B       		.uleb128 0x3b
+ 624 009b 0B       		.uleb128 0xb
+ 625 009c 49       		.uleb128 0x49
+ 626 009d 13       		.uleb128 0x13
+ 627 009e 02       		.uleb128 0x2
+ 628 009f 17       		.uleb128 0x17
+ 629 00a0 00       		.byte	0
+ 630 00a1 00       		.byte	0
+ 631 00a2 0D       		.uleb128 0xd
+ 632 00a3 2E       		.uleb128 0x2e
+ 633 00a4 01       		.byte	0x1
+ 634 00a5 3F       		.uleb128 0x3f
+ 635 00a6 19       		.uleb128 0x19
+ 636 00a7 03       		.uleb128 0x3
+ 637 00a8 0E       		.uleb128 0xe
+ 638 00a9 3A       		.uleb128 0x3a
+ 639 00aa 0B       		.uleb128 0xb
+ 640 00ab 3B       		.uleb128 0x3b
+ 641 00ac 0B       		.uleb128 0xb
+ 642 00ad 27       		.uleb128 0x27
+ 643 00ae 19       		.uleb128 0x19
+ 644 00af 49       		.uleb128 0x49
+ 645 00b0 13       		.uleb128 0x13
+ 646 00b1 11       		.uleb128 0x11
+ 647 00b2 01       		.uleb128 0x1
+ 648 00b3 12       		.uleb128 0x12
+ 649 00b4 06       		.uleb128 0x6
+ 650 00b5 40       		.uleb128 0x40
+ 651 00b6 18       		.uleb128 0x18
+ 652 00b7 9742     		.uleb128 0x2117
+ 653 00b9 19       		.uleb128 0x19
+ 654 00ba 01       		.uleb128 0x1
+ 655 00bb 13       		.uleb128 0x13
+ 656 00bc 00       		.byte	0
+ 657 00bd 00       		.byte	0
+ 658 00be 0E       		.uleb128 0xe
+ 659 00bf 34       		.uleb128 0x34
+ 660 00c0 00       		.byte	0
+ 661 00c1 03       		.uleb128 0x3
+ 662 00c2 0E       		.uleb128 0xe
+ 663 00c3 3A       		.uleb128 0x3a
+ 664 00c4 0B       		.uleb128 0xb
+ 665 00c5 3B       		.uleb128 0x3b
+ 666 00c6 0B       		.uleb128 0xb
+ 667 00c7 49       		.uleb128 0x49
+ 668 00c8 13       		.uleb128 0x13
+ 669 00c9 02       		.uleb128 0x2
+ 670 00ca 18       		.uleb128 0x18
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 14
+
+
+ 671 00cb 00       		.byte	0
+ 672 00cc 00       		.byte	0
+ 673 00cd 0F       		.uleb128 0xf
+ 674 00ce 34       		.uleb128 0x34
+ 675 00cf 00       		.byte	0
+ 676 00d0 03       		.uleb128 0x3
+ 677 00d1 0E       		.uleb128 0xe
+ 678 00d2 3A       		.uleb128 0x3a
+ 679 00d3 0B       		.uleb128 0xb
+ 680 00d4 3B       		.uleb128 0x3b
+ 681 00d5 05       		.uleb128 0x5
+ 682 00d6 49       		.uleb128 0x49
+ 683 00d7 13       		.uleb128 0x13
+ 684 00d8 3F       		.uleb128 0x3f
+ 685 00d9 19       		.uleb128 0x19
+ 686 00da 3C       		.uleb128 0x3c
+ 687 00db 19       		.uleb128 0x19
+ 688 00dc 00       		.byte	0
+ 689 00dd 00       		.byte	0
+ 690 00de 10       		.uleb128 0x10
+ 691 00df 35       		.uleb128 0x35
+ 692 00e0 00       		.byte	0
+ 693 00e1 49       		.uleb128 0x49
+ 694 00e2 13       		.uleb128 0x13
+ 695 00e3 00       		.byte	0
+ 696 00e4 00       		.byte	0
+ 697 00e5 11       		.uleb128 0x11
+ 698 00e6 34       		.uleb128 0x34
+ 699 00e7 00       		.byte	0
+ 700 00e8 03       		.uleb128 0x3
+ 701 00e9 0E       		.uleb128 0xe
+ 702 00ea 3A       		.uleb128 0x3a
+ 703 00eb 0B       		.uleb128 0xb
+ 704 00ec 3B       		.uleb128 0x3b
+ 705 00ed 0B       		.uleb128 0xb
+ 706 00ee 49       		.uleb128 0x49
+ 707 00ef 13       		.uleb128 0x13
+ 708 00f0 3F       		.uleb128 0x3f
+ 709 00f1 19       		.uleb128 0x19
+ 710 00f2 02       		.uleb128 0x2
+ 711 00f3 18       		.uleb128 0x18
+ 712 00f4 00       		.byte	0
+ 713 00f5 00       		.byte	0
+ 714 00f6 12       		.uleb128 0x12
+ 715 00f7 2E       		.uleb128 0x2e
+ 716 00f8 01       		.byte	0x1
+ 717 00f9 3F       		.uleb128 0x3f
+ 718 00fa 19       		.uleb128 0x19
+ 719 00fb 03       		.uleb128 0x3
+ 720 00fc 0E       		.uleb128 0xe
+ 721 00fd 3A       		.uleb128 0x3a
+ 722 00fe 0B       		.uleb128 0xb
+ 723 00ff 3B       		.uleb128 0x3b
+ 724 0100 0B       		.uleb128 0xb
+ 725 0101 27       		.uleb128 0x27
+ 726 0102 19       		.uleb128 0x19
+ 727 0103 49       		.uleb128 0x49
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 15
+
+
+ 728 0104 13       		.uleb128 0x13
+ 729 0105 3C       		.uleb128 0x3c
+ 730 0106 19       		.uleb128 0x19
+ 731 0107 01       		.uleb128 0x1
+ 732 0108 13       		.uleb128 0x13
+ 733 0109 00       		.byte	0
+ 734 010a 00       		.byte	0
+ 735 010b 13       		.uleb128 0x13
+ 736 010c 05       		.uleb128 0x5
+ 737 010d 00       		.byte	0
+ 738 010e 49       		.uleb128 0x49
+ 739 010f 13       		.uleb128 0x13
+ 740 0110 00       		.byte	0
+ 741 0111 00       		.byte	0
+ 742 0112 14       		.uleb128 0x14
+ 743 0113 0F       		.uleb128 0xf
+ 744 0114 00       		.byte	0
+ 745 0115 0B       		.uleb128 0xb
+ 746 0116 0B       		.uleb128 0xb
+ 747 0117 49       		.uleb128 0x49
+ 748 0118 13       		.uleb128 0x13
+ 749 0119 00       		.byte	0
+ 750 011a 00       		.byte	0
+ 751 011b 15       		.uleb128 0x15
+ 752 011c 2E       		.uleb128 0x2e
+ 753 011d 01       		.byte	0x1
+ 754 011e 3F       		.uleb128 0x3f
+ 755 011f 19       		.uleb128 0x19
+ 756 0120 03       		.uleb128 0x3
+ 757 0121 0E       		.uleb128 0xe
+ 758 0122 3A       		.uleb128 0x3a
+ 759 0123 0B       		.uleb128 0xb
+ 760 0124 3B       		.uleb128 0x3b
+ 761 0125 0B       		.uleb128 0xb
+ 762 0126 27       		.uleb128 0x27
+ 763 0127 19       		.uleb128 0x19
+ 764 0128 49       		.uleb128 0x49
+ 765 0129 13       		.uleb128 0x13
+ 766 012a 3C       		.uleb128 0x3c
+ 767 012b 19       		.uleb128 0x19
+ 768 012c 00       		.byte	0
+ 769 012d 00       		.byte	0
+ 770 012e 00       		.byte	0
+ 771              		.section	.debug_loc,"",%progbits
+ 772              	.Ldebug_loc0:
+ 773              	.LLST0:
+ 774 0000 00000000 		.4byte	.LVL2
+ 775 0004 0C000000 		.4byte	.LVL3
+ 776 0008 0100     		.2byte	0x1
+ 777 000a 50       		.byte	0x50
+ 778 000b 0C000000 		.4byte	.LVL3
+ 779 000f 13000000 		.4byte	.LVL4-1
+ 780 0013 0500     		.2byte	0x5
+ 781 0015 03       		.byte	0x3
+ 782 0016 01000000 		.4byte	myWrBuffer+1
+ 783 001a 13000000 		.4byte	.LVL4-1
+ 784 001e 1C000000 		.4byte	.LFE64
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 16
+
+
+ 785 0022 0400     		.2byte	0x4
+ 786 0024 F3       		.byte	0xf3
+ 787 0025 01       		.uleb128 0x1
+ 788 0026 50       		.byte	0x50
+ 789 0027 9F       		.byte	0x9f
+ 790 0028 00000000 		.4byte	0
+ 791 002c 00000000 		.4byte	0
+ 792              		.section	.debug_aranges,"",%progbits
+ 793 0000 2C000000 		.4byte	0x2c
+ 794 0004 0200     		.2byte	0x2
+ 795 0006 00000000 		.4byte	.Ldebug_info0
+ 796 000a 04       		.byte	0x4
+ 797 000b 00       		.byte	0
+ 798 000c 0000     		.2byte	0
+ 799 000e 0000     		.2byte	0
+ 800 0010 00000000 		.4byte	.LFB63
+ 801 0014 30000000 		.4byte	.LFE63-.LFB63
+ 802 0018 00000000 		.4byte	.LFB64
+ 803 001c 1C000000 		.4byte	.LFE64-.LFB64
+ 804 0020 00000000 		.4byte	.LFB65
+ 805 0024 2C000000 		.4byte	.LFE65-.LFB65
+ 806 0028 00000000 		.4byte	0
+ 807 002c 00000000 		.4byte	0
+ 808              		.section	.debug_ranges,"",%progbits
+ 809              	.Ldebug_ranges0:
+ 810 0000 00000000 		.4byte	.LFB63
+ 811 0004 30000000 		.4byte	.LFE63
+ 812 0008 00000000 		.4byte	.LFB64
+ 813 000c 1C000000 		.4byte	.LFE64
+ 814 0010 00000000 		.4byte	.LFB65
+ 815 0014 2C000000 		.4byte	.LFE65
+ 816 0018 00000000 		.4byte	0
+ 817 001c 00000000 		.4byte	0
+ 818              		.section	.debug_line,"",%progbits
+ 819              	.Ldebug_line0:
+ 820 0000 99010000 		.section	.debug_str,"MS",%progbits,1
+ 820      02005801 
+ 820      00000201 
+ 820      FB0E0D00 
+ 820      01010101 
+ 821              	.LASF6:
+ 822 0000 6C6F6E67 		.ascii	"long long int\000"
+ 822      206C6F6E 
+ 822      6720696E 
+ 822      7400
+ 823              	.LASF16:
+ 824 000e 696E6974 		.ascii	"initDIGIO8Card\000"
+ 824      44494749 
+ 824      4F384361 
+ 824      726400
+ 825              	.LASF8:
+ 826 001d 756E7369 		.ascii	"unsigned int\000"
+ 826      676E6564 
+ 826      20696E74 
+ 826      00
+ 827              	.LASF26:
+ 828 002a 4932435F 		.ascii	"I2C_MasterWriteBuf\000"
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 17
+
+
+ 828      4D617374 
+ 828      65725772 
+ 828      69746542 
+ 828      756600
+ 829              	.LASF11:
+ 830 003d 75696E74 		.ascii	"uint8\000"
+ 830      3800
+ 831              	.LASF22:
+ 832 0043 44494749 		.ascii	"DIGIO8Driver.c\000"
+ 832      4F384472 
+ 832      69766572 
+ 832      2E6300
+ 833              	.LASF10:
+ 834 0052 696E7433 		.ascii	"int32_t\000"
+ 834      325F7400 
+ 835              	.LASF5:
+ 836 005a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 836      20756E73 
+ 836      69676E65 
+ 836      6420696E 
+ 836      7400
+ 837              	.LASF7:
+ 838 006c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 838      206C6F6E 
+ 838      6720756E 
+ 838      7369676E 
+ 838      65642069 
+ 839              	.LASF3:
+ 840 0083 73686F72 		.ascii	"short unsigned int\000"
+ 840      7420756E 
+ 840      7369676E 
+ 840      65642069 
+ 840      6E7400
+ 841              	.LASF23:
+ 842 0096 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
+ 842      73657273 
+ 842      5C444769 
+ 842      6C6C696C 
+ 842      616E645C 
+ 843 00c3 532D5053 		.ascii	"S-PSOC5\\Projects\\ODAS-PSOC5-I2CIO8-BlinkLED1.cyds"
+ 843      4F43355C 
+ 843      50726F6A 
+ 843      65637473 
+ 843      5C4F4441 
+ 844 00f4 6E00     		.ascii	"n\000"
+ 845              	.LASF27:
+ 846 00f6 4932435F 		.ascii	"I2C_MasterReadByte\000"
+ 846      4D617374 
+ 846      65725265 
+ 846      61644279 
+ 846      746500
+ 847              	.LASF21:
+ 848 0109 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 848      4320342E 
+ 848      392E3320 
+ 848      32303135 
+ 848      30333033 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 18
+
+
+ 849 013c 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 849      20726576 
+ 849      6973696F 
+ 849      6E203232 
+ 849      31323230 
+ 850 016f 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 850      66756E63 
+ 850      74696F6E 
+ 850      2D736563 
+ 850      74696F6E 
+ 851              	.LASF1:
+ 852 0197 756E7369 		.ascii	"unsigned char\000"
+ 852      676E6564 
+ 852      20636861 
+ 852      7200
+ 853              	.LASF24:
+ 854 01a5 6F757444 		.ascii	"outData\000"
+ 854      61746100 
+ 855              	.LASF4:
+ 856 01ad 6C6F6E67 		.ascii	"long int\000"
+ 856      20696E74 
+ 856      00
+ 857              	.LASF15:
+ 858 01b6 73697A65 		.ascii	"sizetype\000"
+ 858      74797065 
+ 858      00
+ 859              	.LASF13:
+ 860 01bf 646F7562 		.ascii	"double\000"
+ 860      6C6500
+ 861              	.LASF20:
+ 862 01c6 72644275 		.ascii	"rdBuff\000"
+ 862      666600
+ 863              	.LASF19:
+ 864 01cd 6D795772 		.ascii	"myWrBuffer\000"
+ 864      42756666 
+ 864      657200
+ 865              	.LASF18:
+ 866 01d8 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 866      52784275 
+ 866      66666572 
+ 866      00
+ 867              	.LASF0:
+ 868 01e5 7369676E 		.ascii	"signed char\000"
+ 868      65642063 
+ 868      68617200 
+ 869              	.LASF9:
+ 870 01f1 5F5F696E 		.ascii	"__int32_t\000"
+ 870      7433325F 
+ 870      7400
+ 871              	.LASF12:
+ 872 01fb 666C6F61 		.ascii	"float\000"
+ 872      7400
+ 873              	.LASF2:
+ 874 0201 73686F72 		.ascii	"short int\000"
+ 874      7420696E 
+ 874      7400
+ 875              	.LASF25:
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cchFNnVe.s 			page 19
+
+
+ 876 020b 72656164 		.ascii	"readDIGIO8Card\000"
+ 876      44494749 
+ 876      4F384361 
+ 876      726400
+ 877              	.LASF17:
+ 878 021a 77726974 		.ascii	"writeDIGIO8Card\000"
+ 878      65444947 
+ 878      494F3843 
+ 878      61726400 
+ 879              	.LASF14:
+ 880 022a 63686172 		.ascii	"char\000"
+ 880      00
+ 881              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
