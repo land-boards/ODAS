@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 1
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccS9e9fV.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 1
   29:Generated_Source\PSoC5/P1_34.c **** * \brief Writes the value to the physical port (data output register), masking
   30:Generated_Source\PSoC5/P1_34.c **** *  and shifting the bits appropriately. 
   31:Generated_Source\PSoC5/P1_34.c **** *
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccS9e9fV.s 			page 2
 
 
   32:Generated_Source\PSoC5/P1_34.c **** * The data output register controls the signal applied to the physical pin in 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 1
   52              		.align	2
   53              		.global	P1_34_SetDriveMode
   54              		.thumb
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 3
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccS9e9fV.s 			page 3
 
 
   55              		.thumb_func
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 1
   77 0014 18500040 		.word	1073762328
   78              		.cfi_endproc
   79              	.LFE1:
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 4
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccS9e9fV.s 			page 4
 
 
   80              		.size	P1_34_SetDriveMode, .-P1_34_SetDriveMode
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 1
  110              		.thumb
  111              		.thumb_func
  112              		.type	P1_34_ReadDataReg, %function
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 5
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccS9e9fV.s 			page 5
 
 
  113              	P1_34_ReadDataReg:
@@ -298,21 +298,21 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 1
  139 0004 0400     		.2byte	0x4
  140 0006 00000000 		.4byte	.Ldebug_abbrev0
  141 000a 04       		.byte	0x4
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 6
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccS9e9fV.s 			page 6
 
 
  142 000b 01       		.uleb128 0x1
  143 000c 92000000 		.4byte	.LASF20
  144 0010 01       		.byte	0x1
  145 0011 57010000 		.4byte	.LASF21
- 146 0015 8B010000 		.4byte	.LASF22
+ 146 0015 A0010000 		.4byte	.LASF22
  147 0019 00000000 		.4byte	.Ldebug_ranges0+0
  148 001d 00000000 		.4byte	0
  149 0021 00000000 		.4byte	.Ldebug_line0
  150 0025 02       		.uleb128 0x2
  151 0026 01       		.byte	0x1
  152 0027 06       		.byte	0x6
- 153 0028 F4010000 		.4byte	.LASF0
+ 153 0028 94010000 		.4byte	.LASF0
  154 002c 02       		.uleb128 0x2
  155 002d 01       		.byte	0x1
  156 002e 08       		.byte	0x8
@@ -328,7 +328,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 1
  166 0041 02       		.uleb128 0x2
  167 0042 04       		.byte	0x4
  168 0043 05       		.byte	0x5
- 169 0044 EB010000 		.4byte	.LASF4
+ 169 0044 8B010000 		.4byte	.LASF4
  170 0048 02       		.uleb128 0x2
  171 0049 04       		.byte	0x4
  172 004a 07       		.byte	0x7
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 1
  196 0078 04       		.byte	0x4
  197 0079 04       		.byte	0x4
  198 007a 2E000000 		.4byte	.LASF9
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 7
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccS9e9fV.s 			page 7
 
 
  199 007e 02       		.uleb128 0x2
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 1
  253 00f4 09       		.uleb128 0x9
  254 00f5 23000000 		.4byte	.LASF18
  255 00f9 01       		.byte	0x1
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 8
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccS9e9fV.s 			page 8
 
 
  256 00fa 71       		.byte	0x71
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 1
  310 0024 0B       		.uleb128 0xb
  311 0025 03       		.uleb128 0x3
  312 0026 08       		.uleb128 0x8
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 9
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccS9e9fV.s 			page 9
 
 
  313 0027 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 1
  367 005e 3B       		.uleb128 0x3b
  368 005f 0B       		.uleb128 0xb
  369 0060 49       		.uleb128 0x49
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 10
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccS9e9fV.s 			page 10
 
 
  370 0061 13       		.uleb128 0x13
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 1
  424 000f 18000000 		.4byte	.LFE0
  425 0013 0400     		.2byte	0x4
  426 0015 F3       		.byte	0xf3
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 11
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccS9e9fV.s 			page 11
 
 
  427 0016 01       		.uleb128 0x1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 1
  478      FB0E0D00 
  478      01010101 
  479              	.LASF16:
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 12
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccS9e9fV.s 			page 12
 
 
  480 0000 76616C75 		.ascii	"value\000"
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 1
  504      4320342E 
  504      392E3320 
  504      32303135 
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 13
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccS9e9fV.s 			page 13
 
 
  504      30333033 
@@ -767,27 +767,27 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 1
  521              	.LASF12:
  522 0185 75696E74 		.ascii	"uint8\000"
  522      3800
- 523              	.LASF22:
- 524 018b 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
- 524      73657273 
- 524      5C444769 
- 524      6C6C696C 
- 524      616E645C 
- 525 01b8 532D5053 		.ascii	"S-PSOC5\\Projects\\ODAS-PSOC5-I2CIO8-BlinkLED2.cyds"
- 525      4F43355C 
- 525      50726F6A 
- 525      65637473 
- 525      5C4F4441 
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cccgY9XN.s 			page 14
+ 523              	.LASF4:
+ 524 018b 6C6F6E67 		.ascii	"long int\000"
+ 524      20696E74 
+ 524      00
+ 525              	.LASF0:
+ 526 0194 7369676E 		.ascii	"signed char\000"
+ 526      65642063 
+ 526      68617200 
+ 527              	.LASF22:
+ 528 01a0 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
+ 528      73657273 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccS9e9fV.s 			page 14
 
 
- 526 01e9 6E00     		.ascii	"n\000"
- 527              	.LASF4:
- 528 01eb 6C6F6E67 		.ascii	"long int\000"
- 528      20696E74 
- 528      00
- 529              	.LASF0:
- 530 01f4 7369676E 		.ascii	"signed char\000"
- 530      65642063 
- 530      68617200 
+ 528      5C444769 
+ 528      6C6C696C 
+ 528      616E645C 
+ 529 01cd 532D5053 		.ascii	"S-PSOC5\\Projects\\ODAS-PSOC5-I2CIO8-BlinkLED3.cyds"
+ 529      4F43355C 
+ 529      50726F6A 
+ 529      65637473 
+ 529      5C4F4441 
+ 530 01fe 6E00     		.ascii	"n\000"
  531              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

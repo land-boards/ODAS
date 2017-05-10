@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 1
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccGStPZu.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 1
   29:Generated_Source\PSoC5/SDA_1.c **** * \brief Writes the value to the physical port (data output register), masking
   30:Generated_Source\PSoC5/SDA_1.c **** *  and shifting the bits appropriately. 
   31:Generated_Source\PSoC5/SDA_1.c **** *
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccGStPZu.s 			page 2
 
 
   32:Generated_Source\PSoC5/SDA_1.c **** * The data output register controls the signal applied to the physical pin in 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 1
   52              		.section	.text.SDA_1_SetDriveMode,"ax",%progbits
   53              		.align	2
   54              		.global	SDA_1_SetDriveMode
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 3
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccGStPZu.s 			page 3
 
 
   55              		.thumb
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 1
   77              	.L5:
   78 0014 65500040 		.word	1073762405
   79              		.cfi_endproc
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 4
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccGStPZu.s 			page 4
 
 
   80              	.LFE1:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 1
  110              		.global	SDA_1_ReadDataReg
  111              		.thumb
  112              		.thumb_func
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 5
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccGStPZu.s 			page 5
 
 
  113              		.type	SDA_1_ReadDataReg, %function
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 1
  139 0000 1B010000 		.4byte	0x11b
  140 0004 0400     		.2byte	0x4
  141 0006 00000000 		.4byte	.Ldebug_abbrev0
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 6
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccGStPZu.s 			page 6
 
 
  142 000a 04       		.byte	0x4
@@ -306,14 +306,14 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 1
  144 000c 86000000 		.4byte	.LASF20
  145 0010 01       		.byte	0x1
  146 0011 E1010000 		.4byte	.LASF21
- 147 0015 6C010000 		.4byte	.LASF22
+ 147 0015 81010000 		.4byte	.LASF22
  148 0019 00000000 		.4byte	.Ldebug_ranges0+0
  149 001d 00000000 		.4byte	0
  150 0021 00000000 		.4byte	.Ldebug_line0
  151 0025 02       		.uleb128 0x2
  152 0026 01       		.byte	0x1
  153 0027 06       		.byte	0x6
- 154 0028 D5010000 		.4byte	.LASF0
+ 154 0028 75010000 		.4byte	.LASF0
  155 002c 02       		.uleb128 0x2
  156 002d 01       		.byte	0x1
  157 002e 08       		.byte	0x8
@@ -329,7 +329,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 1
  167 0041 02       		.uleb128 0x2
  168 0042 04       		.byte	0x4
  169 0043 05       		.byte	0x5
- 170 0044 CC010000 		.4byte	.LASF4
+ 170 0044 6C010000 		.4byte	.LASF4
  171 0048 02       		.uleb128 0x2
  172 0049 04       		.byte	0x4
  173 004a 07       		.byte	0x7
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 1
  196 0077 02       		.uleb128 0x2
  197 0078 04       		.byte	0x4
  198 0079 04       		.byte	0x4
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 7
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccGStPZu.s 			page 7
 
 
  199 007a 36000000 		.4byte	.LASF9
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 1
  253 00f3 00       		.byte	0
  254 00f4 09       		.uleb128 0x9
  255 00f5 7B000000 		.4byte	.LASF18
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 8
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccGStPZu.s 			page 8
 
 
  256 00f9 01       		.byte	0x1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 1
  310 0023 3E       		.uleb128 0x3e
  311 0024 0B       		.uleb128 0xb
  312 0025 03       		.uleb128 0x3
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 9
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccGStPZu.s 			page 9
 
 
  313 0026 08       		.uleb128 0x8
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 1
  367 005d 0B       		.uleb128 0xb
  368 005e 3B       		.uleb128 0x3b
  369 005f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 10
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccGStPZu.s 			page 10
 
 
  370 0060 49       		.uleb128 0x49
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 1
  424 000b 0A000000 		.4byte	.LVL2
  425 000f 18000000 		.4byte	.LFE0
  426 0013 0400     		.2byte	0x4
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 11
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccGStPZu.s 			page 11
 
 
  427 0015 F3       		.byte	0xf3
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 1
  479      00000201 
  479      FB0E0D00 
  479      01010101 
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 12
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccGStPZu.s 			page 12
 
 
  480              	.LASF16:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 1
  503      30333033 
  504 00b9 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
  504      20726576 
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 13
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccGStPZu.s 			page 13
 
 
  504      6973696F 
@@ -762,29 +762,29 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 1
  520              	.LASF12:
  521 0166 75696E74 		.ascii	"uint8\000"
  521      3800
- 522              	.LASF22:
- 523 016c 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
- 523      73657273 
- 523      5C444769 
- 523      6C6C696C 
- 523      616E645C 
- 524 0199 532D5053 		.ascii	"S-PSOC5\\Projects\\ODAS-PSOC5-I2CIO8-BlinkLED2.cyds"
- 524      4F43355C 
- 524      50726F6A 
- 524      65637473 
- 524      5C4F4441 
- 525 01ca 6E00     		.ascii	"n\000"
- 526              	.LASF4:
- 527 01cc 6C6F6E67 		.ascii	"long int\000"
- 527      20696E74 
- 527      00
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc7Kvirk.s 			page 14
+ 522              	.LASF4:
+ 523 016c 6C6F6E67 		.ascii	"long int\000"
+ 523      20696E74 
+ 523      00
+ 524              	.LASF0:
+ 525 0175 7369676E 		.ascii	"signed char\000"
+ 525      65642063 
+ 525      68617200 
+ 526              	.LASF22:
+ 527 0181 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
+ 527      73657273 
+ 527      5C444769 
+ 527      6C6C696C 
+ 527      616E645C 
+ 528 01ae 532D5053 		.ascii	"S-PSOC5\\Projects\\ODAS-PSOC5-I2CIO8-BlinkLED3.cyds"
+ 528      4F43355C 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccGStPZu.s 			page 14
 
 
- 528              	.LASF0:
- 529 01d5 7369676E 		.ascii	"signed char\000"
- 529      65642063 
- 529      68617200 
+ 528      50726F6A 
+ 528      65637473 
+ 528      5C4F4441 
+ 529 01df 6E00     		.ascii	"n\000"
  530              	.LASF21:
  531 01e1 47656E65 		.ascii	"Generated_Source\\PSoC5\\SDA_1.c\000"
  531      72617465 

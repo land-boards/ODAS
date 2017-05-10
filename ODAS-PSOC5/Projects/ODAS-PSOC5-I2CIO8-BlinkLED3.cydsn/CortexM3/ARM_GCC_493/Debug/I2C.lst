@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
   29:Generated_Source\PSoC5/I2C.c **** /*******************************************************************************
   30:Generated_Source\PSoC5/I2C.c **** * Function Name: I2C_Init
   31:Generated_Source\PSoC5/I2C.c **** ********************************************************************************
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 2
 
 
   32:Generated_Source\PSoC5/I2C.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
   58:Generated_Source\PSoC5/I2C.c **** 
   59:Generated_Source\PSoC5/I2C.c **** #else
   60:Generated_Source\PSoC5/I2C.c ****     uint8 intState;
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 3
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 3
 
 
   61:Generated_Source\PSoC5/I2C.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
   97:Generated_Source\PSoC5/I2C.c **** #if (I2C_MODE_SLAVE_ENABLED)
   98:Generated_Source\PSoC5/I2C.c ****     /* Clear status and buffers index */
   99:Generated_Source\PSoC5/I2C.c ****     I2C_slStatus = 0u;
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 4
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 4
 
 
  100:Generated_Source\PSoC5/I2C.c ****     I2C_slRdBufIndex = 0u;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  123:Generated_Source\PSoC5/I2C.c **** * Parameters:
  124:Generated_Source\PSoC5/I2C.c **** *  None.
  125:Generated_Source\PSoC5/I2C.c **** *
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 5
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 5
 
 
  126:Generated_Source\PSoC5/I2C.c **** * Return:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  141              		.type	I2C_Start, %function
  142              	I2C_Start:
  143              	.LFB2:
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 6
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 6
 
 
  143:Generated_Source\PSoC5/I2C.c **** #else
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  150              		.cfi_offset 3, -8
  151              		.cfi_offset 14, -4
  191:Generated_Source\PSoC5/I2C.c ****     if (0u == I2C_initVar)
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 7
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 7
 
 
  152              		.loc 1 191 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  210:Generated_Source\PSoC5/I2C.c **** * Parameters:
  211:Generated_Source\PSoC5/I2C.c **** *  None.
  212:Generated_Source\PSoC5/I2C.c **** *
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 8
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 8
 
 
  213:Generated_Source\PSoC5/I2C.c **** * Return:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  235:Generated_Source\PSoC5/I2C.c ****         /* Calculate number of cycles to reset block */
  236:Generated_Source\PSoC5/I2C.c ****         blockResetCycles = ((uint16) ((uint16) I2C_CLKDIV2_REG << 8u) | I2C_CLKDIV1_REG) + 1u;
  220              		.loc 1 236 0
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 9
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 9
 
 
  221 0026 3078     		ldrb	r0, [r6]	@ zero_extendqisi2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  254:Generated_Source\PSoC5/I2C.c ****         I2C_ADDR_REG    = I2C_backup.addr;
  258              		.loc 1 254 0
  259 006a E378     		ldrb	r3, [r4, #3]	@ zero_extendqisi2
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 10
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 10
 
 
  260 006c 88F80030 		strb	r3, [r8]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  287 00a0 D6490040 		.word	1073760726
  288 00a4 A5430040 		.word	1073759141
  289 00a8 80E200E0 		.word	-536812928
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 11
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 11
 
 
  290 00ac 00000000 		.word	I2C_state
@@ -629,8 +629,8 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  315 000b 01       		.uleb128 0x1
  316 000c D4000000 		.4byte	.LASF39
  317 0010 01       		.byte	0x1
- 318 0011 D7020000 		.4byte	.LASF40
- 319 0015 3A020000 		.4byte	.LASF41
+ 318 0011 77020000 		.4byte	.LASF40
+ 319 0015 94020000 		.4byte	.LASF41
  320 0019 00000000 		.4byte	.Ldebug_ranges0+0
  321 001d 00000000 		.4byte	0
  322 0021 00000000 		.4byte	.Ldebug_line0
@@ -653,12 +653,12 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  339 0041 02       		.uleb128 0x2
  340 0042 04       		.byte	0x4
  341 0043 05       		.byte	0x5
- 342 0044 9A020000 		.4byte	.LASF4
+ 342 0044 3A020000 		.4byte	.LASF4
  343 0048 02       		.uleb128 0x2
  344 0049 04       		.byte	0x4
  345 004a 07       		.byte	0x7
  346 004b 94000000 		.4byte	.LASF5
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 12
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 12
 
 
  347 004f 02       		.uleb128 0x2
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  401 00bd C1000000 		.4byte	0xc1
  402 00c1 05       		.uleb128 0x5
  403 00c2 83000000 		.4byte	0x83
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 13
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 13
 
 
  404 00c6 04       		.uleb128 0x4
@@ -740,7 +740,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  420 00e3 76       		.byte	0x76
  421 00e4 31010000 		.4byte	0x131
  422 00e8 09       		.uleb128 0x9
- 423 00e9 A3020000 		.4byte	.LASF19
+ 423 00e9 43020000 		.4byte	.LASF19
  424 00ed 03       		.byte	0x3
  425 00ee 78       		.byte	0x78
  426 00ef 6B000000 		.4byte	0x6b
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  458 0130 00       		.byte	0
  459 0131 0B       		.uleb128 0xb
  460 0132 09020000 		.4byte	.LASF24
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 14
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 14
 
 
  461 0136 03       		.byte	0x3
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  515 01a2 AF020000 		.4byte	0x2af
  516 01a6 11       		.uleb128 0x11
  517 01a7 1E000000 		.4byte	.LVL3
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 15
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 15
 
 
  518 01ab BA020000 		.4byte	0x2ba
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  572 0232 F4020000 		.4byte	.LASF31
  573 0236 01       		.byte	0x1
  574 0237 18       		.byte	0x18
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 16
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 16
 
 
  575 0238 6B000000 		.4byte	0x6b
@@ -906,12 +906,12 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  577 023d 03       		.byte	0x3
  578 023e 00000000 		.4byte	I2C_initVar
  579 0242 14       		.uleb128 0x14
- 580 0243 AF020000 		.4byte	.LASF32
+ 580 0243 4F020000 		.4byte	.LASF32
  581 0247 04       		.byte	0x4
  582 0248 21       		.byte	0x21
  583 0249 31010000 		.4byte	0x131
  584 024d 13       		.uleb128 0x13
- 585 024e BA020000 		.4byte	.LASF33
+ 585 024e 5A020000 		.4byte	.LASF33
  586 0252 01       		.byte	0x1
  587 0253 1A       		.byte	0x1a
  588 0254 B0000000 		.4byte	0xb0
@@ -929,7 +929,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  600 026f 2D       		.byte	0x2d
  601 0270 B0000000 		.4byte	0xb0
  602 0274 14       		.uleb128 0x14
- 603 0275 C4020000 		.4byte	.LASF36
+ 603 0275 64020000 		.4byte	.LASF36
  604 0279 04       		.byte	0x4
  605 027a 32       		.byte	0x32
  606 027b B0000000 		.4byte	0xb0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  629 02b0 AF010000 		.4byte	.LASF43
  630 02b4 05       		.byte	0x5
  631 02b5 7D       		.byte	0x7d
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 17
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 17
 
 
  632 02b6 6B000000 		.4byte	0x6b
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  686 0023 3E       		.uleb128 0x3e
  687 0024 0B       		.uleb128 0xb
  688 0025 03       		.uleb128 0x3
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 18
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 18
 
 
  689 0026 08       		.uleb128 0x8
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  743 005c 00       		.byte	0
  744 005d 03       		.uleb128 0x3
  745 005e 0E       		.uleb128 0xe
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 19
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 19
 
 
  746 005f 3A       		.uleb128 0x3a
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  800 0095 06       		.uleb128 0x6
  801 0096 40       		.uleb128 0x40
  802 0097 18       		.uleb128 0x18
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 20
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 20
 
 
  803 0098 9742     		.uleb128 0x2117
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  857 00d8 01       		.uleb128 0x1
  858 00d9 31       		.uleb128 0x31
  859 00da 13       		.uleb128 0x13
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 21
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 21
 
 
  860 00db 00       		.byte	0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  914 0111 3B       		.uleb128 0x3b
  915 0112 0B       		.uleb128 0xb
  916 0113 27       		.uleb128 0x27
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 22
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 22
 
 
  917 0114 19       		.uleb128 0x19
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  971 014a 19       		.uleb128 0x19
  972 014b 2E       		.uleb128 0x2e
  973 014c 01       		.byte	0x1
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 23
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 23
 
 
  974 014d 3F       		.uleb128 0x3f
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  1028 0030 00000000 		.4byte	0
  1029 0034 00000000 		.4byte	0
  1030              		.section	.debug_ranges,"",%progbits
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 24
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 24
 
 
  1031              	.Ldebug_ranges0:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  1060 0064 666C6F61 		.ascii	"float\000"
  1060      7400
  1061              	.LASF7:
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 25
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 25
 
 
  1062 006a 6C6F6E67 		.ascii	"long long unsigned int\000"
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  1084      74696F6E 
  1085              	.LASF29:
  1086 0162 696E7453 		.ascii	"intState\000"
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 26
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 26
 
 
  1086      74617465 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  1110 01ff 63686172 		.ascii	"char\000"
  1110      00
  1111              	.LASF20:
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 27
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 27
 
 
  1112 0204 78636667 		.ascii	"xcfg\000"
@@ -1581,49 +1581,49 @@ ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 1
  1120      6D737472 
  1120      53746174 
  1120      757300
- 1121              	.LASF41:
- 1122 023a 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
- 1122      73657273 
- 1122      5C444769 
- 1122      6C6C696C 
- 1122      616E645C 
- 1123 0267 532D5053 		.ascii	"S-PSOC5\\Projects\\ODAS-PSOC5-I2CIO8-BlinkLED2.cyds"
- 1123      4F43355C 
- 1123      50726F6A 
- 1123      65637473 
- 1123      5C4F4441 
- 1124 0298 6E00     		.ascii	"n\000"
- 1125              	.LASF4:
- 1126 029a 6C6F6E67 		.ascii	"long int\000"
- 1126      20696E74 
- 1126      00
- 1127              	.LASF19:
- 1128 02a3 656E6162 		.ascii	"enableState\000"
- 1128      6C655374 
- 1128      61746500 
- 1129              	.LASF32:
- 1130 02af 4932435F 		.ascii	"I2C_backup\000"
- 1130      6261636B 
- 1130      757000
- 1131              	.LASF33:
- 1132 02ba 4932435F 		.ascii	"I2C_state\000"
- 1132      73746174 
- 1132      6500
- 1133              	.LASF36:
- 1134 02c4 4932435F 		.ascii	"I2C_mstrWrBufIndex\000"
- 1134      6D737472 
- 1134      57724275 
- 1134      66496E64 
- 1134      657800
- 1135              	.LASF40:
- 1136 02d7 47656E65 		.ascii	"Generated_Source\\PSoC5\\I2C.c\000"
- 1136      72617465 
-ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccWxQCAC.s 			page 28
+ 1121              	.LASF4:
+ 1122 023a 6C6F6E67 		.ascii	"long int\000"
+ 1122      20696E74 
+ 1122      00
+ 1123              	.LASF19:
+ 1124 0243 656E6162 		.ascii	"enableState\000"
+ 1124      6C655374 
+ 1124      61746500 
+ 1125              	.LASF32:
+ 1126 024f 4932435F 		.ascii	"I2C_backup\000"
+ 1126      6261636B 
+ 1126      757000
+ 1127              	.LASF33:
+ 1128 025a 4932435F 		.ascii	"I2C_state\000"
+ 1128      73746174 
+ 1128      6500
+ 1129              	.LASF36:
+ 1130 0264 4932435F 		.ascii	"I2C_mstrWrBufIndex\000"
+ 1130      6D737472 
+ 1130      57724275 
+ 1130      66496E64 
+ 1130      657800
+ 1131              	.LASF40:
+ 1132 0277 47656E65 		.ascii	"Generated_Source\\PSoC5\\I2C.c\000"
+ 1132      72617465 
+ 1132      645F536F 
+ 1132      75726365 
+ 1132      5C50536F 
+ 1133              	.LASF41:
+ 1134 0294 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
+ 1134      73657273 
+ 1134      5C444769 
+ 1134      6C6C696C 
+ 1134      616E645C 
+ 1135 02c1 532D5053 		.ascii	"S-PSOC5\\Projects\\ODAS-PSOC5-I2CIO8-BlinkLED3.cyds"
+ 1135      4F43355C 
+ 1135      50726F6A 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc6DjeOR.s 			page 28
 
 
- 1136      645F536F 
- 1136      75726365 
- 1136      5C50536F 
+ 1135      65637473 
+ 1135      5C4F4441 
+ 1136 02f2 6E00     		.ascii	"n\000"
  1137              	.LASF31:
  1138 02f4 4932435F 		.ascii	"I2C_initVar\000"
  1138      696E6974 

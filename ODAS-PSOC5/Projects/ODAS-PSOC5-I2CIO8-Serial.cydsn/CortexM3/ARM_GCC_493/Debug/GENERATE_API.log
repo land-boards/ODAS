@@ -1,0 +1,89 @@
+--------------- Build Started: 05/10/2017 12:21:38 Project: ODAS-PSOC5-I2CIO8-Serial, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\DGilliland\AppData\Local\Cypress Semiconductor\PSoC Creator\4.0" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\ODAS-PSOC5-I2CIO8-Serial.cyprj -d CY8C5267AXI-LP051 -s C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+ADD: sdb.M0025: error: No input on Instance "P1_24", terminal "y_0".
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1043)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_101.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1043)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_101.2)
+ADD: sdb.M0025: error: No input on Instance "P1_22", terminal "y_0".
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1042)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_103.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1042)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_103.2)
+ADD: sdb.M0025: error: No input on Instance "P1_23", terminal "y_0".
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1072)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_102.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1072)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_102.2)
+ADD: sdb.M0025: error: No input on Instance "P1_25", terminal "y_0".
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1073)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_100.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1073)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_100.2)
+ADD: sdb.M0025: error: No input on Instance "P1_27", terminal "y_0".
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1074)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_98.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1074)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_98.2)
+ADD: sdb.M0025: error: No input on Instance "P1_29", terminal "y_0".
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1075)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_96.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1075)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_96.2)
+ADD: sdb.M0025: error: No input on Instance "P1_21", terminal "y_0".
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1071)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_104.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1071)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_104.2)
+ADD: sdb.M0025: error: No input on Instance "P1_26", terminal "y_0".
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1044)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_99.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1044)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_99.2)
+ADD: sdb.M0025: error: No input on Instance "P1_28", terminal "y_0".
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1045)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_97.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1045)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_97.2)
+ADD: sdb.M0025: error: No input on Instance "P1_30", terminal "y_0".
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1046)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_95.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1046)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_95.2)
+ADD: sdb.M0025: error: No input on Instance "P1_32", terminal "y_0".
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1047)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_93.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1047)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_93.2)
+ADD: sdb.M0025: error: No input on Instance "P1_34", terminal "y_0".
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1048)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_456.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1048)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_456.2)
+ADD: sdb.M0025: error: No input on Instance "P1_33", terminal "y_0".
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1131)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_2142.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1131)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_2142.2)
+ADD: sdb.M0025: error: No input on Instance "P1_31", terminal "y_0".
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1130)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_2141.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1130)
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-I2CIO8-Serial.cydsn\TopDesign\TopDesign.cysch (Shape_2141.2)
+Error: fit.M0050: The fitter aborted due to errors, please address all errors and rebuild. (App=cydsfit)
+--------------- Build Failed: 05/10/2017 12:21:41 ---------------

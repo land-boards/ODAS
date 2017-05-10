@@ -1,0 +1,1264 @@
+Archive member included because of file (symbol)
+
+.\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+                              .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o (cyfitter_cfg)
+.\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+                              .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o (CyHalt)
+.\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+                              .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o) (CyPmReadStatus)
+.\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(Control_Reg_1.o)
+                              .\CortexM3\ARM_GCC_493\Debug\main.o (Control_Reg_1_Write)
+.\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+                              .\CortexM3\ARM_GCC_493\Debug\main.o (LED_Write)
+.\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+                              .\CortexM3\ARM_GCC_493\Debug\serialIO.o (UART_1_Start)
+.\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+                              .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o) (UART_1_IntClock_Start)
+.\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+                              .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o (I2C_Start)
+.\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_INT.o)
+                              .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o) (I2C_ISR)
+.\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+                              .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o) (I2C_backup)
+.\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+                              .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o (I2C_MasterWriteBuf)
+.\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyBootAsmGnu.o)
+                              .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o) (CyDelayCycles)
+.\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+                              .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o) (CyFlash_SetWaitCycles)
+.\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+                              .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o) (CySpcStart)
+c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                              .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o (__errno)
+c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+                              c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o (exit)
+c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                              c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o) (_global_impure_ptr)
+c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                              c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o (__libc_init_array)
+c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+                              .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o) (memcpy)
+c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                              c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o (memset)
+
+Allocating common symbols
+Common symbol       size              file
+
+myWrBuffer          0x2               .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+I2C_state           0x1               .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+I2C_mstrWrBufIndex  0x1               .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+I2C_mstrWrBufSize   0x1               .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+I2C_mstrStatus      0x1               .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+I2C_mstrRdBufPtr    0x4               .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+I2C_mstrControl     0x1               .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+I2C_mstrRdBufSize   0x1               .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ledVal              0x1               .\CortexM3\ARM_GCC_493\Debug\main.o
+I2C_mstrRdBufIndex  0x1               .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+I2C_mstrWrBufPtr    0x4               .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+dieTemperature      0x2               .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+ .data          0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .text          0x00000000       0x74 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .ARM.extab     0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .ARM.exidx     0x00000000        0x8 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\main.o
+ COMMON         0x00000000        0x1 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+ .text.writeLineNoLF
+                0x00000000       0x14 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+ .text.writeLine
+                0x00000000       0x14 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+ .text.readLine
+                0x00000000       0x74 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .data          0x00000000        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .text._exit    0x00000000        0xc .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .text._sbrk    0x00000000       0x30 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .text.SetAnalogRoutingPumps
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .bss           0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyUSB_PowerOnCheck
+                0x00000000       0x48 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyBusClk_Internal_SetDivider
+                0x00000000       0x48 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyPLL_OUT_Stop
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyIMO_Stop
+                0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyIMO_EnableDoubler
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyIMO_DisableDoubler
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyMasterClk_SetSource
+                0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyMasterClk_SetDivider
+                0x00000000        0xc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyBusClk_SetDivider
+                0x00000000       0x70 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyUsbClk_SetSource
+                0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyILO_Start1K
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyILO_Stop1K
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyILO_Start100K
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyILO_Stop100K
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyPLL_OUT_Start
+                0x00000000       0x78 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyIMO_Start
+                0x00000000       0x60 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyILO_Enable33K
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyILO_Disable33K
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyILO_SetSource
+                0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyILO_SetPowerMode
+                0x00000000       0x24 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyXTAL_32KHZ_Stop
+                0x00000000       0x30 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyXTAL_32KHZ_ReadStatus
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyXTAL_Start
+                0x00000000       0xac .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyXTAL_Stop
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyXTAL_EnableErrStatus
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyXTAL_DisableErrStatus
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyXTAL_ReadStatus
+                0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyXTAL_EnableFaultRecovery
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyXTAL_DisableFaultRecovery
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyXTAL_SetStartup
+                0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyXTAL_SetFbVoltage
+                0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyXTAL_SetWdVoltage
+                0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyPLL_OUT_SetPQ
+                0x00000000       0x60 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyPLL_OUT_SetSource
+                0x00000000       0x34 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyIMO_SetTrimValue
+                0x00000000       0xcc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyIMO_SetFreq
+                0x00000000       0xf4 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyIMO_SetSource
+                0x00000000       0x58 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySoftwareReset
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyDelayUs
+                0x00000000       0x14 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyXTAL_32KHZ_SetPowerMode
+                0x00000000       0x84 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyXTAL_32KHZ_Start
+                0x00000000       0x70 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyDelayFreq
+                0x00000000       0x4c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyWdtStart
+                0x00000000       0x40 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyWdtClear
+                0x00000000        0xc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyVdStickyStatus
+                0x00000000       0x2c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyVdLvDigitEnable
+                0x00000000       0x84 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyVdLvAnalogEnable
+                0x00000000       0x80 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyVdLvDigitDisable
+                0x00000000       0x30 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyVdLvAnalogDisable
+                0x00000000       0x28 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyVdHvAnalogEnable
+                0x00000000       0x54 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyVdHvAnalogDisable
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyVdRealTimeStatus
+                0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyDisableInts
+                0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyEnableInts
+                0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyFlushCache
+                0x00000000       0x44 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyIntSetSysVector
+                0x00000000       0x28 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyIntGetSysVector
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyIntGetVector
+                0x00000000       0x24 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyIntGetPriority
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyIntGetState
+                0x00000000       0x24 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySysTickStop
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySysTickEnableInterrupt
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySysTickEnable
+                0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySysTickDisableInterrupt
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySysTickSetReload
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySysTickGetReload
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySysTickGetValue
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySysTickSetClockSource
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySysTickGetClockSource
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySysTickGetCountFlag
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySysTickServiceCallbacks
+                0x00000000       0x28 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySysTickClear
+                0x00000000        0xc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySysTickInit
+                0x00000000       0x58 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySysTickStart
+                0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySysTickSetCallback
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CySysTickGetCallback
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text.CyGetUniqueId
+                0x00000000       0x70 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .bss           0x00000000       0x44 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text.CyPmHibSlpSaveSet
+                0x00000000      0x1dc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text.CyPmHibSlpRestore
+                0x00000000       0xd4 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text.CyPmHviLviSaveDisable
+                0x00000000       0xa0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text.CyPmHibSaveSet
+                0x00000000       0x8c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text.CyPmHviLviRestore
+                0x00000000       0x48 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text.CyPmHibRestore
+                0x00000000       0x58 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text.CyPmSaveClocks
+                0x00000000      0x218 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text.CyPmRestoreClocks
+                0x00000000      0x24c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text.CyPmAltAct
+                0x00000000       0x6c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text.CyPmSleep
+                0x00000000       0xf4 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text.CyPmHibernateEx
+                0x00000000       0xf4 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text.CyPmHibernate
+                0x00000000        0xc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text.CyPmReadStatus
+                0x00000000       0x30 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text.CyPmCtwSetInterval
+                0x00000000       0x5c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text.CyPmOppsSet
+                0x00000000       0x2c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text.CyPmFtwSetInterval
+                0x00000000       0x5c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .rodata        0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(Control_Reg_1.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(Control_Reg_1.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(Control_Reg_1.o)
+ .text.Control_Reg_1_Read
+                0x00000000        0xc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(Control_Reg_1.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+ .text.LED_SetDriveMode
+                0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+ .text.LED_Read
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+ .text.LED_ReadDataReg
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_Stop
+                0x00000000       0x3c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_ReadControlRegister
+                0x00000000        0x4 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_WriteControlRegister
+                0x00000000        0x4 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_SetRxInterruptMode
+                0x00000000        0xc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_ReadRxData
+                0x00000000        0xc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_GetByte
+                0x00000000       0x14 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_GetRxBufferSize
+                0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_ClearRxBuffer
+                0x00000000       0x24 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_SetRxAddressMode
+                0x00000000        0x4 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_SetRxAddress1
+                0x00000000        0xc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_SetRxAddress2
+                0x00000000        0xc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_SetTxInterruptMode
+                0x00000000        0xc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_WriteTxData
+                0x00000000       0x14 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_PutString
+                0x00000000       0x24 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_PutArray
+                0x00000000       0x28 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_PutCRLF
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_GetTxBufferSize
+                0x00000000       0x24 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_ClearTxBuffer
+                0x00000000       0x24 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_SendBreak
+                0x00000000       0x58 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text.UART_1_SetTxAddressMode
+                0x00000000        0x4 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .text.UART_1_IntClock_Stop
+                0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .text.UART_1_IntClock_StopBlock
+                0x00000000       0x6c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .text.UART_1_IntClock_StandbyPower
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .text.UART_1_IntClock_GetDividerRegister
+                0x00000000        0xc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .text.UART_1_IntClock_SetModeRegister
+                0x00000000       0x14 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .text.UART_1_IntClock_ClearModeRegister
+                0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .text.UART_1_IntClock_GetModeRegister
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .text.UART_1_IntClock_GetSourceRegister
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .text.UART_1_IntClock_SetDividerRegister
+                0x00000000       0xd8 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .text.UART_1_IntClock_SetSourceRegister
+                0x00000000       0x5c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+ .text.I2C_Stop
+                0x00000000       0xb4 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_INT.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_INT.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_INT.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+ .data          0x00000000        0x8 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+ .text.I2C_SaveConfig
+                0x00000000       0x3c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+ .text.I2C_Sleep
+                0x00000000       0x24 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+ .text.I2C_RestoreConfig
+                0x00000000       0x60 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+ .text.I2C_Wakeup
+                0x00000000       0x24 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .text.I2C_MasterReadBuf
+                0x00000000       0xd0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .text.I2C_MasterSendRestart
+                0x00000000       0x6c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .text.I2C_MasterGetReadBufSize
+                0x00000000        0xc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .text.I2C_MasterGetWriteBufSize
+                0x00000000        0xc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .text.I2C_MasterClearReadBuf
+                0x00000000       0x30 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .text.I2C_MasterClearWriteBuf
+                0x00000000       0x30 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyBootAsmGnu.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyBootAsmGnu.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .bss           0x00000000        0x4 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .text.CyFlashGetSpcAlgorithm
+                0x00000000       0x4c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .text.CySetTempInt
+                0x00000000       0x60 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .text.CyFlash_Start
+                0x00000000       0x54 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .text.CyFlash_Stop
+                0x00000000       0x24 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .text.CySetTemp
+                0x00000000       0x14 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .text.CySetFlashEEBuffer
+                0x00000000       0x28 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .text.CyWriteRowFull
+                0x00000000       0xf8 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .text.CyWriteRowData
+                0x00000000       0x14 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .text.CyFlash_SetWaitCycles
+                0x00000000       0x7c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .text.CyEEPROM_Start
+                0x00000000       0x54 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .text.CyEEPROM_Stop
+                0x00000000       0x24 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .text.CyEEPROM_ReadReserve
+                0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .text.CyEEPROM_ReadRelease
+                0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ COMMON         0x00000000        0x2 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .bss           0x00000000        0x8 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .text.CySpcStart
+                0x00000000       0x24 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .text.CySpcStop
+                0x00000000       0x24 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .text.CySpcReadData
+                0x00000000       0x34 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .text.CySpcLoadMultiByte
+                0x00000000       0x78 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .text.CySpcLoadRow
+                0x00000000       0x54 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .text.CySpcLoadRowFull
+                0x00000000       0x80 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .text.CySpcWriteRow
+                0x00000000       0x4c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .text.CySpcEraseSector
+                0x00000000       0x3c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .text.CySpcGetTemp
+                0x00000000       0x3c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .text.CySpcLock
+                0x00000000       0x4c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .text.CySpcUnlock
+                0x00000000       0x38 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .text.CySpcGetAlgorithm
+                0x00000000       0x28 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .text.exit     0x00000000       0x28 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .rodata._global_impure_ptr
+                0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00020000         xr
+ram              0x1fffc000         0x00008000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+LOAD c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+LOAD c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+START GROUP
+LOAD .\CortexM3\ARM_GCC_493\Debug\main.o
+LOAD .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+LOAD .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+LOAD .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+LOAD .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+LOAD .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a
+LOAD C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_493\Debug\CyComponentLibrary.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libc_nano.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libc_nano.a
+END GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+LOAD c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libnosys.a
+END GROUP
+                0x00000000                CY_APPL_ORIGIN = 0x0
+                0x00000100                CY_FLASH_ROW_SIZE = 0x100
+                0x00000020                CY_ECC_ROW_SIZE = 0x20
+                0x00000000                CY_EE_IN_BTLDR = 0x0
+                0x00000000                CY_APPL_LOADABLE = 0x0
+                0x00000800                CY_EE_SIZE = 0x800
+                0x00000001                CY_APPL_NUM = 0x1
+                0x00000001                CY_APPL_MAX = 0x1
+                0x00000040                CY_METADATA_SIZE = 0x40
+                0x00000000                CY_APPL_LOADABLE = 0x0
+                0x00000000                CY_CHECKSUM_EXCLUDE_SIZE = ALIGN (0x0, CY_FLASH_ROW_SIZE)
+                0x1fffc1b8                PROVIDE (__cy_heap_start, _end)
+                0x00000001                PROVIDE (__cy_region_num, ((__cy_regions_end - __cy_regions) / 0x10))
+                0x20004000                PROVIDE (__cy_stack, (ORIGIN (ram) + 0x8000))
+                0x20003800                PROVIDE (__cy_heap_end, (__cy_stack - 0x800))
+
+.cybootloader   0x00000000        0x0
+ *(.cybootloader)
+                0x00000000                appl1_start = CY_APPL_ORIGIN?CY_APPL_ORIGIN:ALIGN (CY_FLASH_ROW_SIZE)
+                0x0000ff00                appl2_start = (appl1_start + ALIGN ((((0x20000 - appl1_start) - (0x2 * CY_FLASH_ROW_SIZE)) / 0x2), CY_FLASH_ROW_SIZE))
+                0x00000000                appl_start = (CY_APPL_NUM == 0x1)?appl1_start:appl2_start
+                0x00000000                ecc_offset = ((appl_start / CY_FLASH_ROW_SIZE) * CY_ECC_ROW_SIZE)
+                0x00000000                ee_offset = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?((CY_EE_SIZE / CY_APPL_MAX) * (CY_APPL_NUM - 0x1)):0x0
+                0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
+                0x00000000                PROVIDE (CY_ECC_OFFSET, ecc_offset)
+
+.text           0x00000000      0xdd6
+ CREATE_OBJECT_SYMBOLS
+                0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
+ *(.romvectors)
+ .romvectors    0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00000000                RomVectors
+                0x00000001                ASSERT ((. != __cy_interrupt_vector), No interrupt vector)
+                0x00000001                ASSERT (CY_APPL_ORIGIN?(SIZEOF (.cybootloader) <= CY_APPL_ORIGIN):0x1, Wrong image location)
+                0x00000010                PROVIDE (__cy_reset, Reset)
+ *(.text.Reset)
+ .text.Reset    0x00000010       0x18 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00000010                Reset
+                0x00000001                ASSERT ((. != __cy_reset), No reset code)
+ *(.dma_init)
+                0x00000001                ASSERT ((((appl_start + .) <= 0x10000) || 0x1), DMA Init must be within the first 64k of flash)
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x00000028       0x5c c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .text.toggleOnBoardLED
+                0x00000084       0x1c .\CortexM3\ARM_GCC_493\Debug\main.o
+                0x00000084                toggleOnBoardLED
+ .text.main     0x000000a0       0x3c .\CortexM3\ARM_GCC_493\Debug\main.o
+                0x000000a0                main
+ .text.readRegisterDIGIO8Card
+                0x000000dc       0x38 .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+                0x000000dc                readRegisterDIGIO8Card
+ .text.writeRegisterDIGIO8Card
+                0x00000114       0x30 .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+                0x00000114                writeRegisterDIGIO8Card
+ .text.initDIGIO8Card
+                0x00000144       0x38 .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+                0x00000144                initDIGIO8Card
+ .text.writeDIGIO8Card
+                0x0000017c        0xc .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+                0x0000017c                writeDIGIO8Card
+ .text.readDIGIO8Card
+                0x00000188       0x10 .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+                0x00000188                readDIGIO8Card
+ .text.initSerial
+                0x00000198        0x8 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+                0x00000198                initSerial
+ .text.outSingleChar
+                0x000001a0       0x18 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+                0x000001a0                outSingleChar
+ .text.getSingleChar
+                0x000001b8       0x14 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+                0x000001b8                getSingleChar
+ .text.checkReceiveChar
+                0x000001cc       0x14 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+                0x000001cc                checkReceiveChar
+ .text.IntDefaultHandler
+                0x000001e0       0x10 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x000001e0                IntDefaultHandler
+ .text.Start_c  0x000001f0       0x4c .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x000001f0                Start_c
+ .text.initialize_psoc
+                0x0000023c       0x74 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x0000023c                initialize_psoc
+ .text.CyClockStartupError
+                0x000002b0        0x4 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .text.cfg_write_bytes32
+                0x000002b4       0x34 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .text.AnalogSetDefault
+                0x000002e8       0x28 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .text.CYMEMZERO
+                0x00000310        0xc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .text.ClockSetup
+                0x0000031c       0xfc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .text.CYCONFIGCPY
+                0x00000418        0x8 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .text.cyfitter_cfg
+                0x00000420      0x168 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+                0x00000420                cyfitter_cfg
+ .text.CyHalt   0x00000588        0x4 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+                0x00000588                CyHalt
+ .text.CyDelay  0x0000058c       0x2c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+                0x0000058c                CyDelay
+ .text.CyIntSetVector
+                0x000005b8       0x28 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+                0x000005b8                CyIntSetVector
+ .text.CyIntSetPriority
+                0x000005e0       0x30 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+                0x000005e0                CyIntSetPriority
+ .text.Control_Reg_1_Write
+                0x00000610        0xc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(Control_Reg_1.o)
+                0x00000610                Control_Reg_1_Write
+ .text.LED_Write
+                0x0000061c       0x18 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+                0x0000061c                LED_Write
+ .text.UART_1_Init
+                0x00000634       0x24 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+                0x00000634                UART_1_Init
+ .text.UART_1_Enable
+                0x00000658       0x38 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+                0x00000658                UART_1_Enable
+ .text.UART_1_Start
+                0x00000690       0x1c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+                0x00000690                UART_1_Start
+ .text.UART_1_ReadRxStatus
+                0x000006ac       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+                0x000006ac                UART_1_ReadRxStatus
+ .text.UART_1_GetChar
+                0x000006bc       0x2c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+                0x000006bc                UART_1_GetChar
+ .text.UART_1_ReadTxStatus
+                0x000006e8        0xc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+                0x000006e8                UART_1_ReadTxStatus
+ .text.UART_1_PutChar
+                0x000006f4       0x18 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+                0x000006f4                UART_1_PutChar
+ .text.UART_1_IntClock_Start
+                0x0000070c       0x1c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+                0x0000070c                UART_1_IntClock_Start
+ .text.I2C_Init
+                0x00000728       0x68 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+                0x00000728                I2C_Init
+ .text.I2C_Enable
+                0x00000790       0x24 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+                0x00000790                I2C_Enable
+ .text.I2C_Start
+                0x000007b4       0x28 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+                0x000007b4                I2C_Start
+ .text.I2C_ISR  0x000007dc      0x2cc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_INT.o)
+                0x000007dc                I2C_ISR
+ .text.I2C_MasterWriteBuf
+                0x00000aa8       0xcc .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+                0x00000aa8                I2C_MasterWriteBuf
+ .text.I2C_MasterSendStart
+                0x00000b74       0x80 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+                0x00000b74                I2C_MasterSendStart
+ .text.I2C_MasterSendStop
+                0x00000bf4       0x38 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+                0x00000bf4                I2C_MasterSendStop
+ .text.I2C_MasterWriteByte
+                0x00000c2c       0x58 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+                0x00000c2c                I2C_MasterWriteByte
+ .text.I2C_MasterReadByte
+                0x00000c84       0x58 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+                0x00000c84                I2C_MasterReadByte
+ .text.I2C_MasterStatus
+                0x00000cdc       0x38 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+                0x00000cdc                I2C_MasterStatus
+ .text.I2C_MasterClearStatus
+                0x00000d14       0x24 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+                0x00000d14                I2C_MasterClearStatus
+ .text          0x00000d38       0x20 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyBootAsmGnu.o)
+                0x00000d38                CyDelayCycles
+                0x00000d48                CyEnterCriticalSection
+                0x00000d50                CyExitCriticalSection
+ .text.__errno  0x00000d58        0xc c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x00000d58                __errno
+ .text.__libc_init_array
+                0x00000d64       0x4c c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x00000d64                __libc_init_array
+ .text.memcpy   0x00000db0       0x16 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+                0x00000db0                memcpy
+ .text.memset   0x00000dc6       0x10 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x00000dc6                memset
+ *(.plt)
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+ *(.bootloader)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ *(.gcc_except_table)
+
+.v4_bx          0x00000dd8        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x00000dd8        0x0
+ .iplt          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame       0x00000dd8        0x4
+ *(.eh_frame)
+ .eh_frame      0x00000dd8        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .eh_frame      0x00000dd8        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+                0x00000ddc                PROVIDE (__exidx_start, .)
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00000ddc                __exidx_end = .
+
+.rodata         0x00000ddc       0x74
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x00000ddc       0x38 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .rodata.str1.1
+                0x00000e14        0x2 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x00000e18                . = ALIGN (0x4)
+ *fill*         0x00000e16        0x2 
+ *(.init)
+ .init          0x00000e18        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+                0x00000e18                _init
+ .init          0x00000e1c        0x8 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+                0x00000e24                . = ALIGN (0x4)
+                0x00000e24                __preinit_array_start = .
+ *(.preinit_array)
+                0x00000e24                __preinit_array_end = .
+                0x00000e24                . = ALIGN (0x4)
+                0x00000e24                __init_array_start = .
+ *(SORT(.init_array.*))
+ *(.init_array)
+ .init_array    0x00000e24        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .init_array    0x00000e28        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00000e2c                __init_array_end = .
+                0x00000e2c                . = ALIGN (0x4)
+ *(.fini)
+ .fini          0x00000e2c        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+                0x00000e2c                _fini
+ .fini          0x00000e30        0x8 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+                0x00000e38                . = ALIGN (0x4)
+                0x00000e38                __fini_array_start = .
+ *(.fini_array)
+ .fini_array    0x00000e38        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ *(SORT(.fini_array.*))
+                0x00000e3c                __fini_array_end = .
+                0x00000e3c                . = ALIGN (0x4)
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *crtend.o(.ctors)
+                0x00000e3c                . = ALIGN (0x4)
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *crtend.o(.dtors)
+                0x00000e3c                . = ALIGN (0x4)
+                0x00000e3c                __cy_regions = .
+                0x00000e3c        0x4 LONG 0xe50 __cy_region_init_ram
+                0x00000e40        0x4 LONG 0x1fffc108 __cy_region_start_data
+                0x00000e44        0x4 LONG 0x78 __cy_region_init_size_ram
+                0x00000e48        0x4 LONG 0x38 __cy_region_zero_size_ram
+                0x00000e4c                __cy_regions_end = .
+                0x00000e50                . = ALIGN (0x8)
+ *fill*         0x00000e4c        0x4 
+                0x00000e50                _etext = .
+
+.cy_checksum_exclude
+                0x00000e50        0x0
+ *(.cy_checksum_exclude)
+
+.ramvectors     0x1fffc000      0x100
+                0x1fffc000                __cy_region_start_ram = .
+ *(.ramvectors)
+ .ramvectors    0x1fffc000      0x100 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x1fffc000                CyRamVectors
+
+.noinit         0x1fffc100        0x5
+ *(.noinit)
+ .noinit        0x1fffc100        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .noinit        0x1fffc104        0x1 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+                0x1fffc104                CyResetStatus
+
+.data           0x1fffc108       0x78 load address 0x00000e50
+                0x1fffc108                __cy_region_start_data = .
+ *(.jcr)
+ .jcr           0x1fffc108        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .jcr           0x1fffc108        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+ *(.got.plt)
+ *(.got)
+ *(.shdata)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x1fffc10c       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+                0x1fffc10c                cydelay_32k_ms
+                0x1fffc110                cydelay_freq_khz
+                0x1fffc114                cydelay_freq_mhz
+                0x1fffc118                cydelay_freq_hz
+ .data.impure_data
+                0x1fffc11c       0x60 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x1fffc17c        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x1fffc17c                _impure_ptr
+                0x1fffc180                . = ALIGN (0x8)
+ *(.ram)
+                0x1fffc180                _edata = .
+
+.igot.plt       0x1fffc180        0x0 load address 0x00000ec8
+ .igot.plt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+
+.bss            0x1fffc180       0x38 load address 0x00000ec8
+                0x1fffc180                PROVIDE (__bss_start__, .)
+ *(.shbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x1fffc180       0x1c c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .bss           0x1fffc19c        0x2 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+                0x1fffc19c                UART_1_initVar
+ .bss           0x1fffc19e        0x1 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+                0x1fffc19e                I2C_initVar
+ *(COMMON)
+ *fill*         0x1fffc19f        0x1 
+ COMMON         0x1fffc1a0        0x2 .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+                0x1fffc1a0                myWrBuffer
+ COMMON         0x1fffc1a2        0x1 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+                0x1fffc1a2                I2C_state
+ *fill*         0x1fffc1a3        0x1 
+ COMMON         0x1fffc1a4       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+                0x1fffc1a4                I2C_mstrWrBufIndex
+                0x1fffc1a5                I2C_mstrWrBufSize
+                0x1fffc1a6                I2C_mstrStatus
+                0x1fffc1a8                I2C_mstrRdBufPtr
+                0x1fffc1ac                I2C_mstrControl
+                0x1fffc1ad                I2C_mstrRdBufSize
+                0x1fffc1ae                I2C_mstrRdBufIndex
+                0x1fffc1b0                I2C_mstrWrBufPtr
+                0x1fffc1b8                . = ALIGN (0x8)
+ *fill*         0x1fffc1b4        0x4 
+ *(.ram.b)
+                0x1fffc1b8                _end = .
+                0x1fffc1b8                __end = .
+                0x1fffc1b8                PROVIDE (end, .)
+                0x1fffc1b8                PROVIDE (__bss_end__, .)
+                0x00000e50                __cy_region_init_ram = LOADADDR (.data)
+                0x00000078                __cy_region_init_size_ram = (_edata - ADDR (.data))
+                0x00000038                __cy_region_zero_size_ram = (_end - _edata)
+
+.heap           0x1fffc1b8       0x80 load address 0x00000ec8
+                0x1fffc1b8                . = _end
+                0x1fffc238                . = (. + 0x80)
+ *fill*         0x1fffc1b8       0x80 
+                0x1fffc238                __cy_heap_limit = .
+
+.stack          0x20003800      0x800
+                0x20003800                __cy_stack_limit = .
+                0x20004000                . = (. + 0x800)
+ *fill*         0x20003800      0x800 
+                0x00000001                ASSERT ((__cy_stack_limit >= __cy_heap_limit), region RAM overflowed with stack)
+                0x00000000                cy_checksum_exclude_size = (CY_APPL_LOADABLE == 0x1)?SIZEOF (.cy_checksum_exclude):0x0
+                0x00000001                ASSERT ((cy_checksum_exclude_size <= CY_CHECKSUM_EXCLUDE_SIZE), CY_BOOT: Section .cy_checksum_exclude size exceedes specified limit.)
+
+.cyloadermeta
+ *(.cyloadermeta)
+
+.cyloadablemeta
+ *(.cyloadablemeta)
+
+.cyconfigecc    0x80000000      0x714
+ *(.cyconfigecc)
+ .cyconfigecc   0x80000000      0x714 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                0x80000000                cy_meta_configecc
+
+.cycustnvl      0x90000000        0x4
+ *(.cycustnvl)
+ .cycustnvl     0x90000000        0x4 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                0x90000000                cy_meta_custnvl
+
+.cywolatch      0x90100000        0x4
+ *(.cywolatch)
+ .cywolatch     0x90100000        0x4 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                0x90100000                cy_meta_wonvl
+
+.cyeeprom       0x90200000        0x0
+ *(.cyeeprom)
+                0x00000001                ASSERT ((. <= ((0x90200000 + ee_offset) + ee_size)), .cyeeprom data will not fit in EEPROM)
+
+.cyflashprotect
+                0x90400000       0x80
+ *(.cyflashprotect)
+ .cyflashprotect
+                0x90400000       0x80 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                0x90400000                cy_meta_flashprotect
+
+.cymeta         0x90500000        0xc
+ *(.cymeta)
+ .cymeta        0x90500000        0xc .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                0x90500000                cy_metadata
+
+.rel.dyn        0x00000ec8        0x0 load address 0x9050000c
+ .rel.iplt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x890
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x28 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_aranges
+                0x00000028       0x40 .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+ .debug_aranges
+                0x00000068       0x50 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+ .debug_aranges
+                0x000000b8       0x18 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_aranges
+                0x000000d0       0x48 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_aranges
+                0x00000118       0x58 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .debug_aranges
+                0x00000170      0x2a0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .debug_aranges
+                0x00000410       0x98 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .debug_aranges
+                0x000004a8       0x28 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(Control_Reg_1.o)
+ .debug_aranges
+                0x000004d0       0x38 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+ .debug_aranges
+                0x00000508       0xf0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .debug_aranges
+                0x000005f8       0x70 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .debug_aranges
+                0x00000668       0x38 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+ .debug_aranges
+                0x000006a0       0x20 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_INT.o)
+ .debug_aranges
+                0x000006c0       0x38 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+ .debug_aranges
+                0x000006f8       0x80 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .debug_aranges
+                0x00000778       0x20 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyBootAsmGnu.o)
+ .debug_aranges
+                0x00000798       0x80 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .debug_aranges
+                0x00000818       0x78 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x5340
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x284 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_info    0x00000284      0x3af .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+ .debug_info    0x00000633      0x362 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+ .debug_info    0x00000995      0x13f .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_info    0x00000ad4      0x3b3 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_info    0x00000e87      0x66c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .debug_info    0x000014f3     0x1385 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .debug_info    0x00002878      0xa57 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .debug_info    0x000032cf       0xd6 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(Control_Reg_1.o)
+ .debug_info    0x000033a5      0x11f .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+ .debug_info    0x000034c4      0x603 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .debug_info    0x00003ac7      0x283 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .debug_info    0x00003d4a      0x2d9 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+ .debug_info    0x00004023      0x17f .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_INT.o)
+ .debug_info    0x000041a2      0x1fe .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+ .debug_info    0x000043a0      0x400 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .debug_info    0x000047a0       0xae .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyBootAsmGnu.o)
+ .debug_info    0x0000484e      0x608 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .debug_info    0x00004e56      0x4ea .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+
+.debug_abbrev   0x00000000     0x18f7
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x137 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_abbrev  0x00000137      0x15a .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+ .debug_abbrev  0x00000291      0x135 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+ .debug_abbrev  0x000003c6       0x77 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_abbrev  0x0000043d      0x1f7 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_abbrev  0x00000634      0x212 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .debug_abbrev  0x00000846      0x296 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .debug_abbrev  0x00000adc      0x1ed .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .debug_abbrev  0x00000cc9       0x81 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(Control_Reg_1.o)
+ .debug_abbrev  0x00000d4a       0x90 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+ .debug_abbrev  0x00000dda      0x1a2 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .debug_abbrev  0x00000f7c      0x139 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .debug_abbrev  0x000010b5      0x15c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+ .debug_abbrev  0x00001211       0xbd .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_INT.o)
+ .debug_abbrev  0x000012ce      0x12b .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+ .debug_abbrev  0x000013f9      0x13c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .debug_abbrev  0x00001535       0x14 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00001549      0x1ed .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .debug_abbrev  0x00001736      0x1c1 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+
+.debug_line     0x00000000     0x2437
+ *(.debug_line)
+ .debug_line    0x00000000      0x1b3 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_line    0x000001b3      0x1cd .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+ .debug_line    0x00000380      0x210 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+ .debug_line    0x00000590       0x51 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_line    0x000005e1      0x24f .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_line    0x00000830      0x219 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .debug_line    0x00000a49      0x816 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .debug_line    0x0000125f      0x364 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .debug_line    0x000015c3       0x75 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(Control_Reg_1.o)
+ .debug_line    0x00001638       0x90 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+ .debug_line    0x000016c8      0x2c0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .debug_line    0x00001988      0x17e .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .debug_line    0x00001b06       0xd9 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+ .debug_line    0x00001bdf      0x114 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_INT.o)
+ .debug_line    0x00001cf3       0xbb .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+ .debug_line    0x00001dae      0x1fd .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .debug_line    0x00001fab       0x66 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyBootAsmGnu.o)
+ .debug_line    0x00002011      0x1ea .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .debug_line    0x000021fb      0x23c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+
+.debug_frame    0x00000000     0x1640
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x48 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_frame   0x00000048       0xa0 .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+ .debug_frame   0x000000e8       0xe0 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+ .debug_frame   0x000001c8       0xb8 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_frame   0x00000280       0xe4 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .debug_frame   0x00000364      0x738 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .debug_frame   0x00000a9c      0x1f8 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .debug_frame   0x00000c94       0x30 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(Control_Reg_1.o)
+ .debug_frame   0x00000cc4       0x50 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+ .debug_frame   0x00000d14      0x250 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .debug_frame   0x00000f64       0xe0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .debug_frame   0x00001044       0x90 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+ .debug_frame   0x000010d4       0x30 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_INT.o)
+ .debug_frame   0x00001104       0x74 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+ .debug_frame   0x00001178      0x138 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .debug_frame   0x000012b0      0x174 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .debug_frame   0x00001424      0x160 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .debug_frame   0x00001584       0x20 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x000015a4       0x28 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x000015cc       0x2c c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x000015f8       0x28 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+ .debug_frame   0x00001620       0x20 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+
+.debug_str      0x00000000     0x1c8c
+ *(.debug_str)
+ .debug_str     0x00000000      0x23f .\CortexM3\ARM_GCC_493\Debug\main.o
+                                0x280 (size before relaxing)
+ .debug_str     0x0000023f       0xfa .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+                                0x2da (size before relaxing)
+ .debug_str     0x00000339       0xc2 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+                                0x2b2 (size before relaxing)
+ .debug_str     0x000003fb       0x75 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                                0x208 (size before relaxing)
+ .debug_str     0x00000470      0x163 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                                0x31c (size before relaxing)
+ .debug_str     0x000005d3      0x190 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+                                0x356 (size before relaxing)
+ .debug_str     0x00000763      0x846 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+                                0xa59 (size before relaxing)
+ .debug_str     0x00000fa9      0x359 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+                                0x739 (size before relaxing)
+ .debug_str     0x00001302       0x42 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(Control_Reg_1.o)
+                                0x1e5 (size before relaxing)
+ .debug_str     0x00001344       0x52 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+                                0x1f6 (size before relaxing)
+ .debug_str     0x00001396      0x27a .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+                                0x4c5 (size before relaxing)
+ .debug_str     0x00001610      0x197 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+                                0x36c (size before relaxing)
+ .debug_str     0x000017a7       0xd9 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+                                0x300 (size before relaxing)
+ .debug_str     0x00001880       0x86 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_INT.o)
+                                0x271 (size before relaxing)
+ .debug_str     0x00001906       0x56 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+                                0x28f (size before relaxing)
+ .debug_str     0x0000195c       0xe8 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+                                0x3b6 (size before relaxing)
+ .debug_str     0x00001a44      0x19c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+                                0x3b3 (size before relaxing)
+ .debug_str     0x00001be0       0xac .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+                                0x33c (size before relaxing)
+
+.debug_loc      0x00000000     0x24db
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_loc     0x00000020       0x97 .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+ .debug_loc     0x000000b7      0x1c2 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+ .debug_loc     0x00000279      0x144 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_loc     0x000003bd      0x272 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .debug_loc     0x0000062f      0xa11 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .debug_loc     0x00001040      0x1e4 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .debug_loc     0x00001224       0x42 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+ .debug_loc     0x00001266      0x258 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .debug_loc     0x000014be      0x12c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .debug_loc     0x000015ea       0x39 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+ .debug_loc     0x00001623       0x29 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_INT.o)
+ .debug_loc     0x0000164c       0x13 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+ .debug_loc     0x0000165f      0x52f .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .debug_loc     0x00001b8e      0x300 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .debug_loc     0x00001e8e      0x64d .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_ranges   0x00000000      0x748
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_ranges  0x00000018       0x30 .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+ .debug_ranges  0x00000048       0x40 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+ .debug_ranges  0x00000088       0x38 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_ranges  0x000000c0       0x48 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .debug_ranges  0x00000108      0x290 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .debug_ranges  0x00000398       0x88 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .debug_ranges  0x00000420       0x18 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(Control_Reg_1.o)
+ .debug_ranges  0x00000438       0x28 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+ .debug_ranges  0x00000460       0xe0 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .debug_ranges  0x00000540       0x60 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .debug_ranges  0x000005a0       0x28 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+ .debug_ranges  0x000005c8       0x10 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_INT.o)
+ .debug_ranges  0x000005d8       0x28 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+ .debug_ranges  0x00000600       0x70 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .debug_ranges  0x00000670       0x70 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .debug_ranges  0x000006e0       0x68 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+
+.comment        0x00000000       0x70
+ .comment       0x00000000       0x70 .\CortexM3\ARM_GCC_493\Debug\main.o
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(Control_Reg_1.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_INT.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+.ARM.attributes
+                0x00000000       0x29
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x1d c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+ .ARM.attributes
+                0x0000001d       0x2d c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .ARM.attributes
+                0x0000004a       0x1b c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .ARM.attributes
+                0x00000065       0x33 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .ARM.attributes
+                0x00000098       0x33 .\CortexM3\ARM_GCC_493\Debug\DIGIO8Driver.o
+ .ARM.attributes
+                0x000000cb       0x33 .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+ .ARM.attributes
+                0x000000fe       0x33 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .ARM.attributes
+                0x00000131       0x33 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .ARM.attributes
+                0x00000164       0x33 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyfitter_cfg.o)
+ .ARM.attributes
+                0x00000197       0x33 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyLib.o)
+ .ARM.attributes
+                0x000001ca       0x33 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(cyPm.o)
+ .ARM.attributes
+                0x000001fd       0x33 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(Control_Reg_1.o)
+ .ARM.attributes
+                0x00000230       0x33 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(LED.o)
+ .ARM.attributes
+                0x00000263       0x33 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1.o)
+ .ARM.attributes
+                0x00000296       0x33 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(UART_1_IntClock.o)
+ .ARM.attributes
+                0x000002c9       0x33 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C.o)
+ .ARM.attributes
+                0x000002fc       0x33 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_INT.o)
+ .ARM.attributes
+                0x0000032f       0x33 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_PM.o)
+ .ARM.attributes
+                0x00000362       0x33 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(I2C_MASTER.o)
+ .ARM.attributes
+                0x00000395       0x21 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyBootAsmGnu.o)
+ .ARM.attributes
+                0x000003b6       0x33 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CyFlash.o)
+ .ARM.attributes
+                0x000003e9       0x33 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.a(CySpc.o)
+ .ARM.attributes
+                0x0000041c       0x2d c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .ARM.attributes
+                0x00000449       0x2d c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .ARM.attributes
+                0x00000476       0x2d c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x000004a3       0x2d c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x000004d0       0x2d c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+ .ARM.attributes
+                0x000004fd       0x2d c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x0000052a       0x2d c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+ .ARM.attributes
+                0x00000557       0x1d c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+
+/DISCARD/
+ *(.note.GNU-stack)
+OUTPUT(.\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-I2CIO8-BlinkLED3.elf elf32-littlearm)

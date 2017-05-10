@@ -1,0 +1,1068 @@
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.toggleOnBoardLED,"ax",%progbits
+  19              		.align	2
+  20              		.global	toggleOnBoardLED
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	toggleOnBoardLED, %function
+  24              	toggleOnBoardLED:
+  25              	.LFB63:
+  26              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright Land Boards, LLC, 2016
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** 
+  13:main.c        **** #include <project.h>
+  14:main.c        **** #include <strings.h>
+  15:main.c        **** #include <stdio.h>
+  16:main.c        **** #include "serialIO.h"
+  17:main.c        **** 
+  18:main.c        **** // Prototypes
+  19:main.c        **** 
+  20:main.c        **** void initDIGIO8Card(void);
+  21:main.c        **** void writeDIGIO8Card(uint8 outData);
+  22:main.c        **** uint8 readDIGIO8Card(void);
+  23:main.c        **** //void initSerial(void);
+  24:main.c        **** //char8 getSingleChar(void);
+  25:main.c        **** //void outSingleChar(char8 txChar);
+  26:main.c        **** 
+  27:main.c        **** uint8 ledVal;
+  28:main.c        **** 
+  29:main.c        **** void toggleOnBoardLED(void)
+  30:main.c        **** {
+  27              		.loc 1 30 0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 2
+
+
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 08B5     		push	{r3, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 3, -8
+  34              		.cfi_offset 14, -4
+  31:main.c        ****     LED_Write(1);
+  35              		.loc 1 31 0
+  36 0002 0120     		movs	r0, #1
+  37 0004 FFF7FEFF 		bl	LED_Write
+  38              	.LVL0:
+  32:main.c        ****     CyDelay(50);
+  39              		.loc 1 32 0
+  40 0008 3220     		movs	r0, #50
+  41 000a FFF7FEFF 		bl	CyDelay
+  42              	.LVL1:
+  33:main.c        ****     LED_Write(0);
+  43              		.loc 1 33 0
+  44 000e 0020     		movs	r0, #0
+  45 0010 FFF7FEFF 		bl	LED_Write
+  46              	.LVL2:
+  34:main.c        ****     CyDelay(50);
+  47              		.loc 1 34 0
+  48 0014 3220     		movs	r0, #50
+  49 0016 FFF7FEFF 		bl	CyDelay
+  50              	.LVL3:
+  51 001a 08BD     		pop	{r3, pc}
+  52              		.cfi_endproc
+  53              	.LFE63:
+  54              		.size	toggleOnBoardLED, .-toggleOnBoardLED
+  55              		.section	.text.main,"ax",%progbits
+  56              		.align	2
+  57              		.global	main
+  58              		.thumb
+  59              		.thumb_func
+  60              		.type	main, %function
+  61              	main:
+  62              	.LFB64:
+  35:main.c        **** }
+  36:main.c        **** 
+  37:main.c        **** int main()
+  38:main.c        **** {
+  63              		.loc 1 38 0
+  64              		.cfi_startproc
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67 0000 10B5     		push	{r4, lr}
+  68              		.cfi_def_cfa_offset 8
+  69              		.cfi_offset 4, -8
+  70              		.cfi_offset 14, -4
+  71              	.LVL4:
+  39:main.c        ****     uint8 myReadVal=0x55;
+  40:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  72              		.loc 1 40 0
+  73              	@ 40 "main.c" 1
+  74 0002 62B6     		CPSIE   i
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 3
+
+
+  75              	@ 0 "" 2
+  41:main.c        ****     initSerial();
+  76              		.loc 1 41 0
+  77              		.thumb
+  78 0004 FFF7FEFF 		bl	initSerial
+  79              	.LVL5:
+  42:main.c        ****     initDIGIO8Card();
+  80              		.loc 1 42 0
+  81 0008 FFF7FEFF 		bl	initDIGIO8Card
+  82              	.LVL6:
+  43:main.c        ****     CyDelay(500);
+  83              		.loc 1 43 0
+  84 000c 4FF4FA70 		mov	r0, #500
+  85 0010 FFF7FEFF 		bl	CyDelay
+  86              	.LVL7:
+  87              	.L4:
+  44:main.c        ****     for(;;)
+  45:main.c        ****     {
+  46:main.c        ****         myReadVal = readDIGIO8Card();
+  88              		.loc 1 46 0
+  89 0014 FFF7FEFF 		bl	readDIGIO8Card
+  90              	.LVL8:
+  47:main.c        ****         writeDIGIO8Card(myReadVal);
+  91              		.loc 1 47 0
+  92 0018 FFF7FEFF 		bl	writeDIGIO8Card
+  93              	.LVL9:
+  48:main.c        ****         myReadVal ^= 0x0f;
+  49:main.c        ****         toggleOnBoardLED();
+  94              		.loc 1 49 0
+  95 001c FFF7FEFF 		bl	toggleOnBoardLED
+  96              	.LVL10:
+  50:main.c        ****         if (checkReceiveChar())
+  97              		.loc 1 50 0
+  98 0020 FFF7FEFF 		bl	checkReceiveChar
+  99              	.LVL11:
+ 100 0024 0028     		cmp	r0, #0
+ 101 0026 F5D0     		beq	.L4
+ 102              	.LBB2:
+  51:main.c        ****         {
+  52:main.c        ****             char8 myChar = getSingleChar();
+ 103              		.loc 1 52 0
+ 104 0028 FFF7FEFF 		bl	getSingleChar
+ 105              	.LVL12:
+ 106 002c 0446     		mov	r4, r0
+ 107              	.LVL13:
+  53:main.c        ****             outSingleChar(myChar);
+ 108              		.loc 1 53 0
+ 109 002e FFF7FEFF 		bl	outSingleChar
+ 110              	.LVL14:
+  54:main.c        ****             Control_Reg_1_Write(myChar);
+ 111              		.loc 1 54 0
+ 112 0032 2046     		mov	r0, r4
+ 113 0034 FFF7FEFF 		bl	Control_Reg_1_Write
+ 114              	.LVL15:
+ 115 0038 ECE7     		b	.L4
+ 116              	.LBE2:
+ 117              		.cfi_endproc
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 4
+
+
+ 118              	.LFE64:
+ 119              		.size	main, .-main
+ 120              		.comm	ledVal,1,1
+ 121 003a 00BF     		.text
+ 122              	.Letext0:
+ 123              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 124              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 125              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 126              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 127              		.file 6 "Generated_Source\\PSoC5/LED.h"
+ 128              		.file 7 "Generated_Source\\PSoC5/CyLib.h"
+ 129              		.file 8 "serialIO.h"
+ 130              		.file 9 "Generated_Source\\PSoC5/Control_Reg_1.h"
+ 131              		.section	.debug_info,"",%progbits
+ 132              	.Ldebug_info0:
+ 133 0000 80020000 		.4byte	0x280
+ 134 0004 0400     		.2byte	0x4
+ 135 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 136 000a 04       		.byte	0x4
+ 137 000b 01       		.uleb128 0x1
+ 138 000c C7000000 		.4byte	.LASF34
+ 139 0010 01       		.byte	0x1
+ 140 0011 C9010000 		.4byte	.LASF35
+ 141 0015 D5010000 		.4byte	.LASF36
+ 142 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 143 001d 00000000 		.4byte	0
+ 144 0021 00000000 		.4byte	.Ldebug_line0
+ 145 0025 02       		.uleb128 0x2
+ 146 0026 01       		.byte	0x1
+ 147 0027 06       		.byte	0x6
+ 148 0028 52020000 		.4byte	.LASF0
+ 149 002c 02       		.uleb128 0x2
+ 150 002d 01       		.byte	0x1
+ 151 002e 08       		.byte	0x8
+ 152 002f 60000000 		.4byte	.LASF1
+ 153 0033 02       		.uleb128 0x2
+ 154 0034 02       		.byte	0x2
+ 155 0035 05       		.byte	0x5
+ 156 0036 B6000000 		.4byte	.LASF2
+ 157 003a 02       		.uleb128 0x2
+ 158 003b 02       		.byte	0x2
+ 159 003c 07       		.byte	0x7
+ 160 003d 40000000 		.4byte	.LASF3
+ 161 0041 03       		.uleb128 0x3
+ 162 0042 36000000 		.4byte	.LASF9
+ 163 0046 02       		.byte	0x2
+ 164 0047 3F       		.byte	0x3f
+ 165 0048 4C000000 		.4byte	0x4c
+ 166 004c 02       		.uleb128 0x2
+ 167 004d 04       		.byte	0x4
+ 168 004e 05       		.byte	0x5
+ 169 004f 49020000 		.4byte	.LASF4
+ 170 0053 02       		.uleb128 0x2
+ 171 0054 04       		.byte	0x4
+ 172 0055 07       		.byte	0x7
+ 173 0056 85000000 		.4byte	.LASF5
+ 174 005a 02       		.uleb128 0x2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 5
+
+
+ 175 005b 08       		.byte	0x8
+ 176 005c 05       		.byte	0x5
+ 177 005d BB010000 		.4byte	.LASF6
+ 178 0061 02       		.uleb128 0x2
+ 179 0062 08       		.byte	0x8
+ 180 0063 07       		.byte	0x7
+ 181 0064 7A010000 		.4byte	.LASF7
+ 182 0068 04       		.uleb128 0x4
+ 183 0069 04       		.byte	0x4
+ 184 006a 05       		.byte	0x5
+ 185 006b 696E7400 		.ascii	"int\000"
+ 186 006f 02       		.uleb128 0x2
+ 187 0070 04       		.byte	0x4
+ 188 0071 07       		.byte	0x7
+ 189 0072 63010000 		.4byte	.LASF8
+ 190 0076 03       		.uleb128 0x3
+ 191 0077 AA010000 		.4byte	.LASF10
+ 192 007b 03       		.byte	0x3
+ 193 007c 2C       		.byte	0x2c
+ 194 007d 41000000 		.4byte	0x41
+ 195 0081 05       		.uleb128 0x5
+ 196 0082 43020000 		.4byte	.LASF11
+ 197 0086 04       		.byte	0x4
+ 198 0087 9201     		.2byte	0x192
+ 199 0089 2C000000 		.4byte	0x2c
+ 200 008d 05       		.uleb128 0x5
+ 201 008e C0000000 		.4byte	.LASF12
+ 202 0092 04       		.byte	0x4
+ 203 0093 9401     		.2byte	0x194
+ 204 0095 53000000 		.4byte	0x53
+ 205 0099 02       		.uleb128 0x2
+ 206 009a 04       		.byte	0x4
+ 207 009b 04       		.byte	0x4
+ 208 009c 5A000000 		.4byte	.LASF13
+ 209 00a0 02       		.uleb128 0x2
+ 210 00a1 08       		.byte	0x8
+ 211 00a2 04       		.byte	0x4
+ 212 00a3 53000000 		.4byte	.LASF14
+ 213 00a7 05       		.uleb128 0x5
+ 214 00a8 6E000000 		.4byte	.LASF15
+ 215 00ac 04       		.byte	0x4
+ 216 00ad A301     		.2byte	0x1a3
+ 217 00af B3000000 		.4byte	0xb3
+ 218 00b3 02       		.uleb128 0x2
+ 219 00b4 01       		.byte	0x1
+ 220 00b5 08       		.byte	0x8
+ 221 00b6 D0010000 		.4byte	.LASF16
+ 222 00ba 02       		.uleb128 0x2
+ 223 00bb 04       		.byte	0x4
+ 224 00bc 07       		.byte	0x7
+ 225 00bd B2010000 		.4byte	.LASF17
+ 226 00c1 06       		.uleb128 0x6
+ 227 00c2 74000000 		.4byte	.LASF18
+ 228 00c6 01       		.byte	0x1
+ 229 00c7 1D       		.byte	0x1d
+ 230 00c8 00000000 		.4byte	.LFB63
+ 231 00cc 1C000000 		.4byte	.LFE63-.LFB63
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 6
+
+
+ 232 00d0 01       		.uleb128 0x1
+ 233 00d1 9C       		.byte	0x9c
+ 234 00d2 21010000 		.4byte	0x121
+ 235 00d6 07       		.uleb128 0x7
+ 236 00d7 08000000 		.4byte	.LVL0
+ 237 00db FF010000 		.4byte	0x1ff
+ 238 00df E9000000 		.4byte	0xe9
+ 239 00e3 08       		.uleb128 0x8
+ 240 00e4 01       		.uleb128 0x1
+ 241 00e5 50       		.byte	0x50
+ 242 00e6 01       		.uleb128 0x1
+ 243 00e7 31       		.byte	0x31
+ 244 00e8 00       		.byte	0
+ 245 00e9 07       		.uleb128 0x7
+ 246 00ea 0E000000 		.4byte	.LVL1
+ 247 00ee 10020000 		.4byte	0x210
+ 248 00f2 FD000000 		.4byte	0xfd
+ 249 00f6 08       		.uleb128 0x8
+ 250 00f7 01       		.uleb128 0x1
+ 251 00f8 50       		.byte	0x50
+ 252 00f9 02       		.uleb128 0x2
+ 253 00fa 08       		.byte	0x8
+ 254 00fb 32       		.byte	0x32
+ 255 00fc 00       		.byte	0
+ 256 00fd 07       		.uleb128 0x7
+ 257 00fe 14000000 		.4byte	.LVL2
+ 258 0102 FF010000 		.4byte	0x1ff
+ 259 0106 10010000 		.4byte	0x110
+ 260 010a 08       		.uleb128 0x8
+ 261 010b 01       		.uleb128 0x1
+ 262 010c 50       		.byte	0x50
+ 263 010d 01       		.uleb128 0x1
+ 264 010e 30       		.byte	0x30
+ 265 010f 00       		.byte	0
+ 266 0110 09       		.uleb128 0x9
+ 267 0111 1A000000 		.4byte	.LVL3
+ 268 0115 10020000 		.4byte	0x210
+ 269 0119 08       		.uleb128 0x8
+ 270 011a 01       		.uleb128 0x1
+ 271 011b 50       		.byte	0x50
+ 272 011c 02       		.uleb128 0x2
+ 273 011d 08       		.byte	0x8
+ 274 011e 32       		.byte	0x32
+ 275 011f 00       		.byte	0
+ 276 0120 00       		.byte	0
+ 277 0121 0A       		.uleb128 0xa
+ 278 0122 A5010000 		.4byte	.LASF19
+ 279 0126 01       		.byte	0x1
+ 280 0127 25       		.byte	0x25
+ 281 0128 68000000 		.4byte	0x68
+ 282 012c 00000000 		.4byte	.LFB64
+ 283 0130 3A000000 		.4byte	.LFE64-.LFB64
+ 284 0134 01       		.uleb128 0x1
+ 285 0135 9C       		.byte	0x9c
+ 286 0136 DD010000 		.4byte	0x1dd
+ 287 013a 0B       		.uleb128 0xb
+ 288 013b 70010000 		.4byte	.LASF20
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 7
+
+
+ 289 013f 01       		.byte	0x1
+ 290 0140 27       		.byte	0x27
+ 291 0141 81000000 		.4byte	0x81
+ 292 0145 00000000 		.4byte	.LLST0
+ 293 0149 0C       		.uleb128 0xc
+ 294 014a 28000000 		.4byte	.LBB2
+ 295 014e 12000000 		.4byte	.LBE2-.LBB2
+ 296 0152 91010000 		.4byte	0x191
+ 297 0156 0D       		.uleb128 0xd
+ 298 0157 AF000000 		.4byte	.LASF21
+ 299 015b 01       		.byte	0x1
+ 300 015c 34       		.byte	0x34
+ 301 015d A7000000 		.4byte	0xa7
+ 302 0161 01       		.uleb128 0x1
+ 303 0162 54       		.byte	0x54
+ 304 0163 0E       		.uleb128 0xe
+ 305 0164 2C000000 		.4byte	.LVL12
+ 306 0168 21020000 		.4byte	0x221
+ 307 016c 07       		.uleb128 0x7
+ 308 016d 32000000 		.4byte	.LVL14
+ 309 0171 2C020000 		.4byte	0x22c
+ 310 0175 80010000 		.4byte	0x180
+ 311 0179 08       		.uleb128 0x8
+ 312 017a 01       		.uleb128 0x1
+ 313 017b 50       		.byte	0x50
+ 314 017c 02       		.uleb128 0x2
+ 315 017d 74       		.byte	0x74
+ 316 017e 00       		.sleb128 0
+ 317 017f 00       		.byte	0
+ 318 0180 09       		.uleb128 0x9
+ 319 0181 38000000 		.4byte	.LVL15
+ 320 0185 3D020000 		.4byte	0x23d
+ 321 0189 08       		.uleb128 0x8
+ 322 018a 01       		.uleb128 0x1
+ 323 018b 50       		.byte	0x50
+ 324 018c 02       		.uleb128 0x2
+ 325 018d 74       		.byte	0x74
+ 326 018e 00       		.sleb128 0
+ 327 018f 00       		.byte	0
+ 328 0190 00       		.byte	0
+ 329 0191 0E       		.uleb128 0xe
+ 330 0192 08000000 		.4byte	.LVL5
+ 331 0196 4E020000 		.4byte	0x24e
+ 332 019a 0E       		.uleb128 0xe
+ 333 019b 0C000000 		.4byte	.LVL6
+ 334 019f 55020000 		.4byte	0x255
+ 335 01a3 07       		.uleb128 0x7
+ 336 01a4 14000000 		.4byte	.LVL7
+ 337 01a8 10020000 		.4byte	0x210
+ 338 01ac B8010000 		.4byte	0x1b8
+ 339 01b0 08       		.uleb128 0x8
+ 340 01b1 01       		.uleb128 0x1
+ 341 01b2 50       		.byte	0x50
+ 342 01b3 03       		.uleb128 0x3
+ 343 01b4 0A       		.byte	0xa
+ 344 01b5 F401     		.2byte	0x1f4
+ 345 01b7 00       		.byte	0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 8
+
+
+ 346 01b8 0E       		.uleb128 0xe
+ 347 01b9 18000000 		.4byte	.LVL8
+ 348 01bd 5C020000 		.4byte	0x25c
+ 349 01c1 0E       		.uleb128 0xe
+ 350 01c2 1C000000 		.4byte	.LVL9
+ 351 01c6 67020000 		.4byte	0x267
+ 352 01ca 0E       		.uleb128 0xe
+ 353 01cb 20000000 		.4byte	.LVL10
+ 354 01cf C1000000 		.4byte	0xc1
+ 355 01d3 0E       		.uleb128 0xe
+ 356 01d4 24000000 		.4byte	.LVL11
+ 357 01d8 78020000 		.4byte	0x278
+ 358 01dc 00       		.byte	0
+ 359 01dd 0F       		.uleb128 0xf
+ 360 01de A2000000 		.4byte	.LASF22
+ 361 01e2 05       		.byte	0x5
+ 362 01e3 9606     		.2byte	0x696
+ 363 01e5 E9010000 		.4byte	0x1e9
+ 364 01e9 10       		.uleb128 0x10
+ 365 01ea 76000000 		.4byte	0x76
+ 366 01ee 11       		.uleb128 0x11
+ 367 01ef 6E020000 		.4byte	.LASF23
+ 368 01f3 01       		.byte	0x1
+ 369 01f4 1B       		.byte	0x1b
+ 370 01f5 81000000 		.4byte	0x81
+ 371 01f9 05       		.uleb128 0x5
+ 372 01fa 03       		.byte	0x3
+ 373 01fb 00000000 		.4byte	ledVal
+ 374 01ff 12       		.uleb128 0x12
+ 375 0200 1D000000 		.4byte	.LASF24
+ 376 0204 06       		.byte	0x6
+ 377 0205 26       		.byte	0x26
+ 378 0206 10020000 		.4byte	0x210
+ 379 020a 13       		.uleb128 0x13
+ 380 020b 81000000 		.4byte	0x81
+ 381 020f 00       		.byte	0
+ 382 0210 12       		.uleb128 0x12
+ 383 0211 75020000 		.4byte	.LASF25
+ 384 0215 07       		.byte	0x7
+ 385 0216 76       		.byte	0x76
+ 386 0217 21020000 		.4byte	0x221
+ 387 021b 13       		.uleb128 0x13
+ 388 021c 8D000000 		.4byte	0x8d
+ 389 0220 00       		.byte	0
+ 390 0221 14       		.uleb128 0x14
+ 391 0222 00000000 		.4byte	.LASF30
+ 392 0226 08       		.byte	0x8
+ 393 0227 18       		.byte	0x18
+ 394 0228 A7000000 		.4byte	0xa7
+ 395 022c 12       		.uleb128 0x12
+ 396 022d 55010000 		.4byte	.LASF26
+ 397 0231 08       		.byte	0x8
+ 398 0232 15       		.byte	0x15
+ 399 0233 3D020000 		.4byte	0x23d
+ 400 0237 13       		.uleb128 0x13
+ 401 0238 A7000000 		.4byte	0xa7
+ 402 023c 00       		.byte	0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 9
+
+
+ 403 023d 12       		.uleb128 0x12
+ 404 023e 91010000 		.4byte	.LASF27
+ 405 0242 09       		.byte	0x9
+ 406 0243 27       		.byte	0x27
+ 407 0244 4E020000 		.4byte	0x24e
+ 408 0248 13       		.uleb128 0x13
+ 409 0249 81000000 		.4byte	0x81
+ 410 024d 00       		.byte	0
+ 411 024e 15       		.uleb128 0x15
+ 412 024f 97000000 		.4byte	.LASF28
+ 413 0253 08       		.byte	0x8
+ 414 0254 14       		.byte	0x14
+ 415 0255 15       		.uleb128 0x15
+ 416 0256 0E000000 		.4byte	.LASF29
+ 417 025a 01       		.byte	0x1
+ 418 025b 14       		.byte	0x14
+ 419 025c 14       		.uleb128 0x14
+ 420 025d 27000000 		.4byte	.LASF31
+ 421 0261 01       		.byte	0x1
+ 422 0262 16       		.byte	0x16
+ 423 0263 81000000 		.4byte	0x81
+ 424 0267 12       		.uleb128 0x12
+ 425 0268 5E020000 		.4byte	.LASF32
+ 426 026c 01       		.byte	0x1
+ 427 026d 15       		.byte	0x15
+ 428 026e 78020000 		.4byte	0x278
+ 429 0272 13       		.uleb128 0x13
+ 430 0273 81000000 		.4byte	0x81
+ 431 0277 00       		.byte	0
+ 432 0278 14       		.uleb128 0x14
+ 433 0279 32020000 		.4byte	.LASF33
+ 434 027d 08       		.byte	0x8
+ 435 027e 1A       		.byte	0x1a
+ 436 027f 81000000 		.4byte	0x81
+ 437 0283 00       		.byte	0
+ 438              		.section	.debug_abbrev,"",%progbits
+ 439              	.Ldebug_abbrev0:
+ 440 0000 01       		.uleb128 0x1
+ 441 0001 11       		.uleb128 0x11
+ 442 0002 01       		.byte	0x1
+ 443 0003 25       		.uleb128 0x25
+ 444 0004 0E       		.uleb128 0xe
+ 445 0005 13       		.uleb128 0x13
+ 446 0006 0B       		.uleb128 0xb
+ 447 0007 03       		.uleb128 0x3
+ 448 0008 0E       		.uleb128 0xe
+ 449 0009 1B       		.uleb128 0x1b
+ 450 000a 0E       		.uleb128 0xe
+ 451 000b 55       		.uleb128 0x55
+ 452 000c 17       		.uleb128 0x17
+ 453 000d 11       		.uleb128 0x11
+ 454 000e 01       		.uleb128 0x1
+ 455 000f 10       		.uleb128 0x10
+ 456 0010 17       		.uleb128 0x17
+ 457 0011 00       		.byte	0
+ 458 0012 00       		.byte	0
+ 459 0013 02       		.uleb128 0x2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 10
+
+
+ 460 0014 24       		.uleb128 0x24
+ 461 0015 00       		.byte	0
+ 462 0016 0B       		.uleb128 0xb
+ 463 0017 0B       		.uleb128 0xb
+ 464 0018 3E       		.uleb128 0x3e
+ 465 0019 0B       		.uleb128 0xb
+ 466 001a 03       		.uleb128 0x3
+ 467 001b 0E       		.uleb128 0xe
+ 468 001c 00       		.byte	0
+ 469 001d 00       		.byte	0
+ 470 001e 03       		.uleb128 0x3
+ 471 001f 16       		.uleb128 0x16
+ 472 0020 00       		.byte	0
+ 473 0021 03       		.uleb128 0x3
+ 474 0022 0E       		.uleb128 0xe
+ 475 0023 3A       		.uleb128 0x3a
+ 476 0024 0B       		.uleb128 0xb
+ 477 0025 3B       		.uleb128 0x3b
+ 478 0026 0B       		.uleb128 0xb
+ 479 0027 49       		.uleb128 0x49
+ 480 0028 13       		.uleb128 0x13
+ 481 0029 00       		.byte	0
+ 482 002a 00       		.byte	0
+ 483 002b 04       		.uleb128 0x4
+ 484 002c 24       		.uleb128 0x24
+ 485 002d 00       		.byte	0
+ 486 002e 0B       		.uleb128 0xb
+ 487 002f 0B       		.uleb128 0xb
+ 488 0030 3E       		.uleb128 0x3e
+ 489 0031 0B       		.uleb128 0xb
+ 490 0032 03       		.uleb128 0x3
+ 491 0033 08       		.uleb128 0x8
+ 492 0034 00       		.byte	0
+ 493 0035 00       		.byte	0
+ 494 0036 05       		.uleb128 0x5
+ 495 0037 16       		.uleb128 0x16
+ 496 0038 00       		.byte	0
+ 497 0039 03       		.uleb128 0x3
+ 498 003a 0E       		.uleb128 0xe
+ 499 003b 3A       		.uleb128 0x3a
+ 500 003c 0B       		.uleb128 0xb
+ 501 003d 3B       		.uleb128 0x3b
+ 502 003e 05       		.uleb128 0x5
+ 503 003f 49       		.uleb128 0x49
+ 504 0040 13       		.uleb128 0x13
+ 505 0041 00       		.byte	0
+ 506 0042 00       		.byte	0
+ 507 0043 06       		.uleb128 0x6
+ 508 0044 2E       		.uleb128 0x2e
+ 509 0045 01       		.byte	0x1
+ 510 0046 3F       		.uleb128 0x3f
+ 511 0047 19       		.uleb128 0x19
+ 512 0048 03       		.uleb128 0x3
+ 513 0049 0E       		.uleb128 0xe
+ 514 004a 3A       		.uleb128 0x3a
+ 515 004b 0B       		.uleb128 0xb
+ 516 004c 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 11
+
+
+ 517 004d 0B       		.uleb128 0xb
+ 518 004e 27       		.uleb128 0x27
+ 519 004f 19       		.uleb128 0x19
+ 520 0050 11       		.uleb128 0x11
+ 521 0051 01       		.uleb128 0x1
+ 522 0052 12       		.uleb128 0x12
+ 523 0053 06       		.uleb128 0x6
+ 524 0054 40       		.uleb128 0x40
+ 525 0055 18       		.uleb128 0x18
+ 526 0056 9742     		.uleb128 0x2117
+ 527 0058 19       		.uleb128 0x19
+ 528 0059 01       		.uleb128 0x1
+ 529 005a 13       		.uleb128 0x13
+ 530 005b 00       		.byte	0
+ 531 005c 00       		.byte	0
+ 532 005d 07       		.uleb128 0x7
+ 533 005e 898201   		.uleb128 0x4109
+ 534 0061 01       		.byte	0x1
+ 535 0062 11       		.uleb128 0x11
+ 536 0063 01       		.uleb128 0x1
+ 537 0064 31       		.uleb128 0x31
+ 538 0065 13       		.uleb128 0x13
+ 539 0066 01       		.uleb128 0x1
+ 540 0067 13       		.uleb128 0x13
+ 541 0068 00       		.byte	0
+ 542 0069 00       		.byte	0
+ 543 006a 08       		.uleb128 0x8
+ 544 006b 8A8201   		.uleb128 0x410a
+ 545 006e 00       		.byte	0
+ 546 006f 02       		.uleb128 0x2
+ 547 0070 18       		.uleb128 0x18
+ 548 0071 9142     		.uleb128 0x2111
+ 549 0073 18       		.uleb128 0x18
+ 550 0074 00       		.byte	0
+ 551 0075 00       		.byte	0
+ 552 0076 09       		.uleb128 0x9
+ 553 0077 898201   		.uleb128 0x4109
+ 554 007a 01       		.byte	0x1
+ 555 007b 11       		.uleb128 0x11
+ 556 007c 01       		.uleb128 0x1
+ 557 007d 31       		.uleb128 0x31
+ 558 007e 13       		.uleb128 0x13
+ 559 007f 00       		.byte	0
+ 560 0080 00       		.byte	0
+ 561 0081 0A       		.uleb128 0xa
+ 562 0082 2E       		.uleb128 0x2e
+ 563 0083 01       		.byte	0x1
+ 564 0084 3F       		.uleb128 0x3f
+ 565 0085 19       		.uleb128 0x19
+ 566 0086 03       		.uleb128 0x3
+ 567 0087 0E       		.uleb128 0xe
+ 568 0088 3A       		.uleb128 0x3a
+ 569 0089 0B       		.uleb128 0xb
+ 570 008a 3B       		.uleb128 0x3b
+ 571 008b 0B       		.uleb128 0xb
+ 572 008c 49       		.uleb128 0x49
+ 573 008d 13       		.uleb128 0x13
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 12
+
+
+ 574 008e 11       		.uleb128 0x11
+ 575 008f 01       		.uleb128 0x1
+ 576 0090 12       		.uleb128 0x12
+ 577 0091 06       		.uleb128 0x6
+ 578 0092 40       		.uleb128 0x40
+ 579 0093 18       		.uleb128 0x18
+ 580 0094 9742     		.uleb128 0x2117
+ 581 0096 19       		.uleb128 0x19
+ 582 0097 01       		.uleb128 0x1
+ 583 0098 13       		.uleb128 0x13
+ 584 0099 00       		.byte	0
+ 585 009a 00       		.byte	0
+ 586 009b 0B       		.uleb128 0xb
+ 587 009c 34       		.uleb128 0x34
+ 588 009d 00       		.byte	0
+ 589 009e 03       		.uleb128 0x3
+ 590 009f 0E       		.uleb128 0xe
+ 591 00a0 3A       		.uleb128 0x3a
+ 592 00a1 0B       		.uleb128 0xb
+ 593 00a2 3B       		.uleb128 0x3b
+ 594 00a3 0B       		.uleb128 0xb
+ 595 00a4 49       		.uleb128 0x49
+ 596 00a5 13       		.uleb128 0x13
+ 597 00a6 02       		.uleb128 0x2
+ 598 00a7 17       		.uleb128 0x17
+ 599 00a8 00       		.byte	0
+ 600 00a9 00       		.byte	0
+ 601 00aa 0C       		.uleb128 0xc
+ 602 00ab 0B       		.uleb128 0xb
+ 603 00ac 01       		.byte	0x1
+ 604 00ad 11       		.uleb128 0x11
+ 605 00ae 01       		.uleb128 0x1
+ 606 00af 12       		.uleb128 0x12
+ 607 00b0 06       		.uleb128 0x6
+ 608 00b1 01       		.uleb128 0x1
+ 609 00b2 13       		.uleb128 0x13
+ 610 00b3 00       		.byte	0
+ 611 00b4 00       		.byte	0
+ 612 00b5 0D       		.uleb128 0xd
+ 613 00b6 34       		.uleb128 0x34
+ 614 00b7 00       		.byte	0
+ 615 00b8 03       		.uleb128 0x3
+ 616 00b9 0E       		.uleb128 0xe
+ 617 00ba 3A       		.uleb128 0x3a
+ 618 00bb 0B       		.uleb128 0xb
+ 619 00bc 3B       		.uleb128 0x3b
+ 620 00bd 0B       		.uleb128 0xb
+ 621 00be 49       		.uleb128 0x49
+ 622 00bf 13       		.uleb128 0x13
+ 623 00c0 02       		.uleb128 0x2
+ 624 00c1 18       		.uleb128 0x18
+ 625 00c2 00       		.byte	0
+ 626 00c3 00       		.byte	0
+ 627 00c4 0E       		.uleb128 0xe
+ 628 00c5 898201   		.uleb128 0x4109
+ 629 00c8 00       		.byte	0
+ 630 00c9 11       		.uleb128 0x11
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 13
+
+
+ 631 00ca 01       		.uleb128 0x1
+ 632 00cb 31       		.uleb128 0x31
+ 633 00cc 13       		.uleb128 0x13
+ 634 00cd 00       		.byte	0
+ 635 00ce 00       		.byte	0
+ 636 00cf 0F       		.uleb128 0xf
+ 637 00d0 34       		.uleb128 0x34
+ 638 00d1 00       		.byte	0
+ 639 00d2 03       		.uleb128 0x3
+ 640 00d3 0E       		.uleb128 0xe
+ 641 00d4 3A       		.uleb128 0x3a
+ 642 00d5 0B       		.uleb128 0xb
+ 643 00d6 3B       		.uleb128 0x3b
+ 644 00d7 05       		.uleb128 0x5
+ 645 00d8 49       		.uleb128 0x49
+ 646 00d9 13       		.uleb128 0x13
+ 647 00da 3F       		.uleb128 0x3f
+ 648 00db 19       		.uleb128 0x19
+ 649 00dc 3C       		.uleb128 0x3c
+ 650 00dd 19       		.uleb128 0x19
+ 651 00de 00       		.byte	0
+ 652 00df 00       		.byte	0
+ 653 00e0 10       		.uleb128 0x10
+ 654 00e1 35       		.uleb128 0x35
+ 655 00e2 00       		.byte	0
+ 656 00e3 49       		.uleb128 0x49
+ 657 00e4 13       		.uleb128 0x13
+ 658 00e5 00       		.byte	0
+ 659 00e6 00       		.byte	0
+ 660 00e7 11       		.uleb128 0x11
+ 661 00e8 34       		.uleb128 0x34
+ 662 00e9 00       		.byte	0
+ 663 00ea 03       		.uleb128 0x3
+ 664 00eb 0E       		.uleb128 0xe
+ 665 00ec 3A       		.uleb128 0x3a
+ 666 00ed 0B       		.uleb128 0xb
+ 667 00ee 3B       		.uleb128 0x3b
+ 668 00ef 0B       		.uleb128 0xb
+ 669 00f0 49       		.uleb128 0x49
+ 670 00f1 13       		.uleb128 0x13
+ 671 00f2 3F       		.uleb128 0x3f
+ 672 00f3 19       		.uleb128 0x19
+ 673 00f4 02       		.uleb128 0x2
+ 674 00f5 18       		.uleb128 0x18
+ 675 00f6 00       		.byte	0
+ 676 00f7 00       		.byte	0
+ 677 00f8 12       		.uleb128 0x12
+ 678 00f9 2E       		.uleb128 0x2e
+ 679 00fa 01       		.byte	0x1
+ 680 00fb 3F       		.uleb128 0x3f
+ 681 00fc 19       		.uleb128 0x19
+ 682 00fd 03       		.uleb128 0x3
+ 683 00fe 0E       		.uleb128 0xe
+ 684 00ff 3A       		.uleb128 0x3a
+ 685 0100 0B       		.uleb128 0xb
+ 686 0101 3B       		.uleb128 0x3b
+ 687 0102 0B       		.uleb128 0xb
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 14
+
+
+ 688 0103 27       		.uleb128 0x27
+ 689 0104 19       		.uleb128 0x19
+ 690 0105 3C       		.uleb128 0x3c
+ 691 0106 19       		.uleb128 0x19
+ 692 0107 01       		.uleb128 0x1
+ 693 0108 13       		.uleb128 0x13
+ 694 0109 00       		.byte	0
+ 695 010a 00       		.byte	0
+ 696 010b 13       		.uleb128 0x13
+ 697 010c 05       		.uleb128 0x5
+ 698 010d 00       		.byte	0
+ 699 010e 49       		.uleb128 0x49
+ 700 010f 13       		.uleb128 0x13
+ 701 0110 00       		.byte	0
+ 702 0111 00       		.byte	0
+ 703 0112 14       		.uleb128 0x14
+ 704 0113 2E       		.uleb128 0x2e
+ 705 0114 00       		.byte	0
+ 706 0115 3F       		.uleb128 0x3f
+ 707 0116 19       		.uleb128 0x19
+ 708 0117 03       		.uleb128 0x3
+ 709 0118 0E       		.uleb128 0xe
+ 710 0119 3A       		.uleb128 0x3a
+ 711 011a 0B       		.uleb128 0xb
+ 712 011b 3B       		.uleb128 0x3b
+ 713 011c 0B       		.uleb128 0xb
+ 714 011d 27       		.uleb128 0x27
+ 715 011e 19       		.uleb128 0x19
+ 716 011f 49       		.uleb128 0x49
+ 717 0120 13       		.uleb128 0x13
+ 718 0121 3C       		.uleb128 0x3c
+ 719 0122 19       		.uleb128 0x19
+ 720 0123 00       		.byte	0
+ 721 0124 00       		.byte	0
+ 722 0125 15       		.uleb128 0x15
+ 723 0126 2E       		.uleb128 0x2e
+ 724 0127 00       		.byte	0
+ 725 0128 3F       		.uleb128 0x3f
+ 726 0129 19       		.uleb128 0x19
+ 727 012a 03       		.uleb128 0x3
+ 728 012b 0E       		.uleb128 0xe
+ 729 012c 3A       		.uleb128 0x3a
+ 730 012d 0B       		.uleb128 0xb
+ 731 012e 3B       		.uleb128 0x3b
+ 732 012f 0B       		.uleb128 0xb
+ 733 0130 27       		.uleb128 0x27
+ 734 0131 19       		.uleb128 0x19
+ 735 0132 3C       		.uleb128 0x3c
+ 736 0133 19       		.uleb128 0x19
+ 737 0134 00       		.byte	0
+ 738 0135 00       		.byte	0
+ 739 0136 00       		.byte	0
+ 740              		.section	.debug_loc,"",%progbits
+ 741              	.Ldebug_loc0:
+ 742              	.LLST0:
+ 743 0000 02000000 		.4byte	.LVL4
+ 744 0004 14000000 		.4byte	.LVL7
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 15
+
+
+ 745 0008 0300     		.2byte	0x3
+ 746 000a 08       		.byte	0x8
+ 747 000b 55       		.byte	0x55
+ 748 000c 9F       		.byte	0x9f
+ 749 000d 18000000 		.4byte	.LVL8
+ 750 0011 1B000000 		.4byte	.LVL9-1
+ 751 0015 0100     		.2byte	0x1
+ 752 0017 50       		.byte	0x50
+ 753 0018 00000000 		.4byte	0
+ 754 001c 00000000 		.4byte	0
+ 755              		.section	.debug_aranges,"",%progbits
+ 756 0000 24000000 		.4byte	0x24
+ 757 0004 0200     		.2byte	0x2
+ 758 0006 00000000 		.4byte	.Ldebug_info0
+ 759 000a 04       		.byte	0x4
+ 760 000b 00       		.byte	0
+ 761 000c 0000     		.2byte	0
+ 762 000e 0000     		.2byte	0
+ 763 0010 00000000 		.4byte	.LFB63
+ 764 0014 1C000000 		.4byte	.LFE63-.LFB63
+ 765 0018 00000000 		.4byte	.LFB64
+ 766 001c 3A000000 		.4byte	.LFE64-.LFB64
+ 767 0020 00000000 		.4byte	0
+ 768 0024 00000000 		.4byte	0
+ 769              		.section	.debug_ranges,"",%progbits
+ 770              	.Ldebug_ranges0:
+ 771 0000 00000000 		.4byte	.LFB63
+ 772 0004 1C000000 		.4byte	.LFE63
+ 773 0008 00000000 		.4byte	.LFB64
+ 774 000c 3A000000 		.4byte	.LFE64
+ 775 0010 00000000 		.4byte	0
+ 776 0014 00000000 		.4byte	0
+ 777              		.section	.debug_line,"",%progbits
+ 778              	.Ldebug_line0:
+ 779 0000 AF010000 		.section	.debug_str,"MS",%progbits,1
+ 779      02007C01 
+ 779      00000201 
+ 779      FB0E0D00 
+ 779      01010101 
+ 780              	.LASF30:
+ 781 0000 67657453 		.ascii	"getSingleChar\000"
+ 781      696E676C 
+ 781      65436861 
+ 781      7200
+ 782              	.LASF29:
+ 783 000e 696E6974 		.ascii	"initDIGIO8Card\000"
+ 783      44494749 
+ 783      4F384361 
+ 783      726400
+ 784              	.LASF24:
+ 785 001d 4C45445F 		.ascii	"LED_Write\000"
+ 785      57726974 
+ 785      6500
+ 786              	.LASF31:
+ 787 0027 72656164 		.ascii	"readDIGIO8Card\000"
+ 787      44494749 
+ 787      4F384361 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 16
+
+
+ 787      726400
+ 788              	.LASF9:
+ 789 0036 5F5F696E 		.ascii	"__int32_t\000"
+ 789      7433325F 
+ 789      7400
+ 790              	.LASF3:
+ 791 0040 73686F72 		.ascii	"short unsigned int\000"
+ 791      7420756E 
+ 791      7369676E 
+ 791      65642069 
+ 791      6E7400
+ 792              	.LASF14:
+ 793 0053 646F7562 		.ascii	"double\000"
+ 793      6C6500
+ 794              	.LASF13:
+ 795 005a 666C6F61 		.ascii	"float\000"
+ 795      7400
+ 796              	.LASF1:
+ 797 0060 756E7369 		.ascii	"unsigned char\000"
+ 797      676E6564 
+ 797      20636861 
+ 797      7200
+ 798              	.LASF15:
+ 799 006e 63686172 		.ascii	"char8\000"
+ 799      3800
+ 800              	.LASF18:
+ 801 0074 746F6767 		.ascii	"toggleOnBoardLED\000"
+ 801      6C654F6E 
+ 801      426F6172 
+ 801      644C4544 
+ 801      00
+ 802              	.LASF5:
+ 803 0085 6C6F6E67 		.ascii	"long unsigned int\000"
+ 803      20756E73 
+ 803      69676E65 
+ 803      6420696E 
+ 803      7400
+ 804              	.LASF28:
+ 805 0097 696E6974 		.ascii	"initSerial\000"
+ 805      53657269 
+ 805      616C00
+ 806              	.LASF22:
+ 807 00a2 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 807      52784275 
+ 807      66666572 
+ 807      00
+ 808              	.LASF21:
+ 809 00af 6D794368 		.ascii	"myChar\000"
+ 809      617200
+ 810              	.LASF2:
+ 811 00b6 73686F72 		.ascii	"short int\000"
+ 811      7420696E 
+ 811      7400
+ 812              	.LASF12:
+ 813 00c0 75696E74 		.ascii	"uint32\000"
+ 813      333200
+ 814              	.LASF34:
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 17
+
+
+ 815 00c7 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 815      4320342E 
+ 815      392E3320 
+ 815      32303135 
+ 815      30333033 
+ 816 00fa 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 816      20726576 
+ 816      6973696F 
+ 816      6E203232 
+ 816      31323230 
+ 817 012d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 817      66756E63 
+ 817      74696F6E 
+ 817      2D736563 
+ 817      74696F6E 
+ 818              	.LASF26:
+ 819 0155 6F757453 		.ascii	"outSingleChar\000"
+ 819      696E676C 
+ 819      65436861 
+ 819      7200
+ 820              	.LASF8:
+ 821 0163 756E7369 		.ascii	"unsigned int\000"
+ 821      676E6564 
+ 821      20696E74 
+ 821      00
+ 822              	.LASF20:
+ 823 0170 6D795265 		.ascii	"myReadVal\000"
+ 823      61645661 
+ 823      6C00
+ 824              	.LASF7:
+ 825 017a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 825      206C6F6E 
+ 825      6720756E 
+ 825      7369676E 
+ 825      65642069 
+ 826              	.LASF27:
+ 827 0191 436F6E74 		.ascii	"Control_Reg_1_Write\000"
+ 827      726F6C5F 
+ 827      5265675F 
+ 827      315F5772 
+ 827      69746500 
+ 828              	.LASF19:
+ 829 01a5 6D61696E 		.ascii	"main\000"
+ 829      00
+ 830              	.LASF10:
+ 831 01aa 696E7433 		.ascii	"int32_t\000"
+ 831      325F7400 
+ 832              	.LASF17:
+ 833 01b2 73697A65 		.ascii	"sizetype\000"
+ 833      74797065 
+ 833      00
+ 834              	.LASF6:
+ 835 01bb 6C6F6E67 		.ascii	"long long int\000"
+ 835      206C6F6E 
+ 835      6720696E 
+ 835      7400
+ 836              	.LASF35:
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccRglu27.s 			page 18
+
+
+ 837 01c9 6D61696E 		.ascii	"main.c\000"
+ 837      2E6300
+ 838              	.LASF16:
+ 839 01d0 63686172 		.ascii	"char\000"
+ 839      00
+ 840              	.LASF36:
+ 841 01d5 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
+ 841      73657273 
+ 841      5C444769 
+ 841      6C6C696C 
+ 841      616E645C 
+ 842 0202 532D5053 		.ascii	"S-PSOC5\\Projects\\ODAS-PSOC5-I2CIO8-Serial.cydsn\000"
+ 842      4F43355C 
+ 842      50726F6A 
+ 842      65637473 
+ 842      5C4F4441 
+ 843              	.LASF33:
+ 844 0232 63686563 		.ascii	"checkReceiveChar\000"
+ 844      6B526563 
+ 844      65697665 
+ 844      43686172 
+ 844      00
+ 845              	.LASF11:
+ 846 0243 75696E74 		.ascii	"uint8\000"
+ 846      3800
+ 847              	.LASF4:
+ 848 0249 6C6F6E67 		.ascii	"long int\000"
+ 848      20696E74 
+ 848      00
+ 849              	.LASF0:
+ 850 0252 7369676E 		.ascii	"signed char\000"
+ 850      65642063 
+ 850      68617200 
+ 851              	.LASF32:
+ 852 025e 77726974 		.ascii	"writeDIGIO8Card\000"
+ 852      65444947 
+ 852      494F3843 
+ 852      61726400 
+ 853              	.LASF23:
+ 854 026e 6C656456 		.ascii	"ledVal\000"
+ 854      616C00
+ 855              	.LASF25:
+ 856 0275 43794465 		.ascii	"CyDelay\000"
+ 856      6C617900 
+ 857              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

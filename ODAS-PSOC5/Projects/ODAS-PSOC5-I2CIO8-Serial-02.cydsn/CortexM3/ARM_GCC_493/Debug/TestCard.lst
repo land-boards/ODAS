@@ -1,0 +1,1246 @@
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"TestCard.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.testCard,"ax",%progbits
+  19              		.align	2
+  20              		.global	testCard
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	testCard, %function
+  24              	testCard:
+  25              	.LFB63:
+  26              		.file 1 "TestCard.c"
+   1:TestCard.c    **** /* ========================================
+   2:TestCard.c    ****  *
+   3:TestCard.c    ****  * Copyright Land Boards LLC, 2017
+   4:TestCard.c    ****  * All Rights Reserved
+   5:TestCard.c    ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:TestCard.c    ****  *
+   7:TestCard.c    ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:TestCard.c    ****  * WHICH IS THE PROPERTY OF Land Boards LLC.
+   9:TestCard.c    ****  *
+  10:TestCard.c    ****  * ========================================
+  11:TestCard.c    **** */
+  12:TestCard.c    **** #include <project.h>
+  13:TestCard.c    **** #include "DIGIO32Driver.h"
+  14:TestCard.c    **** #include "TestCard.h"
+  15:TestCard.c    **** #include "TestMenu.h"
+  16:TestCard.c    **** #include "SerialIO.h"
+  17:TestCard.c    **** #include "stringConvs.h"
+  18:TestCard.c    **** 
+  19:TestCard.c    **** #define VERBOSEMODE
+  20:TestCard.c    **** 
+  21:TestCard.c    **** //////////////////////////////////////////////////////////////////////////////
+  22:TestCard.c    **** // void testCard(void)
+  23:TestCard.c    **** //////////////////////////////////////////////////////////////////////////////
+  24:TestCard.c    **** 
+  25:TestCard.c    **** void testCard(void)
+  26:TestCard.c    **** {
+  27              		.loc 1 26 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 2
+
+
+  32 0000 7047     		bx	lr
+  33              		.cfi_endproc
+  34              	.LFE63:
+  35              		.size	testCard, .-testCard
+  36 0002 00BF     		.section	.text.initGPIOPins,"ax",%progbits
+  37              		.align	2
+  38              		.global	initGPIOPins
+  39              		.thumb
+  40              		.thumb_func
+  41              		.type	initGPIOPins, %function
+  42              	initGPIOPins:
+  43              	.LFB64:
+  27:TestCard.c    **** //    initDIGIO32Cards();
+  28:TestCard.c    **** //    initGPIOPins();
+  29:TestCard.c    **** //    initDIGIO32Cards();
+  30:TestCard.c    **** }
+  31:TestCard.c    **** 
+  32:TestCard.c    **** //////////////////////////////////////////////////////////////////////////////
+  33:TestCard.c    **** // void initGPIOPins(void)
+  34:TestCard.c    **** //////////////////////////////////////////////////////////////////////////////
+  35:TestCard.c    **** 
+  36:TestCard.c    **** void initGPIOPins(void)
+  37:TestCard.c    **** {
+  44              		.loc 1 37 0
+  45              		.cfi_startproc
+  46              		@ args = 0, pretend = 0, frame = 0
+  47              		@ frame_needed = 0, uses_anonymous_args = 0
+  48              		.loc 1 37 0
+  49 0000 08B5     		push	{r3, lr}
+  50              		.cfi_def_cfa_offset 8
+  51              		.cfi_offset 3, -8
+  52              		.cfi_offset 14, -4
+  38:TestCard.c    **** #ifdef VERBOSEMODE
+  39:TestCard.c    ****     writeLine("initGPIOPins() - reached function");
+  53              		.loc 1 39 0
+  54 0002 2848     		ldr	r0, .L4
+  55 0004 FFF7FEFF 		bl	writeLine
+  56              	.LVL0:
+  40:TestCard.c    **** #endif
+  41:TestCard.c    ****     initDIGIO32Cards();
+  57              		.loc 1 41 0
+  58 0008 FFF7FEFF 		bl	initDIGIO32Cards
+  59              	.LVL1:
+  42:TestCard.c    ****     writeRegisterDIGIO32Card(BRD3,MCPCHIP0,MCP23017_IODIRA_REGADR,0);
+  60              		.loc 1 42 0
+  61 000c 0020     		movs	r0, #0
+  62 000e 0146     		mov	r1, r0
+  63 0010 0246     		mov	r2, r0
+  64 0012 0346     		mov	r3, r0
+  65 0014 FFF7FEFF 		bl	writeRegisterDIGIO32Card
+  66              	.LVL2:
+  43:TestCard.c    ****     writeRegisterDIGIO32Card(BRD3,MCPCHIP0,MCP23017_IODIRB_REGADR,0);
+  67              		.loc 1 43 0
+  68 0018 0020     		movs	r0, #0
+  69 001a 0146     		mov	r1, r0
+  70 001c 0122     		movs	r2, #1
+  71 001e 0346     		mov	r3, r0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 3
+
+
+  72 0020 FFF7FEFF 		bl	writeRegisterDIGIO32Card
+  73              	.LVL3:
+  44:TestCard.c    ****     writeRegisterDIGIO32Card(BRD3,MCPCHIP1,MCP23017_IODIRA_REGADR,0);
+  74              		.loc 1 44 0
+  75 0024 0020     		movs	r0, #0
+  76 0026 0121     		movs	r1, #1
+  77 0028 0246     		mov	r2, r0
+  78 002a 0346     		mov	r3, r0
+  79 002c FFF7FEFF 		bl	writeRegisterDIGIO32Card
+  80              	.LVL4:
+  45:TestCard.c    ****     writeRegisterDIGIO32Card(BRD3,MCPCHIP1,MCP23017_IODIRB_REGADR,0);
+  81              		.loc 1 45 0
+  82 0030 0020     		movs	r0, #0
+  83 0032 0121     		movs	r1, #1
+  84 0034 0A46     		mov	r2, r1
+  85 0036 0346     		mov	r3, r0
+  86 0038 FFF7FEFF 		bl	writeRegisterDIGIO32Card
+  87              	.LVL5:
+  46:TestCard.c    ****     writeRegisterDIGIO32Card(BRD4,MCPCHIP0,MCP23017_IODIRA_REGADR,0);
+  88              		.loc 1 46 0
+  89 003c 0120     		movs	r0, #1
+  90 003e 0021     		movs	r1, #0
+  91 0040 0A46     		mov	r2, r1
+  92 0042 0B46     		mov	r3, r1
+  93 0044 FFF7FEFF 		bl	writeRegisterDIGIO32Card
+  94              	.LVL6:
+  47:TestCard.c    ****     writeRegisterDIGIO32Card(BRD4,MCPCHIP0,MCP23017_IODIRB_REGADR,0);
+  95              		.loc 1 47 0
+  96 0048 0120     		movs	r0, #1
+  97 004a 0021     		movs	r1, #0
+  98 004c 0246     		mov	r2, r0
+  99 004e 0B46     		mov	r3, r1
+ 100 0050 FFF7FEFF 		bl	writeRegisterDIGIO32Card
+ 101              	.LVL7:
+  48:TestCard.c    ****     writeRegisterDIGIO32Card(BRD4,MCPCHIP1,MCP23017_IODIRA_REGADR,0);
+ 102              		.loc 1 48 0
+ 103 0054 0120     		movs	r0, #1
+ 104 0056 0146     		mov	r1, r0
+ 105 0058 0022     		movs	r2, #0
+ 106 005a 1346     		mov	r3, r2
+ 107 005c FFF7FEFF 		bl	writeRegisterDIGIO32Card
+ 108              	.LVL8:
+  49:TestCard.c    ****     writeRegisterDIGIO32Card(BRD4,MCPCHIP1,MCP23017_IODIRB_REGADR,0);
+ 109              		.loc 1 49 0
+ 110 0060 0120     		movs	r0, #1
+ 111 0062 0146     		mov	r1, r0
+ 112 0064 0246     		mov	r2, r0
+ 113 0066 0023     		movs	r3, #0
+ 114 0068 FFF7FEFF 		bl	writeRegisterDIGIO32Card
+ 115              	.LVL9:
+  50:TestCard.c    ****     writeRegisterDIGIO32Card(BRD5,MCPCHIP0,MCP23017_IODIRA_REGADR,0);
+ 116              		.loc 1 50 0
+ 117 006c 0220     		movs	r0, #2
+ 118 006e 0021     		movs	r1, #0
+ 119 0070 0A46     		mov	r2, r1
+ 120 0072 0B46     		mov	r3, r1
+ 121 0074 FFF7FEFF 		bl	writeRegisterDIGIO32Card
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 4
+
+
+ 122              	.LVL10:
+  51:TestCard.c    ****     writeRegisterDIGIO32Card(BRD5,MCPCHIP0,MCP23017_IODIRB_REGADR,0);
+ 123              		.loc 1 51 0
+ 124 0078 0220     		movs	r0, #2
+ 125 007a 0021     		movs	r1, #0
+ 126 007c 0122     		movs	r2, #1
+ 127 007e 0B46     		mov	r3, r1
+ 128 0080 FFF7FEFF 		bl	writeRegisterDIGIO32Card
+ 129              	.LVL11:
+  52:TestCard.c    ****     writeRegisterDIGIO32Card(BRD5,MCPCHIP1,MCP23017_IODIRA_REGADR,0);
+ 130              		.loc 1 52 0
+ 131 0084 0220     		movs	r0, #2
+ 132 0086 0121     		movs	r1, #1
+ 133 0088 0022     		movs	r2, #0
+ 134 008a 1346     		mov	r3, r2
+ 135 008c FFF7FEFF 		bl	writeRegisterDIGIO32Card
+ 136              	.LVL12:
+  53:TestCard.c    ****     writeRegisterDIGIO32Card(BRD5,MCPCHIP1,MCP23017_IODIRB_REGADR,0);
+ 137              		.loc 1 53 0
+ 138 0090 0220     		movs	r0, #2
+ 139 0092 0121     		movs	r1, #1
+ 140 0094 0A46     		mov	r2, r1
+ 141 0096 0023     		movs	r3, #0
+ 142 0098 FFF7FEFF 		bl	writeRegisterDIGIO32Card
+ 143              	.LVL13:
+  54:TestCard.c    **** #ifdef VERBOSEMODE
+  55:TestCard.c    ****     writeLine("initGPIOPins() - completed function");
+ 144              		.loc 1 55 0
+ 145 009c 0248     		ldr	r0, .L4+4
+ 146 009e FFF7FEFF 		bl	writeLine
+ 147              	.LVL14:
+ 148 00a2 08BD     		pop	{r3, pc}
+ 149              	.L5:
+ 150              		.align	2
+ 151              	.L4:
+ 152 00a4 00000000 		.word	.LC0
+ 153 00a8 24000000 		.word	.LC1
+ 154              		.cfi_endproc
+ 155              	.LFE64:
+ 156              		.size	initGPIOPins, .-initGPIOPins
+ 157              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 158              		.align	2
+ 159              	.LC0:
+ 160 0000 696E6974 		.ascii	"initGPIOPins() - reached function\000"
+ 160      4750494F 
+ 160      50696E73 
+ 160      2829202D 
+ 160      20726561 
+ 161 0022 0000     		.space	2
+ 162              	.LC1:
+ 163 0024 696E6974 		.ascii	"initGPIOPins() - completed function\000"
+ 163      4750494F 
+ 163      50696E73 
+ 163      2829202D 
+ 163      20636F6D 
+ 164              		.text
+ 165              	.Letext0:
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 5
+
+
+ 166              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 167              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 168              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 169              		.file 5 "DIGIO32Driver.h"
+ 170              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
+ 171              		.file 7 "SerialIO.h"
+ 172              		.section	.debug_info,"",%progbits
+ 173              	.Ldebug_info0:
+ 174 0000 1B030000 		.4byte	0x31b
+ 175 0004 0400     		.2byte	0x4
+ 176 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 177 000a 04       		.byte	0x4
+ 178 000b 01       		.uleb128 0x1
+ 179 000c 2D010000 		.4byte	.LASF23
+ 180 0010 01       		.byte	0x1
+ 181 0011 2B000000 		.4byte	.LASF24
+ 182 0015 36000000 		.4byte	.LASF25
+ 183 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 184 001d 00000000 		.4byte	0
+ 185 0021 00000000 		.4byte	.Ldebug_line0
+ 186 0025 02       		.uleb128 0x2
+ 187 0026 01       		.byte	0x1
+ 188 0027 06       		.byte	0x6
+ 189 0028 2E020000 		.4byte	.LASF0
+ 190 002c 02       		.uleb128 0x2
+ 191 002d 01       		.byte	0x1
+ 192 002e 08       		.byte	0x8
+ 193 002f 9C000000 		.4byte	.LASF1
+ 194 0033 02       		.uleb128 0x2
+ 195 0034 02       		.byte	0x2
+ 196 0035 05       		.byte	0x5
+ 197 0036 03020000 		.4byte	.LASF2
+ 198 003a 02       		.uleb128 0x2
+ 199 003b 02       		.byte	0x2
+ 200 003c 07       		.byte	0x7
+ 201 003d BC000000 		.4byte	.LASF3
+ 202 0041 03       		.uleb128 0x3
+ 203 0042 12000000 		.4byte	.LASF9
+ 204 0046 02       		.byte	0x2
+ 205 0047 3F       		.byte	0x3f
+ 206 0048 4C000000 		.4byte	0x4c
+ 207 004c 02       		.uleb128 0x2
+ 208 004d 04       		.byte	0x4
+ 209 004e 05       		.byte	0x5
+ 210 004f 1C020000 		.4byte	.LASF4
+ 211 0053 02       		.uleb128 0x2
+ 212 0054 04       		.byte	0x4
+ 213 0055 07       		.byte	0x7
+ 214 0056 AA000000 		.4byte	.LASF5
+ 215 005a 02       		.uleb128 0x2
+ 216 005b 08       		.byte	0x8
+ 217 005c 05       		.byte	0x5
+ 218 005d D6010000 		.4byte	.LASF6
+ 219 0061 02       		.uleb128 0x2
+ 220 0062 08       		.byte	0x8
+ 221 0063 07       		.byte	0x7
+ 222 0064 16010000 		.4byte	.LASF7
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 6
+
+
+ 223 0068 04       		.uleb128 0x4
+ 224 0069 04       		.byte	0x4
+ 225 006a 05       		.byte	0x5
+ 226 006b 696E7400 		.ascii	"int\000"
+ 227 006f 02       		.uleb128 0x2
+ 228 0070 04       		.byte	0x4
+ 229 0071 07       		.byte	0x7
+ 230 0072 09010000 		.4byte	.LASF8
+ 231 0076 03       		.uleb128 0x3
+ 232 0077 C5010000 		.4byte	.LASF10
+ 233 007b 03       		.byte	0x3
+ 234 007c 2C       		.byte	0x2c
+ 235 007d 41000000 		.4byte	0x41
+ 236 0081 05       		.uleb128 0x5
+ 237 0082 0D020000 		.4byte	.LASF11
+ 238 0086 04       		.byte	0x4
+ 239 0087 9201     		.2byte	0x192
+ 240 0089 2C000000 		.4byte	0x2c
+ 241 008d 02       		.uleb128 0x2
+ 242 008e 04       		.byte	0x4
+ 243 008f 04       		.byte	0x4
+ 244 0090 96000000 		.4byte	.LASF12
+ 245 0094 02       		.uleb128 0x2
+ 246 0095 08       		.byte	0x8
+ 247 0096 04       		.byte	0x4
+ 248 0097 F5000000 		.4byte	.LASF13
+ 249 009b 02       		.uleb128 0x2
+ 250 009c 01       		.byte	0x1
+ 251 009d 08       		.byte	0x8
+ 252 009e F5010000 		.4byte	.LASF14
+ 253 00a2 02       		.uleb128 0x2
+ 254 00a3 04       		.byte	0x4
+ 255 00a4 07       		.byte	0x7
+ 256 00a5 CD010000 		.4byte	.LASF15
+ 257 00a9 06       		.uleb128 0x6
+ 258 00aa 04       		.byte	0x4
+ 259 00ab 9B000000 		.4byte	0x9b
+ 260 00af 07       		.uleb128 0x7
+ 261 00b0 BB010000 		.4byte	.LASF19
+ 262 00b4 01       		.byte	0x1
+ 263 00b5 05       		.byte	0x5
+ 264 00b6 15       		.byte	0x15
+ 265 00b7 CE000000 		.4byte	0xce
+ 266 00bb 08       		.uleb128 0x8
+ 267 00bc 1C000000 		.4byte	.LASF16
+ 268 00c0 00       		.sleb128 0
+ 269 00c1 08       		.uleb128 0x8
+ 270 00c2 21000000 		.4byte	.LASF17
+ 271 00c6 01       		.sleb128 1
+ 272 00c7 08       		.uleb128 0x8
+ 273 00c8 26000000 		.4byte	.LASF18
+ 274 00cc 02       		.sleb128 2
+ 275 00cd 00       		.byte	0
+ 276 00ce 07       		.uleb128 0x7
+ 277 00cf 00000000 		.4byte	.LASF20
+ 278 00d3 01       		.byte	0x1
+ 279 00d4 05       		.byte	0x5
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 7
+
+
+ 280 00d5 16       		.byte	0x16
+ 281 00d6 E7000000 		.4byte	0xe7
+ 282 00da 08       		.uleb128 0x8
+ 283 00db 13020000 		.4byte	.LASF21
+ 284 00df 00       		.sleb128 0
+ 285 00e0 08       		.uleb128 0x8
+ 286 00e1 FA010000 		.4byte	.LASF22
+ 287 00e5 01       		.sleb128 1
+ 288 00e6 00       		.byte	0
+ 289 00e7 09       		.uleb128 0x9
+ 290 00e8 25020000 		.4byte	.LASF26
+ 291 00ec 01       		.byte	0x1
+ 292 00ed 19       		.byte	0x19
+ 293 00ee 00000000 		.4byte	.LFB63
+ 294 00f2 02000000 		.4byte	.LFE63-.LFB63
+ 295 00f6 01       		.uleb128 0x1
+ 296 00f7 9C       		.byte	0x9c
+ 297 00f8 0A       		.uleb128 0xa
+ 298 00f9 FC000000 		.4byte	.LASF27
+ 299 00fd 01       		.byte	0x1
+ 300 00fe 24       		.byte	0x24
+ 301 00ff 00000000 		.4byte	.LFB64
+ 302 0103 AC000000 		.4byte	.LFE64-.LFB64
+ 303 0107 01       		.uleb128 0x1
+ 304 0108 9C       		.byte	0x9c
+ 305 0109 D9020000 		.4byte	0x2d9
+ 306 010d 0B       		.uleb128 0xb
+ 307 010e 08000000 		.4byte	.LVL0
+ 308 0112 EA020000 		.4byte	0x2ea
+ 309 0116 24010000 		.4byte	0x124
+ 310 011a 0C       		.uleb128 0xc
+ 311 011b 01       		.uleb128 0x1
+ 312 011c 50       		.byte	0x50
+ 313 011d 05       		.uleb128 0x5
+ 314 011e 03       		.byte	0x3
+ 315 011f 00000000 		.4byte	.LC0
+ 316 0123 00       		.byte	0
+ 317 0124 0D       		.uleb128 0xd
+ 318 0125 0C000000 		.4byte	.LVL1
+ 319 0129 FB020000 		.4byte	0x2fb
+ 320 012d 0B       		.uleb128 0xb
+ 321 012e 18000000 		.4byte	.LVL2
+ 322 0132 02030000 		.4byte	0x302
+ 323 0136 4F010000 		.4byte	0x14f
+ 324 013a 0C       		.uleb128 0xc
+ 325 013b 01       		.uleb128 0x1
+ 326 013c 53       		.byte	0x53
+ 327 013d 01       		.uleb128 0x1
+ 328 013e 30       		.byte	0x30
+ 329 013f 0C       		.uleb128 0xc
+ 330 0140 01       		.uleb128 0x1
+ 331 0141 52       		.byte	0x52
+ 332 0142 01       		.uleb128 0x1
+ 333 0143 30       		.byte	0x30
+ 334 0144 0C       		.uleb128 0xc
+ 335 0145 01       		.uleb128 0x1
+ 336 0146 51       		.byte	0x51
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 8
+
+
+ 337 0147 01       		.uleb128 0x1
+ 338 0148 30       		.byte	0x30
+ 339 0149 0C       		.uleb128 0xc
+ 340 014a 01       		.uleb128 0x1
+ 341 014b 50       		.byte	0x50
+ 342 014c 01       		.uleb128 0x1
+ 343 014d 30       		.byte	0x30
+ 344 014e 00       		.byte	0
+ 345 014f 0B       		.uleb128 0xb
+ 346 0150 24000000 		.4byte	.LVL3
+ 347 0154 02030000 		.4byte	0x302
+ 348 0158 71010000 		.4byte	0x171
+ 349 015c 0C       		.uleb128 0xc
+ 350 015d 01       		.uleb128 0x1
+ 351 015e 53       		.byte	0x53
+ 352 015f 01       		.uleb128 0x1
+ 353 0160 30       		.byte	0x30
+ 354 0161 0C       		.uleb128 0xc
+ 355 0162 01       		.uleb128 0x1
+ 356 0163 52       		.byte	0x52
+ 357 0164 01       		.uleb128 0x1
+ 358 0165 31       		.byte	0x31
+ 359 0166 0C       		.uleb128 0xc
+ 360 0167 01       		.uleb128 0x1
+ 361 0168 51       		.byte	0x51
+ 362 0169 01       		.uleb128 0x1
+ 363 016a 30       		.byte	0x30
+ 364 016b 0C       		.uleb128 0xc
+ 365 016c 01       		.uleb128 0x1
+ 366 016d 50       		.byte	0x50
+ 367 016e 01       		.uleb128 0x1
+ 368 016f 30       		.byte	0x30
+ 369 0170 00       		.byte	0
+ 370 0171 0B       		.uleb128 0xb
+ 371 0172 30000000 		.4byte	.LVL4
+ 372 0176 02030000 		.4byte	0x302
+ 373 017a 93010000 		.4byte	0x193
+ 374 017e 0C       		.uleb128 0xc
+ 375 017f 01       		.uleb128 0x1
+ 376 0180 53       		.byte	0x53
+ 377 0181 01       		.uleb128 0x1
+ 378 0182 30       		.byte	0x30
+ 379 0183 0C       		.uleb128 0xc
+ 380 0184 01       		.uleb128 0x1
+ 381 0185 52       		.byte	0x52
+ 382 0186 01       		.uleb128 0x1
+ 383 0187 30       		.byte	0x30
+ 384 0188 0C       		.uleb128 0xc
+ 385 0189 01       		.uleb128 0x1
+ 386 018a 51       		.byte	0x51
+ 387 018b 01       		.uleb128 0x1
+ 388 018c 31       		.byte	0x31
+ 389 018d 0C       		.uleb128 0xc
+ 390 018e 01       		.uleb128 0x1
+ 391 018f 50       		.byte	0x50
+ 392 0190 01       		.uleb128 0x1
+ 393 0191 30       		.byte	0x30
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 9
+
+
+ 394 0192 00       		.byte	0
+ 395 0193 0B       		.uleb128 0xb
+ 396 0194 3C000000 		.4byte	.LVL5
+ 397 0198 02030000 		.4byte	0x302
+ 398 019c B5010000 		.4byte	0x1b5
+ 399 01a0 0C       		.uleb128 0xc
+ 400 01a1 01       		.uleb128 0x1
+ 401 01a2 53       		.byte	0x53
+ 402 01a3 01       		.uleb128 0x1
+ 403 01a4 30       		.byte	0x30
+ 404 01a5 0C       		.uleb128 0xc
+ 405 01a6 01       		.uleb128 0x1
+ 406 01a7 52       		.byte	0x52
+ 407 01a8 01       		.uleb128 0x1
+ 408 01a9 31       		.byte	0x31
+ 409 01aa 0C       		.uleb128 0xc
+ 410 01ab 01       		.uleb128 0x1
+ 411 01ac 51       		.byte	0x51
+ 412 01ad 01       		.uleb128 0x1
+ 413 01ae 31       		.byte	0x31
+ 414 01af 0C       		.uleb128 0xc
+ 415 01b0 01       		.uleb128 0x1
+ 416 01b1 50       		.byte	0x50
+ 417 01b2 01       		.uleb128 0x1
+ 418 01b3 30       		.byte	0x30
+ 419 01b4 00       		.byte	0
+ 420 01b5 0B       		.uleb128 0xb
+ 421 01b6 48000000 		.4byte	.LVL6
+ 422 01ba 02030000 		.4byte	0x302
+ 423 01be D7010000 		.4byte	0x1d7
+ 424 01c2 0C       		.uleb128 0xc
+ 425 01c3 01       		.uleb128 0x1
+ 426 01c4 53       		.byte	0x53
+ 427 01c5 01       		.uleb128 0x1
+ 428 01c6 30       		.byte	0x30
+ 429 01c7 0C       		.uleb128 0xc
+ 430 01c8 01       		.uleb128 0x1
+ 431 01c9 52       		.byte	0x52
+ 432 01ca 01       		.uleb128 0x1
+ 433 01cb 30       		.byte	0x30
+ 434 01cc 0C       		.uleb128 0xc
+ 435 01cd 01       		.uleb128 0x1
+ 436 01ce 51       		.byte	0x51
+ 437 01cf 01       		.uleb128 0x1
+ 438 01d0 30       		.byte	0x30
+ 439 01d1 0C       		.uleb128 0xc
+ 440 01d2 01       		.uleb128 0x1
+ 441 01d3 50       		.byte	0x50
+ 442 01d4 01       		.uleb128 0x1
+ 443 01d5 31       		.byte	0x31
+ 444 01d6 00       		.byte	0
+ 445 01d7 0B       		.uleb128 0xb
+ 446 01d8 54000000 		.4byte	.LVL7
+ 447 01dc 02030000 		.4byte	0x302
+ 448 01e0 F9010000 		.4byte	0x1f9
+ 449 01e4 0C       		.uleb128 0xc
+ 450 01e5 01       		.uleb128 0x1
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 10
+
+
+ 451 01e6 53       		.byte	0x53
+ 452 01e7 01       		.uleb128 0x1
+ 453 01e8 30       		.byte	0x30
+ 454 01e9 0C       		.uleb128 0xc
+ 455 01ea 01       		.uleb128 0x1
+ 456 01eb 52       		.byte	0x52
+ 457 01ec 01       		.uleb128 0x1
+ 458 01ed 31       		.byte	0x31
+ 459 01ee 0C       		.uleb128 0xc
+ 460 01ef 01       		.uleb128 0x1
+ 461 01f0 51       		.byte	0x51
+ 462 01f1 01       		.uleb128 0x1
+ 463 01f2 30       		.byte	0x30
+ 464 01f3 0C       		.uleb128 0xc
+ 465 01f4 01       		.uleb128 0x1
+ 466 01f5 50       		.byte	0x50
+ 467 01f6 01       		.uleb128 0x1
+ 468 01f7 31       		.byte	0x31
+ 469 01f8 00       		.byte	0
+ 470 01f9 0B       		.uleb128 0xb
+ 471 01fa 60000000 		.4byte	.LVL8
+ 472 01fe 02030000 		.4byte	0x302
+ 473 0202 1B020000 		.4byte	0x21b
+ 474 0206 0C       		.uleb128 0xc
+ 475 0207 01       		.uleb128 0x1
+ 476 0208 53       		.byte	0x53
+ 477 0209 01       		.uleb128 0x1
+ 478 020a 30       		.byte	0x30
+ 479 020b 0C       		.uleb128 0xc
+ 480 020c 01       		.uleb128 0x1
+ 481 020d 52       		.byte	0x52
+ 482 020e 01       		.uleb128 0x1
+ 483 020f 30       		.byte	0x30
+ 484 0210 0C       		.uleb128 0xc
+ 485 0211 01       		.uleb128 0x1
+ 486 0212 51       		.byte	0x51
+ 487 0213 01       		.uleb128 0x1
+ 488 0214 31       		.byte	0x31
+ 489 0215 0C       		.uleb128 0xc
+ 490 0216 01       		.uleb128 0x1
+ 491 0217 50       		.byte	0x50
+ 492 0218 01       		.uleb128 0x1
+ 493 0219 31       		.byte	0x31
+ 494 021a 00       		.byte	0
+ 495 021b 0B       		.uleb128 0xb
+ 496 021c 6C000000 		.4byte	.LVL9
+ 497 0220 02030000 		.4byte	0x302
+ 498 0224 3D020000 		.4byte	0x23d
+ 499 0228 0C       		.uleb128 0xc
+ 500 0229 01       		.uleb128 0x1
+ 501 022a 53       		.byte	0x53
+ 502 022b 01       		.uleb128 0x1
+ 503 022c 30       		.byte	0x30
+ 504 022d 0C       		.uleb128 0xc
+ 505 022e 01       		.uleb128 0x1
+ 506 022f 52       		.byte	0x52
+ 507 0230 01       		.uleb128 0x1
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 11
+
+
+ 508 0231 31       		.byte	0x31
+ 509 0232 0C       		.uleb128 0xc
+ 510 0233 01       		.uleb128 0x1
+ 511 0234 51       		.byte	0x51
+ 512 0235 01       		.uleb128 0x1
+ 513 0236 31       		.byte	0x31
+ 514 0237 0C       		.uleb128 0xc
+ 515 0238 01       		.uleb128 0x1
+ 516 0239 50       		.byte	0x50
+ 517 023a 01       		.uleb128 0x1
+ 518 023b 31       		.byte	0x31
+ 519 023c 00       		.byte	0
+ 520 023d 0B       		.uleb128 0xb
+ 521 023e 78000000 		.4byte	.LVL10
+ 522 0242 02030000 		.4byte	0x302
+ 523 0246 5F020000 		.4byte	0x25f
+ 524 024a 0C       		.uleb128 0xc
+ 525 024b 01       		.uleb128 0x1
+ 526 024c 53       		.byte	0x53
+ 527 024d 01       		.uleb128 0x1
+ 528 024e 30       		.byte	0x30
+ 529 024f 0C       		.uleb128 0xc
+ 530 0250 01       		.uleb128 0x1
+ 531 0251 52       		.byte	0x52
+ 532 0252 01       		.uleb128 0x1
+ 533 0253 30       		.byte	0x30
+ 534 0254 0C       		.uleb128 0xc
+ 535 0255 01       		.uleb128 0x1
+ 536 0256 51       		.byte	0x51
+ 537 0257 01       		.uleb128 0x1
+ 538 0258 30       		.byte	0x30
+ 539 0259 0C       		.uleb128 0xc
+ 540 025a 01       		.uleb128 0x1
+ 541 025b 50       		.byte	0x50
+ 542 025c 01       		.uleb128 0x1
+ 543 025d 32       		.byte	0x32
+ 544 025e 00       		.byte	0
+ 545 025f 0B       		.uleb128 0xb
+ 546 0260 84000000 		.4byte	.LVL11
+ 547 0264 02030000 		.4byte	0x302
+ 548 0268 81020000 		.4byte	0x281
+ 549 026c 0C       		.uleb128 0xc
+ 550 026d 01       		.uleb128 0x1
+ 551 026e 53       		.byte	0x53
+ 552 026f 01       		.uleb128 0x1
+ 553 0270 30       		.byte	0x30
+ 554 0271 0C       		.uleb128 0xc
+ 555 0272 01       		.uleb128 0x1
+ 556 0273 52       		.byte	0x52
+ 557 0274 01       		.uleb128 0x1
+ 558 0275 31       		.byte	0x31
+ 559 0276 0C       		.uleb128 0xc
+ 560 0277 01       		.uleb128 0x1
+ 561 0278 51       		.byte	0x51
+ 562 0279 01       		.uleb128 0x1
+ 563 027a 30       		.byte	0x30
+ 564 027b 0C       		.uleb128 0xc
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 12
+
+
+ 565 027c 01       		.uleb128 0x1
+ 566 027d 50       		.byte	0x50
+ 567 027e 01       		.uleb128 0x1
+ 568 027f 32       		.byte	0x32
+ 569 0280 00       		.byte	0
+ 570 0281 0B       		.uleb128 0xb
+ 571 0282 90000000 		.4byte	.LVL12
+ 572 0286 02030000 		.4byte	0x302
+ 573 028a A3020000 		.4byte	0x2a3
+ 574 028e 0C       		.uleb128 0xc
+ 575 028f 01       		.uleb128 0x1
+ 576 0290 53       		.byte	0x53
+ 577 0291 01       		.uleb128 0x1
+ 578 0292 30       		.byte	0x30
+ 579 0293 0C       		.uleb128 0xc
+ 580 0294 01       		.uleb128 0x1
+ 581 0295 52       		.byte	0x52
+ 582 0296 01       		.uleb128 0x1
+ 583 0297 30       		.byte	0x30
+ 584 0298 0C       		.uleb128 0xc
+ 585 0299 01       		.uleb128 0x1
+ 586 029a 51       		.byte	0x51
+ 587 029b 01       		.uleb128 0x1
+ 588 029c 31       		.byte	0x31
+ 589 029d 0C       		.uleb128 0xc
+ 590 029e 01       		.uleb128 0x1
+ 591 029f 50       		.byte	0x50
+ 592 02a0 01       		.uleb128 0x1
+ 593 02a1 32       		.byte	0x32
+ 594 02a2 00       		.byte	0
+ 595 02a3 0B       		.uleb128 0xb
+ 596 02a4 9C000000 		.4byte	.LVL13
+ 597 02a8 02030000 		.4byte	0x302
+ 598 02ac C5020000 		.4byte	0x2c5
+ 599 02b0 0C       		.uleb128 0xc
+ 600 02b1 01       		.uleb128 0x1
+ 601 02b2 53       		.byte	0x53
+ 602 02b3 01       		.uleb128 0x1
+ 603 02b4 30       		.byte	0x30
+ 604 02b5 0C       		.uleb128 0xc
+ 605 02b6 01       		.uleb128 0x1
+ 606 02b7 52       		.byte	0x52
+ 607 02b8 01       		.uleb128 0x1
+ 608 02b9 31       		.byte	0x31
+ 609 02ba 0C       		.uleb128 0xc
+ 610 02bb 01       		.uleb128 0x1
+ 611 02bc 51       		.byte	0x51
+ 612 02bd 01       		.uleb128 0x1
+ 613 02be 31       		.byte	0x31
+ 614 02bf 0C       		.uleb128 0xc
+ 615 02c0 01       		.uleb128 0x1
+ 616 02c1 50       		.byte	0x50
+ 617 02c2 01       		.uleb128 0x1
+ 618 02c3 32       		.byte	0x32
+ 619 02c4 00       		.byte	0
+ 620 02c5 0E       		.uleb128 0xe
+ 621 02c6 A2000000 		.4byte	.LVL14
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 13
+
+
+ 622 02ca EA020000 		.4byte	0x2ea
+ 623 02ce 0C       		.uleb128 0xc
+ 624 02cf 01       		.uleb128 0x1
+ 625 02d0 50       		.byte	0x50
+ 626 02d1 05       		.uleb128 0x5
+ 627 02d2 03       		.byte	0x3
+ 628 02d3 24000000 		.4byte	.LC1
+ 629 02d7 00       		.byte	0
+ 630 02d8 00       		.byte	0
+ 631 02d9 0F       		.uleb128 0xf
+ 632 02da CF000000 		.4byte	.LASF28
+ 633 02de 06       		.byte	0x6
+ 634 02df 9606     		.2byte	0x696
+ 635 02e1 E5020000 		.4byte	0x2e5
+ 636 02e5 10       		.uleb128 0x10
+ 637 02e6 76000000 		.4byte	0x76
+ 638 02ea 11       		.uleb128 0x11
+ 639 02eb 08000000 		.4byte	.LASF29
+ 640 02ef 07       		.byte	0x7
+ 641 02f0 17       		.byte	0x17
+ 642 02f1 FB020000 		.4byte	0x2fb
+ 643 02f5 12       		.uleb128 0x12
+ 644 02f6 A9000000 		.4byte	0xa9
+ 645 02fa 00       		.byte	0
+ 646 02fb 13       		.uleb128 0x13
+ 647 02fc E4010000 		.4byte	.LASF30
+ 648 0300 05       		.byte	0x5
+ 649 0301 37       		.byte	0x37
+ 650 0302 14       		.uleb128 0x14
+ 651 0303 DC000000 		.4byte	.LASF31
+ 652 0307 05       		.byte	0x5
+ 653 0308 3A       		.byte	0x3a
+ 654 0309 12       		.uleb128 0x12
+ 655 030a 81000000 		.4byte	0x81
+ 656 030e 12       		.uleb128 0x12
+ 657 030f 81000000 		.4byte	0x81
+ 658 0313 12       		.uleb128 0x12
+ 659 0314 81000000 		.4byte	0x81
+ 660 0318 12       		.uleb128 0x12
+ 661 0319 81000000 		.4byte	0x81
+ 662 031d 00       		.byte	0
+ 663 031e 00       		.byte	0
+ 664              		.section	.debug_abbrev,"",%progbits
+ 665              	.Ldebug_abbrev0:
+ 666 0000 01       		.uleb128 0x1
+ 667 0001 11       		.uleb128 0x11
+ 668 0002 01       		.byte	0x1
+ 669 0003 25       		.uleb128 0x25
+ 670 0004 0E       		.uleb128 0xe
+ 671 0005 13       		.uleb128 0x13
+ 672 0006 0B       		.uleb128 0xb
+ 673 0007 03       		.uleb128 0x3
+ 674 0008 0E       		.uleb128 0xe
+ 675 0009 1B       		.uleb128 0x1b
+ 676 000a 0E       		.uleb128 0xe
+ 677 000b 55       		.uleb128 0x55
+ 678 000c 17       		.uleb128 0x17
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 14
+
+
+ 679 000d 11       		.uleb128 0x11
+ 680 000e 01       		.uleb128 0x1
+ 681 000f 10       		.uleb128 0x10
+ 682 0010 17       		.uleb128 0x17
+ 683 0011 00       		.byte	0
+ 684 0012 00       		.byte	0
+ 685 0013 02       		.uleb128 0x2
+ 686 0014 24       		.uleb128 0x24
+ 687 0015 00       		.byte	0
+ 688 0016 0B       		.uleb128 0xb
+ 689 0017 0B       		.uleb128 0xb
+ 690 0018 3E       		.uleb128 0x3e
+ 691 0019 0B       		.uleb128 0xb
+ 692 001a 03       		.uleb128 0x3
+ 693 001b 0E       		.uleb128 0xe
+ 694 001c 00       		.byte	0
+ 695 001d 00       		.byte	0
+ 696 001e 03       		.uleb128 0x3
+ 697 001f 16       		.uleb128 0x16
+ 698 0020 00       		.byte	0
+ 699 0021 03       		.uleb128 0x3
+ 700 0022 0E       		.uleb128 0xe
+ 701 0023 3A       		.uleb128 0x3a
+ 702 0024 0B       		.uleb128 0xb
+ 703 0025 3B       		.uleb128 0x3b
+ 704 0026 0B       		.uleb128 0xb
+ 705 0027 49       		.uleb128 0x49
+ 706 0028 13       		.uleb128 0x13
+ 707 0029 00       		.byte	0
+ 708 002a 00       		.byte	0
+ 709 002b 04       		.uleb128 0x4
+ 710 002c 24       		.uleb128 0x24
+ 711 002d 00       		.byte	0
+ 712 002e 0B       		.uleb128 0xb
+ 713 002f 0B       		.uleb128 0xb
+ 714 0030 3E       		.uleb128 0x3e
+ 715 0031 0B       		.uleb128 0xb
+ 716 0032 03       		.uleb128 0x3
+ 717 0033 08       		.uleb128 0x8
+ 718 0034 00       		.byte	0
+ 719 0035 00       		.byte	0
+ 720 0036 05       		.uleb128 0x5
+ 721 0037 16       		.uleb128 0x16
+ 722 0038 00       		.byte	0
+ 723 0039 03       		.uleb128 0x3
+ 724 003a 0E       		.uleb128 0xe
+ 725 003b 3A       		.uleb128 0x3a
+ 726 003c 0B       		.uleb128 0xb
+ 727 003d 3B       		.uleb128 0x3b
+ 728 003e 05       		.uleb128 0x5
+ 729 003f 49       		.uleb128 0x49
+ 730 0040 13       		.uleb128 0x13
+ 731 0041 00       		.byte	0
+ 732 0042 00       		.byte	0
+ 733 0043 06       		.uleb128 0x6
+ 734 0044 0F       		.uleb128 0xf
+ 735 0045 00       		.byte	0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 15
+
+
+ 736 0046 0B       		.uleb128 0xb
+ 737 0047 0B       		.uleb128 0xb
+ 738 0048 49       		.uleb128 0x49
+ 739 0049 13       		.uleb128 0x13
+ 740 004a 00       		.byte	0
+ 741 004b 00       		.byte	0
+ 742 004c 07       		.uleb128 0x7
+ 743 004d 04       		.uleb128 0x4
+ 744 004e 01       		.byte	0x1
+ 745 004f 03       		.uleb128 0x3
+ 746 0050 0E       		.uleb128 0xe
+ 747 0051 0B       		.uleb128 0xb
+ 748 0052 0B       		.uleb128 0xb
+ 749 0053 3A       		.uleb128 0x3a
+ 750 0054 0B       		.uleb128 0xb
+ 751 0055 3B       		.uleb128 0x3b
+ 752 0056 0B       		.uleb128 0xb
+ 753 0057 01       		.uleb128 0x1
+ 754 0058 13       		.uleb128 0x13
+ 755 0059 00       		.byte	0
+ 756 005a 00       		.byte	0
+ 757 005b 08       		.uleb128 0x8
+ 758 005c 28       		.uleb128 0x28
+ 759 005d 00       		.byte	0
+ 760 005e 03       		.uleb128 0x3
+ 761 005f 0E       		.uleb128 0xe
+ 762 0060 1C       		.uleb128 0x1c
+ 763 0061 0D       		.uleb128 0xd
+ 764 0062 00       		.byte	0
+ 765 0063 00       		.byte	0
+ 766 0064 09       		.uleb128 0x9
+ 767 0065 2E       		.uleb128 0x2e
+ 768 0066 00       		.byte	0
+ 769 0067 3F       		.uleb128 0x3f
+ 770 0068 19       		.uleb128 0x19
+ 771 0069 03       		.uleb128 0x3
+ 772 006a 0E       		.uleb128 0xe
+ 773 006b 3A       		.uleb128 0x3a
+ 774 006c 0B       		.uleb128 0xb
+ 775 006d 3B       		.uleb128 0x3b
+ 776 006e 0B       		.uleb128 0xb
+ 777 006f 27       		.uleb128 0x27
+ 778 0070 19       		.uleb128 0x19
+ 779 0071 11       		.uleb128 0x11
+ 780 0072 01       		.uleb128 0x1
+ 781 0073 12       		.uleb128 0x12
+ 782 0074 06       		.uleb128 0x6
+ 783 0075 40       		.uleb128 0x40
+ 784 0076 18       		.uleb128 0x18
+ 785 0077 9742     		.uleb128 0x2117
+ 786 0079 19       		.uleb128 0x19
+ 787 007a 00       		.byte	0
+ 788 007b 00       		.byte	0
+ 789 007c 0A       		.uleb128 0xa
+ 790 007d 2E       		.uleb128 0x2e
+ 791 007e 01       		.byte	0x1
+ 792 007f 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 16
+
+
+ 793 0080 19       		.uleb128 0x19
+ 794 0081 03       		.uleb128 0x3
+ 795 0082 0E       		.uleb128 0xe
+ 796 0083 3A       		.uleb128 0x3a
+ 797 0084 0B       		.uleb128 0xb
+ 798 0085 3B       		.uleb128 0x3b
+ 799 0086 0B       		.uleb128 0xb
+ 800 0087 27       		.uleb128 0x27
+ 801 0088 19       		.uleb128 0x19
+ 802 0089 11       		.uleb128 0x11
+ 803 008a 01       		.uleb128 0x1
+ 804 008b 12       		.uleb128 0x12
+ 805 008c 06       		.uleb128 0x6
+ 806 008d 40       		.uleb128 0x40
+ 807 008e 18       		.uleb128 0x18
+ 808 008f 9742     		.uleb128 0x2117
+ 809 0091 19       		.uleb128 0x19
+ 810 0092 01       		.uleb128 0x1
+ 811 0093 13       		.uleb128 0x13
+ 812 0094 00       		.byte	0
+ 813 0095 00       		.byte	0
+ 814 0096 0B       		.uleb128 0xb
+ 815 0097 898201   		.uleb128 0x4109
+ 816 009a 01       		.byte	0x1
+ 817 009b 11       		.uleb128 0x11
+ 818 009c 01       		.uleb128 0x1
+ 819 009d 31       		.uleb128 0x31
+ 820 009e 13       		.uleb128 0x13
+ 821 009f 01       		.uleb128 0x1
+ 822 00a0 13       		.uleb128 0x13
+ 823 00a1 00       		.byte	0
+ 824 00a2 00       		.byte	0
+ 825 00a3 0C       		.uleb128 0xc
+ 826 00a4 8A8201   		.uleb128 0x410a
+ 827 00a7 00       		.byte	0
+ 828 00a8 02       		.uleb128 0x2
+ 829 00a9 18       		.uleb128 0x18
+ 830 00aa 9142     		.uleb128 0x2111
+ 831 00ac 18       		.uleb128 0x18
+ 832 00ad 00       		.byte	0
+ 833 00ae 00       		.byte	0
+ 834 00af 0D       		.uleb128 0xd
+ 835 00b0 898201   		.uleb128 0x4109
+ 836 00b3 00       		.byte	0
+ 837 00b4 11       		.uleb128 0x11
+ 838 00b5 01       		.uleb128 0x1
+ 839 00b6 31       		.uleb128 0x31
+ 840 00b7 13       		.uleb128 0x13
+ 841 00b8 00       		.byte	0
+ 842 00b9 00       		.byte	0
+ 843 00ba 0E       		.uleb128 0xe
+ 844 00bb 898201   		.uleb128 0x4109
+ 845 00be 01       		.byte	0x1
+ 846 00bf 11       		.uleb128 0x11
+ 847 00c0 01       		.uleb128 0x1
+ 848 00c1 31       		.uleb128 0x31
+ 849 00c2 13       		.uleb128 0x13
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 17
+
+
+ 850 00c3 00       		.byte	0
+ 851 00c4 00       		.byte	0
+ 852 00c5 0F       		.uleb128 0xf
+ 853 00c6 34       		.uleb128 0x34
+ 854 00c7 00       		.byte	0
+ 855 00c8 03       		.uleb128 0x3
+ 856 00c9 0E       		.uleb128 0xe
+ 857 00ca 3A       		.uleb128 0x3a
+ 858 00cb 0B       		.uleb128 0xb
+ 859 00cc 3B       		.uleb128 0x3b
+ 860 00cd 05       		.uleb128 0x5
+ 861 00ce 49       		.uleb128 0x49
+ 862 00cf 13       		.uleb128 0x13
+ 863 00d0 3F       		.uleb128 0x3f
+ 864 00d1 19       		.uleb128 0x19
+ 865 00d2 3C       		.uleb128 0x3c
+ 866 00d3 19       		.uleb128 0x19
+ 867 00d4 00       		.byte	0
+ 868 00d5 00       		.byte	0
+ 869 00d6 10       		.uleb128 0x10
+ 870 00d7 35       		.uleb128 0x35
+ 871 00d8 00       		.byte	0
+ 872 00d9 49       		.uleb128 0x49
+ 873 00da 13       		.uleb128 0x13
+ 874 00db 00       		.byte	0
+ 875 00dc 00       		.byte	0
+ 876 00dd 11       		.uleb128 0x11
+ 877 00de 2E       		.uleb128 0x2e
+ 878 00df 01       		.byte	0x1
+ 879 00e0 3F       		.uleb128 0x3f
+ 880 00e1 19       		.uleb128 0x19
+ 881 00e2 03       		.uleb128 0x3
+ 882 00e3 0E       		.uleb128 0xe
+ 883 00e4 3A       		.uleb128 0x3a
+ 884 00e5 0B       		.uleb128 0xb
+ 885 00e6 3B       		.uleb128 0x3b
+ 886 00e7 0B       		.uleb128 0xb
+ 887 00e8 27       		.uleb128 0x27
+ 888 00e9 19       		.uleb128 0x19
+ 889 00ea 3C       		.uleb128 0x3c
+ 890 00eb 19       		.uleb128 0x19
+ 891 00ec 01       		.uleb128 0x1
+ 892 00ed 13       		.uleb128 0x13
+ 893 00ee 00       		.byte	0
+ 894 00ef 00       		.byte	0
+ 895 00f0 12       		.uleb128 0x12
+ 896 00f1 05       		.uleb128 0x5
+ 897 00f2 00       		.byte	0
+ 898 00f3 49       		.uleb128 0x49
+ 899 00f4 13       		.uleb128 0x13
+ 900 00f5 00       		.byte	0
+ 901 00f6 00       		.byte	0
+ 902 00f7 13       		.uleb128 0x13
+ 903 00f8 2E       		.uleb128 0x2e
+ 904 00f9 00       		.byte	0
+ 905 00fa 3F       		.uleb128 0x3f
+ 906 00fb 19       		.uleb128 0x19
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 18
+
+
+ 907 00fc 03       		.uleb128 0x3
+ 908 00fd 0E       		.uleb128 0xe
+ 909 00fe 3A       		.uleb128 0x3a
+ 910 00ff 0B       		.uleb128 0xb
+ 911 0100 3B       		.uleb128 0x3b
+ 912 0101 0B       		.uleb128 0xb
+ 913 0102 27       		.uleb128 0x27
+ 914 0103 19       		.uleb128 0x19
+ 915 0104 3C       		.uleb128 0x3c
+ 916 0105 19       		.uleb128 0x19
+ 917 0106 00       		.byte	0
+ 918 0107 00       		.byte	0
+ 919 0108 14       		.uleb128 0x14
+ 920 0109 2E       		.uleb128 0x2e
+ 921 010a 01       		.byte	0x1
+ 922 010b 3F       		.uleb128 0x3f
+ 923 010c 19       		.uleb128 0x19
+ 924 010d 03       		.uleb128 0x3
+ 925 010e 0E       		.uleb128 0xe
+ 926 010f 3A       		.uleb128 0x3a
+ 927 0110 0B       		.uleb128 0xb
+ 928 0111 3B       		.uleb128 0x3b
+ 929 0112 0B       		.uleb128 0xb
+ 930 0113 27       		.uleb128 0x27
+ 931 0114 19       		.uleb128 0x19
+ 932 0115 3C       		.uleb128 0x3c
+ 933 0116 19       		.uleb128 0x19
+ 934 0117 00       		.byte	0
+ 935 0118 00       		.byte	0
+ 936 0119 00       		.byte	0
+ 937              		.section	.debug_aranges,"",%progbits
+ 938 0000 24000000 		.4byte	0x24
+ 939 0004 0200     		.2byte	0x2
+ 940 0006 00000000 		.4byte	.Ldebug_info0
+ 941 000a 04       		.byte	0x4
+ 942 000b 00       		.byte	0
+ 943 000c 0000     		.2byte	0
+ 944 000e 0000     		.2byte	0
+ 945 0010 00000000 		.4byte	.LFB63
+ 946 0014 02000000 		.4byte	.LFE63-.LFB63
+ 947 0018 00000000 		.4byte	.LFB64
+ 948 001c AC000000 		.4byte	.LFE64-.LFB64
+ 949 0020 00000000 		.4byte	0
+ 950 0024 00000000 		.4byte	0
+ 951              		.section	.debug_ranges,"",%progbits
+ 952              	.Ldebug_ranges0:
+ 953 0000 00000000 		.4byte	.LFB63
+ 954 0004 02000000 		.4byte	.LFE63
+ 955 0008 00000000 		.4byte	.LFB64
+ 956 000c AC000000 		.4byte	.LFE64
+ 957 0010 00000000 		.4byte	0
+ 958 0014 00000000 		.4byte	0
+ 959              		.section	.debug_line,"",%progbits
+ 960              	.Ldebug_line0:
+ 961 0000 A0010000 		.section	.debug_str,"MS",%progbits,1
+ 961      02006C01 
+ 961      00000201 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 19
+
+
+ 961      FB0E0D00 
+ 961      01010101 
+ 962              	.LASF20:
+ 963 0000 4D435043 		.ascii	"MCPCHIP\000"
+ 963      48495000 
+ 964              	.LASF29:
+ 965 0008 77726974 		.ascii	"writeLine\000"
+ 965      654C696E 
+ 965      6500
+ 966              	.LASF9:
+ 967 0012 5F5F696E 		.ascii	"__int32_t\000"
+ 967      7433325F 
+ 967      7400
+ 968              	.LASF16:
+ 969 001c 42524433 		.ascii	"BRD3\000"
+ 969      00
+ 970              	.LASF17:
+ 971 0021 42524434 		.ascii	"BRD4\000"
+ 971      00
+ 972              	.LASF18:
+ 973 0026 42524435 		.ascii	"BRD5\000"
+ 973      00
+ 974              	.LASF24:
+ 975 002b 54657374 		.ascii	"TestCard.c\000"
+ 975      43617264 
+ 975      2E6300
+ 976              	.LASF25:
+ 977 0036 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
+ 977      73657273 
+ 977      5C444769 
+ 977      6C6C696C 
+ 977      616E645C 
+ 978 0063 532D5053 		.ascii	"S-PSOC5\\Projects\\ODAS-PSOC5-I2CIO8-Serial-02.cyds"
+ 978      4F43355C 
+ 978      50726F6A 
+ 978      65637473 
+ 978      5C4F4441 
+ 979 0094 6E00     		.ascii	"n\000"
+ 980              	.LASF12:
+ 981 0096 666C6F61 		.ascii	"float\000"
+ 981      7400
+ 982              	.LASF1:
+ 983 009c 756E7369 		.ascii	"unsigned char\000"
+ 983      676E6564 
+ 983      20636861 
+ 983      7200
+ 984              	.LASF5:
+ 985 00aa 6C6F6E67 		.ascii	"long unsigned int\000"
+ 985      20756E73 
+ 985      69676E65 
+ 985      6420696E 
+ 985      7400
+ 986              	.LASF3:
+ 987 00bc 73686F72 		.ascii	"short unsigned int\000"
+ 987      7420756E 
+ 987      7369676E 
+ 987      65642069 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 20
+
+
+ 987      6E7400
+ 988              	.LASF28:
+ 989 00cf 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 989      52784275 
+ 989      66666572 
+ 989      00
+ 990              	.LASF31:
+ 991 00dc 77726974 		.ascii	"writeRegisterDIGIO32Card\000"
+ 991      65526567 
+ 991      69737465 
+ 991      72444947 
+ 991      494F3332 
+ 992              	.LASF13:
+ 993 00f5 646F7562 		.ascii	"double\000"
+ 993      6C6500
+ 994              	.LASF27:
+ 995 00fc 696E6974 		.ascii	"initGPIOPins\000"
+ 995      4750494F 
+ 995      50696E73 
+ 995      00
+ 996              	.LASF8:
+ 997 0109 756E7369 		.ascii	"unsigned int\000"
+ 997      676E6564 
+ 997      20696E74 
+ 997      00
+ 998              	.LASF7:
+ 999 0116 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 999      206C6F6E 
+ 999      6720756E 
+ 999      7369676E 
+ 999      65642069 
+ 1000              	.LASF23:
+ 1001 012d 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1001      4320342E 
+ 1001      392E3320 
+ 1001      32303135 
+ 1001      30333033 
+ 1002 0160 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1002      20726576 
+ 1002      6973696F 
+ 1002      6E203232 
+ 1002      31323230 
+ 1003 0193 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1003      66756E63 
+ 1003      74696F6E 
+ 1003      2D736563 
+ 1003      74696F6E 
+ 1004              	.LASF19:
+ 1005 01bb 44494749 		.ascii	"DIGIOCARD\000"
+ 1005      4F434152 
+ 1005      4400
+ 1006              	.LASF10:
+ 1007 01c5 696E7433 		.ascii	"int32_t\000"
+ 1007      325F7400 
+ 1008              	.LASF15:
+ 1009 01cd 73697A65 		.ascii	"sizetype\000"
+ 1009      74797065 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccpuz5Sw.s 			page 21
+
+
+ 1009      00
+ 1010              	.LASF6:
+ 1011 01d6 6C6F6E67 		.ascii	"long long int\000"
+ 1011      206C6F6E 
+ 1011      6720696E 
+ 1011      7400
+ 1012              	.LASF30:
+ 1013 01e4 696E6974 		.ascii	"initDIGIO32Cards\000"
+ 1013      44494749 
+ 1013      4F333243 
+ 1013      61726473 
+ 1013      00
+ 1014              	.LASF14:
+ 1015 01f5 63686172 		.ascii	"char\000"
+ 1015      00
+ 1016              	.LASF22:
+ 1017 01fa 4D435043 		.ascii	"MCPCHIP1\000"
+ 1017      48495031 
+ 1017      00
+ 1018              	.LASF2:
+ 1019 0203 73686F72 		.ascii	"short int\000"
+ 1019      7420696E 
+ 1019      7400
+ 1020              	.LASF11:
+ 1021 020d 75696E74 		.ascii	"uint8\000"
+ 1021      3800
+ 1022              	.LASF21:
+ 1023 0213 4D435043 		.ascii	"MCPCHIP0\000"
+ 1023      48495030 
+ 1023      00
+ 1024              	.LASF4:
+ 1025 021c 6C6F6E67 		.ascii	"long int\000"
+ 1025      20696E74 
+ 1025      00
+ 1026              	.LASF26:
+ 1027 0225 74657374 		.ascii	"testCard\000"
+ 1027      43617264 
+ 1027      00
+ 1028              	.LASF0:
+ 1029 022e 7369676E 		.ascii	"signed char\000"
+ 1029      65642063 
+ 1029      68617200 
+ 1030              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
