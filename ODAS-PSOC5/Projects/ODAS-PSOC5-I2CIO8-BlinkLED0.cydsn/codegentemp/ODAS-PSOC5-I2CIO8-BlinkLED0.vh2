@@ -2,7 +2,7 @@
 --	Conversion of ODAS-PSOC5-I2CIO8-BlinkLED0.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon May 08 16:01:49 2017
+--	Wed May 17 13:52:22 2017
 --
 
 USE cypress.cypress.all;

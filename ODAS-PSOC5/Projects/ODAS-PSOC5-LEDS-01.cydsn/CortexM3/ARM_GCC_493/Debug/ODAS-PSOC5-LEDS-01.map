@@ -693,7 +693,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x34b1
+.debug_info     0x00000000     0x34b4
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000       0xc4 .\CortexM3\ARM_GCC_493\Debug\main.o
  .debug_info    0x000000c4      0x13b .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
@@ -701,9 +701,9 @@ END GROUP
  .debug_info    0x000005b2      0x58f .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(cyfitter_cfg.o)
  .debug_info    0x00000b41     0x1385 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(CyLib.o)
  .debug_info    0x00001ec6      0xa57 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(cyPm.o)
- .debug_info    0x0000291d       0xa2 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(CyBootAsmGnu.o)
- .debug_info    0x000029bf      0x608 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(CyFlash.o)
- .debug_info    0x00002fc7      0x4ea .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(CySpc.o)
+ .debug_info    0x0000291d       0xa5 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(CyBootAsmGnu.o)
+ .debug_info    0x000029c2      0x608 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(CyFlash.o)
+ .debug_info    0x00002fca      0x4ea .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(CySpc.o)
 
 .debug_abbrev   0x00000000      0xd0e
  *(.debug_abbrev)
@@ -744,24 +744,24 @@ END GROUP
  .debug_frame   0x00000e34       0x28 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
  .debug_frame   0x00000e5c       0x20 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x12a0
+.debug_str      0x00000000     0x12a3
  *(.debug_str)
- .debug_str     0x00000000      0x16b .\CortexM3\ARM_GCC_493\Debug\main.o
-                                0x1ac (size before relaxing)
- .debug_str     0x0000016b       0x7b .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
-                                0x1fc (size before relaxing)
- .debug_str     0x000001e6      0x16a .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                                0x310 (size before relaxing)
- .debug_str     0x00000350      0x15b .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(cyfitter_cfg.o)
-                                0x315 (size before relaxing)
- .debug_str     0x000004ab      0x854 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(CyLib.o)
-                                0xa4d (size before relaxing)
- .debug_str     0x00000cff      0x359 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(cyPm.o)
-                                0x72d (size before relaxing)
- .debug_str     0x00001058      0x19c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(CyFlash.o)
-                                0x3a7 (size before relaxing)
- .debug_str     0x000011f4       0xac .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(CySpc.o)
-                                0x330 (size before relaxing)
+ .debug_str     0x00000000      0x16e .\CortexM3\ARM_GCC_493\Debug\main.o
+                                0x1af (size before relaxing)
+ .debug_str     0x0000016e       0x7b .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                                0x1ff (size before relaxing)
+ .debug_str     0x000001e9      0x16a .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                                0x313 (size before relaxing)
+ .debug_str     0x00000353      0x15b .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(cyfitter_cfg.o)
+                                0x318 (size before relaxing)
+ .debug_str     0x000004ae      0x854 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(CyLib.o)
+                                0xa50 (size before relaxing)
+ .debug_str     0x00000d02      0x359 .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(cyPm.o)
+                                0x730 (size before relaxing)
+ .debug_str     0x0000105b      0x19c .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(CyFlash.o)
+                                0x3aa (size before relaxing)
+ .debug_str     0x000011f7       0xac .\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.a(CySpc.o)
+                                0x333 (size before relaxing)
 
 .debug_loc      0x00000000     0x1876
  *(.debug_loc)

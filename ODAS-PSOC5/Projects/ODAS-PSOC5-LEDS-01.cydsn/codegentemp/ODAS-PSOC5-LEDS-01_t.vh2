@@ -1,6 +1,6 @@
--- Project:   C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj
--- Generated: 05/02/2017 19:13:27
--- PSoC Creator  4.0 Update 1
+-- Project:   C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj
+-- Generated: 05/17/2017 13:58:53
+-- PSoC Creator  4.0
 
 ENTITY \ODAS-PSOC5-LEDS-01\ IS
     PORT(
