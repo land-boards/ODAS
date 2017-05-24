@@ -16,11 +16,12 @@
 #include <project.h>
 
 #define MCP23017BASE            0x20
-#define NUMBER_OF_DIGIO32_CARDS 3
+#define NUMBER_OF_DIGIO32_CARDS 4
     
-enum DIGIOCARD {BRD3, BRD4, BRD5};
+enum DIGIOCARD {BRD6, BRD7, BRD8, BRD9};
 enum MCPCHIP {MCPCHIP0, MCPCHIP1};
 enum ABPORT {APORT, BPORT};
+enum PINMODE {OUTPUT_MODE,INPUT_MODE};
  
 #define MCP23017_IODIRA_REGADR   0x00
 #define MCP23017_IODIRB_REGADR   0x01
@@ -52,16 +53,21 @@ enum ABPORT {APORT, BPORT};
 #define MCP23017_IOCON_DEFVAL    0x00       // Disable sequential,  active-low
 #define MCP23017_GPPU_DEFVAL     0xf0
 
-void initDIGIO32Cards();
-void setDIGIO32InOut(uint8, uint8, uint8, uint8);
+void initDIGIO32_4xCards();
+
+// Arduino-ish functions
+void digitalWrite_4xDIGIO32Cards(uint8, uint8);
+uint8 digitalRead_4xDIGIO32Cards(uint8);
+void pinMode_4xDIGIO32Cards(uint8 bit, uint8 val);
+
+// Byte control/access functions
+void pinModeByByte_4xDIGIO32Cards(uint8, uint8, uint8, uint8);
+uint8 readByteDIGIO32Card(uint8, uint8, uint8);
+uint8 readOLATByteDIGIO32Card(uint8, uint8, uint8);
+void writeByteDIGIO32Card(uint8, uint8, uint8, uint8);
+
+// I2C Low Level Hardware access functions
 uint8 readRegisterDIGIO32Card(uint8, uint8, uint8);
 void writeRegisterDIGIO32Card(uint8, uint8, uint8, uint8);
-uint8 readDIGIO32Card(uint8, uint8, uint8);
-void writeDIGIO32Card(uint8, uint8, uint8, uint8);
-void bounceDIGIOLines();
-void digitalWriteDIGIO32Card(uint8, uint8);
-
-
-/* [] END OF FILE */
 
 #endif

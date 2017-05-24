@@ -1,40 +1,54 @@
 /* ========================================
- * DIGIO8Driver.c
- * Copyright Land Boards, LLC, 2017
+ * DIGIO32Driver.c
+ * Copyright COMPANY, 2017
  * All Rights Reserved
  * UNPUBLISHED, LICENSED SOFTWARE.
  *
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF Land Boards.
+ * WHICH IS THE PROPERTY OF COMPANY.
+ *
+ * Driver for four DIGO32-I2C Cards.
+ *  http://land-boards.com/blwiki/index.php?title=DIGIO32-I2C
+ *
+ * File has four types of functions:
+ *      Arduino-ish (bit) oriented
+ *      Byte oriented
+ *      All (4) DIGIO32 Cards oriented
+ *      I2C Low Level Driver oriented
  *
  * ========================================
 */
 
 #include <project.h>
 #include "DIGIO32Driver.h"
-#include "SerialIO.h"
+#include "serialIO.h"
 #include "stringConvs.h"
+#include "debugOutput.h"
 
 #define VERBOSEMODE
+//#undef VERBOSEMODE
 
 uint8 myWrBuffer[2];
 
 //////////////////////////////////////////////////////////////////////////////
-// initDIGIO32Cards(void) - 
+// initDIGIO32_4xCards(void) - Initializes the registers on the DIGIO32 card.
+// Can be called before and after a test.
+// Directly accesses the bits in the cards.
 //////////////////////////////////////////////////////////////////////////////
 
-void initDIGIO32Cards(void)
+void initDIGIO32_4xCards(void)
 {
     uint8 card;
     uint8 chip;
 #ifdef VERBOSEMODE
-    writeLine("initDIGIO32Cards() - reached function");
+//    printLine("initDIGIO32_4xCards() - reached function");
 #endif
-    I2C_Start();    // Kick off the I2C interface
     for (card=0; card < NUMBER_OF_DIGIO32_CARDS; card++)
     {
         for (chip=0; chip < 2; chip++)      // Two MCP23017 chips per card
         {
+//            debugPrintStringLong("Initializing card: ",card);
+//            debugPrintStringLong("Initializing chip: ",chip);
             writeRegisterDIGIO32Card(card,chip,MCP23017_IOCONA_REGADR,MCP23017_IOCON_DEFVAL);
             writeRegisterDIGIO32Card(card,chip,MCP23017_IOCONB_REGADR,MCP23017_IOCON_DEFVAL);
             writeRegisterDIGIO32Card(card,chip,MCP23017_IODIRA_REGADR,MCP23017_IODIR_DEFVAL);
@@ -49,79 +63,12 @@ void initDIGIO32Cards(void)
             readRegisterDIGIO32Card(card,chip,MCP23017_INTCAPB_REGADR);
         }
     }
-#ifdef VERBOSEMODE
-    writeLine("initDIGIO32Cards() - exiting function");
-#endif
+printLine("Initialized the DIGIO32 Cards");
 }
 
 //////////////////////////////////////////////////////////////////////////////
-// void bounceDIGIOLines(void) - Bounce a one across all 128 digital outputs.
-//////////////////////////////////////////////////////////////////////////////
-
-#define BOUNCEDELAY 100
-
-void bounceDIGIOLines(void)
-{
-    uint8_t card;
-    uint32_t bit;
-#ifdef VERBOSEMODE
-    writeLine("bounceDIGIOLines() - reached function");
-#endif
-    initDIGIO32Cards();
-    for (card = 0; card < 4; card++)
-    {
-        writeRegisterDIGIO32Card(card,0,MCP23017_IODIRA_REGADR,0x00);
-        writeRegisterDIGIO32Card(card,0,MCP23017_IODIRB_REGADR,0x00);
-        writeRegisterDIGIO32Card(card,1,MCP23017_IODIRA_REGADR,0x00);
-        writeRegisterDIGIO32Card(card,1,MCP23017_IODIRB_REGADR,0x00);
-    }
-//        for (bit = 0; bit < 8; bit++)
-//        {
-//            writeDIGIO32Card(card,MCPCHIP0,APORT,1<<bit);
-//            CyDelay(BOUNCEDELAY);
-//            writeDIGIO32Card(card,MCPCHIP0,APORT,0x00);
-//        }
-//        for (bit = 0; bit < 8; bit++)
-//        {
-//            writeDIGIO32Card(card,MCPCHIP0,BPORT,1<<bit);
-//            CyDelay(BOUNCEDELAY);
-//            writeDIGIO32Card(card,MCPCHIP0,BPORT,0x00);
-//        }
-//        for (bit = 0; bit < 8; bit++)
-//        {
-//            writeDIGIO32Card(card,MCPCHIP1,APORT,1<<bit);
-//            CyDelay(BOUNCEDELAY);
-//            writeDIGIO32Card(card,MCPCHIP1,APORT,0x00);
-//        }
-//        for (bit = 0; bit < 8; bit++)
-//        {
-//            writeDIGIO32Card(card,MCPCHIP1,BPORT,1<<bit);
-//            CyDelay(BOUNCEDELAY);
-//            writeDIGIO32Card(card,MCPCHIP1,BPORT,0x00);
-//        }
-    
-    for (bit = 0; bit < 128; bit++)
-    {
-        digitalWriteDIGIO32Card(bit,1);
-        CyDelay(BOUNCEDELAY);
-        digitalWriteDIGIO32Card(bit,0);
-    }
-    for (card = 0; card < 4; card++)
-    {
-        writeRegisterDIGIO32Card(card,0,MCP23017_IODIRA_REGADR,MCP23017_IODIR_DEFVAL);
-        writeRegisterDIGIO32Card(card,0,MCP23017_IODIRB_REGADR,MCP23017_IODIR_DEFVAL);
-        writeRegisterDIGIO32Card(card,1,MCP23017_IODIRA_REGADR,MCP23017_IODIR_DEFVAL);
-        writeRegisterDIGIO32Card(card,1,MCP23017_IODIRB_REGADR,MCP23017_IODIR_DEFVAL);
-    }
-
-    
-#ifdef VERBOSEMODE
-    writeLine("bounceDIGIOLines() - exiting function");
-#endif
-}
-
-//////////////////////////////////////////////////////////////////////////////
-// void digitalWriteDIGIO32Card(uint8 bit, uint8 val) - write to a bit
+// void pinMode_4xDIGIO32Cards(bit, mode) - Set a bit to INPUT or OUTPUT
+// Arduino-style function.
 // bit is 0-127 (128 bits total),
 // bit 0BBCHPPP
 //  0 = ZERO
@@ -129,36 +76,119 @@ void bounceDIGIOLines(void)
 //  C = Chip (0,1)
 //  H = Half of chip
 //  PPP = Bit choice
-// val is 0,1
+// val is OUTPUT_MODE,INPUT_MODE
+// Uses readRegisterDIGIO32Card and writeRegisterDIGIO32Card functions to access the cards.
 //////////////////////////////////////////////////////////////////////////////
 
-void digitalWriteDIGIO32Card(uint8 bit, uint8 val)
+void pinMode_4xDIGIO32Cards(uint8 bit, uint8 val)
+{
+    uint8_t board;
+    uint8_t chip;
+    uint8_t abVal;
+    uint8_t changeBit;
+    uint8_t regVal;
+    board = (bit>>5) & 0x03;
+    chip  = (bit>>4) & 0x01;
+    abVal = (bit>>3) & 0x01;
+    changeBit = 1 << (bit & 0x7);
+//    debugPrintStringLong("pinMode_4xDIGIO32Cards(): board value is: ",board);
+//    debugPrintStringLong("pinMode_4xDIGIO32Cards(): chip value is: ",chip);
+//    debugPrintStringLong("pinMode_4xDIGIO32Cards(): abVal value is: ",abVal);
+//    debugPrintStringLong("pinMode_4xDIGIO32Cards(): changeBit value is: ",changeBit);
+    if (abVal == 0)
+    {
+        regVal = readRegisterDIGIO32Card(board, chip, MCP23017_IODIRA_REGADR);
+//        debugPrintStringLong("pinMode_4xDIGIO32Cards(): MCP23017_IODIRA_REGADR (before) is: ", (uint32) regVal);
+        if (val == OUTPUT_MODE)
+            regVal &= ~changeBit;
+        else    // INPUT_MODE
+            regVal |= changeBit;
+//        debugPrintStringLong("pinMode_4xDIGIO32Cards(): MCP23017_IODIRA_REGADR (after) is: ", (uint32) regVal);
+        writeRegisterDIGIO32Card(board, chip, MCP23017_IODIRA_REGADR, regVal);
+    }
+    else
+    {
+        regVal = readRegisterDIGIO32Card(board, chip, MCP23017_IODIRB_REGADR);
+//        debugPrintStringLong("pinMode_4xDIGIO32Cards(): MCP23017_IODIRB_REGADR is: ", (uint32) regVal);
+        if (val == OUTPUT_MODE)
+            regVal &= ~changeBit;
+        else    // INPUT_MODE
+            regVal |= changeBit;
+//        debugPrintStringLong("pinMode_4xDIGIO32Cards(): MCP23017_IODIRB_REGADR (after) is: ", (uint32) regVal);
+        writeRegisterDIGIO32Card(board, chip, MCP23017_IODIRB_REGADR, regVal);
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// void digitalWrite_4xDIGIO32Cards(uint8 bit, uint8 val) - write val to a single bit
+// Arduino-style function.
+// bit is 0-127 (128 bits total)
+// bit 0BBCHPPP
+//  0 = ZERO
+//  BB = Board (0-3)
+//  C = Chip (0,1)
+//  H = Half of chip
+//  PPP = Bit choice
+// val is 0,1
+// Uses readOLATByteDIGIO32Card and writeByteDIGIO32Card functions to access the cards.
+//////////////////////////////////////////////////////////////////////////////
+
+void digitalWrite_4xDIGIO32Cards(uint8 bit, uint8 val)
 {
     uint8_t board;
     uint8_t chip;
     uint8_t abVal;
     uint8_t port;
+    uint8_t rVal;
     board = (bit>>5) & 0x03;
     chip = (bit>>4) & 0x01;
     abVal = (bit>>3) & 0x01;
     port = bit & 0x7;
-    writeDIGIO32Card(board,chip,abVal,val<<port);
+//    debugPrintStringLong("digitalWrite_4xDIGIO32Cards(): board value is: ",board);
+//    debugPrintStringLong("digitalWrite_4xDIGIO32Cards(): chip value is: ",chip);
+//    debugPrintStringLong("digitalWrite_4xDIGIO32Cards(): abVal value is: ",abVal);
+//    debugPrintStringLong("digitalWrite_4xDIGIO32Cards(): port value is: ",port);
+    rVal = readOLATByteDIGIO32Card(board,chip,abVal);
+//    debugPrintStringLong("digitalWrite_4xDIGIO32Cards(): rVal (before) value is: ",rVal);
+    if (val == 0)
+        rVal &= ~(1<<port);
+    else
+        rVal |= (1<<port);
+//    debugPrintStringLong("digitalWrite_4xDIGIO32Cards(): rVal (after) value is: ",rVal);
+    writeByteDIGIO32Card(board,chip,abVal,rVal);
 }
 
 //////////////////////////////////////////////////////////////////////////////
-// void readDigitalDIGIO32Card(uint8 bit)
+// void digitalRead_4xDIGIO32Cards(uint8 bit) - returns back a single bit
+// Arduino-style function.
+// Uses readByteDIGIO32Card functions to access the cards.
 //////////////////////////////////////////////////////////////////////////////
 
-uint8_t readDigitalDIGIO32Card(uint8 bit)
+uint8_t digitalRead_4xDIGIO32Cards(uint8 bit)
 {
-    return (0);
+    uint8_t board;
+    uint8_t chip;
+    uint8_t abVal;
+    uint8_t port;
+    uint8_t readVal;
+    board = (bit>>5) & 0x03;
+    chip = (bit>>4) & 0x01;
+    abVal = (bit>>3) & 0x01;
+    readVal = readByteDIGIO32Card(board, chip, abVal);
+    port = bit & 0x7;
+    return((readVal >> port)&0x1);
 }
 
 //////////////////////////////////////////////////////////////////////////////
-// void setDIGIO32InOut(uint8 card, uint8 chip, uint8 a0b1, uint8 polarity) - 
+// void pinModeByByte_4xDIGIO32Cards(uint8 card, uint8 chip, uint8 a0b1, uint8 polarity) - 
+// Set an entire 8 bit port to read/write
+// card = 0-3
+// chip = 0,1
+// a0b1 = 0,1
+// polarity = OUTPUT_MODE,INPUT_MODE
 //////////////////////////////////////////////////////////////////////////////
 
-void setDIGIO32InOut(uint8 card, uint8 chip, uint8 a0b1, uint8 polarity)
+void pinModeByByte_4xDIGIO32Cards(uint8 card, uint8 chip, uint8 a0b1, uint8 polarity)
 {
     if (a0b1 == APORT)
         writeRegisterDIGIO32Card(card, chip, MCP23017_IODIRA_REGADR, polarity);
@@ -167,7 +197,49 @@ void setDIGIO32InOut(uint8 card, uint8 chip, uint8 a0b1, uint8 polarity)
 }
 
 //////////////////////////////////////////////////////////////////////////////
-// uint8 readRegisterDIGIO32Card(ctrlAdr) - 
+// uint8 readByteDIGIO32Card(uint8 card, uint8 chip, uint8 a0b1)
+//////////////////////////////////////////////////////////////////////////////
+
+uint8 readByteDIGIO32Card(uint8 card, uint8 chip, uint8 a0b1)
+{
+    uint8 rdBuff;
+    if (a0b1 ==0)
+        rdBuff = readRegisterDIGIO32Card(card,chip,MCP23017_GPIOA_REGADR);
+    else
+        rdBuff = readRegisterDIGIO32Card(card,chip,MCP23017_GPIOB_REGADR);
+    return rdBuff;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// uint8 readOLATByteDIGIO32Card(uint8 card, uint8 chip, uint8 a0b1)
+//////////////////////////////////////////////////////////////////////////////
+
+uint8 readOLATByteDIGIO32Card(uint8 card, uint8 chip, uint8 a0b1)
+{
+    uint8 rdBuff;
+    if (a0b1 ==0)
+        rdBuff = readRegisterDIGIO32Card(card,chip,MCP23017_OLATA_REGADR);
+    else
+        rdBuff = readRegisterDIGIO32Card(card,chip,MCP23017_OLATB_REGADR);
+    return rdBuff;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// void writeByteDIGIO32Card(uint8 card, uint8 chip, uint8 a0b1, uint8 outData)
+//////////////////////////////////////////////////////////////////////////////
+
+void writeByteDIGIO32Card(uint8 card, uint8 chip, uint8 a0b1, uint8 outData)
+{
+    if (a0b1 ==0)
+         writeRegisterDIGIO32Card(card,chip,MCP23017_OLATA_REGADR,outData);
+    else
+         writeRegisterDIGIO32Card(card,chip,MCP23017_OLATB_REGADR,outData);
+}
+
+//////////////// Chip Level Register Access Functions ////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////
+// uint8 readRegisterDIGIO32Card(ctrlAdr) - Reads 8-bit port from a MCP23017
 //////////////////////////////////////////////////////////////////////////////
 
 uint8 readRegisterDIGIO32Card(uint8 card, uint8 chip, uint8 ctrlAdr)
@@ -188,7 +260,7 @@ uint8 readRegisterDIGIO32Card(uint8 card, uint8 chip, uint8 ctrlAdr)
 }
 
 //////////////////////////////////////////////////////////////////////////////
-// writeRegisterDIGIO32Card(ctrlAdr, ctrlVal) - 
+// void writeRegisterDIGIO32Card(uint8 card, uint8 chip, uint8 ctrlAdr, uint8 ctrlVal)
 //////////////////////////////////////////////////////////////////////////////
 
 void writeRegisterDIGIO32Card(uint8 card, uint8 chip, uint8 ctrlAdr, uint8 ctrlVal)
@@ -202,31 +274,5 @@ void writeRegisterDIGIO32Card(uint8 card, uint8 chip, uint8 ctrlAdr, uint8 ctrlV
     I2C_MasterClearStatus();
 }
 
-//////////////////////////////////////////////////////////////////////////////
-// readDIGIO32Card(void)
-//////////////////////////////////////////////////////////////////////////////
-
-uint8 readDIGIO32Card(uint8 card, uint8 chip, uint8 a0b1)
-{
-    uint8 rdBuff;
-    if (a0b1 ==0)
-        rdBuff = readRegisterDIGIO32Card(card,chip,MCP23017_GPIOA_REGADR);
-    else
-        rdBuff = readRegisterDIGIO32Card(card,chip,MCP23017_GPIOB_REGADR);
-    return rdBuff>>4;
-}
-
-//////////////////////////////////////////////////////////////////////////////
-// writeDIGIO32Card(uint8_t outData) - 
-//////////////////////////////////////////////////////////////////////////////
-
-void writeDIGIO32Card(uint8 card, uint8 chip, uint8 a0b1, uint8 outData)
-{
-    if (a0b1 ==0)
-         writeRegisterDIGIO32Card(card,chip,MCP23017_OLATA_REGADR,outData);
-    else
-         writeRegisterDIGIO32Card(card,chip,MCP23017_OLATB_REGADR,outData);
-}
-
-
 /* [] END OF FILE */
+
