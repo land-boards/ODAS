@@ -18,7 +18,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot">
 <ExpandedNodeIds>
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000</v>
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3</v>
@@ -50,7 +50,6 @@
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\Control_Reg_1\Control_Reg_1.c</v>
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\Control_Reg_1\Control_Reg_1.h</v>
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\Control_Reg_1\Control_Reg_1_PM.c</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot</v>
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\Cm3RealView.scat</v>
@@ -77,7 +76,6 @@
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\CySpc.h</v>
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\cytypes.h</v>
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\cyutils.c</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\I2C</v>
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\I2C\I2C.c</v>
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\I2C\I2C.h</v>
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\I2C\I2C_BOOT.c</v>
@@ -272,26 +270,21 @@
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\Control_Reg_1\Control_Reg_1.h</v>
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\Control_Reg_1\Control_Reg_1_PM.c</v>
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\Cm3RealView.scat</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\cmsis_armcc.h</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\cmsis_gcc.h</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\core_cm3.h</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\core_cm3_psoc5.h</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\core_cmFunc.h</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\core_cmInstr.h</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\CyBootAsmGnu.s</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\CyBootAsmIar.s</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\CyBootAsmRv.s</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\CyDmac.c</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\CyDmac.h</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\CyFlash.c</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\CyFlash.h</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\CyLib.c</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\CyLib.h</v>
-<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\cy_boot\cypins.h</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\I2C</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\LED</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\LED\LED.c</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\LED\LED.h</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\LED\LED_aliases.h</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\P1_05</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\P1_05\P1_05.c</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\P1_05\P1_05.h</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\P1_05\P1_05_aliases.h</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\P1_06</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\P1_06\P1_06.c</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\P1_06\P1_06.h</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\P1_06\P1_06_aliases.h</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\P1_07</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\Generated_Source\PSoC5\P1_07\P1_07.c</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -381,7 +374,54 @@
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\ODAS-PSOC5-I2CIO8-BlinkLED3.rpt</v>
 <v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\ODAS-PSOC5-I2CIO8-BlinkLED3_timing.html</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\Control_Reg_1.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\Control_Reg_1_PM.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\DIGIO8Driver.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_BOOT.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_INT.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_MASTER.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_PM.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_SLAVE.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\LED.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_05.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_06.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_07.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_08.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_09.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_10.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_11.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_12.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_13.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_14.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_15.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_16.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_17.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_18.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_19.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_20.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_21.lst</v>
+<v>ODAS-PSOC5-I2CIO8-BlinkLED3-000\ODAS-PSOC5-I2CIO8-BlinkLED3\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_22.lst</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
 <TreeKeysV2>
@@ -438,6 +478,8 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\main.c" />
+<name v=".\TopDesign\TopDesign.cysch" />
+<name v=".\Generated_Source\PSoC5\LED.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -445,7 +487,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1360, 734" SelectedTabbedMdiWindow="3b9a51cc-e58d-4f64-979a-25b572d8a925"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="792862a2-9bce-4dd6-a525-4a635666889f" /><DocumentWindow Key="0e4c4f20-7e24-4a8d-bd9e-098dd28f40fc" Guid="3b9a51cc-e58d-4f64-979a-25b572d8a925" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1207, 701" SelectedTabbedMdiWindow="7245d9a8-cfba-48f8-9d65-388879463c0d"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="792862a2-9bce-4dd6-a525-4a635666889f" /><DocumentWindow Key="c3c7eba8-0af7-4ca8-b849-85bd42a29727" Guid="73baf11c-1907-4dc4-8bcb-94fd7132ab5a" /><DocumentWindow Key="ac152149-edce-487d-8565-fc1d33a1852b" Guid="15d255d5-c8ff-4891-8470-2c041be8abf8" /><DocumentWindow Key="a87557bb-6206-423c-8dbf-6f0add9cff82" Guid="7245d9a8-cfba-48f8-9d65-388879463c0d" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
