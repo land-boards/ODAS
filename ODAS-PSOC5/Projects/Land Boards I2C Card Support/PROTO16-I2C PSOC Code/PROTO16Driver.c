@@ -1,11 +1,11 @@
 /* ========================================
  * PROTO16Driver.c
- * Copyright COMPANY, 2017
+ * Copyright Land Boards, LLC, 2017
  * All Rights Reserved
  * UNPUBLISHED, LICENSED SOFTWARE.
  *
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF COMPANY.
+ * WHICH IS THE PROPERTY OF Land Boards, LLC.
  *
  * Driver for three DIGO32-I2C Cards.
  *  http://land-boards.com/blwiki/index.php?title=PROTO16-I2C

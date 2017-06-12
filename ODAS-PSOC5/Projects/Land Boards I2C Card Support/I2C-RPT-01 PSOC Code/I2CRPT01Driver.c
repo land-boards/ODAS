@@ -1,11 +1,11 @@
 /* ========================================
  * I2CRPT01Driver.c
- * Copyright AAC, LLC, 2017
+ * Copyright Land Boards, LLC, 2017
  * All Rights Reserved
  * UNPUBLISHED, LICENSED SOFTWARE.
  *
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF AAC.
+ * WHICH IS THE PROPERTY OF Land Boards, LLC.
  *
  * http://land-boards.com/blwiki/index.php?title=I2C-RPT
  *
