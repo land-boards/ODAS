@@ -1,5 +1,5 @@
-#if !defined(DIGIO32DRIVER_H)
-#define DIGIO32DRIVER_H
+#if !defined(MCP23017_H)
+#define MCP23017_H
 
 /* ========================================
  *
@@ -12,16 +12,12 @@
  *
  * ========================================
 */
-
-#include <project.h>
-
-#define MCP23017BASE            0x20
-#define NUMBER_OF_DIGIO32_CARDS 4
     
-enum DIGIOCARD {BRD6, BRD7, BRD8, BRD9};
-enum MCPCHIP {MCPCHIP0, MCPCHIP1};
+#include <project.h>
+#include "i2cAddressMap.h"
+
 enum ABPORT {APORT, BPORT};
-enum PINMODE {OUTPUT_MODE,INPUT_MODE};
+enum PINMODE {OUTPUT_MODE,INPUT_MODE,INPUT_PULLUP,INPUT_MODE_LEAVE_PUP};
  
 #define MCP23017_IODIRA_REGADR   0x00
 #define MCP23017_IODIRB_REGADR   0x01
@@ -47,27 +43,34 @@ enum PINMODE {OUTPUT_MODE,INPUT_MODE};
 #define MCP23017_OLATB_REGADR    0x15
 
 #define MCP23017_IODIR_DEFVAL    0xff       // Initially set all channels to inputs
+#define MCP23017_IODIR_ALL_INS   0xff
+#define MCP23017_IODIR_ALL_OUTS  0x00
+
 #define MCP23017_IPOL_DEFVAL     0x00       // Input polarity = invert jumpers
 #define MCP23017_GPINTEN_DEFVAL  0x00       // Disable GPIO for interrupt on change
 #define MCP23017_INTCON_DEFVAL   0x00       // Int for change from previous pin
 #define MCP23017_IOCON_DEFVAL    0x00       // Disable sequential,  active-low
-#define MCP23017_GPPU_DEFVAL     0xf0
+#define MCP23017_GPPU_DEFVAL     0x00
 
-void initDIGIO32_4xCards();
+void init_MCP23017(uint8);
 
 // Arduino-ish functions
-void digitalWrite_4xDIGIO32Cards(uint8, uint8);
-uint8 digitalRead_4xDIGIO32Cards(uint8);
-void pinMode_4xDIGIO32Cards(uint8 bit, uint8 val);
+void digitalWrite_MCP23017(uint8, uint8, uint8);
+uint8 digitalRead_MCP23017(uint8, uint8);
+void pinMode_MCP23017(uint8, uint8, uint8);
 
 // Byte control/access functions
-void pinModeByByte_4xDIGIO32Cards(uint8, uint8, uint8, uint8);
-uint8 readByteDIGIO32Card(uint8, uint8, uint8);
-uint8 readOLATByteDIGIO32Card(uint8, uint8, uint8);
-void writeByteDIGIO32Card(uint8, uint8, uint8, uint8);
+void pinModeByByte_MCP23017(uint8, uint8, uint8);
+uint8 read8_MCP23017(uint8, uint8);
+uint16 read16_MCP23017(uint8);
+uint8 readBack8_MCP23017(uint8, uint8);
+void write8_MCP23017(uint8, uint8, uint8);
+void write16_MCP23017(uint8, uint16);
 
 // I2C Low Level Hardware access functions
-uint8 readRegisterDIGIO32Card(uint8, uint8, uint8);
-void writeRegisterDIGIO32Card(uint8, uint8, uint8, uint8);
+uint8 readRegister_MCP23017(uint8, uint8);
+void writeRegister_MCP23017(uint8, uint8, uint8);
 
-#endif
+# endif
+
+/* [] END OF FILE */
