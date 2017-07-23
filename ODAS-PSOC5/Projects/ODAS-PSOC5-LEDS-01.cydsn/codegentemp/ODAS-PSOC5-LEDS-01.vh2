@@ -2,7 +2,7 @@
 --	Conversion of ODAS-PSOC5-LEDS-01.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed May 17 13:58:49 2017
+--	Fri Jul 21 17:59:20 2017
 --
 
 USE cypress.cypress.all;
@@ -23,7 +23,8 @@ SIGNAL one : bit;
 SIGNAL tmpINTERRUPT_0__P1_05_net_0 : bit;
 SIGNAL Net_1010 : bit;
 SIGNAL Net_16_4 : bit;
-SIGNAL Net_18 : bit;
+SIGNAL Net_1012 : bit;
+ATTRIBUTE soft of Net_1012:SIGNAL IS '1';
 SIGNAL \BasicCounter_1:add_vi_vv_MODGEN_1_4\ : bit;
 SIGNAL Net_16_3 : bit;
 SIGNAL \BasicCounter_1:add_vi_vv_MODGEN_1_3\ : bit;
@@ -282,7 +283,7 @@ SIGNAL Net_942 : bit;
 SIGNAL Net_943 : bit;
 SIGNAL Net_369 : bit;
 SIGNAL Net_370 : bit;
-SIGNAL Net_108 : bit;
+SIGNAL Net_1013 : bit;
 SIGNAL tmpOE__P1_09_net_0 : bit;
 SIGNAL tmpFB_0__P1_09_net_0 : bit;
 SIGNAL tmpIO_0__P1_09_net_0 : bit;
@@ -431,7 +432,6 @@ SIGNAL \demux_2:tmp__demux_2_12_reg\ : bit;
 SIGNAL \demux_2:tmp__demux_2_13_reg\ : bit;
 SIGNAL \demux_2:tmp__demux_2_14_reg\ : bit;
 SIGNAL \demux_2:tmp__demux_2_15_reg\ : bit;
-SIGNAL Net_915 : bit;
 SIGNAL Net_989 : bit;
 SIGNAL tmpOE__P1_34_net_0 : bit;
 SIGNAL tmpFB_0__P1_34_net_0 : bit;
@@ -454,25 +454,25 @@ Net_919 <=  ('1') ;
 
 zero <=  ('0') ;
 
-Net_16_4D <= ((not Net_16_4 and Net_16_3 and Net_16_2 and Net_16_1 and Net_16_0)
-	OR (not Net_16_0 and Net_16_4)
-	OR (not Net_16_1 and Net_16_4)
-	OR (not Net_16_2 and Net_16_4)
-	OR (not Net_16_3 and Net_16_4));
+Net_16_4D <= ((not Net_16_4 and not Net_1012 and Net_16_3 and Net_16_2 and Net_16_1 and Net_16_0)
+	OR (not Net_1012 and not Net_16_0 and Net_16_4)
+	OR (not Net_1012 and not Net_16_1 and Net_16_4)
+	OR (not Net_1012 and not Net_16_2 and Net_16_4)
+	OR (not Net_1012 and not Net_16_3 and Net_16_4));
 
-Net_16_3D <= ((not Net_16_3 and Net_16_2 and Net_16_1 and Net_16_0)
-	OR (not Net_16_0 and Net_16_3)
-	OR (not Net_16_1 and Net_16_3)
-	OR (not Net_16_2 and Net_16_3));
+Net_16_3D <= ((not Net_1012 and not Net_16_3 and Net_16_2 and Net_16_1 and Net_16_0)
+	OR (not Net_1012 and not Net_16_0 and Net_16_3)
+	OR (not Net_1012 and not Net_16_1 and Net_16_3)
+	OR (not Net_1012 and not Net_16_2 and Net_16_3));
 
-Net_16_2D <= ((not Net_16_2 and Net_16_1 and Net_16_0)
-	OR (not Net_16_0 and Net_16_2)
-	OR (not Net_16_1 and Net_16_2));
+Net_16_2D <= ((not Net_1012 and not Net_16_2 and Net_16_1 and Net_16_0)
+	OR (not Net_1012 and not Net_16_0 and Net_16_2)
+	OR (not Net_1012 and not Net_16_1 and Net_16_2));
 
-Net_16_1D <= ((not Net_16_0 and Net_16_1)
-	OR (not Net_16_1 and Net_16_0));
+Net_16_1D <= ((not Net_1012 and not Net_16_0 and Net_16_1)
+	OR (not Net_1012 and not Net_16_1 and Net_16_0));
 
-Net_16_0D <= (not Net_16_0);
+Net_16_0D <= ((not Net_1012 and not Net_16_0));
 
 Net_357 <= ((not Net_16_4 and not Net_16_3 and not Net_16_2 and not Net_16_1 and not Net_16_0));
 
@@ -504,6 +504,8 @@ Net_370 <= ((not Net_16_4 and not Net_16_1 and Net_16_3 and Net_16_2 and Net_16_
 
 Net_371 <= ((not Net_16_4 and not Net_16_0 and Net_16_3 and Net_16_2 and Net_16_1));
 
+Net_1013 <= ((not Net_16_4 and Net_16_3 and Net_16_2 and Net_16_1 and Net_16_0));
+
 Net_901 <= ((not Net_16_3 and not Net_16_2 and not Net_16_1 and not Net_16_0 and Net_16_4));
 
 Net_902 <= ((not Net_16_3 and not Net_16_2 and not Net_16_1 and Net_16_4 and Net_16_0));
@@ -532,9 +534,7 @@ Net_913 <= ((not Net_16_1 and not Net_16_0 and Net_16_4 and Net_16_3 and Net_16_
 
 Net_914 <= ((not Net_16_1 and Net_16_4 and Net_16_3 and Net_16_2 and Net_16_0));
 
-Net_915 <= ((not Net_16_0 and Net_16_4 and Net_16_3 and Net_16_2 and Net_16_1));
-
-Net_989 <= ((Net_16_4 and Net_16_3 and Net_16_2 and Net_16_1 and Net_16_0));
+Net_1012 <= ((not Net_16_0 and Net_16_4 and Net_16_3 and Net_16_2 and Net_16_1));
 
 P1_05:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"e851a3b9-efb8-48be-bbb8-b303b216c393",
@@ -2642,7 +2642,7 @@ P1_34:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_915,
+		y=>Net_1012,
 		fb=>(tmpFB_0__P1_34_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__P1_34_net_0),
@@ -2712,7 +2712,7 @@ LED:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(Net_919),
-		y=>Net_989,
+		y=>Net_1013,
 		fb=>(tmpFB_0__LED_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__LED_net_0),

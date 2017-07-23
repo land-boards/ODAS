@@ -1,6 +1,6 @@
 // ======================================================================
 // ODAS-PSOC5-LEDS-01.v generated from TopDesign.cysch
-// 05/17/2017 at 13:58
+// 07/21/2017 at 17:59
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -10,40 +10,44 @@
 `define CYDEV_CHIP_REV_LEOPARD_ES3 3
 `define CYDEV_CHIP_REV_LEOPARD_ES2 1
 `define CYDEV_CHIP_REV_LEOPARD_ES1 0
-`define CYDEV_CHIP_DIE_TMA4 2
-`define CYDEV_CHIP_REV_TMA4_PRODUCTION 17
-`define CYDEV_CHIP_REV_TMA4_ES 17
-`define CYDEV_CHIP_REV_TMA4_ES2 33
-`define CYDEV_CHIP_DIE_PSOC4A 3
-`define CYDEV_CHIP_REV_PSOC4A_PRODUCTION 17
-`define CYDEV_CHIP_REV_PSOC4A_ES0 17
-`define CYDEV_CHIP_DIE_PSOC5LP 4
+`define CYDEV_CHIP_DIE_PSOC5LP 2
 `define CYDEV_CHIP_REV_PSOC5LP_PRODUCTION 0
 `define CYDEV_CHIP_REV_PSOC5LP_ES0 0
-`define CYDEV_CHIP_DIE_PSOC5TM 5
+`define CYDEV_CHIP_DIE_PSOC5TM 3
 `define CYDEV_CHIP_REV_PSOC5TM_PRODUCTION 1
 `define CYDEV_CHIP_REV_PSOC5TM_ES1 1
 `define CYDEV_CHIP_REV_PSOC5TM_ES0 0
-`define CYDEV_CHIP_DIE_VOLANS 6
+`define CYDEV_CHIP_DIE_TMA4 4
+`define CYDEV_CHIP_REV_TMA4_PRODUCTION 17
+`define CYDEV_CHIP_REV_TMA4_ES 17
+`define CYDEV_CHIP_REV_TMA4_ES2 33
+`define CYDEV_CHIP_DIE_PSOC4A 5
+`define CYDEV_CHIP_REV_PSOC4A_PRODUCTION 17
+`define CYDEV_CHIP_REV_PSOC4A_ES0 17
+`define CYDEV_CHIP_DIE_PSOC6ABLE2 6
+`define CYDEV_CHIP_REV_PSOC6ABLE2_PRODUCTION 0
+`define CYDEV_CHIP_REV_PSOC6ABLE2_NO_UDB 0
+`define CYDEV_CHIP_DIE_VOLANS 7
 `define CYDEV_CHIP_REV_VOLANS_PRODUCTION 0
-`define CYDEV_CHIP_DIE_BERRYPECKER 7
+`define CYDEV_CHIP_DIE_BERRYPECKER 8
 `define CYDEV_CHIP_REV_BERRYPECKER_PRODUCTION 0
-`define CYDEV_CHIP_DIE_CRANE 8
+`define CYDEV_CHIP_DIE_CRANE 9
 `define CYDEV_CHIP_REV_CRANE_PRODUCTION 0
-`define CYDEV_CHIP_DIE_FM3 9
+`define CYDEV_CHIP_DIE_FM3 10
 `define CYDEV_CHIP_REV_FM3_PRODUCTION 0
-`define CYDEV_CHIP_DIE_FM4 10
+`define CYDEV_CHIP_DIE_FM4 11
 `define CYDEV_CHIP_REV_FM4_PRODUCTION 0
-`define CYDEV_CHIP_DIE_EXPECT 4
+`define CYDEV_CHIP_DIE_EXPECT 2
 `define CYDEV_CHIP_REV_EXPECT 0
-`define CYDEV_CHIP_DIE_ACTUAL 4
+`define CYDEV_CHIP_DIE_ACTUAL 2
 /* -- WARNING: The previous section of defines are deprecated and will be removed in a future release -- */
 `define CYDEV_CHIP_FAMILY_PSOC3 1
 `define CYDEV_CHIP_FAMILY_PSOC4 2
 `define CYDEV_CHIP_FAMILY_PSOC5 3
-`define CYDEV_CHIP_FAMILY_FM0P 4
-`define CYDEV_CHIP_FAMILY_FM3 5
-`define CYDEV_CHIP_FAMILY_FM4 6
+`define CYDEV_CHIP_FAMILY_PSOC6 4
+`define CYDEV_CHIP_FAMILY_FM0P 5
+`define CYDEV_CHIP_FAMILY_FM3 6
+`define CYDEV_CHIP_FAMILY_FM4 7
 `define CYDEV_CHIP_FAMILY_UNKNOWN 0
 `define CYDEV_CHIP_MEMBER_UNKNOWN 0
 `define CYDEV_CHIP_MEMBER_3A 1
@@ -51,64 +55,69 @@
 `define CYDEV_CHIP_REVISION_3A_ES3 3
 `define CYDEV_CHIP_REVISION_3A_ES2 1
 `define CYDEV_CHIP_REVISION_3A_ES1 0
-`define CYDEV_CHIP_MEMBER_4G 2
-`define CYDEV_CHIP_REVISION_4G_PRODUCTION 17
-`define CYDEV_CHIP_REVISION_4G_ES 17
-`define CYDEV_CHIP_REVISION_4G_ES2 33
-`define CYDEV_CHIP_MEMBER_4U 3
-`define CYDEV_CHIP_REVISION_4U_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_4E 4
-`define CYDEV_CHIP_REVISION_4E_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_4O 5
-`define CYDEV_CHIP_REVISION_4O_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_4N 6
-`define CYDEV_CHIP_REVISION_4N_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_4Q 7
-`define CYDEV_CHIP_REVISION_4Q_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_4D 8
-`define CYDEV_CHIP_REVISION_4D_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_4J 9
-`define CYDEV_CHIP_REVISION_4J_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_4K 10
-`define CYDEV_CHIP_REVISION_4K_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_4H 11
-`define CYDEV_CHIP_REVISION_4H_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_4A 12
-`define CYDEV_CHIP_REVISION_4A_PRODUCTION 17
-`define CYDEV_CHIP_REVISION_4A_ES0 17
-`define CYDEV_CHIP_MEMBER_4F 13
-`define CYDEV_CHIP_REVISION_4F_PRODUCTION 0
-`define CYDEV_CHIP_REVISION_4F_PRODUCTION_256K 0
-`define CYDEV_CHIP_REVISION_4F_PRODUCTION_256DMA 0
-`define CYDEV_CHIP_MEMBER_4P 14
-`define CYDEV_CHIP_REVISION_4P_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_4M 15
-`define CYDEV_CHIP_REVISION_4M_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_4L 16
-`define CYDEV_CHIP_REVISION_4L_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_4I 17
-`define CYDEV_CHIP_REVISION_4I_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_4C 18
-`define CYDEV_CHIP_REVISION_4C_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_5B 19
+`define CYDEV_CHIP_MEMBER_5B 2
 `define CYDEV_CHIP_REVISION_5B_PRODUCTION 0
 `define CYDEV_CHIP_REVISION_5B_ES0 0
-`define CYDEV_CHIP_MEMBER_5A 20
+`define CYDEV_CHIP_MEMBER_5A 3
 `define CYDEV_CHIP_REVISION_5A_PRODUCTION 1
 `define CYDEV_CHIP_REVISION_5A_ES1 1
 `define CYDEV_CHIP_REVISION_5A_ES0 0
-`define CYDEV_CHIP_MEMBER_PDL_FM0P_TYPE1 21
+`define CYDEV_CHIP_MEMBER_4G 4
+`define CYDEV_CHIP_REVISION_4G_PRODUCTION 17
+`define CYDEV_CHIP_REVISION_4G_ES 17
+`define CYDEV_CHIP_REVISION_4G_ES2 33
+`define CYDEV_CHIP_MEMBER_4U 5
+`define CYDEV_CHIP_REVISION_4U_PRODUCTION 0
+`define CYDEV_CHIP_MEMBER_4E 6
+`define CYDEV_CHIP_REVISION_4E_PRODUCTION 0
+`define CYDEV_CHIP_MEMBER_4O 7
+`define CYDEV_CHIP_REVISION_4O_PRODUCTION 0
+`define CYDEV_CHIP_MEMBER_4R 8
+`define CYDEV_CHIP_REVISION_4R_PRODUCTION 0
+`define CYDEV_CHIP_MEMBER_4N 9
+`define CYDEV_CHIP_REVISION_4N_PRODUCTION 0
+`define CYDEV_CHIP_MEMBER_4S 10
+`define CYDEV_CHIP_REVISION_4S_PRODUCTION 0
+`define CYDEV_CHIP_MEMBER_4Q 11
+`define CYDEV_CHIP_REVISION_4Q_PRODUCTION 0
+`define CYDEV_CHIP_MEMBER_4D 12
+`define CYDEV_CHIP_REVISION_4D_PRODUCTION 0
+`define CYDEV_CHIP_MEMBER_4J 13
+`define CYDEV_CHIP_REVISION_4J_PRODUCTION 0
+`define CYDEV_CHIP_MEMBER_4K 14
+`define CYDEV_CHIP_REVISION_4K_PRODUCTION 0
+`define CYDEV_CHIP_MEMBER_4H 15
+`define CYDEV_CHIP_REVISION_4H_PRODUCTION 0
+`define CYDEV_CHIP_MEMBER_4A 16
+`define CYDEV_CHIP_REVISION_4A_PRODUCTION 17
+`define CYDEV_CHIP_REVISION_4A_ES0 17
+`define CYDEV_CHIP_MEMBER_4F 17
+`define CYDEV_CHIP_REVISION_4F_PRODUCTION 0
+`define CYDEV_CHIP_REVISION_4F_PRODUCTION_256K 0
+`define CYDEV_CHIP_REVISION_4F_PRODUCTION_256DMA 0
+`define CYDEV_CHIP_MEMBER_4P 18
+`define CYDEV_CHIP_REVISION_4P_PRODUCTION 0
+`define CYDEV_CHIP_MEMBER_4M 19
+`define CYDEV_CHIP_REVISION_4M_PRODUCTION 0
+`define CYDEV_CHIP_MEMBER_4L 20
+`define CYDEV_CHIP_REVISION_4L_PRODUCTION 0
+`define CYDEV_CHIP_MEMBER_4I 21
+`define CYDEV_CHIP_REVISION_4I_PRODUCTION 0
+`define CYDEV_CHIP_MEMBER_6A 22
+`define CYDEV_CHIP_REVISION_6A_PRODUCTION 0
+`define CYDEV_CHIP_REVISION_6A_NO_UDB 0
+`define CYDEV_CHIP_MEMBER_PDL_FM0P_TYPE1 23
 `define CYDEV_CHIP_REVISION_PDL_FM0P_TYPE1_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_PDL_FM0P_TYPE2 22
+`define CYDEV_CHIP_MEMBER_PDL_FM0P_TYPE2 24
 `define CYDEV_CHIP_REVISION_PDL_FM0P_TYPE2_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_PDL_FM0P_TYPE3 23
+`define CYDEV_CHIP_MEMBER_PDL_FM0P_TYPE3 25
 `define CYDEV_CHIP_REVISION_PDL_FM0P_TYPE3_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_FM3 24
+`define CYDEV_CHIP_MEMBER_FM3 26
 `define CYDEV_CHIP_REVISION_FM3_PRODUCTION 0
-`define CYDEV_CHIP_MEMBER_FM4 25
+`define CYDEV_CHIP_MEMBER_FM4 27
 `define CYDEV_CHIP_REVISION_FM4_PRODUCTION 0
 `define CYDEV_CHIP_FAMILY_USED 3
-`define CYDEV_CHIP_MEMBER_USED 19
+`define CYDEV_CHIP_MEMBER_USED 2
 `define CYDEV_CHIP_REVISION_USED 0
 // Component: cy_constant_v1_0
 `ifdef CY_BLK_DIR
@@ -116,11 +125,11 @@
 `endif
 
 `ifdef WARP
-`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0"
-`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v"
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v"
 `else
-`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0"
-`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v"
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v"
 `endif
 
 // Component: BasicCounter_v1_0
@@ -129,11 +138,11 @@
 `endif
 
 `ifdef WARP
-`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BasicCounter_v1_0"
-`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v"
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BasicCounter_v1_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v"
 `else
-`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BasicCounter_v1_0"
-`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v"
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BasicCounter_v1_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v"
 `endif
 
 // Component: demux_v1_10
@@ -142,11 +151,11 @@
 `endif
 
 `ifdef WARP
-`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\demux_v1_10"
-`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\demux_v1_10\demux_v1_10.v"
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\demux_v1_10"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\demux_v1_10\demux_v1_10.v"
 `else
-`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\demux_v1_10"
-`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\demux_v1_10\demux_v1_10.v"
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\demux_v1_10"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\demux_v1_10\demux_v1_10.v"
 `endif
 
 // Component: not_v1_0
@@ -155,53 +164,52 @@
 `endif
 
 `ifdef WARP
-`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0"
-`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v"
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.v"
 `else
-`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0"
-`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v"
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.v"
 `endif
 
 // top
 module top ;
 
-          wire  Net_108;
+          wire  Net_989;
           wire  Net_15;
+          wire  Net_1013;
+          wire  Net_371;
+          wire  Net_1012;
+          wire  Net_366;
+          wire  Net_942;
+          wire  Net_911;
+          wire  Net_943;
+          wire  Net_370;
+          wire  Net_912;
+          wire  Net_913;
+          wire  Net_914;
+          wire  Net_369;
+          wire  Net_365;
+          wire  Net_909;
+          wire  Net_910;
+          wire  Net_908;
+          wire  Net_364;
+          wire  Net_907;
+          wire  Net_363;
+          wire  Net_906;
+          wire  Net_362;
+          wire  Net_905;
+          wire  Net_361;
+          wire  Net_904;
+          wire  Net_935;
+          wire  Net_903;
+          wire  Net_934;
+          wire  Net_902;
+          wire  Net_358;
+          wire  Net_901;
+          wire  Net_357;
           wire  Net_1010;
           wire  Net_54;
-          wire  Net_989;
-          wire  Net_915;
-          wire  Net_914;
-          wire  Net_913;
-          wire  Net_912;
-          wire  Net_911;
-          wire  Net_910;
-          wire  Net_909;
-          wire  Net_908;
-          wire  Net_907;
-          wire  Net_906;
-          wire  Net_905;
-          wire  Net_904;
-          wire  Net_903;
-          wire  Net_902;
-          wire  Net_901;
-          wire  Net_371;
-          wire  Net_370;
-          wire  Net_369;
-          wire  Net_943;
-          wire  Net_942;
-          wire  Net_366;
-          wire  Net_365;
-          wire  Net_364;
-          wire  Net_363;
-          wire  Net_362;
-          wire  Net_361;
-          wire  Net_935;
-          wire  Net_934;
-          wire  Net_358;
-          wire  Net_357;
           wire [4:0] Net_16;
-          wire  Net_18;
           wire  Net_919;
 
     assign Net_919 = 1'h1;
@@ -296,11 +304,9 @@ module top ;
     BasicCounter_v1_0 BasicCounter_1 (
         .en(Net_919),
         .cnt(Net_16[4:0]),
-        .reset(Net_18),
+        .reset(Net_1012),
         .clock(Net_1010));
     defparam BasicCounter_1.Width = 5;
-
-    assign Net_18 = 1'h0;
 
 	wire [0:0] tmpOE__P1_06_net;
 	wire [0:0] tmpFB_0__P1_06_net;
@@ -945,7 +951,7 @@ module top ;
         assign Net_369 = tmp__demux_1_12_reg;
         assign Net_370 = tmp__demux_1_13_reg;
         assign Net_371 = tmp__demux_1_14_reg;
-        assign Net_108 = tmp__demux_1_15_reg;
+        assign Net_1013 = tmp__demux_1_15_reg;
     end
     // -- De Mux end --
 
@@ -3091,7 +3097,7 @@ module top ;
         assign Net_912 = tmp__demux_2_11_reg;
         assign Net_913 = tmp__demux_2_12_reg;
         assign Net_914 = tmp__demux_2_13_reg;
-        assign Net_915 = tmp__demux_2_14_reg;
+        assign Net_1012 = tmp__demux_2_14_reg;
         assign Net_989 = tmp__demux_2_15_reg;
     end
     // -- De Mux end --
@@ -3157,7 +3163,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		P1_34
 		 (.oe(tmpOE__P1_34_net),
-		  .y({Net_915}),
+		  .y({Net_1012}),
 		  .fb({tmpFB_0__P1_34_net[0:0]}),
 		  .io({tmpIO_0__P1_34_net[0:0]}),
 		  .siovref(tmpSIOVREF__P1_34_net),
@@ -3232,7 +3238,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		LED
 		 (.oe(tmpOE__LED_net),
-		  .y({Net_989}),
+		  .y({Net_1013}),
 		  .fb({tmpFB_0__LED_net[0:0]}),
 		  .io({tmpIO_0__LED_net[0:0]}),
 		  .siovref(tmpSIOVREF__LED_net),

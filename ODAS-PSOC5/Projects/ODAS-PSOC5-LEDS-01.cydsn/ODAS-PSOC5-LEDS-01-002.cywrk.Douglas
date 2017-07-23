@@ -18,7 +18,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\TopDesign">
 <ExpandedNodeIds>
 <v>ODAS-PSOC5-LEDS-01-002</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01</v>
@@ -244,6 +244,27 @@
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\cmsis_armcc.h</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\cmsis_gcc.h</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\core_cm3.h</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\core_cm3_psoc5.h</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\core_cmFunc.h</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\core_cmInstr.h</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\CyBootAsmGnu.s</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\CyBootAsmIar.s</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\CyBootAsmRv.s</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\CyDmac.c</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\CyDmac.h</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\CyFlash.c</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\CyFlash.h</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\CyLib.c</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\CyLib.h</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\cypins.h</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\cyPm.c</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\cyPm.h</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\CySpc.c</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\CySpc.h</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\cytypes.h</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\cy_boot\cyutils.c</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\Generated_Source\PSoC5\LED</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -265,55 +286,55 @@
 <v>ODAS-PSOC5-LEDS-01-002</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\LED.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_05.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_06.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_07.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_08.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_09.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_10.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_11.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_12.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_13.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_14.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_15.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_16.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_17.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_18.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_19.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_20.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_21.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_22.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_23.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_24.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_25.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_26.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_27.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_28.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_29.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_30.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_31.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_32.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_33.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_34.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.elf</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.hex</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\ODAS-PSOC5-LEDS-01.map</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\LED.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_05.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_06.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_07.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_08.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_09.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_10.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_11.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_12.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_13.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_14.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_15.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_16.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_17.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_18.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_19.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_20.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_21.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_22.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_23.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_24.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_25.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_26.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_27.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_28.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_29.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_30.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_31.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_32.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_33.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\Listing Files\P1_34.lst</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\ODAS-PSOC5-LEDS-01.elf</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\ODAS-PSOC5-LEDS-01.hex</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_541\Debug\ODAS-PSOC5-LEDS-01.map</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\ODAS-PSOC5-LEDS-01.gpdsc</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\ODAS-PSOC5-LEDS-01.rpt</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\ODAS-PSOC5-LEDS-01_timing.html</v>
@@ -321,33 +342,6 @@
 <VisibleNodeIds>
 <v>ODAS-PSOC5-LEDS-01-002</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\LED.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_05.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_06.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_07.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_08.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_09.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_10.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_11.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_12.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_13.lst</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CortexM3\ARM_GCC_493\Debug\Listing Files\P1_14.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -365,8 +359,7 @@
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\System Reference Guides\cy_boot_v5_50</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\BasicCounter_v1_0.pdf</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_clock_v2_20.pdf</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_constant_v1_0</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_constant_v1_0.pdf</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_pins_v2_20</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\demux_v1_10</v>
@@ -382,8 +375,7 @@
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\System Reference Guides\cy_boot_v5_50</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\BasicCounter_v1_0.pdf</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_clock_v2_20.pdf</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_constant_v1_0</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
+<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_constant_v1_0.pdf</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_pins_v2_20</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\demux_v1_10</v>
@@ -397,14 +389,16 @@
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
-<OpenDocs />
+<OpenDocs>
+<name v=".\TopDesign\TopDesign.cysch" />
+</OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
   Actipro Docking/MDI for WinForms
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1037, 376" SelectedTabbedMdiWindow="a9244b02-0aea-413a-b615-c1384743d9cd"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="a9244b02-0aea-413a-b615-c1384743d9cd" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1439, 752" SelectedTabbedMdiWindow="bd34c3de-afba-4668-9260-0b8733e35ff2"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="a9244b02-0aea-413a-b615-c1384743d9cd" /><DocumentWindow Key="C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\TopDesign\TopDesign.cysch" Guid="bd34c3de-afba-4668-9260-0b8733e35ff2" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

@@ -1,6 +1,6 @@
--- Project:   C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj
--- Generated: 05/17/2017 13:58:53
--- PSoC Creator  4.0
+-- Project:   C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj
+-- Generated: 07/21/2017 17:59:28
+-- PSoC Creator  4.1
 
 ENTITY \ODAS-PSOC5-LEDS-01\ IS
     PORT(
@@ -62,80 +62,81 @@ ARCHITECTURE __DEFAULT__ OF \ODAS-PSOC5-LEDS-01\ IS
     SIGNAL Net_1010 : bit;
     ATTRIBUTE global_signal OF Net_1010 : SIGNAL IS true;
     SIGNAL Net_1010_local : bit;
+    SIGNAL Net_1012 : bit;
+    ATTRIBUTE placement_force OF Net_1012 : SIGNAL IS "U(3,0,A)1";
+    ATTRIBUTE soft OF Net_1012 : SIGNAL IS 1;
+    SIGNAL Net_1013 : bit;
+    ATTRIBUTE placement_force OF Net_1013 : SIGNAL IS "U(3,0,B)2";
     SIGNAL Net_16_0 : bit;
-    ATTRIBUTE placement_force OF Net_16_0 : SIGNAL IS "U(2,1,A)3";
+    ATTRIBUTE placement_force OF Net_16_0 : SIGNAL IS "U(3,0,B)1";
     SIGNAL Net_16_1 : bit;
-    ATTRIBUTE placement_force OF Net_16_1 : SIGNAL IS "U(2,1,A)2";
+    ATTRIBUTE placement_force OF Net_16_1 : SIGNAL IS "U(3,0,B)0";
     SIGNAL Net_16_2 : bit;
-    ATTRIBUTE placement_force OF Net_16_2 : SIGNAL IS "U(2,1,A)1";
+    ATTRIBUTE placement_force OF Net_16_2 : SIGNAL IS "U(3,0,A)3";
     SIGNAL Net_16_3 : bit;
-    ATTRIBUTE placement_force OF Net_16_3 : SIGNAL IS "U(2,1,A)0";
+    ATTRIBUTE placement_force OF Net_16_3 : SIGNAL IS "U(3,0,A)2";
     SIGNAL Net_16_4 : bit;
-    ATTRIBUTE placement_force OF Net_16_4 : SIGNAL IS "U(3,1,B)3";
+    ATTRIBUTE placement_force OF Net_16_4 : SIGNAL IS "U(3,0,A)0";
     SIGNAL Net_357 : bit;
-    ATTRIBUTE placement_force OF Net_357 : SIGNAL IS "U(3,2,A)1";
+    ATTRIBUTE placement_force OF Net_357 : SIGNAL IS "U(3,1,A)1";
     SIGNAL Net_358 : bit;
-    ATTRIBUTE placement_force OF Net_358 : SIGNAL IS "U(2,3,B)1";
+    ATTRIBUTE placement_force OF Net_358 : SIGNAL IS "U(2,2,A)1";
     SIGNAL Net_361 : bit;
-    ATTRIBUTE placement_force OF Net_361 : SIGNAL IS "U(3,2,B)2";
+    ATTRIBUTE placement_force OF Net_361 : SIGNAL IS "U(2,2,A)2";
     SIGNAL Net_362 : bit;
-    ATTRIBUTE placement_force OF Net_362 : SIGNAL IS "U(3,2,B)0";
+    ATTRIBUTE placement_force OF Net_362 : SIGNAL IS "U(2,2,A)3";
     SIGNAL Net_363 : bit;
-    ATTRIBUTE placement_force OF Net_363 : SIGNAL IS "U(3,2,B)1";
+    ATTRIBUTE placement_force OF Net_363 : SIGNAL IS "U(3,2,B)0";
     SIGNAL Net_364 : bit;
-    ATTRIBUTE placement_force OF Net_364 : SIGNAL IS "U(3,1,B)2";
+    ATTRIBUTE placement_force OF Net_364 : SIGNAL IS "U(3,2,B)1";
     SIGNAL Net_365 : bit;
-    ATTRIBUTE placement_force OF Net_365 : SIGNAL IS "U(2,3,A)0";
+    ATTRIBUTE placement_force OF Net_365 : SIGNAL IS "U(2,1,B)0";
     SIGNAL Net_366 : bit;
-    ATTRIBUTE placement_force OF Net_366 : SIGNAL IS "U(2,2,A)1";
+    ATTRIBUTE placement_force OF Net_366 : SIGNAL IS "U(3,2,B)3";
     SIGNAL Net_369 : bit;
-    ATTRIBUTE placement_force OF Net_369 : SIGNAL IS "U(3,3,A)1";
+    ATTRIBUTE placement_force OF Net_369 : SIGNAL IS "U(3,2,A)1";
     SIGNAL Net_370 : bit;
-    ATTRIBUTE placement_force OF Net_370 : SIGNAL IS "U(2,3,A)2";
+    ATTRIBUTE placement_force OF Net_370 : SIGNAL IS "U(3,2,B)2";
     SIGNAL Net_371 : bit;
-    ATTRIBUTE placement_force OF Net_371 : SIGNAL IS "U(2,3,A)1";
+    ATTRIBUTE placement_force OF Net_371 : SIGNAL IS "U(3,1,B)3";
     SIGNAL Net_901 : bit;
     ATTRIBUTE placement_force OF Net_901 : SIGNAL IS "U(2,2,B)0";
     SIGNAL Net_902 : bit;
-    ATTRIBUTE placement_force OF Net_902 : SIGNAL IS "U(3,1,A)2";
+    ATTRIBUTE placement_force OF Net_902 : SIGNAL IS "U(2,2,B)1";
     SIGNAL Net_903 : bit;
-    ATTRIBUTE placement_force OF Net_903 : SIGNAL IS "U(2,2,A)3";
+    ATTRIBUTE placement_force OF Net_903 : SIGNAL IS "U(2,2,B)2";
     SIGNAL Net_904 : bit;
-    ATTRIBUTE placement_force OF Net_904 : SIGNAL IS "U(3,2,A)3";
+    ATTRIBUTE placement_force OF Net_904 : SIGNAL IS "U(2,2,B)3";
     SIGNAL Net_905 : bit;
-    ATTRIBUTE placement_force OF Net_905 : SIGNAL IS "U(3,3,A)2";
+    ATTRIBUTE placement_force OF Net_905 : SIGNAL IS "U(2,1,A)1";
     SIGNAL Net_906 : bit;
-    ATTRIBUTE placement_force OF Net_906 : SIGNAL IS "U(3,3,A)3";
+    ATTRIBUTE placement_force OF Net_906 : SIGNAL IS "U(2,1,A)2";
     SIGNAL Net_907 : bit;
-    ATTRIBUTE placement_force OF Net_907 : SIGNAL IS "U(2,2,A)0";
+    ATTRIBUTE placement_force OF Net_907 : SIGNAL IS "U(2,1,A)3";
     SIGNAL Net_908 : bit;
-    ATTRIBUTE placement_force OF Net_908 : SIGNAL IS "U(3,1,B)1";
+    ATTRIBUTE placement_force OF Net_908 : SIGNAL IS "U(3,2,A)2";
     SIGNAL Net_909 : bit;
-    ATTRIBUTE placement_force OF Net_909 : SIGNAL IS "U(3,3,B)2";
+    ATTRIBUTE placement_force OF Net_909 : SIGNAL IS "U(2,1,B)1";
     SIGNAL Net_910 : bit;
-    ATTRIBUTE placement_force OF Net_910 : SIGNAL IS "U(3,2,A)2";
+    ATTRIBUTE placement_force OF Net_910 : SIGNAL IS "U(2,1,B)2";
     SIGNAL Net_911 : bit;
-    ATTRIBUTE placement_force OF Net_911 : SIGNAL IS "U(3,1,A)1";
+    ATTRIBUTE placement_force OF Net_911 : SIGNAL IS "U(2,1,B)3";
     SIGNAL Net_912 : bit;
-    ATTRIBUTE placement_force OF Net_912 : SIGNAL IS "U(3,3,B)0";
+    ATTRIBUTE placement_force OF Net_912 : SIGNAL IS "U(3,2,A)0";
     SIGNAL Net_913 : bit;
-    ATTRIBUTE placement_force OF Net_913 : SIGNAL IS "U(3,2,A)0";
+    ATTRIBUTE placement_force OF Net_913 : SIGNAL IS "U(3,1,A)0";
     SIGNAL Net_914 : bit;
-    ATTRIBUTE placement_force OF Net_914 : SIGNAL IS "U(3,3,B)1";
-    SIGNAL Net_915 : bit;
-    ATTRIBUTE placement_force OF Net_915 : SIGNAL IS "U(3,1,A)3";
+    ATTRIBUTE placement_force OF Net_914 : SIGNAL IS "U(3,0,B)3";
     SIGNAL Net_919 : bit;
     ATTRIBUTE POWER OF Net_919 : SIGNAL IS true;
     SIGNAL Net_934 : bit;
-    ATTRIBUTE placement_force OF Net_934 : SIGNAL IS "U(3,3,A)0";
+    ATTRIBUTE placement_force OF Net_934 : SIGNAL IS "U(2,1,A)0";
     SIGNAL Net_935 : bit;
-    ATTRIBUTE placement_force OF Net_935 : SIGNAL IS "U(3,1,B)0";
+    ATTRIBUTE placement_force OF Net_935 : SIGNAL IS "U(3,1,A)2";
     SIGNAL Net_942 : bit;
-    ATTRIBUTE placement_force OF Net_942 : SIGNAL IS "U(3,1,A)0";
+    ATTRIBUTE placement_force OF Net_942 : SIGNAL IS "U(3,1,B)0";
     SIGNAL Net_943 : bit;
-    ATTRIBUTE placement_force OF Net_943 : SIGNAL IS "U(2,3,A)3";
-    SIGNAL Net_989 : bit;
-    ATTRIBUTE placement_force OF Net_989 : SIGNAL IS "U(2,2,A)2";
+    ATTRIBUTE placement_force OF Net_943 : SIGNAL IS "U(3,1,A)3";
     SIGNAL P1_05(0)__PA : bit;
     SIGNAL P1_06(0)__PA : bit;
     SIGNAL P1_07(0)__PA : bit;
@@ -236,77 +237,77 @@ ARCHITECTURE __DEFAULT__ OF \ODAS-PSOC5-LEDS-01\ IS
     ATTRIBUTE lib_model OF LED(0) : LABEL IS "iocell31";
     ATTRIBUTE Location OF LED(0) : LABEL IS "P5[4]";
     ATTRIBUTE lib_model OF Net_357 : LABEL IS "macrocell1";
-    ATTRIBUTE Location OF Net_357 : LABEL IS "U(3,2)";
+    ATTRIBUTE Location OF Net_357 : LABEL IS "U(3,1)";
     ATTRIBUTE lib_model OF Net_358 : LABEL IS "macrocell2";
-    ATTRIBUTE Location OF Net_358 : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF Net_358 : LABEL IS "U(2,2)";
     ATTRIBUTE lib_model OF Net_934 : LABEL IS "macrocell3";
-    ATTRIBUTE Location OF Net_934 : LABEL IS "U(3,3)";
+    ATTRIBUTE Location OF Net_934 : LABEL IS "U(2,1)";
     ATTRIBUTE lib_model OF Net_935 : LABEL IS "macrocell4";
     ATTRIBUTE Location OF Net_935 : LABEL IS "U(3,1)";
     ATTRIBUTE lib_model OF Net_361 : LABEL IS "macrocell5";
-    ATTRIBUTE Location OF Net_361 : LABEL IS "U(3,2)";
+    ATTRIBUTE Location OF Net_361 : LABEL IS "U(2,2)";
     ATTRIBUTE lib_model OF Net_362 : LABEL IS "macrocell6";
-    ATTRIBUTE Location OF Net_362 : LABEL IS "U(3,2)";
+    ATTRIBUTE Location OF Net_362 : LABEL IS "U(2,2)";
     ATTRIBUTE lib_model OF Net_363 : LABEL IS "macrocell7";
     ATTRIBUTE Location OF Net_363 : LABEL IS "U(3,2)";
     ATTRIBUTE lib_model OF Net_364 : LABEL IS "macrocell8";
-    ATTRIBUTE Location OF Net_364 : LABEL IS "U(3,1)";
+    ATTRIBUTE Location OF Net_364 : LABEL IS "U(3,2)";
     ATTRIBUTE lib_model OF Net_365 : LABEL IS "macrocell9";
-    ATTRIBUTE Location OF Net_365 : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF Net_365 : LABEL IS "U(2,1)";
     ATTRIBUTE lib_model OF Net_366 : LABEL IS "macrocell10";
-    ATTRIBUTE Location OF Net_366 : LABEL IS "U(2,2)";
+    ATTRIBUTE Location OF Net_366 : LABEL IS "U(3,2)";
     ATTRIBUTE lib_model OF Net_942 : LABEL IS "macrocell11";
     ATTRIBUTE Location OF Net_942 : LABEL IS "U(3,1)";
     ATTRIBUTE lib_model OF Net_943 : LABEL IS "macrocell12";
-    ATTRIBUTE Location OF Net_943 : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF Net_943 : LABEL IS "U(3,1)";
     ATTRIBUTE lib_model OF Net_369 : LABEL IS "macrocell13";
-    ATTRIBUTE Location OF Net_369 : LABEL IS "U(3,3)";
+    ATTRIBUTE Location OF Net_369 : LABEL IS "U(3,2)";
     ATTRIBUTE lib_model OF Net_370 : LABEL IS "macrocell14";
-    ATTRIBUTE Location OF Net_370 : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF Net_370 : LABEL IS "U(3,2)";
     ATTRIBUTE lib_model OF Net_371 : LABEL IS "macrocell15";
-    ATTRIBUTE Location OF Net_371 : LABEL IS "U(2,3)";
-    ATTRIBUTE lib_model OF Net_901 : LABEL IS "macrocell16";
+    ATTRIBUTE Location OF Net_371 : LABEL IS "U(3,1)";
+    ATTRIBUTE lib_model OF Net_1013 : LABEL IS "macrocell16";
+    ATTRIBUTE Location OF Net_1013 : LABEL IS "U(3,0)";
+    ATTRIBUTE lib_model OF Net_901 : LABEL IS "macrocell17";
     ATTRIBUTE Location OF Net_901 : LABEL IS "U(2,2)";
-    ATTRIBUTE lib_model OF Net_902 : LABEL IS "macrocell17";
-    ATTRIBUTE Location OF Net_902 : LABEL IS "U(3,1)";
-    ATTRIBUTE lib_model OF Net_903 : LABEL IS "macrocell18";
+    ATTRIBUTE lib_model OF Net_902 : LABEL IS "macrocell18";
+    ATTRIBUTE Location OF Net_902 : LABEL IS "U(2,2)";
+    ATTRIBUTE lib_model OF Net_903 : LABEL IS "macrocell19";
     ATTRIBUTE Location OF Net_903 : LABEL IS "U(2,2)";
-    ATTRIBUTE lib_model OF Net_904 : LABEL IS "macrocell19";
-    ATTRIBUTE Location OF Net_904 : LABEL IS "U(3,2)";
-    ATTRIBUTE lib_model OF Net_905 : LABEL IS "macrocell20";
-    ATTRIBUTE Location OF Net_905 : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF Net_906 : LABEL IS "macrocell21";
-    ATTRIBUTE Location OF Net_906 : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF Net_907 : LABEL IS "macrocell22";
-    ATTRIBUTE Location OF Net_907 : LABEL IS "U(2,2)";
-    ATTRIBUTE lib_model OF Net_908 : LABEL IS "macrocell23";
-    ATTRIBUTE Location OF Net_908 : LABEL IS "U(3,1)";
-    ATTRIBUTE lib_model OF Net_909 : LABEL IS "macrocell24";
-    ATTRIBUTE Location OF Net_909 : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF Net_910 : LABEL IS "macrocell25";
-    ATTRIBUTE Location OF Net_910 : LABEL IS "U(3,2)";
-    ATTRIBUTE lib_model OF Net_911 : LABEL IS "macrocell26";
-    ATTRIBUTE Location OF Net_911 : LABEL IS "U(3,1)";
-    ATTRIBUTE lib_model OF Net_912 : LABEL IS "macrocell27";
-    ATTRIBUTE Location OF Net_912 : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF Net_913 : LABEL IS "macrocell28";
-    ATTRIBUTE Location OF Net_913 : LABEL IS "U(3,2)";
-    ATTRIBUTE lib_model OF Net_914 : LABEL IS "macrocell29";
-    ATTRIBUTE Location OF Net_914 : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF Net_915 : LABEL IS "macrocell30";
-    ATTRIBUTE Location OF Net_915 : LABEL IS "U(3,1)";
-    ATTRIBUTE lib_model OF Net_989 : LABEL IS "macrocell31";
-    ATTRIBUTE Location OF Net_989 : LABEL IS "U(2,2)";
+    ATTRIBUTE lib_model OF Net_904 : LABEL IS "macrocell20";
+    ATTRIBUTE Location OF Net_904 : LABEL IS "U(2,2)";
+    ATTRIBUTE lib_model OF Net_905 : LABEL IS "macrocell21";
+    ATTRIBUTE Location OF Net_905 : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF Net_906 : LABEL IS "macrocell22";
+    ATTRIBUTE Location OF Net_906 : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF Net_907 : LABEL IS "macrocell23";
+    ATTRIBUTE Location OF Net_907 : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF Net_908 : LABEL IS "macrocell24";
+    ATTRIBUTE Location OF Net_908 : LABEL IS "U(3,2)";
+    ATTRIBUTE lib_model OF Net_909 : LABEL IS "macrocell25";
+    ATTRIBUTE Location OF Net_909 : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF Net_910 : LABEL IS "macrocell26";
+    ATTRIBUTE Location OF Net_910 : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF Net_911 : LABEL IS "macrocell27";
+    ATTRIBUTE Location OF Net_911 : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF Net_912 : LABEL IS "macrocell28";
+    ATTRIBUTE Location OF Net_912 : LABEL IS "U(3,2)";
+    ATTRIBUTE lib_model OF Net_913 : LABEL IS "macrocell29";
+    ATTRIBUTE Location OF Net_913 : LABEL IS "U(3,1)";
+    ATTRIBUTE lib_model OF Net_914 : LABEL IS "macrocell30";
+    ATTRIBUTE Location OF Net_914 : LABEL IS "U(3,0)";
+    ATTRIBUTE lib_model OF Net_1012 : LABEL IS "macrocell31";
+    ATTRIBUTE Location OF Net_1012 : LABEL IS "U(3,0)";
     ATTRIBUTE lib_model OF Net_16_4 : LABEL IS "macrocell32";
-    ATTRIBUTE Location OF Net_16_4 : LABEL IS "U(3,1)";
+    ATTRIBUTE Location OF Net_16_4 : LABEL IS "U(3,0)";
     ATTRIBUTE lib_model OF Net_16_3 : LABEL IS "macrocell33";
-    ATTRIBUTE Location OF Net_16_3 : LABEL IS "U(2,1)";
+    ATTRIBUTE Location OF Net_16_3 : LABEL IS "U(3,0)";
     ATTRIBUTE lib_model OF Net_16_2 : LABEL IS "macrocell34";
-    ATTRIBUTE Location OF Net_16_2 : LABEL IS "U(2,1)";
+    ATTRIBUTE Location OF Net_16_2 : LABEL IS "U(3,0)";
     ATTRIBUTE lib_model OF Net_16_1 : LABEL IS "macrocell35";
-    ATTRIBUTE Location OF Net_16_1 : LABEL IS "U(2,1)";
+    ATTRIBUTE Location OF Net_16_1 : LABEL IS "U(3,0)";
     ATTRIBUTE lib_model OF Net_16_0 : LABEL IS "macrocell36";
-    ATTRIBUTE Location OF Net_16_0 : LABEL IS "U(2,1)";
+    ATTRIBUTE Location OF Net_16_0 : LABEL IS "U(3,0)";
     COMPONENT clockblockcell
         PORT (
             dclk_0 : OUT std_ulogic;
@@ -3232,7 +3233,7 @@ BEGIN
         PORT MAP(
             pa_out => P1_34(0)__PA,
             oe => open,
-            pin_input => Net_915,
+            pin_input => Net_1012,
             pad_out => P1_34(0)_PAD,
             pad_in => P1_34(0)_PAD,
             in_clock => open,
@@ -3324,7 +3325,7 @@ BEGIN
         PORT MAP(
             pa_out => LED(0)__PA,
             oe => open,
-            pin_input => Net_989,
+            pin_input => Net_1013,
             pad_out => LED(0)_PAD,
             pad_in => LED(0)_PAD,
             in_clock => open,
@@ -3529,6 +3530,19 @@ BEGIN
             main_3 => Net_16_1,
             main_4 => Net_16_0);
 
+    Net_1013:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * main_2 * main_3 * main_4)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => Net_1013,
+            main_0 => Net_16_4,
+            main_1 => Net_16_3,
+            main_2 => Net_16_2,
+            main_3 => Net_16_1,
+            main_4 => Net_16_0);
+
     Net_901:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * !main_1 * !main_2 * !main_3 * !main_4)",
@@ -3711,26 +3725,14 @@ BEGIN
             main_3 => Net_16_1,
             main_4 => Net_16_0);
 
-    Net_915:macrocell
+    Net_1012:macrocell
         GENERIC MAP(
+            soft => 1,
             eqn_main => "(main_0 * main_1 * main_2 * main_3 * !main_4)",
             regmode => 0,
             clken_mode => 1)
         PORT MAP(
-            q => Net_915,
-            main_0 => Net_16_4,
-            main_1 => Net_16_3,
-            main_2 => Net_16_2,
-            main_3 => Net_16_1,
-            main_4 => Net_16_0);
-
-    Net_989:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0 * main_1 * main_2 * main_3 * main_4)",
-            regmode => 0,
-            clken_mode => 1)
-        PORT MAP(
-            q => Net_989,
+            q => Net_1012,
             main_0 => Net_16_4,
             main_1 => Net_16_3,
             main_2 => Net_16_2,
@@ -3739,62 +3741,72 @@ BEGIN
 
     Net_16_4:macrocell
         GENERIC MAP(
-            eqn_main => "(main_0 * main_1 * main_2 * main_3)",
+            eqn_main => "(main_0 * main_1) + (!main_1 * main_2 * main_3 * main_4 * main_5)",
             regmode => 2,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
             q => Net_16_4,
             clock_0 => Net_1010,
-            main_0 => Net_16_3,
-            main_1 => Net_16_2,
-            main_2 => Net_16_1,
-            main_3 => Net_16_0);
+            main_0 => Net_16_4,
+            main_1 => Net_1012,
+            main_2 => Net_16_3,
+            main_3 => Net_16_2,
+            main_4 => Net_16_1,
+            main_5 => Net_16_0);
 
     Net_16_3:macrocell
         GENERIC MAP(
-            eqn_main => "(main_0 * main_1 * main_2)",
+            eqn_main => "(!main_0 * main_2 * main_3 * main_4) + (main_0 * main_1)",
             regmode => 2,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
             q => Net_16_3,
             clock_0 => Net_1010,
-            main_0 => Net_16_2,
-            main_1 => Net_16_1,
-            main_2 => Net_16_0);
+            main_0 => Net_1012,
+            main_1 => Net_16_3,
+            main_2 => Net_16_2,
+            main_3 => Net_16_1,
+            main_4 => Net_16_0);
 
     Net_16_2:macrocell
         GENERIC MAP(
-            eqn_main => "(main_0 * main_1)",
+            eqn_main => "(!main_0 * main_2 * main_3) + (main_0 * main_1)",
             regmode => 2,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
             q => Net_16_2,
             clock_0 => Net_1010,
-            main_0 => Net_16_1,
-            main_1 => Net_16_0);
+            main_0 => Net_1012,
+            main_1 => Net_16_2,
+            main_2 => Net_16_1,
+            main_3 => Net_16_0);
 
     Net_16_1:macrocell
         GENERIC MAP(
-            eqn_main => "(main_0)",
-            regmode => 2,
+            eqn_main => "(!main_0 * !main_1 * main_2) + (!main_0 * main_1 * !main_2)",
+            regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
             q => Net_16_1,
             clock_0 => Net_1010,
-            main_0 => Net_16_0);
+            main_0 => Net_1012,
+            main_1 => Net_16_1,
+            main_2 => Net_16_0);
 
     Net_16_0:macrocell
         GENERIC MAP(
-            eqn_main => "1'b0",
-            regmode => 2,
+            eqn_main => "(!main_0 * !main_1)",
+            regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
             q => Net_16_0,
-            clock_0 => Net_1010);
+            clock_0 => Net_1010,
+            main_0 => Net_1012,
+            main_1 => Net_16_0);
 
 END __DEFAULT__;

@@ -1,12 +1,13 @@
-Loading plugins phase: Elapsed time ==> 0s.320ms
+Loading plugins phase: Elapsed time ==> 0s.283ms
 <CYPRESSTAG name="CyDsfit arguments...">
-cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj -d CY8C5267AXI-LP051 -s C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE</CYPRESSTAG>
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj -d CY8C5267AXI-LP051 -s C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+</CYPRESSTAG>
 <CYPRESSTAG name="Design elaboration results...">
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 1s.030ms
+Elaboration phase: Elapsed time ==> 1s.429ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 0s.060ms
+HDL generation phase: Elapsed time ==> 0s.080ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -23,24 +24,24 @@ HDL generation phase: Elapsed time ==> 0s.060ms
 
 ======================================================================
 Compiling:  ODAS-PSOC5-LEDS-01.v
-Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\bin\warp.exe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj -dcpsoc3 ODAS-PSOC5-LEDS-01.v -verilog
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\bin\warp.exe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj -dcpsoc3 ODAS-PSOC5-LEDS-01.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  ODAS-PSOC5-LEDS-01.v
-Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\bin\warp.exe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj -dcpsoc3 ODAS-PSOC5-LEDS-01.v -verilog
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\bin\warp.exe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj -dcpsoc3 ODAS-PSOC5-LEDS-01.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  ODAS-PSOC5-LEDS-01.v
 Program  :   vlogfe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj -dcpsoc3 -verilog ODAS-PSOC5-LEDS-01.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj -dcpsoc3 -verilog ODAS-PSOC5-LEDS-01.v
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Wed May 17 13:58:49 2017
+Fri Jul 21 17:59:19 2017
 
 
 ======================================================================
@@ -50,31 +51,31 @@ Options  :    -yv2 -q10 ODAS-PSOC5-LEDS-01.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Wed May 17 13:58:49 2017
+Fri Jul 21 17:59:19 2017
 
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\demux_v1_10\demux_v1_10.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\demux_v1_10\demux_v1_10.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.v'
 
 vpp:  No errors.
 
 Library 'work' => directory 'lcpsoc3'
 General_symbol_table
 General_symbol_table
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\std.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\work\cypress.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
 Using control file 'ODAS-PSOC5-LEDS-01.ctl'.
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v (line 59, col 28):  Note: Substituting module 'add_vi_vv' for '+'.
+C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v (line 59, col 28):  Note: Substituting module 'add_vi_vv' for '+'.
 
 vlogfe:  No errors.
 
@@ -82,30 +83,30 @@ vlogfe:  No errors.
 ======================================================================
 Compiling:  ODAS-PSOC5-LEDS-01.v
 Program  :   tovif
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj -dcpsoc3 -verilog ODAS-PSOC5-LEDS-01.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj -dcpsoc3 -verilog ODAS-PSOC5-LEDS-01.v
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Wed May 17 13:58:49 2017
+Fri Jul 21 17:59:19 2017
 
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\std.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\work\cypress.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\codegentemp\ODAS-PSOC5-LEDS-01.ctl'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
-Linking 'C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\codegentemp\ODAS-PSOC5-LEDS-01.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\demux_v1_10\demux_v1_10.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\codegentemp\ODAS-PSOC5-LEDS-01.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
+Linking 'C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\codegentemp\ODAS-PSOC5-LEDS-01.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\cypress.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\demux_v1_10\demux_v1_10.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
 
 tovif:  No errors.
 
@@ -113,31 +114,31 @@ tovif:  No errors.
 ======================================================================
 Compiling:  ODAS-PSOC5-LEDS-01.v
 Program  :   topld
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj -dcpsoc3 -verilog ODAS-PSOC5-LEDS-01.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj -dcpsoc3 -verilog ODAS-PSOC5-LEDS-01.v
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Wed May 17 13:58:49 2017
+Fri Jul 21 17:59:20 2017
 
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\std.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\work\cypress.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\codegentemp\ODAS-PSOC5-LEDS-01.ctl'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
-Linking 'C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\codegentemp\ODAS-PSOC5-LEDS-01.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\demux_v1_10\demux_v1_10.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\codegentemp\ODAS-PSOC5-LEDS-01.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
+Linking 'C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\codegentemp\ODAS-PSOC5-LEDS-01.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\cypress.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\demux_v1_10\demux_v1_10.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
 
 ----------------------------------------------------------
 Detecting unused logic.
@@ -249,8 +250,8 @@ Detecting unused logic.
 	\BasicCounter_1:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_27\
 	\BasicCounter_1:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_26\
 	\BasicCounter_1:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_25\
-	\demux_1:tmp__demux_1_15_reg\
-	Net_108
+	\demux_2:tmp__demux_2_15_reg\
+	Net_989
 
     Synthesized names
 	\BasicCounter_1:add_vi_vv_MODGEN_1_31\
@@ -289,7 +290,6 @@ Alias Detection
 ------------------------------------------------------
 Aliasing tmpOE__P1_05_net_0 to Net_919
 Aliasing one to Net_919
-Aliasing Net_18 to zero
 Aliasing \BasicCounter_1:MODULE_1:g2:a0:a_23\ to zero
 Aliasing \BasicCounter_1:MODULE_1:g2:a0:a_22\ to zero
 Aliasing \BasicCounter_1:MODULE_1:g2:a0:a_21\ to zero
@@ -343,7 +343,7 @@ Aliasing tmpOE__LED_net_0 to Net_919
 Removing Lhs of wire tmpOE__P1_05_net_0[2] = Net_919[0]
 Removing Rhs of wire Net_357[3] = \demux_1:tmp__demux_1_0_reg\[250]
 Removing Lhs of wire one[8] = Net_919[0]
-Removing Lhs of wire Net_18[13] = zero[7]
+Removing Rhs of wire Net_1012[13] = \demux_2:tmp__demux_2_14_reg\[450]
 Removing Lhs of wire \BasicCounter_1:add_vi_vv_MODGEN_1_4\[14] = \BasicCounter_1:MODULE_1:g2:a0:s_4\[178]
 Removing Lhs of wire \BasicCounter_1:add_vi_vv_MODGEN_1_3\[16] = \BasicCounter_1:MODULE_1:g2:a0:s_3\[179]
 Removing Lhs of wire \BasicCounter_1:add_vi_vv_MODGEN_1_2\[18] = \BasicCounter_1:MODULE_1:g2:a0:s_2\[180]
@@ -400,6 +400,7 @@ Removing Rhs of wire Net_942[275] = \demux_1:tmp__demux_1_10_reg\[261]
 Removing Rhs of wire Net_943[276] = \demux_1:tmp__demux_1_11_reg\[262]
 Removing Rhs of wire Net_369[277] = \demux_1:tmp__demux_1_12_reg\[263]
 Removing Rhs of wire Net_370[278] = \demux_1:tmp__demux_1_13_reg\[264]
+Removing Rhs of wire Net_1013[279] = \demux_1:tmp__demux_1_15_reg\[266]
 Removing Lhs of wire tmpOE__P1_09_net_0[281] = Net_919[0]
 Removing Lhs of wire tmpOE__P1_10_net_0[287] = Net_919[0]
 Removing Rhs of wire Net_903[288] = \demux_2:tmp__demux_2_2_reg\[438]
@@ -436,13 +437,11 @@ Removing Lhs of wire tmpOE__P1_23_net_0[418] = Net_919[0]
 Removing Lhs of wire tmpOE__P1_22_net_0[424] = Net_919[0]
 Removing Rhs of wire Net_909[425] = \demux_2:tmp__demux_2_8_reg\[444]
 Removing Lhs of wire tmpOE__P1_21_net_0[431] = Net_919[0]
-Removing Rhs of wire Net_915[452] = \demux_2:tmp__demux_2_14_reg\[450]
-Removing Rhs of wire Net_989[453] = \demux_2:tmp__demux_2_15_reg\[451]
-Removing Lhs of wire tmpOE__P1_34_net_0[455] = Net_919[0]
-Removing Lhs of wire tmpOE__LED_net_0[461] = Net_919[0]
+Removing Lhs of wire tmpOE__P1_34_net_0[454] = Net_919[0]
+Removing Lhs of wire tmpOE__LED_net_0[460] = Net_919[0]
 
 ------------------------------------------------------
-Aliased 0 equations, 100 wires.
+Aliased 0 equations, 99 wires.
 ------------------------------------------------------
 
 ----------------------------------------------------------
@@ -459,6 +458,9 @@ zero <=  ('0') ;
 
 Note:  Expanding virtual equation for 'Net_54' (cost = 0):
 Net_54 <= (not Net_16_4);
+
+Note:  Virtual signal Net_1012 with ( cost: 150 or cost_inv: 5)  > 90 or with size: 1 > 102 has been made a (soft) node.
+Net_1012 <= ((not Net_16_0 and Net_16_4 and Net_16_3 and Net_16_2 and Net_16_1));
 
 Note:  Expanding virtual equation for '\BasicCounter_1:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_1\' (cost = 0):
 \BasicCounter_1:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_1\ <= (Net_16_0);
@@ -574,7 +576,7 @@ Substituting virtuals - pass 8:
 Circuit simplification results:
 
 	Expanded 29 signals.
-	Turned 0 signals into soft nodes.
+	Turned 1 signals into soft nodes.
 	Maximum default expansion cost was set at 3.
 ----------------------------------------------------------
 
@@ -615,18 +617,18 @@ Circuit simplification results:
 
 topld:  No errors.
 
-CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp
-Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\bin\warp.exe
-Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj -dcpsoc3 ODAS-PSOC5-LEDS-01.v -verilog
+CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp
+Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\bin\warp.exe
+Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj -dcpsoc3 ODAS-PSOC5-LEDS-01.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 0s.730ms
+Warp synthesis phase: Elapsed time ==> 1s.462ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V4.0.0.432, Family: PSoC3, Started at: Wednesday, 17 May 2017 13:58:49
-Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj -d CY8C5267AXI-LP051 ODAS-PSOC5-LEDS-01.v -verilog
+cyp3fit: V4.1.0.2686, Family: PSoC3, Started at: Friday, 21 July 2017 17:59:20
+Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj -d CY8C5267AXI-LP051 ODAS-PSOC5-LEDS-01.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.020ms
+Design parsing phase: Elapsed time ==> 0s.035ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech Mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
@@ -686,12 +688,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_05(0)__PA ,
-            input => Net_357 ,
+            pin_input => Net_357 ,
             pad => P1_05(0)_PAD );
         Properties:
         {
@@ -726,12 +728,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_06(0)__PA ,
-            input => Net_901 ,
+            pin_input => Net_901 ,
             pad => P1_06(0)_PAD );
         Properties:
         {
@@ -766,12 +768,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_07(0)__PA ,
-            input => Net_358 ,
+            pin_input => Net_358 ,
             pad => P1_07(0)_PAD );
         Properties:
         {
@@ -806,12 +808,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_08(0)__PA ,
-            input => Net_902 ,
+            pin_input => Net_902 ,
             pad => P1_08(0)_PAD );
         Properties:
         {
@@ -846,12 +848,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_33(0)__PA ,
-            input => Net_371 ,
+            pin_input => Net_371 ,
             pad => P1_33(0)_PAD );
         Properties:
         {
@@ -886,12 +888,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_09(0)__PA ,
-            input => Net_934 ,
+            pin_input => Net_934 ,
             pad => P1_09(0)_PAD );
         Properties:
         {
@@ -926,12 +928,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_10(0)__PA ,
-            input => Net_903 ,
+            pin_input => Net_903 ,
             pad => P1_10(0)_PAD );
         Properties:
         {
@@ -966,12 +968,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_11(0)__PA ,
-            input => Net_935 ,
+            pin_input => Net_935 ,
             pad => P1_11(0)_PAD );
         Properties:
         {
@@ -1006,12 +1008,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_12(0)__PA ,
-            input => Net_904 ,
+            pin_input => Net_904 ,
             pad => P1_12(0)_PAD );
         Properties:
         {
@@ -1046,12 +1048,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_13(0)__PA ,
-            input => Net_361 ,
+            pin_input => Net_361 ,
             pad => P1_13(0)_PAD );
         Properties:
         {
@@ -1086,12 +1088,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_14(0)__PA ,
-            input => Net_905 ,
+            pin_input => Net_905 ,
             pad => P1_14(0)_PAD );
         Properties:
         {
@@ -1126,12 +1128,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_15(0)__PA ,
-            input => Net_362 ,
+            pin_input => Net_362 ,
             pad => P1_15(0)_PAD );
         Properties:
         {
@@ -1166,12 +1168,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_16(0)__PA ,
-            input => Net_906 ,
+            pin_input => Net_906 ,
             pad => P1_16(0)_PAD );
         Properties:
         {
@@ -1206,12 +1208,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_17(0)__PA ,
-            input => Net_363 ,
+            pin_input => Net_363 ,
             pad => P1_17(0)_PAD );
         Properties:
         {
@@ -1246,12 +1248,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_18(0)__PA ,
-            input => Net_907 ,
+            pin_input => Net_907 ,
             pad => P1_18(0)_PAD );
         Properties:
         {
@@ -1286,12 +1288,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_19(0)__PA ,
-            input => Net_364 ,
+            pin_input => Net_364 ,
             pad => P1_19(0)_PAD );
         Properties:
         {
@@ -1326,12 +1328,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_20(0)__PA ,
-            input => Net_908 ,
+            pin_input => Net_908 ,
             pad => P1_20(0)_PAD );
         Properties:
         {
@@ -1366,12 +1368,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_32(0)__PA ,
-            input => Net_914 ,
+            pin_input => Net_914 ,
             pad => P1_32(0)_PAD );
         Properties:
         {
@@ -1406,12 +1408,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_31(0)__PA ,
-            input => Net_370 ,
+            pin_input => Net_370 ,
             pad => P1_31(0)_PAD );
         Properties:
         {
@@ -1446,12 +1448,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_30(0)__PA ,
-            input => Net_913 ,
+            pin_input => Net_913 ,
             pad => P1_30(0)_PAD );
         Properties:
         {
@@ -1486,12 +1488,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_29(0)__PA ,
-            input => Net_369 ,
+            pin_input => Net_369 ,
             pad => P1_29(0)_PAD );
         Properties:
         {
@@ -1526,12 +1528,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_28(0)__PA ,
-            input => Net_912 ,
+            pin_input => Net_912 ,
             pad => P1_28(0)_PAD );
         Properties:
         {
@@ -1566,12 +1568,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_27(0)__PA ,
-            input => Net_943 ,
+            pin_input => Net_943 ,
             pad => P1_27(0)_PAD );
         Properties:
         {
@@ -1606,12 +1608,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_26(0)__PA ,
-            input => Net_911 ,
+            pin_input => Net_911 ,
             pad => P1_26(0)_PAD );
         Properties:
         {
@@ -1646,12 +1648,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_25(0)__PA ,
-            input => Net_942 ,
+            pin_input => Net_942 ,
             pad => P1_25(0)_PAD );
         Properties:
         {
@@ -1686,12 +1688,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_24(0)__PA ,
-            input => Net_910 ,
+            pin_input => Net_910 ,
             pad => P1_24(0)_PAD );
         Properties:
         {
@@ -1726,12 +1728,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_23(0)__PA ,
-            input => Net_366 ,
+            pin_input => Net_366 ,
             pad => P1_23(0)_PAD );
         Properties:
         {
@@ -1766,12 +1768,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_22(0)__PA ,
-            input => Net_909 ,
+            pin_input => Net_909 ,
             pad => P1_22(0)_PAD );
         Properties:
         {
@@ -1806,12 +1808,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_21(0)__PA ,
-            input => Net_365 ,
+            pin_input => Net_365 ,
             pad => P1_21(0)_PAD );
         Properties:
         {
@@ -1846,12 +1848,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => P1_34(0)__PA ,
-            input => Net_915 ,
+            pin_input => Net_1012 ,
             pad => P1_34(0)_PAD );
         Properties:
         {
@@ -1886,12 +1888,12 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilitites: DIGITAL, ROUTABLE
+            Required Capabilities: DIGITAL, ROUTABLE
             Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => LED(0)__PA ,
-            input => Net_989 ,
+            pin_input => Net_1013 ,
             pad => LED(0)_PAD );
         Properties:
         {
@@ -2053,6 +2055,16 @@ Design Equations
         );
         Output = Net_371 (fanout=1)
 
+    MacroCell: Name=Net_1013, Mode=(Combinatorial)
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !Net_16_4 * Net_16_3 * Net_16_2 * Net_16_1 * Net_16_0
+        );
+        Output = Net_1013 (fanout=1)
+
     MacroCell: Name=Net_901, Mode=(Combinatorial)
         Total # of inputs        : 5
         Total # of product terms : 1
@@ -2193,7 +2205,7 @@ Design Equations
         );
         Output = Net_914 (fanout=1)
 
-    MacroCell: Name=Net_915, Mode=(Combinatorial)
+    MacroCell: Name=Net_1012, Mode=(Combinatorial)
         Total # of inputs        : 5
         Total # of product terms : 1
             Clock Enable: True
@@ -2201,43 +2213,65 @@ Design Equations
         (
               Net_16_4 * Net_16_3 * Net_16_2 * Net_16_1 * !Net_16_0
         );
-        Output = Net_915 (fanout=1)
-
-    MacroCell: Name=Net_989, Mode=(Combinatorial)
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_16_4 * Net_16_3 * Net_16_2 * Net_16_1 * Net_16_0
-        );
-        Output = Net_989 (fanout=1)
+        Output = Net_1012 (fanout=6)
+        Properties               : 
+        {
+            soft = 1
+        }
 
     MacroCell: Name=Net_16_4, Mode=(T-Register)
-        Total # of inputs        : 4
-        Total # of product terms : 1
+        Total # of inputs        : 6
+        Total # of product terms : 2
         List of special equations: 
             Clock  = (Net_1010) => Global
             Clock Enable: True
-        Main Equation            : 1 pterm
+        Main Equation            : 2 pterms
         (
-              Net_16_3 * Net_16_2 * Net_16_1 * Net_16_0
+              Net_16_4 * Net_1012
+            + !Net_1012 * Net_16_3 * Net_16_2 * Net_16_1 * Net_16_0
         );
-        Output = Net_16_4 (fanout=31)
+        Output = Net_16_4 (fanout=32)
 
     MacroCell: Name=Net_16_3, Mode=(T-Register)
-        Total # of inputs        : 3
-        Total # of product terms : 1
+        Total # of inputs        : 5
+        Total # of product terms : 2
         List of special equations: 
             Clock  = (Net_1010) => Global
             Clock Enable: True
-        Main Equation            : 1 pterm
+        Main Equation            : 2 pterms
         (
-              Net_16_2 * Net_16_1 * Net_16_0
+              !Net_1012 * Net_16_2 * Net_16_1 * Net_16_0
+            + Net_1012 * Net_16_3
         );
-        Output = Net_16_3 (fanout=32)
+        Output = Net_16_3 (fanout=33)
 
     MacroCell: Name=Net_16_2, Mode=(T-Register)
+        Total # of inputs        : 4
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (Net_1010) => Global
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        (
+              !Net_1012 * Net_16_1 * Net_16_0
+            + Net_1012 * Net_16_2
+        );
+        Output = Net_16_2 (fanout=34)
+
+    MacroCell: Name=Net_16_1, Mode=(D-Register)
+        Total # of inputs        : 3
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (Net_1010) => Global
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        (
+              !Net_1012 * !Net_16_1 * Net_16_0
+            + !Net_1012 * Net_16_1 * !Net_16_0
+        );
+        Output = Net_16_1 (fanout=35)
+
+    MacroCell: Name=Net_16_0, Mode=(D-Register)
         Total # of inputs        : 2
         Total # of product terms : 1
         List of special equations: 
@@ -2245,33 +2279,9 @@ Design Equations
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              Net_16_1 * Net_16_0
+              !Net_1012 * !Net_16_0
         );
-        Output = Net_16_2 (fanout=33)
-
-    MacroCell: Name=Net_16_1, Mode=(T-Register)
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_1010) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_16_0
-        );
-        Output = Net_16_1 (fanout=34)
-
-    MacroCell: Name=Net_16_0, Mode=(T-Register)
-        Total # of inputs        : 0
-        Total # of product terms : 0
-        List of special equations: 
-            Clock  = (Net_1010) => Global
-            Clock Enable: True
-        Main Equation            : 0 pterms
-        !(
-            0
-        );
-        Output = Net_16_0 (fanout=35)
+        Output = Net_16_0 (fanout=36)
     </CYPRESSTAG>
     <CYPRESSTAG name="Datapath listing">
     </CYPRESSTAG>
@@ -2310,19 +2320,20 @@ DMA Channels                  :    0 :   24 :   24 :  0.00 %
 Timer                         :    0 :    4 :    4 :  0.00 %
 UDB                           :      :      :      :        
   Macrocells                  :   36 :  156 :  192 : 18.75 %
-  Unique P-terms              :   35 :  349 :  384 :  9.11 %
-  Total P-terms               :   35 :      :      :        
+  Unique P-terms              :   40 :  344 :  384 : 10.42 %
+  Total P-terms               :   40 :      :      :        
   Datapath Cells              :    0 :   24 :   24 :  0.00 %
   Status Cells                :    0 :   24 :   24 :  0.00 %
   Control Cells               :    0 :   24 :   24 :  0.00 %
 Comparator                    :    0 :    2 :    2 :  0.00 %
+Delta-Sigma ADC               :    0 :    1 :    1 :  0.00 %
 LPF                           :    0 :    2 :    2 :  0.00 %
 SAR ADC                       :    0 :    1 :    1 :  0.00 %
 DAC                           :      :      :      :        
   VIDAC                       :    0 :    1 :    1 :  0.00 %
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 0s.040ms
-Tech Mapping phase: Elapsed time ==> 0s.150ms
+Technology Mapping: Elapsed time ==> 0s.349ms
+Tech Mapping phase: Elapsed time ==> 0s.485ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
 Initial Analog Placement Results:
@@ -2357,7 +2368,7 @@ IO_3@[IOP=(3)][IoId=(3)] : P1_31(0) (fixed)
 IO_2@[IOP=(3)][IoId=(2)] : P1_32(0) (fixed)
 IO_1@[IOP=(3)][IoId=(1)] : P1_33(0) (fixed)
 IO_0@[IOP=(3)][IoId=(0)] : P1_34(0) (fixed)
-Analog Placement phase: Elapsed time ==> 0s.030ms
+Analog Placement phase: Elapsed time ==> 0s.049ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
 Analog Routing phase: Elapsed time ==> 0s.000ms
@@ -2375,11 +2386,11 @@ Dump of CyP35AnalogRoutingResultsDB
 IsVddaHalfUsedForComp = False
 IsVddaHalfUsedForSar0 = False
 IsVddaHalfUsedForSar1 = False
-Analog Code Generation phase: Elapsed time ==> 0s.020ms
+Analog Code Generation phase: Elapsed time ==> 0s.016ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
-I2076: Total run-time: 1.2 sec.
+I2076: Total run-time: 2.3 sec.
 
 </CYPRESSTAG>
 <CYPRESSTAG name="PLD Packing">
@@ -2390,27 +2401,27 @@ PLD Packing Summary
 ------------------------------------------------------------
             Resource Type : Used : Free :  Max :  % Used
     ====================================================
-                     PLDs :   11 :   37 :   48 :  22.92%
+                     PLDs :   10 :   38 :   48 :  20.83%
 
 <CYPRESSTAG name="PLD Statistics">
 
         PLD Resource Type :     Average/LAB
     =======================================
-                   Inputs :            4.82
-                   Pterms :            3.18
-               Macrocells :            3.27
+                   Inputs :            5.20
+                   Pterms :            4.00
+               Macrocells :            3.60
 </CYPRESSTAG>
 <CYPRESSTAG name="Packed PLD Contents">
 Packed PLD Contents not displayed at this verbose level.</CYPRESSTAG>
 </CYPRESSTAG>
-PLD Packing: Elapsed time ==> 0s.000ms
+PLD Packing: Elapsed time ==> 0s.002ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Partitioning">
 <CYPRESSTAG name="Initial Partitioning Summary">
 Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 <CYPRESSTAG name="Final Partitioning Summary">
 Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
-Partitioning: Elapsed time ==> 0s.040ms
+Partitioning: Elapsed time ==> 0s.048ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Final Placement Summary">
 
@@ -2420,7 +2431,7 @@ Final Placement Summary
 
        Resource Type :      Count : Avg Inputs : Avg Outputs
     ========================================================
-                 UDB :          6 :       4.67 :       6.00
+                 UDB :          5 :       5.20 :       7.20
 <CYPRESSTAG name="Final Placement Details">
 <CYPRESSTAG name="Component Details">
 
@@ -2441,73 +2452,48 @@ UDB [UDB=(1,4)] is empty.
 UDB [UDB=(1,5)] is empty.
 UDB [UDB=(2,0)] is empty.
 UDB [UDB=(2,1)] contents:
-LAB@[UDB=(2,1)][LB=0] #macrocells=4, #inputs=3, #pterms=3
+LAB@[UDB=(2,1)][LB=0] #macrocells=4, #inputs=5, #pterms=4
 {
-    [McSlotId=0]:     MacroCell: Name=Net_16_3, Mode=(T-Register) @ [UDB=(2,1)][LB=0][MC=0]
-        Total # of inputs        : 3
+    [McSlotId=0]:     MacroCell: Name=Net_934, Mode=(Combinatorial) @ [UDB=(2,1)][LB=0][MC=0]
+        Total # of inputs        : 5
         Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_1010) => Global
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              Net_16_2 * Net_16_1 * Net_16_0
+              !Net_16_4 * !Net_16_3 * !Net_16_2 * Net_16_1 * !Net_16_0
         );
-        Output = Net_16_3 (fanout=32)
+        Output = Net_934 (fanout=1)
         Properties               : 
         {
         }
 
-    [McSlotId=1]:     MacroCell: Name=Net_16_2, Mode=(T-Register) @ [UDB=(2,1)][LB=0][MC=1]
-        Total # of inputs        : 2
+    [McSlotId=1]:     MacroCell: Name=Net_905, Mode=(Combinatorial) @ [UDB=(2,1)][LB=0][MC=1]
+        Total # of inputs        : 5
         Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_1010) => Global
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              Net_16_1 * Net_16_0
+              Net_16_4 * !Net_16_3 * Net_16_2 * !Net_16_1 * !Net_16_0
         );
-        Output = Net_16_2 (fanout=33)
+        Output = Net_905 (fanout=1)
         Properties               : 
         {
         }
 
-    [McSlotId=2]:     MacroCell: Name=Net_16_1, Mode=(T-Register) @ [UDB=(2,1)][LB=0][MC=2]
-        Total # of inputs        : 1
+    [McSlotId=2]:     MacroCell: Name=Net_906, Mode=(Combinatorial) @ [UDB=(2,1)][LB=0][MC=2]
+        Total # of inputs        : 5
         Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_1010) => Global
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              Net_16_0
+              Net_16_4 * !Net_16_3 * Net_16_2 * !Net_16_1 * Net_16_0
         );
-        Output = Net_16_1 (fanout=34)
+        Output = Net_906 (fanout=1)
         Properties               : 
         {
         }
 
-    [McSlotId=3]:     MacroCell: Name=Net_16_0, Mode=(T-Register) @ [UDB=(2,1)][LB=0][MC=3]
-        Total # of inputs        : 0
-        Total # of product terms : 0
-        List of special equations: 
-            Clock  = (Net_1010) => Global
-            Clock Enable: True
-        Main Equation            : 0 pterms
-        !(
-            0
-        );
-        Output = Net_16_0 (fanout=35)
-        Properties               : 
-        {
-        }
-}
-
-UDB [UDB=(2,2)] contents:
-LAB@[UDB=(2,2)][LB=0] #macrocells=4, #inputs=5, #pterms=4
-{
-    [McSlotId=0]:     MacroCell: Name=Net_907, Mode=(Combinatorial) @ [UDB=(2,2)][LB=0][MC=0]
+    [McSlotId=3]:     MacroCell: Name=Net_907, Mode=(Combinatorial) @ [UDB=(2,1)][LB=0][MC=3]
         Total # of inputs        : 5
         Total # of product terms : 1
             Clock Enable: True
@@ -2519,48 +2505,108 @@ LAB@[UDB=(2,2)][LB=0] #macrocells=4, #inputs=5, #pterms=4
         Properties               : 
         {
         }
+}
 
-    [McSlotId=1]:     MacroCell: Name=Net_366, Mode=(Combinatorial) @ [UDB=(2,2)][LB=0][MC=1]
+LAB@[UDB=(2,1)][LB=1] #macrocells=4, #inputs=5, #pterms=4
+{
+    [McSlotId=0]:     MacroCell: Name=Net_365, Mode=(Combinatorial) @ [UDB=(2,1)][LB=1][MC=0]
         Total # of inputs        : 5
         Total # of product terms : 1
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              !Net_16_4 * Net_16_3 * !Net_16_2 * !Net_16_1 * Net_16_0
+              !Net_16_4 * Net_16_3 * !Net_16_2 * !Net_16_1 * !Net_16_0
         );
-        Output = Net_366 (fanout=1)
+        Output = Net_365 (fanout=1)
         Properties               : 
         {
         }
 
-    [McSlotId=2]:     MacroCell: Name=Net_989, Mode=(Combinatorial) @ [UDB=(2,2)][LB=0][MC=2]
+    [McSlotId=1]:     MacroCell: Name=Net_909, Mode=(Combinatorial) @ [UDB=(2,1)][LB=1][MC=1]
         Total # of inputs        : 5
         Total # of product terms : 1
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              Net_16_4 * Net_16_3 * Net_16_2 * Net_16_1 * Net_16_0
+              Net_16_4 * Net_16_3 * !Net_16_2 * !Net_16_1 * !Net_16_0
         );
-        Output = Net_989 (fanout=1)
+        Output = Net_909 (fanout=1)
         Properties               : 
         {
         }
 
-    [McSlotId=3]:     MacroCell: Name=Net_903, Mode=(Combinatorial) @ [UDB=(2,2)][LB=0][MC=3]
+    [McSlotId=2]:     MacroCell: Name=Net_910, Mode=(Combinatorial) @ [UDB=(2,1)][LB=1][MC=2]
         Total # of inputs        : 5
         Total # of product terms : 1
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              Net_16_4 * !Net_16_3 * !Net_16_2 * Net_16_1 * !Net_16_0
+              Net_16_4 * Net_16_3 * !Net_16_2 * !Net_16_1 * Net_16_0
         );
-        Output = Net_903 (fanout=1)
+        Output = Net_910 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]:     MacroCell: Name=Net_911, Mode=(Combinatorial) @ [UDB=(2,1)][LB=1][MC=3]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              Net_16_4 * Net_16_3 * !Net_16_2 * Net_16_1 * !Net_16_0
+        );
+        Output = Net_911 (fanout=1)
         Properties               : 
         {
         }
 }
 
-LAB@[UDB=(2,2)][LB=1] #macrocells=1, #inputs=5, #pterms=1
+UDB [UDB=(2,2)] contents:
+LAB@[UDB=(2,2)][LB=0] #macrocells=3, #inputs=5, #pterms=3
+{
+    [McSlotId=0]: (empty)
+    [McSlotId=1]:     MacroCell: Name=Net_358, Mode=(Combinatorial) @ [UDB=(2,2)][LB=0][MC=1]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !Net_16_4 * !Net_16_3 * !Net_16_2 * !Net_16_1 * Net_16_0
+        );
+        Output = Net_358 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]:     MacroCell: Name=Net_361, Mode=(Combinatorial) @ [UDB=(2,2)][LB=0][MC=2]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !Net_16_4 * !Net_16_3 * Net_16_2 * !Net_16_1 * !Net_16_0
+        );
+        Output = Net_361 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]:     MacroCell: Name=Net_362, Mode=(Combinatorial) @ [UDB=(2,2)][LB=0][MC=3]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !Net_16_4 * !Net_16_3 * Net_16_2 * !Net_16_1 * Net_16_0
+        );
+        Output = Net_362 (fanout=1)
+        Properties               : 
+        {
+        }
+}
+
+LAB@[UDB=(2,2)][LB=1] #macrocells=4, #inputs=5, #pterms=4
 {
     [McSlotId=0]:     MacroCell: Name=Net_901, Mode=(Combinatorial) @ [UDB=(2,2)][LB=1][MC=0]
         Total # of inputs        : 5
@@ -2575,120 +2621,7 @@ LAB@[UDB=(2,2)][LB=1] #macrocells=1, #inputs=5, #pterms=1
         {
         }
 
-    [McSlotId=1]: (empty)
-    [McSlotId=2]: (empty)
-    [McSlotId=3]: (empty)
-}
-
-UDB [UDB=(2,3)] contents:
-LAB@[UDB=(2,3)][LB=0] #macrocells=4, #inputs=5, #pterms=4
-{
-    [McSlotId=0]:     MacroCell: Name=Net_365, Mode=(Combinatorial) @ [UDB=(2,3)][LB=0][MC=0]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !Net_16_4 * Net_16_3 * !Net_16_2 * !Net_16_1 * !Net_16_0
-        );
-        Output = Net_365 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]:     MacroCell: Name=Net_371, Mode=(Combinatorial) @ [UDB=(2,3)][LB=0][MC=1]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !Net_16_4 * Net_16_3 * Net_16_2 * Net_16_1 * !Net_16_0
-        );
-        Output = Net_371 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]:     MacroCell: Name=Net_370, Mode=(Combinatorial) @ [UDB=(2,3)][LB=0][MC=2]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !Net_16_4 * Net_16_3 * Net_16_2 * !Net_16_1 * Net_16_0
-        );
-        Output = Net_370 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=3]:     MacroCell: Name=Net_943, Mode=(Combinatorial) @ [UDB=(2,3)][LB=0][MC=3]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !Net_16_4 * Net_16_3 * !Net_16_2 * Net_16_1 * Net_16_0
-        );
-        Output = Net_943 (fanout=1)
-        Properties               : 
-        {
-        }
-}
-
-LAB@[UDB=(2,3)][LB=1] #macrocells=1, #inputs=5, #pterms=1
-{
-    [McSlotId=0]: (empty)
-    [McSlotId=1]:     MacroCell: Name=Net_358, Mode=(Combinatorial) @ [UDB=(2,3)][LB=1][MC=1]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !Net_16_4 * !Net_16_3 * !Net_16_2 * !Net_16_1 * Net_16_0
-        );
-        Output = Net_358 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]: (empty)
-    [McSlotId=3]: (empty)
-}
-
-UDB [UDB=(2,4)] is empty.
-UDB [UDB=(2,5)] is empty.
-UDB [UDB=(3,0)] is empty.
-UDB [UDB=(3,1)] contents:
-LAB@[UDB=(3,1)][LB=0] #macrocells=4, #inputs=5, #pterms=4
-{
-    [McSlotId=0]:     MacroCell: Name=Net_942, Mode=(Combinatorial) @ [UDB=(3,1)][LB=0][MC=0]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !Net_16_4 * Net_16_3 * !Net_16_2 * Net_16_1 * !Net_16_0
-        );
-        Output = Net_942 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]:     MacroCell: Name=Net_911, Mode=(Combinatorial) @ [UDB=(3,1)][LB=0][MC=1]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_16_4 * Net_16_3 * !Net_16_2 * Net_16_1 * !Net_16_0
-        );
-        Output = Net_911 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]:     MacroCell: Name=Net_902, Mode=(Combinatorial) @ [UDB=(3,1)][LB=0][MC=2]
+    [McSlotId=1]:     MacroCell: Name=Net_902, Mode=(Combinatorial) @ [UDB=(2,2)][LB=1][MC=1]
         Total # of inputs        : 5
         Total # of product terms : 1
             Clock Enable: True
@@ -2701,120 +2634,20 @@ LAB@[UDB=(3,1)][LB=0] #macrocells=4, #inputs=5, #pterms=4
         {
         }
 
-    [McSlotId=3]:     MacroCell: Name=Net_915, Mode=(Combinatorial) @ [UDB=(3,1)][LB=0][MC=3]
+    [McSlotId=2]:     MacroCell: Name=Net_903, Mode=(Combinatorial) @ [UDB=(2,2)][LB=1][MC=2]
         Total # of inputs        : 5
         Total # of product terms : 1
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              Net_16_4 * Net_16_3 * Net_16_2 * Net_16_1 * !Net_16_0
+              Net_16_4 * !Net_16_3 * !Net_16_2 * Net_16_1 * !Net_16_0
         );
-        Output = Net_915 (fanout=1)
-        Properties               : 
-        {
-        }
-}
-
-LAB@[UDB=(3,1)][LB=1] #macrocells=4, #inputs=5, #pterms=4
-{
-    [McSlotId=0]:     MacroCell: Name=Net_935, Mode=(Combinatorial) @ [UDB=(3,1)][LB=1][MC=0]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !Net_16_4 * !Net_16_3 * !Net_16_2 * Net_16_1 * Net_16_0
-        );
-        Output = Net_935 (fanout=1)
+        Output = Net_903 (fanout=1)
         Properties               : 
         {
         }
 
-    [McSlotId=1]:     MacroCell: Name=Net_908, Mode=(Combinatorial) @ [UDB=(3,1)][LB=1][MC=1]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_16_4 * !Net_16_3 * Net_16_2 * Net_16_1 * Net_16_0
-        );
-        Output = Net_908 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]:     MacroCell: Name=Net_364, Mode=(Combinatorial) @ [UDB=(3,1)][LB=1][MC=2]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !Net_16_4 * !Net_16_3 * Net_16_2 * Net_16_1 * Net_16_0
-        );
-        Output = Net_364 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=3]:     MacroCell: Name=Net_16_4, Mode=(T-Register) @ [UDB=(3,1)][LB=1][MC=3]
-        Total # of inputs        : 4
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_1010) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_16_3 * Net_16_2 * Net_16_1 * Net_16_0
-        );
-        Output = Net_16_4 (fanout=31)
-        Properties               : 
-        {
-        }
-}
-
-UDB [UDB=(3,2)] contents:
-LAB@[UDB=(3,2)][LB=0] #macrocells=4, #inputs=5, #pterms=4
-{
-    [McSlotId=0]:     MacroCell: Name=Net_913, Mode=(Combinatorial) @ [UDB=(3,2)][LB=0][MC=0]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_16_4 * Net_16_3 * Net_16_2 * !Net_16_1 * !Net_16_0
-        );
-        Output = Net_913 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]:     MacroCell: Name=Net_357, Mode=(Combinatorial) @ [UDB=(3,2)][LB=0][MC=1]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !Net_16_4 * !Net_16_3 * !Net_16_2 * !Net_16_1 * !Net_16_0
-        );
-        Output = Net_357 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]:     MacroCell: Name=Net_910, Mode=(Combinatorial) @ [UDB=(3,2)][LB=0][MC=2]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_16_4 * Net_16_3 * !Net_16_2 * !Net_16_1 * Net_16_0
-        );
-        Output = Net_910 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=3]:     MacroCell: Name=Net_904, Mode=(Combinatorial) @ [UDB=(3,2)][LB=0][MC=3]
+    [McSlotId=3]:     MacroCell: Name=Net_904, Mode=(Combinatorial) @ [UDB=(2,2)][LB=1][MC=3]
         Total # of inputs        : 5
         Total # of product terms : 1
             Clock Enable: True
@@ -2828,109 +2661,226 @@ LAB@[UDB=(3,2)][LB=0] #macrocells=4, #inputs=5, #pterms=4
         }
 }
 
-LAB@[UDB=(3,2)][LB=1] #macrocells=3, #inputs=5, #pterms=3
+UDB [UDB=(2,3)] is empty.
+UDB [UDB=(2,4)] is empty.
+UDB [UDB=(2,5)] is empty.
+UDB [UDB=(3,0)] contents:
+LAB@[UDB=(3,0)][LB=0] #macrocells=4, #inputs=6, #pterms=7
 {
-    [McSlotId=0]:     MacroCell: Name=Net_362, Mode=(Combinatorial) @ [UDB=(3,2)][LB=1][MC=0]
-        Total # of inputs        : 5
-        Total # of product terms : 1
+    [McSlotId=0]:     MacroCell: Name=Net_16_4, Mode=(T-Register) @ [UDB=(3,0)][LB=0][MC=0]
+        Total # of inputs        : 6
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (Net_1010) => Global
             Clock Enable: True
-        Main Equation            : 1 pterm
+        Main Equation            : 2 pterms
         (
-              !Net_16_4 * !Net_16_3 * Net_16_2 * !Net_16_1 * Net_16_0
+              Net_16_4 * Net_1012
+            + !Net_1012 * Net_16_3 * Net_16_2 * Net_16_1 * Net_16_0
         );
-        Output = Net_362 (fanout=1)
+        Output = Net_16_4 (fanout=32)
         Properties               : 
         {
         }
 
-    [McSlotId=1]:     MacroCell: Name=Net_363, Mode=(Combinatorial) @ [UDB=(3,2)][LB=1][MC=1]
+    [McSlotId=1]:     MacroCell: Name=Net_1012, Mode=(Combinatorial) @ [UDB=(3,0)][LB=0][MC=1]
         Total # of inputs        : 5
         Total # of product terms : 1
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              !Net_16_4 * !Net_16_3 * Net_16_2 * Net_16_1 * !Net_16_0
+              Net_16_4 * Net_16_3 * Net_16_2 * Net_16_1 * !Net_16_0
         );
-        Output = Net_363 (fanout=1)
+        Output = Net_1012 (fanout=6)
+        Properties               : 
+        {
+            soft = 1
+        }
+
+    [McSlotId=2]:     MacroCell: Name=Net_16_3, Mode=(T-Register) @ [UDB=(3,0)][LB=0][MC=2]
+        Total # of inputs        : 5
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (Net_1010) => Global
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        (
+              !Net_1012 * Net_16_2 * Net_16_1 * Net_16_0
+            + Net_1012 * Net_16_3
+        );
+        Output = Net_16_3 (fanout=33)
         Properties               : 
         {
         }
 
-    [McSlotId=2]:     MacroCell: Name=Net_361, Mode=(Combinatorial) @ [UDB=(3,2)][LB=1][MC=2]
-        Total # of inputs        : 5
-        Total # of product terms : 1
+    [McSlotId=3]:     MacroCell: Name=Net_16_2, Mode=(T-Register) @ [UDB=(3,0)][LB=0][MC=3]
+        Total # of inputs        : 4
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (Net_1010) => Global
             Clock Enable: True
-        Main Equation            : 1 pterm
+        Main Equation            : 2 pterms
         (
-              !Net_16_4 * !Net_16_3 * Net_16_2 * !Net_16_1 * !Net_16_0
+              !Net_1012 * Net_16_1 * Net_16_0
+            + Net_1012 * Net_16_2
         );
-        Output = Net_361 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=3]: (empty)
-}
-
-UDB [UDB=(3,3)] contents:
-LAB@[UDB=(3,3)][LB=0] #macrocells=4, #inputs=5, #pterms=4
-{
-    [McSlotId=0]:     MacroCell: Name=Net_934, Mode=(Combinatorial) @ [UDB=(3,3)][LB=0][MC=0]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !Net_16_4 * !Net_16_3 * !Net_16_2 * Net_16_1 * !Net_16_0
-        );
-        Output = Net_934 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]:     MacroCell: Name=Net_369, Mode=(Combinatorial) @ [UDB=(3,3)][LB=0][MC=1]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !Net_16_4 * Net_16_3 * Net_16_2 * !Net_16_1 * !Net_16_0
-        );
-        Output = Net_369 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]:     MacroCell: Name=Net_905, Mode=(Combinatorial) @ [UDB=(3,3)][LB=0][MC=2]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_16_4 * !Net_16_3 * Net_16_2 * !Net_16_1 * !Net_16_0
-        );
-        Output = Net_905 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=3]:     MacroCell: Name=Net_906, Mode=(Combinatorial) @ [UDB=(3,3)][LB=0][MC=3]
-        Total # of inputs        : 5
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_16_4 * !Net_16_3 * Net_16_2 * !Net_16_1 * Net_16_0
-        );
-        Output = Net_906 (fanout=1)
+        Output = Net_16_2 (fanout=34)
         Properties               : 
         {
         }
 }
 
-LAB@[UDB=(3,3)][LB=1] #macrocells=3, #inputs=5, #pterms=3
+LAB@[UDB=(3,0)][LB=1] #macrocells=4, #inputs=6, #pterms=5
 {
-    [McSlotId=0]:     MacroCell: Name=Net_912, Mode=(Combinatorial) @ [UDB=(3,3)][LB=1][MC=0]
+    [McSlotId=0]:     MacroCell: Name=Net_16_1, Mode=(D-Register) @ [UDB=(3,0)][LB=1][MC=0]
+        Total # of inputs        : 3
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (Net_1010) => Global
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        (
+              !Net_1012 * !Net_16_1 * Net_16_0
+            + !Net_1012 * Net_16_1 * !Net_16_0
+        );
+        Output = Net_16_1 (fanout=35)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]:     MacroCell: Name=Net_16_0, Mode=(D-Register) @ [UDB=(3,0)][LB=1][MC=1]
+        Total # of inputs        : 2
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_1010) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !Net_1012 * !Net_16_0
+        );
+        Output = Net_16_0 (fanout=36)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]:     MacroCell: Name=Net_1013, Mode=(Combinatorial) @ [UDB=(3,0)][LB=1][MC=2]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !Net_16_4 * Net_16_3 * Net_16_2 * Net_16_1 * Net_16_0
+        );
+        Output = Net_1013 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]:     MacroCell: Name=Net_914, Mode=(Combinatorial) @ [UDB=(3,0)][LB=1][MC=3]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              Net_16_4 * Net_16_3 * Net_16_2 * !Net_16_1 * Net_16_0
+        );
+        Output = Net_914 (fanout=1)
+        Properties               : 
+        {
+        }
+}
+
+UDB [UDB=(3,1)] contents:
+LAB@[UDB=(3,1)][LB=0] #macrocells=4, #inputs=5, #pterms=4
+{
+    [McSlotId=0]:     MacroCell: Name=Net_913, Mode=(Combinatorial) @ [UDB=(3,1)][LB=0][MC=0]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              Net_16_4 * Net_16_3 * Net_16_2 * !Net_16_1 * !Net_16_0
+        );
+        Output = Net_913 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]:     MacroCell: Name=Net_357, Mode=(Combinatorial) @ [UDB=(3,1)][LB=0][MC=1]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !Net_16_4 * !Net_16_3 * !Net_16_2 * !Net_16_1 * !Net_16_0
+        );
+        Output = Net_357 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]:     MacroCell: Name=Net_935, Mode=(Combinatorial) @ [UDB=(3,1)][LB=0][MC=2]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !Net_16_4 * !Net_16_3 * !Net_16_2 * Net_16_1 * Net_16_0
+        );
+        Output = Net_935 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]:     MacroCell: Name=Net_943, Mode=(Combinatorial) @ [UDB=(3,1)][LB=0][MC=3]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !Net_16_4 * Net_16_3 * !Net_16_2 * Net_16_1 * Net_16_0
+        );
+        Output = Net_943 (fanout=1)
+        Properties               : 
+        {
+        }
+}
+
+LAB@[UDB=(3,1)][LB=1] #macrocells=2, #inputs=5, #pterms=2
+{
+    [McSlotId=0]:     MacroCell: Name=Net_942, Mode=(Combinatorial) @ [UDB=(3,1)][LB=1][MC=0]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !Net_16_4 * Net_16_3 * !Net_16_2 * Net_16_1 * !Net_16_0
+        );
+        Output = Net_942 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]: (empty)
+    [McSlotId=2]: (empty)
+    [McSlotId=3]:     MacroCell: Name=Net_371, Mode=(Combinatorial) @ [UDB=(3,1)][LB=1][MC=3]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !Net_16_4 * Net_16_3 * Net_16_2 * Net_16_1 * !Net_16_0
+        );
+        Output = Net_371 (fanout=1)
+        Properties               : 
+        {
+        }
+}
+
+UDB [UDB=(3,2)] contents:
+LAB@[UDB=(3,2)][LB=0] #macrocells=3, #inputs=5, #pterms=3
+{
+    [McSlotId=0]:     MacroCell: Name=Net_912, Mode=(Combinatorial) @ [UDB=(3,2)][LB=0][MC=0]
         Total # of inputs        : 5
         Total # of product terms : 1
             Clock Enable: True
@@ -2943,28 +2893,28 @@ LAB@[UDB=(3,3)][LB=1] #macrocells=3, #inputs=5, #pterms=3
         {
         }
 
-    [McSlotId=1]:     MacroCell: Name=Net_914, Mode=(Combinatorial) @ [UDB=(3,3)][LB=1][MC=1]
+    [McSlotId=1]:     MacroCell: Name=Net_369, Mode=(Combinatorial) @ [UDB=(3,2)][LB=0][MC=1]
         Total # of inputs        : 5
         Total # of product terms : 1
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              Net_16_4 * Net_16_3 * Net_16_2 * !Net_16_1 * Net_16_0
+              !Net_16_4 * Net_16_3 * Net_16_2 * !Net_16_1 * !Net_16_0
         );
-        Output = Net_914 (fanout=1)
+        Output = Net_369 (fanout=1)
         Properties               : 
         {
         }
 
-    [McSlotId=2]:     MacroCell: Name=Net_909, Mode=(Combinatorial) @ [UDB=(3,3)][LB=1][MC=2]
+    [McSlotId=2]:     MacroCell: Name=Net_908, Mode=(Combinatorial) @ [UDB=(3,2)][LB=0][MC=2]
         Total # of inputs        : 5
         Total # of product terms : 1
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              Net_16_4 * Net_16_3 * !Net_16_2 * !Net_16_1 * !Net_16_0
+              Net_16_4 * !Net_16_3 * Net_16_2 * Net_16_1 * Net_16_0
         );
-        Output = Net_909 (fanout=1)
+        Output = Net_908 (fanout=1)
         Properties               : 
         {
         }
@@ -2972,6 +2922,62 @@ LAB@[UDB=(3,3)][LB=1] #macrocells=3, #inputs=5, #pterms=3
     [McSlotId=3]: (empty)
 }
 
+LAB@[UDB=(3,2)][LB=1] #macrocells=4, #inputs=5, #pterms=4
+{
+    [McSlotId=0]:     MacroCell: Name=Net_363, Mode=(Combinatorial) @ [UDB=(3,2)][LB=1][MC=0]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !Net_16_4 * !Net_16_3 * Net_16_2 * Net_16_1 * !Net_16_0
+        );
+        Output = Net_363 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]:     MacroCell: Name=Net_364, Mode=(Combinatorial) @ [UDB=(3,2)][LB=1][MC=1]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !Net_16_4 * !Net_16_3 * Net_16_2 * Net_16_1 * Net_16_0
+        );
+        Output = Net_364 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]:     MacroCell: Name=Net_370, Mode=(Combinatorial) @ [UDB=(3,2)][LB=1][MC=2]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !Net_16_4 * Net_16_3 * Net_16_2 * !Net_16_1 * Net_16_0
+        );
+        Output = Net_370 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]:     MacroCell: Name=Net_366, Mode=(Combinatorial) @ [UDB=(3,2)][LB=1][MC=3]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !Net_16_4 * Net_16_3 * !Net_16_2 * !Net_16_1 * Net_16_0
+        );
+        Output = Net_366 (fanout=1)
+        Properties               : 
+        {
+        }
+}
+
+UDB [UDB=(3,3)] is empty.
 UDB [UDB=(3,4)] is empty.
 UDB [UDB=(3,5)] is empty.
 Intr container @ [IntrContainer=(0)]: empty
@@ -3007,12 +3013,12 @@ Pin : Name = P1_18(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_18(0)__PA ,
-        input => Net_907 ,
+        pin_input => Net_907 ,
         pad => P1_18(0)_PAD );
     Properties:
     {
@@ -3048,12 +3054,12 @@ Pin : Name = P1_17(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_17(0)__PA ,
-        input => Net_363 ,
+        pin_input => Net_363 ,
         pad => P1_17(0)_PAD );
     Properties:
     {
@@ -3089,12 +3095,12 @@ Pin : Name = P1_16(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_16(0)__PA ,
-        input => Net_906 ,
+        pin_input => Net_906 ,
         pad => P1_16(0)_PAD );
     Properties:
     {
@@ -3130,12 +3136,12 @@ Pin : Name = P1_15(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_15(0)__PA ,
-        input => Net_362 ,
+        pin_input => Net_362 ,
         pad => P1_15(0)_PAD );
     Properties:
     {
@@ -3171,12 +3177,12 @@ Pin : Name = P1_14(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_14(0)__PA ,
-        input => Net_905 ,
+        pin_input => Net_905 ,
         pad => P1_14(0)_PAD );
     Properties:
     {
@@ -3212,12 +3218,12 @@ Pin : Name = P1_13(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_13(0)__PA ,
-        input => Net_361 ,
+        pin_input => Net_361 ,
         pad => P1_13(0)_PAD );
     Properties:
     {
@@ -3253,12 +3259,12 @@ Pin : Name = P1_12(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_12(0)__PA ,
-        input => Net_904 ,
+        pin_input => Net_904 ,
         pad => P1_12(0)_PAD );
     Properties:
     {
@@ -3294,19 +3300,19 @@ Pin : Name = P1_11(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_11(0)__PA ,
-        input => Net_935 ,
+        pin_input => Net_935 ,
         pad => P1_11(0)_PAD );
     Properties:
     {
     }
 
-Port 1 is empty
-Port 2 is empty
+Port 1 contains the following IO cells:
+Port 2 contains the following IO cells:
 Port 3 contains the following IO cells:
 [IoId=0]: 
 Pin : Name = P1_34(0)
@@ -3338,12 +3344,12 @@ Pin : Name = P1_34(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_34(0)__PA ,
-        input => Net_915 ,
+        pin_input => Net_1012 ,
         pad => P1_34(0)_PAD );
     Properties:
     {
@@ -3379,12 +3385,12 @@ Pin : Name = P1_33(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_33(0)__PA ,
-        input => Net_371 ,
+        pin_input => Net_371 ,
         pad => P1_33(0)_PAD );
     Properties:
     {
@@ -3420,12 +3426,12 @@ Pin : Name = P1_32(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_32(0)__PA ,
-        input => Net_914 ,
+        pin_input => Net_914 ,
         pad => P1_32(0)_PAD );
     Properties:
     {
@@ -3461,12 +3467,12 @@ Pin : Name = P1_31(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_31(0)__PA ,
-        input => Net_370 ,
+        pin_input => Net_370 ,
         pad => P1_31(0)_PAD );
     Properties:
     {
@@ -3502,12 +3508,12 @@ Pin : Name = P1_30(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_30(0)__PA ,
-        input => Net_913 ,
+        pin_input => Net_913 ,
         pad => P1_30(0)_PAD );
     Properties:
     {
@@ -3543,12 +3549,12 @@ Pin : Name = P1_29(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_29(0)__PA ,
-        input => Net_369 ,
+        pin_input => Net_369 ,
         pad => P1_29(0)_PAD );
     Properties:
     {
@@ -3584,12 +3590,12 @@ Pin : Name = P1_28(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_28(0)__PA ,
-        input => Net_912 ,
+        pin_input => Net_912 ,
         pad => P1_28(0)_PAD );
     Properties:
     {
@@ -3625,12 +3631,12 @@ Pin : Name = P1_27(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_27(0)__PA ,
-        input => Net_943 ,
+        pin_input => Net_943 ,
         pad => P1_27(0)_PAD );
     Properties:
     {
@@ -3667,12 +3673,12 @@ Pin : Name = P1_20(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_20(0)__PA ,
-        input => Net_908 ,
+        pin_input => Net_908 ,
         pad => P1_20(0)_PAD );
     Properties:
     {
@@ -3708,12 +3714,12 @@ Pin : Name = P1_19(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_19(0)__PA ,
-        input => Net_364 ,
+        pin_input => Net_364 ,
         pad => P1_19(0)_PAD );
     Properties:
     {
@@ -3749,12 +3755,12 @@ Pin : Name = P1_10(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_10(0)__PA ,
-        input => Net_903 ,
+        pin_input => Net_903 ,
         pad => P1_10(0)_PAD );
     Properties:
     {
@@ -3790,12 +3796,12 @@ Pin : Name = P1_09(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_09(0)__PA ,
-        input => Net_934 ,
+        pin_input => Net_934 ,
         pad => P1_09(0)_PAD );
     Properties:
     {
@@ -3831,12 +3837,12 @@ Pin : Name = P1_08(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_08(0)__PA ,
-        input => Net_902 ,
+        pin_input => Net_902 ,
         pad => P1_08(0)_PAD );
     Properties:
     {
@@ -3872,12 +3878,12 @@ Pin : Name = P1_07(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_07(0)__PA ,
-        input => Net_358 ,
+        pin_input => Net_358 ,
         pad => P1_07(0)_PAD );
     Properties:
     {
@@ -3913,12 +3919,12 @@ Pin : Name = P1_06(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_06(0)__PA ,
-        input => Net_901 ,
+        pin_input => Net_901 ,
         pad => P1_06(0)_PAD );
     Properties:
     {
@@ -3954,12 +3960,12 @@ Pin : Name = P1_05(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_05(0)__PA ,
-        input => Net_357 ,
+        pin_input => Net_357 ,
         pad => P1_05(0)_PAD );
     Properties:
     {
@@ -3996,18 +4002,18 @@ Pin : Name = LED(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => LED(0)__PA ,
-        input => Net_989 ,
+        pin_input => Net_1013 ,
         pad => LED(0)_PAD );
     Properties:
     {
     }
 
-Port 6 is empty
+Port 6 contains the following IO cells:
 Port 12 contains the following IO cells:
 [IoId=0]: 
 Pin : Name = P1_26(0)
@@ -4039,12 +4045,12 @@ Pin : Name = P1_26(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_26(0)__PA ,
-        input => Net_911 ,
+        pin_input => Net_911 ,
         pad => P1_26(0)_PAD );
     Properties:
     {
@@ -4080,12 +4086,12 @@ Pin : Name = P1_25(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_25(0)__PA ,
-        input => Net_942 ,
+        pin_input => Net_942 ,
         pad => P1_25(0)_PAD );
     Properties:
     {
@@ -4121,12 +4127,12 @@ Pin : Name = P1_22(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_22(0)__PA ,
-        input => Net_909 ,
+        pin_input => Net_909 ,
         pad => P1_22(0)_PAD );
     Properties:
     {
@@ -4162,12 +4168,12 @@ Pin : Name = P1_21(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_21(0)__PA ,
-        input => Net_365 ,
+        pin_input => Net_365 ,
         pad => P1_21(0)_PAD );
     Properties:
     {
@@ -4204,12 +4210,12 @@ Pin : Name = P1_24(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_24(0)__PA ,
-        input => Net_910 ,
+        pin_input => Net_910 ,
         pad => P1_24(0)_PAD );
     Properties:
     {
@@ -4245,19 +4251,18 @@ Pin : Name = P1_23(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilitites: DIGITAL, ROUTABLE
+        Required Capabilities: DIGITAL, ROUTABLE
         Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => P1_23(0)__PA ,
-        input => Net_366 ,
+        pin_input => Net_366 ,
         pad => P1_23(0)_PAD );
     Properties:
     {
     }
 
 ARM group 0: empty
-CAN 2.0b group 0: empty
 Cache group 0: empty
 CapSense group 0: empty
 Clock group 0: 
@@ -4281,22 +4286,24 @@ Clock group 0:
         {
         }
 Comparator group 0: empty
-Digital Filter Block group 0: empty
-Delta-Sigma ADC group 0: empty
+DSM group 0: empty
 Decimator group 0: empty
 EMIF group 0: empty
 I2C group 0: empty
-Segment LCD group 0: empty
+LCD group 0: empty
 LVD group 0: empty
+PICU group 0: empty
 PM group 0: empty
 SPC group 0: empty
 Timer group 0: empty
 USB group 0: empty
 VIDAC group 0: empty
-CapSense Buffers group 0: empty
+CsAbuf group 0: empty
 Vref group 0: empty
 LPF group 0: empty
-SAR ADC group 0: empty
+SAR group 0: empty
+ANAIF group 0: empty
+PHUB group 0: empty
 </CYPRESSTAG>
 <CYPRESSTAG name="Port Configuration Details">
 
@@ -4305,7 +4312,7 @@ Port Configuration report
 ------------------------------------------------------------
      |     |       | Interrupt |                  |          | 
 Port | Pin | Fixed |      Type |       Drive Mode |     Name | Connections
------+-----+-------+-----------+------------------+----------+------------
+-----+-----+-------+-----------+------------------+----------+-------------
    0 |   0 |     * |      NONE |         CMOS_OUT | P1_18(0) | In(Net_907)
      |   1 |     * |      NONE |         CMOS_OUT | P1_17(0) | In(Net_363)
      |   2 |     * |      NONE |         CMOS_OUT | P1_16(0) | In(Net_906)
@@ -4314,8 +4321,8 @@ Port | Pin | Fixed |      Type |       Drive Mode |     Name | Connections
      |   5 |     * |      NONE |         CMOS_OUT | P1_13(0) | In(Net_361)
      |   6 |     * |      NONE |         CMOS_OUT | P1_12(0) | In(Net_904)
      |   7 |     * |      NONE |         CMOS_OUT | P1_11(0) | In(Net_935)
------+-----+-------+-----------+------------------+----------+------------
-   3 |   0 |     * |      NONE |         CMOS_OUT | P1_34(0) | In(Net_915)
+-----+-----+-------+-----------+------------------+----------+-------------
+   3 |   0 |     * |      NONE |         CMOS_OUT | P1_34(0) | In(Net_1012)
      |   1 |     * |      NONE |         CMOS_OUT | P1_33(0) | In(Net_371)
      |   2 |     * |      NONE |         CMOS_OUT | P1_32(0) | In(Net_914)
      |   3 |     * |      NONE |         CMOS_OUT | P1_31(0) | In(Net_370)
@@ -4323,7 +4330,7 @@ Port | Pin | Fixed |      Type |       Drive Mode |     Name | Connections
      |   5 |     * |      NONE |         CMOS_OUT | P1_29(0) | In(Net_369)
      |   6 |     * |      NONE |         CMOS_OUT | P1_28(0) | In(Net_912)
      |   7 |     * |      NONE |         CMOS_OUT | P1_27(0) | In(Net_943)
------+-----+-------+-----------+------------------+----------+------------
+-----+-----+-------+-----------+------------------+----------+-------------
    4 |   0 |     * |      NONE |         CMOS_OUT | P1_20(0) | In(Net_908)
      |   1 |     * |      NONE |         CMOS_OUT | P1_19(0) | In(Net_364)
      |   2 |     * |      NONE |         CMOS_OUT | P1_10(0) | In(Net_903)
@@ -4332,46 +4339,47 @@ Port | Pin | Fixed |      Type |       Drive Mode |     Name | Connections
      |   5 |     * |      NONE |         CMOS_OUT | P1_07(0) | In(Net_358)
      |   6 |     * |      NONE |         CMOS_OUT | P1_06(0) | In(Net_901)
      |   7 |     * |      NONE |         CMOS_OUT | P1_05(0) | In(Net_357)
------+-----+-------+-----------+------------------+----------+------------
-   5 |   4 |     * |      NONE |         CMOS_OUT |   LED(0) | In(Net_989)
------+-----+-------+-----------+------------------+----------+------------
+-----+-----+-------+-----------+------------------+----------+-------------
+   5 |   4 |     * |      NONE |         CMOS_OUT |   LED(0) | In(Net_1013)
+-----+-----+-------+-----------+------------------+----------+-------------
   12 |   0 |     * |      NONE |         CMOS_OUT | P1_26(0) | In(Net_911)
      |   1 |     * |      NONE |         CMOS_OUT | P1_25(0) | In(Net_942)
      |   2 |     * |      NONE |         CMOS_OUT | P1_22(0) | In(Net_909)
      |   3 |     * |      NONE |         CMOS_OUT | P1_21(0) | In(Net_365)
------+-----+-------+-----------+------------------+----------+------------
+-----+-----+-------+-----------+------------------+----------+-------------
   15 |   2 |     * |      NONE |         CMOS_OUT | P1_24(0) | In(Net_910)
      |   3 |     * |      NONE |         CMOS_OUT | P1_23(0) | In(Net_366)
---------------------------------------------------------------------------
+---------------------------------------------------------------------------
 </CYPRESSTAG>
 </CYPRESSTAG>
 </CYPRESSTAG>
-Digital component placer commit/Report: Elapsed time ==> 0s.000ms
-Digital Placement phase: Elapsed time ==> 1s.550ms
+Digital component placer commit/Report: Elapsed time ==> 0s.184ms
+Digital Placement phase: Elapsed time ==> 3s.344ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
+"C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\bin/sjrouter.exe" --xml-path "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\dev\psoc5/psoc5lp/route_arch-rrg.cydata" --vh2-path "ODAS-PSOC5-LEDS-01_r.vh2" --pcf-path "ODAS-PSOC5-LEDS-01.pco" --des-name "ODAS-PSOC5-LEDS-01" --dsf-path "ODAS-PSOC5-LEDS-01.dsf" --sdc-path "ODAS-PSOC5-LEDS-01.sdc" --lib-path "ODAS-PSOC5-LEDS-01_r.lib"
 Routing successful.
-Digital Routing phase: Elapsed time ==> 1s.910ms
+Digital Routing phase: Elapsed time ==> 2s.983ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Generation">
-Bitstream Generation phase: Elapsed time ==> 0s.250ms
+Bitstream Generation phase: Elapsed time ==> 0s.262ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Verification">
-Bitstream Verification phase: Elapsed time ==> 0s.060ms
+Bitstream Verification phase: Elapsed time ==> 0s.069ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
 Timing report is in ODAS-PSOC5-LEDS-01_timing.html.
-Static timing analysis phase: Elapsed time ==> 0s.320ms
+Static timing analysis phase: Elapsed time ==> 0s.567ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
 Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.290ms
+Design database save phase: Elapsed time ==> 0s.341ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 4s.620ms
+cydsfit: Elapsed time ==> 8s.186ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 4s.620ms
-API generation phase: Elapsed time ==> 7s.280ms
-Dependency generation phase: Elapsed time ==> 0s.030ms
-Cleanup phase: Elapsed time ==> 0s.000ms
+Fitter phase: Elapsed time ==> 8s.192ms
+API generation phase: Elapsed time ==> 3s.200ms
+Dependency generation phase: Elapsed time ==> 0s.035ms
+Cleanup phase: Elapsed time ==> 0s.030ms
