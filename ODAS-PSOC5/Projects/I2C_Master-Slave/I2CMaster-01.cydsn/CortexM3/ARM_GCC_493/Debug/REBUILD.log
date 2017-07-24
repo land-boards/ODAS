@@ -1,0 +1,83 @@
+--------------- Rebuild Started: 07/03/2017 09:26:26 Project: I2CMaster-01, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\main.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\cyfitter_cfg.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\cymetadata.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\SDA.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\SCL.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\I2CM.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\I2CM_BOOT.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\I2CM_INT.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\I2CM_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\I2CM_SLAVE.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\I2CM_MASTER.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\Cm3Start.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\CyBootAsmGnu.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\CyDmac.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\CyFlash.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\CyLib.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\cyPm.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\CySpc.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\cyutils.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\LED.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\I2CMaster-01.hex"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\I2CMaster-01.elf"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\I2CMaster-01.map"
+Deleting file ".\I2CMaster-01.cycdx"
+Deleting file ".\I2CMaster-01.svd"
+Deleting file ".\I2CMaster-01.rpt"
+Deleting file ".\I2CMaster-01_timing.html"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\.deps\SOURCE_C__ARM_GCC_GENERIC.P"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\.deps\SOURCE_ASM__ARM_GCC_GENERIC.P"
+cydsfit.exe -.appdatapath "C:\Users\DGilliland\AppData\Local\Cypress Semiconductor\PSoC Creator\4.0" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\I2C_Master-Slave\I2CMaster-01.cydsn\I2CMaster-01.cyprj -d CY8C5267AXI-LP051 -s C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\I2C_Master-Slave\I2CMaster-01.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+HDL Generation...
+Synthesis...
+Tech Mapping...
+Analog Placement...
+Analog Routing...
+Analog Code Generation...
+Digital Placement...
+Digital Routing...
+Bitstream Generation...
+Bitstream Verification...
+Static timing analysis...
+API Generation...
+Dependency Generation...
+Cleanup...
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/main.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c main.c -o .\CortexM3\ARM_GCC_493\Debug\main.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/serialIO.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c ..\I2CSlave-01.cydsn\serialIO.c -o .\CortexM3\ARM_GCC_493\Debug\serialIO.o
+..\I2CSlave-01.cydsn\serialIO.c: In function 'initSerial':
+..\I2CSlave-01.cydsn\serialIO.c:24:5: warning: implicit declaration of function 'UART_1_Start' [-Wimplicit-function-declaration]
+     UART_1_Start();
+     ^
+..\I2CSlave-01.cydsn\serialIO.c: In function 'printSingleChar':
+..\I2CSlave-01.cydsn\serialIO.c:36:9: warning: implicit declaration of function 'UART_1_ReadTxStatus' [-Wimplicit-function-declaration]
+         txStat = UART_1_ReadTxStatus();
+         ^
+..\I2CSlave-01.cydsn\serialIO.c:38:21: error: 'UART_1_TX_STS_FIFO_FULL' undeclared (first use in this function)
+     while (txStat & UART_1_TX_STS_FIFO_FULL);
+                     ^
+..\I2CSlave-01.cydsn\serialIO.c:38:21: note: each undeclared identifier is reported only once for each function it appears in
+..\I2CSlave-01.cydsn\serialIO.c:39:5: warning: implicit declaration of function 'UART_1_PutChar' [-Wimplicit-function-declaration]
+     UART_1_PutChar(txChar);
+     ^
+..\I2CSlave-01.cydsn\serialIO.c: In function 'getSingleChar':
+..\I2CSlave-01.cydsn\serialIO.c:100:9: warning: implicit declaration of function 'UART_1_ReadRxStatus' [-Wimplicit-function-declaration]
+         rxStat = UART_1_ReadRxStatus(); 
+         ^
+..\I2CSlave-01.cydsn\serialIO.c:101:22: error: 'UART_1_RX_STS_FIFO_NOTEMPTY' undeclared (first use in this function)
+         if (rxStat & UART_1_RX_STS_FIFO_NOTEMPTY)
+                      ^
+..\I2CSlave-01.cydsn\serialIO.c:103:13: warning: implicit declaration of function 'UART_1_GetChar' [-Wimplicit-function-declaration]
+             rxChar = UART_1_GetChar();
+             ^
+..\I2CSlave-01.cydsn\serialIO.c: In function 'checkReceiveChar':
+..\I2CSlave-01.cydsn\serialIO.c:116:18: error: 'UART_1_RX_STS_FIFO_NOTEMPTY' undeclared (first use in this function)
+     if (rxStat & UART_1_RX_STS_FIFO_NOTEMPTY)
+                  ^
+..\I2CSlave-01.cydsn\serialIO.c: In function 'readLine':
+..\I2CSlave-01.cydsn\serialIO.c:136:22: error: 'UART_1_RX_STS_FIFO_NOTEMPTY' undeclared (first use in this function)
+         if (rxStat & UART_1_RX_STS_FIFO_NOTEMPTY)
+                      ^
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Rebuild Failed: 07/03/2017 09:26:33 ---------------

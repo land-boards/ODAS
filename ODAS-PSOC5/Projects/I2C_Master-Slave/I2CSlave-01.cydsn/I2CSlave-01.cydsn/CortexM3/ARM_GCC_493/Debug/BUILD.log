@@ -1,0 +1,51 @@
+--------------- Build Started: 06/29/2017 08:10:11 Project: I2CSlave-01, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\DGilliland\AppData\Local\Cypress Semiconductor\PSoC Creator\4.0" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\I2CSlave-01.cydsn\I2CSlave-01.cydsn\I2CSlave-01.cyprj -d CY8C5267AXI-LP051 -s C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\I2CSlave-01.cydsn\I2CSlave-01.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+ADD: pft.M0074: information: A (re)build is required to use the analog device editor. Unable to load the necessary information from the cyfit file. Partial/wrong data will be displayed until this has been resolved.
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\I2CSlave-01.cydsn\I2CSlave-01.cydsn\I2CSlave-01.cydwr ()
+HDL Generation...
+Synthesis...
+Tech Mapping...
+Analog Placement...
+Analog Routing...
+Analog Code Generation...
+Digital Placement...
+Digital Routing...
+Bitstream Generation...
+Bitstream Verification...
+Static timing analysis...
+API Generation...
+DEL: pft.M0074: information: A (re)build is required to use the analog device editor. Unable to load the necessary information from the cyfit file. Partial/wrong data will be displayed until this has been resolved.
+ * C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\I2CSlave-01.cydsn\I2CSlave-01.cydsn\I2CSlave-01.cydwr ()
+Dependency Generation...
+Cleanup...
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/main.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c main.c -o .\CortexM3\ARM_GCC_493\Debug\main.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/cyfitter_cfg.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\cyfitter_cfg.c -o .\CortexM3\ARM_GCC_493\Debug\cyfitter_cfg.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/cymetadata.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\cymetadata.c -o .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/I2CM.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\I2CM.c -o .\CortexM3\ARM_GCC_493\Debug\I2CM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/I2CM_BOOT.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\I2CM_BOOT.c -o .\CortexM3\ARM_GCC_493\Debug\I2CM_BOOT.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/I2CM_INT.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\I2CM_INT.c -o .\CortexM3\ARM_GCC_493\Debug\I2CM_INT.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/I2CM_PM.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\I2CM_PM.c -o .\CortexM3\ARM_GCC_493\Debug\I2CM_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/I2CM_SLAVE.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\I2CM_SLAVE.c -o .\CortexM3\ARM_GCC_493\Debug\I2CM_SLAVE.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/I2CM_MASTER.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\I2CM_MASTER.c -o .\CortexM3\ARM_GCC_493\Debug\I2CM_MASTER.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/SCL.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\SCL.c -o .\CortexM3\ARM_GCC_493\Debug\SCL.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/SDA.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\SDA.c -o .\CortexM3\ARM_GCC_493\Debug\SDA.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/LCD_Char.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\LCD_Char.c -o .\CortexM3\ARM_GCC_493\Debug\LCD_Char.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/LCD_Char_PM.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\LCD_Char_PM.c -o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/LCD_Char_LCDPort.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\LCD_Char_LCDPort.c -o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_LCDPort.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/Cm3Start.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\Cm3Start.c -o .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/CyDmac.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\CyDmac.c -o .\CortexM3\ARM_GCC_493\Debug\CyDmac.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/CyFlash.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\CyFlash.c -o .\CortexM3\ARM_GCC_493\Debug\CyFlash.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/CyLib.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\CyLib.c -o .\CortexM3\ARM_GCC_493\Debug\CyLib.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/cyPm.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\cyPm.c -o .\CortexM3\ARM_GCC_493\Debug\cyPm.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/CySpc.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\CySpc.c -o .\CortexM3\ARM_GCC_493\Debug\CySpc.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/cyutils.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\cyutils.c -o .\CortexM3\ARM_GCC_493\Debug\cyutils.o
+arm-none-eabi-as.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=.\CortexM3\ARM_GCC_493\Debug/CyBootAsmGnu.lst -g -o .\CortexM3\ARM_GCC_493\Debug\CyBootAsmGnu.o Generated_Source\PSoC5\CyBootAsmGnu.s
+arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_493\Debug\I2CSlave-01.a .\CortexM3\ARM_GCC_493\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_493\Debug\I2CM.o .\CortexM3\ARM_GCC_493\Debug\I2CM_BOOT.o .\CortexM3\ARM_GCC_493\Debug\I2CM_INT.o .\CortexM3\ARM_GCC_493\Debug\I2CM_PM.o .\CortexM3\ARM_GCC_493\Debug\I2CM_SLAVE.o .\CortexM3\ARM_GCC_493\Debug\I2CM_MASTER.o .\CortexM3\ARM_GCC_493\Debug\SCL.o .\CortexM3\ARM_GCC_493\Debug\SDA.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_PM.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_LCDPort.o .\CortexM3\ARM_GCC_493\Debug\CyDmac.o .\CortexM3\ARM_GCC_493\Debug\CyFlash.o .\CortexM3\ARM_GCC_493\Debug\CyLib.o .\CortexM3\ARM_GCC_493\Debug\cyPm.o .\CortexM3\ARM_GCC_493\Debug\CySpc.o .\CortexM3\ARM_GCC_493\Debug\cyutils.o .\CortexM3\ARM_GCC_493\Debug\CyBootAsmGnu.o
+arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_493\Debug\I2CSlave-01.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o .\CortexM3\ARM_GCC_493\Debug\I2CSlave-01.elf .\CortexM3\ARM_GCC_493\Debug\main.o .\CortexM3\ARM_GCC_493\Debug\cymetadata.o .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o .\CortexM3\ARM_GCC_493\Debug\I2CSlave-01.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_493\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -g -ffunction-sections -O0 -ffat-lto-objects -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_493\Debug/I2CSlave-01.map -T C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\I2CSlave-01.cydsn\I2CSlave-01.cydsn\Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -Wl,--end-group
+cyelftool.exe -C C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\I2CSlave-01.cydsn\I2CSlave-01.cydsn\CortexM3\ARM_GCC_493\Debug\I2CSlave-01.elf --flash_row_size 256 --flash_size 131072
+cyelftool.exe -S C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\I2CSlave-01.cydsn\I2CSlave-01.cydsn\CortexM3\ARM_GCC_493\Debug\I2CSlave-01.elf
+Flash used: 5254 of 131072 bytes (4.0 %).
+SRAM used: 2621 of 32768 bytes (8.0 %). Stack: 2048 bytes. Heap: 128 bytes.
+--------------- Build Succeeded: 06/29/2017 08:10:26 ---------------

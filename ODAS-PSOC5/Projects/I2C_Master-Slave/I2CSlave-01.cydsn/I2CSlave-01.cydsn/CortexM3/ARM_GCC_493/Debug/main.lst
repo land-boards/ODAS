@@ -1,0 +1,690 @@
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc4meZzR.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.rodata
+  19              		.align	2
+  20              	.LC0:
+  21 0000 307800   		.ascii	"0x\000"
+  22 0003 00       		.align	2
+  23              	.LC1:
+  24 0004 49324320 		.ascii	"I2C Error!\000"
+  24      4572726F 
+  24      722100
+  25 000f 00       		.section	.text.main,"ax",%progbits
+  26              		.align	2
+  27              		.global	main
+  28              		.thumb
+  29              		.thumb_func
+  30              		.type	main, %function
+  31              	main:
+  32              	.LFB63:
+  33              		.file 1 "main.c"
+   1:main.c        **** /*******************************************************************************
+   2:main.c        **** * File Name: main.c
+   3:main.c        **** *
+   4:main.c        **** * Version: 1.0
+   5:main.c        **** *
+   6:main.c        **** * Description:
+   7:main.c        **** *  This is the test project for the 8-ch DelSig ADC and I2C Slave Example 
+   8:main.c        **** *  project.
+   9:main.c        **** *  
+  10:main.c        **** * Parameters used:
+  11:main.c        **** *  I2C Master
+  12:main.c        **** *   Implementation		Fixed function
+  13:main.c        **** *   Data rate			100kbps
+  14:main.c        **** *   SDA SCL config     	Open drain, drives low
+  15:main.c        **** *   Pull-up resistors	2.67k each 
+  16:main.c        **** *
+  17:main.c        **** ********************************************************************************
+  18:main.c        **** * Copyright 2012, Cypress Semiconductor Corporation. All rights reserved.
+  19:main.c        **** * This software is owned by Cypress Semiconductor Corporation and is protected
+  20:main.c        **** * by and subject to worldwide patent and copyright laws and treaties.
+  21:main.c        **** * Therefore, you may use this software only as provided in the license agreement
+  22:main.c        **** * accompanying the software package from which you obtained this software.
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc4meZzR.s 			page 2
+
+
+  23:main.c        **** * CYPRESS AND ITS SUPPLIERS MAKE NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+  24:main.c        **** * WITH REGARD TO THIS SOFTWARE, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT,
+  25:main.c        **** * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  26:main.c        **** *******************************************************************************/
+  27:main.c        **** 
+  28:main.c        **** #include <project.h>
+  29:main.c        **** 
+  30:main.c        **** /* Set the write buffer length to be 16 bits or 2 bytes */
+  31:main.c        **** #define RD_BUFFER_SIZE		(2u)
+  32:main.c        **** /* The I2C Slave address by default in a PSoC device is 8 */
+  33:main.c        **** #define I2C_SLAVE_ADDRESS	(8u)
+  34:main.c        **** 
+  35:main.c        **** /*******************************************************************************
+  36:main.c        **** * Function Name: main
+  37:main.c        **** ********************************************************************************
+  38:main.c        **** *
+  39:main.c        **** * Summary:
+  40:main.c        **** *  Main function performs following functions:
+  41:main.c        **** *   1. Starts used components.
+  42:main.c        **** *   2. Reads slave data buffer.
+  43:main.c        **** *   3. Displays this data on Character LCD.
+  44:main.c        **** *
+  45:main.c        **** * Parameters:
+  46:main.c        **** *  None.
+  47:main.c        **** *
+  48:main.c        **** * Return:
+  49:main.c        **** *  None.
+  50:main.c        **** *
+  51:main.c        **** *******************************************************************************/
+  52:main.c        **** int main()
+  53:main.c        **** {
+  34              		.loc 1 53 0
+  35              		.cfi_startproc
+  36              		@ args = 0, pretend = 0, frame = 8
+  37              		@ frame_needed = 1, uses_anonymous_args = 0
+  38 0000 80B5     		push	{r7, lr}
+  39              		.cfi_def_cfa_offset 8
+  40              		.cfi_offset 7, -8
+  41              		.cfi_offset 14, -4
+  42 0002 82B0     		sub	sp, sp, #8
+  43              		.cfi_def_cfa_offset 16
+  44 0004 00AF     		add	r7, sp, #0
+  45              		.cfi_def_cfa_register 7
+  54:main.c        **** 	/* Allocate 2 bytes to store data read from I2C slave */
+  55:main.c        **** 	uint8 rdBuf[RD_BUFFER_SIZE];
+  56:main.c        **** 	
+  57:main.c        **** 	/* Temporary variable */
+  58:main.c        **** 	uint8 temp = 0u;
+  46              		.loc 1 58 0
+  47 0006 0023     		movs	r3, #0
+  48 0008 FB71     		strb	r3, [r7, #7]
+  59:main.c        **** 
+  60:main.c        **** 	/* Start I2C Master and Character LCD */
+  61:main.c        **** 	I2CM_Start();
+  49              		.loc 1 61 0
+  50 000a FFF7FEFF 		bl	I2CM_Start
+  62:main.c        **** 	LCD_Char_Start();
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc4meZzR.s 			page 3
+
+
+  51              		.loc 1 62 0
+  52 000e FFF7FEFF 		bl	LCD_Char_Start
+  63:main.c        **** 
+  64:main.c        **** 	/* Enable Global Interrupts - needed for I2C operation */
+  65:main.c        **** 	CyGlobalIntEnable;
+  53              		.loc 1 65 0
+  54              	@ 65 "main.c" 1
+  55 0012 62B6     		CPSIE   i
+  56              	@ 0 "" 2
+  57              		.thumb
+  58              	.L2:
+  66:main.c        **** 
+  67:main.c        **** 	for(;;)
+  68:main.c        ****     {
+  69:main.c        **** 		/* Attempt to initiate communication with the slave until the function 
+  70:main.c        **** 		 * completes without error. 
+  71:main.c        **** 		 */
+  72:main.c        **** 		do
+  73:main.c        **** 		{
+  74:main.c        **** 			/* The syntax below automatically reads a buffer of data from a 
+  75:main.c        **** 		     * slave device from start to stop. 
+  76:main.c        **** 		 	 */
+  77:main.c        **** 			temp = I2CM_MasterReadBuf(I2C_SLAVE_ADDRESS, rdBuf, 
+  59              		.loc 1 77 0 discriminator 1
+  60 0014 3B1D     		adds	r3, r7, #4
+  61 0016 0820     		movs	r0, #8
+  62 0018 1946     		mov	r1, r3
+  63 001a 0222     		movs	r2, #2
+  64 001c 0023     		movs	r3, #0
+  65 001e FFF7FEFF 		bl	I2CM_MasterReadBuf
+  66 0022 0346     		mov	r3, r0
+  67 0024 FB71     		strb	r3, [r7, #7]
+  78:main.c        **** 										RD_BUFFER_SIZE, I2CM_MODE_COMPLETE_XFER);
+  79:main.c        **** 		}
+  80:main.c        **** 		while (temp != I2CM_MSTR_NO_ERROR);
+  68              		.loc 1 80 0 discriminator 1
+  69 0026 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  70 0028 002B     		cmp	r3, #0
+  71 002a F3D1     		bne	.L2
+  81:main.c        **** 		
+  82:main.c        **** 		/* Wait for the data transfer to complete */
+  83:main.c        **** 		while(I2CM_MasterStatus() & I2CM_MSTAT_XFER_INP);
+  72              		.loc 1 83 0
+  73 002c 00BF     		nop
+  74              	.L3:
+  75              		.loc 1 83 0 is_stmt 0 discriminator 1
+  76 002e FFF7FEFF 		bl	I2CM_MasterStatus
+  77 0032 0346     		mov	r3, r0
+  78 0034 03F00403 		and	r3, r3, #4
+  79 0038 002B     		cmp	r3, #0
+  80 003a F8D1     		bne	.L3
+  84:main.c        **** 
+  85:main.c        **** 		temp = I2CM_MasterGetReadBufSize();
+  81              		.loc 1 85 0 is_stmt 1
+  82 003c FFF7FEFF 		bl	I2CM_MasterGetReadBufSize
+  83 0040 0346     		mov	r3, r0
+  84 0042 FB71     		strb	r3, [r7, #7]
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc4meZzR.s 			page 4
+
+
+  86:main.c        **** 		
+  87:main.c        **** 		LCD_Char_ClearDisplay();
+  85              		.loc 1 87 0
+  86 0044 0120     		movs	r0, #1
+  87 0046 FFF7FEFF 		bl	LCD_Char_WriteControl
+  88:main.c        **** 
+  89:main.c        **** 		if(temp == RD_BUFFER_SIZE)
+  88              		.loc 1 89 0
+  89 004a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  90 004c 022B     		cmp	r3, #2
+  91 004e 0BD1     		bne	.L4
+  90:main.c        **** 		{
+  91:main.c        **** 			LCD_Char_PrintString("0x");
+  92              		.loc 1 91 0
+  93 0050 0A48     		ldr	r0, .L6
+  94 0052 FFF7FEFF 		bl	LCD_Char_PrintString
+  92:main.c        **** 			LCD_Char_PrintInt8(rdBuf[0]);
+  95              		.loc 1 92 0
+  96 0056 3B79     		ldrb	r3, [r7, #4]	@ zero_extendqisi2
+  97 0058 1846     		mov	r0, r3
+  98 005a FFF7FEFF 		bl	LCD_Char_PrintInt8
+  93:main.c        **** 			LCD_Char_PrintInt8(rdBuf[1]);
+  99              		.loc 1 93 0
+ 100 005e 7B79     		ldrb	r3, [r7, #5]	@ zero_extendqisi2
+ 101 0060 1846     		mov	r0, r3
+ 102 0062 FFF7FEFF 		bl	LCD_Char_PrintInt8
+ 103 0066 04E0     		b	.L5
+ 104              	.L4:
+  94:main.c        **** 		}
+  95:main.c        **** 		else /* Indicate the Error and place your error handling code here */
+  96:main.c        **** 		{
+  97:main.c        **** 			LCD_Char_PrintString("I2C Error!");
+ 105              		.loc 1 97 0
+ 106 0068 0548     		ldr	r0, .L6+4
+ 107 006a FFF7FEFF 		bl	LCD_Char_PrintString
+  98:main.c        **** 			I2CM_MasterClearStatus();
+ 108              		.loc 1 98 0
+ 109 006e FFF7FEFF 		bl	I2CM_MasterClearStatus
+ 110              	.L5:
+  99:main.c        **** 		}
+ 100:main.c        **** 
+ 101:main.c        **** 		/* This delay is present to facilitate easy reading of the Character LCD */
+ 102:main.c        **** 		CyDelay(2000u/*ms*/);	
+ 111              		.loc 1 102 0
+ 112 0072 4FF4FA60 		mov	r0, #2000
+ 113 0076 FFF7FEFF 		bl	CyDelay
+ 103:main.c        **** 		
+ 104:main.c        **** 	} /* End forever loop */
+ 114              		.loc 1 104 0
+ 115 007a CBE7     		b	.L2
+ 116              	.L7:
+ 117              		.align	2
+ 118              	.L6:
+ 119 007c 00000000 		.word	.LC0
+ 120 0080 04000000 		.word	.LC1
+ 121              		.cfi_endproc
+ 122              	.LFE63:
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc4meZzR.s 			page 5
+
+
+ 123              		.size	main, .-main
+ 124              		.text
+ 125              	.Letext0:
+ 126              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 127              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 128              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 129              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 130              		.section	.debug_info,"",%progbits
+ 131              	.Ldebug_info0:
+ 132 0000 FD000000 		.4byte	0xfd
+ 133 0004 0400     		.2byte	0x4
+ 134 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 135 000a 04       		.byte	0x4
+ 136 000b 01       		.uleb128 0x1
+ 137 000c EC000000 		.4byte	.LASF18
+ 138 0010 01       		.byte	0x1
+ 139 0011 2E000000 		.4byte	.LASF19
+ 140 0015 6E000000 		.4byte	.LASF20
+ 141 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 142 001d 00000000 		.4byte	0
+ 143 0021 00000000 		.4byte	.Ldebug_line0
+ 144 0025 02       		.uleb128 0x2
+ 145 0026 01       		.byte	0x1
+ 146 0027 06       		.byte	0x6
+ 147 0028 94010000 		.4byte	.LASF0
+ 148 002c 02       		.uleb128 0x2
+ 149 002d 01       		.byte	0x1
+ 150 002e 08       		.byte	0x8
+ 151 002f D0000000 		.4byte	.LASF1
+ 152 0033 02       		.uleb128 0x2
+ 153 0034 02       		.byte	0x2
+ 154 0035 05       		.byte	0x5
+ 155 0036 B0010000 		.4byte	.LASF2
+ 156 003a 02       		.uleb128 0x2
+ 157 003b 02       		.byte	0x2
+ 158 003c 07       		.byte	0x7
+ 159 003d 0E000000 		.4byte	.LASF3
+ 160 0041 03       		.uleb128 0x3
+ 161 0042 A0010000 		.4byte	.LASF9
+ 162 0046 02       		.byte	0x2
+ 163 0047 3F       		.byte	0x3f
+ 164 0048 4C000000 		.4byte	0x4c
+ 165 004c 02       		.uleb128 0x2
+ 166 004d 04       		.byte	0x4
+ 167 004e 05       		.byte	0x5
+ 168 004f E3000000 		.4byte	.LASF4
+ 169 0053 02       		.uleb128 0x2
+ 170 0054 04       		.byte	0x4
+ 171 0055 07       		.byte	0x7
+ 172 0056 45000000 		.4byte	.LASF5
+ 173 005a 02       		.uleb128 0x2
+ 174 005b 08       		.byte	0x8
+ 175 005c 05       		.byte	0x5
+ 176 005d 00000000 		.4byte	.LASF6
+ 177 0061 02       		.uleb128 0x2
+ 178 0062 08       		.byte	0x8
+ 179 0063 07       		.byte	0x7
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc4meZzR.s 			page 6
+
+
+ 180 0064 57000000 		.4byte	.LASF7
+ 181 0068 04       		.uleb128 0x4
+ 182 0069 04       		.byte	0x4
+ 183 006a 05       		.byte	0x5
+ 184 006b 696E7400 		.ascii	"int\000"
+ 185 006f 02       		.uleb128 0x2
+ 186 0070 04       		.byte	0x4
+ 187 0071 07       		.byte	0x7
+ 188 0072 21000000 		.4byte	.LASF8
+ 189 0076 03       		.uleb128 0x3
+ 190 0077 BA010000 		.4byte	.LASF10
+ 191 007b 03       		.byte	0x3
+ 192 007c 2C       		.byte	0x2c
+ 193 007d 41000000 		.4byte	0x41
+ 194 0081 05       		.uleb128 0x5
+ 195 0082 3F000000 		.4byte	.LASF11
+ 196 0086 04       		.byte	0x4
+ 197 0087 9201     		.2byte	0x192
+ 198 0089 2C000000 		.4byte	0x2c
+ 199 008d 02       		.uleb128 0x2
+ 200 008e 04       		.byte	0x4
+ 201 008f 04       		.byte	0x4
+ 202 0090 AA010000 		.4byte	.LASF12
+ 203 0094 02       		.uleb128 0x2
+ 204 0095 08       		.byte	0x8
+ 205 0096 04       		.byte	0x4
+ 206 0097 7A010000 		.4byte	.LASF13
+ 207 009b 02       		.uleb128 0x2
+ 208 009c 01       		.byte	0x1
+ 209 009d 08       		.byte	0x8
+ 210 009e DE000000 		.4byte	.LASF14
+ 211 00a2 02       		.uleb128 0x2
+ 212 00a3 04       		.byte	0x4
+ 213 00a4 07       		.byte	0x7
+ 214 00a5 C2010000 		.4byte	.LASF15
+ 215 00a9 06       		.uleb128 0x6
+ 216 00aa 3A000000 		.4byte	.LASF21
+ 217 00ae 01       		.byte	0x1
+ 218 00af 34       		.byte	0x34
+ 219 00b0 68000000 		.4byte	0x68
+ 220 00b4 00000000 		.4byte	.LFB63
+ 221 00b8 84000000 		.4byte	.LFE63-.LFB63
+ 222 00bc 01       		.uleb128 0x1
+ 223 00bd 9C       		.byte	0x9c
+ 224 00be DF000000 		.4byte	0xdf
+ 225 00c2 07       		.uleb128 0x7
+ 226 00c3 81010000 		.4byte	.LASF16
+ 227 00c7 01       		.byte	0x1
+ 228 00c8 37       		.byte	0x37
+ 229 00c9 DF000000 		.4byte	0xdf
+ 230 00cd 02       		.uleb128 0x2
+ 231 00ce 91       		.byte	0x91
+ 232 00cf 74       		.sleb128 -12
+ 233 00d0 07       		.uleb128 0x7
+ 234 00d1 35000000 		.4byte	.LASF17
+ 235 00d5 01       		.byte	0x1
+ 236 00d6 3A       		.byte	0x3a
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc4meZzR.s 			page 7
+
+
+ 237 00d7 81000000 		.4byte	0x81
+ 238 00db 02       		.uleb128 0x2
+ 239 00dc 91       		.byte	0x91
+ 240 00dd 77       		.sleb128 -9
+ 241 00de 00       		.byte	0
+ 242 00df 08       		.uleb128 0x8
+ 243 00e0 81000000 		.4byte	0x81
+ 244 00e4 EF000000 		.4byte	0xef
+ 245 00e8 09       		.uleb128 0x9
+ 246 00e9 A2000000 		.4byte	0xa2
+ 247 00ed 01       		.byte	0x1
+ 248 00ee 00       		.byte	0
+ 249 00ef 0A       		.uleb128 0xa
+ 250 00f0 87010000 		.4byte	.LASF22
+ 251 00f4 05       		.byte	0x5
+ 252 00f5 9606     		.2byte	0x696
+ 253 00f7 FB000000 		.4byte	0xfb
+ 254 00fb 0B       		.uleb128 0xb
+ 255 00fc 76000000 		.4byte	0x76
+ 256 0100 00       		.byte	0
+ 257              		.section	.debug_abbrev,"",%progbits
+ 258              	.Ldebug_abbrev0:
+ 259 0000 01       		.uleb128 0x1
+ 260 0001 11       		.uleb128 0x11
+ 261 0002 01       		.byte	0x1
+ 262 0003 25       		.uleb128 0x25
+ 263 0004 0E       		.uleb128 0xe
+ 264 0005 13       		.uleb128 0x13
+ 265 0006 0B       		.uleb128 0xb
+ 266 0007 03       		.uleb128 0x3
+ 267 0008 0E       		.uleb128 0xe
+ 268 0009 1B       		.uleb128 0x1b
+ 269 000a 0E       		.uleb128 0xe
+ 270 000b 55       		.uleb128 0x55
+ 271 000c 17       		.uleb128 0x17
+ 272 000d 11       		.uleb128 0x11
+ 273 000e 01       		.uleb128 0x1
+ 274 000f 10       		.uleb128 0x10
+ 275 0010 17       		.uleb128 0x17
+ 276 0011 00       		.byte	0
+ 277 0012 00       		.byte	0
+ 278 0013 02       		.uleb128 0x2
+ 279 0014 24       		.uleb128 0x24
+ 280 0015 00       		.byte	0
+ 281 0016 0B       		.uleb128 0xb
+ 282 0017 0B       		.uleb128 0xb
+ 283 0018 3E       		.uleb128 0x3e
+ 284 0019 0B       		.uleb128 0xb
+ 285 001a 03       		.uleb128 0x3
+ 286 001b 0E       		.uleb128 0xe
+ 287 001c 00       		.byte	0
+ 288 001d 00       		.byte	0
+ 289 001e 03       		.uleb128 0x3
+ 290 001f 16       		.uleb128 0x16
+ 291 0020 00       		.byte	0
+ 292 0021 03       		.uleb128 0x3
+ 293 0022 0E       		.uleb128 0xe
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc4meZzR.s 			page 8
+
+
+ 294 0023 3A       		.uleb128 0x3a
+ 295 0024 0B       		.uleb128 0xb
+ 296 0025 3B       		.uleb128 0x3b
+ 297 0026 0B       		.uleb128 0xb
+ 298 0027 49       		.uleb128 0x49
+ 299 0028 13       		.uleb128 0x13
+ 300 0029 00       		.byte	0
+ 301 002a 00       		.byte	0
+ 302 002b 04       		.uleb128 0x4
+ 303 002c 24       		.uleb128 0x24
+ 304 002d 00       		.byte	0
+ 305 002e 0B       		.uleb128 0xb
+ 306 002f 0B       		.uleb128 0xb
+ 307 0030 3E       		.uleb128 0x3e
+ 308 0031 0B       		.uleb128 0xb
+ 309 0032 03       		.uleb128 0x3
+ 310 0033 08       		.uleb128 0x8
+ 311 0034 00       		.byte	0
+ 312 0035 00       		.byte	0
+ 313 0036 05       		.uleb128 0x5
+ 314 0037 16       		.uleb128 0x16
+ 315 0038 00       		.byte	0
+ 316 0039 03       		.uleb128 0x3
+ 317 003a 0E       		.uleb128 0xe
+ 318 003b 3A       		.uleb128 0x3a
+ 319 003c 0B       		.uleb128 0xb
+ 320 003d 3B       		.uleb128 0x3b
+ 321 003e 05       		.uleb128 0x5
+ 322 003f 49       		.uleb128 0x49
+ 323 0040 13       		.uleb128 0x13
+ 324 0041 00       		.byte	0
+ 325 0042 00       		.byte	0
+ 326 0043 06       		.uleb128 0x6
+ 327 0044 2E       		.uleb128 0x2e
+ 328 0045 01       		.byte	0x1
+ 329 0046 3F       		.uleb128 0x3f
+ 330 0047 19       		.uleb128 0x19
+ 331 0048 03       		.uleb128 0x3
+ 332 0049 0E       		.uleb128 0xe
+ 333 004a 3A       		.uleb128 0x3a
+ 334 004b 0B       		.uleb128 0xb
+ 335 004c 3B       		.uleb128 0x3b
+ 336 004d 0B       		.uleb128 0xb
+ 337 004e 49       		.uleb128 0x49
+ 338 004f 13       		.uleb128 0x13
+ 339 0050 11       		.uleb128 0x11
+ 340 0051 01       		.uleb128 0x1
+ 341 0052 12       		.uleb128 0x12
+ 342 0053 06       		.uleb128 0x6
+ 343 0054 40       		.uleb128 0x40
+ 344 0055 18       		.uleb128 0x18
+ 345 0056 9642     		.uleb128 0x2116
+ 346 0058 19       		.uleb128 0x19
+ 347 0059 01       		.uleb128 0x1
+ 348 005a 13       		.uleb128 0x13
+ 349 005b 00       		.byte	0
+ 350 005c 00       		.byte	0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc4meZzR.s 			page 9
+
+
+ 351 005d 07       		.uleb128 0x7
+ 352 005e 34       		.uleb128 0x34
+ 353 005f 00       		.byte	0
+ 354 0060 03       		.uleb128 0x3
+ 355 0061 0E       		.uleb128 0xe
+ 356 0062 3A       		.uleb128 0x3a
+ 357 0063 0B       		.uleb128 0xb
+ 358 0064 3B       		.uleb128 0x3b
+ 359 0065 0B       		.uleb128 0xb
+ 360 0066 49       		.uleb128 0x49
+ 361 0067 13       		.uleb128 0x13
+ 362 0068 02       		.uleb128 0x2
+ 363 0069 18       		.uleb128 0x18
+ 364 006a 00       		.byte	0
+ 365 006b 00       		.byte	0
+ 366 006c 08       		.uleb128 0x8
+ 367 006d 01       		.uleb128 0x1
+ 368 006e 01       		.byte	0x1
+ 369 006f 49       		.uleb128 0x49
+ 370 0070 13       		.uleb128 0x13
+ 371 0071 01       		.uleb128 0x1
+ 372 0072 13       		.uleb128 0x13
+ 373 0073 00       		.byte	0
+ 374 0074 00       		.byte	0
+ 375 0075 09       		.uleb128 0x9
+ 376 0076 21       		.uleb128 0x21
+ 377 0077 00       		.byte	0
+ 378 0078 49       		.uleb128 0x49
+ 379 0079 13       		.uleb128 0x13
+ 380 007a 2F       		.uleb128 0x2f
+ 381 007b 0B       		.uleb128 0xb
+ 382 007c 00       		.byte	0
+ 383 007d 00       		.byte	0
+ 384 007e 0A       		.uleb128 0xa
+ 385 007f 34       		.uleb128 0x34
+ 386 0080 00       		.byte	0
+ 387 0081 03       		.uleb128 0x3
+ 388 0082 0E       		.uleb128 0xe
+ 389 0083 3A       		.uleb128 0x3a
+ 390 0084 0B       		.uleb128 0xb
+ 391 0085 3B       		.uleb128 0x3b
+ 392 0086 05       		.uleb128 0x5
+ 393 0087 49       		.uleb128 0x49
+ 394 0088 13       		.uleb128 0x13
+ 395 0089 3F       		.uleb128 0x3f
+ 396 008a 19       		.uleb128 0x19
+ 397 008b 3C       		.uleb128 0x3c
+ 398 008c 19       		.uleb128 0x19
+ 399 008d 00       		.byte	0
+ 400 008e 00       		.byte	0
+ 401 008f 0B       		.uleb128 0xb
+ 402 0090 35       		.uleb128 0x35
+ 403 0091 00       		.byte	0
+ 404 0092 49       		.uleb128 0x49
+ 405 0093 13       		.uleb128 0x13
+ 406 0094 00       		.byte	0
+ 407 0095 00       		.byte	0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc4meZzR.s 			page 10
+
+
+ 408 0096 00       		.byte	0
+ 409              		.section	.debug_aranges,"",%progbits
+ 410 0000 1C000000 		.4byte	0x1c
+ 411 0004 0200     		.2byte	0x2
+ 412 0006 00000000 		.4byte	.Ldebug_info0
+ 413 000a 04       		.byte	0x4
+ 414 000b 00       		.byte	0
+ 415 000c 0000     		.2byte	0
+ 416 000e 0000     		.2byte	0
+ 417 0010 00000000 		.4byte	.LFB63
+ 418 0014 84000000 		.4byte	.LFE63-.LFB63
+ 419 0018 00000000 		.4byte	0
+ 420 001c 00000000 		.4byte	0
+ 421              		.section	.debug_ranges,"",%progbits
+ 422              	.Ldebug_ranges0:
+ 423 0000 00000000 		.4byte	.LFB63
+ 424 0004 84000000 		.4byte	.LFE63
+ 425 0008 00000000 		.4byte	0
+ 426 000c 00000000 		.4byte	0
+ 427              		.section	.debug_line,"",%progbits
+ 428              	.Ldebug_line0:
+ 429 0000 7E010000 		.section	.debug_str,"MS",%progbits,1
+ 429      02004701 
+ 429      00000201 
+ 429      FB0E0D00 
+ 429      01010101 
+ 430              	.LASF6:
+ 431 0000 6C6F6E67 		.ascii	"long long int\000"
+ 431      206C6F6E 
+ 431      6720696E 
+ 431      7400
+ 432              	.LASF3:
+ 433 000e 73686F72 		.ascii	"short unsigned int\000"
+ 433      7420756E 
+ 433      7369676E 
+ 433      65642069 
+ 433      6E7400
+ 434              	.LASF8:
+ 435 0021 756E7369 		.ascii	"unsigned int\000"
+ 435      676E6564 
+ 435      20696E74 
+ 435      00
+ 436              	.LASF19:
+ 437 002e 6D61696E 		.ascii	"main.c\000"
+ 437      2E6300
+ 438              	.LASF17:
+ 439 0035 74656D70 		.ascii	"temp\000"
+ 439      00
+ 440              	.LASF21:
+ 441 003a 6D61696E 		.ascii	"main\000"
+ 441      00
+ 442              	.LASF11:
+ 443 003f 75696E74 		.ascii	"uint8\000"
+ 443      3800
+ 444              	.LASF5:
+ 445 0045 6C6F6E67 		.ascii	"long unsigned int\000"
+ 445      20756E73 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc4meZzR.s 			page 11
+
+
+ 445      69676E65 
+ 445      6420696E 
+ 445      7400
+ 446              	.LASF7:
+ 447 0057 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 447      206C6F6E 
+ 447      6720756E 
+ 447      7369676E 
+ 447      65642069 
+ 448              	.LASF20:
+ 449 006e 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
+ 449      73657273 
+ 449      5C444769 
+ 449      6C6C696C 
+ 449      616E645C 
+ 450 009b 532D5053 		.ascii	"S-PSOC5\\Projects\\I2CSlave-01.cydsn\\I2CSlave-01.c"
+ 450      4F43355C 
+ 450      50726F6A 
+ 450      65637473 
+ 450      5C493243 
+ 451 00cb 7964736E 		.ascii	"ydsn\000"
+ 451      00
+ 452              	.LASF1:
+ 453 00d0 756E7369 		.ascii	"unsigned char\000"
+ 453      676E6564 
+ 453      20636861 
+ 453      7200
+ 454              	.LASF14:
+ 455 00de 63686172 		.ascii	"char\000"
+ 455      00
+ 456              	.LASF4:
+ 457 00e3 6C6F6E67 		.ascii	"long int\000"
+ 457      20696E74 
+ 457      00
+ 458              	.LASF18:
+ 459 00ec 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 459      4320342E 
+ 459      392E3320 
+ 459      32303135 
+ 459      30333033 
+ 460 011f 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 460      20726576 
+ 460      6973696F 
+ 460      6E203232 
+ 460      31323230 
+ 461 0152 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 461      66756E63 
+ 461      74696F6E 
+ 461      2D736563 
+ 461      74696F6E 
+ 462              	.LASF13:
+ 463 017a 646F7562 		.ascii	"double\000"
+ 463      6C6500
+ 464              	.LASF16:
+ 465 0181 72644275 		.ascii	"rdBuf\000"
+ 465      6600
+ 466              	.LASF22:
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cc4meZzR.s 			page 12
+
+
+ 467 0187 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 467      52784275 
+ 467      66666572 
+ 467      00
+ 468              	.LASF0:
+ 469 0194 7369676E 		.ascii	"signed char\000"
+ 469      65642063 
+ 469      68617200 
+ 470              	.LASF9:
+ 471 01a0 5F5F696E 		.ascii	"__int32_t\000"
+ 471      7433325F 
+ 471      7400
+ 472              	.LASF12:
+ 473 01aa 666C6F61 		.ascii	"float\000"
+ 473      7400
+ 474              	.LASF2:
+ 475 01b0 73686F72 		.ascii	"short int\000"
+ 475      7420696E 
+ 475      7400
+ 476              	.LASF10:
+ 477 01ba 696E7433 		.ascii	"int32_t\000"
+ 477      325F7400 
+ 478              	.LASF15:
+ 479 01c2 73697A65 		.ascii	"sizetype\000"
+ 479      74797065 
+ 479      00
+ 480              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

@@ -1,0 +1,7 @@
+C:\Users\DGilliland\Documents\MK48\XMTR STE\PSOC Code\PWM_Master\XTSTE_PWM_Master_02.cydsn\XTSTE_PWM_Master_02.cyprj|aa5a87dc-b118-4e82-8451-ac035f69ff3f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|392ff286-f4c9-411f-a79b-853e60ce00f2
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|c6126a6d-ae1a-4f8f-bd99-3589d345577a
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|af5744e9-e9eb-4ed4-a865-870b047089df
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|6c4babad-b1ff-4305-b048-b865cf6df103
+C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\I2C_Master-Slave\I2CSlave-01.cydsn\I2CSlave-01.cyprj|91a84400-74e2-4e68-b8a6-e675b94a5cda
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|e5e9e0db-6640-478b-962f-76f8817e96ef

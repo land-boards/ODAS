@@ -1,0 +1,982 @@
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"myI2CSlave.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.comm	verboseFlag,1,1
+  19              		.comm	rdBuf,5,4
+  20              		.comm	wrBuf,5,4
+  21              		.section	.text.initI2CBuffs,"ax",%progbits
+  22              		.align	2
+  23              		.global	initI2CBuffs
+  24              		.thumb
+  25              		.thumb_func
+  26              		.type	initI2CBuffs, %function
+  27              	initI2CBuffs:
+  28              	.LFB63:
+  29              		.file 1 "myI2CSlave.c"
+   1:myI2CSlave.c  **** /* ========================================
+   2:myI2CSlave.c  ****  *
+   3:myI2CSlave.c  ****  * Copyright YOUR COMPANY, THE YEAR
+   4:myI2CSlave.c  ****  * All Rights Reserved
+   5:myI2CSlave.c  ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:myI2CSlave.c  ****  *
+   7:myI2CSlave.c  ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:myI2CSlave.c  ****  * WHICH IS THE PROPERTY OF your company.
+   9:myI2CSlave.c  ****  *
+  10:myI2CSlave.c  ****  * ========================================
+  11:myI2CSlave.c  **** */
+  12:myI2CSlave.c  **** 
+  13:myI2CSlave.c  **** #include "myI2CSlave.h"
+  14:myI2CSlave.c  **** 
+  15:myI2CSlave.c  **** uint8 verboseFlag;
+  16:myI2CSlave.c  **** 
+  17:myI2CSlave.c  **** uint8 rdBuf[RD_BUFFER_SIZE];
+  18:myI2CSlave.c  **** uint8 wrBuf[WR_BUFFER_SIZE];
+  19:myI2CSlave.c  **** 
+  20:myI2CSlave.c  **** void initI2CBuffs(void)
+  21:myI2CSlave.c  **** {
+  30              		.loc 1 21 0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 1, uses_anonymous_args = 0
+  34 0000 80B5     		push	{r7, lr}
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 7, -8
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 2
+
+
+  37              		.cfi_offset 14, -4
+  38 0002 00AF     		add	r7, sp, #0
+  39              		.cfi_def_cfa_register 7
+  22:myI2CSlave.c  ****     rdBuf[0] = 0;   // Buffers are globals
+  40              		.loc 1 22 0
+  41 0004 164B     		ldr	r3, .L2
+  42 0006 0022     		movs	r2, #0
+  43 0008 1A70     		strb	r2, [r3]
+  23:myI2CSlave.c  ****     rdBuf[1] = 0;
+  44              		.loc 1 23 0
+  45 000a 154B     		ldr	r3, .L2
+  46 000c 0022     		movs	r2, #0
+  47 000e 5A70     		strb	r2, [r3, #1]
+  24:myI2CSlave.c  ****     rdBuf[2] = 0;
+  48              		.loc 1 24 0
+  49 0010 134B     		ldr	r3, .L2
+  50 0012 0022     		movs	r2, #0
+  51 0014 9A70     		strb	r2, [r3, #2]
+  25:myI2CSlave.c  ****     rdBuf[3] = 0;
+  52              		.loc 1 25 0
+  53 0016 124B     		ldr	r3, .L2
+  54 0018 0022     		movs	r2, #0
+  55 001a DA70     		strb	r2, [r3, #3]
+  26:myI2CSlave.c  ****     rdBuf[4] = 0;
+  56              		.loc 1 26 0
+  57 001c 104B     		ldr	r3, .L2
+  58 001e 0022     		movs	r2, #0
+  59 0020 1A71     		strb	r2, [r3, #4]
+  27:myI2CSlave.c  **** 
+  28:myI2CSlave.c  ****     wrBuf[0] = NULL_CMD;
+  60              		.loc 1 28 0
+  61 0022 104B     		ldr	r3, .L2+4
+  62 0024 0022     		movs	r2, #0
+  63 0026 1A70     		strb	r2, [r3]
+  29:myI2CSlave.c  ****     wrBuf[1] = 0;
+  64              		.loc 1 29 0
+  65 0028 0E4B     		ldr	r3, .L2+4
+  66 002a 0022     		movs	r2, #0
+  67 002c 5A70     		strb	r2, [r3, #1]
+  30:myI2CSlave.c  ****     wrBuf[2] = 0;
+  68              		.loc 1 30 0
+  69 002e 0D4B     		ldr	r3, .L2+4
+  70 0030 0022     		movs	r2, #0
+  71 0032 9A70     		strb	r2, [r3, #2]
+  31:myI2CSlave.c  ****     wrBuf[3] = 0;
+  72              		.loc 1 31 0
+  73 0034 0B4B     		ldr	r3, .L2+4
+  74 0036 0022     		movs	r2, #0
+  75 0038 DA70     		strb	r2, [r3, #3]
+  32:myI2CSlave.c  ****     wrBuf[4] = 0;
+  76              		.loc 1 32 0
+  77 003a 0A4B     		ldr	r3, .L2+4
+  78 003c 0022     		movs	r2, #0
+  79 003e 1A71     		strb	r2, [r3, #4]
+  33:myI2CSlave.c  **** 
+  34:myI2CSlave.c  ****     // Initialize the read/write buffers
+  35:myI2CSlave.c  ****     I2C_1_SlaveSetAddress(0x50);
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 3
+
+
+  80              		.loc 1 35 0
+  81 0040 5020     		movs	r0, #80
+  82 0042 FFF7FEFF 		bl	I2C_1_SlaveSetAddress
+  36:myI2CSlave.c  ****     I2C_1_SlaveInitReadBuf(rdBuf,RD_BUFFER_SIZE);       // Buffer to be read by the master
+  83              		.loc 1 36 0
+  84 0046 0648     		ldr	r0, .L2
+  85 0048 0521     		movs	r1, #5
+  86 004a FFF7FEFF 		bl	I2C_1_SlaveInitReadBuf
+  37:myI2CSlave.c  ****     I2C_1_SlaveInitWriteBuf(wrBuf,WR_BUFFER_SIZE);      // Buffer from the master
+  87              		.loc 1 37 0
+  88 004e 0548     		ldr	r0, .L2+4
+  89 0050 0521     		movs	r1, #5
+  90 0052 FFF7FEFF 		bl	I2C_1_SlaveInitWriteBuf
+  38:myI2CSlave.c  ****     I2C_1_SlaveClearReadStatus();
+  91              		.loc 1 38 0
+  92 0056 FFF7FEFF 		bl	I2C_1_SlaveClearReadStatus
+  39:myI2CSlave.c  ****     I2C_1_SlaveClearWriteStatus();
+  93              		.loc 1 39 0
+  94 005a FFF7FEFF 		bl	I2C_1_SlaveClearWriteStatus
+  40:myI2CSlave.c  **** }
+  95              		.loc 1 40 0
+  96 005e 80BD     		pop	{r7, pc}
+  97              	.L3:
+  98              		.align	2
+  99              	.L2:
+ 100 0060 00000000 		.word	rdBuf
+ 101 0064 00000000 		.word	wrBuf
+ 102              		.cfi_endproc
+ 103              	.LFE63:
+ 104              		.size	initI2CBuffs, .-initI2CBuffs
+ 105              		.section	.text.waitForMasterToWrite,"ax",%progbits
+ 106              		.align	2
+ 107              		.global	waitForMasterToWrite
+ 108              		.thumb
+ 109              		.thumb_func
+ 110              		.type	waitForMasterToWrite, %function
+ 111              	waitForMasterToWrite:
+ 112              	.LFB64:
+  41:myI2CSlave.c  **** 
+  42:myI2CSlave.c  **** void waitForMasterToWrite(void)
+  43:myI2CSlave.c  **** {
+ 113              		.loc 1 43 0
+ 114              		.cfi_startproc
+ 115              		@ args = 0, pretend = 0, frame = 0
+ 116              		@ frame_needed = 1, uses_anonymous_args = 0
+ 117 0000 80B5     		push	{r7, lr}
+ 118              		.cfi_def_cfa_offset 8
+ 119              		.cfi_offset 7, -8
+ 120              		.cfi_offset 14, -4
+ 121 0002 00AF     		add	r7, sp, #0
+ 122              		.cfi_def_cfa_register 7
+  44:myI2CSlave.c  ****     while ((I2C_1_SlaveStatus() & I2C_1_SSTAT_WR_BUSY) != I2C_1_SSTAT_WR_BUSY);         // Wait for
+ 123              		.loc 1 44 0
+ 124 0004 00BF     		nop
+ 125              	.L5:
+ 126              		.loc 1 44 0 is_stmt 0 discriminator 1
+ 127 0006 FFF7FEFF 		bl	I2C_1_SlaveStatus
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 4
+
+
+ 128 000a 0346     		mov	r3, r0
+ 129 000c 03F02003 		and	r3, r3, #32
+ 130 0010 002B     		cmp	r3, #0
+ 131 0012 F8D0     		beq	.L5
+  45:myI2CSlave.c  ****     while ((I2C_1_SlaveStatus() & I2C_1_SSTAT_WR_BUSY) == I2C_1_SSTAT_WR_BUSY);         // Stall wh
+ 132              		.loc 1 45 0 is_stmt 1
+ 133 0014 00BF     		nop
+ 134              	.L6:
+ 135              		.loc 1 45 0 is_stmt 0 discriminator 1
+ 136 0016 FFF7FEFF 		bl	I2C_1_SlaveStatus
+ 137 001a 0346     		mov	r3, r0
+ 138 001c 03F02003 		and	r3, r3, #32
+ 139 0020 002B     		cmp	r3, #0
+ 140 0022 F8D1     		bne	.L6
+  46:myI2CSlave.c  ****     while ((I2C_1_SlaveStatus() & I2C_1_SSTAT_WR_CMPLT) != I2C_1_SSTAT_WR_CMPLT);       // Wait for
+ 141              		.loc 1 46 0 is_stmt 1
+ 142 0024 00BF     		nop
+ 143              	.L7:
+ 144              		.loc 1 46 0 is_stmt 0 discriminator 1
+ 145 0026 FFF7FEFF 		bl	I2C_1_SlaveStatus
+ 146 002a 0346     		mov	r3, r0
+ 147 002c 03F01003 		and	r3, r3, #16
+ 148 0030 002B     		cmp	r3, #0
+ 149 0032 F8D0     		beq	.L7
+  47:myI2CSlave.c  ****     I2C_1_SlaveClearWriteBuf();
+ 150              		.loc 1 47 0 is_stmt 1
+ 151 0034 FFF7FEFF 		bl	I2C_1_SlaveClearWriteBuf
+  48:myI2CSlave.c  **** }
+ 152              		.loc 1 48 0
+ 153 0038 80BD     		pop	{r7, pc}
+ 154              		.cfi_endproc
+ 155              	.LFE64:
+ 156              		.size	waitForMasterToWrite, .-waitForMasterToWrite
+ 157 003a 00BF     		.section	.text.waitForMasterToRead,"ax",%progbits
+ 158              		.align	2
+ 159              		.global	waitForMasterToRead
+ 160              		.thumb
+ 161              		.thumb_func
+ 162              		.type	waitForMasterToRead, %function
+ 163              	waitForMasterToRead:
+ 164              	.LFB65:
+  49:myI2CSlave.c  **** 
+  50:myI2CSlave.c  **** void waitForMasterToRead(void)
+  51:myI2CSlave.c  **** {
+ 165              		.loc 1 51 0
+ 166              		.cfi_startproc
+ 167              		@ args = 0, pretend = 0, frame = 0
+ 168              		@ frame_needed = 1, uses_anonymous_args = 0
+ 169 0000 80B5     		push	{r7, lr}
+ 170              		.cfi_def_cfa_offset 8
+ 171              		.cfi_offset 7, -8
+ 172              		.cfi_offset 14, -4
+ 173 0002 00AF     		add	r7, sp, #0
+ 174              		.cfi_def_cfa_register 7
+  52:myI2CSlave.c  ****     while ((I2C_1_SlaveStatus() & I2C_1_SSTAT_RD_BUSY) == I2C_1_SSTAT_RD_CMPLT);
+ 175              		.loc 1 52 0
+ 176 0004 00BF     		nop
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 5
+
+
+ 177 0006 FFF7FEFF 		bl	I2C_1_SlaveStatus
+  53:myI2CSlave.c  ****     while ((I2C_1_SlaveStatus() & I2C_1_SSTAT_RD_BUSY) != I2C_1_SSTAT_RD_BUSY); // Wait for the rea
+ 178              		.loc 1 53 0
+ 179 000a 00BF     		nop
+ 180              	.L9:
+ 181              		.loc 1 53 0 is_stmt 0 discriminator 1
+ 182 000c FFF7FEFF 		bl	I2C_1_SlaveStatus
+ 183 0010 0346     		mov	r3, r0
+ 184 0012 03F00203 		and	r3, r3, #2
+ 185 0016 002B     		cmp	r3, #0
+ 186 0018 F8D0     		beq	.L9
+  54:myI2CSlave.c  ****     while ((I2C_1_SlaveStatus() & I2C_1_SSTAT_RD_BUSY) == I2C_1_SSTAT_RD_BUSY);
+ 187              		.loc 1 54 0 is_stmt 1
+ 188 001a 00BF     		nop
+ 189              	.L10:
+ 190              		.loc 1 54 0 is_stmt 0 discriminator 1
+ 191 001c FFF7FEFF 		bl	I2C_1_SlaveStatus
+ 192 0020 0346     		mov	r3, r0
+ 193 0022 03F00203 		and	r3, r3, #2
+ 194 0026 002B     		cmp	r3, #0
+ 195 0028 F8D1     		bne	.L10
+  55:myI2CSlave.c  ****     while ((I2C_1_SlaveStatus() & I2C_1_SSTAT_RD_CMPLT) != I2C_1_SSTAT_RD_CMPLT);   // Wait for pac
+ 196              		.loc 1 55 0 is_stmt 1
+ 197 002a 00BF     		nop
+ 198              	.L11:
+ 199              		.loc 1 55 0 is_stmt 0 discriminator 1
+ 200 002c FFF7FEFF 		bl	I2C_1_SlaveStatus
+ 201 0030 0346     		mov	r3, r0
+ 202 0032 03F00103 		and	r3, r3, #1
+ 203 0036 002B     		cmp	r3, #0
+ 204 0038 F8D0     		beq	.L11
+  56:myI2CSlave.c  ****     I2C_1_SlaveClearReadStatus();
+ 205              		.loc 1 56 0 is_stmt 1
+ 206 003a FFF7FEFF 		bl	I2C_1_SlaveClearReadStatus
+  57:myI2CSlave.c  ****     I2C_1_SlaveClearReadBuf();
+ 207              		.loc 1 57 0
+ 208 003e FFF7FEFF 		bl	I2C_1_SlaveClearReadBuf
+  58:myI2CSlave.c  **** }
+ 209              		.loc 1 58 0
+ 210 0042 80BD     		pop	{r7, pc}
+ 211              		.cfi_endproc
+ 212              	.LFE65:
+ 213              		.size	waitForMasterToRead, .-waitForMasterToRead
+ 214              		.section	.text.fastBlink,"ax",%progbits
+ 215              		.align	2
+ 216              		.global	fastBlink
+ 217              		.thumb
+ 218              		.thumb_func
+ 219              		.type	fastBlink, %function
+ 220              	fastBlink:
+ 221              	.LFB66:
+  59:myI2CSlave.c  **** 
+  60:myI2CSlave.c  **** void fastBlink(void)
+  61:myI2CSlave.c  **** {
+ 222              		.loc 1 61 0
+ 223              		.cfi_startproc
+ 224              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 6
+
+
+ 225              		@ frame_needed = 1, uses_anonymous_args = 0
+ 226 0000 80B5     		push	{r7, lr}
+ 227              		.cfi_def_cfa_offset 8
+ 228              		.cfi_offset 7, -8
+ 229              		.cfi_offset 14, -4
+ 230 0002 00AF     		add	r7, sp, #0
+ 231              		.cfi_def_cfa_register 7
+  62:myI2CSlave.c  ****     LED_Write(1);
+ 232              		.loc 1 62 0
+ 233 0004 0120     		movs	r0, #1
+ 234 0006 FFF7FEFF 		bl	LED_Write
+  63:myI2CSlave.c  ****     CyDelay(50);
+ 235              		.loc 1 63 0
+ 236 000a 3220     		movs	r0, #50
+ 237 000c FFF7FEFF 		bl	CyDelay
+  64:myI2CSlave.c  ****     LED_Write(0);
+ 238              		.loc 1 64 0
+ 239 0010 0020     		movs	r0, #0
+ 240 0012 FFF7FEFF 		bl	LED_Write
+  65:myI2CSlave.c  **** }
+ 241              		.loc 1 65 0
+ 242 0016 80BD     		pop	{r7, pc}
+ 243              		.cfi_endproc
+ 244              	.LFE66:
+ 245              		.size	fastBlink, .-fastBlink
+ 246              		.text
+ 247              	.Letext0:
+ 248              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 249              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 250              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 251              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 252              		.file 6 "myI2CSlave.h"
+ 253              		.section	.debug_info,"",%progbits
+ 254              	.Ldebug_info0:
+ 255 0000 8D010000 		.4byte	0x18d
+ 256 0004 0400     		.2byte	0x4
+ 257 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 258 000a 04       		.byte	0x4
+ 259 000b 01       		.uleb128 0x1
+ 260 000c 21000000 		.4byte	.LASF35
+ 261 0010 01       		.byte	0x1
+ 262 0011 AF000000 		.4byte	.LASF36
+ 263 0015 C2000000 		.4byte	.LASF37
+ 264 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 265 001d 00000000 		.4byte	0
+ 266 0021 00000000 		.4byte	.Ldebug_line0
+ 267 0025 02       		.uleb128 0x2
+ 268 0026 01       		.byte	0x1
+ 269 0027 06       		.byte	0x6
+ 270 0028 C0020000 		.4byte	.LASF0
+ 271 002c 02       		.uleb128 0x2
+ 272 002d 01       		.byte	0x1
+ 273 002e 08       		.byte	0x8
+ 274 002f F4010000 		.4byte	.LASF1
+ 275 0033 02       		.uleb128 0x2
+ 276 0034 02       		.byte	0x2
+ 277 0035 05       		.byte	0x5
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 7
+
+
+ 278 0036 84020000 		.4byte	.LASF2
+ 279 003a 02       		.uleb128 0x2
+ 280 003b 02       		.byte	0x2
+ 281 003c 07       		.byte	0x7
+ 282 003d 7A010000 		.4byte	.LASF3
+ 283 0041 03       		.uleb128 0x3
+ 284 0042 17000000 		.4byte	.LASF9
+ 285 0046 02       		.byte	0x2
+ 286 0047 3F       		.byte	0x3f
+ 287 0048 4C000000 		.4byte	0x4c
+ 288 004c 02       		.uleb128 0x2
+ 289 004d 04       		.byte	0x4
+ 290 004e 05       		.byte	0x5
+ 291 004f B7020000 		.4byte	.LASF4
+ 292 0053 02       		.uleb128 0x2
+ 293 0054 04       		.byte	0x4
+ 294 0055 07       		.byte	0x7
+ 295 0056 55010000 		.4byte	.LASF5
+ 296 005a 02       		.uleb128 0x2
+ 297 005b 08       		.byte	0x8
+ 298 005c 05       		.byte	0x5
+ 299 005d 4E020000 		.4byte	.LASF6
+ 300 0061 02       		.uleb128 0x2
+ 301 0062 08       		.byte	0x8
+ 302 0063 07       		.byte	0x7
+ 303 0064 0F020000 		.4byte	.LASF7
+ 304 0068 04       		.uleb128 0x4
+ 305 0069 04       		.byte	0x4
+ 306 006a 05       		.byte	0x5
+ 307 006b 696E7400 		.ascii	"int\000"
+ 308 006f 02       		.uleb128 0x2
+ 309 0070 04       		.byte	0x4
+ 310 0071 07       		.byte	0x7
+ 311 0072 02020000 		.4byte	.LASF8
+ 312 0076 03       		.uleb128 0x3
+ 313 0077 3D020000 		.4byte	.LASF10
+ 314 007b 03       		.byte	0x3
+ 315 007c 2C       		.byte	0x2c
+ 316 007d 41000000 		.4byte	0x41
+ 317 0081 05       		.uleb128 0x5
+ 318 0082 A3020000 		.4byte	.LASF11
+ 319 0086 04       		.byte	0x4
+ 320 0087 9201     		.2byte	0x192
+ 321 0089 2C000000 		.4byte	0x2c
+ 322 008d 02       		.uleb128 0x2
+ 323 008e 04       		.byte	0x4
+ 324 008f 04       		.byte	0x4
+ 325 0090 23010000 		.4byte	.LASF12
+ 326 0094 02       		.uleb128 0x2
+ 327 0095 08       		.byte	0x8
+ 328 0096 04       		.byte	0x4
+ 329 0097 DB010000 		.4byte	.LASF13
+ 330 009b 02       		.uleb128 0x2
+ 331 009c 01       		.byte	0x1
+ 332 009d 08       		.byte	0x8
+ 333 009e 69020000 		.4byte	.LASF14
+ 334 00a2 02       		.uleb128 0x2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 8
+
+
+ 335 00a3 04       		.byte	0x4
+ 336 00a4 07       		.byte	0x7
+ 337 00a5 45020000 		.4byte	.LASF15
+ 338 00a9 06       		.uleb128 0x6
+ 339 00aa C5010000 		.4byte	.LASF38
+ 340 00ae 01       		.byte	0x1
+ 341 00af 06       		.byte	0x6
+ 342 00b0 14       		.byte	0x14
+ 343 00b1 F8000000 		.4byte	0xf8
+ 344 00b5 07       		.uleb128 0x7
+ 345 00b6 D2010000 		.4byte	.LASF16
+ 346 00ba 00       		.sleb128 0
+ 347 00bb 07       		.uleb128 0x7
+ 348 00bc A9020000 		.4byte	.LASF17
+ 349 00c0 01       		.sleb128 1
+ 350 00c1 07       		.uleb128 0x7
+ 351 00c2 5C020000 		.4byte	.LASF18
+ 352 00c6 02       		.sleb128 2
+ 353 00c7 07       		.uleb128 0x7
+ 354 00c8 CC020000 		.4byte	.LASF19
+ 355 00cc 03       		.sleb128 3
+ 356 00cd 07       		.uleb128 0x7
+ 357 00ce 8D010000 		.4byte	.LASF20
+ 358 00d2 04       		.sleb128 4
+ 359 00d3 07       		.uleb128 0x7
+ 360 00d4 A2010000 		.4byte	.LASF21
+ 361 00d8 05       		.sleb128 5
+ 362 00d9 07       		.uleb128 0x7
+ 363 00da 6E020000 		.4byte	.LASF22
+ 364 00de 06       		.sleb128 6
+ 365 00df 07       		.uleb128 0x7
+ 366 00e0 3D010000 		.4byte	.LASF23
+ 367 00e4 07       		.sleb128 7
+ 368 00e5 07       		.uleb128 0x7
+ 369 00e6 67010000 		.4byte	.LASF24
+ 370 00ea 08       		.sleb128 8
+ 371 00eb 07       		.uleb128 0x7
+ 372 00ec 26020000 		.4byte	.LASF25
+ 373 00f0 09       		.sleb128 9
+ 374 00f1 07       		.uleb128 0x7
+ 375 00f2 29010000 		.4byte	.LASF26
+ 376 00f6 0A       		.sleb128 10
+ 377 00f7 00       		.byte	0
+ 378 00f8 08       		.uleb128 0x8
+ 379 00f9 00000000 		.4byte	.LASF27
+ 380 00fd 01       		.byte	0x1
+ 381 00fe 14       		.byte	0x14
+ 382 00ff 00000000 		.4byte	.LFB63
+ 383 0103 68000000 		.4byte	.LFE63-.LFB63
+ 384 0107 01       		.uleb128 0x1
+ 385 0108 9C       		.byte	0x9c
+ 386 0109 08       		.uleb128 0x8
+ 387 010a 8E020000 		.4byte	.LASF28
+ 388 010e 01       		.byte	0x1
+ 389 010f 2A       		.byte	0x2a
+ 390 0110 00000000 		.4byte	.LFB64
+ 391 0114 3A000000 		.4byte	.LFE64-.LFB64
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 9
+
+
+ 392 0118 01       		.uleb128 0x1
+ 393 0119 9C       		.byte	0x9c
+ 394 011a 08       		.uleb128 0x8
+ 395 011b E3020000 		.4byte	.LASF29
+ 396 011f 01       		.byte	0x1
+ 397 0120 32       		.byte	0x32
+ 398 0121 00000000 		.4byte	.LFB65
+ 399 0125 44000000 		.4byte	.LFE65-.LFB65
+ 400 0129 01       		.uleb128 0x1
+ 401 012a 9C       		.byte	0x9c
+ 402 012b 08       		.uleb128 0x8
+ 403 012c 0D000000 		.4byte	.LASF30
+ 404 0130 01       		.byte	0x1
+ 405 0131 3C       		.byte	0x3c
+ 406 0132 00000000 		.4byte	.LFB66
+ 407 0136 18000000 		.4byte	.LFE66-.LFB66
+ 408 013a 01       		.uleb128 0x1
+ 409 013b 9C       		.byte	0x9c
+ 410 013c 09       		.uleb128 0x9
+ 411 013d B8010000 		.4byte	.LASF31
+ 412 0141 05       		.byte	0x5
+ 413 0142 9606     		.2byte	0x696
+ 414 0144 48010000 		.4byte	0x148
+ 415 0148 0A       		.uleb128 0xa
+ 416 0149 76000000 		.4byte	0x76
+ 417 014d 0B       		.uleb128 0xb
+ 418 014e 81000000 		.4byte	0x81
+ 419 0152 5D010000 		.4byte	0x15d
+ 420 0156 0C       		.uleb128 0xc
+ 421 0157 A2000000 		.4byte	0xa2
+ 422 015b 04       		.byte	0x4
+ 423 015c 00       		.byte	0
+ 424 015d 0D       		.uleb128 0xd
+ 425 015e BC000000 		.4byte	.LASF32
+ 426 0162 01       		.byte	0x1
+ 427 0163 11       		.byte	0x11
+ 428 0164 4D010000 		.4byte	0x14d
+ 429 0168 05       		.uleb128 0x5
+ 430 0169 03       		.byte	0x3
+ 431 016a 00000000 		.4byte	rdBuf
+ 432 016e 0D       		.uleb128 0xd
+ 433 016f EE010000 		.4byte	.LASF33
+ 434 0173 01       		.byte	0x1
+ 435 0174 12       		.byte	0x12
+ 436 0175 4D010000 		.4byte	0x14d
+ 437 0179 05       		.uleb128 0x5
+ 438 017a 03       		.byte	0x3
+ 439 017b 00000000 		.4byte	wrBuf
+ 440 017f 0D       		.uleb128 0xd
+ 441 0180 E2010000 		.4byte	.LASF34
+ 442 0184 01       		.byte	0x1
+ 443 0185 0F       		.byte	0xf
+ 444 0186 81000000 		.4byte	0x81
+ 445 018a 05       		.uleb128 0x5
+ 446 018b 03       		.byte	0x3
+ 447 018c 00000000 		.4byte	verboseFlag
+ 448 0190 00       		.byte	0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 10
+
+
+ 449              		.section	.debug_abbrev,"",%progbits
+ 450              	.Ldebug_abbrev0:
+ 451 0000 01       		.uleb128 0x1
+ 452 0001 11       		.uleb128 0x11
+ 453 0002 01       		.byte	0x1
+ 454 0003 25       		.uleb128 0x25
+ 455 0004 0E       		.uleb128 0xe
+ 456 0005 13       		.uleb128 0x13
+ 457 0006 0B       		.uleb128 0xb
+ 458 0007 03       		.uleb128 0x3
+ 459 0008 0E       		.uleb128 0xe
+ 460 0009 1B       		.uleb128 0x1b
+ 461 000a 0E       		.uleb128 0xe
+ 462 000b 55       		.uleb128 0x55
+ 463 000c 17       		.uleb128 0x17
+ 464 000d 11       		.uleb128 0x11
+ 465 000e 01       		.uleb128 0x1
+ 466 000f 10       		.uleb128 0x10
+ 467 0010 17       		.uleb128 0x17
+ 468 0011 00       		.byte	0
+ 469 0012 00       		.byte	0
+ 470 0013 02       		.uleb128 0x2
+ 471 0014 24       		.uleb128 0x24
+ 472 0015 00       		.byte	0
+ 473 0016 0B       		.uleb128 0xb
+ 474 0017 0B       		.uleb128 0xb
+ 475 0018 3E       		.uleb128 0x3e
+ 476 0019 0B       		.uleb128 0xb
+ 477 001a 03       		.uleb128 0x3
+ 478 001b 0E       		.uleb128 0xe
+ 479 001c 00       		.byte	0
+ 480 001d 00       		.byte	0
+ 481 001e 03       		.uleb128 0x3
+ 482 001f 16       		.uleb128 0x16
+ 483 0020 00       		.byte	0
+ 484 0021 03       		.uleb128 0x3
+ 485 0022 0E       		.uleb128 0xe
+ 486 0023 3A       		.uleb128 0x3a
+ 487 0024 0B       		.uleb128 0xb
+ 488 0025 3B       		.uleb128 0x3b
+ 489 0026 0B       		.uleb128 0xb
+ 490 0027 49       		.uleb128 0x49
+ 491 0028 13       		.uleb128 0x13
+ 492 0029 00       		.byte	0
+ 493 002a 00       		.byte	0
+ 494 002b 04       		.uleb128 0x4
+ 495 002c 24       		.uleb128 0x24
+ 496 002d 00       		.byte	0
+ 497 002e 0B       		.uleb128 0xb
+ 498 002f 0B       		.uleb128 0xb
+ 499 0030 3E       		.uleb128 0x3e
+ 500 0031 0B       		.uleb128 0xb
+ 501 0032 03       		.uleb128 0x3
+ 502 0033 08       		.uleb128 0x8
+ 503 0034 00       		.byte	0
+ 504 0035 00       		.byte	0
+ 505 0036 05       		.uleb128 0x5
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 11
+
+
+ 506 0037 16       		.uleb128 0x16
+ 507 0038 00       		.byte	0
+ 508 0039 03       		.uleb128 0x3
+ 509 003a 0E       		.uleb128 0xe
+ 510 003b 3A       		.uleb128 0x3a
+ 511 003c 0B       		.uleb128 0xb
+ 512 003d 3B       		.uleb128 0x3b
+ 513 003e 05       		.uleb128 0x5
+ 514 003f 49       		.uleb128 0x49
+ 515 0040 13       		.uleb128 0x13
+ 516 0041 00       		.byte	0
+ 517 0042 00       		.byte	0
+ 518 0043 06       		.uleb128 0x6
+ 519 0044 04       		.uleb128 0x4
+ 520 0045 01       		.byte	0x1
+ 521 0046 03       		.uleb128 0x3
+ 522 0047 0E       		.uleb128 0xe
+ 523 0048 0B       		.uleb128 0xb
+ 524 0049 0B       		.uleb128 0xb
+ 525 004a 3A       		.uleb128 0x3a
+ 526 004b 0B       		.uleb128 0xb
+ 527 004c 3B       		.uleb128 0x3b
+ 528 004d 0B       		.uleb128 0xb
+ 529 004e 01       		.uleb128 0x1
+ 530 004f 13       		.uleb128 0x13
+ 531 0050 00       		.byte	0
+ 532 0051 00       		.byte	0
+ 533 0052 07       		.uleb128 0x7
+ 534 0053 28       		.uleb128 0x28
+ 535 0054 00       		.byte	0
+ 536 0055 03       		.uleb128 0x3
+ 537 0056 0E       		.uleb128 0xe
+ 538 0057 1C       		.uleb128 0x1c
+ 539 0058 0D       		.uleb128 0xd
+ 540 0059 00       		.byte	0
+ 541 005a 00       		.byte	0
+ 542 005b 08       		.uleb128 0x8
+ 543 005c 2E       		.uleb128 0x2e
+ 544 005d 00       		.byte	0
+ 545 005e 3F       		.uleb128 0x3f
+ 546 005f 19       		.uleb128 0x19
+ 547 0060 03       		.uleb128 0x3
+ 548 0061 0E       		.uleb128 0xe
+ 549 0062 3A       		.uleb128 0x3a
+ 550 0063 0B       		.uleb128 0xb
+ 551 0064 3B       		.uleb128 0x3b
+ 552 0065 0B       		.uleb128 0xb
+ 553 0066 27       		.uleb128 0x27
+ 554 0067 19       		.uleb128 0x19
+ 555 0068 11       		.uleb128 0x11
+ 556 0069 01       		.uleb128 0x1
+ 557 006a 12       		.uleb128 0x12
+ 558 006b 06       		.uleb128 0x6
+ 559 006c 40       		.uleb128 0x40
+ 560 006d 18       		.uleb128 0x18
+ 561 006e 9642     		.uleb128 0x2116
+ 562 0070 19       		.uleb128 0x19
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 12
+
+
+ 563 0071 00       		.byte	0
+ 564 0072 00       		.byte	0
+ 565 0073 09       		.uleb128 0x9
+ 566 0074 34       		.uleb128 0x34
+ 567 0075 00       		.byte	0
+ 568 0076 03       		.uleb128 0x3
+ 569 0077 0E       		.uleb128 0xe
+ 570 0078 3A       		.uleb128 0x3a
+ 571 0079 0B       		.uleb128 0xb
+ 572 007a 3B       		.uleb128 0x3b
+ 573 007b 05       		.uleb128 0x5
+ 574 007c 49       		.uleb128 0x49
+ 575 007d 13       		.uleb128 0x13
+ 576 007e 3F       		.uleb128 0x3f
+ 577 007f 19       		.uleb128 0x19
+ 578 0080 3C       		.uleb128 0x3c
+ 579 0081 19       		.uleb128 0x19
+ 580 0082 00       		.byte	0
+ 581 0083 00       		.byte	0
+ 582 0084 0A       		.uleb128 0xa
+ 583 0085 35       		.uleb128 0x35
+ 584 0086 00       		.byte	0
+ 585 0087 49       		.uleb128 0x49
+ 586 0088 13       		.uleb128 0x13
+ 587 0089 00       		.byte	0
+ 588 008a 00       		.byte	0
+ 589 008b 0B       		.uleb128 0xb
+ 590 008c 01       		.uleb128 0x1
+ 591 008d 01       		.byte	0x1
+ 592 008e 49       		.uleb128 0x49
+ 593 008f 13       		.uleb128 0x13
+ 594 0090 01       		.uleb128 0x1
+ 595 0091 13       		.uleb128 0x13
+ 596 0092 00       		.byte	0
+ 597 0093 00       		.byte	0
+ 598 0094 0C       		.uleb128 0xc
+ 599 0095 21       		.uleb128 0x21
+ 600 0096 00       		.byte	0
+ 601 0097 49       		.uleb128 0x49
+ 602 0098 13       		.uleb128 0x13
+ 603 0099 2F       		.uleb128 0x2f
+ 604 009a 0B       		.uleb128 0xb
+ 605 009b 00       		.byte	0
+ 606 009c 00       		.byte	0
+ 607 009d 0D       		.uleb128 0xd
+ 608 009e 34       		.uleb128 0x34
+ 609 009f 00       		.byte	0
+ 610 00a0 03       		.uleb128 0x3
+ 611 00a1 0E       		.uleb128 0xe
+ 612 00a2 3A       		.uleb128 0x3a
+ 613 00a3 0B       		.uleb128 0xb
+ 614 00a4 3B       		.uleb128 0x3b
+ 615 00a5 0B       		.uleb128 0xb
+ 616 00a6 49       		.uleb128 0x49
+ 617 00a7 13       		.uleb128 0x13
+ 618 00a8 3F       		.uleb128 0x3f
+ 619 00a9 19       		.uleb128 0x19
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 13
+
+
+ 620 00aa 02       		.uleb128 0x2
+ 621 00ab 18       		.uleb128 0x18
+ 622 00ac 00       		.byte	0
+ 623 00ad 00       		.byte	0
+ 624 00ae 00       		.byte	0
+ 625              		.section	.debug_aranges,"",%progbits
+ 626 0000 34000000 		.4byte	0x34
+ 627 0004 0200     		.2byte	0x2
+ 628 0006 00000000 		.4byte	.Ldebug_info0
+ 629 000a 04       		.byte	0x4
+ 630 000b 00       		.byte	0
+ 631 000c 0000     		.2byte	0
+ 632 000e 0000     		.2byte	0
+ 633 0010 00000000 		.4byte	.LFB63
+ 634 0014 68000000 		.4byte	.LFE63-.LFB63
+ 635 0018 00000000 		.4byte	.LFB64
+ 636 001c 3A000000 		.4byte	.LFE64-.LFB64
+ 637 0020 00000000 		.4byte	.LFB65
+ 638 0024 44000000 		.4byte	.LFE65-.LFB65
+ 639 0028 00000000 		.4byte	.LFB66
+ 640 002c 18000000 		.4byte	.LFE66-.LFB66
+ 641 0030 00000000 		.4byte	0
+ 642 0034 00000000 		.4byte	0
+ 643              		.section	.debug_ranges,"",%progbits
+ 644              	.Ldebug_ranges0:
+ 645 0000 00000000 		.4byte	.LFB63
+ 646 0004 68000000 		.4byte	.LFE63
+ 647 0008 00000000 		.4byte	.LFB64
+ 648 000c 3A000000 		.4byte	.LFE64
+ 649 0010 00000000 		.4byte	.LFB65
+ 650 0014 44000000 		.4byte	.LFE65
+ 651 0018 00000000 		.4byte	.LFB66
+ 652 001c 18000000 		.4byte	.LFE66
+ 653 0020 00000000 		.4byte	0
+ 654 0024 00000000 		.4byte	0
+ 655              		.section	.debug_line,"",%progbits
+ 656              	.Ldebug_line0:
+ 657 0000 E9010000 		.section	.debug_str,"MS",%progbits,1
+ 657      02005D01 
+ 657      00000201 
+ 657      FB0E0D00 
+ 657      01010101 
+ 658              	.LASF27:
+ 659 0000 696E6974 		.ascii	"initI2CBuffs\000"
+ 659      49324342 
+ 659      75666673 
+ 659      00
+ 660              	.LASF30:
+ 661 000d 66617374 		.ascii	"fastBlink\000"
+ 661      426C696E 
+ 661      6B00
+ 662              	.LASF9:
+ 663 0017 5F5F696E 		.ascii	"__int32_t\000"
+ 663      7433325F 
+ 663      7400
+ 664              	.LASF35:
+ 665 0021 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 14
+
+
+ 665      4320342E 
+ 665      392E3320 
+ 665      32303135 
+ 665      30333033 
+ 666 0054 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 666      20726576 
+ 666      6973696F 
+ 666      6E203232 
+ 666      31323230 
+ 667 0087 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 667      66756E63 
+ 667      74696F6E 
+ 667      2D736563 
+ 667      74696F6E 
+ 668              	.LASF36:
+ 669 00af 6D794932 		.ascii	"myI2CSlave.c\000"
+ 669      43536C61 
+ 669      76652E63 
+ 669      00
+ 670              	.LASF32:
+ 671 00bc 72644275 		.ascii	"rdBuf\000"
+ 671      6600
+ 672              	.LASF37:
+ 673 00c2 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
+ 673      73657273 
+ 673      5C444769 
+ 673      6C6C696C 
+ 673      616E645C 
+ 674 00ef 532D5053 		.ascii	"S-PSOC5\\Projects\\I2C_Master-Slave\\I2CSlave-01.cy"
+ 674      4F43355C 
+ 674      50726F6A 
+ 674      65637473 
+ 674      5C493243 
+ 675 011f 64736E00 		.ascii	"dsn\000"
+ 676              	.LASF12:
+ 677 0123 666C6F61 		.ascii	"float\000"
+ 677      7400
+ 678              	.LASF26:
+ 679 0129 52455455 		.ascii	"RETURN_ERROR_STATUS\000"
+ 679      524E5F45 
+ 679      52524F52 
+ 679      5F535441 
+ 679      54555300 
+ 680              	.LASF23:
+ 681 013d 414C4C5F 		.ascii	"ALL_PWM_CHANNELS_ACTIVE\000"
+ 681      50574D5F 
+ 681      4348414E 
+ 681      4E454C53 
+ 681      5F414354 
+ 682              	.LASF5:
+ 683 0155 6C6F6E67 		.ascii	"long unsigned int\000"
+ 683      20756E73 
+ 683      69676E65 
+ 683      6420696E 
+ 683      7400
+ 684              	.LASF24:
+ 685 0167 534C4156 		.ascii	"SLAVE_VERBOSE_MODE\000"
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 15
+
+
+ 685      455F5645 
+ 685      52424F53 
+ 685      455F4D4F 
+ 685      444500
+ 686              	.LASF3:
+ 687 017a 73686F72 		.ascii	"short unsigned int\000"
+ 687      7420756E 
+ 687      7369676E 
+ 687      65642069 
+ 687      6E7400
+ 688              	.LASF20:
+ 689 018d 414C4C5F 		.ascii	"ALL_PWM_CHANNELS_LOW\000"
+ 689      50574D5F 
+ 689      4348414E 
+ 689      4E454C53 
+ 689      5F4C4F57 
+ 690              	.LASF21:
+ 691 01a2 414C4C5F 		.ascii	"ALL_PWM_CHANNELS_HIGH\000"
+ 691      50574D5F 
+ 691      4348414E 
+ 691      4E454C53 
+ 691      5F484947 
+ 692              	.LASF31:
+ 693 01b8 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 693      52784275 
+ 693      66666572 
+ 693      00
+ 694              	.LASF38:
+ 695 01c5 4932435F 		.ascii	"I2C_COMMANDS\000"
+ 695      434F4D4D 
+ 695      414E4453 
+ 695      00
+ 696              	.LASF16:
+ 697 01d2 4E554C4C 		.ascii	"NULL_CMD\000"
+ 697      5F434D44 
+ 697      00
+ 698              	.LASF13:
+ 699 01db 646F7562 		.ascii	"double\000"
+ 699      6C6500
+ 700              	.LASF34:
+ 701 01e2 76657262 		.ascii	"verboseFlag\000"
+ 701      6F736546 
+ 701      6C616700 
+ 702              	.LASF33:
+ 703 01ee 77724275 		.ascii	"wrBuf\000"
+ 703      6600
+ 704              	.LASF1:
+ 705 01f4 756E7369 		.ascii	"unsigned char\000"
+ 705      676E6564 
+ 705      20636861 
+ 705      7200
+ 706              	.LASF8:
+ 707 0202 756E7369 		.ascii	"unsigned int\000"
+ 707      676E6564 
+ 707      20696E74 
+ 707      00
+ 708              	.LASF7:
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 16
+
+
+ 709 020f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 709      206C6F6E 
+ 709      6720756E 
+ 709      7369676E 
+ 709      65642069 
+ 710              	.LASF25:
+ 711 0226 534C4156 		.ascii	"SLAVE_NON_VERBOSE_MODE\000"
+ 711      455F4E4F 
+ 711      4E5F5645 
+ 711      52424F53 
+ 711      455F4D4F 
+ 712              	.LASF10:
+ 713 023d 696E7433 		.ascii	"int32_t\000"
+ 713      325F7400 
+ 714              	.LASF15:
+ 715 0245 73697A65 		.ascii	"sizetype\000"
+ 715      74797065 
+ 715      00
+ 716              	.LASF6:
+ 717 024e 6C6F6E67 		.ascii	"long long int\000"
+ 717      206C6F6E 
+ 717      6720696E 
+ 717      7400
+ 718              	.LASF18:
+ 719 025c 534C4156 		.ascii	"SLAVE_LED_ON\000"
+ 719      455F4C45 
+ 719      445F4F4E 
+ 719      00
+ 720              	.LASF14:
+ 721 0269 63686172 		.ascii	"char\000"
+ 721      00
+ 722              	.LASF22:
+ 723 026e 5553455F 		.ascii	"USE_PWM_CHANNELS_MASK\000"
+ 723      50574D5F 
+ 723      4348414E 
+ 723      4E454C53 
+ 723      5F4D4153 
+ 724              	.LASF2:
+ 725 0284 73686F72 		.ascii	"short int\000"
+ 725      7420696E 
+ 725      7400
+ 726              	.LASF28:
+ 727 028e 77616974 		.ascii	"waitForMasterToWrite\000"
+ 727      466F724D 
+ 727      61737465 
+ 727      72546F57 
+ 727      72697465 
+ 728              	.LASF11:
+ 729 02a3 75696E74 		.ascii	"uint8\000"
+ 729      3800
+ 730              	.LASF17:
+ 731 02a9 534C4156 		.ascii	"SLAVE_LED_OFF\000"
+ 731      455F4C45 
+ 731      445F4F46 
+ 731      4600
+ 732              	.LASF4:
+ 733 02b7 6C6F6E67 		.ascii	"long int\000"
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccJhWP9r.s 			page 17
+
+
+ 733      20696E74 
+ 733      00
+ 734              	.LASF0:
+ 735 02c0 7369676E 		.ascii	"signed char\000"
+ 735      65642063 
+ 735      68617200 
+ 736              	.LASF19:
+ 737 02cc 50574D5F 		.ascii	"PWM_CHANNEL_MASK_VALUE\000"
+ 737      4348414E 
+ 737      4E454C5F 
+ 737      4D41534B 
+ 737      5F56414C 
+ 738              	.LASF29:
+ 739 02e3 77616974 		.ascii	"waitForMasterToRead\000"
+ 739      466F724D 
+ 739      61737465 
+ 739      72546F52 
+ 739      65616400 
+ 740              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

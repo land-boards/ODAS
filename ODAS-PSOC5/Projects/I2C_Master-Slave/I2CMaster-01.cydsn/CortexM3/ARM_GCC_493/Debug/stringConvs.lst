@@ -1,0 +1,1642 @@
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"stringConvs.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.findInString,"ax",%progbits
+  19              		.align	2
+  20              		.global	findInString
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	findInString, %function
+  24              	findInString:
+  25              	.LFB63:
+  26              		.file 1 "..\\I2CSlave-01.cydsn\\stringConvs.c"
+   1:..\I2CSlave-01.cydsn/stringConvs.c **** /* ========================================
+   2:..\I2CSlave-01.cydsn/stringConvs.c ****  * stringConvs.c
+   3:..\I2CSlave-01.cydsn/stringConvs.c ****  * Copyright AAC, LLC, 2017
+   4:..\I2CSlave-01.cydsn/stringConvs.c ****  * All Rights Reserved
+   5:..\I2CSlave-01.cydsn/stringConvs.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:..\I2CSlave-01.cydsn/stringConvs.c ****  *
+   7:..\I2CSlave-01.cydsn/stringConvs.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:..\I2CSlave-01.cydsn/stringConvs.c ****  * WHICH IS THE PROPERTY OF AAC.
+   9:..\I2CSlave-01.cydsn/stringConvs.c ****  *
+  10:..\I2CSlave-01.cydsn/stringConvs.c ****  * ========================================
+  11:..\I2CSlave-01.cydsn/stringConvs.c **** */
+  12:..\I2CSlave-01.cydsn/stringConvs.c **** 
+  13:..\I2CSlave-01.cydsn/stringConvs.c **** #include "project.h"
+  14:..\I2CSlave-01.cydsn/stringConvs.c **** #undef DEBUG_ON_PC
+  15:..\I2CSlave-01.cydsn/stringConvs.c **** #include "stringConvs.h"
+  16:..\I2CSlave-01.cydsn/stringConvs.c **** 
+  17:..\I2CSlave-01.cydsn/stringConvs.c **** ////////////////////////////////////////////////////////////////
+  18:..\I2CSlave-01.cydsn/stringConvs.c **** // findInString
+  19:..\I2CSlave-01.cydsn/stringConvs.c **** ////////////////////////////////////////////////////////////////
+  20:..\I2CSlave-01.cydsn/stringConvs.c **** 
+  21:..\I2CSlave-01.cydsn/stringConvs.c **** int8 findInString(char * stringToParse, char valToFind)
+  22:..\I2CSlave-01.cydsn/stringConvs.c **** {
+  27              		.loc 1 22 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 16
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 80B4     		push	{r7}
+  33              		.cfi_def_cfa_offset 4
+  34              		.cfi_offset 7, -4
+  35 0002 85B0     		sub	sp, sp, #20
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 2
+
+
+  36              		.cfi_def_cfa_offset 24
+  37 0004 00AF     		add	r7, sp, #0
+  38              		.cfi_def_cfa_register 7
+  39 0006 7860     		str	r0, [r7, #4]
+  40 0008 0B46     		mov	r3, r1
+  41 000a FB70     		strb	r3, [r7, #3]
+  23:..\I2CSlave-01.cydsn/stringConvs.c ****     char * stringPointer = stringToParse;
+  42              		.loc 1 23 0
+  43 000c 7B68     		ldr	r3, [r7, #4]
+  44 000e BB60     		str	r3, [r7, #8]
+  24:..\I2CSlave-01.cydsn/stringConvs.c ****     int8 offset = 0;
+  45              		.loc 1 24 0
+  46 0010 0023     		movs	r3, #0
+  47 0012 FB73     		strb	r3, [r7, #15]
+  25:..\I2CSlave-01.cydsn/stringConvs.c ****     //printLine("looking for");
+  26:..\I2CSlave-01.cydsn/stringConvs.c ****     //printLine(stringToParse);
+  27:..\I2CSlave-01.cydsn/stringConvs.c ****     while (stringPointer[offset] != 0)
+  48              		.loc 1 27 0
+  49 0014 0EE0     		b	.L2
+  50              	.L5:
+  28:..\I2CSlave-01.cydsn/stringConvs.c ****     {
+  29:..\I2CSlave-01.cydsn/stringConvs.c ****         if (stringPointer[offset] == valToFind)
+  51              		.loc 1 29 0
+  52 0016 97F90F30 		ldrsb	r3, [r7, #15]
+  53 001a BA68     		ldr	r2, [r7, #8]
+  54 001c 1344     		add	r3, r3, r2
+  55 001e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  56 0020 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+  57 0022 9A42     		cmp	r2, r3
+  58 0024 01D1     		bne	.L3
+  30:..\I2CSlave-01.cydsn/stringConvs.c ****             return(offset);
+  59              		.loc 1 30 0
+  60 0026 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+  61 0028 0CE0     		b	.L4
+  62              	.L3:
+  31:..\I2CSlave-01.cydsn/stringConvs.c ****         offset++;
+  63              		.loc 1 31 0
+  64 002a FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+  65 002c DBB2     		uxtb	r3, r3
+  66 002e 0133     		adds	r3, r3, #1
+  67 0030 DBB2     		uxtb	r3, r3
+  68 0032 FB73     		strb	r3, [r7, #15]
+  69              	.L2:
+  27:..\I2CSlave-01.cydsn/stringConvs.c ****     {
+  70              		.loc 1 27 0
+  71 0034 97F90F30 		ldrsb	r3, [r7, #15]
+  72 0038 BA68     		ldr	r2, [r7, #8]
+  73 003a 1344     		add	r3, r3, r2
+  74 003c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  75 003e 002B     		cmp	r3, #0
+  76 0040 E9D1     		bne	.L5
+  32:..\I2CSlave-01.cydsn/stringConvs.c ****     }
+  33:..\I2CSlave-01.cydsn/stringConvs.c ****     return(-1);
+  77              		.loc 1 33 0
+  78 0042 FF23     		movs	r3, #255
+  79              	.L4:
+  80 0044 5BB2     		sxtb	r3, r3
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 3
+
+
+  34:..\I2CSlave-01.cydsn/stringConvs.c **** }
+  81              		.loc 1 34 0
+  82 0046 1846     		mov	r0, r3
+  83 0048 1437     		adds	r7, r7, #20
+  84              		.cfi_def_cfa_offset 4
+  85 004a BD46     		mov	sp, r7
+  86              		.cfi_def_cfa_register 13
+  87              		@ sp needed
+  88 004c 5DF8047B 		ldr	r7, [sp], #4
+  89              		.cfi_restore 7
+  90              		.cfi_def_cfa_offset 0
+  91 0050 7047     		bx	lr
+  92              		.cfi_endproc
+  93              	.LFE63:
+  94              		.size	findInString, .-findInString
+  95 0052 00BF     		.section	.text.charToNibble,"ax",%progbits
+  96              		.align	2
+  97              		.global	charToNibble
+  98              		.thumb
+  99              		.thumb_func
+ 100              		.type	charToNibble, %function
+ 101              	charToNibble:
+ 102              	.LFB64:
+  35:..\I2CSlave-01.cydsn/stringConvs.c **** 
+  36:..\I2CSlave-01.cydsn/stringConvs.c **** ////////////////////////////////////////////////////////////////
+  37:..\I2CSlave-01.cydsn/stringConvs.c **** // uint8 charToNibble(char)
+  38:..\I2CSlave-01.cydsn/stringConvs.c **** ////////////////////////////////////////////////////////////////
+  39:..\I2CSlave-01.cydsn/stringConvs.c **** 
+  40:..\I2CSlave-01.cydsn/stringConvs.c **** uint8 charToNibble(char digitChar)
+  41:..\I2CSlave-01.cydsn/stringConvs.c **** {
+ 103              		.loc 1 41 0
+ 104              		.cfi_startproc
+ 105              		@ args = 0, pretend = 0, frame = 8
+ 106              		@ frame_needed = 1, uses_anonymous_args = 0
+ 107              		@ link register save eliminated.
+ 108 0000 80B4     		push	{r7}
+ 109              		.cfi_def_cfa_offset 4
+ 110              		.cfi_offset 7, -4
+ 111 0002 83B0     		sub	sp, sp, #12
+ 112              		.cfi_def_cfa_offset 16
+ 113 0004 00AF     		add	r7, sp, #0
+ 114              		.cfi_def_cfa_register 7
+ 115 0006 0346     		mov	r3, r0
+ 116 0008 FB71     		strb	r3, [r7, #7]
+  42:..\I2CSlave-01.cydsn/stringConvs.c ****     //printLine("charToNibble: got here");
+  43:..\I2CSlave-01.cydsn/stringConvs.c ****     if (digitChar >= '0' && digitChar <= '9')
+ 117              		.loc 1 43 0
+ 118 000a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 119 000c 2F2B     		cmp	r3, #47
+ 120 000e 06D9     		bls	.L7
+ 121              		.loc 1 43 0 is_stmt 0 discriminator 1
+ 122 0010 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 123 0012 392B     		cmp	r3, #57
+ 124 0014 03D8     		bhi	.L7
+  44:..\I2CSlave-01.cydsn/stringConvs.c ****         return(digitChar-'0');
+ 125              		.loc 1 44 0 is_stmt 1
+ 126 0016 FB79     		ldrb	r3, [r7, #7]
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 4
+
+
+ 127 0018 303B     		subs	r3, r3, #48
+ 128 001a DBB2     		uxtb	r3, r3
+ 129 001c 14E0     		b	.L8
+ 130              	.L7:
+  45:..\I2CSlave-01.cydsn/stringConvs.c ****     else if (digitChar >= 'a' && digitChar <= 'f')
+ 131              		.loc 1 45 0
+ 132 001e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 133 0020 602B     		cmp	r3, #96
+ 134 0022 06D9     		bls	.L9
+ 135              		.loc 1 45 0 is_stmt 0 discriminator 1
+ 136 0024 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 137 0026 662B     		cmp	r3, #102
+ 138 0028 03D8     		bhi	.L9
+  46:..\I2CSlave-01.cydsn/stringConvs.c ****        return(digitChar-'a'+10);
+ 139              		.loc 1 46 0 is_stmt 1
+ 140 002a FB79     		ldrb	r3, [r7, #7]
+ 141 002c 573B     		subs	r3, r3, #87
+ 142 002e DBB2     		uxtb	r3, r3
+ 143 0030 0AE0     		b	.L8
+ 144              	.L9:
+  47:..\I2CSlave-01.cydsn/stringConvs.c ****     else if (digitChar >= 'A' && digitChar <= 'F')
+ 145              		.loc 1 47 0
+ 146 0032 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 147 0034 402B     		cmp	r3, #64
+ 148 0036 06D9     		bls	.L10
+ 149              		.loc 1 47 0 is_stmt 0 discriminator 1
+ 150 0038 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 151 003a 462B     		cmp	r3, #70
+ 152 003c 03D8     		bhi	.L10
+  48:..\I2CSlave-01.cydsn/stringConvs.c ****        return(digitChar-'A'+10);
+ 153              		.loc 1 48 0 is_stmt 1
+ 154 003e FB79     		ldrb	r3, [r7, #7]
+ 155 0040 373B     		subs	r3, r3, #55
+ 156 0042 DBB2     		uxtb	r3, r3
+ 157 0044 00E0     		b	.L8
+ 158              	.L10:
+  49:..\I2CSlave-01.cydsn/stringConvs.c ****     return(0);
+ 159              		.loc 1 49 0
+ 160 0046 0023     		movs	r3, #0
+ 161              	.L8:
+  50:..\I2CSlave-01.cydsn/stringConvs.c **** }
+ 162              		.loc 1 50 0
+ 163 0048 1846     		mov	r0, r3
+ 164 004a 0C37     		adds	r7, r7, #12
+ 165              		.cfi_def_cfa_offset 4
+ 166 004c BD46     		mov	sp, r7
+ 167              		.cfi_def_cfa_register 13
+ 168              		@ sp needed
+ 169 004e 5DF8047B 		ldr	r7, [sp], #4
+ 170              		.cfi_restore 7
+ 171              		.cfi_def_cfa_offset 0
+ 172 0052 7047     		bx	lr
+ 173              		.cfi_endproc
+ 174              	.LFE64:
+ 175              		.size	charToNibble, .-charToNibble
+ 176              		.section	.text.stringToLong,"ax",%progbits
+ 177              		.align	2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 5
+
+
+ 178              		.global	stringToLong
+ 179              		.thumb
+ 180              		.thumb_func
+ 181              		.type	stringToLong, %function
+ 182              	stringToLong:
+ 183              	.LFB65:
+  51:..\I2CSlave-01.cydsn/stringConvs.c **** 
+  52:..\I2CSlave-01.cydsn/stringConvs.c **** ////////////////////////////////////////////////////////////////
+  53:..\I2CSlave-01.cydsn/stringConvs.c **** // uint32 stringToLong(char *)
+  54:..\I2CSlave-01.cydsn/stringConvs.c **** ////////////////////////////////////////////////////////////////
+  55:..\I2CSlave-01.cydsn/stringConvs.c **** 
+  56:..\I2CSlave-01.cydsn/stringConvs.c **** uint32 stringToLong(char * numString)
+  57:..\I2CSlave-01.cydsn/stringConvs.c **** {
+ 184              		.loc 1 57 0
+ 185              		.cfi_startproc
+ 186              		@ args = 0, pretend = 0, frame = 16
+ 187              		@ frame_needed = 1, uses_anonymous_args = 0
+ 188 0000 90B5     		push	{r4, r7, lr}
+ 189              		.cfi_def_cfa_offset 12
+ 190              		.cfi_offset 4, -12
+ 191              		.cfi_offset 7, -8
+ 192              		.cfi_offset 14, -4
+ 193 0002 85B0     		sub	sp, sp, #20
+ 194              		.cfi_def_cfa_offset 32
+ 195 0004 00AF     		add	r7, sp, #0
+ 196              		.cfi_def_cfa_register 7
+ 197 0006 7860     		str	r0, [r7, #4]
+  58:..\I2CSlave-01.cydsn/stringConvs.c ****     uint8 offset = 0;
+ 198              		.loc 1 58 0
+ 199 0008 0023     		movs	r3, #0
+ 200 000a FB73     		strb	r3, [r7, #15]
+  59:..\I2CSlave-01.cydsn/stringConvs.c ****     uint32 theBigNumber = 0;
+ 201              		.loc 1 59 0
+ 202 000c 0023     		movs	r3, #0
+ 203 000e BB60     		str	r3, [r7, #8]
+  60:..\I2CSlave-01.cydsn/stringConvs.c ****     
+  61:..\I2CSlave-01.cydsn/stringConvs.c ****     //printLine("stringToLong: got here");
+  62:..\I2CSlave-01.cydsn/stringConvs.c ****     //printLine(numString);
+  63:..\I2CSlave-01.cydsn/stringConvs.c ****     while (numString[offset] != 0)
+ 204              		.loc 1 63 0
+ 205 0010 0EE0     		b	.L12
+ 206              	.L13:
+  64:..\I2CSlave-01.cydsn/stringConvs.c ****     {
+  65:..\I2CSlave-01.cydsn/stringConvs.c ****         theBigNumber = ((theBigNumber * 16) + charToNibble(numString[offset]));
+ 207              		.loc 1 65 0
+ 208 0012 BB68     		ldr	r3, [r7, #8]
+ 209 0014 1C01     		lsls	r4, r3, #4
+ 210 0016 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 211 0018 7A68     		ldr	r2, [r7, #4]
+ 212 001a 1344     		add	r3, r3, r2
+ 213 001c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 214 001e 1846     		mov	r0, r3
+ 215 0020 FFF7FEFF 		bl	charToNibble
+ 216 0024 0346     		mov	r3, r0
+ 217 0026 2344     		add	r3, r3, r4
+ 218 0028 BB60     		str	r3, [r7, #8]
+  66:..\I2CSlave-01.cydsn/stringConvs.c ****         offset++;
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 6
+
+
+ 219              		.loc 1 66 0
+ 220 002a FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 221 002c 0133     		adds	r3, r3, #1
+ 222 002e FB73     		strb	r3, [r7, #15]
+ 223              	.L12:
+  63:..\I2CSlave-01.cydsn/stringConvs.c ****     {
+ 224              		.loc 1 63 0
+ 225 0030 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 226 0032 7A68     		ldr	r2, [r7, #4]
+ 227 0034 1344     		add	r3, r3, r2
+ 228 0036 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 229 0038 002B     		cmp	r3, #0
+ 230 003a EAD1     		bne	.L13
+  67:..\I2CSlave-01.cydsn/stringConvs.c ****     }
+  68:..\I2CSlave-01.cydsn/stringConvs.c ****     return theBigNumber;
+ 231              		.loc 1 68 0
+ 232 003c BB68     		ldr	r3, [r7, #8]
+  69:..\I2CSlave-01.cydsn/stringConvs.c **** }
+ 233              		.loc 1 69 0
+ 234 003e 1846     		mov	r0, r3
+ 235 0040 1437     		adds	r7, r7, #20
+ 236              		.cfi_def_cfa_offset 12
+ 237 0042 BD46     		mov	sp, r7
+ 238              		.cfi_def_cfa_register 13
+ 239              		@ sp needed
+ 240 0044 90BD     		pop	{r4, r7, pc}
+ 241              		.cfi_endproc
+ 242              	.LFE65:
+ 243              		.size	stringToLong, .-stringToLong
+ 244 0046 00BF     		.section	.text.longToString,"ax",%progbits
+ 245              		.align	2
+ 246              		.global	longToString
+ 247              		.thumb
+ 248              		.thumb_func
+ 249              		.type	longToString, %function
+ 250              	longToString:
+ 251              	.LFB66:
+  70:..\I2CSlave-01.cydsn/stringConvs.c **** 
+  71:..\I2CSlave-01.cydsn/stringConvs.c **** ////////////////////////////////////////////////////////////////
+  72:..\I2CSlave-01.cydsn/stringConvs.c **** // void longToString(uint32 lValue, char * resultString)
+  73:..\I2CSlave-01.cydsn/stringConvs.c **** ////////////////////////////////////////////////////////////////
+  74:..\I2CSlave-01.cydsn/stringConvs.c **** 
+  75:..\I2CSlave-01.cydsn/stringConvs.c **** void longToString(uint32 lValue, char * resultString)
+  76:..\I2CSlave-01.cydsn/stringConvs.c **** {
+ 252              		.loc 1 76 0
+ 253              		.cfi_startproc
+ 254              		@ args = 0, pretend = 0, frame = 24
+ 255              		@ frame_needed = 1, uses_anonymous_args = 0
+ 256              		@ link register save eliminated.
+ 257 0000 80B4     		push	{r7}
+ 258              		.cfi_def_cfa_offset 4
+ 259              		.cfi_offset 7, -4
+ 260 0002 87B0     		sub	sp, sp, #28
+ 261              		.cfi_def_cfa_offset 32
+ 262 0004 00AF     		add	r7, sp, #0
+ 263              		.cfi_def_cfa_register 7
+ 264 0006 7860     		str	r0, [r7, #4]
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 7
+
+
+ 265 0008 3960     		str	r1, [r7]
+  77:..\I2CSlave-01.cydsn/stringConvs.c ****     uint32 nibbleMask = 0xf0000000;
+ 266              		.loc 1 77 0
+ 267 000a 4FF07043 		mov	r3, #-268435456
+ 268 000e 7B61     		str	r3, [r7, #20]
+  78:..\I2CSlave-01.cydsn/stringConvs.c ****     uint8 nibbleOffset = 28;
+ 269              		.loc 1 78 0
+ 270 0010 1C23     		movs	r3, #28
+ 271 0012 FB74     		strb	r3, [r7, #19]
+  79:..\I2CSlave-01.cydsn/stringConvs.c ****     uint32 nibbleVal;
+  80:..\I2CSlave-01.cydsn/stringConvs.c ****     uint8 resultOffset=0;
+ 272              		.loc 1 80 0
+ 273 0014 0023     		movs	r3, #0
+ 274 0016 BB74     		strb	r3, [r7, #18]
+  81:..\I2CSlave-01.cydsn/stringConvs.c ****     //printLine("longToString: got here");
+  82:..\I2CSlave-01.cydsn/stringConvs.c ****     for (resultOffset = 0; resultOffset < 8; resultOffset++)
+ 275              		.loc 1 82 0
+ 276 0018 0023     		movs	r3, #0
+ 277 001a BB74     		strb	r3, [r7, #18]
+ 278 001c 23E0     		b	.L16
+ 279              	.L19:
+  83:..\I2CSlave-01.cydsn/stringConvs.c ****     {
+  84:..\I2CSlave-01.cydsn/stringConvs.c ****         nibbleVal = ((lValue&nibbleMask)>>nibbleOffset);
+ 280              		.loc 1 84 0
+ 281 001e 7A68     		ldr	r2, [r7, #4]
+ 282 0020 7B69     		ldr	r3, [r7, #20]
+ 283 0022 1A40     		ands	r2, r2, r3
+ 284 0024 FB7C     		ldrb	r3, [r7, #19]	@ zero_extendqisi2
+ 285 0026 22FA03F3 		lsr	r3, r2, r3
+ 286 002a FB60     		str	r3, [r7, #12]
+  85:..\I2CSlave-01.cydsn/stringConvs.c ****         if (nibbleVal <= 9)
+ 287              		.loc 1 85 0
+ 288 002c FB68     		ldr	r3, [r7, #12]
+ 289 002e 092B     		cmp	r3, #9
+ 290 0030 08D8     		bhi	.L17
+  86:..\I2CSlave-01.cydsn/stringConvs.c ****             resultString[resultOffset] = nibbleVal+'0';
+ 291              		.loc 1 86 0
+ 292 0032 BB7C     		ldrb	r3, [r7, #18]	@ zero_extendqisi2
+ 293 0034 3A68     		ldr	r2, [r7]
+ 294 0036 1344     		add	r3, r3, r2
+ 295 0038 FA68     		ldr	r2, [r7, #12]
+ 296 003a D2B2     		uxtb	r2, r2
+ 297 003c 3032     		adds	r2, r2, #48
+ 298 003e D2B2     		uxtb	r2, r2
+ 299 0040 1A70     		strb	r2, [r3]
+ 300 0042 07E0     		b	.L18
+ 301              	.L17:
+  87:..\I2CSlave-01.cydsn/stringConvs.c ****         else
+  88:..\I2CSlave-01.cydsn/stringConvs.c ****             resultString[resultOffset] = nibbleVal-10+'A';
+ 302              		.loc 1 88 0
+ 303 0044 BB7C     		ldrb	r3, [r7, #18]	@ zero_extendqisi2
+ 304 0046 3A68     		ldr	r2, [r7]
+ 305 0048 1344     		add	r3, r3, r2
+ 306 004a FA68     		ldr	r2, [r7, #12]
+ 307 004c D2B2     		uxtb	r2, r2
+ 308 004e 3732     		adds	r2, r2, #55
+ 309 0050 D2B2     		uxtb	r2, r2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 8
+
+
+ 310 0052 1A70     		strb	r2, [r3]
+ 311              	.L18:
+  89:..\I2CSlave-01.cydsn/stringConvs.c ****         nibbleMask >>= 4;
+ 312              		.loc 1 89 0 discriminator 2
+ 313 0054 7B69     		ldr	r3, [r7, #20]
+ 314 0056 1B09     		lsrs	r3, r3, #4
+ 315 0058 7B61     		str	r3, [r7, #20]
+  90:..\I2CSlave-01.cydsn/stringConvs.c ****         nibbleOffset -= 4;
+ 316              		.loc 1 90 0 discriminator 2
+ 317 005a FB7C     		ldrb	r3, [r7, #19]
+ 318 005c 043B     		subs	r3, r3, #4
+ 319 005e FB74     		strb	r3, [r7, #19]
+  82:..\I2CSlave-01.cydsn/stringConvs.c ****     {
+ 320              		.loc 1 82 0 discriminator 2
+ 321 0060 BB7C     		ldrb	r3, [r7, #18]	@ zero_extendqisi2
+ 322 0062 0133     		adds	r3, r3, #1
+ 323 0064 BB74     		strb	r3, [r7, #18]
+ 324              	.L16:
+  82:..\I2CSlave-01.cydsn/stringConvs.c ****     {
+ 325              		.loc 1 82 0 is_stmt 0 discriminator 1
+ 326 0066 BB7C     		ldrb	r3, [r7, #18]	@ zero_extendqisi2
+ 327 0068 072B     		cmp	r3, #7
+ 328 006a D8D9     		bls	.L19
+  91:..\I2CSlave-01.cydsn/stringConvs.c ****     }
+  92:..\I2CSlave-01.cydsn/stringConvs.c ****     resultString[8] = 0;
+ 329              		.loc 1 92 0 is_stmt 1
+ 330 006c 3B68     		ldr	r3, [r7]
+ 331 006e 0833     		adds	r3, r3, #8
+ 332 0070 0022     		movs	r2, #0
+ 333 0072 1A70     		strb	r2, [r3]
+  93:..\I2CSlave-01.cydsn/stringConvs.c **** }
+ 334              		.loc 1 93 0
+ 335 0074 1C37     		adds	r7, r7, #28
+ 336              		.cfi_def_cfa_offset 4
+ 337 0076 BD46     		mov	sp, r7
+ 338              		.cfi_def_cfa_register 13
+ 339              		@ sp needed
+ 340 0078 5DF8047B 		ldr	r7, [sp], #4
+ 341              		.cfi_restore 7
+ 342              		.cfi_def_cfa_offset 0
+ 343 007c 7047     		bx	lr
+ 344              		.cfi_endproc
+ 345              	.LFE66:
+ 346              		.size	longToString, .-longToString
+ 347 007e 00BF     		.section	.text.shortToString,"ax",%progbits
+ 348              		.align	2
+ 349              		.global	shortToString
+ 350              		.thumb
+ 351              		.thumb_func
+ 352              		.type	shortToString, %function
+ 353              	shortToString:
+ 354              	.LFB67:
+  94:..\I2CSlave-01.cydsn/stringConvs.c **** 
+  95:..\I2CSlave-01.cydsn/stringConvs.c **** ////////////////////////////////////////////////////////////////
+  96:..\I2CSlave-01.cydsn/stringConvs.c **** // void longToString(uint32 lValue, char * resultString)
+  97:..\I2CSlave-01.cydsn/stringConvs.c **** ////////////////////////////////////////////////////////////////
+  98:..\I2CSlave-01.cydsn/stringConvs.c **** 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 9
+
+
+  99:..\I2CSlave-01.cydsn/stringConvs.c **** void shortToString(uint16 sValue, char * resultString)
+ 100:..\I2CSlave-01.cydsn/stringConvs.c **** {
+ 355              		.loc 1 100 0
+ 356              		.cfi_startproc
+ 357              		@ args = 0, pretend = 0, frame = 24
+ 358              		@ frame_needed = 1, uses_anonymous_args = 0
+ 359              		@ link register save eliminated.
+ 360 0000 80B4     		push	{r7}
+ 361              		.cfi_def_cfa_offset 4
+ 362              		.cfi_offset 7, -4
+ 363 0002 87B0     		sub	sp, sp, #28
+ 364              		.cfi_def_cfa_offset 32
+ 365 0004 00AF     		add	r7, sp, #0
+ 366              		.cfi_def_cfa_register 7
+ 367 0006 0346     		mov	r3, r0
+ 368 0008 3960     		str	r1, [r7]
+ 369 000a FB80     		strh	r3, [r7, #6]	@ movhi
+ 101:..\I2CSlave-01.cydsn/stringConvs.c ****     uint32 nibbleMask = 0xf000;
+ 370              		.loc 1 101 0
+ 371 000c 4FF47043 		mov	r3, #61440
+ 372 0010 7B61     		str	r3, [r7, #20]
+ 102:..\I2CSlave-01.cydsn/stringConvs.c ****     uint8 nibbleOffset = 12;
+ 373              		.loc 1 102 0
+ 374 0012 0C23     		movs	r3, #12
+ 375 0014 FB74     		strb	r3, [r7, #19]
+ 103:..\I2CSlave-01.cydsn/stringConvs.c ****     uint32 nibbleVal;
+ 104:..\I2CSlave-01.cydsn/stringConvs.c ****     uint8 resultOffset=0;
+ 376              		.loc 1 104 0
+ 377 0016 0023     		movs	r3, #0
+ 378 0018 BB74     		strb	r3, [r7, #18]
+ 105:..\I2CSlave-01.cydsn/stringConvs.c ****     //printLine("longToString: got here");
+ 106:..\I2CSlave-01.cydsn/stringConvs.c ****     for (resultOffset = 0; resultOffset < 4; resultOffset++)
+ 379              		.loc 1 106 0
+ 380 001a 0023     		movs	r3, #0
+ 381 001c BB74     		strb	r3, [r7, #18]
+ 382 001e 23E0     		b	.L21
+ 383              	.L24:
+ 107:..\I2CSlave-01.cydsn/stringConvs.c ****     {
+ 108:..\I2CSlave-01.cydsn/stringConvs.c ****         nibbleVal = ((sValue&nibbleMask)>>nibbleOffset);
+ 384              		.loc 1 108 0
+ 385 0020 FA88     		ldrh	r2, [r7, #6]
+ 386 0022 7B69     		ldr	r3, [r7, #20]
+ 387 0024 1A40     		ands	r2, r2, r3
+ 388 0026 FB7C     		ldrb	r3, [r7, #19]	@ zero_extendqisi2
+ 389 0028 22FA03F3 		lsr	r3, r2, r3
+ 390 002c FB60     		str	r3, [r7, #12]
+ 109:..\I2CSlave-01.cydsn/stringConvs.c ****         if (nibbleVal <= 9)
+ 391              		.loc 1 109 0
+ 392 002e FB68     		ldr	r3, [r7, #12]
+ 393 0030 092B     		cmp	r3, #9
+ 394 0032 08D8     		bhi	.L22
+ 110:..\I2CSlave-01.cydsn/stringConvs.c ****             resultString[resultOffset] = nibbleVal+'0';
+ 395              		.loc 1 110 0
+ 396 0034 BB7C     		ldrb	r3, [r7, #18]	@ zero_extendqisi2
+ 397 0036 3A68     		ldr	r2, [r7]
+ 398 0038 1344     		add	r3, r3, r2
+ 399 003a FA68     		ldr	r2, [r7, #12]
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 10
+
+
+ 400 003c D2B2     		uxtb	r2, r2
+ 401 003e 3032     		adds	r2, r2, #48
+ 402 0040 D2B2     		uxtb	r2, r2
+ 403 0042 1A70     		strb	r2, [r3]
+ 404 0044 07E0     		b	.L23
+ 405              	.L22:
+ 111:..\I2CSlave-01.cydsn/stringConvs.c ****         else
+ 112:..\I2CSlave-01.cydsn/stringConvs.c ****             resultString[resultOffset] = nibbleVal-10+'A';
+ 406              		.loc 1 112 0
+ 407 0046 BB7C     		ldrb	r3, [r7, #18]	@ zero_extendqisi2
+ 408 0048 3A68     		ldr	r2, [r7]
+ 409 004a 1344     		add	r3, r3, r2
+ 410 004c FA68     		ldr	r2, [r7, #12]
+ 411 004e D2B2     		uxtb	r2, r2
+ 412 0050 3732     		adds	r2, r2, #55
+ 413 0052 D2B2     		uxtb	r2, r2
+ 414 0054 1A70     		strb	r2, [r3]
+ 415              	.L23:
+ 113:..\I2CSlave-01.cydsn/stringConvs.c ****         nibbleMask >>= 4;
+ 416              		.loc 1 113 0 discriminator 2
+ 417 0056 7B69     		ldr	r3, [r7, #20]
+ 418 0058 1B09     		lsrs	r3, r3, #4
+ 419 005a 7B61     		str	r3, [r7, #20]
+ 114:..\I2CSlave-01.cydsn/stringConvs.c ****         nibbleOffset -= 4;
+ 420              		.loc 1 114 0 discriminator 2
+ 421 005c FB7C     		ldrb	r3, [r7, #19]
+ 422 005e 043B     		subs	r3, r3, #4
+ 423 0060 FB74     		strb	r3, [r7, #19]
+ 106:..\I2CSlave-01.cydsn/stringConvs.c ****     {
+ 424              		.loc 1 106 0 discriminator 2
+ 425 0062 BB7C     		ldrb	r3, [r7, #18]	@ zero_extendqisi2
+ 426 0064 0133     		adds	r3, r3, #1
+ 427 0066 BB74     		strb	r3, [r7, #18]
+ 428              	.L21:
+ 106:..\I2CSlave-01.cydsn/stringConvs.c ****     {
+ 429              		.loc 1 106 0 is_stmt 0 discriminator 1
+ 430 0068 BB7C     		ldrb	r3, [r7, #18]	@ zero_extendqisi2
+ 431 006a 032B     		cmp	r3, #3
+ 432 006c D8D9     		bls	.L24
+ 115:..\I2CSlave-01.cydsn/stringConvs.c ****     }
+ 116:..\I2CSlave-01.cydsn/stringConvs.c ****     resultString[4] = 0;
+ 433              		.loc 1 116 0 is_stmt 1
+ 434 006e 3B68     		ldr	r3, [r7]
+ 435 0070 0433     		adds	r3, r3, #4
+ 436 0072 0022     		movs	r2, #0
+ 437 0074 1A70     		strb	r2, [r3]
+ 117:..\I2CSlave-01.cydsn/stringConvs.c **** }
+ 438              		.loc 1 117 0
+ 439 0076 1C37     		adds	r7, r7, #28
+ 440              		.cfi_def_cfa_offset 4
+ 441 0078 BD46     		mov	sp, r7
+ 442              		.cfi_def_cfa_register 13
+ 443              		@ sp needed
+ 444 007a 5DF8047B 		ldr	r7, [sp], #4
+ 445              		.cfi_restore 7
+ 446              		.cfi_def_cfa_offset 0
+ 447 007e 7047     		bx	lr
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 11
+
+
+ 448              		.cfi_endproc
+ 449              	.LFE67:
+ 450              		.size	shortToString, .-shortToString
+ 451              		.section	.text.byteToString,"ax",%progbits
+ 452              		.align	2
+ 453              		.global	byteToString
+ 454              		.thumb
+ 455              		.thumb_func
+ 456              		.type	byteToString, %function
+ 457              	byteToString:
+ 458              	.LFB68:
+ 118:..\I2CSlave-01.cydsn/stringConvs.c **** 
+ 119:..\I2CSlave-01.cydsn/stringConvs.c **** ////////////////////////////////////////////////////////////////
+ 120:..\I2CSlave-01.cydsn/stringConvs.c **** // void byteToString(uint8 bValue, char * resultString)
+ 121:..\I2CSlave-01.cydsn/stringConvs.c **** ////////////////////////////////////////////////////////////////
+ 122:..\I2CSlave-01.cydsn/stringConvs.c **** 
+ 123:..\I2CSlave-01.cydsn/stringConvs.c **** void byteToString(uint8 bValue, char * resultString)
+ 124:..\I2CSlave-01.cydsn/stringConvs.c **** {
+ 459              		.loc 1 124 0
+ 460              		.cfi_startproc
+ 461              		@ args = 0, pretend = 0, frame = 24
+ 462              		@ frame_needed = 1, uses_anonymous_args = 0
+ 463              		@ link register save eliminated.
+ 464 0000 80B4     		push	{r7}
+ 465              		.cfi_def_cfa_offset 4
+ 466              		.cfi_offset 7, -4
+ 467 0002 87B0     		sub	sp, sp, #28
+ 468              		.cfi_def_cfa_offset 32
+ 469 0004 00AF     		add	r7, sp, #0
+ 470              		.cfi_def_cfa_register 7
+ 471 0006 0346     		mov	r3, r0
+ 472 0008 3960     		str	r1, [r7]
+ 473 000a FB71     		strb	r3, [r7, #7]
+ 125:..\I2CSlave-01.cydsn/stringConvs.c ****     uint32 nibbleMask = 0xf0;
+ 474              		.loc 1 125 0
+ 475 000c F023     		movs	r3, #240
+ 476 000e 7B61     		str	r3, [r7, #20]
+ 126:..\I2CSlave-01.cydsn/stringConvs.c ****     uint8 nibbleOffset = 4;
+ 477              		.loc 1 126 0
+ 478 0010 0423     		movs	r3, #4
+ 479 0012 FB74     		strb	r3, [r7, #19]
+ 127:..\I2CSlave-01.cydsn/stringConvs.c ****     uint32 nibbleVal;
+ 128:..\I2CSlave-01.cydsn/stringConvs.c ****     uint8 resultOffset=0;
+ 480              		.loc 1 128 0
+ 481 0014 0023     		movs	r3, #0
+ 482 0016 BB74     		strb	r3, [r7, #18]
+ 129:..\I2CSlave-01.cydsn/stringConvs.c ****     //printLine("byteToString: got here");
+ 130:..\I2CSlave-01.cydsn/stringConvs.c ****     for (resultOffset = 0; resultOffset < 2; resultOffset++)
+ 483              		.loc 1 130 0
+ 484 0018 0023     		movs	r3, #0
+ 485 001a BB74     		strb	r3, [r7, #18]
+ 486 001c 23E0     		b	.L26
+ 487              	.L29:
+ 131:..\I2CSlave-01.cydsn/stringConvs.c ****     {
+ 132:..\I2CSlave-01.cydsn/stringConvs.c ****         nibbleVal = ((bValue&nibbleMask)>>nibbleOffset);
+ 488              		.loc 1 132 0
+ 489 001e FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 12
+
+
+ 490 0020 7B69     		ldr	r3, [r7, #20]
+ 491 0022 1A40     		ands	r2, r2, r3
+ 492 0024 FB7C     		ldrb	r3, [r7, #19]	@ zero_extendqisi2
+ 493 0026 22FA03F3 		lsr	r3, r2, r3
+ 494 002a FB60     		str	r3, [r7, #12]
+ 133:..\I2CSlave-01.cydsn/stringConvs.c ****         if (nibbleVal <= 9)
+ 495              		.loc 1 133 0
+ 496 002c FB68     		ldr	r3, [r7, #12]
+ 497 002e 092B     		cmp	r3, #9
+ 498 0030 08D8     		bhi	.L27
+ 134:..\I2CSlave-01.cydsn/stringConvs.c ****             resultString[resultOffset] = nibbleVal+'0';
+ 499              		.loc 1 134 0
+ 500 0032 BB7C     		ldrb	r3, [r7, #18]	@ zero_extendqisi2
+ 501 0034 3A68     		ldr	r2, [r7]
+ 502 0036 1344     		add	r3, r3, r2
+ 503 0038 FA68     		ldr	r2, [r7, #12]
+ 504 003a D2B2     		uxtb	r2, r2
+ 505 003c 3032     		adds	r2, r2, #48
+ 506 003e D2B2     		uxtb	r2, r2
+ 507 0040 1A70     		strb	r2, [r3]
+ 508 0042 07E0     		b	.L28
+ 509              	.L27:
+ 135:..\I2CSlave-01.cydsn/stringConvs.c ****         else
+ 136:..\I2CSlave-01.cydsn/stringConvs.c ****             resultString[resultOffset] = nibbleVal-10+'A';
+ 510              		.loc 1 136 0
+ 511 0044 BB7C     		ldrb	r3, [r7, #18]	@ zero_extendqisi2
+ 512 0046 3A68     		ldr	r2, [r7]
+ 513 0048 1344     		add	r3, r3, r2
+ 514 004a FA68     		ldr	r2, [r7, #12]
+ 515 004c D2B2     		uxtb	r2, r2
+ 516 004e 3732     		adds	r2, r2, #55
+ 517 0050 D2B2     		uxtb	r2, r2
+ 518 0052 1A70     		strb	r2, [r3]
+ 519              	.L28:
+ 137:..\I2CSlave-01.cydsn/stringConvs.c ****         nibbleMask >>= 4;
+ 520              		.loc 1 137 0 discriminator 2
+ 521 0054 7B69     		ldr	r3, [r7, #20]
+ 522 0056 1B09     		lsrs	r3, r3, #4
+ 523 0058 7B61     		str	r3, [r7, #20]
+ 138:..\I2CSlave-01.cydsn/stringConvs.c ****         nibbleOffset -= 4;
+ 524              		.loc 1 138 0 discriminator 2
+ 525 005a FB7C     		ldrb	r3, [r7, #19]
+ 526 005c 043B     		subs	r3, r3, #4
+ 527 005e FB74     		strb	r3, [r7, #19]
+ 130:..\I2CSlave-01.cydsn/stringConvs.c ****     {
+ 528              		.loc 1 130 0 discriminator 2
+ 529 0060 BB7C     		ldrb	r3, [r7, #18]	@ zero_extendqisi2
+ 530 0062 0133     		adds	r3, r3, #1
+ 531 0064 BB74     		strb	r3, [r7, #18]
+ 532              	.L26:
+ 130:..\I2CSlave-01.cydsn/stringConvs.c ****     {
+ 533              		.loc 1 130 0 is_stmt 0 discriminator 1
+ 534 0066 BB7C     		ldrb	r3, [r7, #18]	@ zero_extendqisi2
+ 535 0068 012B     		cmp	r3, #1
+ 536 006a D8D9     		bls	.L29
+ 139:..\I2CSlave-01.cydsn/stringConvs.c ****     }
+ 140:..\I2CSlave-01.cydsn/stringConvs.c ****     resultString[2] = 0;
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 13
+
+
+ 537              		.loc 1 140 0 is_stmt 1
+ 538 006c 3B68     		ldr	r3, [r7]
+ 539 006e 0233     		adds	r3, r3, #2
+ 540 0070 0022     		movs	r2, #0
+ 541 0072 1A70     		strb	r2, [r3]
+ 141:..\I2CSlave-01.cydsn/stringConvs.c **** }
+ 542              		.loc 1 141 0
+ 543 0074 1C37     		adds	r7, r7, #28
+ 544              		.cfi_def_cfa_offset 4
+ 545 0076 BD46     		mov	sp, r7
+ 546              		.cfi_def_cfa_register 13
+ 547              		@ sp needed
+ 548 0078 5DF8047B 		ldr	r7, [sp], #4
+ 549              		.cfi_restore 7
+ 550              		.cfi_def_cfa_offset 0
+ 551 007c 7047     		bx	lr
+ 552              		.cfi_endproc
+ 553              	.LFE68:
+ 554              		.size	byteToString, .-byteToString
+ 555 007e 00BF     		.text
+ 556              	.Letext0:
+ 557              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 558              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 559              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 560              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 561              		.section	.debug_info,"",%progbits
+ 562              	.Ldebug_info0:
+ 563 0000 DD020000 		.4byte	0x2dd
+ 564 0004 0400     		.2byte	0x4
+ 565 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 566 000a 04       		.byte	0x4
+ 567 000b 01       		.uleb128 0x1
+ 568 000c 1E000000 		.4byte	.LASF40
+ 569 0010 01       		.byte	0x1
+ 570 0011 A7020000 		.4byte	.LASF41
+ 571 0015 11020000 		.4byte	.LASF42
+ 572 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 573 001d 00000000 		.4byte	0
+ 574 0021 00000000 		.4byte	.Ldebug_line0
+ 575 0025 02       		.uleb128 0x2
+ 576 0026 01       		.byte	0x1
+ 577 0027 06       		.byte	0x6
+ 578 0028 BC010000 		.4byte	.LASF0
+ 579 002c 02       		.uleb128 0x2
+ 580 002d 01       		.byte	0x1
+ 581 002e 08       		.byte	0x8
+ 582 002f CA000000 		.4byte	.LASF1
+ 583 0033 02       		.uleb128 0x2
+ 584 0034 02       		.byte	0x2
+ 585 0035 05       		.byte	0x5
+ 586 0036 07020000 		.4byte	.LASF2
+ 587 003a 02       		.uleb128 0x2
+ 588 003b 02       		.byte	0x2
+ 589 003c 07       		.byte	0x7
+ 590 003d EA000000 		.4byte	.LASF3
+ 591 0041 03       		.uleb128 0x3
+ 592 0042 14000000 		.4byte	.LASF9
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 14
+
+
+ 593 0046 02       		.byte	0x2
+ 594 0047 3F       		.byte	0x3f
+ 595 0048 4C000000 		.4byte	0x4c
+ 596 004c 02       		.uleb128 0x2
+ 597 004d 04       		.byte	0x4
+ 598 004e 05       		.byte	0x5
+ 599 004f 86020000 		.4byte	.LASF4
+ 600 0053 02       		.uleb128 0x2
+ 601 0054 04       		.byte	0x4
+ 602 0055 07       		.byte	0x7
+ 603 0056 D8000000 		.4byte	.LASF5
+ 604 005a 02       		.uleb128 0x2
+ 605 005b 08       		.byte	0x8
+ 606 005c 05       		.byte	0x5
+ 607 005d E6010000 		.4byte	.LASF6
+ 608 0061 02       		.uleb128 0x2
+ 609 0062 08       		.byte	0x8
+ 610 0063 07       		.byte	0x7
+ 611 0064 87010000 		.4byte	.LASF7
+ 612 0068 04       		.uleb128 0x4
+ 613 0069 04       		.byte	0x4
+ 614 006a 05       		.byte	0x5
+ 615 006b 696E7400 		.ascii	"int\000"
+ 616 006f 02       		.uleb128 0x2
+ 617 0070 04       		.byte	0x4
+ 618 0071 07       		.byte	0x7
+ 619 0072 7A010000 		.4byte	.LASF8
+ 620 0076 03       		.uleb128 0x3
+ 621 0077 D5010000 		.4byte	.LASF10
+ 622 007b 03       		.byte	0x3
+ 623 007c 2C       		.byte	0x2c
+ 624 007d 41000000 		.4byte	0x41
+ 625 0081 05       		.uleb128 0x5
+ 626 0082 73020000 		.4byte	.LASF11
+ 627 0086 04       		.byte	0x4
+ 628 0087 9201     		.2byte	0x192
+ 629 0089 2C000000 		.4byte	0x2c
+ 630 008d 05       		.uleb128 0x5
+ 631 008e 67010000 		.4byte	.LASF12
+ 632 0092 04       		.byte	0x4
+ 633 0093 9301     		.2byte	0x193
+ 634 0095 3A000000 		.4byte	0x3a
+ 635 0099 05       		.uleb128 0x5
+ 636 009a 73010000 		.4byte	.LASF13
+ 637 009e 04       		.byte	0x4
+ 638 009f 9401     		.2byte	0x194
+ 639 00a1 53000000 		.4byte	0x53
+ 640 00a5 05       		.uleb128 0x5
+ 641 00a6 6E010000 		.4byte	.LASF14
+ 642 00aa 04       		.byte	0x4
+ 643 00ab 9501     		.2byte	0x195
+ 644 00ad 25000000 		.4byte	0x25
+ 645 00b1 02       		.uleb128 0x2
+ 646 00b2 04       		.byte	0x4
+ 647 00b3 04       		.byte	0x4
+ 648 00b4 B9000000 		.4byte	.LASF15
+ 649 00b8 02       		.uleb128 0x2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 15
+
+
+ 650 00b9 08       		.byte	0x8
+ 651 00ba 04       		.byte	0x4
+ 652 00bb 45010000 		.4byte	.LASF16
+ 653 00bf 02       		.uleb128 0x2
+ 654 00c0 01       		.byte	0x1
+ 655 00c1 08       		.byte	0x8
+ 656 00c2 F4010000 		.4byte	.LASF17
+ 657 00c6 02       		.uleb128 0x2
+ 658 00c7 04       		.byte	0x4
+ 659 00c8 07       		.byte	0x7
+ 660 00c9 DD010000 		.4byte	.LASF18
+ 661 00cd 06       		.uleb128 0x6
+ 662 00ce 04       		.byte	0x4
+ 663 00cf BF000000 		.4byte	0xbf
+ 664 00d3 07       		.uleb128 0x7
+ 665 00d4 14010000 		.4byte	.LASF23
+ 666 00d8 01       		.byte	0x1
+ 667 00d9 15       		.byte	0x15
+ 668 00da A5000000 		.4byte	0xa5
+ 669 00de 00000000 		.4byte	.LFB63
+ 670 00e2 52000000 		.4byte	.LFE63-.LFB63
+ 671 00e6 01       		.uleb128 0x1
+ 672 00e7 9C       		.byte	0x9c
+ 673 00e8 25010000 		.4byte	0x125
+ 674 00ec 08       		.uleb128 0x8
+ 675 00ed CA020000 		.4byte	.LASF19
+ 676 00f1 01       		.byte	0x1
+ 677 00f2 15       		.byte	0x15
+ 678 00f3 CD000000 		.4byte	0xcd
+ 679 00f7 02       		.uleb128 0x2
+ 680 00f8 91       		.byte	0x91
+ 681 00f9 6C       		.sleb128 -20
+ 682 00fa 08       		.uleb128 0x8
+ 683 00fb FD000000 		.4byte	.LASF20
+ 684 00ff 01       		.byte	0x1
+ 685 0100 15       		.byte	0x15
+ 686 0101 BF000000 		.4byte	0xbf
+ 687 0105 02       		.uleb128 0x2
+ 688 0106 91       		.byte	0x91
+ 689 0107 6B       		.sleb128 -21
+ 690 0108 09       		.uleb128 0x9
+ 691 0109 8F020000 		.4byte	.LASF21
+ 692 010d 01       		.byte	0x1
+ 693 010e 17       		.byte	0x17
+ 694 010f CD000000 		.4byte	0xcd
+ 695 0113 02       		.uleb128 0x2
+ 696 0114 91       		.byte	0x91
+ 697 0115 70       		.sleb128 -16
+ 698 0116 09       		.uleb128 0x9
+ 699 0117 00020000 		.4byte	.LASF22
+ 700 011b 01       		.byte	0x1
+ 701 011c 18       		.byte	0x18
+ 702 011d A5000000 		.4byte	0xa5
+ 703 0121 02       		.uleb128 0x2
+ 704 0122 91       		.byte	0x91
+ 705 0123 77       		.sleb128 -9
+ 706 0124 00       		.byte	0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 16
+
+
+ 707 0125 07       		.uleb128 0x7
+ 708 0126 5A010000 		.4byte	.LASF24
+ 709 012a 01       		.byte	0x1
+ 710 012b 28       		.byte	0x28
+ 711 012c 81000000 		.4byte	0x81
+ 712 0130 00000000 		.4byte	.LFB64
+ 713 0134 54000000 		.4byte	.LFE64-.LFB64
+ 714 0138 01       		.uleb128 0x1
+ 715 0139 9C       		.byte	0x9c
+ 716 013a 4D010000 		.4byte	0x14d
+ 717 013e 08       		.uleb128 0x8
+ 718 013f A5010000 		.4byte	.LASF25
+ 719 0143 01       		.byte	0x1
+ 720 0144 28       		.byte	0x28
+ 721 0145 BF000000 		.4byte	0xbf
+ 722 0149 02       		.uleb128 0x2
+ 723 014a 91       		.byte	0x91
+ 724 014b 77       		.sleb128 -9
+ 725 014c 00       		.byte	0
+ 726 014d 0A       		.uleb128 0xa
+ 727 014e AF010000 		.4byte	.LASF26
+ 728 0152 01       		.byte	0x1
+ 729 0153 38       		.byte	0x38
+ 730 0154 99000000 		.4byte	0x99
+ 731 0158 00000000 		.4byte	.LFB65
+ 732 015c 46000000 		.4byte	.LFE65-.LFB65
+ 733 0160 01       		.uleb128 0x1
+ 734 0161 9C       		.byte	0x9c
+ 735 0162 91010000 		.4byte	0x191
+ 736 0166 08       		.uleb128 0x8
+ 737 0167 9D020000 		.4byte	.LASF27
+ 738 016b 01       		.byte	0x1
+ 739 016c 38       		.byte	0x38
+ 740 016d CD000000 		.4byte	0xcd
+ 741 0171 02       		.uleb128 0x2
+ 742 0172 91       		.byte	0x91
+ 743 0173 64       		.sleb128 -28
+ 744 0174 09       		.uleb128 0x9
+ 745 0175 00020000 		.4byte	.LASF22
+ 746 0179 01       		.byte	0x1
+ 747 017a 3A       		.byte	0x3a
+ 748 017b 81000000 		.4byte	0x81
+ 749 017f 02       		.uleb128 0x2
+ 750 0180 91       		.byte	0x91
+ 751 0181 6F       		.sleb128 -17
+ 752 0182 09       		.uleb128 0x9
+ 753 0183 79020000 		.4byte	.LASF28
+ 754 0187 01       		.byte	0x1
+ 755 0188 3B       		.byte	0x3b
+ 756 0189 99000000 		.4byte	0x99
+ 757 018d 02       		.uleb128 0x2
+ 758 018e 91       		.byte	0x91
+ 759 018f 68       		.sleb128 -24
+ 760 0190 00       		.byte	0
+ 761 0191 0B       		.uleb128 0xb
+ 762 0192 07010000 		.4byte	.LASF35
+ 763 0196 01       		.byte	0x1
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 17
+
+
+ 764 0197 4B       		.byte	0x4b
+ 765 0198 00000000 		.4byte	.LFB66
+ 766 019c 7E000000 		.4byte	.LFE66-.LFB66
+ 767 01a0 01       		.uleb128 0x1
+ 768 01a1 9C       		.byte	0x9c
+ 769 01a2 FB010000 		.4byte	0x1fb
+ 770 01a6 08       		.uleb128 0x8
+ 771 01a7 F9010000 		.4byte	.LASF29
+ 772 01ab 01       		.byte	0x1
+ 773 01ac 4B       		.byte	0x4b
+ 774 01ad 99000000 		.4byte	0x99
+ 775 01b1 02       		.uleb128 0x2
+ 776 01b2 91       		.byte	0x91
+ 777 01b3 64       		.sleb128 -28
+ 778 01b4 08       		.uleb128 0x8
+ 779 01b5 C8010000 		.4byte	.LASF30
+ 780 01b9 01       		.byte	0x1
+ 781 01ba 4B       		.byte	0x4b
+ 782 01bb CD000000 		.4byte	0xcd
+ 783 01bf 02       		.uleb128 0x2
+ 784 01c0 91       		.byte	0x91
+ 785 01c1 60       		.sleb128 -32
+ 786 01c2 09       		.uleb128 0x9
+ 787 01c3 BF000000 		.4byte	.LASF31
+ 788 01c7 01       		.byte	0x1
+ 789 01c8 4D       		.byte	0x4d
+ 790 01c9 99000000 		.4byte	0x99
+ 791 01cd 02       		.uleb128 0x2
+ 792 01ce 91       		.byte	0x91
+ 793 01cf 74       		.sleb128 -12
+ 794 01d0 09       		.uleb128 0x9
+ 795 01d1 07000000 		.4byte	.LASF32
+ 796 01d5 01       		.byte	0x1
+ 797 01d6 4E       		.byte	0x4e
+ 798 01d7 81000000 		.4byte	0x81
+ 799 01db 02       		.uleb128 0x2
+ 800 01dc 91       		.byte	0x91
+ 801 01dd 73       		.sleb128 -13
+ 802 01de 09       		.uleb128 0x9
+ 803 01df 3B010000 		.4byte	.LASF33
+ 804 01e3 01       		.byte	0x1
+ 805 01e4 4F       		.byte	0x4f
+ 806 01e5 99000000 		.4byte	0x99
+ 807 01e9 02       		.uleb128 0x2
+ 808 01ea 91       		.byte	0x91
+ 809 01eb 6C       		.sleb128 -20
+ 810 01ec 09       		.uleb128 0x9
+ 811 01ed 2E010000 		.4byte	.LASF34
+ 812 01f1 01       		.byte	0x1
+ 813 01f2 50       		.byte	0x50
+ 814 01f3 81000000 		.4byte	0x81
+ 815 01f7 02       		.uleb128 0x2
+ 816 01f8 91       		.byte	0x91
+ 817 01f9 72       		.sleb128 -14
+ 818 01fa 00       		.byte	0
+ 819 01fb 0B       		.uleb128 0xb
+ 820 01fc 4C010000 		.4byte	.LASF36
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 18
+
+
+ 821 0200 01       		.byte	0x1
+ 822 0201 63       		.byte	0x63
+ 823 0202 00000000 		.4byte	.LFB67
+ 824 0206 80000000 		.4byte	.LFE67-.LFB67
+ 825 020a 01       		.uleb128 0x1
+ 826 020b 9C       		.byte	0x9c
+ 827 020c 65020000 		.4byte	0x265
+ 828 0210 08       		.uleb128 0x8
+ 829 0211 00000000 		.4byte	.LASF37
+ 830 0215 01       		.byte	0x1
+ 831 0216 63       		.byte	0x63
+ 832 0217 8D000000 		.4byte	0x8d
+ 833 021b 02       		.uleb128 0x2
+ 834 021c 91       		.byte	0x91
+ 835 021d 66       		.sleb128 -26
+ 836 021e 08       		.uleb128 0x8
+ 837 021f C8010000 		.4byte	.LASF30
+ 838 0223 01       		.byte	0x1
+ 839 0224 63       		.byte	0x63
+ 840 0225 CD000000 		.4byte	0xcd
+ 841 0229 02       		.uleb128 0x2
+ 842 022a 91       		.byte	0x91
+ 843 022b 60       		.sleb128 -32
+ 844 022c 09       		.uleb128 0x9
+ 845 022d BF000000 		.4byte	.LASF31
+ 846 0231 01       		.byte	0x1
+ 847 0232 65       		.byte	0x65
+ 848 0233 99000000 		.4byte	0x99
+ 849 0237 02       		.uleb128 0x2
+ 850 0238 91       		.byte	0x91
+ 851 0239 74       		.sleb128 -12
+ 852 023a 09       		.uleb128 0x9
+ 853 023b 07000000 		.4byte	.LASF32
+ 854 023f 01       		.byte	0x1
+ 855 0240 66       		.byte	0x66
+ 856 0241 81000000 		.4byte	0x81
+ 857 0245 02       		.uleb128 0x2
+ 858 0246 91       		.byte	0x91
+ 859 0247 73       		.sleb128 -13
+ 860 0248 09       		.uleb128 0x9
+ 861 0249 3B010000 		.4byte	.LASF33
+ 862 024d 01       		.byte	0x1
+ 863 024e 67       		.byte	0x67
+ 864 024f 99000000 		.4byte	0x99
+ 865 0253 02       		.uleb128 0x2
+ 866 0254 91       		.byte	0x91
+ 867 0255 6C       		.sleb128 -20
+ 868 0256 09       		.uleb128 0x9
+ 869 0257 2E010000 		.4byte	.LASF34
+ 870 025b 01       		.byte	0x1
+ 871 025c 68       		.byte	0x68
+ 872 025d 81000000 		.4byte	0x81
+ 873 0261 02       		.uleb128 0x2
+ 874 0262 91       		.byte	0x91
+ 875 0263 72       		.sleb128 -14
+ 876 0264 00       		.byte	0
+ 877 0265 0B       		.uleb128 0xb
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 19
+
+
+ 878 0266 AC000000 		.4byte	.LASF38
+ 879 026a 01       		.byte	0x1
+ 880 026b 7B       		.byte	0x7b
+ 881 026c 00000000 		.4byte	.LFB68
+ 882 0270 7E000000 		.4byte	.LFE68-.LFB68
+ 883 0274 01       		.uleb128 0x1
+ 884 0275 9C       		.byte	0x9c
+ 885 0276 CF020000 		.4byte	0x2cf
+ 886 027a 08       		.uleb128 0x8
+ 887 027b 9E010000 		.4byte	.LASF39
+ 888 027f 01       		.byte	0x1
+ 889 0280 7B       		.byte	0x7b
+ 890 0281 81000000 		.4byte	0x81
+ 891 0285 02       		.uleb128 0x2
+ 892 0286 91       		.byte	0x91
+ 893 0287 67       		.sleb128 -25
+ 894 0288 08       		.uleb128 0x8
+ 895 0289 C8010000 		.4byte	.LASF30
+ 896 028d 01       		.byte	0x1
+ 897 028e 7B       		.byte	0x7b
+ 898 028f CD000000 		.4byte	0xcd
+ 899 0293 02       		.uleb128 0x2
+ 900 0294 91       		.byte	0x91
+ 901 0295 60       		.sleb128 -32
+ 902 0296 09       		.uleb128 0x9
+ 903 0297 BF000000 		.4byte	.LASF31
+ 904 029b 01       		.byte	0x1
+ 905 029c 7D       		.byte	0x7d
+ 906 029d 99000000 		.4byte	0x99
+ 907 02a1 02       		.uleb128 0x2
+ 908 02a2 91       		.byte	0x91
+ 909 02a3 74       		.sleb128 -12
+ 910 02a4 09       		.uleb128 0x9
+ 911 02a5 07000000 		.4byte	.LASF32
+ 912 02a9 01       		.byte	0x1
+ 913 02aa 7E       		.byte	0x7e
+ 914 02ab 81000000 		.4byte	0x81
+ 915 02af 02       		.uleb128 0x2
+ 916 02b0 91       		.byte	0x91
+ 917 02b1 73       		.sleb128 -13
+ 918 02b2 09       		.uleb128 0x9
+ 919 02b3 3B010000 		.4byte	.LASF33
+ 920 02b7 01       		.byte	0x1
+ 921 02b8 7F       		.byte	0x7f
+ 922 02b9 99000000 		.4byte	0x99
+ 923 02bd 02       		.uleb128 0x2
+ 924 02be 91       		.byte	0x91
+ 925 02bf 6C       		.sleb128 -20
+ 926 02c0 09       		.uleb128 0x9
+ 927 02c1 2E010000 		.4byte	.LASF34
+ 928 02c5 01       		.byte	0x1
+ 929 02c6 80       		.byte	0x80
+ 930 02c7 81000000 		.4byte	0x81
+ 931 02cb 02       		.uleb128 0x2
+ 932 02cc 91       		.byte	0x91
+ 933 02cd 72       		.sleb128 -14
+ 934 02ce 00       		.byte	0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 20
+
+
+ 935 02cf 0C       		.uleb128 0xc
+ 936 02d0 21010000 		.4byte	.LASF43
+ 937 02d4 05       		.byte	0x5
+ 938 02d5 9606     		.2byte	0x696
+ 939 02d7 DB020000 		.4byte	0x2db
+ 940 02db 0D       		.uleb128 0xd
+ 941 02dc 76000000 		.4byte	0x76
+ 942 02e0 00       		.byte	0
+ 943              		.section	.debug_abbrev,"",%progbits
+ 944              	.Ldebug_abbrev0:
+ 945 0000 01       		.uleb128 0x1
+ 946 0001 11       		.uleb128 0x11
+ 947 0002 01       		.byte	0x1
+ 948 0003 25       		.uleb128 0x25
+ 949 0004 0E       		.uleb128 0xe
+ 950 0005 13       		.uleb128 0x13
+ 951 0006 0B       		.uleb128 0xb
+ 952 0007 03       		.uleb128 0x3
+ 953 0008 0E       		.uleb128 0xe
+ 954 0009 1B       		.uleb128 0x1b
+ 955 000a 0E       		.uleb128 0xe
+ 956 000b 55       		.uleb128 0x55
+ 957 000c 17       		.uleb128 0x17
+ 958 000d 11       		.uleb128 0x11
+ 959 000e 01       		.uleb128 0x1
+ 960 000f 10       		.uleb128 0x10
+ 961 0010 17       		.uleb128 0x17
+ 962 0011 00       		.byte	0
+ 963 0012 00       		.byte	0
+ 964 0013 02       		.uleb128 0x2
+ 965 0014 24       		.uleb128 0x24
+ 966 0015 00       		.byte	0
+ 967 0016 0B       		.uleb128 0xb
+ 968 0017 0B       		.uleb128 0xb
+ 969 0018 3E       		.uleb128 0x3e
+ 970 0019 0B       		.uleb128 0xb
+ 971 001a 03       		.uleb128 0x3
+ 972 001b 0E       		.uleb128 0xe
+ 973 001c 00       		.byte	0
+ 974 001d 00       		.byte	0
+ 975 001e 03       		.uleb128 0x3
+ 976 001f 16       		.uleb128 0x16
+ 977 0020 00       		.byte	0
+ 978 0021 03       		.uleb128 0x3
+ 979 0022 0E       		.uleb128 0xe
+ 980 0023 3A       		.uleb128 0x3a
+ 981 0024 0B       		.uleb128 0xb
+ 982 0025 3B       		.uleb128 0x3b
+ 983 0026 0B       		.uleb128 0xb
+ 984 0027 49       		.uleb128 0x49
+ 985 0028 13       		.uleb128 0x13
+ 986 0029 00       		.byte	0
+ 987 002a 00       		.byte	0
+ 988 002b 04       		.uleb128 0x4
+ 989 002c 24       		.uleb128 0x24
+ 990 002d 00       		.byte	0
+ 991 002e 0B       		.uleb128 0xb
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 21
+
+
+ 992 002f 0B       		.uleb128 0xb
+ 993 0030 3E       		.uleb128 0x3e
+ 994 0031 0B       		.uleb128 0xb
+ 995 0032 03       		.uleb128 0x3
+ 996 0033 08       		.uleb128 0x8
+ 997 0034 00       		.byte	0
+ 998 0035 00       		.byte	0
+ 999 0036 05       		.uleb128 0x5
+ 1000 0037 16       		.uleb128 0x16
+ 1001 0038 00       		.byte	0
+ 1002 0039 03       		.uleb128 0x3
+ 1003 003a 0E       		.uleb128 0xe
+ 1004 003b 3A       		.uleb128 0x3a
+ 1005 003c 0B       		.uleb128 0xb
+ 1006 003d 3B       		.uleb128 0x3b
+ 1007 003e 05       		.uleb128 0x5
+ 1008 003f 49       		.uleb128 0x49
+ 1009 0040 13       		.uleb128 0x13
+ 1010 0041 00       		.byte	0
+ 1011 0042 00       		.byte	0
+ 1012 0043 06       		.uleb128 0x6
+ 1013 0044 0F       		.uleb128 0xf
+ 1014 0045 00       		.byte	0
+ 1015 0046 0B       		.uleb128 0xb
+ 1016 0047 0B       		.uleb128 0xb
+ 1017 0048 49       		.uleb128 0x49
+ 1018 0049 13       		.uleb128 0x13
+ 1019 004a 00       		.byte	0
+ 1020 004b 00       		.byte	0
+ 1021 004c 07       		.uleb128 0x7
+ 1022 004d 2E       		.uleb128 0x2e
+ 1023 004e 01       		.byte	0x1
+ 1024 004f 3F       		.uleb128 0x3f
+ 1025 0050 19       		.uleb128 0x19
+ 1026 0051 03       		.uleb128 0x3
+ 1027 0052 0E       		.uleb128 0xe
+ 1028 0053 3A       		.uleb128 0x3a
+ 1029 0054 0B       		.uleb128 0xb
+ 1030 0055 3B       		.uleb128 0x3b
+ 1031 0056 0B       		.uleb128 0xb
+ 1032 0057 27       		.uleb128 0x27
+ 1033 0058 19       		.uleb128 0x19
+ 1034 0059 49       		.uleb128 0x49
+ 1035 005a 13       		.uleb128 0x13
+ 1036 005b 11       		.uleb128 0x11
+ 1037 005c 01       		.uleb128 0x1
+ 1038 005d 12       		.uleb128 0x12
+ 1039 005e 06       		.uleb128 0x6
+ 1040 005f 40       		.uleb128 0x40
+ 1041 0060 18       		.uleb128 0x18
+ 1042 0061 9742     		.uleb128 0x2117
+ 1043 0063 19       		.uleb128 0x19
+ 1044 0064 01       		.uleb128 0x1
+ 1045 0065 13       		.uleb128 0x13
+ 1046 0066 00       		.byte	0
+ 1047 0067 00       		.byte	0
+ 1048 0068 08       		.uleb128 0x8
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 22
+
+
+ 1049 0069 05       		.uleb128 0x5
+ 1050 006a 00       		.byte	0
+ 1051 006b 03       		.uleb128 0x3
+ 1052 006c 0E       		.uleb128 0xe
+ 1053 006d 3A       		.uleb128 0x3a
+ 1054 006e 0B       		.uleb128 0xb
+ 1055 006f 3B       		.uleb128 0x3b
+ 1056 0070 0B       		.uleb128 0xb
+ 1057 0071 49       		.uleb128 0x49
+ 1058 0072 13       		.uleb128 0x13
+ 1059 0073 02       		.uleb128 0x2
+ 1060 0074 18       		.uleb128 0x18
+ 1061 0075 00       		.byte	0
+ 1062 0076 00       		.byte	0
+ 1063 0077 09       		.uleb128 0x9
+ 1064 0078 34       		.uleb128 0x34
+ 1065 0079 00       		.byte	0
+ 1066 007a 03       		.uleb128 0x3
+ 1067 007b 0E       		.uleb128 0xe
+ 1068 007c 3A       		.uleb128 0x3a
+ 1069 007d 0B       		.uleb128 0xb
+ 1070 007e 3B       		.uleb128 0x3b
+ 1071 007f 0B       		.uleb128 0xb
+ 1072 0080 49       		.uleb128 0x49
+ 1073 0081 13       		.uleb128 0x13
+ 1074 0082 02       		.uleb128 0x2
+ 1075 0083 18       		.uleb128 0x18
+ 1076 0084 00       		.byte	0
+ 1077 0085 00       		.byte	0
+ 1078 0086 0A       		.uleb128 0xa
+ 1079 0087 2E       		.uleb128 0x2e
+ 1080 0088 01       		.byte	0x1
+ 1081 0089 3F       		.uleb128 0x3f
+ 1082 008a 19       		.uleb128 0x19
+ 1083 008b 03       		.uleb128 0x3
+ 1084 008c 0E       		.uleb128 0xe
+ 1085 008d 3A       		.uleb128 0x3a
+ 1086 008e 0B       		.uleb128 0xb
+ 1087 008f 3B       		.uleb128 0x3b
+ 1088 0090 0B       		.uleb128 0xb
+ 1089 0091 27       		.uleb128 0x27
+ 1090 0092 19       		.uleb128 0x19
+ 1091 0093 49       		.uleb128 0x49
+ 1092 0094 13       		.uleb128 0x13
+ 1093 0095 11       		.uleb128 0x11
+ 1094 0096 01       		.uleb128 0x1
+ 1095 0097 12       		.uleb128 0x12
+ 1096 0098 06       		.uleb128 0x6
+ 1097 0099 40       		.uleb128 0x40
+ 1098 009a 18       		.uleb128 0x18
+ 1099 009b 9642     		.uleb128 0x2116
+ 1100 009d 19       		.uleb128 0x19
+ 1101 009e 01       		.uleb128 0x1
+ 1102 009f 13       		.uleb128 0x13
+ 1103 00a0 00       		.byte	0
+ 1104 00a1 00       		.byte	0
+ 1105 00a2 0B       		.uleb128 0xb
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 23
+
+
+ 1106 00a3 2E       		.uleb128 0x2e
+ 1107 00a4 01       		.byte	0x1
+ 1108 00a5 3F       		.uleb128 0x3f
+ 1109 00a6 19       		.uleb128 0x19
+ 1110 00a7 03       		.uleb128 0x3
+ 1111 00a8 0E       		.uleb128 0xe
+ 1112 00a9 3A       		.uleb128 0x3a
+ 1113 00aa 0B       		.uleb128 0xb
+ 1114 00ab 3B       		.uleb128 0x3b
+ 1115 00ac 0B       		.uleb128 0xb
+ 1116 00ad 27       		.uleb128 0x27
+ 1117 00ae 19       		.uleb128 0x19
+ 1118 00af 11       		.uleb128 0x11
+ 1119 00b0 01       		.uleb128 0x1
+ 1120 00b1 12       		.uleb128 0x12
+ 1121 00b2 06       		.uleb128 0x6
+ 1122 00b3 40       		.uleb128 0x40
+ 1123 00b4 18       		.uleb128 0x18
+ 1124 00b5 9742     		.uleb128 0x2117
+ 1125 00b7 19       		.uleb128 0x19
+ 1126 00b8 01       		.uleb128 0x1
+ 1127 00b9 13       		.uleb128 0x13
+ 1128 00ba 00       		.byte	0
+ 1129 00bb 00       		.byte	0
+ 1130 00bc 0C       		.uleb128 0xc
+ 1131 00bd 34       		.uleb128 0x34
+ 1132 00be 00       		.byte	0
+ 1133 00bf 03       		.uleb128 0x3
+ 1134 00c0 0E       		.uleb128 0xe
+ 1135 00c1 3A       		.uleb128 0x3a
+ 1136 00c2 0B       		.uleb128 0xb
+ 1137 00c3 3B       		.uleb128 0x3b
+ 1138 00c4 05       		.uleb128 0x5
+ 1139 00c5 49       		.uleb128 0x49
+ 1140 00c6 13       		.uleb128 0x13
+ 1141 00c7 3F       		.uleb128 0x3f
+ 1142 00c8 19       		.uleb128 0x19
+ 1143 00c9 3C       		.uleb128 0x3c
+ 1144 00ca 19       		.uleb128 0x19
+ 1145 00cb 00       		.byte	0
+ 1146 00cc 00       		.byte	0
+ 1147 00cd 0D       		.uleb128 0xd
+ 1148 00ce 35       		.uleb128 0x35
+ 1149 00cf 00       		.byte	0
+ 1150 00d0 49       		.uleb128 0x49
+ 1151 00d1 13       		.uleb128 0x13
+ 1152 00d2 00       		.byte	0
+ 1153 00d3 00       		.byte	0
+ 1154 00d4 00       		.byte	0
+ 1155              		.section	.debug_aranges,"",%progbits
+ 1156 0000 44000000 		.4byte	0x44
+ 1157 0004 0200     		.2byte	0x2
+ 1158 0006 00000000 		.4byte	.Ldebug_info0
+ 1159 000a 04       		.byte	0x4
+ 1160 000b 00       		.byte	0
+ 1161 000c 0000     		.2byte	0
+ 1162 000e 0000     		.2byte	0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 24
+
+
+ 1163 0010 00000000 		.4byte	.LFB63
+ 1164 0014 52000000 		.4byte	.LFE63-.LFB63
+ 1165 0018 00000000 		.4byte	.LFB64
+ 1166 001c 54000000 		.4byte	.LFE64-.LFB64
+ 1167 0020 00000000 		.4byte	.LFB65
+ 1168 0024 46000000 		.4byte	.LFE65-.LFB65
+ 1169 0028 00000000 		.4byte	.LFB66
+ 1170 002c 7E000000 		.4byte	.LFE66-.LFB66
+ 1171 0030 00000000 		.4byte	.LFB67
+ 1172 0034 80000000 		.4byte	.LFE67-.LFB67
+ 1173 0038 00000000 		.4byte	.LFB68
+ 1174 003c 7E000000 		.4byte	.LFE68-.LFB68
+ 1175 0040 00000000 		.4byte	0
+ 1176 0044 00000000 		.4byte	0
+ 1177              		.section	.debug_ranges,"",%progbits
+ 1178              	.Ldebug_ranges0:
+ 1179 0000 00000000 		.4byte	.LFB63
+ 1180 0004 52000000 		.4byte	.LFE63
+ 1181 0008 00000000 		.4byte	.LFB64
+ 1182 000c 54000000 		.4byte	.LFE64
+ 1183 0010 00000000 		.4byte	.LFB65
+ 1184 0014 46000000 		.4byte	.LFE65
+ 1185 0018 00000000 		.4byte	.LFB66
+ 1186 001c 7E000000 		.4byte	.LFE66
+ 1187 0020 00000000 		.4byte	.LFB67
+ 1188 0024 80000000 		.4byte	.LFE67
+ 1189 0028 00000000 		.4byte	.LFB68
+ 1190 002c 7E000000 		.4byte	.LFE68
+ 1191 0030 00000000 		.4byte	0
+ 1192 0034 00000000 		.4byte	0
+ 1193              		.section	.debug_line,"",%progbits
+ 1194              	.Ldebug_line0:
+ 1195 0000 60020000 		.section	.debug_str,"MS",%progbits,1
+ 1195      02006301 
+ 1195      00000201 
+ 1195      FB0E0D00 
+ 1195      01010101 
+ 1196              	.LASF37:
+ 1197 0000 7356616C 		.ascii	"sValue\000"
+ 1197      756500
+ 1198              	.LASF32:
+ 1199 0007 6E696262 		.ascii	"nibbleOffset\000"
+ 1199      6C654F66 
+ 1199      66736574 
+ 1199      00
+ 1200              	.LASF9:
+ 1201 0014 5F5F696E 		.ascii	"__int32_t\000"
+ 1201      7433325F 
+ 1201      7400
+ 1202              	.LASF40:
+ 1203 001e 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1203      4320342E 
+ 1203      392E3320 
+ 1203      32303135 
+ 1203      30333033 
+ 1204 0051 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1204      20726576 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 25
+
+
+ 1204      6973696F 
+ 1204      6E203232 
+ 1204      31323230 
+ 1205 0084 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1205      66756E63 
+ 1205      74696F6E 
+ 1205      2D736563 
+ 1205      74696F6E 
+ 1206              	.LASF38:
+ 1207 00ac 62797465 		.ascii	"byteToString\000"
+ 1207      546F5374 
+ 1207      72696E67 
+ 1207      00
+ 1208              	.LASF15:
+ 1209 00b9 666C6F61 		.ascii	"float\000"
+ 1209      7400
+ 1210              	.LASF31:
+ 1211 00bf 6E696262 		.ascii	"nibbleMask\000"
+ 1211      6C654D61 
+ 1211      736B00
+ 1212              	.LASF1:
+ 1213 00ca 756E7369 		.ascii	"unsigned char\000"
+ 1213      676E6564 
+ 1213      20636861 
+ 1213      7200
+ 1214              	.LASF5:
+ 1215 00d8 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1215      20756E73 
+ 1215      69676E65 
+ 1215      6420696E 
+ 1215      7400
+ 1216              	.LASF3:
+ 1217 00ea 73686F72 		.ascii	"short unsigned int\000"
+ 1217      7420756E 
+ 1217      7369676E 
+ 1217      65642069 
+ 1217      6E7400
+ 1218              	.LASF20:
+ 1219 00fd 76616C54 		.ascii	"valToFind\000"
+ 1219      6F46696E 
+ 1219      6400
+ 1220              	.LASF35:
+ 1221 0107 6C6F6E67 		.ascii	"longToString\000"
+ 1221      546F5374 
+ 1221      72696E67 
+ 1221      00
+ 1222              	.LASF23:
+ 1223 0114 66696E64 		.ascii	"findInString\000"
+ 1223      496E5374 
+ 1223      72696E67 
+ 1223      00
+ 1224              	.LASF43:
+ 1225 0121 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1225      52784275 
+ 1225      66666572 
+ 1225      00
+ 1226              	.LASF34:
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 26
+
+
+ 1227 012e 72657375 		.ascii	"resultOffset\000"
+ 1227      6C744F66 
+ 1227      66736574 
+ 1227      00
+ 1228              	.LASF33:
+ 1229 013b 6E696262 		.ascii	"nibbleVal\000"
+ 1229      6C655661 
+ 1229      6C00
+ 1230              	.LASF16:
+ 1231 0145 646F7562 		.ascii	"double\000"
+ 1231      6C6500
+ 1232              	.LASF36:
+ 1233 014c 73686F72 		.ascii	"shortToString\000"
+ 1233      74546F53 
+ 1233      7472696E 
+ 1233      6700
+ 1234              	.LASF24:
+ 1235 015a 63686172 		.ascii	"charToNibble\000"
+ 1235      546F4E69 
+ 1235      62626C65 
+ 1235      00
+ 1236              	.LASF12:
+ 1237 0167 75696E74 		.ascii	"uint16\000"
+ 1237      313600
+ 1238              	.LASF14:
+ 1239 016e 696E7438 		.ascii	"int8\000"
+ 1239      00
+ 1240              	.LASF13:
+ 1241 0173 75696E74 		.ascii	"uint32\000"
+ 1241      333200
+ 1242              	.LASF8:
+ 1243 017a 756E7369 		.ascii	"unsigned int\000"
+ 1243      676E6564 
+ 1243      20696E74 
+ 1243      00
+ 1244              	.LASF7:
+ 1245 0187 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1245      206C6F6E 
+ 1245      6720756E 
+ 1245      7369676E 
+ 1245      65642069 
+ 1246              	.LASF39:
+ 1247 019e 6256616C 		.ascii	"bValue\000"
+ 1247      756500
+ 1248              	.LASF25:
+ 1249 01a5 64696769 		.ascii	"digitChar\000"
+ 1249      74436861 
+ 1249      7200
+ 1250              	.LASF26:
+ 1251 01af 73747269 		.ascii	"stringToLong\000"
+ 1251      6E67546F 
+ 1251      4C6F6E67 
+ 1251      00
+ 1252              	.LASF0:
+ 1253 01bc 7369676E 		.ascii	"signed char\000"
+ 1253      65642063 
+ 1253      68617200 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 27
+
+
+ 1254              	.LASF30:
+ 1255 01c8 72657375 		.ascii	"resultString\000"
+ 1255      6C745374 
+ 1255      72696E67 
+ 1255      00
+ 1256              	.LASF10:
+ 1257 01d5 696E7433 		.ascii	"int32_t\000"
+ 1257      325F7400 
+ 1258              	.LASF18:
+ 1259 01dd 73697A65 		.ascii	"sizetype\000"
+ 1259      74797065 
+ 1259      00
+ 1260              	.LASF6:
+ 1261 01e6 6C6F6E67 		.ascii	"long long int\000"
+ 1261      206C6F6E 
+ 1261      6720696E 
+ 1261      7400
+ 1262              	.LASF17:
+ 1263 01f4 63686172 		.ascii	"char\000"
+ 1263      00
+ 1264              	.LASF29:
+ 1265 01f9 6C56616C 		.ascii	"lValue\000"
+ 1265      756500
+ 1266              	.LASF22:
+ 1267 0200 6F666673 		.ascii	"offset\000"
+ 1267      657400
+ 1268              	.LASF2:
+ 1269 0207 73686F72 		.ascii	"short int\000"
+ 1269      7420696E 
+ 1269      7400
+ 1270              	.LASF42:
+ 1271 0211 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
+ 1271      73657273 
+ 1271      5C444769 
+ 1271      6C6C696C 
+ 1271      616E645C 
+ 1272 023e 532D5053 		.ascii	"S-PSOC5\\Projects\\I2C_Master-Slave\\I2CMaster-01.c"
+ 1272      4F43355C 
+ 1272      50726F6A 
+ 1272      65637473 
+ 1272      5C493243 
+ 1273 026e 7964736E 		.ascii	"ydsn\000"
+ 1273      00
+ 1274              	.LASF11:
+ 1275 0273 75696E74 		.ascii	"uint8\000"
+ 1275      3800
+ 1276              	.LASF28:
+ 1277 0279 74686542 		.ascii	"theBigNumber\000"
+ 1277      69674E75 
+ 1277      6D626572 
+ 1277      00
+ 1278              	.LASF4:
+ 1279 0286 6C6F6E67 		.ascii	"long int\000"
+ 1279      20696E74 
+ 1279      00
+ 1280              	.LASF21:
+ 1281 028f 73747269 		.ascii	"stringPointer\000"
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctcPlWs.s 			page 28
+
+
+ 1281      6E67506F 
+ 1281      696E7465 
+ 1281      7200
+ 1282              	.LASF27:
+ 1283 029d 6E756D53 		.ascii	"numString\000"
+ 1283      7472696E 
+ 1283      6700
+ 1284              	.LASF41:
+ 1285 02a7 2E2E5C49 		.ascii	"..\\I2CSlave-01.cydsn\\stringConvs.c\000"
+ 1285      3243536C 
+ 1285      6176652D 
+ 1285      30312E63 
+ 1285      7964736E 
+ 1286              	.LASF19:
+ 1287 02ca 73747269 		.ascii	"stringToParse\000"
+ 1287      6E67546F 
+ 1287      50617273 
+ 1287      6500
+ 1288              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

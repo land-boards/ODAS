@@ -1,0 +1,927 @@
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccIRQxCb.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"myI2CMaster.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.comm	wrBuf,5,4
+  19              		.comm	rdBuf,5,4
+  20              		.section	.rodata
+  21              		.align	2
+  22              	.LC0:
+  23 0000 5472616E 		.ascii	"Transfer has been halted.\000"
+  23      73666572 
+  23      20686173 
+  23      20626565 
+  23      6E206861 
+  24 001a 0000     		.align	2
+  25              	.LC1:
+  26 001c 53686F72 		.ascii	"Short Transfer Error\000"
+  26      74205472 
+  26      616E7366 
+  26      65722045 
+  26      72726F72 
+  27 0031 000000   		.align	2
+  28              	.LC2:
+  29 0034 536C6176 		.ascii	"Slave did not ack the address\000"
+  29      65206469 
+  29      64206E6F 
+  29      74206163 
+  29      6B207468 
+  30 0052 0000     		.align	2
+  31              	.LC3:
+  32 0054 49324320 		.ascii	"I2C Master lost arbitration\000"
+  32      4D617374 
+  32      6572206C 
+  32      6F737420 
+  32      61726269 
+  33              		.section	.text.sendBuffToI2C,"ax",%progbits
+  34              		.align	2
+  35              		.global	sendBuffToI2C
+  36              		.thumb
+  37              		.thumb_func
+  38              		.type	sendBuffToI2C, %function
+  39              	sendBuffToI2C:
+  40              	.LFB63:
+  41              		.file 1 "myI2CMaster.c"
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccIRQxCb.s 			page 2
+
+
+   1:myI2CMaster.c **** /* ========================================
+   2:myI2CMaster.c ****  *
+   3:myI2CMaster.c ****  * Copyright YOUR COMPANY, THE YEAR
+   4:myI2CMaster.c ****  * All Rights Reserved
+   5:myI2CMaster.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:myI2CMaster.c ****  *
+   7:myI2CMaster.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:myI2CMaster.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:myI2CMaster.c ****  *
+  10:myI2CMaster.c ****  * ========================================
+  11:myI2CMaster.c **** */
+  12:myI2CMaster.c **** 
+  13:myI2CMaster.c **** #include "myI2CMaster.h"
+  14:myI2CMaster.c **** 
+  15:myI2CMaster.c **** uint8 wrBuf[WR_BUFFER_SIZE];
+  16:myI2CMaster.c **** uint8 rdBuf[RD_BUFFER_SIZE];
+  17:myI2CMaster.c **** 
+  18:myI2CMaster.c **** //////////////////////////////////////////////////////////////////////////////////////////////////
+  19:myI2CMaster.c **** // void sendBuffToI2C(void) - 
+  20:myI2CMaster.c **** //////////////////////////////////////////////////////////////////////////////////////////////////
+  21:myI2CMaster.c **** 
+  22:myI2CMaster.c **** void sendBuffToI2C(uint8 slaveAddr)
+  23:myI2CMaster.c **** {
+  42              		.loc 1 23 0
+  43              		.cfi_startproc
+  44              		@ args = 0, pretend = 0, frame = 16
+  45              		@ frame_needed = 1, uses_anonymous_args = 0
+  46 0000 80B5     		push	{r7, lr}
+  47              		.cfi_def_cfa_offset 8
+  48              		.cfi_offset 7, -8
+  49              		.cfi_offset 14, -4
+  50 0002 84B0     		sub	sp, sp, #16
+  51              		.cfi_def_cfa_offset 24
+  52 0004 00AF     		add	r7, sp, #0
+  53              		.cfi_def_cfa_register 7
+  54 0006 0346     		mov	r3, r0
+  55 0008 FB71     		strb	r3, [r7, #7]
+  56              	.L2:
+  24:myI2CMaster.c ****     uint8 temp;
+  25:myI2CMaster.c ****     do
+  26:myI2CMaster.c ****     {
+  27:myI2CMaster.c ****         temp = I2CM_MasterWriteBuf(slaveAddr, (uint8 *)wrBuf, WR_BUFFER_SIZE, I2CM_MODE_COMPLETE_XF
+  57              		.loc 1 27 0 discriminator 1
+  58 000a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  59 000c 1846     		mov	r0, r3
+  60 000e 1E49     		ldr	r1, .L9
+  61 0010 0522     		movs	r2, #5
+  62 0012 0023     		movs	r3, #0
+  63 0014 FFF7FEFF 		bl	I2CM_MasterWriteBuf
+  64 0018 0346     		mov	r3, r0
+  65 001a FB73     		strb	r3, [r7, #15]
+  28:myI2CMaster.c ****     }
+  29:myI2CMaster.c ****     while (temp != I2CM_MSTR_NO_ERROR);
+  66              		.loc 1 29 0 discriminator 1
+  67 001c FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+  68 001e 002B     		cmp	r3, #0
+  69 0020 F3D1     		bne	.L2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccIRQxCb.s 			page 3
+
+
+  30:myI2CMaster.c ****     while(I2CM_MasterStatus() & I2CM_MSTAT_XFER_INP);       // Wait for the data transfer to comple
+  70              		.loc 1 30 0
+  71 0022 00BF     		nop
+  72              	.L3:
+  73              		.loc 1 30 0 is_stmt 0 discriminator 1
+  74 0024 FFF7FEFF 		bl	I2CM_MasterStatus
+  75 0028 0346     		mov	r3, r0
+  76 002a 03F00403 		and	r3, r3, #4
+  77 002e 002B     		cmp	r3, #0
+  78 0030 F8D1     		bne	.L3
+  31:myI2CMaster.c ****     temp = I2CM_MasterClearStatus();
+  79              		.loc 1 31 0 is_stmt 1
+  80 0032 FFF7FEFF 		bl	I2CM_MasterClearStatus
+  81 0036 0346     		mov	r3, r0
+  82 0038 FB73     		strb	r3, [r7, #15]
+  32:myI2CMaster.c ****     if(temp & I2CM_MSTAT_ERR_XFER)  // If there is an error while transferring data */
+  83              		.loc 1 32 0
+  84 003a FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+  85 003c 5BB2     		sxtb	r3, r3
+  86 003e 002B     		cmp	r3, #0
+  87 0040 1FDA     		bge	.L1
+  33:myI2CMaster.c ****     {
+  34:myI2CMaster.c ****         if (temp & I2CM_MSTAT_XFER_HALT)
+  88              		.loc 1 34 0
+  89 0042 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+  90 0044 03F00803 		and	r3, r3, #8
+  91 0048 002B     		cmp	r3, #0
+  92 004a 02D0     		beq	.L5
+  35:myI2CMaster.c ****             printLine("Transfer has been halted.");
+  93              		.loc 1 35 0
+  94 004c 0F48     		ldr	r0, .L9+4
+  95 004e FFF7FEFF 		bl	printLine
+  96              	.L5:
+  36:myI2CMaster.c ****         if (temp & I2CM_MSTAT_ERR_SHORT_XFER)
+  97              		.loc 1 36 0
+  98 0052 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+  99 0054 03F01003 		and	r3, r3, #16
+ 100 0058 002B     		cmp	r3, #0
+ 101 005a 02D0     		beq	.L6
+  37:myI2CMaster.c ****             printLine("Short Transfer Error");
+ 102              		.loc 1 37 0
+ 103 005c 0C48     		ldr	r0, .L9+8
+ 104 005e FFF7FEFF 		bl	printLine
+ 105              	.L6:
+  38:myI2CMaster.c ****         if (temp & I2CM_MSTAT_ERR_ADDR_NAK)
+ 106              		.loc 1 38 0
+ 107 0062 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 108 0064 03F02003 		and	r3, r3, #32
+ 109 0068 002B     		cmp	r3, #0
+ 110 006a 02D0     		beq	.L7
+  39:myI2CMaster.c ****             printLine("Slave did not ack the address");
+ 111              		.loc 1 39 0
+ 112 006c 0948     		ldr	r0, .L9+12
+ 113 006e FFF7FEFF 		bl	printLine
+ 114              	.L7:
+  40:myI2CMaster.c ****         if (temp & I2CM_MSTAT_ERR_ARB_LOST)
+ 115              		.loc 1 40 0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccIRQxCb.s 			page 4
+
+
+ 116 0072 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 117 0074 03F04003 		and	r3, r3, #64
+ 118 0078 002B     		cmp	r3, #0
+ 119 007a 02D0     		beq	.L1
+  41:myI2CMaster.c ****             printLine("I2C Master lost arbitration");
+ 120              		.loc 1 41 0
+ 121 007c 0648     		ldr	r0, .L9+16
+ 122 007e FFF7FEFF 		bl	printLine
+ 123              	.L1:
+  42:myI2CMaster.c ****     }
+  43:myI2CMaster.c ****     else /* Write completed without error */
+  44:myI2CMaster.c ****     {
+  45:myI2CMaster.c **** //            printSingleChar('K');
+  46:myI2CMaster.c ****     }
+  47:myI2CMaster.c **** }
+ 124              		.loc 1 47 0
+ 125 0082 1037     		adds	r7, r7, #16
+ 126              		.cfi_def_cfa_offset 8
+ 127 0084 BD46     		mov	sp, r7
+ 128              		.cfi_def_cfa_register 13
+ 129              		@ sp needed
+ 130 0086 80BD     		pop	{r7, pc}
+ 131              	.L10:
+ 132              		.align	2
+ 133              	.L9:
+ 134 0088 00000000 		.word	wrBuf
+ 135 008c 00000000 		.word	.LC0
+ 136 0090 1C000000 		.word	.LC1
+ 137 0094 34000000 		.word	.LC2
+ 138 0098 54000000 		.word	.LC3
+ 139              		.cfi_endproc
+ 140              	.LFE63:
+ 141              		.size	sendBuffToI2C, .-sendBuffToI2C
+ 142              		.section	.rodata
+ 143              		.align	2
+ 144              	.LC4:
+ 145 0070 5472616E 		.ascii	"Transfer in progress\000"
+ 145      73666572 
+ 145      20696E20 
+ 145      70726F67 
+ 145      72657373 
+ 146 0085 000000   		.section	.text.getBuffFromI2C,"ax",%progbits
+ 147              		.align	2
+ 148              		.global	getBuffFromI2C
+ 149              		.thumb
+ 150              		.thumb_func
+ 151              		.type	getBuffFromI2C, %function
+ 152              	getBuffFromI2C:
+ 153              	.LFB64:
+  48:myI2CMaster.c **** 
+  49:myI2CMaster.c **** 
+  50:myI2CMaster.c **** //////////////////////////////////////////////////////////////////////////////////////////////////
+  51:myI2CMaster.c **** // void sendBuffToI2C(void) - 
+  52:myI2CMaster.c **** //////////////////////////////////////////////////////////////////////////////////////////////////
+  53:myI2CMaster.c **** 
+  54:myI2CMaster.c **** void getBuffFromI2C(uint8 slaveAddr)
+  55:myI2CMaster.c **** {
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccIRQxCb.s 			page 5
+
+
+ 154              		.loc 1 55 0
+ 155              		.cfi_startproc
+ 156              		@ args = 0, pretend = 0, frame = 16
+ 157              		@ frame_needed = 1, uses_anonymous_args = 0
+ 158 0000 80B5     		push	{r7, lr}
+ 159              		.cfi_def_cfa_offset 8
+ 160              		.cfi_offset 7, -8
+ 161              		.cfi_offset 14, -4
+ 162 0002 84B0     		sub	sp, sp, #16
+ 163              		.cfi_def_cfa_offset 24
+ 164 0004 00AF     		add	r7, sp, #0
+ 165              		.cfi_def_cfa_register 7
+ 166 0006 0346     		mov	r3, r0
+ 167 0008 FB71     		strb	r3, [r7, #7]
+  56:myI2CMaster.c ****     uint8 temp;
+  57:myI2CMaster.c ****     I2CM_MasterReadBuf(slaveAddr, (uint8 *)rdBuf, RD_BUFFER_SIZE, I2CM_MODE_COMPLETE_XFER);
+ 168              		.loc 1 57 0
+ 169 000a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 170 000c 1846     		mov	r0, r3
+ 171 000e 2349     		ldr	r1, .L20
+ 172 0010 0522     		movs	r2, #5
+ 173 0012 0023     		movs	r3, #0
+ 174 0014 FFF7FEFF 		bl	I2CM_MasterReadBuf
+  58:myI2CMaster.c ****     while ((I2CM_MasterStatus() & I2CM_MSTAT_RD_CMPLT) != I2CM_MSTAT_RD_CMPLT);         // wait for
+ 175              		.loc 1 58 0
+ 176 0018 00BF     		nop
+ 177              	.L12:
+ 178              		.loc 1 58 0 is_stmt 0 discriminator 1
+ 179 001a FFF7FEFF 		bl	I2CM_MasterStatus
+ 180 001e 0346     		mov	r3, r0
+ 181 0020 03F00103 		and	r3, r3, #1
+ 182 0024 002B     		cmp	r3, #0
+ 183 0026 F8D0     		beq	.L12
+  59:myI2CMaster.c ****     temp = I2CM_MasterClearStatus();
+ 184              		.loc 1 59 0 is_stmt 1
+ 185 0028 FFF7FEFF 		bl	I2CM_MasterClearStatus
+ 186 002c 0346     		mov	r3, r0
+ 187 002e FB73     		strb	r3, [r7, #15]
+  60:myI2CMaster.c ****     if(temp & I2CM_MSTAT_ERR_XFER)  // If there is an error while transferring data */
+ 188              		.loc 1 60 0
+ 189 0030 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 190 0032 5BB2     		sxtb	r3, r3
+ 191 0034 002B     		cmp	r3, #0
+ 192 0036 28DA     		bge	.L13
+  61:myI2CMaster.c ****     {
+  62:myI2CMaster.c ****         if (temp & I2CM_MSTAT_XFER_INP)
+ 193              		.loc 1 62 0
+ 194 0038 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 195 003a 03F00403 		and	r3, r3, #4
+ 196 003e 002B     		cmp	r3, #0
+ 197 0040 02D0     		beq	.L14
+  63:myI2CMaster.c ****             printLine("Transfer in progress");
+ 198              		.loc 1 63 0
+ 199 0042 1748     		ldr	r0, .L20+4
+ 200 0044 FFF7FEFF 		bl	printLine
+ 201              	.L14:
+  64:myI2CMaster.c ****         if (temp & I2CM_MSTAT_XFER_HALT)
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccIRQxCb.s 			page 6
+
+
+ 202              		.loc 1 64 0
+ 203 0048 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 204 004a 03F00803 		and	r3, r3, #8
+ 205 004e 002B     		cmp	r3, #0
+ 206 0050 02D0     		beq	.L15
+  65:myI2CMaster.c ****             printLine("Transfer has been halted.");
+ 207              		.loc 1 65 0
+ 208 0052 1448     		ldr	r0, .L20+8
+ 209 0054 FFF7FEFF 		bl	printLine
+ 210              	.L15:
+  66:myI2CMaster.c ****         if (temp & I2CM_MSTAT_ERR_SHORT_XFER)
+ 211              		.loc 1 66 0
+ 212 0058 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 213 005a 03F01003 		and	r3, r3, #16
+ 214 005e 002B     		cmp	r3, #0
+ 215 0060 02D0     		beq	.L16
+  67:myI2CMaster.c ****             printLine("Short Transfer Error");
+ 216              		.loc 1 67 0
+ 217 0062 1148     		ldr	r0, .L20+12
+ 218 0064 FFF7FEFF 		bl	printLine
+ 219              	.L16:
+  68:myI2CMaster.c ****         if (temp & I2CM_MSTAT_ERR_ADDR_NAK)
+ 220              		.loc 1 68 0
+ 221 0068 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 222 006a 03F02003 		and	r3, r3, #32
+ 223 006e 002B     		cmp	r3, #0
+ 224 0070 02D0     		beq	.L17
+  69:myI2CMaster.c ****             printLine("Slave did not ack the address");
+ 225              		.loc 1 69 0
+ 226 0072 0E48     		ldr	r0, .L20+16
+ 227 0074 FFF7FEFF 		bl	printLine
+ 228              	.L17:
+  70:myI2CMaster.c ****         if (temp & I2CM_MSTAT_ERR_ARB_LOST)
+ 229              		.loc 1 70 0
+ 230 0078 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 231 007a 03F04003 		and	r3, r3, #64
+ 232 007e 002B     		cmp	r3, #0
+ 233 0080 08D0     		beq	.L11
+  71:myI2CMaster.c ****             printLine("I2C Master lost arbitration");
+ 234              		.loc 1 71 0
+ 235 0082 0B48     		ldr	r0, .L20+20
+ 236 0084 FFF7FEFF 		bl	printLine
+ 237 0088 04E0     		b	.L11
+ 238              	.L13:
+  72:myI2CMaster.c ****     }
+  73:myI2CMaster.c ****     else /* Write completed without error */
+  74:myI2CMaster.c ****     {
+  75:myI2CMaster.c ****         printSingleChar(rdBuf[0]);
+ 239              		.loc 1 75 0
+ 240 008a 044B     		ldr	r3, .L20
+ 241 008c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 242 008e 1846     		mov	r0, r3
+ 243 0090 FFF7FEFF 		bl	printSingleChar
+ 244              	.L11:
+  76:myI2CMaster.c **** //            printSingleChar('k');
+  77:myI2CMaster.c ****     }
+  78:myI2CMaster.c **** }
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccIRQxCb.s 			page 7
+
+
+ 245              		.loc 1 78 0
+ 246 0094 1037     		adds	r7, r7, #16
+ 247              		.cfi_def_cfa_offset 8
+ 248 0096 BD46     		mov	sp, r7
+ 249              		.cfi_def_cfa_register 13
+ 250              		@ sp needed
+ 251 0098 80BD     		pop	{r7, pc}
+ 252              	.L21:
+ 253 009a 00BF     		.align	2
+ 254              	.L20:
+ 255 009c 00000000 		.word	rdBuf
+ 256 00a0 70000000 		.word	.LC4
+ 257 00a4 00000000 		.word	.LC0
+ 258 00a8 1C000000 		.word	.LC1
+ 259 00ac 34000000 		.word	.LC2
+ 260 00b0 54000000 		.word	.LC3
+ 261              		.cfi_endproc
+ 262              	.LFE64:
+ 263              		.size	getBuffFromI2C, .-getBuffFromI2C
+ 264              		.text
+ 265              	.Letext0:
+ 266              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 267              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 268              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 269              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 270              		.section	.debug_info,"",%progbits
+ 271              	.Ldebug_info0:
+ 272 0000 4D010000 		.4byte	0x14d
+ 273 0004 0400     		.2byte	0x4
+ 274 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 275 000a 04       		.byte	0x4
+ 276 000b 01       		.uleb128 0x1
+ 277 000c 11010000 		.4byte	.LASF23
+ 278 0010 01       		.byte	0x1
+ 279 0011 C5010000 		.4byte	.LASF24
+ 280 0015 70000000 		.4byte	.LASF25
+ 281 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 282 001d 00000000 		.4byte	0
+ 283 0021 00000000 		.4byte	.Ldebug_line0
+ 284 0025 02       		.uleb128 0x2
+ 285 0026 01       		.byte	0x1
+ 286 0027 06       		.byte	0x6
+ 287 0028 B9010000 		.4byte	.LASF0
+ 288 002c 02       		.uleb128 0x2
+ 289 002d 01       		.byte	0x1
+ 290 002e 08       		.byte	0x8
+ 291 002f F4000000 		.4byte	.LASF1
+ 292 0033 02       		.uleb128 0x2
+ 293 0034 02       		.byte	0x2
+ 294 0035 05       		.byte	0x5
+ 295 0036 E3010000 		.4byte	.LASF2
+ 296 003a 02       		.uleb128 0x2
+ 297 003b 02       		.byte	0x2
+ 298 003c 07       		.byte	0x7
+ 299 003d 0E000000 		.4byte	.LASF3
+ 300 0041 03       		.uleb128 0x3
+ 301 0042 D3010000 		.4byte	.LASF9
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccIRQxCb.s 			page 8
+
+
+ 302 0046 02       		.byte	0x2
+ 303 0047 3F       		.byte	0x3f
+ 304 0048 4C000000 		.4byte	0x4c
+ 305 004c 02       		.uleb128 0x2
+ 306 004d 04       		.byte	0x4
+ 307 004e 05       		.byte	0x5
+ 308 004f 08010000 		.4byte	.LASF4
+ 309 0053 02       		.uleb128 0x2
+ 310 0054 04       		.byte	0x4
+ 311 0055 07       		.byte	0x7
+ 312 0056 39000000 		.4byte	.LASF5
+ 313 005a 02       		.uleb128 0x2
+ 314 005b 08       		.byte	0x8
+ 315 005c 05       		.byte	0x5
+ 316 005d 00000000 		.4byte	.LASF6
+ 317 0061 02       		.uleb128 0x2
+ 318 0062 08       		.byte	0x8
+ 319 0063 07       		.byte	0x7
+ 320 0064 59000000 		.4byte	.LASF7
+ 321 0068 04       		.uleb128 0x4
+ 322 0069 04       		.byte	0x4
+ 323 006a 05       		.byte	0x5
+ 324 006b 696E7400 		.ascii	"int\000"
+ 325 006f 02       		.uleb128 0x2
+ 326 0070 04       		.byte	0x4
+ 327 0071 07       		.byte	0x7
+ 328 0072 21000000 		.4byte	.LASF8
+ 329 0076 03       		.uleb128 0x3
+ 330 0077 ED010000 		.4byte	.LASF10
+ 331 007b 03       		.byte	0x3
+ 332 007c 2C       		.byte	0x2c
+ 333 007d 41000000 		.4byte	0x41
+ 334 0081 05       		.uleb128 0x5
+ 335 0082 33000000 		.4byte	.LASF11
+ 336 0086 04       		.byte	0x4
+ 337 0087 9201     		.2byte	0x192
+ 338 0089 2C000000 		.4byte	0x2c
+ 339 008d 02       		.uleb128 0x2
+ 340 008e 04       		.byte	0x4
+ 341 008f 04       		.byte	0x4
+ 342 0090 DD010000 		.4byte	.LASF12
+ 343 0094 02       		.uleb128 0x2
+ 344 0095 08       		.byte	0x8
+ 345 0096 04       		.byte	0x4
+ 346 0097 9F010000 		.4byte	.LASF13
+ 347 009b 02       		.uleb128 0x2
+ 348 009c 01       		.byte	0x1
+ 349 009d 08       		.byte	0x8
+ 350 009e F5010000 		.4byte	.LASF14
+ 351 00a2 02       		.uleb128 0x2
+ 352 00a3 04       		.byte	0x4
+ 353 00a4 07       		.byte	0x7
+ 354 00a5 EB000000 		.4byte	.LASF15
+ 355 00a9 06       		.uleb128 0x6
+ 356 00aa 4B000000 		.4byte	.LASF16
+ 357 00ae 01       		.byte	0x1
+ 358 00af 16       		.byte	0x16
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccIRQxCb.s 			page 9
+
+
+ 359 00b0 00000000 		.4byte	.LFB63
+ 360 00b4 9C000000 		.4byte	.LFE63-.LFB63
+ 361 00b8 01       		.uleb128 0x1
+ 362 00b9 9C       		.byte	0x9c
+ 363 00ba DB000000 		.4byte	0xdb
+ 364 00be 07       		.uleb128 0x7
+ 365 00bf D2000000 		.4byte	.LASF18
+ 366 00c3 01       		.byte	0x1
+ 367 00c4 16       		.byte	0x16
+ 368 00c5 81000000 		.4byte	0x81
+ 369 00c9 02       		.uleb128 0x2
+ 370 00ca 91       		.byte	0x91
+ 371 00cb 6F       		.sleb128 -17
+ 372 00cc 08       		.uleb128 0x8
+ 373 00cd 2E000000 		.4byte	.LASF19
+ 374 00d1 01       		.byte	0x1
+ 375 00d2 18       		.byte	0x18
+ 376 00d3 81000000 		.4byte	0x81
+ 377 00d7 02       		.uleb128 0x2
+ 378 00d8 91       		.byte	0x91
+ 379 00d9 77       		.sleb128 -9
+ 380 00da 00       		.byte	0
+ 381 00db 06       		.uleb128 0x6
+ 382 00dc DC000000 		.4byte	.LASF17
+ 383 00e0 01       		.byte	0x1
+ 384 00e1 36       		.byte	0x36
+ 385 00e2 00000000 		.4byte	.LFB64
+ 386 00e6 B4000000 		.4byte	.LFE64-.LFB64
+ 387 00ea 01       		.uleb128 0x1
+ 388 00eb 9C       		.byte	0x9c
+ 389 00ec 0D010000 		.4byte	0x10d
+ 390 00f0 07       		.uleb128 0x7
+ 391 00f1 D2000000 		.4byte	.LASF18
+ 392 00f5 01       		.byte	0x1
+ 393 00f6 36       		.byte	0x36
+ 394 00f7 81000000 		.4byte	0x81
+ 395 00fb 02       		.uleb128 0x2
+ 396 00fc 91       		.byte	0x91
+ 397 00fd 6F       		.sleb128 -17
+ 398 00fe 08       		.uleb128 0x8
+ 399 00ff 2E000000 		.4byte	.LASF19
+ 400 0103 01       		.byte	0x1
+ 401 0104 38       		.byte	0x38
+ 402 0105 81000000 		.4byte	0x81
+ 403 0109 02       		.uleb128 0x2
+ 404 010a 91       		.byte	0x91
+ 405 010b 77       		.sleb128 -9
+ 406 010c 00       		.byte	0
+ 407 010d 09       		.uleb128 0x9
+ 408 010e AC010000 		.4byte	.LASF20
+ 409 0112 05       		.byte	0x5
+ 410 0113 9606     		.2byte	0x696
+ 411 0115 19010000 		.4byte	0x119
+ 412 0119 0A       		.uleb128 0xa
+ 413 011a 76000000 		.4byte	0x76
+ 414 011e 0B       		.uleb128 0xb
+ 415 011f 81000000 		.4byte	0x81
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccIRQxCb.s 			page 10
+
+
+ 416 0123 2E010000 		.4byte	0x12e
+ 417 0127 0C       		.uleb128 0xc
+ 418 0128 A2000000 		.4byte	0xa2
+ 419 012c 04       		.byte	0x4
+ 420 012d 00       		.byte	0
+ 421 012e 0D       		.uleb128 0xd
+ 422 012f 02010000 		.4byte	.LASF21
+ 423 0133 01       		.byte	0x1
+ 424 0134 0F       		.byte	0xf
+ 425 0135 1E010000 		.4byte	0x11e
+ 426 0139 05       		.uleb128 0x5
+ 427 013a 03       		.byte	0x3
+ 428 013b 00000000 		.4byte	wrBuf
+ 429 013f 0D       		.uleb128 0xd
+ 430 0140 A6010000 		.4byte	.LASF22
+ 431 0144 01       		.byte	0x1
+ 432 0145 10       		.byte	0x10
+ 433 0146 1E010000 		.4byte	0x11e
+ 434 014a 05       		.uleb128 0x5
+ 435 014b 03       		.byte	0x3
+ 436 014c 00000000 		.4byte	rdBuf
+ 437 0150 00       		.byte	0
+ 438              		.section	.debug_abbrev,"",%progbits
+ 439              	.Ldebug_abbrev0:
+ 440 0000 01       		.uleb128 0x1
+ 441 0001 11       		.uleb128 0x11
+ 442 0002 01       		.byte	0x1
+ 443 0003 25       		.uleb128 0x25
+ 444 0004 0E       		.uleb128 0xe
+ 445 0005 13       		.uleb128 0x13
+ 446 0006 0B       		.uleb128 0xb
+ 447 0007 03       		.uleb128 0x3
+ 448 0008 0E       		.uleb128 0xe
+ 449 0009 1B       		.uleb128 0x1b
+ 450 000a 0E       		.uleb128 0xe
+ 451 000b 55       		.uleb128 0x55
+ 452 000c 17       		.uleb128 0x17
+ 453 000d 11       		.uleb128 0x11
+ 454 000e 01       		.uleb128 0x1
+ 455 000f 10       		.uleb128 0x10
+ 456 0010 17       		.uleb128 0x17
+ 457 0011 00       		.byte	0
+ 458 0012 00       		.byte	0
+ 459 0013 02       		.uleb128 0x2
+ 460 0014 24       		.uleb128 0x24
+ 461 0015 00       		.byte	0
+ 462 0016 0B       		.uleb128 0xb
+ 463 0017 0B       		.uleb128 0xb
+ 464 0018 3E       		.uleb128 0x3e
+ 465 0019 0B       		.uleb128 0xb
+ 466 001a 03       		.uleb128 0x3
+ 467 001b 0E       		.uleb128 0xe
+ 468 001c 00       		.byte	0
+ 469 001d 00       		.byte	0
+ 470 001e 03       		.uleb128 0x3
+ 471 001f 16       		.uleb128 0x16
+ 472 0020 00       		.byte	0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccIRQxCb.s 			page 11
+
+
+ 473 0021 03       		.uleb128 0x3
+ 474 0022 0E       		.uleb128 0xe
+ 475 0023 3A       		.uleb128 0x3a
+ 476 0024 0B       		.uleb128 0xb
+ 477 0025 3B       		.uleb128 0x3b
+ 478 0026 0B       		.uleb128 0xb
+ 479 0027 49       		.uleb128 0x49
+ 480 0028 13       		.uleb128 0x13
+ 481 0029 00       		.byte	0
+ 482 002a 00       		.byte	0
+ 483 002b 04       		.uleb128 0x4
+ 484 002c 24       		.uleb128 0x24
+ 485 002d 00       		.byte	0
+ 486 002e 0B       		.uleb128 0xb
+ 487 002f 0B       		.uleb128 0xb
+ 488 0030 3E       		.uleb128 0x3e
+ 489 0031 0B       		.uleb128 0xb
+ 490 0032 03       		.uleb128 0x3
+ 491 0033 08       		.uleb128 0x8
+ 492 0034 00       		.byte	0
+ 493 0035 00       		.byte	0
+ 494 0036 05       		.uleb128 0x5
+ 495 0037 16       		.uleb128 0x16
+ 496 0038 00       		.byte	0
+ 497 0039 03       		.uleb128 0x3
+ 498 003a 0E       		.uleb128 0xe
+ 499 003b 3A       		.uleb128 0x3a
+ 500 003c 0B       		.uleb128 0xb
+ 501 003d 3B       		.uleb128 0x3b
+ 502 003e 05       		.uleb128 0x5
+ 503 003f 49       		.uleb128 0x49
+ 504 0040 13       		.uleb128 0x13
+ 505 0041 00       		.byte	0
+ 506 0042 00       		.byte	0
+ 507 0043 06       		.uleb128 0x6
+ 508 0044 2E       		.uleb128 0x2e
+ 509 0045 01       		.byte	0x1
+ 510 0046 3F       		.uleb128 0x3f
+ 511 0047 19       		.uleb128 0x19
+ 512 0048 03       		.uleb128 0x3
+ 513 0049 0E       		.uleb128 0xe
+ 514 004a 3A       		.uleb128 0x3a
+ 515 004b 0B       		.uleb128 0xb
+ 516 004c 3B       		.uleb128 0x3b
+ 517 004d 0B       		.uleb128 0xb
+ 518 004e 27       		.uleb128 0x27
+ 519 004f 19       		.uleb128 0x19
+ 520 0050 11       		.uleb128 0x11
+ 521 0051 01       		.uleb128 0x1
+ 522 0052 12       		.uleb128 0x12
+ 523 0053 06       		.uleb128 0x6
+ 524 0054 40       		.uleb128 0x40
+ 525 0055 18       		.uleb128 0x18
+ 526 0056 9642     		.uleb128 0x2116
+ 527 0058 19       		.uleb128 0x19
+ 528 0059 01       		.uleb128 0x1
+ 529 005a 13       		.uleb128 0x13
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccIRQxCb.s 			page 12
+
+
+ 530 005b 00       		.byte	0
+ 531 005c 00       		.byte	0
+ 532 005d 07       		.uleb128 0x7
+ 533 005e 05       		.uleb128 0x5
+ 534 005f 00       		.byte	0
+ 535 0060 03       		.uleb128 0x3
+ 536 0061 0E       		.uleb128 0xe
+ 537 0062 3A       		.uleb128 0x3a
+ 538 0063 0B       		.uleb128 0xb
+ 539 0064 3B       		.uleb128 0x3b
+ 540 0065 0B       		.uleb128 0xb
+ 541 0066 49       		.uleb128 0x49
+ 542 0067 13       		.uleb128 0x13
+ 543 0068 02       		.uleb128 0x2
+ 544 0069 18       		.uleb128 0x18
+ 545 006a 00       		.byte	0
+ 546 006b 00       		.byte	0
+ 547 006c 08       		.uleb128 0x8
+ 548 006d 34       		.uleb128 0x34
+ 549 006e 00       		.byte	0
+ 550 006f 03       		.uleb128 0x3
+ 551 0070 0E       		.uleb128 0xe
+ 552 0071 3A       		.uleb128 0x3a
+ 553 0072 0B       		.uleb128 0xb
+ 554 0073 3B       		.uleb128 0x3b
+ 555 0074 0B       		.uleb128 0xb
+ 556 0075 49       		.uleb128 0x49
+ 557 0076 13       		.uleb128 0x13
+ 558 0077 02       		.uleb128 0x2
+ 559 0078 18       		.uleb128 0x18
+ 560 0079 00       		.byte	0
+ 561 007a 00       		.byte	0
+ 562 007b 09       		.uleb128 0x9
+ 563 007c 34       		.uleb128 0x34
+ 564 007d 00       		.byte	0
+ 565 007e 03       		.uleb128 0x3
+ 566 007f 0E       		.uleb128 0xe
+ 567 0080 3A       		.uleb128 0x3a
+ 568 0081 0B       		.uleb128 0xb
+ 569 0082 3B       		.uleb128 0x3b
+ 570 0083 05       		.uleb128 0x5
+ 571 0084 49       		.uleb128 0x49
+ 572 0085 13       		.uleb128 0x13
+ 573 0086 3F       		.uleb128 0x3f
+ 574 0087 19       		.uleb128 0x19
+ 575 0088 3C       		.uleb128 0x3c
+ 576 0089 19       		.uleb128 0x19
+ 577 008a 00       		.byte	0
+ 578 008b 00       		.byte	0
+ 579 008c 0A       		.uleb128 0xa
+ 580 008d 35       		.uleb128 0x35
+ 581 008e 00       		.byte	0
+ 582 008f 49       		.uleb128 0x49
+ 583 0090 13       		.uleb128 0x13
+ 584 0091 00       		.byte	0
+ 585 0092 00       		.byte	0
+ 586 0093 0B       		.uleb128 0xb
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccIRQxCb.s 			page 13
+
+
+ 587 0094 01       		.uleb128 0x1
+ 588 0095 01       		.byte	0x1
+ 589 0096 49       		.uleb128 0x49
+ 590 0097 13       		.uleb128 0x13
+ 591 0098 01       		.uleb128 0x1
+ 592 0099 13       		.uleb128 0x13
+ 593 009a 00       		.byte	0
+ 594 009b 00       		.byte	0
+ 595 009c 0C       		.uleb128 0xc
+ 596 009d 21       		.uleb128 0x21
+ 597 009e 00       		.byte	0
+ 598 009f 49       		.uleb128 0x49
+ 599 00a0 13       		.uleb128 0x13
+ 600 00a1 2F       		.uleb128 0x2f
+ 601 00a2 0B       		.uleb128 0xb
+ 602 00a3 00       		.byte	0
+ 603 00a4 00       		.byte	0
+ 604 00a5 0D       		.uleb128 0xd
+ 605 00a6 34       		.uleb128 0x34
+ 606 00a7 00       		.byte	0
+ 607 00a8 03       		.uleb128 0x3
+ 608 00a9 0E       		.uleb128 0xe
+ 609 00aa 3A       		.uleb128 0x3a
+ 610 00ab 0B       		.uleb128 0xb
+ 611 00ac 3B       		.uleb128 0x3b
+ 612 00ad 0B       		.uleb128 0xb
+ 613 00ae 49       		.uleb128 0x49
+ 614 00af 13       		.uleb128 0x13
+ 615 00b0 3F       		.uleb128 0x3f
+ 616 00b1 19       		.uleb128 0x19
+ 617 00b2 02       		.uleb128 0x2
+ 618 00b3 18       		.uleb128 0x18
+ 619 00b4 00       		.byte	0
+ 620 00b5 00       		.byte	0
+ 621 00b6 00       		.byte	0
+ 622              		.section	.debug_aranges,"",%progbits
+ 623 0000 24000000 		.4byte	0x24
+ 624 0004 0200     		.2byte	0x2
+ 625 0006 00000000 		.4byte	.Ldebug_info0
+ 626 000a 04       		.byte	0x4
+ 627 000b 00       		.byte	0
+ 628 000c 0000     		.2byte	0
+ 629 000e 0000     		.2byte	0
+ 630 0010 00000000 		.4byte	.LFB63
+ 631 0014 9C000000 		.4byte	.LFE63-.LFB63
+ 632 0018 00000000 		.4byte	.LFB64
+ 633 001c B4000000 		.4byte	.LFE64-.LFB64
+ 634 0020 00000000 		.4byte	0
+ 635 0024 00000000 		.4byte	0
+ 636              		.section	.debug_ranges,"",%progbits
+ 637              	.Ldebug_ranges0:
+ 638 0000 00000000 		.4byte	.LFB63
+ 639 0004 9C000000 		.4byte	.LFE63
+ 640 0008 00000000 		.4byte	.LFB64
+ 641 000c B4000000 		.4byte	.LFE64
+ 642 0010 00000000 		.4byte	0
+ 643 0014 00000000 		.4byte	0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccIRQxCb.s 			page 14
+
+
+ 644              		.section	.debug_line,"",%progbits
+ 645              	.Ldebug_line0:
+ 646 0000 A6010000 		.section	.debug_str,"MS",%progbits,1
+ 646      02004E01 
+ 646      00000201 
+ 646      FB0E0D00 
+ 646      01010101 
+ 647              	.LASF6:
+ 648 0000 6C6F6E67 		.ascii	"long long int\000"
+ 648      206C6F6E 
+ 648      6720696E 
+ 648      7400
+ 649              	.LASF3:
+ 650 000e 73686F72 		.ascii	"short unsigned int\000"
+ 650      7420756E 
+ 650      7369676E 
+ 650      65642069 
+ 650      6E7400
+ 651              	.LASF8:
+ 652 0021 756E7369 		.ascii	"unsigned int\000"
+ 652      676E6564 
+ 652      20696E74 
+ 652      00
+ 653              	.LASF19:
+ 654 002e 74656D70 		.ascii	"temp\000"
+ 654      00
+ 655              	.LASF11:
+ 656 0033 75696E74 		.ascii	"uint8\000"
+ 656      3800
+ 657              	.LASF5:
+ 658 0039 6C6F6E67 		.ascii	"long unsigned int\000"
+ 658      20756E73 
+ 658      69676E65 
+ 658      6420696E 
+ 658      7400
+ 659              	.LASF16:
+ 660 004b 73656E64 		.ascii	"sendBuffToI2C\000"
+ 660      42756666 
+ 660      546F4932 
+ 660      4300
+ 661              	.LASF7:
+ 662 0059 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 662      206C6F6E 
+ 662      6720756E 
+ 662      7369676E 
+ 662      65642069 
+ 663              	.LASF25:
+ 664 0070 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
+ 664      73657273 
+ 664      5C444769 
+ 664      6C6C696C 
+ 664      616E645C 
+ 665 009d 532D5053 		.ascii	"S-PSOC5\\Projects\\I2C_Master-Slave\\I2CMaster-01.c"
+ 665      4F43355C 
+ 665      50726F6A 
+ 665      65637473 
+ 665      5C493243 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccIRQxCb.s 			page 15
+
+
+ 666 00cd 7964736E 		.ascii	"ydsn\000"
+ 666      00
+ 667              	.LASF18:
+ 668 00d2 736C6176 		.ascii	"slaveAddr\000"
+ 668      65416464 
+ 668      7200
+ 669              	.LASF17:
+ 670 00dc 67657442 		.ascii	"getBuffFromI2C\000"
+ 670      75666646 
+ 670      726F6D49 
+ 670      324300
+ 671              	.LASF15:
+ 672 00eb 73697A65 		.ascii	"sizetype\000"
+ 672      74797065 
+ 672      00
+ 673              	.LASF1:
+ 674 00f4 756E7369 		.ascii	"unsigned char\000"
+ 674      676E6564 
+ 674      20636861 
+ 674      7200
+ 675              	.LASF21:
+ 676 0102 77724275 		.ascii	"wrBuf\000"
+ 676      6600
+ 677              	.LASF4:
+ 678 0108 6C6F6E67 		.ascii	"long int\000"
+ 678      20696E74 
+ 678      00
+ 679              	.LASF23:
+ 680 0111 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 680      4320342E 
+ 680      392E3320 
+ 680      32303135 
+ 680      30333033 
+ 681 0144 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 681      20726576 
+ 681      6973696F 
+ 681      6E203232 
+ 681      31323230 
+ 682 0177 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 682      66756E63 
+ 682      74696F6E 
+ 682      2D736563 
+ 682      74696F6E 
+ 683              	.LASF13:
+ 684 019f 646F7562 		.ascii	"double\000"
+ 684      6C6500
+ 685              	.LASF22:
+ 686 01a6 72644275 		.ascii	"rdBuf\000"
+ 686      6600
+ 687              	.LASF20:
+ 688 01ac 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 688      52784275 
+ 688      66666572 
+ 688      00
+ 689              	.LASF0:
+ 690 01b9 7369676E 		.ascii	"signed char\000"
+ 690      65642063 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccIRQxCb.s 			page 16
+
+
+ 690      68617200 
+ 691              	.LASF24:
+ 692 01c5 6D794932 		.ascii	"myI2CMaster.c\000"
+ 692      434D6173 
+ 692      7465722E 
+ 692      6300
+ 693              	.LASF9:
+ 694 01d3 5F5F696E 		.ascii	"__int32_t\000"
+ 694      7433325F 
+ 694      7400
+ 695              	.LASF12:
+ 696 01dd 666C6F61 		.ascii	"float\000"
+ 696      7400
+ 697              	.LASF2:
+ 698 01e3 73686F72 		.ascii	"short int\000"
+ 698      7420696E 
+ 698      7400
+ 699              	.LASF10:
+ 700 01ed 696E7433 		.ascii	"int32_t\000"
+ 700      325F7400 
+ 701              	.LASF14:
+ 702 01f5 63686172 		.ascii	"char\000"
+ 702      00
+ 703              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

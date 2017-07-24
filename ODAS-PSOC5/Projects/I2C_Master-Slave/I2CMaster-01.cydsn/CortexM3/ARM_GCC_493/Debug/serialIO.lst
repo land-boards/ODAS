@@ -1,0 +1,1718 @@
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"serialIO.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.initSerial,"ax",%progbits
+  19              		.align	2
+  20              		.global	initSerial
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	initSerial, %function
+  24              	initSerial:
+  25              	.LFB63:
+  26              		.file 1 "..\\I2CSlave-01.cydsn\\serialIO.c"
+   1:..\I2CSlave-01.cydsn/serialIO.c **** /* ========================================
+   2:..\I2CSlave-01.cydsn/serialIO.c ****  * serialIO.c
+   3:..\I2CSlave-01.cydsn/serialIO.c ****  * Copyright AAC, LLC, 2017
+   4:..\I2CSlave-01.cydsn/serialIO.c ****  * All Rights Reserved
+   5:..\I2CSlave-01.cydsn/serialIO.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:..\I2CSlave-01.cydsn/serialIO.c ****  *
+   7:..\I2CSlave-01.cydsn/serialIO.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:..\I2CSlave-01.cydsn/serialIO.c ****  * WHICH IS THE PROPERTY OF AAC.
+   9:..\I2CSlave-01.cydsn/serialIO.c ****  *
+  10:..\I2CSlave-01.cydsn/serialIO.c ****  * ========================================
+  11:..\I2CSlave-01.cydsn/serialIO.c **** */
+  12:..\I2CSlave-01.cydsn/serialIO.c **** 
+  13:..\I2CSlave-01.cydsn/serialIO.c **** #include "project.h"
+  14:..\I2CSlave-01.cydsn/serialIO.c **** #undef DEBUG_ON_PC
+  15:..\I2CSlave-01.cydsn/serialIO.c **** #include "serialIO.h"
+  16:..\I2CSlave-01.cydsn/serialIO.c **** #include "stringConvs.h"
+  17:..\I2CSlave-01.cydsn/serialIO.c **** 
+  18:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+  19:..\I2CSlave-01.cydsn/serialIO.c **** // void initSerial(void)
+  20:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+  21:..\I2CSlave-01.cydsn/serialIO.c **** 
+  22:..\I2CSlave-01.cydsn/serialIO.c **** void initSerial(void)
+  23:..\I2CSlave-01.cydsn/serialIO.c **** {
+  27              		.loc 1 23 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31 0000 80B5     		push	{r7, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 7, -8
+  34              		.cfi_offset 14, -4
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 2
+
+
+  35 0002 00AF     		add	r7, sp, #0
+  36              		.cfi_def_cfa_register 7
+  24:..\I2CSlave-01.cydsn/serialIO.c ****     UART_1_Start();
+  37              		.loc 1 24 0
+  38 0004 FFF7FEFF 		bl	UART_1_Start
+  25:..\I2CSlave-01.cydsn/serialIO.c **** }
+  39              		.loc 1 25 0
+  40 0008 80BD     		pop	{r7, pc}
+  41              		.cfi_endproc
+  42              	.LFE63:
+  43              		.size	initSerial, .-initSerial
+  44 000a 00BF     		.section	.text.printSingleChar,"ax",%progbits
+  45              		.align	2
+  46              		.global	printSingleChar
+  47              		.thumb
+  48              		.thumb_func
+  49              		.type	printSingleChar, %function
+  50              	printSingleChar:
+  51              	.LFB64:
+  26:..\I2CSlave-01.cydsn/serialIO.c **** 
+  27:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+  28:..\I2CSlave-01.cydsn/serialIO.c **** // printSingleChar(char)
+  29:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+  30:..\I2CSlave-01.cydsn/serialIO.c **** 
+  31:..\I2CSlave-01.cydsn/serialIO.c **** void printSingleChar(char8 txChar)
+  32:..\I2CSlave-01.cydsn/serialIO.c **** {
+  52              		.loc 1 32 0
+  53              		.cfi_startproc
+  54              		@ args = 0, pretend = 0, frame = 16
+  55              		@ frame_needed = 1, uses_anonymous_args = 0
+  56 0000 80B5     		push	{r7, lr}
+  57              		.cfi_def_cfa_offset 8
+  58              		.cfi_offset 7, -8
+  59              		.cfi_offset 14, -4
+  60 0002 84B0     		sub	sp, sp, #16
+  61              		.cfi_def_cfa_offset 24
+  62 0004 00AF     		add	r7, sp, #0
+  63              		.cfi_def_cfa_register 7
+  64 0006 0346     		mov	r3, r0
+  65 0008 FB71     		strb	r3, [r7, #7]
+  66              	.L3:
+  33:..\I2CSlave-01.cydsn/serialIO.c ****     uint8 txStat;
+  34:..\I2CSlave-01.cydsn/serialIO.c ****     do
+  35:..\I2CSlave-01.cydsn/serialIO.c ****     {
+  36:..\I2CSlave-01.cydsn/serialIO.c ****         txStat = UART_1_ReadTxStatus();
+  67              		.loc 1 36 0 discriminator 1
+  68 000a FFF7FEFF 		bl	UART_1_ReadTxStatus
+  69 000e 0346     		mov	r3, r0
+  70 0010 FB73     		strb	r3, [r7, #15]
+  37:..\I2CSlave-01.cydsn/serialIO.c ****     }
+  38:..\I2CSlave-01.cydsn/serialIO.c ****     while (txStat & UART_1_TX_STS_FIFO_FULL);
+  71              		.loc 1 38 0 discriminator 1
+  72 0012 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+  73 0014 03F00403 		and	r3, r3, #4
+  74 0018 002B     		cmp	r3, #0
+  75 001a F6D1     		bne	.L3
+  39:..\I2CSlave-01.cydsn/serialIO.c ****     UART_1_PutChar(txChar);
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 3
+
+
+  76              		.loc 1 39 0
+  77 001c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  78 001e 1846     		mov	r0, r3
+  79 0020 FFF7FEFF 		bl	UART_1_PutChar
+  40:..\I2CSlave-01.cydsn/serialIO.c **** }
+  80              		.loc 1 40 0
+  81 0024 1037     		adds	r7, r7, #16
+  82              		.cfi_def_cfa_offset 8
+  83 0026 BD46     		mov	sp, r7
+  84              		.cfi_def_cfa_register 13
+  85              		@ sp needed
+  86 0028 80BD     		pop	{r7, pc}
+  87              		.cfi_endproc
+  88              	.LFE64:
+  89              		.size	printSingleChar, .-printSingleChar
+  90 002a 00BF     		.section	.text.printString,"ax",%progbits
+  91              		.align	2
+  92              		.global	printString
+  93              		.thumb
+  94              		.thumb_func
+  95              		.type	printString, %function
+  96              	printString:
+  97              	.LFB65:
+  41:..\I2CSlave-01.cydsn/serialIO.c **** 
+  42:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+  43:..\I2CSlave-01.cydsn/serialIO.c **** // void printString(char * lineBuffer)
+  44:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+  45:..\I2CSlave-01.cydsn/serialIO.c **** 
+  46:..\I2CSlave-01.cydsn/serialIO.c **** void printString(char * lineBuffer)
+  47:..\I2CSlave-01.cydsn/serialIO.c **** {
+  98              		.loc 1 47 0
+  99              		.cfi_startproc
+ 100              		@ args = 0, pretend = 0, frame = 16
+ 101              		@ frame_needed = 1, uses_anonymous_args = 0
+ 102 0000 80B5     		push	{r7, lr}
+ 103              		.cfi_def_cfa_offset 8
+ 104              		.cfi_offset 7, -8
+ 105              		.cfi_offset 14, -4
+ 106 0002 84B0     		sub	sp, sp, #16
+ 107              		.cfi_def_cfa_offset 24
+ 108 0004 00AF     		add	r7, sp, #0
+ 109              		.cfi_def_cfa_register 7
+ 110 0006 7860     		str	r0, [r7, #4]
+  48:..\I2CSlave-01.cydsn/serialIO.c ****     char * linePtr;
+  49:..\I2CSlave-01.cydsn/serialIO.c ****     linePtr = lineBuffer;
+ 111              		.loc 1 49 0
+ 112 0008 7B68     		ldr	r3, [r7, #4]
+ 113 000a FB60     		str	r3, [r7, #12]
+  50:..\I2CSlave-01.cydsn/serialIO.c ****     while (*linePtr != 0)
+ 114              		.loc 1 50 0
+ 115 000c 06E0     		b	.L5
+ 116              	.L6:
+  51:..\I2CSlave-01.cydsn/serialIO.c ****         printSingleChar(*linePtr++);
+ 117              		.loc 1 51 0
+ 118 000e FB68     		ldr	r3, [r7, #12]
+ 119 0010 5A1C     		adds	r2, r3, #1
+ 120 0012 FA60     		str	r2, [r7, #12]
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 4
+
+
+ 121 0014 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 122 0016 1846     		mov	r0, r3
+ 123 0018 FFF7FEFF 		bl	printSingleChar
+ 124              	.L5:
+  50:..\I2CSlave-01.cydsn/serialIO.c ****     while (*linePtr != 0)
+ 125              		.loc 1 50 0
+ 126 001c FB68     		ldr	r3, [r7, #12]
+ 127 001e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 128 0020 002B     		cmp	r3, #0
+ 129 0022 F4D1     		bne	.L6
+  52:..\I2CSlave-01.cydsn/serialIO.c **** }
+ 130              		.loc 1 52 0
+ 131 0024 1037     		adds	r7, r7, #16
+ 132              		.cfi_def_cfa_offset 8
+ 133 0026 BD46     		mov	sp, r7
+ 134              		.cfi_def_cfa_register 13
+ 135              		@ sp needed
+ 136 0028 80BD     		pop	{r7, pc}
+ 137              		.cfi_endproc
+ 138              	.LFE65:
+ 139              		.size	printString, .-printString
+ 140 002a 00BF     		.section	.text.printLine,"ax",%progbits
+ 141              		.align	2
+ 142              		.global	printLine
+ 143              		.thumb
+ 144              		.thumb_func
+ 145              		.type	printLine, %function
+ 146              	printLine:
+ 147              	.LFB66:
+  53:..\I2CSlave-01.cydsn/serialIO.c **** 
+  54:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+  55:..\I2CSlave-01.cydsn/serialIO.c **** // void printLine(char *)
+  56:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+  57:..\I2CSlave-01.cydsn/serialIO.c **** 
+  58:..\I2CSlave-01.cydsn/serialIO.c **** void printLine(char * lineBuffer)
+  59:..\I2CSlave-01.cydsn/serialIO.c **** {
+ 148              		.loc 1 59 0
+ 149              		.cfi_startproc
+ 150              		@ args = 0, pretend = 0, frame = 8
+ 151              		@ frame_needed = 1, uses_anonymous_args = 0
+ 152 0000 80B5     		push	{r7, lr}
+ 153              		.cfi_def_cfa_offset 8
+ 154              		.cfi_offset 7, -8
+ 155              		.cfi_offset 14, -4
+ 156 0002 82B0     		sub	sp, sp, #8
+ 157              		.cfi_def_cfa_offset 16
+ 158 0004 00AF     		add	r7, sp, #0
+ 159              		.cfi_def_cfa_register 7
+ 160 0006 7860     		str	r0, [r7, #4]
+  60:..\I2CSlave-01.cydsn/serialIO.c ****    printString(lineBuffer);
+ 161              		.loc 1 60 0
+ 162 0008 7868     		ldr	r0, [r7, #4]
+ 163 000a FFF7FEFF 		bl	printString
+  61:..\I2CSlave-01.cydsn/serialIO.c ****    printSingleChar(0x0d);
+ 164              		.loc 1 61 0
+ 165 000e 0D20     		movs	r0, #13
+ 166 0010 FFF7FEFF 		bl	printSingleChar
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 5
+
+
+  62:..\I2CSlave-01.cydsn/serialIO.c ****    printSingleChar(0x0a);
+ 167              		.loc 1 62 0
+ 168 0014 0A20     		movs	r0, #10
+ 169 0016 FFF7FEFF 		bl	printSingleChar
+  63:..\I2CSlave-01.cydsn/serialIO.c **** }
+ 170              		.loc 1 63 0
+ 171 001a 0837     		adds	r7, r7, #8
+ 172              		.cfi_def_cfa_offset 8
+ 173 001c BD46     		mov	sp, r7
+ 174              		.cfi_def_cfa_register 13
+ 175              		@ sp needed
+ 176 001e 80BD     		pop	{r7, pc}
+ 177              		.cfi_endproc
+ 178              	.LFE66:
+ 179              		.size	printLine, .-printLine
+ 180              		.section	.text.printLong,"ax",%progbits
+ 181              		.align	2
+ 182              		.global	printLong
+ 183              		.thumb
+ 184              		.thumb_func
+ 185              		.type	printLong, %function
+ 186              	printLong:
+ 187              	.LFB67:
+  64:..\I2CSlave-01.cydsn/serialIO.c **** 
+  65:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+  66:..\I2CSlave-01.cydsn/serialIO.c **** // void writeLong(uint32)
+  67:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+  68:..\I2CSlave-01.cydsn/serialIO.c **** 
+  69:..\I2CSlave-01.cydsn/serialIO.c **** void printLong(uint32 uLVal)
+  70:..\I2CSlave-01.cydsn/serialIO.c **** {
+ 188              		.loc 1 70 0
+ 189              		.cfi_startproc
+ 190              		@ args = 0, pretend = 0, frame = 24
+ 191              		@ frame_needed = 1, uses_anonymous_args = 0
+ 192 0000 80B5     		push	{r7, lr}
+ 193              		.cfi_def_cfa_offset 8
+ 194              		.cfi_offset 7, -8
+ 195              		.cfi_offset 14, -4
+ 196 0002 86B0     		sub	sp, sp, #24
+ 197              		.cfi_def_cfa_offset 32
+ 198 0004 00AF     		add	r7, sp, #0
+ 199              		.cfi_def_cfa_register 7
+ 200 0006 7860     		str	r0, [r7, #4]
+  71:..\I2CSlave-01.cydsn/serialIO.c ****     char myWBuff[9];
+  72:..\I2CSlave-01.cydsn/serialIO.c ****     longToString(uLVal,myWBuff);
+ 201              		.loc 1 72 0
+ 202 0008 07F10C03 		add	r3, r7, #12
+ 203 000c 7868     		ldr	r0, [r7, #4]
+ 204 000e 1946     		mov	r1, r3
+ 205 0010 FFF7FEFF 		bl	longToString
+  73:..\I2CSlave-01.cydsn/serialIO.c ****     printString(myWBuff);
+ 206              		.loc 1 73 0
+ 207 0014 07F10C03 		add	r3, r7, #12
+ 208 0018 1846     		mov	r0, r3
+ 209 001a FFF7FEFF 		bl	printString
+  74:..\I2CSlave-01.cydsn/serialIO.c **** }
+ 210              		.loc 1 74 0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 6
+
+
+ 211 001e 1837     		adds	r7, r7, #24
+ 212              		.cfi_def_cfa_offset 8
+ 213 0020 BD46     		mov	sp, r7
+ 214              		.cfi_def_cfa_register 13
+ 215              		@ sp needed
+ 216 0022 80BD     		pop	{r7, pc}
+ 217              		.cfi_endproc
+ 218              	.LFE67:
+ 219              		.size	printLong, .-printLong
+ 220              		.section	.text.printBit,"ax",%progbits
+ 221              		.align	2
+ 222              		.global	printBit
+ 223              		.thumb
+ 224              		.thumb_func
+ 225              		.type	printBit, %function
+ 226              	printBit:
+ 227              	.LFB68:
+  75:..\I2CSlave-01.cydsn/serialIO.c **** 
+  76:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+  77:..\I2CSlave-01.cydsn/serialIO.c **** // void printBit(uint8_t)
+  78:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+  79:..\I2CSlave-01.cydsn/serialIO.c **** 
+  80:..\I2CSlave-01.cydsn/serialIO.c **** void printBit(uint8_t uBVal)
+  81:..\I2CSlave-01.cydsn/serialIO.c **** {
+ 228              		.loc 1 81 0
+ 229              		.cfi_startproc
+ 230              		@ args = 0, pretend = 0, frame = 24
+ 231              		@ frame_needed = 1, uses_anonymous_args = 0
+ 232 0000 80B5     		push	{r7, lr}
+ 233              		.cfi_def_cfa_offset 8
+ 234              		.cfi_offset 7, -8
+ 235              		.cfi_offset 14, -4
+ 236 0002 86B0     		sub	sp, sp, #24
+ 237              		.cfi_def_cfa_offset 32
+ 238 0004 00AF     		add	r7, sp, #0
+ 239              		.cfi_def_cfa_register 7
+ 240 0006 0346     		mov	r3, r0
+ 241 0008 FB71     		strb	r3, [r7, #7]
+  82:..\I2CSlave-01.cydsn/serialIO.c ****     char outChar[2];
+  83:..\I2CSlave-01.cydsn/serialIO.c ****     char myWBuff[9];
+  84:..\I2CSlave-01.cydsn/serialIO.c ****     longToString((uint32_t)uBVal,myWBuff);
+ 242              		.loc 1 84 0
+ 243 000a FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 244 000c 07F10803 		add	r3, r7, #8
+ 245 0010 1046     		mov	r0, r2
+ 246 0012 1946     		mov	r1, r3
+ 247 0014 FFF7FEFF 		bl	longToString
+  85:..\I2CSlave-01.cydsn/serialIO.c ****     outChar[0] = myWBuff[7];
+ 248              		.loc 1 85 0
+ 249 0018 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 250 001a 3B75     		strb	r3, [r7, #20]
+  86:..\I2CSlave-01.cydsn/serialIO.c ****     outChar[1] = 0;
+ 251              		.loc 1 86 0
+ 252 001c 0023     		movs	r3, #0
+ 253 001e 7B75     		strb	r3, [r7, #21]
+  87:..\I2CSlave-01.cydsn/serialIO.c ****     printString(outChar);
+ 254              		.loc 1 87 0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 7
+
+
+ 255 0020 07F11403 		add	r3, r7, #20
+ 256 0024 1846     		mov	r0, r3
+ 257 0026 FFF7FEFF 		bl	printString
+  88:..\I2CSlave-01.cydsn/serialIO.c **** }
+ 258              		.loc 1 88 0
+ 259 002a 1837     		adds	r7, r7, #24
+ 260              		.cfi_def_cfa_offset 8
+ 261 002c BD46     		mov	sp, r7
+ 262              		.cfi_def_cfa_register 13
+ 263              		@ sp needed
+ 264 002e 80BD     		pop	{r7, pc}
+ 265              		.cfi_endproc
+ 266              	.LFE68:
+ 267              		.size	printBit, .-printBit
+ 268              		.section	.text.getSingleChar,"ax",%progbits
+ 269              		.align	2
+ 270              		.global	getSingleChar
+ 271              		.thumb
+ 272              		.thumb_func
+ 273              		.type	getSingleChar, %function
+ 274              	getSingleChar:
+ 275              	.LFB69:
+  89:..\I2CSlave-01.cydsn/serialIO.c **** 
+  90:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+  91:..\I2CSlave-01.cydsn/serialIO.c **** // char8 getSingleChar(void)
+  92:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+  93:..\I2CSlave-01.cydsn/serialIO.c **** 
+  94:..\I2CSlave-01.cydsn/serialIO.c **** char8 getSingleChar(void)
+  95:..\I2CSlave-01.cydsn/serialIO.c **** {
+ 276              		.loc 1 95 0
+ 277              		.cfi_startproc
+ 278              		@ args = 0, pretend = 0, frame = 8
+ 279              		@ frame_needed = 1, uses_anonymous_args = 0
+ 280 0000 80B5     		push	{r7, lr}
+ 281              		.cfi_def_cfa_offset 8
+ 282              		.cfi_offset 7, -8
+ 283              		.cfi_offset 14, -4
+ 284 0002 82B0     		sub	sp, sp, #8
+ 285              		.cfi_def_cfa_offset 16
+ 286 0004 00AF     		add	r7, sp, #0
+ 287              		.cfi_def_cfa_register 7
+ 288              	.L13:
+  96:..\I2CSlave-01.cydsn/serialIO.c ****     uint8 rxStat;
+  97:..\I2CSlave-01.cydsn/serialIO.c ****     char8 rxChar;       /* Data received from the Serial port */
+  98:..\I2CSlave-01.cydsn/serialIO.c ****     while(1)
+  99:..\I2CSlave-01.cydsn/serialIO.c ****     {
+ 100:..\I2CSlave-01.cydsn/serialIO.c ****         rxStat = UART_1_ReadRxStatus(); 
+ 289              		.loc 1 100 0
+ 290 0006 FFF7FEFF 		bl	UART_1_ReadRxStatus
+ 291 000a 0346     		mov	r3, r0
+ 292 000c FB71     		strb	r3, [r7, #7]
+ 101:..\I2CSlave-01.cydsn/serialIO.c ****         if (rxStat & UART_1_RX_STS_FIFO_NOTEMPTY)
+ 293              		.loc 1 101 0
+ 294 000e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 295 0010 03F02003 		and	r3, r3, #32
+ 296 0014 002B     		cmp	r3, #0
+ 297 0016 05D0     		beq	.L11
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 8
+
+
+ 102:..\I2CSlave-01.cydsn/serialIO.c ****         {
+ 103:..\I2CSlave-01.cydsn/serialIO.c ****             rxChar = UART_1_GetChar();
+ 298              		.loc 1 103 0
+ 299 0018 FFF7FEFF 		bl	UART_1_GetChar
+ 300 001c 0346     		mov	r3, r0
+ 301 001e BB71     		strb	r3, [r7, #6]
+ 104:..\I2CSlave-01.cydsn/serialIO.c ****             return rxChar;
+ 302              		.loc 1 104 0
+ 303 0020 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 304 0022 00E0     		b	.L14
+ 305              	.L11:
+ 105:..\I2CSlave-01.cydsn/serialIO.c ****         }
+ 106:..\I2CSlave-01.cydsn/serialIO.c ****     }
+ 306              		.loc 1 106 0
+ 307 0024 EFE7     		b	.L13
+ 308              	.L14:
+ 107:..\I2CSlave-01.cydsn/serialIO.c **** }
+ 309              		.loc 1 107 0 discriminator 1
+ 310 0026 1846     		mov	r0, r3
+ 311 0028 0837     		adds	r7, r7, #8
+ 312              		.cfi_def_cfa_offset 8
+ 313 002a BD46     		mov	sp, r7
+ 314              		.cfi_def_cfa_register 13
+ 315              		@ sp needed
+ 316 002c 80BD     		pop	{r7, pc}
+ 317              		.cfi_endproc
+ 318              	.LFE69:
+ 319              		.size	getSingleChar, .-getSingleChar
+ 320 002e 00BF     		.section	.text.checkReceiveChar,"ax",%progbits
+ 321              		.align	2
+ 322              		.global	checkReceiveChar
+ 323              		.thumb
+ 324              		.thumb_func
+ 325              		.type	checkReceiveChar, %function
+ 326              	checkReceiveChar:
+ 327              	.LFB70:
+ 108:..\I2CSlave-01.cydsn/serialIO.c **** 
+ 109:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+ 110:..\I2CSlave-01.cydsn/serialIO.c **** // uint8 checkReceiveChar(void) - returns True if character present
+ 111:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+ 112:..\I2CSlave-01.cydsn/serialIO.c **** 
+ 113:..\I2CSlave-01.cydsn/serialIO.c **** enum CHAR_PRESENT checkReceiveChar(void)
+ 114:..\I2CSlave-01.cydsn/serialIO.c **** {
+ 328              		.loc 1 114 0
+ 329              		.cfi_startproc
+ 330              		@ args = 0, pretend = 0, frame = 8
+ 331              		@ frame_needed = 1, uses_anonymous_args = 0
+ 332 0000 80B5     		push	{r7, lr}
+ 333              		.cfi_def_cfa_offset 8
+ 334              		.cfi_offset 7, -8
+ 335              		.cfi_offset 14, -4
+ 336 0002 82B0     		sub	sp, sp, #8
+ 337              		.cfi_def_cfa_offset 16
+ 338 0004 00AF     		add	r7, sp, #0
+ 339              		.cfi_def_cfa_register 7
+ 115:..\I2CSlave-01.cydsn/serialIO.c ****     uint8 rxStat = UART_1_ReadRxStatus();
+ 340              		.loc 1 115 0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 9
+
+
+ 341 0006 FFF7FEFF 		bl	UART_1_ReadRxStatus
+ 342 000a 0346     		mov	r3, r0
+ 343 000c FB71     		strb	r3, [r7, #7]
+ 116:..\I2CSlave-01.cydsn/serialIO.c ****     if (rxStat & UART_1_RX_STS_FIFO_NOTEMPTY)
+ 344              		.loc 1 116 0
+ 345 000e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 346 0010 03F02003 		and	r3, r3, #32
+ 347 0014 002B     		cmp	r3, #0
+ 348 0016 01D0     		beq	.L16
+ 117:..\I2CSlave-01.cydsn/serialIO.c ****         return CHAR_IS_PRESENT;
+ 349              		.loc 1 117 0
+ 350 0018 0123     		movs	r3, #1
+ 351 001a 00E0     		b	.L17
+ 352              	.L16:
+ 118:..\I2CSlave-01.cydsn/serialIO.c ****     return NO_CHAR_PRESENT;
+ 353              		.loc 1 118 0
+ 354 001c 0023     		movs	r3, #0
+ 355              	.L17:
+ 119:..\I2CSlave-01.cydsn/serialIO.c **** }
+ 356              		.loc 1 119 0
+ 357 001e 1846     		mov	r0, r3
+ 358 0020 0837     		adds	r7, r7, #8
+ 359              		.cfi_def_cfa_offset 8
+ 360 0022 BD46     		mov	sp, r7
+ 361              		.cfi_def_cfa_register 13
+ 362              		@ sp needed
+ 363 0024 80BD     		pop	{r7, pc}
+ 364              		.cfi_endproc
+ 365              	.LFE70:
+ 366              		.size	checkReceiveChar, .-checkReceiveChar
+ 367 0026 00BF     		.section	.text.readLine,"ax",%progbits
+ 368              		.align	2
+ 369              		.global	readLine
+ 370              		.thumb
+ 371              		.thumb_func
+ 372              		.type	readLine, %function
+ 373              	readLine:
+ 374              	.LFB71:
+ 120:..\I2CSlave-01.cydsn/serialIO.c **** 
+ 121:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+ 122:..\I2CSlave-01.cydsn/serialIO.c **** // uint8 readLine(char * lineBuffer)
+ 123:..\I2CSlave-01.cydsn/serialIO.c **** ////////////////////////////////////////////////////////////////
+ 124:..\I2CSlave-01.cydsn/serialIO.c **** 
+ 125:..\I2CSlave-01.cydsn/serialIO.c **** uint8 readLine(char * lineBuffer)
+ 126:..\I2CSlave-01.cydsn/serialIO.c **** {
+ 375              		.loc 1 126 0
+ 376              		.cfi_startproc
+ 377              		@ args = 0, pretend = 0, frame = 24
+ 378              		@ frame_needed = 1, uses_anonymous_args = 0
+ 379 0000 80B5     		push	{r7, lr}
+ 380              		.cfi_def_cfa_offset 8
+ 381              		.cfi_offset 7, -8
+ 382              		.cfi_offset 14, -4
+ 383 0002 86B0     		sub	sp, sp, #24
+ 384              		.cfi_def_cfa_offset 32
+ 385 0004 00AF     		add	r7, sp, #0
+ 386              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 10
+
+
+ 387 0006 7860     		str	r0, [r7, #4]
+ 127:..\I2CSlave-01.cydsn/serialIO.c ****     uint8 byteCount=0;
+ 388              		.loc 1 127 0
+ 389 0008 0023     		movs	r3, #0
+ 390 000a FB75     		strb	r3, [r7, #23]
+ 128:..\I2CSlave-01.cydsn/serialIO.c ****     char * linePtr;
+ 129:..\I2CSlave-01.cydsn/serialIO.c ****     uint8 rxStat;
+ 130:..\I2CSlave-01.cydsn/serialIO.c ****     char8 rxChar;       /* Data received from the Serial port */
+ 131:..\I2CSlave-01.cydsn/serialIO.c ****     uint8 endOfLine = 0;
+ 391              		.loc 1 131 0
+ 392 000c 0023     		movs	r3, #0
+ 393 000e FB73     		strb	r3, [r7, #15]
+ 132:..\I2CSlave-01.cydsn/serialIO.c ****     linePtr = lineBuffer;
+ 394              		.loc 1 132 0
+ 395 0010 7B68     		ldr	r3, [r7, #4]
+ 396 0012 3B61     		str	r3, [r7, #16]
+ 397              	.L27:
+ 133:..\I2CSlave-01.cydsn/serialIO.c ****     do
+ 134:..\I2CSlave-01.cydsn/serialIO.c ****     {
+ 135:..\I2CSlave-01.cydsn/serialIO.c ****         rxStat = UART_1_ReadRxStatus(); 
+ 398              		.loc 1 135 0
+ 399 0014 FFF7FEFF 		bl	UART_1_ReadRxStatus
+ 400 0018 0346     		mov	r3, r0
+ 401 001a BB73     		strb	r3, [r7, #14]
+ 136:..\I2CSlave-01.cydsn/serialIO.c ****         if (rxStat & UART_1_RX_STS_FIFO_NOTEMPTY)
+ 402              		.loc 1 136 0
+ 403 001c BB7B     		ldrb	r3, [r7, #14]	@ zero_extendqisi2
+ 404 001e 03F02003 		and	r3, r3, #32
+ 405 0022 002B     		cmp	r3, #0
+ 406 0024 47D0     		beq	.L19
+ 137:..\I2CSlave-01.cydsn/serialIO.c ****         {
+ 138:..\I2CSlave-01.cydsn/serialIO.c ****             rxChar = UART_1_GetChar();
+ 407              		.loc 1 138 0
+ 408 0026 FFF7FEFF 		bl	UART_1_GetChar
+ 409 002a 0346     		mov	r3, r0
+ 410 002c 7B73     		strb	r3, [r7, #13]
+ 139:..\I2CSlave-01.cydsn/serialIO.c ****             if (rxChar == 0x0a || rxChar == 0x0d)
+ 411              		.loc 1 139 0
+ 412 002e 7B7B     		ldrb	r3, [r7, #13]	@ zero_extendqisi2
+ 413 0030 0A2B     		cmp	r3, #10
+ 414 0032 02D0     		beq	.L20
+ 415              		.loc 1 139 0 is_stmt 0 discriminator 1
+ 416 0034 7B7B     		ldrb	r3, [r7, #13]	@ zero_extendqisi2
+ 417 0036 0D2B     		cmp	r3, #13
+ 418 0038 0DD1     		bne	.L21
+ 419              	.L20:
+ 140:..\I2CSlave-01.cydsn/serialIO.c ****             {
+ 141:..\I2CSlave-01.cydsn/serialIO.c ****                 printSingleChar(rxChar);
+ 420              		.loc 1 141 0 is_stmt 1
+ 421 003a 7B7B     		ldrb	r3, [r7, #13]	@ zero_extendqisi2
+ 422 003c 1846     		mov	r0, r3
+ 423 003e FFF7FEFF 		bl	printSingleChar
+ 142:..\I2CSlave-01.cydsn/serialIO.c ****                 endOfLine = 1;
+ 424              		.loc 1 142 0
+ 425 0042 0123     		movs	r3, #1
+ 426 0044 FB73     		strb	r3, [r7, #15]
+ 143:..\I2CSlave-01.cydsn/serialIO.c ****                 *linePtr = 0;
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 11
+
+
+ 427              		.loc 1 143 0
+ 428 0046 3B69     		ldr	r3, [r7, #16]
+ 429 0048 0022     		movs	r2, #0
+ 430 004a 1A70     		strb	r2, [r3]
+ 144:..\I2CSlave-01.cydsn/serialIO.c ****                 byteCount++;
+ 431              		.loc 1 144 0
+ 432 004c FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ 433 004e 0133     		adds	r3, r3, #1
+ 434 0050 FB75     		strb	r3, [r7, #23]
+ 145:..\I2CSlave-01.cydsn/serialIO.c ****                 return byteCount;
+ 435              		.loc 1 145 0
+ 436 0052 FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ 437 0054 33E0     		b	.L22
+ 438              	.L21:
+ 146:..\I2CSlave-01.cydsn/serialIO.c ****             }
+ 147:..\I2CSlave-01.cydsn/serialIO.c ****             else if ((rxChar == 0x08) ||(rxChar == 0x7f))
+ 439              		.loc 1 147 0
+ 440 0056 7B7B     		ldrb	r3, [r7, #13]	@ zero_extendqisi2
+ 441 0058 082B     		cmp	r3, #8
+ 442 005a 02D0     		beq	.L23
+ 443              		.loc 1 147 0 is_stmt 0 discriminator 1
+ 444 005c 7B7B     		ldrb	r3, [r7, #13]	@ zero_extendqisi2
+ 445 005e 7F2B     		cmp	r3, #127
+ 446 0060 13D1     		bne	.L24
+ 447              	.L23:
+ 148:..\I2CSlave-01.cydsn/serialIO.c ****             {
+ 149:..\I2CSlave-01.cydsn/serialIO.c ****                 if (byteCount > 0)
+ 448              		.loc 1 149 0 is_stmt 1
+ 449 0062 FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ 450 0064 002B     		cmp	r3, #0
+ 451 0066 0FD0     		beq	.L25
+ 150:..\I2CSlave-01.cydsn/serialIO.c ****                 {
+ 151:..\I2CSlave-01.cydsn/serialIO.c ****                     printSingleChar(0x08);
+ 452              		.loc 1 151 0
+ 453 0068 0820     		movs	r0, #8
+ 454 006a FFF7FEFF 		bl	printSingleChar
+ 152:..\I2CSlave-01.cydsn/serialIO.c ****                     printSingleChar(' ');
+ 455              		.loc 1 152 0
+ 456 006e 2020     		movs	r0, #32
+ 457 0070 FFF7FEFF 		bl	printSingleChar
+ 153:..\I2CSlave-01.cydsn/serialIO.c ****                     printSingleChar(0x08);
+ 458              		.loc 1 153 0
+ 459 0074 0820     		movs	r0, #8
+ 460 0076 FFF7FEFF 		bl	printSingleChar
+ 154:..\I2CSlave-01.cydsn/serialIO.c ****                     linePtr--;
+ 461              		.loc 1 154 0
+ 462 007a 3B69     		ldr	r3, [r7, #16]
+ 463 007c 013B     		subs	r3, r3, #1
+ 464 007e 3B61     		str	r3, [r7, #16]
+ 155:..\I2CSlave-01.cydsn/serialIO.c ****                     byteCount--;
+ 465              		.loc 1 155 0
+ 466 0080 FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ 467 0082 013B     		subs	r3, r3, #1
+ 468 0084 FB75     		strb	r3, [r7, #23]
+ 149:..\I2CSlave-01.cydsn/serialIO.c ****                 {
+ 469              		.loc 1 149 0
+ 470 0086 16E0     		b	.L19
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 12
+
+
+ 471              	.L25:
+ 472 0088 15E0     		b	.L19
+ 473              	.L24:
+ 156:..\I2CSlave-01.cydsn/serialIO.c ****                 }
+ 157:..\I2CSlave-01.cydsn/serialIO.c ****             }
+ 158:..\I2CSlave-01.cydsn/serialIO.c ****             else if (byteCount > MAXLINELENGTH-2)
+ 474              		.loc 1 158 0
+ 475 008a FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ 476 008c 4E2B     		cmp	r3, #78
+ 477 008e 05D9     		bls	.L26
+ 159:..\I2CSlave-01.cydsn/serialIO.c ****             {
+ 160:..\I2CSlave-01.cydsn/serialIO.c ****                 endOfLine = 1;
+ 478              		.loc 1 160 0
+ 479 0090 0123     		movs	r3, #1
+ 480 0092 FB73     		strb	r3, [r7, #15]
+ 161:..\I2CSlave-01.cydsn/serialIO.c ****                 *linePtr = 0;
+ 481              		.loc 1 161 0
+ 482 0094 3B69     		ldr	r3, [r7, #16]
+ 483 0096 0022     		movs	r2, #0
+ 484 0098 1A70     		strb	r2, [r3]
+ 485 009a 0CE0     		b	.L19
+ 486              	.L26:
+ 162:..\I2CSlave-01.cydsn/serialIO.c ****             }
+ 163:..\I2CSlave-01.cydsn/serialIO.c ****             else
+ 164:..\I2CSlave-01.cydsn/serialIO.c ****             {
+ 165:..\I2CSlave-01.cydsn/serialIO.c ****                 printSingleChar(rxChar);
+ 487              		.loc 1 165 0
+ 488 009c 7B7B     		ldrb	r3, [r7, #13]	@ zero_extendqisi2
+ 489 009e 1846     		mov	r0, r3
+ 490 00a0 FFF7FEFF 		bl	printSingleChar
+ 166:..\I2CSlave-01.cydsn/serialIO.c ****                 *linePtr = rxChar;
+ 491              		.loc 1 166 0
+ 492 00a4 3B69     		ldr	r3, [r7, #16]
+ 493 00a6 7A7B     		ldrb	r2, [r7, #13]
+ 494 00a8 1A70     		strb	r2, [r3]
+ 167:..\I2CSlave-01.cydsn/serialIO.c ****                 linePtr++;
+ 495              		.loc 1 167 0
+ 496 00aa 3B69     		ldr	r3, [r7, #16]
+ 497 00ac 0133     		adds	r3, r3, #1
+ 498 00ae 3B61     		str	r3, [r7, #16]
+ 168:..\I2CSlave-01.cydsn/serialIO.c ****                 byteCount++;
+ 499              		.loc 1 168 0
+ 500 00b0 FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ 501 00b2 0133     		adds	r3, r3, #1
+ 502 00b4 FB75     		strb	r3, [r7, #23]
+ 503              	.L19:
+ 169:..\I2CSlave-01.cydsn/serialIO.c ****             }
+ 170:..\I2CSlave-01.cydsn/serialIO.c ****         }    
+ 171:..\I2CSlave-01.cydsn/serialIO.c ****     }
+ 172:..\I2CSlave-01.cydsn/serialIO.c ****     while(endOfLine == 0);
+ 504              		.loc 1 172 0
+ 505 00b6 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 506 00b8 002B     		cmp	r3, #0
+ 507 00ba ABD0     		beq	.L27
+ 173:..\I2CSlave-01.cydsn/serialIO.c ****     return byteCount;
+ 508              		.loc 1 173 0
+ 509 00bc FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 13
+
+
+ 510              	.L22:
+ 174:..\I2CSlave-01.cydsn/serialIO.c **** }
+ 511              		.loc 1 174 0
+ 512 00be 1846     		mov	r0, r3
+ 513 00c0 1837     		adds	r7, r7, #24
+ 514              		.cfi_def_cfa_offset 8
+ 515 00c2 BD46     		mov	sp, r7
+ 516              		.cfi_def_cfa_register 13
+ 517              		@ sp needed
+ 518 00c4 80BD     		pop	{r7, pc}
+ 519              		.cfi_endproc
+ 520              	.LFE71:
+ 521              		.size	readLine, .-readLine
+ 522 00c6 00BF     		.text
+ 523              	.Letext0:
+ 524              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 525              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 526              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 527              		.file 5 "..\\I2CSlave-01.cydsn\\serialIO.h"
+ 528              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
+ 529              		.section	.debug_info,"",%progbits
+ 530              	.Ldebug_info0:
+ 531 0000 11030000 		.4byte	0x311
+ 532 0004 0400     		.2byte	0x4
+ 533 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 534 000a 04       		.byte	0x4
+ 535 000b 01       		.uleb128 0x1
+ 536 000c 43000000 		.4byte	.LASF44
+ 537 0010 01       		.byte	0x1
+ 538 0011 DA000000 		.4byte	.LASF45
+ 539 0015 4D020000 		.4byte	.LASF46
+ 540 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 541 001d 00000000 		.4byte	0
+ 542 0021 00000000 		.4byte	.Ldebug_line0
+ 543 0025 02       		.uleb128 0x2
+ 544 0026 01       		.byte	0x1
+ 545 0027 06       		.byte	0x6
+ 546 0028 1A010000 		.4byte	.LASF0
+ 547 002c 03       		.uleb128 0x3
+ 548 002d 07000000 		.4byte	.LASF4
+ 549 0031 02       		.byte	0x2
+ 550 0032 1D       		.byte	0x1d
+ 551 0033 37000000 		.4byte	0x37
+ 552 0037 02       		.uleb128 0x2
+ 553 0038 01       		.byte	0x1
+ 554 0039 08       		.byte	0x8
+ 555 003a 76010000 		.4byte	.LASF1
+ 556 003e 02       		.uleb128 0x2
+ 557 003f 02       		.byte	0x2
+ 558 0040 05       		.byte	0x5
+ 559 0041 92010000 		.4byte	.LASF2
+ 560 0045 02       		.uleb128 0x2
+ 561 0046 02       		.byte	0x2
+ 562 0047 07       		.byte	0x7
+ 563 0048 D8020000 		.4byte	.LASF3
+ 564 004c 03       		.uleb128 0x3
+ 565 004d 1F000000 		.4byte	.LASF5
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 14
+
+
+ 566 0051 02       		.byte	0x2
+ 567 0052 3F       		.byte	0x3f
+ 568 0053 57000000 		.4byte	0x57
+ 569 0057 02       		.uleb128 0x2
+ 570 0058 04       		.byte	0x4
+ 571 0059 05       		.byte	0x5
+ 572 005a BE020000 		.4byte	.LASF6
+ 573 005e 03       		.uleb128 0x3
+ 574 005f 03010000 		.4byte	.LASF7
+ 575 0063 02       		.byte	0x2
+ 576 0064 41       		.byte	0x41
+ 577 0065 69000000 		.4byte	0x69
+ 578 0069 02       		.uleb128 0x2
+ 579 006a 04       		.byte	0x4
+ 580 006b 07       		.byte	0x7
+ 581 006c 3D010000 		.4byte	.LASF8
+ 582 0070 02       		.uleb128 0x2
+ 583 0071 08       		.byte	0x8
+ 584 0072 05       		.byte	0x5
+ 585 0073 F5010000 		.4byte	.LASF9
+ 586 0077 02       		.uleb128 0x2
+ 587 0078 08       		.byte	0x8
+ 588 0079 07       		.byte	0x7
+ 589 007a B8010000 		.4byte	.LASF10
+ 590 007e 04       		.uleb128 0x4
+ 591 007f 04       		.byte	0x4
+ 592 0080 05       		.byte	0x5
+ 593 0081 696E7400 		.ascii	"int\000"
+ 594 0085 02       		.uleb128 0x2
+ 595 0086 04       		.byte	0x4
+ 596 0087 07       		.byte	0x7
+ 597 0088 AB010000 		.4byte	.LASF11
+ 598 008c 03       		.uleb128 0x3
+ 599 008d CF010000 		.4byte	.LASF12
+ 600 0091 03       		.byte	0x3
+ 601 0092 15       		.byte	0x15
+ 602 0093 2C000000 		.4byte	0x2c
+ 603 0097 03       		.uleb128 0x3
+ 604 0098 E4010000 		.4byte	.LASF13
+ 605 009c 03       		.byte	0x3
+ 606 009d 2C       		.byte	0x2c
+ 607 009e 4C000000 		.4byte	0x4c
+ 608 00a2 03       		.uleb128 0x3
+ 609 00a3 B5020000 		.4byte	.LASF14
+ 610 00a7 03       		.byte	0x3
+ 611 00a8 2D       		.byte	0x2d
+ 612 00a9 5E000000 		.4byte	0x5e
+ 613 00ad 05       		.uleb128 0x5
+ 614 00ae AF020000 		.4byte	.LASF15
+ 615 00b2 04       		.byte	0x4
+ 616 00b3 9201     		.2byte	0x192
+ 617 00b5 37000000 		.4byte	0x37
+ 618 00b9 05       		.uleb128 0x5
+ 619 00ba A4010000 		.4byte	.LASF16
+ 620 00be 04       		.byte	0x4
+ 621 00bf 9401     		.2byte	0x194
+ 622 00c1 69000000 		.4byte	0x69
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 15
+
+
+ 623 00c5 02       		.uleb128 0x2
+ 624 00c6 04       		.byte	0x4
+ 625 00c7 04       		.byte	0x4
+ 626 00c8 0E010000 		.4byte	.LASF17
+ 627 00cc 02       		.uleb128 0x2
+ 628 00cd 08       		.byte	0x8
+ 629 00ce 04       		.byte	0x4
+ 630 00cf 8B010000 		.4byte	.LASF18
+ 631 00d3 05       		.uleb128 0x5
+ 632 00d4 37010000 		.4byte	.LASF19
+ 633 00d8 04       		.byte	0x4
+ 634 00d9 A301     		.2byte	0x1a3
+ 635 00db DF000000 		.4byte	0xdf
+ 636 00df 02       		.uleb128 0x2
+ 637 00e0 01       		.byte	0x1
+ 638 00e1 08       		.byte	0x8
+ 639 00e2 17020000 		.4byte	.LASF20
+ 640 00e6 02       		.uleb128 0x2
+ 641 00e7 04       		.byte	0x4
+ 642 00e8 07       		.byte	0x7
+ 643 00e9 EC010000 		.4byte	.LASF21
+ 644 00ed 06       		.uleb128 0x6
+ 645 00ee 04       		.byte	0x4
+ 646 00ef DF000000 		.4byte	0xdf
+ 647 00f3 07       		.uleb128 0x7
+ 648 00f4 03020000 		.4byte	.LASF47
+ 649 00f8 01       		.byte	0x1
+ 650 00f9 05       		.byte	0x5
+ 651 00fa 14       		.byte	0x14
+ 652 00fb 0C010000 		.4byte	0x10c
+ 653 00ff 08       		.uleb128 0x8
+ 654 0100 29000000 		.4byte	.LASF22
+ 655 0104 00       		.sleb128 0
+ 656 0105 08       		.uleb128 0x8
+ 657 0106 1C020000 		.4byte	.LASF23
+ 658 010a 01       		.sleb128 1
+ 659 010b 00       		.byte	0
+ 660 010c 09       		.uleb128 0x9
+ 661 010d 57010000 		.4byte	.LASF48
+ 662 0111 01       		.byte	0x1
+ 663 0112 16       		.byte	0x16
+ 664 0113 00000000 		.4byte	.LFB63
+ 665 0117 0A000000 		.4byte	.LFE63-.LFB63
+ 666 011b 01       		.uleb128 0x1
+ 667 011c 9C       		.byte	0x9c
+ 668 011d 0A       		.uleb128 0xa
+ 669 011e 2C020000 		.4byte	.LASF24
+ 670 0122 01       		.byte	0x1
+ 671 0123 1F       		.byte	0x1f
+ 672 0124 00000000 		.4byte	.LFB64
+ 673 0128 2A000000 		.4byte	.LFE64-.LFB64
+ 674 012c 01       		.uleb128 0x1
+ 675 012d 9C       		.byte	0x9c
+ 676 012e 4F010000 		.4byte	0x14f
+ 677 0132 0B       		.uleb128 0xb
+ 678 0133 84010000 		.4byte	.LASF26
+ 679 0137 01       		.byte	0x1
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 16
+
+
+ 680 0138 1F       		.byte	0x1f
+ 681 0139 D3000000 		.4byte	0xd3
+ 682 013d 02       		.uleb128 0x2
+ 683 013e 91       		.byte	0x91
+ 684 013f 6F       		.sleb128 -17
+ 685 0140 0C       		.uleb128 0xc
+ 686 0141 00000000 		.4byte	.LASF28
+ 687 0145 01       		.byte	0x1
+ 688 0146 21       		.byte	0x21
+ 689 0147 AD000000 		.4byte	0xad
+ 690 014b 02       		.uleb128 0x2
+ 691 014c 91       		.byte	0x91
+ 692 014d 77       		.sleb128 -9
+ 693 014e 00       		.byte	0
+ 694 014f 0A       		.uleb128 0xa
+ 695 0150 F3020000 		.4byte	.LASF25
+ 696 0154 01       		.byte	0x1
+ 697 0155 2E       		.byte	0x2e
+ 698 0156 00000000 		.4byte	.LFB65
+ 699 015a 2A000000 		.4byte	.LFE65-.LFB65
+ 700 015e 01       		.uleb128 0x1
+ 701 015f 9C       		.byte	0x9c
+ 702 0160 81010000 		.4byte	0x181
+ 703 0164 0B       		.uleb128 0xb
+ 704 0165 CD020000 		.4byte	.LASF27
+ 705 0169 01       		.byte	0x1
+ 706 016a 2E       		.byte	0x2e
+ 707 016b ED000000 		.4byte	0xed
+ 708 016f 02       		.uleb128 0x2
+ 709 0170 91       		.byte	0x91
+ 710 0171 6C       		.sleb128 -20
+ 711 0172 0C       		.uleb128 0xc
+ 712 0173 EB020000 		.4byte	.LASF29
+ 713 0177 01       		.byte	0x1
+ 714 0178 30       		.byte	0x30
+ 715 0179 ED000000 		.4byte	0xed
+ 716 017d 02       		.uleb128 0x2
+ 717 017e 91       		.byte	0x91
+ 718 017f 74       		.sleb128 -12
+ 719 0180 00       		.byte	0
+ 720 0181 0A       		.uleb128 0xa
+ 721 0182 26010000 		.4byte	.LASF30
+ 722 0186 01       		.byte	0x1
+ 723 0187 3A       		.byte	0x3a
+ 724 0188 00000000 		.4byte	.LFB66
+ 725 018c 20000000 		.4byte	.LFE66-.LFB66
+ 726 0190 01       		.uleb128 0x1
+ 727 0191 9C       		.byte	0x9c
+ 728 0192 A5010000 		.4byte	0x1a5
+ 729 0196 0B       		.uleb128 0xb
+ 730 0197 CD020000 		.4byte	.LASF27
+ 731 019b 01       		.byte	0x1
+ 732 019c 3A       		.byte	0x3a
+ 733 019d ED000000 		.4byte	0xed
+ 734 01a1 02       		.uleb128 0x2
+ 735 01a2 91       		.byte	0x91
+ 736 01a3 74       		.sleb128 -12
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 17
+
+
+ 737 01a4 00       		.byte	0
+ 738 01a5 0A       		.uleb128 0xa
+ 739 01a6 62010000 		.4byte	.LASF31
+ 740 01aa 01       		.byte	0x1
+ 741 01ab 45       		.byte	0x45
+ 742 01ac 00000000 		.4byte	.LFB67
+ 743 01b0 24000000 		.4byte	.LFE67-.LFB67
+ 744 01b4 01       		.uleb128 0x1
+ 745 01b5 9C       		.byte	0x9c
+ 746 01b6 D7010000 		.4byte	0x1d7
+ 747 01ba 0B       		.uleb128 0xb
+ 748 01bb 14010000 		.4byte	.LASF32
+ 749 01bf 01       		.byte	0x1
+ 750 01c0 45       		.byte	0x45
+ 751 01c1 B9000000 		.4byte	0xb9
+ 752 01c5 02       		.uleb128 0x2
+ 753 01c6 91       		.byte	0x91
+ 754 01c7 64       		.sleb128 -28
+ 755 01c8 0C       		.uleb128 0xc
+ 756 01c9 4F010000 		.4byte	.LASF33
+ 757 01cd 01       		.byte	0x1
+ 758 01ce 47       		.byte	0x47
+ 759 01cf D7010000 		.4byte	0x1d7
+ 760 01d3 02       		.uleb128 0x2
+ 761 01d4 91       		.byte	0x91
+ 762 01d5 6C       		.sleb128 -20
+ 763 01d6 00       		.byte	0
+ 764 01d7 0D       		.uleb128 0xd
+ 765 01d8 DF000000 		.4byte	0xdf
+ 766 01dc E7010000 		.4byte	0x1e7
+ 767 01e0 0E       		.uleb128 0xe
+ 768 01e1 E6000000 		.4byte	0xe6
+ 769 01e5 08       		.byte	0x8
+ 770 01e6 00       		.byte	0
+ 771 01e7 0A       		.uleb128 0xa
+ 772 01e8 FA000000 		.4byte	.LASF34
+ 773 01ec 01       		.byte	0x1
+ 774 01ed 50       		.byte	0x50
+ 775 01ee 00000000 		.4byte	.LFB68
+ 776 01f2 30000000 		.4byte	.LFE68-.LFB68
+ 777 01f6 01       		.uleb128 0x1
+ 778 01f7 9C       		.byte	0x9c
+ 779 01f8 27020000 		.4byte	0x227
+ 780 01fc 0B       		.uleb128 0xb
+ 781 01fd C7020000 		.4byte	.LASF35
+ 782 0201 01       		.byte	0x1
+ 783 0202 50       		.byte	0x50
+ 784 0203 8C000000 		.4byte	0x8c
+ 785 0207 02       		.uleb128 0x2
+ 786 0208 91       		.byte	0x91
+ 787 0209 67       		.sleb128 -25
+ 788 020a 0C       		.uleb128 0xc
+ 789 020b 9C010000 		.4byte	.LASF36
+ 790 020f 01       		.byte	0x1
+ 791 0210 52       		.byte	0x52
+ 792 0211 27020000 		.4byte	0x227
+ 793 0215 02       		.uleb128 0x2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 18
+
+
+ 794 0216 91       		.byte	0x91
+ 795 0217 74       		.sleb128 -12
+ 796 0218 0C       		.uleb128 0xc
+ 797 0219 4F010000 		.4byte	.LASF33
+ 798 021d 01       		.byte	0x1
+ 799 021e 53       		.byte	0x53
+ 800 021f D7010000 		.4byte	0x1d7
+ 801 0223 02       		.uleb128 0x2
+ 802 0224 91       		.byte	0x91
+ 803 0225 68       		.sleb128 -24
+ 804 0226 00       		.byte	0
+ 805 0227 0D       		.uleb128 0xd
+ 806 0228 DF000000 		.4byte	0xdf
+ 807 022c 37020000 		.4byte	0x237
+ 808 0230 0E       		.uleb128 0xe
+ 809 0231 E6000000 		.4byte	0xe6
+ 810 0235 01       		.byte	0x1
+ 811 0236 00       		.byte	0
+ 812 0237 0F       		.uleb128 0xf
+ 813 0238 11000000 		.4byte	.LASF39
+ 814 023c 01       		.byte	0x1
+ 815 023d 5E       		.byte	0x5e
+ 816 023e D3000000 		.4byte	0xd3
+ 817 0242 00000000 		.4byte	.LFB69
+ 818 0246 2E000000 		.4byte	.LFE69-.LFB69
+ 819 024a 01       		.uleb128 0x1
+ 820 024b 9C       		.byte	0x9c
+ 821 024c 6D020000 		.4byte	0x26d
+ 822 0250 0C       		.uleb128 0xc
+ 823 0251 30010000 		.4byte	.LASF37
+ 824 0255 01       		.byte	0x1
+ 825 0256 60       		.byte	0x60
+ 826 0257 AD000000 		.4byte	0xad
+ 827 025b 02       		.uleb128 0x2
+ 828 025c 91       		.byte	0x91
+ 829 025d 77       		.sleb128 -9
+ 830 025e 0C       		.uleb128 0xc
+ 831 025f 10020000 		.4byte	.LASF38
+ 832 0263 01       		.byte	0x1
+ 833 0264 61       		.byte	0x61
+ 834 0265 D3000000 		.4byte	0xd3
+ 835 0269 02       		.uleb128 0x2
+ 836 026a 91       		.byte	0x91
+ 837 026b 76       		.sleb128 -10
+ 838 026c 00       		.byte	0
+ 839 026d 0F       		.uleb128 0xf
+ 840 026e 3C020000 		.4byte	.LASF40
+ 841 0272 01       		.byte	0x1
+ 842 0273 71       		.byte	0x71
+ 843 0274 F3000000 		.4byte	0xf3
+ 844 0278 00000000 		.4byte	.LFB70
+ 845 027c 26000000 		.4byte	.LFE70-.LFB70
+ 846 0280 01       		.uleb128 0x1
+ 847 0281 9C       		.byte	0x9c
+ 848 0282 95020000 		.4byte	0x295
+ 849 0286 0C       		.uleb128 0xc
+ 850 0287 30010000 		.4byte	.LASF37
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 19
+
+
+ 851 028b 01       		.byte	0x1
+ 852 028c 73       		.byte	0x73
+ 853 028d AD000000 		.4byte	0xad
+ 854 0291 02       		.uleb128 0x2
+ 855 0292 91       		.byte	0x91
+ 856 0293 77       		.sleb128 -9
+ 857 0294 00       		.byte	0
+ 858 0295 0F       		.uleb128 0xf
+ 859 0296 D1000000 		.4byte	.LASF41
+ 860 029a 01       		.byte	0x1
+ 861 029b 7D       		.byte	0x7d
+ 862 029c AD000000 		.4byte	0xad
+ 863 02a0 00000000 		.4byte	.LFB71
+ 864 02a4 C6000000 		.4byte	.LFE71-.LFB71
+ 865 02a8 01       		.uleb128 0x1
+ 866 02a9 9C       		.byte	0x9c
+ 867 02aa 03030000 		.4byte	0x303
+ 868 02ae 0B       		.uleb128 0xb
+ 869 02af CD020000 		.4byte	.LASF27
+ 870 02b3 01       		.byte	0x1
+ 871 02b4 7D       		.byte	0x7d
+ 872 02b5 ED000000 		.4byte	0xed
+ 873 02b9 02       		.uleb128 0x2
+ 874 02ba 91       		.byte	0x91
+ 875 02bb 64       		.sleb128 -28
+ 876 02bc 0C       		.uleb128 0xc
+ 877 02bd 6C010000 		.4byte	.LASF42
+ 878 02c1 01       		.byte	0x1
+ 879 02c2 7F       		.byte	0x7f
+ 880 02c3 AD000000 		.4byte	0xad
+ 881 02c7 02       		.uleb128 0x2
+ 882 02c8 91       		.byte	0x91
+ 883 02c9 77       		.sleb128 -9
+ 884 02ca 0C       		.uleb128 0xc
+ 885 02cb EB020000 		.4byte	.LASF29
+ 886 02cf 01       		.byte	0x1
+ 887 02d0 80       		.byte	0x80
+ 888 02d1 ED000000 		.4byte	0xed
+ 889 02d5 02       		.uleb128 0x2
+ 890 02d6 91       		.byte	0x91
+ 891 02d7 70       		.sleb128 -16
+ 892 02d8 0C       		.uleb128 0xc
+ 893 02d9 30010000 		.4byte	.LASF37
+ 894 02dd 01       		.byte	0x1
+ 895 02de 81       		.byte	0x81
+ 896 02df AD000000 		.4byte	0xad
+ 897 02e3 02       		.uleb128 0x2
+ 898 02e4 91       		.byte	0x91
+ 899 02e5 6E       		.sleb128 -18
+ 900 02e6 0C       		.uleb128 0xc
+ 901 02e7 10020000 		.4byte	.LASF38
+ 902 02eb 01       		.byte	0x1
+ 903 02ec 82       		.byte	0x82
+ 904 02ed D3000000 		.4byte	0xd3
+ 905 02f1 02       		.uleb128 0x2
+ 906 02f2 91       		.byte	0x91
+ 907 02f3 6D       		.sleb128 -19
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 20
+
+
+ 908 02f4 0C       		.uleb128 0xc
+ 909 02f5 39000000 		.4byte	.LASF43
+ 910 02f9 01       		.byte	0x1
+ 911 02fa 83       		.byte	0x83
+ 912 02fb AD000000 		.4byte	0xad
+ 913 02ff 02       		.uleb128 0x2
+ 914 0300 91       		.byte	0x91
+ 915 0301 6F       		.sleb128 -17
+ 916 0302 00       		.byte	0
+ 917 0303 10       		.uleb128 0x10
+ 918 0304 D7010000 		.4byte	.LASF49
+ 919 0308 06       		.byte	0x6
+ 920 0309 9606     		.2byte	0x696
+ 921 030b 0F030000 		.4byte	0x30f
+ 922 030f 11       		.uleb128 0x11
+ 923 0310 97000000 		.4byte	0x97
+ 924 0314 00       		.byte	0
+ 925              		.section	.debug_abbrev,"",%progbits
+ 926              	.Ldebug_abbrev0:
+ 927 0000 01       		.uleb128 0x1
+ 928 0001 11       		.uleb128 0x11
+ 929 0002 01       		.byte	0x1
+ 930 0003 25       		.uleb128 0x25
+ 931 0004 0E       		.uleb128 0xe
+ 932 0005 13       		.uleb128 0x13
+ 933 0006 0B       		.uleb128 0xb
+ 934 0007 03       		.uleb128 0x3
+ 935 0008 0E       		.uleb128 0xe
+ 936 0009 1B       		.uleb128 0x1b
+ 937 000a 0E       		.uleb128 0xe
+ 938 000b 55       		.uleb128 0x55
+ 939 000c 17       		.uleb128 0x17
+ 940 000d 11       		.uleb128 0x11
+ 941 000e 01       		.uleb128 0x1
+ 942 000f 10       		.uleb128 0x10
+ 943 0010 17       		.uleb128 0x17
+ 944 0011 00       		.byte	0
+ 945 0012 00       		.byte	0
+ 946 0013 02       		.uleb128 0x2
+ 947 0014 24       		.uleb128 0x24
+ 948 0015 00       		.byte	0
+ 949 0016 0B       		.uleb128 0xb
+ 950 0017 0B       		.uleb128 0xb
+ 951 0018 3E       		.uleb128 0x3e
+ 952 0019 0B       		.uleb128 0xb
+ 953 001a 03       		.uleb128 0x3
+ 954 001b 0E       		.uleb128 0xe
+ 955 001c 00       		.byte	0
+ 956 001d 00       		.byte	0
+ 957 001e 03       		.uleb128 0x3
+ 958 001f 16       		.uleb128 0x16
+ 959 0020 00       		.byte	0
+ 960 0021 03       		.uleb128 0x3
+ 961 0022 0E       		.uleb128 0xe
+ 962 0023 3A       		.uleb128 0x3a
+ 963 0024 0B       		.uleb128 0xb
+ 964 0025 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 21
+
+
+ 965 0026 0B       		.uleb128 0xb
+ 966 0027 49       		.uleb128 0x49
+ 967 0028 13       		.uleb128 0x13
+ 968 0029 00       		.byte	0
+ 969 002a 00       		.byte	0
+ 970 002b 04       		.uleb128 0x4
+ 971 002c 24       		.uleb128 0x24
+ 972 002d 00       		.byte	0
+ 973 002e 0B       		.uleb128 0xb
+ 974 002f 0B       		.uleb128 0xb
+ 975 0030 3E       		.uleb128 0x3e
+ 976 0031 0B       		.uleb128 0xb
+ 977 0032 03       		.uleb128 0x3
+ 978 0033 08       		.uleb128 0x8
+ 979 0034 00       		.byte	0
+ 980 0035 00       		.byte	0
+ 981 0036 05       		.uleb128 0x5
+ 982 0037 16       		.uleb128 0x16
+ 983 0038 00       		.byte	0
+ 984 0039 03       		.uleb128 0x3
+ 985 003a 0E       		.uleb128 0xe
+ 986 003b 3A       		.uleb128 0x3a
+ 987 003c 0B       		.uleb128 0xb
+ 988 003d 3B       		.uleb128 0x3b
+ 989 003e 05       		.uleb128 0x5
+ 990 003f 49       		.uleb128 0x49
+ 991 0040 13       		.uleb128 0x13
+ 992 0041 00       		.byte	0
+ 993 0042 00       		.byte	0
+ 994 0043 06       		.uleb128 0x6
+ 995 0044 0F       		.uleb128 0xf
+ 996 0045 00       		.byte	0
+ 997 0046 0B       		.uleb128 0xb
+ 998 0047 0B       		.uleb128 0xb
+ 999 0048 49       		.uleb128 0x49
+ 1000 0049 13       		.uleb128 0x13
+ 1001 004a 00       		.byte	0
+ 1002 004b 00       		.byte	0
+ 1003 004c 07       		.uleb128 0x7
+ 1004 004d 04       		.uleb128 0x4
+ 1005 004e 01       		.byte	0x1
+ 1006 004f 03       		.uleb128 0x3
+ 1007 0050 0E       		.uleb128 0xe
+ 1008 0051 0B       		.uleb128 0xb
+ 1009 0052 0B       		.uleb128 0xb
+ 1010 0053 3A       		.uleb128 0x3a
+ 1011 0054 0B       		.uleb128 0xb
+ 1012 0055 3B       		.uleb128 0x3b
+ 1013 0056 0B       		.uleb128 0xb
+ 1014 0057 01       		.uleb128 0x1
+ 1015 0058 13       		.uleb128 0x13
+ 1016 0059 00       		.byte	0
+ 1017 005a 00       		.byte	0
+ 1018 005b 08       		.uleb128 0x8
+ 1019 005c 28       		.uleb128 0x28
+ 1020 005d 00       		.byte	0
+ 1021 005e 03       		.uleb128 0x3
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 22
+
+
+ 1022 005f 0E       		.uleb128 0xe
+ 1023 0060 1C       		.uleb128 0x1c
+ 1024 0061 0D       		.uleb128 0xd
+ 1025 0062 00       		.byte	0
+ 1026 0063 00       		.byte	0
+ 1027 0064 09       		.uleb128 0x9
+ 1028 0065 2E       		.uleb128 0x2e
+ 1029 0066 00       		.byte	0
+ 1030 0067 3F       		.uleb128 0x3f
+ 1031 0068 19       		.uleb128 0x19
+ 1032 0069 03       		.uleb128 0x3
+ 1033 006a 0E       		.uleb128 0xe
+ 1034 006b 3A       		.uleb128 0x3a
+ 1035 006c 0B       		.uleb128 0xb
+ 1036 006d 3B       		.uleb128 0x3b
+ 1037 006e 0B       		.uleb128 0xb
+ 1038 006f 27       		.uleb128 0x27
+ 1039 0070 19       		.uleb128 0x19
+ 1040 0071 11       		.uleb128 0x11
+ 1041 0072 01       		.uleb128 0x1
+ 1042 0073 12       		.uleb128 0x12
+ 1043 0074 06       		.uleb128 0x6
+ 1044 0075 40       		.uleb128 0x40
+ 1045 0076 18       		.uleb128 0x18
+ 1046 0077 9642     		.uleb128 0x2116
+ 1047 0079 19       		.uleb128 0x19
+ 1048 007a 00       		.byte	0
+ 1049 007b 00       		.byte	0
+ 1050 007c 0A       		.uleb128 0xa
+ 1051 007d 2E       		.uleb128 0x2e
+ 1052 007e 01       		.byte	0x1
+ 1053 007f 3F       		.uleb128 0x3f
+ 1054 0080 19       		.uleb128 0x19
+ 1055 0081 03       		.uleb128 0x3
+ 1056 0082 0E       		.uleb128 0xe
+ 1057 0083 3A       		.uleb128 0x3a
+ 1058 0084 0B       		.uleb128 0xb
+ 1059 0085 3B       		.uleb128 0x3b
+ 1060 0086 0B       		.uleb128 0xb
+ 1061 0087 27       		.uleb128 0x27
+ 1062 0088 19       		.uleb128 0x19
+ 1063 0089 11       		.uleb128 0x11
+ 1064 008a 01       		.uleb128 0x1
+ 1065 008b 12       		.uleb128 0x12
+ 1066 008c 06       		.uleb128 0x6
+ 1067 008d 40       		.uleb128 0x40
+ 1068 008e 18       		.uleb128 0x18
+ 1069 008f 9642     		.uleb128 0x2116
+ 1070 0091 19       		.uleb128 0x19
+ 1071 0092 01       		.uleb128 0x1
+ 1072 0093 13       		.uleb128 0x13
+ 1073 0094 00       		.byte	0
+ 1074 0095 00       		.byte	0
+ 1075 0096 0B       		.uleb128 0xb
+ 1076 0097 05       		.uleb128 0x5
+ 1077 0098 00       		.byte	0
+ 1078 0099 03       		.uleb128 0x3
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 23
+
+
+ 1079 009a 0E       		.uleb128 0xe
+ 1080 009b 3A       		.uleb128 0x3a
+ 1081 009c 0B       		.uleb128 0xb
+ 1082 009d 3B       		.uleb128 0x3b
+ 1083 009e 0B       		.uleb128 0xb
+ 1084 009f 49       		.uleb128 0x49
+ 1085 00a0 13       		.uleb128 0x13
+ 1086 00a1 02       		.uleb128 0x2
+ 1087 00a2 18       		.uleb128 0x18
+ 1088 00a3 00       		.byte	0
+ 1089 00a4 00       		.byte	0
+ 1090 00a5 0C       		.uleb128 0xc
+ 1091 00a6 34       		.uleb128 0x34
+ 1092 00a7 00       		.byte	0
+ 1093 00a8 03       		.uleb128 0x3
+ 1094 00a9 0E       		.uleb128 0xe
+ 1095 00aa 3A       		.uleb128 0x3a
+ 1096 00ab 0B       		.uleb128 0xb
+ 1097 00ac 3B       		.uleb128 0x3b
+ 1098 00ad 0B       		.uleb128 0xb
+ 1099 00ae 49       		.uleb128 0x49
+ 1100 00af 13       		.uleb128 0x13
+ 1101 00b0 02       		.uleb128 0x2
+ 1102 00b1 18       		.uleb128 0x18
+ 1103 00b2 00       		.byte	0
+ 1104 00b3 00       		.byte	0
+ 1105 00b4 0D       		.uleb128 0xd
+ 1106 00b5 01       		.uleb128 0x1
+ 1107 00b6 01       		.byte	0x1
+ 1108 00b7 49       		.uleb128 0x49
+ 1109 00b8 13       		.uleb128 0x13
+ 1110 00b9 01       		.uleb128 0x1
+ 1111 00ba 13       		.uleb128 0x13
+ 1112 00bb 00       		.byte	0
+ 1113 00bc 00       		.byte	0
+ 1114 00bd 0E       		.uleb128 0xe
+ 1115 00be 21       		.uleb128 0x21
+ 1116 00bf 00       		.byte	0
+ 1117 00c0 49       		.uleb128 0x49
+ 1118 00c1 13       		.uleb128 0x13
+ 1119 00c2 2F       		.uleb128 0x2f
+ 1120 00c3 0B       		.uleb128 0xb
+ 1121 00c4 00       		.byte	0
+ 1122 00c5 00       		.byte	0
+ 1123 00c6 0F       		.uleb128 0xf
+ 1124 00c7 2E       		.uleb128 0x2e
+ 1125 00c8 01       		.byte	0x1
+ 1126 00c9 3F       		.uleb128 0x3f
+ 1127 00ca 19       		.uleb128 0x19
+ 1128 00cb 03       		.uleb128 0x3
+ 1129 00cc 0E       		.uleb128 0xe
+ 1130 00cd 3A       		.uleb128 0x3a
+ 1131 00ce 0B       		.uleb128 0xb
+ 1132 00cf 3B       		.uleb128 0x3b
+ 1133 00d0 0B       		.uleb128 0xb
+ 1134 00d1 27       		.uleb128 0x27
+ 1135 00d2 19       		.uleb128 0x19
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 24
+
+
+ 1136 00d3 49       		.uleb128 0x49
+ 1137 00d4 13       		.uleb128 0x13
+ 1138 00d5 11       		.uleb128 0x11
+ 1139 00d6 01       		.uleb128 0x1
+ 1140 00d7 12       		.uleb128 0x12
+ 1141 00d8 06       		.uleb128 0x6
+ 1142 00d9 40       		.uleb128 0x40
+ 1143 00da 18       		.uleb128 0x18
+ 1144 00db 9642     		.uleb128 0x2116
+ 1145 00dd 19       		.uleb128 0x19
+ 1146 00de 01       		.uleb128 0x1
+ 1147 00df 13       		.uleb128 0x13
+ 1148 00e0 00       		.byte	0
+ 1149 00e1 00       		.byte	0
+ 1150 00e2 10       		.uleb128 0x10
+ 1151 00e3 34       		.uleb128 0x34
+ 1152 00e4 00       		.byte	0
+ 1153 00e5 03       		.uleb128 0x3
+ 1154 00e6 0E       		.uleb128 0xe
+ 1155 00e7 3A       		.uleb128 0x3a
+ 1156 00e8 0B       		.uleb128 0xb
+ 1157 00e9 3B       		.uleb128 0x3b
+ 1158 00ea 05       		.uleb128 0x5
+ 1159 00eb 49       		.uleb128 0x49
+ 1160 00ec 13       		.uleb128 0x13
+ 1161 00ed 3F       		.uleb128 0x3f
+ 1162 00ee 19       		.uleb128 0x19
+ 1163 00ef 3C       		.uleb128 0x3c
+ 1164 00f0 19       		.uleb128 0x19
+ 1165 00f1 00       		.byte	0
+ 1166 00f2 00       		.byte	0
+ 1167 00f3 11       		.uleb128 0x11
+ 1168 00f4 35       		.uleb128 0x35
+ 1169 00f5 00       		.byte	0
+ 1170 00f6 49       		.uleb128 0x49
+ 1171 00f7 13       		.uleb128 0x13
+ 1172 00f8 00       		.byte	0
+ 1173 00f9 00       		.byte	0
+ 1174 00fa 00       		.byte	0
+ 1175              		.section	.debug_aranges,"",%progbits
+ 1176 0000 5C000000 		.4byte	0x5c
+ 1177 0004 0200     		.2byte	0x2
+ 1178 0006 00000000 		.4byte	.Ldebug_info0
+ 1179 000a 04       		.byte	0x4
+ 1180 000b 00       		.byte	0
+ 1181 000c 0000     		.2byte	0
+ 1182 000e 0000     		.2byte	0
+ 1183 0010 00000000 		.4byte	.LFB63
+ 1184 0014 0A000000 		.4byte	.LFE63-.LFB63
+ 1185 0018 00000000 		.4byte	.LFB64
+ 1186 001c 2A000000 		.4byte	.LFE64-.LFB64
+ 1187 0020 00000000 		.4byte	.LFB65
+ 1188 0024 2A000000 		.4byte	.LFE65-.LFB65
+ 1189 0028 00000000 		.4byte	.LFB66
+ 1190 002c 20000000 		.4byte	.LFE66-.LFB66
+ 1191 0030 00000000 		.4byte	.LFB67
+ 1192 0034 24000000 		.4byte	.LFE67-.LFB67
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 25
+
+
+ 1193 0038 00000000 		.4byte	.LFB68
+ 1194 003c 30000000 		.4byte	.LFE68-.LFB68
+ 1195 0040 00000000 		.4byte	.LFB69
+ 1196 0044 2E000000 		.4byte	.LFE69-.LFB69
+ 1197 0048 00000000 		.4byte	.LFB70
+ 1198 004c 26000000 		.4byte	.LFE70-.LFB70
+ 1199 0050 00000000 		.4byte	.LFB71
+ 1200 0054 C6000000 		.4byte	.LFE71-.LFB71
+ 1201 0058 00000000 		.4byte	0
+ 1202 005c 00000000 		.4byte	0
+ 1203              		.section	.debug_ranges,"",%progbits
+ 1204              	.Ldebug_ranges0:
+ 1205 0000 00000000 		.4byte	.LFB63
+ 1206 0004 0A000000 		.4byte	.LFE63
+ 1207 0008 00000000 		.4byte	.LFB64
+ 1208 000c 2A000000 		.4byte	.LFE64
+ 1209 0010 00000000 		.4byte	.LFB65
+ 1210 0014 2A000000 		.4byte	.LFE65
+ 1211 0018 00000000 		.4byte	.LFB66
+ 1212 001c 20000000 		.4byte	.LFE66
+ 1213 0020 00000000 		.4byte	.LFB67
+ 1214 0024 24000000 		.4byte	.LFE67
+ 1215 0028 00000000 		.4byte	.LFB68
+ 1216 002c 30000000 		.4byte	.LFE68
+ 1217 0030 00000000 		.4byte	.LFB69
+ 1218 0034 2E000000 		.4byte	.LFE69
+ 1219 0038 00000000 		.4byte	.LFB70
+ 1220 003c 26000000 		.4byte	.LFE70
+ 1221 0040 00000000 		.4byte	.LFB71
+ 1222 0044 C6000000 		.4byte	.LFE71
+ 1223 0048 00000000 		.4byte	0
+ 1224 004c 00000000 		.4byte	0
+ 1225              		.section	.debug_line,"",%progbits
+ 1226              	.Ldebug_line0:
+ 1227 0000 5E020000 		.section	.debug_str,"MS",%progbits,1
+ 1227      02006E01 
+ 1227      00000201 
+ 1227      FB0E0D00 
+ 1227      01010101 
+ 1228              	.LASF28:
+ 1229 0000 74785374 		.ascii	"txStat\000"
+ 1229      617400
+ 1230              	.LASF4:
+ 1231 0007 5F5F7569 		.ascii	"__uint8_t\000"
+ 1231      6E74385F 
+ 1231      7400
+ 1232              	.LASF39:
+ 1233 0011 67657453 		.ascii	"getSingleChar\000"
+ 1233      696E676C 
+ 1233      65436861 
+ 1233      7200
+ 1234              	.LASF5:
+ 1235 001f 5F5F696E 		.ascii	"__int32_t\000"
+ 1235      7433325F 
+ 1235      7400
+ 1236              	.LASF22:
+ 1237 0029 4E4F5F43 		.ascii	"NO_CHAR_PRESENT\000"
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 26
+
+
+ 1237      4841525F 
+ 1237      50524553 
+ 1237      454E5400 
+ 1238              	.LASF43:
+ 1239 0039 656E644F 		.ascii	"endOfLine\000"
+ 1239      664C696E 
+ 1239      6500
+ 1240              	.LASF44:
+ 1241 0043 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1241      4320342E 
+ 1241      392E3320 
+ 1241      32303135 
+ 1241      30333033 
+ 1242 0076 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1242      20726576 
+ 1242      6973696F 
+ 1242      6E203232 
+ 1242      31323230 
+ 1243 00a9 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1243      66756E63 
+ 1243      74696F6E 
+ 1243      2D736563 
+ 1243      74696F6E 
+ 1244              	.LASF41:
+ 1245 00d1 72656164 		.ascii	"readLine\000"
+ 1245      4C696E65 
+ 1245      00
+ 1246              	.LASF45:
+ 1247 00da 2E2E5C49 		.ascii	"..\\I2CSlave-01.cydsn\\serialIO.c\000"
+ 1247      3243536C 
+ 1247      6176652D 
+ 1247      30312E63 
+ 1247      7964736E 
+ 1248              	.LASF34:
+ 1249 00fa 7072696E 		.ascii	"printBit\000"
+ 1249      74426974 
+ 1249      00
+ 1250              	.LASF7:
+ 1251 0103 5F5F7569 		.ascii	"__uint32_t\000"
+ 1251      6E743332 
+ 1251      5F7400
+ 1252              	.LASF17:
+ 1253 010e 666C6F61 		.ascii	"float\000"
+ 1253      7400
+ 1254              	.LASF32:
+ 1255 0114 754C5661 		.ascii	"uLVal\000"
+ 1255      6C00
+ 1256              	.LASF0:
+ 1257 011a 7369676E 		.ascii	"signed char\000"
+ 1257      65642063 
+ 1257      68617200 
+ 1258              	.LASF30:
+ 1259 0126 7072696E 		.ascii	"printLine\000"
+ 1259      744C696E 
+ 1259      6500
+ 1260              	.LASF37:
+ 1261 0130 72785374 		.ascii	"rxStat\000"
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 27
+
+
+ 1261      617400
+ 1262              	.LASF19:
+ 1263 0137 63686172 		.ascii	"char8\000"
+ 1263      3800
+ 1264              	.LASF8:
+ 1265 013d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1265      20756E73 
+ 1265      69676E65 
+ 1265      6420696E 
+ 1265      7400
+ 1266              	.LASF33:
+ 1267 014f 6D795742 		.ascii	"myWBuff\000"
+ 1267      75666600 
+ 1268              	.LASF48:
+ 1269 0157 696E6974 		.ascii	"initSerial\000"
+ 1269      53657269 
+ 1269      616C00
+ 1270              	.LASF31:
+ 1271 0162 7072696E 		.ascii	"printLong\000"
+ 1271      744C6F6E 
+ 1271      6700
+ 1272              	.LASF42:
+ 1273 016c 62797465 		.ascii	"byteCount\000"
+ 1273      436F756E 
+ 1273      7400
+ 1274              	.LASF1:
+ 1275 0176 756E7369 		.ascii	"unsigned char\000"
+ 1275      676E6564 
+ 1275      20636861 
+ 1275      7200
+ 1276              	.LASF26:
+ 1277 0184 74784368 		.ascii	"txChar\000"
+ 1277      617200
+ 1278              	.LASF18:
+ 1279 018b 646F7562 		.ascii	"double\000"
+ 1279      6C6500
+ 1280              	.LASF2:
+ 1281 0192 73686F72 		.ascii	"short int\000"
+ 1281      7420696E 
+ 1281      7400
+ 1282              	.LASF36:
+ 1283 019c 6F757443 		.ascii	"outChar\000"
+ 1283      68617200 
+ 1284              	.LASF16:
+ 1285 01a4 75696E74 		.ascii	"uint32\000"
+ 1285      333200
+ 1286              	.LASF11:
+ 1287 01ab 756E7369 		.ascii	"unsigned int\000"
+ 1287      676E6564 
+ 1287      20696E74 
+ 1287      00
+ 1288              	.LASF10:
+ 1289 01b8 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1289      206C6F6E 
+ 1289      6720756E 
+ 1289      7369676E 
+ 1289      65642069 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 28
+
+
+ 1290              	.LASF12:
+ 1291 01cf 75696E74 		.ascii	"uint8_t\000"
+ 1291      385F7400 
+ 1292              	.LASF49:
+ 1293 01d7 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1293      52784275 
+ 1293      66666572 
+ 1293      00
+ 1294              	.LASF13:
+ 1295 01e4 696E7433 		.ascii	"int32_t\000"
+ 1295      325F7400 
+ 1296              	.LASF21:
+ 1297 01ec 73697A65 		.ascii	"sizetype\000"
+ 1297      74797065 
+ 1297      00
+ 1298              	.LASF9:
+ 1299 01f5 6C6F6E67 		.ascii	"long long int\000"
+ 1299      206C6F6E 
+ 1299      6720696E 
+ 1299      7400
+ 1300              	.LASF47:
+ 1301 0203 43484152 		.ascii	"CHAR_PRESENT\000"
+ 1301      5F505245 
+ 1301      53454E54 
+ 1301      00
+ 1302              	.LASF38:
+ 1303 0210 72784368 		.ascii	"rxChar\000"
+ 1303      617200
+ 1304              	.LASF20:
+ 1305 0217 63686172 		.ascii	"char\000"
+ 1305      00
+ 1306              	.LASF23:
+ 1307 021c 43484152 		.ascii	"CHAR_IS_PRESENT\000"
+ 1307      5F49535F 
+ 1307      50524553 
+ 1307      454E5400 
+ 1308              	.LASF24:
+ 1309 022c 7072696E 		.ascii	"printSingleChar\000"
+ 1309      7453696E 
+ 1309      676C6543 
+ 1309      68617200 
+ 1310              	.LASF40:
+ 1311 023c 63686563 		.ascii	"checkReceiveChar\000"
+ 1311      6B526563 
+ 1311      65697665 
+ 1311      43686172 
+ 1311      00
+ 1312              	.LASF46:
+ 1313 024d 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
+ 1313      73657273 
+ 1313      5C444769 
+ 1313      6C6C696C 
+ 1313      616E645C 
+ 1314 027a 532D5053 		.ascii	"S-PSOC5\\Projects\\I2C_Master-Slave\\I2CMaster-01.c"
+ 1314      4F43355C 
+ 1314      50726F6A 
+ 1314      65637473 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\ccN4AStl.s 			page 29
+
+
+ 1314      5C493243 
+ 1315 02aa 7964736E 		.ascii	"ydsn\000"
+ 1315      00
+ 1316              	.LASF15:
+ 1317 02af 75696E74 		.ascii	"uint8\000"
+ 1317      3800
+ 1318              	.LASF14:
+ 1319 02b5 75696E74 		.ascii	"uint32_t\000"
+ 1319      33325F74 
+ 1319      00
+ 1320              	.LASF6:
+ 1321 02be 6C6F6E67 		.ascii	"long int\000"
+ 1321      20696E74 
+ 1321      00
+ 1322              	.LASF35:
+ 1323 02c7 75425661 		.ascii	"uBVal\000"
+ 1323      6C00
+ 1324              	.LASF27:
+ 1325 02cd 6C696E65 		.ascii	"lineBuffer\000"
+ 1325      42756666 
+ 1325      657200
+ 1326              	.LASF3:
+ 1327 02d8 73686F72 		.ascii	"short unsigned int\000"
+ 1327      7420756E 
+ 1327      7369676E 
+ 1327      65642069 
+ 1327      6E7400
+ 1328              	.LASF29:
+ 1329 02eb 6C696E65 		.ascii	"linePtr\000"
+ 1329      50747200 
+ 1330              	.LASF25:
+ 1331 02f3 7072696E 		.ascii	"printString\000"
+ 1331      74537472 
+ 1331      696E6700 
+ 1332              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

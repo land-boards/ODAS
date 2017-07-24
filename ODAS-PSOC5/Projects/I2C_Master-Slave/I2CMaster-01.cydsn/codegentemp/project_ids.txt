@@ -1,0 +1,7 @@
+C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\I2C_Master-Slave\I2CMaster-01.cydsn\I2CMaster-01.cyprj|a4f183ba-7feb-4fe1-a9c8-86f306db5908
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|383436a4-0546-4cfc-aadb-64d47cb67913
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|cef198cf-8c1d-4656-88f1-0f6874648e91
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|65046d94-bb86-4933-9a21-8fff6dea0995
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|2ab63c84-96ca-4e88-8013-267a6a739804
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|3cd35fc5-3683-4792-a26e-2a818fed1010
+C:\Users\DGilliland\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\I2C_Master-Slave\I2CSlave-01.cydsn\I2CSlave-01.cyprj|ddb05cc1-7887-4b7d-ad54-83c6a95fcf19

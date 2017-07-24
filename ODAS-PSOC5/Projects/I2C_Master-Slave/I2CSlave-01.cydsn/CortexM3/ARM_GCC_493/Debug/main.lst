@@ -1,0 +1,1155 @@
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.rodata
+  19              		.align	2
+  20              	.LC0:
+  21 0000 536C6176 		.ascii	"Slave is alive\000"
+  21      65206973 
+  21      20616C69 
+  21      766500
+  22 000f 00       		.align	2
+  23              	.LC1:
+  24 0010 4E554C4C 		.ascii	"NULL_CMD\000"
+  24      5F434D44 
+  24      00
+  25 0019 000000   		.align	2
+  26              	.LC2:
+  27 001c 4C45445F 		.ascii	"LED_OFF \000"
+  27      4F464620 
+  27      00
+  28 0025 000000   		.align	2
+  29              	.LC3:
+  30 0028 4C45445F 		.ascii	"LED_ON\000"
+  30      4F4E00
+  31 002f 00       		.align	2
+  32              	.LC4:
+  33 0030 4348204D 		.ascii	"CH MASK: 0x\000"
+  33      41534B3A 
+  33      20307800 
+  34              		.align	2
+  35              	.LC5:
+  36 003c 414C4C5F 		.ascii	"ALL_PWM_ACTIVE\000"
+  36      50574D5F 
+  36      41435449 
+  36      564500
+  37 004b 00       		.align	2
+  38              	.LC6:
+  39 004c 5553455F 		.ascii	"USE_PWM_MASK\000"
+  39      50574D5F 
+  39      4D41534B 
+  39      00
+  40 0059 000000   		.align	2
+  41              	.LC7:
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 2
+
+
+  42 005c 414C4C5F 		.ascii	"ALL_PWM_LOW\000"
+  42      50574D5F 
+  42      4C4F5700 
+  43              		.align	2
+  44              	.LC8:
+  45 0068 414C4C5F 		.ascii	"ALL_PWM_HIGH\000"
+  45      50574D5F 
+  45      48494748 
+  45      00
+  46 0075 000000   		.align	2
+  47              	.LC9:
+  48 0078 52544E5F 		.ascii	"RTN_ERR\000"
+  48      45525200 
+  49              		.align	2
+  50              	.LC10:
+  51 0080 4E4F4E5F 		.ascii	"NON_VERBOSE_MODE\000"
+  51      56455242 
+  51      4F53455F 
+  51      4D4F4445 
+  51      00
+  52 0091 000000   		.align	2
+  53              	.LC11:
+  54 0094 56455242 		.ascii	"VERBOSE_MODE\000"
+  54      4F53455F 
+  54      4D4F4445 
+  54      00
+  55 00a1 000000   		.section	.text.main,"ax",%progbits
+  56              		.align	2
+  57              		.global	main
+  58              		.thumb
+  59              		.thumb_func
+  60              		.type	main, %function
+  61              	main:
+  62              	.LFB63:
+  63              		.file 1 "main.c"
+   1:main.c        **** /*******************************************************************************
+   2:main.c        **** * File Name: main.c
+   3:main.c        **** *
+   4:main.c        **** * Version: 1.0
+   5:main.c        **** *
+   6:main.c        **** * Description:
+   7:main.c        **** *  I2C Slave Example 
+   8:main.c        **** *  
+   9:main.c        **** * Parameters used:
+  10:main.c        **** *  I2C Slave
+  11:main.c        **** *   Implementation		Fixed function
+  12:main.c        **** *   Data rate			400kbps
+  13:main.c        **** *   SDA SCL config     	Open drain, drives low
+  14:main.c        **** *   Pull-up resistors	2.2k each 
+  15:main.c        **** *
+  16:main.c        **** ********************************************************************************
+  17:main.c        **** * Copyright 2012, Cypress Semiconductor Corporation. All rights reserved.
+  18:main.c        **** * This software is owned by Cypress Semiconductor Corporation and is protected
+  19:main.c        **** * by and subject to worldwide patent and copyright laws and treaties.
+  20:main.c        **** * Therefore, you may use this software only as provided in the license agreement
+  21:main.c        **** * accompanying the software package from which you obtained this software.
+  22:main.c        **** * CYPRESS AND ITS SUPPLIERS MAKE NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 3
+
+
+  23:main.c        **** * WITH REGARD TO THIS SOFTWARE, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT,
+  24:main.c        **** * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  25:main.c        **** *******************************************************************************/
+  26:main.c        **** 
+  27:main.c        **** #include <project.h>
+  28:main.c        **** #include "serialIO.h"
+  29:main.c        **** #include "myI2CSlave.h"
+  30:main.c        **** 
+  31:main.c        **** /*******************************************************************************
+  32:main.c        **** * Function Name: main
+  33:main.c        **** ********************************************************************************
+  34:main.c        **** *
+  35:main.c        **** * Summary:
+  36:main.c        **** *  Main function performs following functions:
+  37:main.c        **** *   1. Starts used components.
+  38:main.c        **** *   2. Reads slave data buffer.
+  39:main.c        **** *   3. Blinks LED
+  40:main.c        **** *
+  41:main.c        **** * Parameters:
+  42:main.c        **** *  None.
+  43:main.c        **** *
+  44:main.c        **** * Return:
+  45:main.c        **** *  None.
+  46:main.c        **** *
+  47:main.c        **** *******************************************************************************/
+  48:main.c        **** 
+  49:main.c        **** int main()
+  50:main.c        **** {
+  64              		.loc 1 50 0
+  65              		.cfi_startproc
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 1, uses_anonymous_args = 0
+  68 0000 80B5     		push	{r7, lr}
+  69              		.cfi_def_cfa_offset 8
+  70              		.cfi_offset 7, -8
+  71              		.cfi_offset 14, -4
+  72 0002 00AF     		add	r7, sp, #0
+  73              		.cfi_def_cfa_register 7
+  51:main.c        **** 	/* Start I2C Master */
+  52:main.c        **** 	I2C_1_Start();
+  74              		.loc 1 52 0
+  75 0004 FFF7FEFF 		bl	I2C_1_Start
+  53:main.c        ****     UART_1_Start();
+  76              		.loc 1 53 0
+  77 0008 FFF7FEFF 		bl	UART_1_Start
+  54:main.c        ****     verboseFlag = SLAVE_NON_VERBOSE_MODE;
+  78              		.loc 1 54 0
+  79 000c 6E4B     		ldr	r3, .L26
+  80 000e 0922     		movs	r2, #9
+  81 0010 1A70     		strb	r2, [r3]
+  55:main.c        **** 
+  56:main.c        **** 	/* Enable Global Interrupts - needed for I2C operation */
+  57:main.c        **** 	CyGlobalIntEnable;
+  82              		.loc 1 57 0
+  83              	@ 57 "main.c" 1
+  84 0012 62B6     		CPSIE   i
+  85              	@ 0 "" 2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 4
+
+
+  58:main.c        ****     initI2CBuffs();
+  86              		.loc 1 58 0
+  87              		.thumb
+  88 0014 FFF7FEFF 		bl	initI2CBuffs
+  59:main.c        ****     
+  60:main.c        ****     printLine("Slave is alive");
+  89              		.loc 1 60 0
+  90 0018 6C48     		ldr	r0, .L26+4
+  91 001a FFF7FEFF 		bl	printLine
+  92              	.L25:
+  61:main.c        **** 	for(;;)
+  62:main.c        ****     {
+  63:main.c        ****         waitForMasterToWrite();
+  93              		.loc 1 63 0
+  94 001e FFF7FEFF 		bl	waitForMasterToWrite
+  64:main.c        ****         switch (wrBuf[0])       // buffer written from the host
+  95              		.loc 1 64 0
+  96 0022 6B4B     		ldr	r3, .L26+8
+  97 0024 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  98 0026 0A2B     		cmp	r3, #10
+  99 0028 00F2C380 		bhi	.L2
+ 100 002c 01A2     		adr	r2, .L4
+ 101 002e 52F823F0 		ldr	pc, [r2, r3, lsl #2]
+ 102 0032 00BF     		.p2align 2
+ 103              	.L4:
+ 104 0034 61000000 		.word	.L3+1
+ 105 0038 79000000 		.word	.L5+1
+ 106 003c 97000000 		.word	.L6+1
+ 107 0040 B5000000 		.word	.L7+1
+ 108 0044 37010000 		.word	.L8+1
+ 109 0048 55010000 		.word	.L9+1
+ 110 004c 19010000 		.word	.L10+1
+ 111 0050 FB000000 		.word	.L11+1
+ 112 0054 9F010000 		.word	.L12+1
+ 113 0058 8B010000 		.word	.L13+1
+ 114 005c 73010000 		.word	.L14+1
+ 115              		.p2align 1
+ 116              	.L3:
+  65:main.c        ****         {
+  66:main.c        ****             case NULL_CMD:
+  67:main.c        ****                 rdBuf[0] = 'Z';
+ 117              		.loc 1 67 0
+ 118 0060 5C4B     		ldr	r3, .L26+12
+ 119 0062 5A22     		movs	r2, #90
+ 120 0064 1A70     		strb	r2, [r3]
+  68:main.c        ****                 if (verboseFlag == SLAVE_VERBOSE_MODE)
+ 121              		.loc 1 68 0
+ 122 0066 584B     		ldr	r3, .L26
+ 123 0068 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 124 006a 082B     		cmp	r3, #8
+ 125 006c 03D1     		bne	.L15
+  69:main.c        ****                     printLine("NULL_CMD");
+ 126              		.loc 1 69 0
+ 127 006e 5A48     		ldr	r0, .L26+16
+ 128 0070 FFF7FEFF 		bl	printLine
+  70:main.c        ****                 break;
+ 129              		.loc 1 70 0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 5
+
+
+ 130 0074 A1E0     		b	.L16
+ 131              	.L15:
+ 132 0076 A0E0     		b	.L16
+ 133              	.L5:
+  71:main.c        ****             case SLAVE_LED_OFF:             // Turn off the LED on the card
+  72:main.c        ****                 LED_Write(0);
+ 134              		.loc 1 72 0
+ 135 0078 0020     		movs	r0, #0
+ 136 007a FFF7FEFF 		bl	LED_Write
+  73:main.c        ****                 rdBuf[0] = 'K';
+ 137              		.loc 1 73 0
+ 138 007e 554B     		ldr	r3, .L26+12
+ 139 0080 4B22     		movs	r2, #75
+ 140 0082 1A70     		strb	r2, [r3]
+  74:main.c        ****                 if (verboseFlag == SLAVE_VERBOSE_MODE)
+ 141              		.loc 1 74 0
+ 142 0084 504B     		ldr	r3, .L26
+ 143 0086 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 144 0088 082B     		cmp	r3, #8
+ 145 008a 03D1     		bne	.L17
+  75:main.c        ****                     printString("LED_OFF ");
+ 146              		.loc 1 75 0
+ 147 008c 5348     		ldr	r0, .L26+20
+ 148 008e FFF7FEFF 		bl	printString
+  76:main.c        ****                 break;
+ 149              		.loc 1 76 0
+ 150 0092 92E0     		b	.L16
+ 151              	.L17:
+ 152 0094 91E0     		b	.L16
+ 153              	.L6:
+  77:main.c        ****             case SLAVE_LED_ON:              // Turn on the LED on the card
+  78:main.c        ****                 LED_Write(1);
+ 154              		.loc 1 78 0
+ 155 0096 0120     		movs	r0, #1
+ 156 0098 FFF7FEFF 		bl	LED_Write
+  79:main.c        ****                 rdBuf[0] = 'K';
+ 157              		.loc 1 79 0
+ 158 009c 4D4B     		ldr	r3, .L26+12
+ 159 009e 4B22     		movs	r2, #75
+ 160 00a0 1A70     		strb	r2, [r3]
+  80:main.c        ****                 if (verboseFlag == SLAVE_VERBOSE_MODE)
+ 161              		.loc 1 80 0
+ 162 00a2 494B     		ldr	r3, .L26
+ 163 00a4 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 164 00a6 082B     		cmp	r3, #8
+ 165 00a8 03D1     		bne	.L18
+  81:main.c        ****                     printLine("LED_ON");
+ 166              		.loc 1 81 0
+ 167 00aa 4D48     		ldr	r0, .L26+24
+ 168 00ac FFF7FEFF 		bl	printLine
+  82:main.c        ****                 break;
+ 169              		.loc 1 82 0
+ 170 00b0 83E0     		b	.L16
+ 171              	.L18:
+ 172 00b2 82E0     		b	.L16
+ 173              	.L7:
+  83:main.c        ****             case PWM_CHANNEL_MASK_VALUE:            // Set the output channel mask
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 6
+
+
+  84:main.c        ****                 PWM_Mask_Upper_Write(wrBuf[1]);     // Upper bits of the mask
+ 174              		.loc 1 84 0
+ 175 00b4 464B     		ldr	r3, .L26+8
+ 176 00b6 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+ 177 00b8 1846     		mov	r0, r3
+ 178 00ba FFF7FEFF 		bl	PWM_Mask_Upper_Write
+  85:main.c        ****                 PWM_Mask_Lower_Write(wrBuf[2]);     // Lower bits of the mask
+ 179              		.loc 1 85 0
+ 180 00be 444B     		ldr	r3, .L26+8
+ 181 00c0 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 182 00c2 1846     		mov	r0, r3
+ 183 00c4 FFF7FEFF 		bl	PWM_Mask_Lower_Write
+  86:main.c        ****                 rdBuf[0] = 'K';
+ 184              		.loc 1 86 0
+ 185 00c8 424B     		ldr	r3, .L26+12
+ 186 00ca 4B22     		movs	r2, #75
+ 187 00cc 1A70     		strb	r2, [r3]
+  87:main.c        ****                 if (verboseFlag == SLAVE_VERBOSE_MODE)
+ 188              		.loc 1 87 0
+ 189 00ce 3E4B     		ldr	r3, .L26
+ 190 00d0 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 191 00d2 082B     		cmp	r3, #8
+ 192 00d4 10D1     		bne	.L19
+  88:main.c        ****                 {
+  89:main.c        ****                     printString("CH MASK: 0x");
+ 193              		.loc 1 89 0
+ 194 00d6 4348     		ldr	r0, .L26+28
+ 195 00d8 FFF7FEFF 		bl	printString
+  90:main.c        ****                     printLong(wrBuf[1]);
+ 196              		.loc 1 90 0
+ 197 00dc 3C4B     		ldr	r3, .L26+8
+ 198 00de 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+ 199 00e0 1846     		mov	r0, r3
+ 200 00e2 FFF7FEFF 		bl	printLong
+  91:main.c        ****                     printString("CH MASK: 0x");
+ 201              		.loc 1 91 0
+ 202 00e6 3F48     		ldr	r0, .L26+28
+ 203 00e8 FFF7FEFF 		bl	printString
+  92:main.c        ****                     printLong(wrBuf[2]);
+ 204              		.loc 1 92 0
+ 205 00ec 384B     		ldr	r3, .L26+8
+ 206 00ee 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 207 00f0 1846     		mov	r0, r3
+ 208 00f2 FFF7FEFF 		bl	printLong
+  93:main.c        ****                 }
+  94:main.c        ****                 break;
+ 209              		.loc 1 94 0
+ 210 00f6 60E0     		b	.L16
+ 211              	.L19:
+ 212 00f8 5FE0     		b	.L16
+ 213              	.L11:
+  95:main.c        ****             case ALL_PWM_CHANNELS_ACTIVE:   // Drive all PWM channels actively
+  96:main.c        ****                 Mux_Control_Write(0);
+ 214              		.loc 1 96 0
+ 215 00fa 0020     		movs	r0, #0
+ 216 00fc FFF7FEFF 		bl	Mux_Control_Write
+  97:main.c        ****                 rdBuf[0] = 'K';
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 7
+
+
+ 217              		.loc 1 97 0
+ 218 0100 344B     		ldr	r3, .L26+12
+ 219 0102 4B22     		movs	r2, #75
+ 220 0104 1A70     		strb	r2, [r3]
+  98:main.c        ****                 if (verboseFlag == SLAVE_VERBOSE_MODE)
+ 221              		.loc 1 98 0
+ 222 0106 304B     		ldr	r3, .L26
+ 223 0108 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 224 010a 082B     		cmp	r3, #8
+ 225 010c 03D1     		bne	.L20
+  99:main.c        ****                     printLine("ALL_PWM_ACTIVE");
+ 226              		.loc 1 99 0
+ 227 010e 3648     		ldr	r0, .L26+32
+ 228 0110 FFF7FEFF 		bl	printLine
+ 100:main.c        ****                 break;
+ 229              		.loc 1 100 0
+ 230 0114 51E0     		b	.L16
+ 231              	.L20:
+ 232 0116 50E0     		b	.L16
+ 233              	.L10:
+ 101:main.c        ****             case USE_PWM_CHANNELS_MASK:     // Turn on individual PWM channels
+ 102:main.c        ****                 Mux_Control_Write(1);
+ 234              		.loc 1 102 0
+ 235 0118 0120     		movs	r0, #1
+ 236 011a FFF7FEFF 		bl	Mux_Control_Write
+ 103:main.c        ****                 rdBuf[0] = 'K';
+ 237              		.loc 1 103 0
+ 238 011e 2D4B     		ldr	r3, .L26+12
+ 239 0120 4B22     		movs	r2, #75
+ 240 0122 1A70     		strb	r2, [r3]
+ 104:main.c        ****                 if (verboseFlag == SLAVE_VERBOSE_MODE)
+ 241              		.loc 1 104 0
+ 242 0124 284B     		ldr	r3, .L26
+ 243 0126 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 244 0128 082B     		cmp	r3, #8
+ 245 012a 03D1     		bne	.L21
+ 105:main.c        ****                     printLine("USE_PWM_MASK");
+ 246              		.loc 1 105 0
+ 247 012c 2F48     		ldr	r0, .L26+36
+ 248 012e FFF7FEFF 		bl	printLine
+ 106:main.c        ****                 break;
+ 249              		.loc 1 106 0
+ 250 0132 42E0     		b	.L16
+ 251              	.L21:
+ 252 0134 41E0     		b	.L16
+ 253              	.L8:
+ 107:main.c        ****             case ALL_PWM_CHANNELS_LOW:      // Turn all PWM channels off
+ 108:main.c        ****                 Mux_Control_Write(2);
+ 254              		.loc 1 108 0
+ 255 0136 0220     		movs	r0, #2
+ 256 0138 FFF7FEFF 		bl	Mux_Control_Write
+ 109:main.c        ****                 rdBuf[0] = 'K';
+ 257              		.loc 1 109 0
+ 258 013c 254B     		ldr	r3, .L26+12
+ 259 013e 4B22     		movs	r2, #75
+ 260 0140 1A70     		strb	r2, [r3]
+ 110:main.c        ****                 if (verboseFlag == SLAVE_VERBOSE_MODE)
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 8
+
+
+ 261              		.loc 1 110 0
+ 262 0142 214B     		ldr	r3, .L26
+ 263 0144 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 264 0146 082B     		cmp	r3, #8
+ 265 0148 03D1     		bne	.L22
+ 111:main.c        ****                     printLine("ALL_PWM_LOW");
+ 266              		.loc 1 111 0
+ 267 014a 2948     		ldr	r0, .L26+40
+ 268 014c FFF7FEFF 		bl	printLine
+ 112:main.c        ****                 break;
+ 269              		.loc 1 112 0
+ 270 0150 33E0     		b	.L16
+ 271              	.L22:
+ 272 0152 32E0     		b	.L16
+ 273              	.L9:
+ 113:main.c        ****             case ALL_PWM_CHANNELS_HIGH:     // Turn all PWM channels on
+ 114:main.c        ****                 Mux_Control_Write(3);
+ 274              		.loc 1 114 0
+ 275 0154 0320     		movs	r0, #3
+ 276 0156 FFF7FEFF 		bl	Mux_Control_Write
+ 115:main.c        ****                 rdBuf[0] = 'K';
+ 277              		.loc 1 115 0
+ 278 015a 1E4B     		ldr	r3, .L26+12
+ 279 015c 4B22     		movs	r2, #75
+ 280 015e 1A70     		strb	r2, [r3]
+ 116:main.c        ****                 if (verboseFlag == SLAVE_VERBOSE_MODE)
+ 281              		.loc 1 116 0
+ 282 0160 194B     		ldr	r3, .L26
+ 283 0162 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 284 0164 082B     		cmp	r3, #8
+ 285 0166 03D1     		bne	.L23
+ 117:main.c        ****                     printLine("ALL_PWM_HIGH");
+ 286              		.loc 1 117 0
+ 287 0168 2248     		ldr	r0, .L26+44
+ 288 016a FFF7FEFF 		bl	printLine
+ 118:main.c        ****                 break;
+ 289              		.loc 1 118 0
+ 290 016e 24E0     		b	.L16
+ 291              	.L23:
+ 292 0170 23E0     		b	.L16
+ 293              	.L14:
+ 119:main.c        ****             case RETURN_ERROR_STATUS:       // Return an Error as status
+ 120:main.c        ****                 rdBuf[0] = 'E';
+ 294              		.loc 1 120 0
+ 295 0172 184B     		ldr	r3, .L26+12
+ 296 0174 4522     		movs	r2, #69
+ 297 0176 1A70     		strb	r2, [r3]
+ 121:main.c        ****                 if (verboseFlag == SLAVE_VERBOSE_MODE)
+ 298              		.loc 1 121 0
+ 299 0178 134B     		ldr	r3, .L26
+ 300 017a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 301 017c 082B     		cmp	r3, #8
+ 302 017e 03D1     		bne	.L24
+ 122:main.c        ****                     printLine("RTN_ERR");
+ 303              		.loc 1 122 0
+ 304 0180 1D48     		ldr	r0, .L26+48
+ 305 0182 FFF7FEFF 		bl	printLine
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 9
+
+
+ 123:main.c        ****                 break;
+ 306              		.loc 1 123 0
+ 307 0186 18E0     		b	.L16
+ 308              	.L24:
+ 309 0188 17E0     		b	.L16
+ 310              	.L13:
+ 124:main.c        ****             case SLAVE_NON_VERBOSE_MODE:
+ 125:main.c        ****                 rdBuf[0] = 'K';
+ 311              		.loc 1 125 0
+ 312 018a 124B     		ldr	r3, .L26+12
+ 313 018c 4B22     		movs	r2, #75
+ 314 018e 1A70     		strb	r2, [r3]
+ 126:main.c        ****                 verboseFlag = SLAVE_NON_VERBOSE_MODE;
+ 315              		.loc 1 126 0
+ 316 0190 0D4B     		ldr	r3, .L26
+ 317 0192 0922     		movs	r2, #9
+ 318 0194 1A70     		strb	r2, [r3]
+ 127:main.c        ****                 printLine("NON_VERBOSE_MODE");
+ 319              		.loc 1 127 0
+ 320 0196 1948     		ldr	r0, .L26+52
+ 321 0198 FFF7FEFF 		bl	printLine
+ 128:main.c        ****                 break;
+ 322              		.loc 1 128 0
+ 323 019c 0DE0     		b	.L16
+ 324              	.L12:
+ 129:main.c        ****             case SLAVE_VERBOSE_MODE:
+ 130:main.c        ****                 rdBuf[0] = 'K';
+ 325              		.loc 1 130 0
+ 326 019e 0D4B     		ldr	r3, .L26+12
+ 327 01a0 4B22     		movs	r2, #75
+ 328 01a2 1A70     		strb	r2, [r3]
+ 131:main.c        ****                 verboseFlag = SLAVE_VERBOSE_MODE;
+ 329              		.loc 1 131 0
+ 330 01a4 084B     		ldr	r3, .L26
+ 331 01a6 0822     		movs	r2, #8
+ 332 01a8 1A70     		strb	r2, [r3]
+ 132:main.c        ****                 printLine("VERBOSE_MODE");
+ 333              		.loc 1 132 0
+ 334 01aa 1548     		ldr	r0, .L26+56
+ 335 01ac FFF7FEFF 		bl	printLine
+ 133:main.c        ****                 break;
+ 336              		.loc 1 133 0
+ 337 01b0 03E0     		b	.L16
+ 338              	.L2:
+ 134:main.c        ****             default:
+ 135:main.c        ****                 rdBuf[0] = 'E';
+ 339              		.loc 1 135 0
+ 340 01b2 084B     		ldr	r3, .L26+12
+ 341 01b4 4522     		movs	r2, #69
+ 342 01b6 1A70     		strb	r2, [r3]
+ 136:main.c        ****                 break;
+ 343              		.loc 1 136 0
+ 344 01b8 00BF     		nop
+ 345              	.L16:
+ 137:main.c        ****         }
+ 138:main.c        ****         wrBuf[0] = NULL_CMD;
+ 346              		.loc 1 138 0
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 10
+
+
+ 347 01ba 054B     		ldr	r3, .L26+8
+ 348 01bc 0022     		movs	r2, #0
+ 349 01be 1A70     		strb	r2, [r3]
+ 139:main.c        ****         waitForMasterToRead();
+ 350              		.loc 1 139 0
+ 351 01c0 FFF7FEFF 		bl	waitForMasterToRead
+ 140:main.c        **** //        printSingleChar('p');
+ 141:main.c        **** 	} /* End forever loop */
+ 352              		.loc 1 141 0
+ 353 01c4 2BE7     		b	.L25
+ 354              	.L27:
+ 355 01c6 00BF     		.align	2
+ 356              	.L26:
+ 357 01c8 00000000 		.word	verboseFlag
+ 358 01cc 00000000 		.word	.LC0
+ 359 01d0 00000000 		.word	wrBuf
+ 360 01d4 00000000 		.word	rdBuf
+ 361 01d8 10000000 		.word	.LC1
+ 362 01dc 1C000000 		.word	.LC2
+ 363 01e0 28000000 		.word	.LC3
+ 364 01e4 30000000 		.word	.LC4
+ 365 01e8 3C000000 		.word	.LC5
+ 366 01ec 4C000000 		.word	.LC6
+ 367 01f0 5C000000 		.word	.LC7
+ 368 01f4 68000000 		.word	.LC8
+ 369 01f8 78000000 		.word	.LC9
+ 370 01fc 80000000 		.word	.LC10
+ 371 0200 94000000 		.word	.LC11
+ 372              		.cfi_endproc
+ 373              	.LFE63:
+ 374              		.size	main, .-main
+ 375              		.text
+ 376              	.Letext0:
+ 377              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 378              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 379              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 380              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 381              		.file 6 "myI2CSlave.h"
+ 382              		.section	.debug_info,"",%progbits
+ 383              	.Ldebug_info0:
+ 384 0000 47010000 		.4byte	0x147
+ 385 0004 0400     		.2byte	0x4
+ 386 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 387 000a 04       		.byte	0x4
+ 388 000b 01       		.uleb128 0x1
+ 389 000c 0A000000 		.4byte	.LASF31
+ 390 0010 01       		.byte	0x1
+ 391 0011 4A020000 		.4byte	.LASF32
+ 392 0015 9E000000 		.4byte	.LASF33
+ 393 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 394 001d 00000000 		.4byte	0
+ 395 0021 00000000 		.4byte	.Ldebug_line0
+ 396 0025 02       		.uleb128 0x2
+ 397 0026 01       		.byte	0x1
+ 398 0027 06       		.byte	0x6
+ 399 0028 93020000 		.4byte	.LASF0
+ 400 002c 02       		.uleb128 0x2
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 11
+
+
+ 401 002d 01       		.byte	0x1
+ 402 002e 08       		.byte	0x8
+ 403 002f D5010000 		.4byte	.LASF1
+ 404 0033 02       		.uleb128 0x2
+ 405 0034 02       		.byte	0x2
+ 406 0035 05       		.byte	0x5
+ 407 0036 6C020000 		.4byte	.LASF2
+ 408 003a 02       		.uleb128 0x2
+ 409 003b 02       		.byte	0x2
+ 410 003c 07       		.byte	0x7
+ 411 003d 56010000 		.4byte	.LASF3
+ 412 0041 03       		.uleb128 0x3
+ 413 0042 00000000 		.4byte	.LASF9
+ 414 0046 02       		.byte	0x2
+ 415 0047 3F       		.byte	0x3f
+ 416 0048 4C000000 		.4byte	0x4c
+ 417 004c 02       		.uleb128 0x2
+ 418 004d 04       		.byte	0x4
+ 419 004e 05       		.byte	0x5
+ 420 004f 8A020000 		.4byte	.LASF4
+ 421 0053 02       		.uleb128 0x2
+ 422 0054 04       		.byte	0x4
+ 423 0055 07       		.byte	0x7
+ 424 0056 31010000 		.4byte	.LASF5
+ 425 005a 02       		.uleb128 0x2
+ 426 005b 08       		.byte	0x8
+ 427 005c 05       		.byte	0x5
+ 428 005d 2F020000 		.4byte	.LASF6
+ 429 0061 02       		.uleb128 0x2
+ 430 0062 08       		.byte	0x8
+ 431 0063 07       		.byte	0x7
+ 432 0064 F0010000 		.4byte	.LASF7
+ 433 0068 04       		.uleb128 0x4
+ 434 0069 04       		.byte	0x4
+ 435 006a 05       		.byte	0x5
+ 436 006b 696E7400 		.ascii	"int\000"
+ 437 006f 02       		.uleb128 0x2
+ 438 0070 04       		.byte	0x4
+ 439 0071 07       		.byte	0x7
+ 440 0072 E3010000 		.4byte	.LASF8
+ 441 0076 03       		.uleb128 0x3
+ 442 0077 1E020000 		.4byte	.LASF10
+ 443 007b 03       		.byte	0x3
+ 444 007c 2C       		.byte	0x2c
+ 445 007d 41000000 		.4byte	0x41
+ 446 0081 05       		.uleb128 0x5
+ 447 0082 76020000 		.4byte	.LASF11
+ 448 0086 04       		.byte	0x4
+ 449 0087 9201     		.2byte	0x192
+ 450 0089 2C000000 		.4byte	0x2c
+ 451 008d 02       		.uleb128 0x2
+ 452 008e 04       		.byte	0x4
+ 453 008f 04       		.byte	0x4
+ 454 0090 FF000000 		.4byte	.LASF12
+ 455 0094 02       		.uleb128 0x2
+ 456 0095 08       		.byte	0x8
+ 457 0096 04       		.byte	0x4
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 12
+
+
+ 458 0097 B7010000 		.4byte	.LASF13
+ 459 009b 02       		.uleb128 0x2
+ 460 009c 01       		.byte	0x1
+ 461 009d 08       		.byte	0x8
+ 462 009e 51020000 		.4byte	.LASF14
+ 463 00a2 02       		.uleb128 0x2
+ 464 00a3 04       		.byte	0x4
+ 465 00a4 07       		.byte	0x7
+ 466 00a5 26020000 		.4byte	.LASF15
+ 467 00a9 06       		.uleb128 0x6
+ 468 00aa A1010000 		.4byte	.LASF34
+ 469 00ae 01       		.byte	0x1
+ 470 00af 06       		.byte	0x6
+ 471 00b0 14       		.byte	0x14
+ 472 00b1 F8000000 		.4byte	0xf8
+ 473 00b5 07       		.uleb128 0x7
+ 474 00b6 AE010000 		.4byte	.LASF16
+ 475 00ba 00       		.sleb128 0
+ 476 00bb 07       		.uleb128 0x7
+ 477 00bc 7C020000 		.4byte	.LASF17
+ 478 00c0 01       		.sleb128 1
+ 479 00c1 07       		.uleb128 0x7
+ 480 00c2 3D020000 		.4byte	.LASF18
+ 481 00c6 02       		.sleb128 2
+ 482 00c7 07       		.uleb128 0x7
+ 483 00c8 9F020000 		.4byte	.LASF19
+ 484 00cc 03       		.sleb128 3
+ 485 00cd 07       		.uleb128 0x7
+ 486 00ce 69010000 		.4byte	.LASF20
+ 487 00d2 04       		.sleb128 4
+ 488 00d3 07       		.uleb128 0x7
+ 489 00d4 7E010000 		.4byte	.LASF21
+ 490 00d8 05       		.sleb128 5
+ 491 00d9 07       		.uleb128 0x7
+ 492 00da 56020000 		.4byte	.LASF22
+ 493 00de 06       		.sleb128 6
+ 494 00df 07       		.uleb128 0x7
+ 495 00e0 19010000 		.4byte	.LASF23
+ 496 00e4 07       		.sleb128 7
+ 497 00e5 07       		.uleb128 0x7
+ 498 00e6 43010000 		.4byte	.LASF24
+ 499 00ea 08       		.sleb128 8
+ 500 00eb 07       		.uleb128 0x7
+ 501 00ec 07020000 		.4byte	.LASF25
+ 502 00f0 09       		.sleb128 9
+ 503 00f1 07       		.uleb128 0x7
+ 504 00f2 05010000 		.4byte	.LASF26
+ 505 00f6 0A       		.sleb128 10
+ 506 00f7 00       		.byte	0
+ 507 00f8 08       		.uleb128 0x8
+ 508 00f9 BE010000 		.4byte	.LASF35
+ 509 00fd 01       		.byte	0x1
+ 510 00fe 31       		.byte	0x31
+ 511 00ff 68000000 		.4byte	0x68
+ 512 0103 00000000 		.4byte	.LFB63
+ 513 0107 04020000 		.4byte	.LFE63-.LFB63
+ 514 010b 01       		.uleb128 0x1
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 13
+
+
+ 515 010c 9C       		.byte	0x9c
+ 516 010d 09       		.uleb128 0x9
+ 517 010e 94010000 		.4byte	.LASF27
+ 518 0112 05       		.byte	0x5
+ 519 0113 9606     		.2byte	0x696
+ 520 0115 19010000 		.4byte	0x119
+ 521 0119 0A       		.uleb128 0xa
+ 522 011a 76000000 		.4byte	0x76
+ 523 011e 0B       		.uleb128 0xb
+ 524 011f 81000000 		.4byte	0x81
+ 525 0123 29010000 		.4byte	0x129
+ 526 0127 0C       		.uleb128 0xc
+ 527 0128 00       		.byte	0
+ 528 0129 0D       		.uleb128 0xd
+ 529 012a 98000000 		.4byte	.LASF28
+ 530 012e 06       		.byte	0x6
+ 531 012f 23       		.byte	0x23
+ 532 0130 1E010000 		.4byte	0x11e
+ 533 0134 0D       		.uleb128 0xd
+ 534 0135 CF010000 		.4byte	.LASF29
+ 535 0139 06       		.byte	0x6
+ 536 013a 24       		.byte	0x24
+ 537 013b 1E010000 		.4byte	0x11e
+ 538 013f 0D       		.uleb128 0xd
+ 539 0140 C3010000 		.4byte	.LASF30
+ 540 0144 06       		.byte	0x6
+ 541 0145 25       		.byte	0x25
+ 542 0146 81000000 		.4byte	0x81
+ 543 014a 00       		.byte	0
+ 544              		.section	.debug_abbrev,"",%progbits
+ 545              	.Ldebug_abbrev0:
+ 546 0000 01       		.uleb128 0x1
+ 547 0001 11       		.uleb128 0x11
+ 548 0002 01       		.byte	0x1
+ 549 0003 25       		.uleb128 0x25
+ 550 0004 0E       		.uleb128 0xe
+ 551 0005 13       		.uleb128 0x13
+ 552 0006 0B       		.uleb128 0xb
+ 553 0007 03       		.uleb128 0x3
+ 554 0008 0E       		.uleb128 0xe
+ 555 0009 1B       		.uleb128 0x1b
+ 556 000a 0E       		.uleb128 0xe
+ 557 000b 55       		.uleb128 0x55
+ 558 000c 17       		.uleb128 0x17
+ 559 000d 11       		.uleb128 0x11
+ 560 000e 01       		.uleb128 0x1
+ 561 000f 10       		.uleb128 0x10
+ 562 0010 17       		.uleb128 0x17
+ 563 0011 00       		.byte	0
+ 564 0012 00       		.byte	0
+ 565 0013 02       		.uleb128 0x2
+ 566 0014 24       		.uleb128 0x24
+ 567 0015 00       		.byte	0
+ 568 0016 0B       		.uleb128 0xb
+ 569 0017 0B       		.uleb128 0xb
+ 570 0018 3E       		.uleb128 0x3e
+ 571 0019 0B       		.uleb128 0xb
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 14
+
+
+ 572 001a 03       		.uleb128 0x3
+ 573 001b 0E       		.uleb128 0xe
+ 574 001c 00       		.byte	0
+ 575 001d 00       		.byte	0
+ 576 001e 03       		.uleb128 0x3
+ 577 001f 16       		.uleb128 0x16
+ 578 0020 00       		.byte	0
+ 579 0021 03       		.uleb128 0x3
+ 580 0022 0E       		.uleb128 0xe
+ 581 0023 3A       		.uleb128 0x3a
+ 582 0024 0B       		.uleb128 0xb
+ 583 0025 3B       		.uleb128 0x3b
+ 584 0026 0B       		.uleb128 0xb
+ 585 0027 49       		.uleb128 0x49
+ 586 0028 13       		.uleb128 0x13
+ 587 0029 00       		.byte	0
+ 588 002a 00       		.byte	0
+ 589 002b 04       		.uleb128 0x4
+ 590 002c 24       		.uleb128 0x24
+ 591 002d 00       		.byte	0
+ 592 002e 0B       		.uleb128 0xb
+ 593 002f 0B       		.uleb128 0xb
+ 594 0030 3E       		.uleb128 0x3e
+ 595 0031 0B       		.uleb128 0xb
+ 596 0032 03       		.uleb128 0x3
+ 597 0033 08       		.uleb128 0x8
+ 598 0034 00       		.byte	0
+ 599 0035 00       		.byte	0
+ 600 0036 05       		.uleb128 0x5
+ 601 0037 16       		.uleb128 0x16
+ 602 0038 00       		.byte	0
+ 603 0039 03       		.uleb128 0x3
+ 604 003a 0E       		.uleb128 0xe
+ 605 003b 3A       		.uleb128 0x3a
+ 606 003c 0B       		.uleb128 0xb
+ 607 003d 3B       		.uleb128 0x3b
+ 608 003e 05       		.uleb128 0x5
+ 609 003f 49       		.uleb128 0x49
+ 610 0040 13       		.uleb128 0x13
+ 611 0041 00       		.byte	0
+ 612 0042 00       		.byte	0
+ 613 0043 06       		.uleb128 0x6
+ 614 0044 04       		.uleb128 0x4
+ 615 0045 01       		.byte	0x1
+ 616 0046 03       		.uleb128 0x3
+ 617 0047 0E       		.uleb128 0xe
+ 618 0048 0B       		.uleb128 0xb
+ 619 0049 0B       		.uleb128 0xb
+ 620 004a 3A       		.uleb128 0x3a
+ 621 004b 0B       		.uleb128 0xb
+ 622 004c 3B       		.uleb128 0x3b
+ 623 004d 0B       		.uleb128 0xb
+ 624 004e 01       		.uleb128 0x1
+ 625 004f 13       		.uleb128 0x13
+ 626 0050 00       		.byte	0
+ 627 0051 00       		.byte	0
+ 628 0052 07       		.uleb128 0x7
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 15
+
+
+ 629 0053 28       		.uleb128 0x28
+ 630 0054 00       		.byte	0
+ 631 0055 03       		.uleb128 0x3
+ 632 0056 0E       		.uleb128 0xe
+ 633 0057 1C       		.uleb128 0x1c
+ 634 0058 0D       		.uleb128 0xd
+ 635 0059 00       		.byte	0
+ 636 005a 00       		.byte	0
+ 637 005b 08       		.uleb128 0x8
+ 638 005c 2E       		.uleb128 0x2e
+ 639 005d 00       		.byte	0
+ 640 005e 3F       		.uleb128 0x3f
+ 641 005f 19       		.uleb128 0x19
+ 642 0060 03       		.uleb128 0x3
+ 643 0061 0E       		.uleb128 0xe
+ 644 0062 3A       		.uleb128 0x3a
+ 645 0063 0B       		.uleb128 0xb
+ 646 0064 3B       		.uleb128 0x3b
+ 647 0065 0B       		.uleb128 0xb
+ 648 0066 49       		.uleb128 0x49
+ 649 0067 13       		.uleb128 0x13
+ 650 0068 11       		.uleb128 0x11
+ 651 0069 01       		.uleb128 0x1
+ 652 006a 12       		.uleb128 0x12
+ 653 006b 06       		.uleb128 0x6
+ 654 006c 40       		.uleb128 0x40
+ 655 006d 18       		.uleb128 0x18
+ 656 006e 9642     		.uleb128 0x2116
+ 657 0070 19       		.uleb128 0x19
+ 658 0071 00       		.byte	0
+ 659 0072 00       		.byte	0
+ 660 0073 09       		.uleb128 0x9
+ 661 0074 34       		.uleb128 0x34
+ 662 0075 00       		.byte	0
+ 663 0076 03       		.uleb128 0x3
+ 664 0077 0E       		.uleb128 0xe
+ 665 0078 3A       		.uleb128 0x3a
+ 666 0079 0B       		.uleb128 0xb
+ 667 007a 3B       		.uleb128 0x3b
+ 668 007b 05       		.uleb128 0x5
+ 669 007c 49       		.uleb128 0x49
+ 670 007d 13       		.uleb128 0x13
+ 671 007e 3F       		.uleb128 0x3f
+ 672 007f 19       		.uleb128 0x19
+ 673 0080 3C       		.uleb128 0x3c
+ 674 0081 19       		.uleb128 0x19
+ 675 0082 00       		.byte	0
+ 676 0083 00       		.byte	0
+ 677 0084 0A       		.uleb128 0xa
+ 678 0085 35       		.uleb128 0x35
+ 679 0086 00       		.byte	0
+ 680 0087 49       		.uleb128 0x49
+ 681 0088 13       		.uleb128 0x13
+ 682 0089 00       		.byte	0
+ 683 008a 00       		.byte	0
+ 684 008b 0B       		.uleb128 0xb
+ 685 008c 01       		.uleb128 0x1
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 16
+
+
+ 686 008d 01       		.byte	0x1
+ 687 008e 49       		.uleb128 0x49
+ 688 008f 13       		.uleb128 0x13
+ 689 0090 01       		.uleb128 0x1
+ 690 0091 13       		.uleb128 0x13
+ 691 0092 00       		.byte	0
+ 692 0093 00       		.byte	0
+ 693 0094 0C       		.uleb128 0xc
+ 694 0095 21       		.uleb128 0x21
+ 695 0096 00       		.byte	0
+ 696 0097 00       		.byte	0
+ 697 0098 00       		.byte	0
+ 698 0099 0D       		.uleb128 0xd
+ 699 009a 34       		.uleb128 0x34
+ 700 009b 00       		.byte	0
+ 701 009c 03       		.uleb128 0x3
+ 702 009d 0E       		.uleb128 0xe
+ 703 009e 3A       		.uleb128 0x3a
+ 704 009f 0B       		.uleb128 0xb
+ 705 00a0 3B       		.uleb128 0x3b
+ 706 00a1 0B       		.uleb128 0xb
+ 707 00a2 49       		.uleb128 0x49
+ 708 00a3 13       		.uleb128 0x13
+ 709 00a4 3F       		.uleb128 0x3f
+ 710 00a5 19       		.uleb128 0x19
+ 711 00a6 3C       		.uleb128 0x3c
+ 712 00a7 19       		.uleb128 0x19
+ 713 00a8 00       		.byte	0
+ 714 00a9 00       		.byte	0
+ 715 00aa 00       		.byte	0
+ 716              		.section	.debug_aranges,"",%progbits
+ 717 0000 1C000000 		.4byte	0x1c
+ 718 0004 0200     		.2byte	0x2
+ 719 0006 00000000 		.4byte	.Ldebug_info0
+ 720 000a 04       		.byte	0x4
+ 721 000b 00       		.byte	0
+ 722 000c 0000     		.2byte	0
+ 723 000e 0000     		.2byte	0
+ 724 0010 00000000 		.4byte	.LFB63
+ 725 0014 04020000 		.4byte	.LFE63-.LFB63
+ 726 0018 00000000 		.4byte	0
+ 727 001c 00000000 		.4byte	0
+ 728              		.section	.debug_ranges,"",%progbits
+ 729              	.Ldebug_ranges0:
+ 730 0000 00000000 		.4byte	.LFB63
+ 731 0004 04020000 		.4byte	.LFE63
+ 732 0008 00000000 		.4byte	0
+ 733 000c 00000000 		.4byte	0
+ 734              		.section	.debug_line,"",%progbits
+ 735              	.Ldebug_line0:
+ 736 0000 B1010000 		.section	.debug_str,"MS",%progbits,1
+ 736      02005701 
+ 736      00000201 
+ 736      FB0E0D00 
+ 736      01010101 
+ 737              	.LASF9:
+ 738 0000 5F5F696E 		.ascii	"__int32_t\000"
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 17
+
+
+ 738      7433325F 
+ 738      7400
+ 739              	.LASF31:
+ 740 000a 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 740      4320342E 
+ 740      392E3320 
+ 740      32303135 
+ 740      30333033 
+ 741 003d 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 741      20726576 
+ 741      6973696F 
+ 741      6E203232 
+ 741      31323230 
+ 742 0070 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 742      66756E63 
+ 742      74696F6E 
+ 742      2D736563 
+ 742      74696F6E 
+ 743              	.LASF28:
+ 744 0098 72644275 		.ascii	"rdBuf\000"
+ 744      6600
+ 745              	.LASF33:
+ 746 009e 433A5C55 		.ascii	"C:\\Users\\DGilliland\\Documents\\GitHub\\ODAS\\ODA"
+ 746      73657273 
+ 746      5C444769 
+ 746      6C6C696C 
+ 746      616E645C 
+ 747 00cb 532D5053 		.ascii	"S-PSOC5\\Projects\\I2C_Master-Slave\\I2CSlave-01.cy"
+ 747      4F43355C 
+ 747      50726F6A 
+ 747      65637473 
+ 747      5C493243 
+ 748 00fb 64736E00 		.ascii	"dsn\000"
+ 749              	.LASF12:
+ 750 00ff 666C6F61 		.ascii	"float\000"
+ 750      7400
+ 751              	.LASF26:
+ 752 0105 52455455 		.ascii	"RETURN_ERROR_STATUS\000"
+ 752      524E5F45 
+ 752      52524F52 
+ 752      5F535441 
+ 752      54555300 
+ 753              	.LASF23:
+ 754 0119 414C4C5F 		.ascii	"ALL_PWM_CHANNELS_ACTIVE\000"
+ 754      50574D5F 
+ 754      4348414E 
+ 754      4E454C53 
+ 754      5F414354 
+ 755              	.LASF5:
+ 756 0131 6C6F6E67 		.ascii	"long unsigned int\000"
+ 756      20756E73 
+ 756      69676E65 
+ 756      6420696E 
+ 756      7400
+ 757              	.LASF24:
+ 758 0143 534C4156 		.ascii	"SLAVE_VERBOSE_MODE\000"
+ 758      455F5645 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 18
+
+
+ 758      52424F53 
+ 758      455F4D4F 
+ 758      444500
+ 759              	.LASF3:
+ 760 0156 73686F72 		.ascii	"short unsigned int\000"
+ 760      7420756E 
+ 760      7369676E 
+ 760      65642069 
+ 760      6E7400
+ 761              	.LASF20:
+ 762 0169 414C4C5F 		.ascii	"ALL_PWM_CHANNELS_LOW\000"
+ 762      50574D5F 
+ 762      4348414E 
+ 762      4E454C53 
+ 762      5F4C4F57 
+ 763              	.LASF21:
+ 764 017e 414C4C5F 		.ascii	"ALL_PWM_CHANNELS_HIGH\000"
+ 764      50574D5F 
+ 764      4348414E 
+ 764      4E454C53 
+ 764      5F484947 
+ 765              	.LASF27:
+ 766 0194 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 766      52784275 
+ 766      66666572 
+ 766      00
+ 767              	.LASF34:
+ 768 01a1 4932435F 		.ascii	"I2C_COMMANDS\000"
+ 768      434F4D4D 
+ 768      414E4453 
+ 768      00
+ 769              	.LASF16:
+ 770 01ae 4E554C4C 		.ascii	"NULL_CMD\000"
+ 770      5F434D44 
+ 770      00
+ 771              	.LASF13:
+ 772 01b7 646F7562 		.ascii	"double\000"
+ 772      6C6500
+ 773              	.LASF35:
+ 774 01be 6D61696E 		.ascii	"main\000"
+ 774      00
+ 775              	.LASF30:
+ 776 01c3 76657262 		.ascii	"verboseFlag\000"
+ 776      6F736546 
+ 776      6C616700 
+ 777              	.LASF29:
+ 778 01cf 77724275 		.ascii	"wrBuf\000"
+ 778      6600
+ 779              	.LASF1:
+ 780 01d5 756E7369 		.ascii	"unsigned char\000"
+ 780      676E6564 
+ 780      20636861 
+ 780      7200
+ 781              	.LASF8:
+ 782 01e3 756E7369 		.ascii	"unsigned int\000"
+ 782      676E6564 
+ 782      20696E74 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 19
+
+
+ 782      00
+ 783              	.LASF7:
+ 784 01f0 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 784      206C6F6E 
+ 784      6720756E 
+ 784      7369676E 
+ 784      65642069 
+ 785              	.LASF25:
+ 786 0207 534C4156 		.ascii	"SLAVE_NON_VERBOSE_MODE\000"
+ 786      455F4E4F 
+ 786      4E5F5645 
+ 786      52424F53 
+ 786      455F4D4F 
+ 787              	.LASF10:
+ 788 021e 696E7433 		.ascii	"int32_t\000"
+ 788      325F7400 
+ 789              	.LASF15:
+ 790 0226 73697A65 		.ascii	"sizetype\000"
+ 790      74797065 
+ 790      00
+ 791              	.LASF6:
+ 792 022f 6C6F6E67 		.ascii	"long long int\000"
+ 792      206C6F6E 
+ 792      6720696E 
+ 792      7400
+ 793              	.LASF18:
+ 794 023d 534C4156 		.ascii	"SLAVE_LED_ON\000"
+ 794      455F4C45 
+ 794      445F4F4E 
+ 794      00
+ 795              	.LASF32:
+ 796 024a 6D61696E 		.ascii	"main.c\000"
+ 796      2E6300
+ 797              	.LASF14:
+ 798 0251 63686172 		.ascii	"char\000"
+ 798      00
+ 799              	.LASF22:
+ 800 0256 5553455F 		.ascii	"USE_PWM_CHANNELS_MASK\000"
+ 800      50574D5F 
+ 800      4348414E 
+ 800      4E454C53 
+ 800      5F4D4153 
+ 801              	.LASF2:
+ 802 026c 73686F72 		.ascii	"short int\000"
+ 802      7420696E 
+ 802      7400
+ 803              	.LASF11:
+ 804 0276 75696E74 		.ascii	"uint8\000"
+ 804      3800
+ 805              	.LASF17:
+ 806 027c 534C4156 		.ascii	"SLAVE_LED_OFF\000"
+ 806      455F4C45 
+ 806      445F4F46 
+ 806      4600
+ 807              	.LASF4:
+ 808 028a 6C6F6E67 		.ascii	"long int\000"
+ 808      20696E74 
+ARM GAS  C:\Users\DGILLI~1\AppData\Local\Temp\cctkuUfC.s 			page 20
+
+
+ 808      00
+ 809              	.LASF0:
+ 810 0293 7369676E 		.ascii	"signed char\000"
+ 810      65642063 
+ 810      68617200 
+ 811              	.LASF19:
+ 812 029f 50574D5F 		.ascii	"PWM_CHANNEL_MASK_VALUE\000"
+ 812      4348414E 
+ 812      4E454C5F 
+ 812      4D41534B 
+ 812      5F56414C 
+ 813              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
