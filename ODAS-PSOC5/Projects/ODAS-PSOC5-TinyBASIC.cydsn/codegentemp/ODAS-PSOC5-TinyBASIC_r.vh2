@@ -1,6 +1,6 @@
 -- Project:   ODAS-PSOC5-TinyBASIC
--- Generated: 12/20/2016 12:14:40
--- PSoC Creator  4.0
+-- Generated: 02/24/2019 12:49:16
+-- PSoC Creator  4.2
 
 ENTITY \ODAS-PSOC5-TinyBASIC\ IS
     PORT(
@@ -389,11 +389,11 @@ ARCHITECTURE __DEFAULT__ OF \ODAS-PSOC5-TinyBASIC\ IS
     END COMPONENT;
     COMPONENT iocell
         PORT (
-            pin_input : IN std_ulogic;
             oe : IN std_ulogic;
             fb : OUT std_ulogic;
-            pad_in : IN std_ulogic;
             pa_out : OUT std_ulogic;
+            pin_input : IN std_ulogic;
+            pad_in : IN std_ulogic;
             pad_out : OUT std_ulogic;
             oe_reg : OUT std_ulogic;
             oe_internal : IN std_ulogic;

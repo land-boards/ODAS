@@ -2,7 +2,7 @@
 --	Conversion of ODAS-PSOC5-TinyBASIC.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Dec 20 12:14:33 2016
+--	Sun Feb 24 12:49:13 2019
 --
 
 USE cypress.cypress.all;

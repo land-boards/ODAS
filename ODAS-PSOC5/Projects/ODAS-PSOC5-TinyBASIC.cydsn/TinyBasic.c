@@ -344,7 +344,7 @@ int DeHex(char* txt, int ndigs) {                /* decode hex -> int */
   char ch = ' ';
   while (ch<'0')                              /* first skip to num... */
     if (ch == '\0') return -1; else ch = DeCaps[((int)*txt++)&127];
-  if (ch>'F' || ch>'9' && ch<'A') return -1;               /* not hex */
+  if (ch>'F' || (ch>'9' && ch<'A')) return -1;               /* not hex */
   while ((ndigs--) >0) {                 /* only get requested digits */
     if (ch<'0' || ch>'F') return num;              /* not a hex digit */
     if (ch>='A') num = num*16-55+((int)ch);      /* A-F */
@@ -1078,7 +1078,7 @@ void Interp(void) {
       case 5:
         while (((char)Core[BP]) == ' ') BP++;     /* skip over spaces */
         ch = (char)Core[BP];
-        if (ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z')
+        if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
           PushExBy((((int)Core[BP++])&0x5F)*2);
         else if (op==160) TBerror();           /* error if not letter */
           else ILPC = ILPC+op-160;
@@ -1429,7 +1429,8 @@ int mainTinyBASIC(int argc, char* argv[]) {
   for (nx=1; nx<argc; nx++) {         /* look for command-line args.. */
     if (strcmp(argv[nx],"-b")==0 && ++nx<argc) {     /* alt IL file.. */
       tmpFile = fopen(argv[nx],"r");
-      if (tmpFile != NULL) if (fseek(tmpFile,0,SEEK_END)==0) {
+      if (tmpFile != NULL) 
+        if (fseek(tmpFile,0,SEEK_END)==0) {
         len = ftell(tmpFile);                      /* get file size.. */
         if (fseek(tmpFile,0,SEEK_SET)==0) if (len>9) {
           len = len/8+len;            /* allow for line end expansion */
