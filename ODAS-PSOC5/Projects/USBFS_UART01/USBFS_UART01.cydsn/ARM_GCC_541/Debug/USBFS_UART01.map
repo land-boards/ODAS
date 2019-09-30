@@ -1,0 +1,1907 @@
+Archive member included to satisfy reference by file (symbol)
+
+.\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+                              .\ARM_GCC_541\Debug\main.o (USBUART_Start)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+                              .\ARM_GCC_541\Debug\main.o (USBUART_CDC_Init)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                              .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o) (USBUART_EP)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+                              .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o) (USBUART_EP_1_ISR)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+                              .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o) (USBUART_hidProtocol)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+                              .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o) (USBUART_DP_ISR)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+                              .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o) (USBUART_HandleStandardRqst)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_vnd.o)
+                              .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o) (USBUART_HandleVendorRqst)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+                              .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o) (USBUART_Dp_ClearInterrupt)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+                              .\ARM_GCC_541\Debug\Cm3Start.o (CyResetStatus)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+                              .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o) (CyPmReadStatus)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+                              .\ARM_GCC_541\Debug\main.o (I2C_Start)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_INT.o)
+                              .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o) (I2C_ISR)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+                              .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o) (I2C_backup)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+                              .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o) (I2C_mstrStatus)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(CyBootAsmGnu.o)
+                              .\ARM_GCC_541\Debug\cyfitter_cfg.o (CyDelayCycles)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+                              .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o) (CyScBoostClk_Start)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cls.o)
+                              .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o) (USBUART_DispatchClassRqst)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_descr.o)
+                              .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o) (USBUART_DEVICE0_DESCR)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+                              .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o) (CyFlash_SetWaitCycles)
+.\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+                              .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o) (CySpcStart)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                              .\ARM_GCC_541\Debug\Cm3Start.o (__errno)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o (exit)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o) (_global_impure_ptr)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o (__libc_init_array)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+                              .\ARM_GCC_541\Debug\cyfitter_cfg.o (memcpy)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o (memset)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o)
+                              .\ARM_GCC_541\Debug\main.o (_printf_float)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o) (_printf_common)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strlen.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o) (strlen)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-dtoa.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o) (_dtoa_r)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o) (_localeconv_r)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-malloc.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-dtoa.o) (malloc)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o) (memchr)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-dtoa.o) (_Balloc)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-callocr.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o) (_calloc_r)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-malloc.o) (_free_r)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-malloc.o) (_malloc_r)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o) (_sbrk_r)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strcmp.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o) (strcmp)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o) (__malloc_lock)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o) (errno)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubdf3.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-dtoa.o) (__aeabi_dsub)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivdf3.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-dtoa.o) (__aeabi_dmul)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_cmpdf2.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o) (__aeabi_dcmpeq)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_unorddf2.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o) (__aeabi_dcmpun)
+c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_fixdfsi.o)
+                              c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-dtoa.o) (__aeabi_d2iz)
+
+Allocating common symbols
+Common symbol       size              file
+
+USBUART_lastPacketSize
+                    0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+USBUART_device      0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+USBUART_transferByteCount
+                    0x2               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+USBUART_hidProtocol
+                    0x2               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+USBUART_transferState
+                    0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+errno               0x4               c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
+USBUART_hidIdleTimer
+                    0x2               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+USBUART_interfaceSettingLast
+                    0x2               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+USBUART_linesChanged
+                    0x2               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+USBUART_currentTD   0xc               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+USBUART_cdcDataInEp
+                    0x2               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+myWrBuffer          0x2               .\ARM_GCC_541\Debug\DIGIO8Driver.o
+I2C_state           0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+I2C_mstrWrBufIndex  0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+USBUART_idSerialNumberStringDescriptor
+                    0x22              .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_descr.o)
+USBUART_cdcCommInInterruptEp
+                    0x2               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+USBUART_cdcDataOutEp
+                    0x2               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+I2C_mstrWrBufSize   0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+USBUART_interfaceNumber
+                    0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+I2C_mstrStatus      0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+USBUART_interfaceClass
+                    0x4               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+USBUART_configurationChanged
+                    0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+USBUART_ep0Mode     0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+I2C_mstrRdBufPtr    0x4               .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+I2C_mstrControl     0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+USBUART_deviceAddress
+                    0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+USBUART_configuration
+                    0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+I2C_mstrRdBufSize   0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+USBUART_serialStateBitmap
+                    0x4               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+USBUART_ep0Count    0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+USBUART_linesControlBitmap
+                    0x4               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+USBUART_deviceStatus
+                    0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+I2C_mstrRdBufIndex  0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+I2C_mstrWrBufPtr    0x4               .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+USBUART_EP          0x6c              .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+USBUART_hidIdleRate
+                    0x2               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+USBUART_interfaceSetting
+                    0x2               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+USBUART_ep0Toggle   0x1               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+dieTemperature      0x2               .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+USBUART_interfaceStatus
+                    0x2               .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+ .data          0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .text          0x00000000       0x74 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .ARM.extab     0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .ARM.exidx     0x00000000        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\main.o
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\main.o
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\main.o
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\DIGIO8Driver.o
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\DIGIO8Driver.o
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\DIGIO8Driver.o
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.SetAnalogRoutingPumps
+                0x00000000       0x28 .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\cymetadata.o
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\cymetadata.o
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\cymetadata.o
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\Cm3Start.o
+ .data          0x00000000        0x4 .\ARM_GCC_541\Debug\Cm3Start.o
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\Cm3Start.o
+ .text._exit    0x00000000       0x14 .\ARM_GCC_541\Debug\Cm3Start.o
+ .text._sbrk    0x00000000       0x50 .\ARM_GCC_541\Debug\Cm3Start.o
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .text.USBUART_Stop
+                0x00000000      0x10c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .text.USBUART_CheckActivity
+                0x00000000       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .text.USBUART_GetInterfaceSetting
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .text.USBUART_DisableOutEP
+                0x00000000       0x34 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .text.USBUART_Force
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .text.USBUART_GetEPAckState
+                0x00000000       0x40 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .text.USBUART_SetPowerStatus
+                0x00000000       0x40 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .text.USBUART_RWUEnabled
+                0x00000000       0x2c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .text.USBUART_GetDeviceAddress
+                0x00000000       0x1c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .text.USBUART_EnableSofInt
+                0x00000000       0x18 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .text.USBUART_DisableSofInt
+                0x00000000       0x18 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_StrLen
+                0x00000000       0x2c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_PutString
+                0x00000000       0xdc .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_PutChar
+                0x00000000       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .rodata        0x00000000        0x2 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_PutCRLF
+                0x00000000       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_GetCount
+                0x00000000       0x54 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_GetData
+                0x00000000       0x3c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_GetChar
+                0x00000000       0x30 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_IsLineChanged
+                0x00000000       0x54 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_GetDTERate
+                0x00000000       0x8c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_GetCharFormat
+                0x00000000       0x2c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_GetParityType
+                0x00000000       0x2c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_GetDataBits
+                0x00000000       0x2c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_GetLineControl
+                0x00000000       0x24 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_SendSerialState
+                0x00000000       0xa8 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_GetSerialState
+                0x00000000       0x24 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_NotificationIsReady
+                0x00000000       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_SetComPort
+                0x00000000       0x30 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text.USBUART_GetComPort
+                0x00000000       0x14 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+ .text.USBUART_UpdateHIDTimer
+                0x00000000       0x64 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+ .text.USBUART_GetProtocol
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+ .bss           0x00000000        0x2 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+ .text.USBUART_SaveConfig
+                0x00000000        0xc .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+ .text.USBUART_RestoreConfig
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+ .text.USBUART_Suspend
+                0x00000000      0x11c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+ .text.USBUART_Resume
+                0x00000000      0x100 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+ .text.USBUART_EpStateInit
+                0x00000000       0x6c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+ .text.USBUART_TerminateEP
+                0x00000000       0xc0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_vnd.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_vnd.o)
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_vnd.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+ .text.USBUART_Dp_Write
+                0x00000000       0x3c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+ .text.USBUART_Dp_SetDriveMode
+                0x00000000       0x3c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+ .text.USBUART_Dp_Read
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+ .text.USBUART_Dp_ReadDataReg
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+ .text.USBUART_Dp_SetInterruptMode
+                0x00000000       0x30 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .bss           0x00000000       0x1d .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyPLL_OUT_Start
+                0x00000000       0xb0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyPLL_OUT_Stop
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyPLL_OUT_SetPQ
+                0x00000000       0x94 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyPLL_OUT_SetSource
+                0x00000000       0x58 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyIMO_Start
+                0x00000000       0x94 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyIMO_Stop
+                0x00000000       0x34 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyUSB_PowerOnCheck
+                0x00000000       0x60 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyIMO_SetTrimValue
+                0x00000000      0x108 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyIMO_SetFreq
+                0x00000000      0x1b0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyIMO_SetSource
+                0x00000000       0x8c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyIMO_EnableDoubler
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyIMO_DisableDoubler
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyMasterClk_SetSource
+                0x00000000       0x34 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyMasterClk_SetDivider
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyBusClk_Internal_SetDivider
+                0x00000000       0x78 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyBusClk_SetDivider
+                0x00000000       0xb4 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyUsbClk_SetSource
+                0x00000000       0x34 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyILO_Start1K
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyILO_Stop1K
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyILO_Start100K
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyILO_Stop100K
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyILO_Enable33K
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyILO_Disable33K
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyILO_SetSource
+                0x00000000       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyILO_SetPowerMode
+                0x00000000       0x4c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyXTAL_32KHZ_Start
+                0x00000000       0x88 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyXTAL_32KHZ_Stop
+                0x00000000       0x50 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyXTAL_32KHZ_ReadStatus
+                0x00000000       0x1c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyXTAL_32KHZ_SetPowerMode
+                0x00000000       0xb4 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyXTAL_Start
+                0x00000000       0xd0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyXTAL_Stop
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyXTAL_EnableErrStatus
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyXTAL_DisableErrStatus
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyXTAL_ReadStatus
+                0x00000000       0x24 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyXTAL_EnableFaultRecovery
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyXTAL_DisableFaultRecovery
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyXTAL_SetStartup
+                0x00000000       0x34 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyXTAL_SetFbVoltage
+                0x00000000       0x34 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyXTAL_SetWdVoltage
+                0x00000000       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySoftwareReset
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyDelay  0x00000000       0x44 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyDelayFreq
+                0x00000000       0x7c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyWdtStart
+                0x00000000       0x8c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyWdtClear
+                0x00000000       0x18 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyVdLvDigitEnable
+                0x00000000       0xcc .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyVdLvAnalogEnable
+                0x00000000       0xcc .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyVdLvDigitDisable
+                0x00000000       0x48 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyVdLvAnalogDisable
+                0x00000000       0x44 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyVdHvAnalogEnable
+                0x00000000       0x7c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyVdHvAnalogDisable
+                0x00000000       0x30 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyVdStickyStatus
+                0x00000000       0x5c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyVdRealTimeStatus
+                0x00000000       0x30 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyDisableInts
+                0x00000000       0x34 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyEnableInts
+                0x00000000       0x2c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyFlushCache
+                0x00000000       0x5c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyIntSetSysVector
+                0x00000000       0x4c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyIntGetSysVector
+                0x00000000       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyIntGetVector
+                0x00000000       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyIntGetPriority
+                0x00000000       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CyIntGetState
+                0x00000000       0x44 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySetScPumps
+                0x00000000      0x1b0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySysTickStart
+                0x00000000       0x24 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySysTickInit
+                0x00000000       0x6c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySysTickEnable
+                0x00000000       0x1c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySysTickStop
+                0x00000000       0x1c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySysTickEnableInterrupt
+                0x00000000       0x1c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySysTickDisableInterrupt
+                0x00000000       0x1c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySysTickSetReload
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySysTickGetReload
+                0x00000000       0x18 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySysTickGetValue
+                0x00000000       0x18 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySysTickSetClockSource
+                0x00000000       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySysTickGetClockSource
+                0x00000000       0x1c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySysTickGetCountFlag
+                0x00000000       0x1c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySysTickClear
+                0x00000000       0x18 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySysTickSetCallback
+                0x00000000       0x30 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySysTickGetCallback
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text.CySysTickServiceCallbacks
+                0x00000000       0x44 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .bss           0x00000000       0x43 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .rodata        0x00000000        0xf .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text.CyPmSaveClocks
+                0x00000000      0x288 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text.CyPmRestoreClocks
+                0x00000000      0x2f0 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text.CyPmAltAct
+                0x00000000       0xbc .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text.CyPmSleep
+                0x00000000      0x170 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text.CyPmHibernate
+                0x00000000       0x10 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text.CyPmHibernateEx
+                0x00000000      0x158 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text.CyPmReadStatus
+                0x00000000       0x5c .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text.CyPmHibSaveSet
+                0x00000000       0xe8 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text.CyPmHibRestore
+                0x00000000       0x78 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text.CyPmCtwSetInterval
+                0x00000000       0x94 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text.CyPmOppsSet
+                0x00000000       0x44 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text.CyPmFtwSetInterval
+                0x00000000       0x94 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text.CyPmHibSlpSaveSet
+                0x00000000      0x280 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text.CyPmHibSlpRestore
+                0x00000000      0x18c .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text.CyPmHviLviSaveDisable
+                0x00000000       0xd8 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text.CyPmHviLviRestore
+                0x00000000       0x58 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+ .text.I2C_Stop
+                0x00000000      0x110 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_INT.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_INT.o)
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_INT.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+ .data          0x00000000        0x6 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+ .text.I2C_SaveConfig
+                0x00000000       0x58 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+ .text.I2C_Sleep
+                0x00000000       0x3c .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+ .text.I2C_RestoreConfig
+                0x00000000       0x8c .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+ .text.I2C_Wakeup
+                0x00000000       0x28 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .text.I2C_MasterReadBuf
+                0x00000000      0x110 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .text.I2C_MasterSendRestart
+                0x00000000       0xa4 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .text.I2C_MasterGetReadBufSize
+                0x00000000       0x18 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .text.I2C_MasterGetWriteBufSize
+                0x00000000       0x18 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .text.I2C_MasterClearReadBuf
+                0x00000000       0x44 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .text.I2C_MasterClearWriteBuf
+                0x00000000       0x44 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyBootAsmGnu.o)
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyBootAsmGnu.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .text.CyScBoostClk_Start
+                0x00000000       0x34 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .text.CyScBoostClk_Stop
+                0x00000000       0x34 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .text.CyScBoostClk_StopBlock
+                0x00000000       0xb0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .text.CyScBoostClk_StandbyPower
+                0x00000000       0x40 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .text.CyScBoostClk_SetDividerRegister
+                0x00000000      0x164 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .text.CyScBoostClk_GetDividerRegister
+                0x00000000       0x18 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .text.CyScBoostClk_SetModeRegister
+                0x00000000       0x34 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .text.CyScBoostClk_ClearModeRegister
+                0x00000000       0x34 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .text.CyScBoostClk_GetModeRegister
+                0x00000000       0x1c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .text.CyScBoostClk_SetSourceRegister
+                0x00000000       0xc4 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .text.CyScBoostClk_GetSourceRegister
+                0x00000000       0x1c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .text.CyScBoostClk_SetPhaseRegister
+                0x00000000       0x24 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .text.CyScBoostClk_GetPhaseRegister
+                0x00000000       0x1c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cls.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cls.o)
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cls.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_descr.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_descr.o)
+ .bss           0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_descr.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .bss           0x00000000        0x4 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .text.CyFlash_Start
+                0x00000000       0x8c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .text.CyFlash_Stop
+                0x00000000       0x48 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .text.CyFlash_EraseRow
+                0x00000000       0xb0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .text.CySetTempInt
+                0x00000000       0x7c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .text.CyFlashGetSpcAlgorithm
+                0x00000000       0x70 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .text.CySetTemp
+                0x00000000       0x24 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .text.CySetFlashEEBuffer
+                0x00000000       0x54 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .text.CyWriteRowData
+                0x00000000       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .text.CyWriteRowConfig
+                0x00000000       0x28 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .text.CyWriteRowFull
+                0x00000000      0x154 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .text.CyFlash_SetWaitCycles
+                0x00000000       0xbc .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .text.CyEEPROM_Start
+                0x00000000       0x8c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .text.CyEEPROM_Stop
+                0x00000000       0x48 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .text.CyEEPROM_ReadReserve
+                0x00000000       0x30 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .text.CyEEPROM_ReadRelease
+                0x00000000       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ COMMON         0x00000000        0x2 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .text          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .data          0x00000000        0x0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .bss           0x00000000        0x8 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .text.CySpcStart
+                0x00000000       0x48 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .text.CySpcStop
+                0x00000000       0x48 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .text.CySpcReadData
+                0x00000000       0x54 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .text.CySpcLoadMultiByte
+                0x00000000       0xd0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .text.CySpcLoadRow
+                0x00000000       0x88 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .text.CySpcLoadRowFull
+                0x00000000      0x104 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .text.CySpcWriteRow
+                0x00000000       0x98 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .text.CySpcEraseSector
+                0x00000000       0x70 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .text.CySpcEraseRow
+                0x00000000       0x98 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .text.CySpcGetTemp
+                0x00000000       0x64 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .text.CySpcLock
+                0x00000000       0x68 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .text.CySpcUnlock
+                0x00000000       0x50 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .text.CySpcGetAlgorithm
+                0x00000000       0x44 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .text.exit     0x00000000       0x28 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .rodata._global_impure_ptr
+                0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o)
+ .text.__cvt    0x00000000       0xc0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o)
+ .text.__exponent
+                0x00000000       0x62 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o)
+ .text._printf_float
+                0x00000000      0x488 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o)
+ .rodata.str1.1
+                0x00000000       0x12 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .text._printf_common
+                0x00000000       0xec c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .text._printf_i
+                0x00000000      0x24c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .rodata.str1.1
+                0x00000000       0x22 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .text          0x00000000       0x10 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strlen.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strlen.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strlen.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-dtoa.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-dtoa.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-dtoa.o)
+ .text.quorem   0x00000000      0x116 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-dtoa.o)
+ .text._dtoa_r  0x00000000      0xb30 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-dtoa.o)
+ .rodata.str1.1
+                0x00000000        0xf c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-dtoa.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .text._setlocale_r
+                0x00000000       0x38 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .text.__locale_charset
+                0x00000000        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .text.__locale_mb_cur_max
+                0x00000000        0xc c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .text.__locale_msgcharset
+                0x00000000        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .text.__locale_cjk_lang
+                0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .text._localeconv_r
+                0x00000000        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .text.setlocale
+                0x00000000       0x10 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .text.localeconv
+                0x00000000        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .data.lc_message_charset
+                0x00000000       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .bss._PathLocale
+                0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .bss.__nlocale_changed
+                0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .bss.__mlocale_changed
+                0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .data.lconv    0x00000000       0x38 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .rodata.str1.1
+                0x00000000        0xb c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .data.lc_ctype_charset
+                0x00000000       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .data.__mb_cur_max
+                0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-malloc.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-malloc.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-malloc.o)
+ .text.malloc   0x00000000       0x10 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-malloc.o)
+ .text.free     0x00000000       0x10 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-malloc.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
+ .text.memchr   0x00000000       0x1c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text._Balloc  0x00000000       0x6a c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text._Bfree   0x00000000       0x2e c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text.__multadd
+                0x00000000       0x76 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text.__s2b    0x00000000       0x7c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text.__hi0bits
+                0x00000000       0x40 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text.__lo0bits
+                0x00000000       0x5a c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text.__i2b    0x00000000       0x12 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text.__multiply
+                0x00000000      0x120 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text.__pow5mult
+                0x00000000       0x9c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text.__lshift
+                0x00000000       0xa2 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text.__mcmp   0x00000000       0x38 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text.__mdiff  0x00000000       0xbe c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text.__ulp    0x00000000       0x48 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text.__b2d    0x00000000       0x9a c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text.__d2b    0x00000000       0x9c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text.__ratio  0x00000000       0x50 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text._mprec_log10
+                0x00000000       0x34 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text.__copybits
+                0x00000000       0x34 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text.__any_on
+                0x00000000       0x44 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .rodata.__mprec_tens
+                0x00000000       0xc8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .rodata.p05.5408
+                0x00000000        0xc c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .rodata.__mprec_bigtens
+                0x00000000       0x28 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .rodata.__mprec_tinytens
+                0x00000000       0x28 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-callocr.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-callocr.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-callocr.o)
+ .text._calloc_r
+                0x00000000       0x1c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-callocr.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
+ .text._free_r  0x00000000       0x98 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+ .text._malloc_r
+                0x00000000       0xbc c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+ .bss.__malloc_sbrk_start
+                0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+ .bss.__malloc_free_list
+                0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
+ .text._sbrk_r  0x00000000       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
+ .text          0x00000000       0x14 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strcmp.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strcmp.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strcmp.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+ .text.__malloc_lock
+                0x00000000        0x2 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+ .text.__malloc_unlock
+                0x00000000        0x2 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
+ .text.cleanup_glue
+                0x00000000       0x1a c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
+ .text._reclaim_reent
+                0x00000000       0xb4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
+ COMMON         0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
+ .text          0x00000000      0x370 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubdf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubdf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubdf3.o)
+ .text          0x00000000      0x424 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivdf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivdf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivdf3.o)
+ .text          0x00000000      0x110 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_cmpdf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_cmpdf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_cmpdf2.o)
+ .text          0x00000000       0x2c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_unorddf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_unorddf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_unorddf2.o)
+ .text          0x00000000       0x50 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_fixdfsi.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_fixdfsi.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_fixdfsi.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00020000         xr
+ram              0x1fffc000         0x00008000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+LOAD c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+LOAD c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+START GROUP
+LOAD .\ARM_GCC_541\Debug\main.o
+LOAD .\ARM_GCC_541\Debug\DIGIO8Driver.o
+LOAD .\ARM_GCC_541\Debug\cyfitter_cfg.o
+LOAD .\ARM_GCC_541\Debug\cymetadata.o
+LOAD .\ARM_GCC_541\Debug\Cm3Start.o
+LOAD .\ARM_GCC_541\Debug\USBFS_UART01.a
+LOAD C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libc_nano.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libc_nano.a
+END GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+LOAD c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libnosys.a
+END GROUP
+                0x00000000                CY_APPL_ORIGIN = 0x0
+                0x00000100                CY_FLASH_ROW_SIZE = 0x100
+                0x00000020                CY_ECC_ROW_SIZE = 0x20
+                0x00000000                CY_EE_IN_BTLDR = 0x0
+                0x00000000                CY_APPL_LOADABLE = 0x0
+                0x00000800                CY_EE_SIZE = 0x800
+                0x00000001                CY_APPL_NUM = 0x1
+                0x00000001                CY_APPL_MAX = 0x1
+                0x00000040                CY_METADATA_SIZE = 0x40
+                0x00000000                CY_APPL_LOADABLE = 0x0
+                0x00000000                CY_CHECKSUM_EXCLUDE_SIZE = ALIGN (0x0, CY_FLASH_ROW_SIZE)
+                [!provide]                PROVIDE (__cy_heap_start, _end)
+                0x00000001                PROVIDE (__cy_region_num, ((__cy_regions_end - __cy_regions) / 0x10))
+                0x20004000                PROVIDE (__cy_stack, (ORIGIN (ram) + LENGTH (ram)))
+                [!provide]                PROVIDE (__cy_heap_end, (__cy_stack - 0x800))
+
+.cybootloader   0x00000000        0x0
+ *(.cybootloader)
+                0x00000000                appl1_start = CY_APPL_ORIGIN?CY_APPL_ORIGIN:ALIGN (CY_FLASH_ROW_SIZE)
+                0x0000ff00                appl2_start = (appl1_start + ALIGN ((((LENGTH (rom) - appl1_start) - (0x2 * CY_FLASH_ROW_SIZE)) / 0x2), CY_FLASH_ROW_SIZE))
+                0x00000000                appl_start = (CY_APPL_NUM == 0x1)?appl1_start:appl2_start
+                0x00000000                ecc_offset = ((appl_start / CY_FLASH_ROW_SIZE) * CY_ECC_ROW_SIZE)
+                0x00000000                ee_offset = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?((CY_EE_SIZE / CY_APPL_MAX) * (CY_APPL_NUM - 0x1)):0x0
+                0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
+                [!provide]                PROVIDE (CY_ECC_OFFSET, ecc_offset)
+
+.text           0x00000000     0x377e
+ CREATE_OBJECT_SYMBOLS
+                0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
+ *(.romvectors)
+ .romvectors    0x00000000       0x10 .\ARM_GCC_541\Debug\Cm3Start.o
+                0x00000000                RomVectors
+                0x00000001                ASSERT ((. != __cy_interrupt_vector), No interrupt vector)
+                0x00000001                ASSERT (CY_APPL_ORIGIN?(SIZEOF (.cybootloader) <= CY_APPL_ORIGIN):0x1, Wrong image location)
+                0x00000010                PROVIDE (__cy_reset, Reset)
+ *(.text.Reset)
+ .text.Reset    0x00000010       0x18 .\ARM_GCC_541\Debug\Cm3Start.o
+                0x00000010                Reset
+                0x00000001                ASSERT ((. != __cy_reset), No reset code)
+ *(.dma_init)
+                0x00000001                ASSERT ((((appl_start + .) <= 0x10000) || 0x1), DMA Init must be within the first 64k of flash)
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x00000028       0x5c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .text.main     0x00000084       0xa8 .\ARM_GCC_541\Debug\main.o
+                0x00000084                main
+ .text.readRegisterDIGIO8Card
+                0x0000012c       0x48 .\ARM_GCC_541\Debug\DIGIO8Driver.o
+                0x0000012c                readRegisterDIGIO8Card
+ .text.writeRegisterDIGIO8Card
+                0x00000174       0x4c .\ARM_GCC_541\Debug\DIGIO8Driver.o
+                0x00000174                writeRegisterDIGIO8Card
+ .text.initDIGIO8Card
+                0x000001c0       0x3c .\ARM_GCC_541\Debug\DIGIO8Driver.o
+                0x000001c0                initDIGIO8Card
+ .text.writeDIGIO8Card
+                0x000001fc       0x1c .\ARM_GCC_541\Debug\DIGIO8Driver.o
+                0x000001fc                writeDIGIO8Card
+ .text.readDIGIO8Card
+                0x00000218       0x20 .\ARM_GCC_541\Debug\DIGIO8Driver.o
+                0x00000218                readDIGIO8Card
+ .text.CYMEMZERO
+                0x00000238       0x1c .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.CYCONFIGCPY
+                0x00000254       0x20 .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.CYCONFIGCPYCODE
+                0x00000274       0x20 .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.CyClockStartupError
+                0x00000294        0xc .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.cfg_write_bytes32
+                0x000002a0       0x74 .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.ClockSetup
+                0x00000314      0x118 .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.AnalogSetDefault
+                0x0000042c       0x44 .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.cyfitter_cfg
+                0x00000470      0x140 .\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000470                cyfitter_cfg
+ .text.IntDefaultHandler
+                0x000005b0       0x14 .\ARM_GCC_541\Debug\Cm3Start.o
+                0x000005b0                IntDefaultHandler
+ .text.Start_c  0x000005c4       0x98 .\ARM_GCC_541\Debug\Cm3Start.o
+                0x000005c4                Start_c
+ .text.initialize_psoc
+                0x0000065c       0x90 .\ARM_GCC_541\Debug\Cm3Start.o
+                0x0000065c                initialize_psoc
+ .text.USBUART_Start
+                0x000006ec       0x3c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+                0x000006ec                USBUART_Start
+ .text.USBUART_Init
+                0x00000728      0x1a4 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+                0x00000728                USBUART_Init
+ .text.USBUART_InitComponent
+                0x000008cc      0x120 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+                0x000008cc                USBUART_InitComponent
+ .text.USBUART_ReInitComponent
+                0x000009ec       0x88 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+                0x000009ec                USBUART_ReInitComponent
+ .text.USBUART_GetConfiguration
+                0x00000a74       0x18 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+                0x00000a74                USBUART_GetConfiguration
+ .text.USBUART_IsConfigurationChanged
+                0x00000a8c       0x30 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+                0x00000a8c                USBUART_IsConfigurationChanged
+ .text.USBUART_GetEPState
+                0x00000abc       0x2c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+                0x00000abc                USBUART_GetEPState
+ .text.USBUART_GetEPCount
+                0x00000ae8       0x60 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+                0x00000ae8                USBUART_GetEPCount
+ .text.USBUART_LoadInEP
+                0x00000b48      0x108 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+                0x00000b48                USBUART_LoadInEP
+ .text.USBUART_ReadOutEP
+                0x00000c50       0x8c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+                0x00000c50                USBUART_ReadOutEP
+ .text.USBUART_EnableOutEP
+                0x00000cdc       0x5c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+                0x00000cdc                USBUART_EnableOutEP
+ .text.USBUART_DispatchCDCClassRqst
+                0x00000d38       0xe4 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+                0x00000d38                USBUART_DispatchCDCClassRqst
+ .text.USBUART_GetInterfaceComPort
+                0x00000e1c       0x60 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+                0x00000e1c                USBUART_GetInterfaceComPort
+ .text.USBUART_CDC_Init
+                0x00000e7c       0xa8 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+                0x00000e7c                USBUART_CDC_Init
+ .text.USBUART_PutData
+                0x00000f24       0x6c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+                0x00000f24                USBUART_PutData
+ .text.USBUART_DataIsReady
+                0x00000f90       0x24 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+                0x00000f90                USBUART_DataIsReady
+ .text.USBUART_CDCIsReady
+                0x00000fb4       0x24 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+                0x00000fb4                USBUART_CDCIsReady
+ .text.USBUART_GetAll
+                0x00000fd8       0x4c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+                0x00000fd8                USBUART_GetAll
+ .text.USBUART_Cdc_EpInit
+                0x00001024       0x90 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+                0x00001024                USBUART_Cdc_EpInit
+ .text.USBUART_EP_0_ISR
+                0x000010b4       0xf8 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x000010b4                USBUART_EP_0_ISR
+ .text.USBUART_HandleSetup
+                0x000011ac       0x88 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x000011ac                USBUART_HandleSetup
+ .text.USBUART_HandleIN
+                0x00001234       0x4c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x00001234                USBUART_HandleIN
+ .text.USBUART_HandleOUT
+                0x00001280       0x58 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x00001280                USBUART_HandleOUT
+ .text.USBUART_LoadEP0
+                0x000012d8       0xd0 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x000012d8                USBUART_LoadEP0
+ .text.USBUART_InitControlRead
+                0x000013a8       0x70 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x000013a8                USBUART_InitControlRead
+ .text.USBUART_InitZeroLengthControlTransfer
+                0x00001418       0x40 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x00001418                USBUART_InitZeroLengthControlTransfer
+ .text.USBUART_ControlReadDataStage
+                0x00001458        0xc .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x00001458                USBUART_ControlReadDataStage
+ .text.USBUART_ControlReadStatusStage
+                0x00001464       0x40 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x00001464                USBUART_ControlReadStatusStage
+ .text.USBUART_InitControlWrite
+                0x000014a4       0x64 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x000014a4                USBUART_InitControlWrite
+ .text.USBUART_ControlWriteDataStage
+                0x00001508       0xb4 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x00001508                USBUART_ControlWriteDataStage
+ .text.USBUART_ControlWriteStatusStage
+                0x000015bc       0x24 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x000015bc                USBUART_ControlWriteStatusStage
+ .text.USBUART_InitNoDataControlTransfer
+                0x000015e0       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x000015e0                USBUART_InitNoDataControlTransfer
+ .text.USBUART_NoDataControlStatusStage
+                0x00001618       0x4c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x00001618                USBUART_NoDataControlStatusStage
+ .text.USBUART_UpdateStatusBlock
+                0x00001664       0x40 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x00001664                USBUART_UpdateStatusBlock
+ .text.USBUART_InitializeStatusBlock
+                0x000016a4       0x34 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x000016a4                USBUART_InitializeStatusBlock
+ .text.USBUART_EP_1_ISR
+                0x000016d8       0x48 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+                0x000016d8                USBUART_EP_1_ISR
+ .text.USBUART_EP_2_ISR
+                0x00001720       0x4c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+                0x00001720                USBUART_EP_2_ISR
+ .text.USBUART_EP_3_ISR
+                0x0000176c       0x54 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+                0x0000176c                USBUART_EP_3_ISR
+ .text.USBUART_SOF_ISR
+                0x000017c0        0xc .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+                0x000017c0                USBUART_SOF_ISR
+ .text.USBUART_BUS_RESET_ISR
+                0x000017cc        0xc .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+                0x000017cc                USBUART_BUS_RESET_ISR
+ .text.USBUART_DispatchHIDClassRqst
+                0x000017d8      0x1e4 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+                0x000017d8                USBUART_DispatchHIDClassRqst
+ .text.USBUART_FindHidClassDecriptor
+                0x000019bc       0x7c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+                0x000019bc                USBUART_FindHidClassDecriptor
+ .text.USBUART_FindReportDescriptor
+                0x00001a38       0x90 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+                0x00001a38                USBUART_FindReportDescriptor
+ .text.USBUART_FindReport
+                0x00001ac8       0xcc .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+                0x00001ac8                USBUART_FindReport
+ .text.USBUART_DP_ISR
+                0x00001b94        0xc .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+                0x00001b94                USBUART_DP_ISR
+ .text.USBUART_HandleStandardRqst
+                0x00001ba0      0x4a4 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+                0x00001ba0                USBUART_HandleStandardRqst
+ .text.USBUART_ReadDieID
+                0x00002044       0xd8 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+                0x00002044                USBUART_ReadDieID
+ .text.USBUART_ConfigReg
+                0x0000211c      0x138 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+                0x0000211c                USBUART_ConfigReg
+ .text.USBUART_Config
+                0x00002254      0x3a4 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+                0x00002254                USBUART_Config
+ .text.USBUART_ConfigAltChanged
+                0x000025f8      0x25c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+                0x000025f8                USBUART_ConfigAltChanged
+ .text.USBUART_GetConfigTablePtr
+                0x00002854       0x50 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+                0x00002854                USBUART_GetConfigTablePtr
+ .text.USBUART_GetDeviceTablePtr
+                0x000028a4       0x24 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+                0x000028a4                USBUART_GetDeviceTablePtr
+ .text.USBUART_GetInterfaceClassTablePtr
+                0x000028c8       0x4c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+                0x000028c8                USBUART_GetInterfaceClassTablePtr
+ .text.USBUART_SetEndpointHalt
+                0x00002914       0xe8 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+                0x00002914                USBUART_SetEndpointHalt
+ .text.USBUART_ClearEndpointHalt
+                0x000029fc      0x158 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+                0x000029fc                USBUART_ClearEndpointHalt
+ .text.USBUART_ValidateAlternateSetting
+                0x00002b54       0x70 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+                0x00002b54                USBUART_ValidateAlternateSetting
+ .text.USBUART_HandleVendorRqst
+                0x00002bc4       0x54 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_vnd.o)
+                0x00002bc4                USBUART_HandleVendorRqst
+ .text.USBUART_Dp_ClearInterrupt
+                0x00002c18       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+                0x00002c18                USBUART_Dp_ClearInterrupt
+ .text.CyHalt   0x00002c38       0x18 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+                0x00002c38                CyHalt
+ .text.CyDelayUs
+                0x00002c50       0x28 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+                0x00002c50                CyDelayUs
+ .text.CyIntSetVector
+                0x00002c78       0x50 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+                0x00002c78                CyIntSetVector
+ .text.CyIntSetPriority
+                0x00002cc8       0x48 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+                0x00002cc8                CyIntSetPriority
+ .text.CyGetUniqueId
+                0x00002d10       0xc4 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+                0x00002d10                CyGetUniqueId
+ .text.I2C_Init
+                0x00002dd4       0x84 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+                0x00002dd4                I2C_Init
+ .text.I2C_Enable
+                0x00002e58       0x48 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+                0x00002e58                I2C_Enable
+ .text.I2C_Start
+                0x00002ea0       0x30 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+                0x00002ea0                I2C_Start
+ .text.I2C_ISR  0x00002ed0      0x3a8 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_INT.o)
+                0x00002ed0                I2C_ISR
+ .text.I2C_MasterWriteBuf
+                0x00003278      0x108 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+                0x00003278                I2C_MasterWriteBuf
+ .text.I2C_MasterSendStart
+                0x00003380       0xb8 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+                0x00003380                I2C_MasterSendStart
+ .text.I2C_MasterSendStop
+                0x00003438       0x58 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+                0x00003438                I2C_MasterSendStop
+ .text.I2C_MasterWriteByte
+                0x00003490       0x80 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+                0x00003490                I2C_MasterWriteByte
+ .text.I2C_MasterReadByte
+                0x00003510       0x78 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+                0x00003510                I2C_MasterReadByte
+ .text.I2C_MasterStatus
+                0x00003588       0x50 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+                0x00003588                I2C_MasterStatus
+ .text.I2C_MasterClearStatus
+                0x000035d8       0x3c .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+                0x000035d8                I2C_MasterClearStatus
+ *fill*         0x00003614        0x4 
+ .text          0x00003618       0x54 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyBootAsmGnu.o)
+                0x00003618                CyDelayCycles
+                0x00003656                CyEnterCriticalSection
+                0x0000365e                CyExitCriticalSection
+ .text.USBUART_DispatchClassRqst
+                0x0000366c       0x94 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cls.o)
+                0x0000366c                USBUART_DispatchClassRqst
+ .text.__errno  0x00003700        0xc c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x00003700                __errno
+ .text.__libc_init_array
+                0x0000370c       0x4c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x0000370c                __libc_init_array
+ .text.memcpy   0x00003758       0x16 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x00003758                memcpy
+ .text.memset   0x0000376e       0x10 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x0000376e                memset
+ *(.plt)
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x0000377e        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x0000377e        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x0000377e        0x0 linker stubs
+ *(.bootloader)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ *(.gcc_except_table)
+
+.v4_bx          0x00003780        0x0
+ .v4_bx         0x00003780        0x0 linker stubs
+
+.iplt           0x00003780        0x0
+ .iplt          0x00003780        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame       0x00003780        0x4
+ *(.eh_frame)
+ .eh_frame      0x00003780        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .eh_frame      0x00003780        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+                [!provide]                PROVIDE (__exidx_start, .)
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00003784                __exidx_end = .
+
+.rodata         0x00003784      0x384
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x00003784      0x164 .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .rodata        0x000038e8       0x11 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+ *fill*         0x000038f9        0x3 
+ .rodata        0x000038fc      0x1d4 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_descr.o)
+                0x000038fc                USBUART_DEVICE0_DESCR
+                0x00003910                USBUART_DEVICE0_CONFIGURATION0_DESCR
+                0x00003954                USBUART_STRING_DESCRIPTORS
+                0x000039f4                USBUART_SN_STRING_DESCRIPTOR
+                0x000039f8                USBUART_HIDREPORT_DESCRIPTOR1
+                0x00003a30                USBUART_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE
+                0x00003a48                USBUART_DEVICE0_CONFIGURATION0_INTERFACE_CLASS
+                0x00003a4c                USBUART_DEVICE0_CONFIGURATION0_TABLE
+                0x00003a74                USBUART_DEVICE0_TABLE
+                0x00003a8c                USBUART_TABLE
+                0x00003a94                USBUART_MSOS_DESCRIPTOR
+                0x00003aa8                USBUART_MSOS_CONFIGURATION_DESCR
+ .rodata.str1.1
+                0x00003ad0        0x2 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x00003ad4                . = ALIGN (0x4)
+ *fill*         0x00003ad2        0x2 
+ *(.init)
+ .init          0x00003ad4        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x00003ad4                _init
+ .init          0x00003ad8        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x00003ae0                . = ALIGN (0x4)
+                0x00003ae0                __preinit_array_start = .
+ *(.preinit_array)
+                0x00003ae0                __preinit_array_end = .
+                0x00003ae0                . = ALIGN (0x4)
+                0x00003ae0                __init_array_start = .
+ *(SORT(.init_array.*))
+ *(.init_array)
+ .init_array    0x00003ae0        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .init_array    0x00003ae4        0x4 .\ARM_GCC_541\Debug\Cm3Start.o
+                0x00003ae8                __init_array_end = .
+                0x00003ae8                . = ALIGN (0x4)
+ *(.fini)
+ .fini          0x00003ae8        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x00003ae8                _fini
+ .fini          0x00003aec        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x00003af4                . = ALIGN (0x4)
+                0x00003af4                __fini_array_start = .
+ *(.fini_array)
+ .fini_array    0x00003af4        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ *(SORT(.fini_array.*))
+                0x00003af8                __fini_array_end = .
+                0x00003af8                . = ALIGN (0x4)
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *crtend.o(.ctors)
+                0x00003af8                . = ALIGN (0x4)
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *crtend.o(.dtors)
+                0x00003af8                . = ALIGN (0x4)
+                0x00003af8                __cy_regions = .
+                0x00003af8        0x4 LONG 0x3b08 __cy_region_init_ram
+                0x00003afc        0x4 LONG 0x1fffc0c8 __cy_region_start_data
+                0x00003b00        0x4 LONG 0x98 __cy_region_init_size_ram
+                0x00003b04        0x4 LONG 0x120 __cy_region_zero_size_ram
+                0x00003b08                __cy_regions_end = .
+                0x00003b08                . = ALIGN (0x8)
+                0x00003b08                _etext = .
+
+.cy_checksum_exclude
+                0x00003b08        0x0
+ *(.cy_checksum_exclude)
+
+.ramvectors     0x1fffc000       0xc0
+                0x1fffc000                __cy_region_start_ram = .
+ *(.ramvectors)
+ .ramvectors    0x1fffc000       0xc0 .\ARM_GCC_541\Debug\Cm3Start.o
+                0x1fffc000                CyRamVectors
+
+.noinit         0x1fffc0c0        0x5
+ *(.noinit)
+ .noinit        0x1fffc0c0        0x4 .\ARM_GCC_541\Debug\Cm3Start.o
+ .noinit        0x1fffc0c4        0x1 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+                0x1fffc0c4                CyResetStatus
+
+.data           0x1fffc0c8       0x98 load address 0x00003b08
+                0x1fffc0c8                __cy_region_start_data = .
+ *(.jcr)
+ .jcr           0x1fffc0c8        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .jcr           0x1fffc0c8        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ *(.got.plt)
+ *(.got)
+ *(.shdata)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x1fffc0cc       0x1a .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+                0x1fffc0cc                USBUART_linesCoding
+ *fill*         0x1fffc0e6        0x2 
+ .data          0x1fffc0e8       0x10 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+                0x1fffc0e8                cydelay_freq_hz
+                0x1fffc0ec                cydelay_freq_khz
+                0x1fffc0f0                cydelay_freq_mhz
+                0x1fffc0f4                cydelay_32k_ms
+ .data.impure_data
+                0x1fffc0f8       0x60 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x1fffc158        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x1fffc158                _impure_ptr
+                0x1fffc160                . = ALIGN (0x8)
+ *fill*         0x1fffc15c        0x4 
+ *(.ram)
+                0x1fffc160                _edata = .
+
+.igot.plt       0x1fffc160        0x0 load address 0x00003ba0
+ .igot.plt      0x1fffc160        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+
+.bss            0x1fffc160      0x120 load address 0x00003ba0
+                0x1fffc160                PROVIDE (__bss_start__, .)
+ *(.shbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x1fffc160       0x1c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .bss           0x1fffc17c        0x1 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+                0x1fffc17c                USBUART_initVar
+ .bss           0x1fffc17d        0x1 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ *fill*         0x1fffc17e        0x2 
+ .bss           0x1fffc180        0x2 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+ .bss           0x1fffc182        0x1 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+                0x1fffc182                I2C_initVar
+ *(COMMON)
+ *fill*         0x1fffc183        0x1 
+ COMMON         0x1fffc184        0x2 .\ARM_GCC_541\Debug\DIGIO8Driver.o
+                0x1fffc184                myWrBuffer
+ *fill*         0x1fffc186        0x2 
+ COMMON         0x1fffc188       0x18 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+                0x1fffc188                USBUART_linesChanged
+                0x1fffc18c                USBUART_cdcDataInEp
+                0x1fffc190                USBUART_cdcCommInInterruptEp
+                0x1fffc194                USBUART_cdcDataOutEp
+                0x1fffc198                USBUART_serialStateBitmap
+                0x1fffc19c                USBUART_linesControlBitmap
+ COMMON         0x1fffc1a0       0x9a .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                0x1fffc1a0                USBUART_lastPacketSize
+                0x1fffc1a1                USBUART_device
+                0x1fffc1a2                USBUART_transferByteCount
+                0x1fffc1a4                USBUART_transferState
+                0x1fffc1a8                USBUART_interfaceSettingLast
+                0x1fffc1ac                USBUART_currentTD
+                0x1fffc1b8                USBUART_interfaceNumber
+                0x1fffc1bc                USBUART_interfaceClass
+                0x1fffc1c0                USBUART_configurationChanged
+                0x1fffc1c1                USBUART_ep0Mode
+                0x1fffc1c2                USBUART_deviceAddress
+                0x1fffc1c3                USBUART_configuration
+                0x1fffc1c4                USBUART_ep0Count
+                0x1fffc1c5                USBUART_deviceStatus
+                0x1fffc1c8                USBUART_EP
+                0x1fffc234                USBUART_interfaceSetting
+                0x1fffc236                USBUART_ep0Toggle
+                0x1fffc238                USBUART_interfaceStatus
+ *fill*         0x1fffc23a        0x2 
+ COMMON         0x1fffc23c        0xa .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+                0x1fffc23c                USBUART_hidProtocol
+                0x1fffc240                USBUART_hidIdleTimer
+                0x1fffc244                USBUART_hidIdleRate
+ COMMON         0x1fffc246        0x1 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+                0x1fffc246                I2C_state
+ *fill*         0x1fffc247        0x1 
+ COMMON         0x1fffc248       0x10 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+                0x1fffc248                I2C_mstrWrBufIndex
+                0x1fffc249                I2C_mstrWrBufSize
+                0x1fffc24a                I2C_mstrStatus
+                0x1fffc24c                I2C_mstrRdBufPtr
+                0x1fffc250                I2C_mstrControl
+                0x1fffc251                I2C_mstrRdBufSize
+                0x1fffc252                I2C_mstrRdBufIndex
+                0x1fffc254                I2C_mstrWrBufPtr
+ COMMON         0x1fffc258       0x22 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_descr.o)
+                0x1fffc258                USBUART_idSerialNumberStringDescriptor
+                0x1fffc280                . = ALIGN (0x8)
+ *fill*         0x1fffc27a        0x6 
+ *(.ram.b)
+                0x1fffc280                _end = .
+                0x1fffc280                __end = .
+                0x1fffc280                PROVIDE (end, .)
+                0x1fffc280                PROVIDE (__bss_end__, .)
+                0x00003b08                __cy_region_init_ram = LOADADDR (.data)
+                0x00000098                __cy_region_init_size_ram = (_edata - ADDR (.data))
+                0x00000120                __cy_region_zero_size_ram = (_end - _edata)
+
+.heap           0x1fffc280       0x80 load address 0x00003ba0
+                0x1fffc280                . = _end
+                0x1fffc300                . = (. + 0x80)
+ *fill*         0x1fffc280       0x80 
+                0x1fffc300                __cy_heap_limit = .
+
+.stack          0x20003800      0x800
+                0x20003800                __cy_stack_limit = .
+                0x20004000                . = (. + 0x800)
+ *fill*         0x20003800      0x800 
+                0x00000001                ASSERT ((__cy_stack_limit >= __cy_heap_limit), region RAM overflowed with stack)
+                0x00000000                cy_checksum_exclude_size = (CY_APPL_LOADABLE == 0x1)?SIZEOF (.cy_checksum_exclude):0x0
+                0x00000001                ASSERT ((cy_checksum_exclude_size <= CY_CHECKSUM_EXCLUDE_SIZE), CY_BOOT: Section .cy_checksum_exclude size exceedes specified limit.)
+
+.cyloadermeta
+ *(.cyloadermeta)
+
+.cyloadablemeta
+ *(.cyloadablemeta)
+
+.cyconfigecc    0x80000000        0x1
+ *(.cyconfigecc)
+ .cyconfigecc   0x80000000        0x1 .\ARM_GCC_541\Debug\cymetadata.o
+                0x80000000                cy_meta_configecc
+
+.cycustnvl      0x90000000        0x4
+ *(.cycustnvl)
+ .cycustnvl     0x90000000        0x4 .\ARM_GCC_541\Debug\cymetadata.o
+                0x90000000                cy_meta_custnvl
+
+.cywolatch      0x90100000        0x4
+ *(.cywolatch)
+ .cywolatch     0x90100000        0x4 .\ARM_GCC_541\Debug\cymetadata.o
+                0x90100000                cy_meta_wonvl
+
+.cyeeprom       0x90200000        0x0
+ *(.cyeeprom)
+                0x00000001                ASSERT ((. <= ((0x90200000 + ee_offset) + ee_size)), .cyeeprom data will not fit in EEPROM)
+
+.cyflashprotect
+                0x90400000       0x80
+ *(.cyflashprotect)
+ .cyflashprotect
+                0x90400000       0x80 .\ARM_GCC_541\Debug\cymetadata.o
+                0x90400000                cy_meta_flashprotect
+
+.cymeta         0x90500000        0xc
+ *(.cymeta)
+ .cymeta        0x90500000        0xc .\ARM_GCC_541\Debug\cymetadata.o
+                0x90500000                cy_metadata
+
+.rel.dyn        0x00003ba0        0x0 load address 0x9050000c
+ .rel.iplt      0x00003ba0        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0xb50
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 .\ARM_GCC_541\Debug\main.o
+ .debug_aranges
+                0x00000020       0x40 .\ARM_GCC_541\Debug\DIGIO8Driver.o
+ .debug_aranges
+                0x00000060       0x60 .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_aranges
+                0x000000c0       0x18 .\ARM_GCC_541\Debug\cymetadata.o
+ .debug_aranges
+                0x000000d8       0x48 .\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_aranges
+                0x00000120       0xc8 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .debug_aranges
+                0x000001e8       0xe8 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .debug_aranges
+                0x000002d0       0x98 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+ .debug_aranges
+                0x00000368       0x40 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+ .debug_aranges
+                0x000003a8       0x48 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+ .debug_aranges
+                0x000003f0       0x40 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+ .debug_aranges
+                0x00000430       0x80 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+ .debug_aranges
+                0x000004b0       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_vnd.o)
+ .debug_aranges
+                0x000004d0       0x48 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+ .debug_aranges
+                0x00000518      0x2a8 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .debug_aranges
+                0x000007c0       0x98 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .debug_aranges
+                0x00000858       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+ .debug_aranges
+                0x00000890       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_INT.o)
+ .debug_aranges
+                0x000008b0       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+ .debug_aranges
+                0x000008e8       0x80 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .debug_aranges
+                0x00000968       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyBootAsmGnu.o)
+ .debug_aranges
+                0x00000988       0x80 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .debug_aranges
+                0x00000a08       0x20 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cls.o)
+ .debug_aranges
+                0x00000a28       0x18 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_descr.o)
+ .debug_aranges
+                0x00000a40       0x90 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .debug_aranges
+                0x00000ad0       0x80 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x62e2
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x123 .\ARM_GCC_541\Debug\main.o
+ .debug_info    0x00000123      0x1a8 .\ARM_GCC_541\Debug\DIGIO8Driver.o
+ .debug_info    0x000002cb      0x493 .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x0000075e      0x134 .\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x00000892      0x32b .\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_info    0x00000bbd      0x747 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .debug_info    0x00001304      0x924 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .debug_info    0x00001c28      0x52d .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+ .debug_info    0x00002155      0x23b .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+ .debug_info    0x00002390      0x37b .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+ .debug_info    0x0000270b      0x18d .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+ .debug_info    0x00002898      0x961 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+ .debug_info    0x000031f9      0x1a9 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_vnd.o)
+ .debug_info    0x000033a2      0x171 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+ .debug_info    0x00003513      0xe88 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .debug_info    0x0000439b      0x57a .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .debug_info    0x00004915      0x201 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+ .debug_info    0x00004b16      0x156 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_INT.o)
+ .debug_info    0x00004c6c      0x19a .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+ .debug_info    0x00004e06      0x3f8 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .debug_info    0x000051fe       0xa8 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyBootAsmGnu.o)
+ .debug_info    0x000052a6      0x299 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .debug_info    0x0000553f      0x1c8 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cls.o)
+ .debug_info    0x00005707      0x30b .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_descr.o)
+ .debug_info    0x00005a12      0x410 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .debug_info    0x00005e22      0x4c0 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+
+.debug_abbrev   0x00000000     0x1d70
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x97 .\ARM_GCC_541\Debug\main.o
+ .debug_abbrev  0x00000097       0xeb .\ARM_GCC_541\Debug\DIGIO8Driver.o
+ .debug_abbrev  0x00000182      0x19f .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_abbrev  0x00000321       0x5d .\ARM_GCC_541\Debug\cymetadata.o
+ .debug_abbrev  0x0000037e      0x1d6 .\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_abbrev  0x00000554      0x1f3 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .debug_abbrev  0x00000747      0x233 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .debug_abbrev  0x0000097a      0x161 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+ .debug_abbrev  0x00000adb       0xfd .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+ .debug_abbrev  0x00000bd8      0x15e .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+ .debug_abbrev  0x00000d36       0xd1 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+ .debug_abbrev  0x00000e07      0x1c2 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+ .debug_abbrev  0x00000fc9       0xc5 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_vnd.o)
+ .debug_abbrev  0x0000108e       0x90 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+ .debug_abbrev  0x0000111e      0x217 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .debug_abbrev  0x00001335      0x161 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .debug_abbrev  0x00001496       0xe2 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+ .debug_abbrev  0x00001578       0x81 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_INT.o)
+ .debug_abbrev  0x000015f9       0xf8 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+ .debug_abbrev  0x000016f1      0x11e .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .debug_abbrev  0x0000180f       0x14 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00001823      0x11d .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .debug_abbrev  0x00001940       0xc5 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cls.o)
+ .debug_abbrev  0x00001a05       0xb4 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_descr.o)
+ .debug_abbrev  0x00001ab9      0x14b .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .debug_abbrev  0x00001c04      0x16c .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+
+.debug_line     0x00000000     0x32a3
+ *(.debug_line)
+ .debug_line    0x00000000      0x193 .\ARM_GCC_541\Debug\main.o
+ .debug_line    0x00000193      0x1d1 .\ARM_GCC_541\Debug\DIGIO8Driver.o
+ .debug_line    0x00000364      0x1f4 .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x00000558      0x141 .\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x00000699      0x1dc .\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_line    0x00000875      0x327 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .debug_line    0x00000b9c      0x30c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .debug_line    0x00000ea8      0x21f .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+ .debug_line    0x000010c7       0xf2 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+ .debug_line    0x000011b9      0x179 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+ .debug_line    0x00001332       0xe6 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+ .debug_line    0x00001418      0x470 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+ .debug_line    0x00001888       0x8f .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_vnd.o)
+ .debug_line    0x00001917       0xbf .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+ .debug_line    0x000019d6      0x8b5 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .debug_line    0x0000228b      0x38e .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .debug_line    0x00002619       0xd5 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+ .debug_line    0x000026ee      0x13b .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_INT.o)
+ .debug_line    0x00002829       0xbb .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+ .debug_line    0x000028e4      0x1e8 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .debug_line    0x00002acc       0x7d .\ARM_GCC_541\Debug\USBFS_UART01.a(CyBootAsmGnu.o)
+ .debug_line    0x00002b49      0x1cf .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .debug_line    0x00002d18       0x97 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cls.o)
+ .debug_line    0x00002daf       0x61 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_descr.o)
+ .debug_line    0x00002e10      0x242 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .debug_line    0x00003052      0x251 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+
+.debug_frame    0x00000000     0x31e4
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x30 .\ARM_GCC_541\Debug\main.o
+ .debug_frame   0x00000030       0xcc .\ARM_GCC_541\Debug\DIGIO8Driver.o
+ .debug_frame   0x000000fc      0x16c .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_frame   0x00000268       0xd8 .\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_frame   0x00000340      0x380 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .debug_frame   0x000006c0      0x3ec .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .debug_frame   0x00000aac      0x23c .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+ .debug_frame   0x00000ce8       0xbc .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+ .debug_frame   0x00000da4      0x100 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+ .debug_frame   0x00000ea4       0xbc .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+ .debug_frame   0x00000f60      0x224 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+ .debug_frame   0x00001184       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_vnd.o)
+ .debug_frame   0x000011bc       0xf4 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+ .debug_frame   0x000012b0      0xc34 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .debug_frame   0x00001ee4      0x234 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .debug_frame   0x00002118       0x98 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+ .debug_frame   0x000021b0       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_INT.o)
+ .debug_frame   0x000021e8       0x94 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+ .debug_frame   0x0000227c      0x208 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .debug_frame   0x00002484      0x200 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .debug_frame   0x00002684       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cls.o)
+ .debug_frame   0x000026bc      0x260 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .debug_frame   0x0000291c      0x228 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .debug_frame   0x00002b44       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x00002b64       0x28 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x00002b8c       0x2c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x00002bb8       0x28 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00002be0       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x00002c00       0x8c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o)
+ .debug_frame   0x00002c8c       0x60 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .debug_frame   0x00002cec       0x6c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-dtoa.o)
+ .debug_frame   0x00002d58       0x98 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .debug_frame   0x00002df0       0x30 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-malloc.o)
+ .debug_frame   0x00002e20       0x28 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
+ .debug_frame   0x00002e48      0x234 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .debug_frame   0x0000307c       0x2c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-callocr.o)
+ .debug_frame   0x000030a8       0x38 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
+ .debug_frame   0x000030e0       0x2c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x0000310c       0x2c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
+ .debug_frame   0x00003138       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strcmp.o)
+ .debug_frame   0x00003158       0x30 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+ .debug_frame   0x00003188       0x5c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
+
+.debug_str      0x00000000     0x2be5
+ *(.debug_str)
+ .debug_str     0x00000000      0x196 .\ARM_GCC_541\Debug\main.o
+                                0x1de (size before relaxing)
+ .debug_str     0x00000196       0x96 .\ARM_GCC_541\Debug\DIGIO8Driver.o
+                                0x24e (size before relaxing)
+ .debug_str     0x0000022c      0x1da .\ARM_GCC_541\Debug\cyfitter_cfg.o
+                                0x3a3 (size before relaxing)
+ .debug_str     0x00000406       0x7f .\ARM_GCC_541\Debug\cymetadata.o
+                                0x1fc (size before relaxing)
+ .debug_str     0x00000485      0x123 .\ARM_GCC_541\Debug\Cm3Start.o
+                                0x2ef (size before relaxing)
+ .debug_str     0x000005a8      0x448 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+                                0x617 (size before relaxing)
+ .debug_str     0x000009f0      0x4d9 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+                                0x732 (size before relaxing)
+ .debug_str     0x00000ec9      0x296 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+                                0x612 (size before relaxing)
+ .debug_str     0x0000115f       0x80 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+                                0x2df (size before relaxing)
+ .debug_str     0x000011df      0x120 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+                                0x3ad (size before relaxing)
+ .debug_str     0x000012ff       0xac .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+                                0x283 (size before relaxing)
+ .debug_str     0x000013ab      0x29a .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+                                0x772 (size before relaxing)
+ .debug_str     0x00001645       0x5f .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_vnd.o)
+                                0x28f (size before relaxing)
+ .debug_str     0x000016a4       0xbe .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+                                0x259 (size before relaxing)
+ .debug_str     0x00001762      0x81c .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+                                0xa26 (size before relaxing)
+ .debug_str     0x00001f7e      0x371 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+                                0x55b (size before relaxing)
+ .debug_str     0x000022ef       0xd2 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+                                0x29e (size before relaxing)
+ .debug_str     0x000023c1       0x86 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_INT.o)
+                                0x270 (size before relaxing)
+ .debug_str     0x00002447       0x56 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+                                0x254 (size before relaxing)
+ .debug_str     0x0000249d      0x170 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+                                0x3bc (size before relaxing)
+ .debug_str     0x0000260d      0x1e3 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+                                0x387 (size before relaxing)
+ .debug_str     0x000027f0       0x3f .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cls.o)
+                                0x2a7 (size before relaxing)
+ .debug_str     0x0000282f      0x122 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_descr.o)
+                                0x3c8 (size before relaxing)
+ .debug_str     0x00002951      0x167 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+                                0x337 (size before relaxing)
+ .debug_str     0x00002ab8      0x12d .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+                                0x319 (size before relaxing)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_ranges   0x00000000      0x990
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x10 .\ARM_GCC_541\Debug\main.o
+ .debug_ranges  0x00000010       0x30 .\ARM_GCC_541\Debug\DIGIO8Driver.o
+ .debug_ranges  0x00000040       0x50 .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_ranges  0x00000090       0x38 .\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_ranges  0x000000c8       0xb8 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .debug_ranges  0x00000180       0xd8 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .debug_ranges  0x00000258       0x88 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+ .debug_ranges  0x000002e0       0x30 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+ .debug_ranges  0x00000310       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+ .debug_ranges  0x00000348       0x30 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+ .debug_ranges  0x00000378       0x70 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+ .debug_ranges  0x000003e8       0x10 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_vnd.o)
+ .debug_ranges  0x000003f8       0x38 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+ .debug_ranges  0x00000430      0x298 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .debug_ranges  0x000006c8       0x88 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .debug_ranges  0x00000750       0x28 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+ .debug_ranges  0x00000778       0x10 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_INT.o)
+ .debug_ranges  0x00000788       0x28 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+ .debug_ranges  0x000007b0       0x70 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .debug_ranges  0x00000820       0x70 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .debug_ranges  0x00000890       0x10 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cls.o)
+ .debug_ranges  0x000008a0       0x80 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .debug_ranges  0x00000920       0x70 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+
+.comment        0x00000000       0x6e
+ .comment       0x00000000       0x6e .\ARM_GCC_541\Debug\main.o
+                                 0x6f (size before relaxing)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\DIGIO8Driver.o
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\cymetadata.o
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\Cm3Start.o
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_vnd.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_INT.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cls.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_descr.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .comment       0x0000006e       0x6f .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+.ARM.attributes
+                0x00000000       0x29
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x1d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+ .ARM.attributes
+                0x0000001d       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .ARM.attributes
+                0x0000004a       0x1b c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .ARM.attributes
+                0x00000065       0x33 .\ARM_GCC_541\Debug\main.o
+ .ARM.attributes
+                0x00000098       0x33 .\ARM_GCC_541\Debug\DIGIO8Driver.o
+ .ARM.attributes
+                0x000000cb       0x33 .\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .ARM.attributes
+                0x000000fe       0x33 .\ARM_GCC_541\Debug\cymetadata.o
+ .ARM.attributes
+                0x00000131       0x33 .\ARM_GCC_541\Debug\Cm3Start.o
+ .ARM.attributes
+                0x00000164       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART.o)
+ .ARM.attributes
+                0x00000197       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cdc.o)
+ .ARM.attributes
+                0x000001ca       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_drv.o)
+ .ARM.attributes
+                0x000001fd       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_episr.o)
+ .ARM.attributes
+                0x00000230       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_hid.o)
+ .ARM.attributes
+                0x00000263       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_pm.o)
+ .ARM.attributes
+                0x00000296       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_std.o)
+ .ARM.attributes
+                0x000002c9       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_vnd.o)
+ .ARM.attributes
+                0x000002fc       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_Dp.o)
+ .ARM.attributes
+                0x0000032f       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyLib.o)
+ .ARM.attributes
+                0x00000362       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(cyPm.o)
+ .ARM.attributes
+                0x00000395       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C.o)
+ .ARM.attributes
+                0x000003c8       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_INT.o)
+ .ARM.attributes
+                0x000003fb       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_PM.o)
+ .ARM.attributes
+                0x0000042e       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(I2C_MASTER.o)
+ .ARM.attributes
+                0x00000461       0x21 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyBootAsmGnu.o)
+ .ARM.attributes
+                0x00000482       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyScBoostClk.o)
+ .ARM.attributes
+                0x000004b5       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_cls.o)
+ .ARM.attributes
+                0x000004e8       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(USBUART_descr.o)
+ .ARM.attributes
+                0x0000051b       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(CyFlash.o)
+ .ARM.attributes
+                0x0000054e       0x33 .\ARM_GCC_541\Debug\USBFS_UART01.a(CySpc.o)
+ .ARM.attributes
+                0x00000581       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .ARM.attributes
+                0x000005ae       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .ARM.attributes
+                0x000005db       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x00000608       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000635       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x00000662       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x0000068f       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o)
+ .ARM.attributes
+                0x000006bc       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .ARM.attributes
+                0x000006e9       0x17 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strlen.o)
+ .ARM.attributes
+                0x00000700       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-dtoa.o)
+ .ARM.attributes
+                0x0000072d       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+ .ARM.attributes
+                0x0000075a       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-malloc.o)
+ .ARM.attributes
+                0x00000787       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
+ .ARM.attributes
+                0x000007b4       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
+ .ARM.attributes
+                0x000007e1       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-callocr.o)
+ .ARM.attributes
+                0x0000080e       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
+ .ARM.attributes
+                0x0000083b       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+ .ARM.attributes
+                0x00000868       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
+ .ARM.attributes
+                0x00000895       0x1b c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strcmp.o)
+ .ARM.attributes
+                0x000008b0       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+ .ARM.attributes
+                0x000008dd       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
+ .ARM.attributes
+                0x0000090a       0x1d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubdf3.o)
+ .ARM.attributes
+                0x00000927       0x1d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivdf3.o)
+ .ARM.attributes
+                0x00000944       0x1d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_cmpdf2.o)
+ .ARM.attributes
+                0x00000961       0x1d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_unorddf2.o)
+ .ARM.attributes
+                0x0000097e       0x1d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_fixdfsi.o)
+ .ARM.attributes
+                0x0000099b       0x2d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ .ARM.attributes
+                0x000009c8       0x1d c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+
+/DISCARD/
+ *(.note.GNU-stack)
+OUTPUT(C:\Users\HPz420\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\USBFS_UART01\USBFS_UART01.cydsn\ARM_GCC_541\Debug\USBFS_UART01.elf elf32-littlearm)
