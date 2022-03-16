@@ -2,7 +2,7 @@
 
 === Factory Acceptance Test (FAT) ===
 
-<img src="http://land-boards.com/blwiki/images/a/a9/LED-32-P426-720px.jpg"></img>
+<img src="http://land-boards.com/blwiki/images/6/63/ODAS-PSOC5_P108_720PX.jpg"></img>
 
 * Uses [[LED-32]] card from [[Arduino Based Test Station]]
 * Cable set from UUT to [[LED-32]]
