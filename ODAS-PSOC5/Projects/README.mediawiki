@@ -8,6 +8,8 @@
 
 [http://land-boards.com/blwiki/index.php?title=ODAS-PSOC5 WIKI PAGE]
 
+This contains PSoC programming files for the ODAS-PSOC5.
+
 == Features ==
 
 * PSOC5 Programmable System on a Chip
