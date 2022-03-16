@@ -3,4 +3,9 @@
 Supports the followinG Land Boards cards:
 
 * [http://land-boards.com/blwiki/index.php?title=DIGIO32-I2C DIGIO32-I2C]
-* [ ]
+* [http://land-boards.com/blwiki/index.php?title=I2C-RPT I2C-RPT-01]
+* [http://land-boards.com/blwiki/index.php?title=PROTO16-I2C PROTO16-I2C]
+
+Supports chips:
+
+* MCP23017 16-bit I2C port expander
