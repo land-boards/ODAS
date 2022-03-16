@@ -1,1 +1,13 @@
 == ODAS-PSOC5 P1 I/O Test Code ==
+
+=== Factory Acceptance Test (FAT) ===
+
+<img src="http://land-boards.com/blwiki/images/a/a9/LED-32-P426-720px.jpg"></img>
+
+* Uses [[LED-32]] card from [[Arduino Based Test Station]]
+* Cable set from UUT to [[LED-32]]
+* Running [https://github.com/land-boards/ODAS/tree/master/ODAS-PSOC5/Projects/ODAS-PSOC5-LEDS-01.cydsn ODAS-PSOC5-LED-01 Build]
+* Lights are lit in the following order
+** D0 through D14, LED on card, then D30 through D17
+** D16 = power (always on)
+** D15, D31 are not used
