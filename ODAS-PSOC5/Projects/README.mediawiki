@@ -3,3 +3,33 @@
 <IMG SRC="http://land-boards.com/blwiki/images/7/7c/ODAS-PSOC5-P682-X4-720px.jpg"></IMG>
 
 [http://land-boards.com/blwiki/index.php?title=ODAS-PSOC5 WIKI PAGE]
+
+== Features ==
+
+* PSOC5 Programmable System on a Chip
+** Part number: CY8C5267AXI-LP051
+** Core: ARM Cortex M3
+** Data Bus Width: 32 bit
+** Maximum Clock Frequency: 67 MHz
+** Program Memory Size: 128 kB
+** Data RAM Size: 32 kB
+** ADC Resolution: 12 bit
+** Data RAM Type: SRAM
+** Interface Type: I2C, USB
+** Number of ADC Channels: 1
+** Number of I/Os: 72 I/O
+** Number of Timers/Counters: 4 Timers
+** Program Memory Type: Flash
+* 16 MHz External Crystal
+* Connectors
+** USB Connector (USB-B Mini)
+** I/O Connector (30 I/O lines which can be analog or digital connections)
+** I2C Connector (4-pin header)
+** SPI Connector (6-pin header)
+* Configuration EEPROM
+* On Board LED (5.4)
+* 9V power input
+** Fuses on 3.3V and 5V power
+*95x45mm Form Factor
+* Compatible with Land Boards [[Open Data Acquisition System]] (ODAS) Cards
+* (4) #6 screw holes for solid mounting
