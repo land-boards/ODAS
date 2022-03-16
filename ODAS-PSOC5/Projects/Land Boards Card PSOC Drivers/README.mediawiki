@@ -1,4 +1,6 @@
 == Land Boards Cards Drivers ==
 
-Supports the followin Land Boards cards:
+Supports the followinG Land Boards cards:
 
+* [http://land-boards.com/blwiki/index.php?title=DIGIO32-I2C DIGIO32-I2C]
+* [ ]
