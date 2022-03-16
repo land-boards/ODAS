@@ -1,3 +1,3 @@
 == ODAS - Open Data Acquisition System ==
 
-[http://land-boards.com/blwiki/index.php?title=Open_Data_Acquisition_System Wiki Page]
+[http://land-boards.com/blwiki/index.php?title=Open_Data_Acquisition_System ODAS Wiki Page]
