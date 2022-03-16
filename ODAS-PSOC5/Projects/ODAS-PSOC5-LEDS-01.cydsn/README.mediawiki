@@ -4,6 +4,8 @@
 
 <img src="http://land-boards.com/blwiki/images/6/63/ODAS-PSOC5_P108_720PX.jpg"></img>
 
+[http://land-boards.com/blwiki/index.php?title=ODAS-PSOC5#Factory_Acceptance_Test_.28FAT.29 Wiki page]
+
 * Uses [[LED-32]] card from [[Arduino Based Test Station]]
 * Cable set from UUT to [[LED-32]]
 * Running [https://github.com/land-boards/ODAS/tree/master/ODAS-PSOC5/Projects/ODAS-PSOC5-LEDS-01.cydsn ODAS-PSOC5-LED-01 Build]
