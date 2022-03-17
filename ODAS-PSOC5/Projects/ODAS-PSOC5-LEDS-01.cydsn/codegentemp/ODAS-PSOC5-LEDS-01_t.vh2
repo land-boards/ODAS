@@ -1,6 +1,6 @@
--- Project:   C:\Users\Douglas\Documents\GitHub\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj
--- Generated: 07/21/2017 17:59:28
--- PSoC Creator  4.1
+-- Project:   C:\Users\HPz420\Documents\GitHub\land-boards\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cyprj
+-- Generated: 03/15/2022 11:40:56
+-- PSoC Creator  4.4
 
 ENTITY \ODAS-PSOC5-LEDS-01\ IS
     PORT(
@@ -390,11 +390,11 @@ ARCHITECTURE __DEFAULT__ OF \ODAS-PSOC5-LEDS-01\ IS
     END COMPONENT;
     COMPONENT iocell
         PORT (
-            pin_input : IN std_ulogic;
             oe : IN std_ulogic;
             fb : OUT std_ulogic;
-            pad_in : IN std_ulogic;
             pa_out : OUT std_ulogic;
+            pin_input : IN std_ulogic;
+            pad_in : IN std_ulogic;
             pad_out : OUT std_ulogic;
             oe_reg : OUT std_ulogic;
             oe_internal : IN std_ulogic;

@@ -1,6 +1,6 @@
 -- ======================================================================
 -- ODAS-PSOC5-LEDS-01.ctl generated from ODAS-PSOC5-LEDS-01
--- 07/21/2017 at 17:59
+-- 03/15/2022 at 11:40
 -- This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 -- ======================================================================
 
