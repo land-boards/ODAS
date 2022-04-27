@@ -187,15 +187,6 @@
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\PSoC 5LP Architecture TRM</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CY8C52LP Family Datasheet</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\System Reference Guides</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\System Reference Guides\cy_boot_v5_50</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\BasicCounter_v1_0.pdf</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_clock_v2_20.pdf</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_constant_v1_0.pdf</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_pins_v2_20</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\demux_v1_10</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\demux_v1_10\demux_v1_10.pdf</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\not_v1_0.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>ODAS-PSOC5-LEDS-01-002</v>
@@ -203,15 +194,6 @@
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\PSoC 5LP Architecture TRM</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\CY8C52LP Family Datasheet</v>
 <v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\System Reference Guides</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\System Reference Guides\cy_boot_v5_50</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\BasicCounter_v1_0.pdf</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_clock_v2_20.pdf</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_constant_v1_0.pdf</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_pins_v2_20</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\demux_v1_10</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\demux_v1_10\demux_v1_10.pdf</v>
-<v>ODAS-PSOC5-LEDS-01-002\ODAS-PSOC5-LEDS-01\not_v1_0.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -231,7 +213,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="884, 552" SelectedTabbedMdiWindow="af288072-a583-4461-9810-28b225cd584a"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="f908feb5-a8cc-41c1-8fbb-99f34fbc4db2" /><DocumentWindow Key="C:\Users\HPz420\Documents\GitHub\land-boards\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cydwr" Guid="f6bcbc0e-2d56-4550-96d9-a55691c67391" /><DocumentWindow Key="C:\Users\HPz420\Documents\GitHub\land-boards\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\TopDesign\TopDesign.cysch" Guid="af288072-a583-4461-9810-28b225cd584a" /><DocumentWindow Key="C:\Users\HPz420\Documents\GitHub\land-boards\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\main.c" Guid="98167516-950b-43b3-acbb-3f7d368783ca" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="884, 747" SelectedTabbedMdiWindow="af288072-a583-4461-9810-28b225cd584a"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="f908feb5-a8cc-41c1-8fbb-99f34fbc4db2" /><DocumentWindow Key="C:\Users\HPz420\Documents\GitHub\land-boards\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\ODAS-PSOC5-LEDS-01.cydwr" Guid="f6bcbc0e-2d56-4550-96d9-a55691c67391" /><DocumentWindow Key="C:\Users\HPz420\Documents\GitHub\land-boards\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\TopDesign\TopDesign.cysch" Guid="af288072-a583-4461-9810-28b225cd584a" /><DocumentWindow Key="C:\Users\HPz420\Documents\GitHub\land-boards\ODAS\ODAS-PSOC5\Projects\ODAS-PSOC5-LEDS-01.cydsn\main.c" Guid="98167516-950b-43b3-acbb-3f7d368783ca" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
