@@ -1,0 +1,6 @@
+#ifndef INCLUDED_CYDISABLEDSHEETS_H
+#define INCLUDED_CYDISABLEDSHEETS_H
+
+#define stash__DISABLED 1u /* stash */
+
+#endif /* INCLUDED_CYDISABLEDSHEETS_H */

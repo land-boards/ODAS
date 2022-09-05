@@ -1,0 +1,22 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2022-09-05T15:06:18Z")
+ (DESIGN "DDS_WaveGen_01c")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "PSoC Creator")
+ (VERSION " 4.4")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "DDS_WaveGen_01c")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT ClockBlock.clk_bus_glb isrDrq.clock (0.000:0.000:0.000))
+    (INTERCONNECT ClockBlock.clk_bus_glb DMA2.clock (0.000:0.000:0.000))
+    (INTERCONNECT ClockBlock.dclk_0 DMA2.dmareq (4.928:4.928:4.928))
+    (INTERCONNECT DMA2.termout isrDrq.interrupt (1.000:1.000:1.000))
+   )
+  )
+ )
+)

@@ -1,0 +1,9 @@
+C:\Users\HPz420\Documents\GitHub\land-boards\ODAS\ODAS-PSOC5\Projects\DDS_WaveGen_01c.cydsn\DDS_WaveGen_01c.cyprj|ae43bab7-eabf-4388-8046-35e1466dfae7
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|75e69dea-49c3-4a4b-84ed-1aaf22f2f051
+C:\Users\HPz420\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|2350a5d6-9f4d-4be0-97cc-ba850c823d64
+C:\Users\HPz420\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\Downloads ( 4.3).cyprj|fb76c447-de11-443d-b794-f5ec3c821fb6
+C:\Users\HPz420\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|4d3892e0-3474-41ee-b1ee-884fdf94208e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|8adc6d4f-fcca-4b9b-9f17-ddc57931c108
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|211642ba-5aec-4749-b59a-c0fa77dfe431
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|13083adb-f300-4bd3-9b38-6c8e9babfe28
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc3\AnalogDevice\PSoC35AnalogDevice.cylib\PSoC35AnalogDevice.cyprj|d51eec60-83cc-4d83-88df-f4dabe5ab9b2

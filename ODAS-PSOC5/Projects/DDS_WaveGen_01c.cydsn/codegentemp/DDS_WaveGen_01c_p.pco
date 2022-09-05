@@ -1,0 +1,24 @@
+dont_use_io iocell 1 0
+dont_use_io iocell 1 1
+dont_use_io iocell 1 3
+dont_use_location cancell -1 -1 0
+dont_use_location comparatorcell -1 -1 1
+dont_use_location comparatorcell -1 -1 3
+dont_use_location dfbcell -1 -1 0
+dont_use_location sccell -1 -1 0
+dont_use_location sccell -1 -1 1
+dont_use_location sccell -1 -1 2
+dont_use_location sccell -1 -1 3
+dont_use_location vidaccell -1 -1 1
+dont_use_location vidaccell -1 -1 2
+dont_use_location vidaccell -1 -1 3
+dont_use_location sarcell -1 -1 1
+dont_use_location abufcell -1 -1 0
+dont_use_location abufcell -1 -1 2
+dont_use_location abufcell -1 -1 1
+dont_use_location abufcell -1 -1 3
+set_location "DMA2" drqcell -1 -1 0
+set_location "isrDrq" interrupt -1 -1 0
+set_location "\VDAC_1:viDAC8\" vidaccell -1 -1 0
+set_location "ClockBlock" clockblockcell -1 -1 0
+set_io "Pin_37(0)" iocell 3 4

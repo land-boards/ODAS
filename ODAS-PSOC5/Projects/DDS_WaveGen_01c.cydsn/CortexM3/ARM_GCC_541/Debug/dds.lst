@@ -1,0 +1,2081 @@
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"dds.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	__aeabi_ddiv
+  20              		.global	__aeabi_dmul
+  21              		.global	__aeabi_dadd
+  22              		.global	__aeabi_d2uiz
+  23              		.section	.text.DDS_SetFrequency,"ax",%progbits
+  24              		.align	2
+  25              		.global	DDS_SetFrequency
+  26              		.thumb
+  27              		.thumb_func
+  28              		.type	DDS_SetFrequency, %function
+  29              	DDS_SetFrequency:
+  30              	.LFB64:
+  31              		.file 1 "dds.c"
+   1:dds.c         **** /* ========================================
+   2:dds.c         ****  *
+   3:dds.c         ****  *
+   4:dds.c         ****  * ========================================
+   5:dds.c         **** */
+   6:dds.c         **** 
+   7:dds.c         **** #include <dds.h>
+   8:dds.c         **** #include <project.h>
+   9:dds.c         **** #include <WaveGen.h>
+  10:dds.c         **** #include <WaveTable.h>
+  11:dds.c         **** 
+  12:dds.c         **** uint8 *WriteBufferIndex = &(VDAC_Buffer[0]);
+  13:dds.c         **** 
+  14:dds.c         **** /*
+  15:dds.c         **** // RAM only->
+  16:dds.c         **** //http://www.daycounter.com/Calculators/Sine-Generator-Calculator2.phtml
+  17:dds.c         **** const // (+2 ticks)  
+  18:dds.c         **** uint8_t sine8[256] = {
+  19:dds.c         **** 128,131,134,137,140,143,146,149,    152,155,158,162,165,167,170,173,
+  20:dds.c         **** 176,179,182,185,188,190,193,196,    198,201,203,206,208,211,213,215,
+  21:dds.c         **** 218,220,222,224,226,228,230,232,    234,235,237,238,240,241,243,244,
+  22:dds.c         **** 245,246,248,249,250,250,251,252,    253,253,254,254,254,255,255,255,
+  23:dds.c         **** 255,255,255,255,254,254,254,253,    253,252,251,250,250,249,248,246,
+  24:dds.c         **** 245,244,243,241,240,238,237,235,    234,232,230,228,226,224,222,220,
+  25:dds.c         **** 218,215,213,211,208,206,203,201,    198,196,193,190,188,185,182,179,
+  26:dds.c         **** 176,173,170,167,165,162,158,155,    152,149,146,143,140,137,134,131,
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 2
+
+
+  27:dds.c         ****     
+  28:dds.c         **** 128,124,121,118,115,112,109,106,    103,100, 97, 93, 90, 88, 85, 82,
+  29:dds.c         ****  79, 76, 73, 70, 67, 65, 62, 59,     57, 54, 52, 49, 47, 44, 42, 40,
+  30:dds.c         ****  37, 35, 33, 31, 29, 27, 25, 23,     21, 20, 18, 17, 15, 14, 12, 11,
+  31:dds.c         ****  10,  9,  7,  6,  5,  5,  4,  3,      2,  2,  1,  1,  1,  0,  0,  0,
+  32:dds.c         ****   0,  0,  0,  0,  1,  1,  1,  2,      2,  3,  4,  5,  5,  6,  7,  9,
+  33:dds.c         ****  10, 11, 12, 14, 15, 17, 18, 20,     21, 23, 25, 27, 29, 31, 33, 35,
+  34:dds.c         ****  37, 40, 42, 44, 47, 49, 52, 54,     57, 59, 62, 65, 67, 70, 73, 76,
+  35:dds.c         ****  79, 82, 85, 88, 90, 93, 97,100,    103,106,109,112,115,118,121,124,
+  36:dds.c         **** };
+  37:dds.c         **** */
+  38:dds.c         **** 
+  39:dds.c         **** //==============================================================================
+  40:dds.c         **** // Initialize component
+  41:dds.c         **** // Set input clock frequency and default values for output frequency and phase 
+  42:dds.c         **** //==============================================================================
+  43:dds.c         **** 
+  44:dds.c         **** void DDS_Start()
+  45:dds.c         **** {   
+  46:dds.c         ****     // make record of the input clock frequency into period   
+  47:dds.c         ****     //Tdiv = (double) (DDS_RESOLUTION / `$INSTANCE_NAME`_CLOCK_FREQ);	
+  48:dds.c         ****     
+  49:dds.c         ****     //Initialized = true;
+  50:dds.c         ****     
+  51:dds.c         ****     dds_acc = 0;
+  52:dds.c         **** 
+  53:dds.c         ****     DDS_SetFrequency( 1000 );
+  54:dds.c         **** }
+  55:dds.c         **** 
+  56:dds.c         **** //==============================================================================
+  57:dds.c         **** // Set output frequency
+  58:dds.c         **** //==============================================================================
+  59:dds.c         **** 
+  60:dds.c         **** uint8 DDS_SetFrequency( double freq )
+  61:dds.c         **** {     
+  32              		.loc 1 61 0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 0
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36              	.LVL0:
+  37 0000 38B5     		push	{r3, r4, r5, lr}
+  38              		.cfi_def_cfa_offset 16
+  39              		.cfi_offset 3, -16
+  40              		.cfi_offset 4, -12
+  41              		.cfi_offset 5, -8
+  42              		.cfi_offset 14, -4
+  43 0002 0446     		mov	r4, r0
+  44 0004 0D46     		mov	r5, r1
+  62:dds.c         ****     const double Tdiv = (double) (DDS_RESOLUTION / DDS_Clock_Freq); // time period per bit incremen
+  45              		.loc 1 62 0
+  46 0006 0C4B     		ldr	r3, .L5
+  47 0008 D3E90023 		ldrd	r2, [r3]
+  48 000c 0020     		movs	r0, #0
+  49              	.LVL1:
+  50 000e 0B49     		ldr	r1, .L5+4
+  51 0010 FFF7FEFF 		bl	__aeabi_ddiv
+  52              	.LVL2:
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 3
+
+
+  63:dds.c         **** 
+  64:dds.c         ****     uint8 result = 0; // success = 1, fail = 0 
+  65:dds.c         **** 
+  66:dds.c         ****  
+  67:dds.c         ****         
+  68:dds.c         ****     uint32 tmp = (uint32) (freq * Tdiv + 0.5);           // calculate tune word
+  53              		.loc 1 68 0
+  54 0014 2246     		mov	r2, r4
+  55 0016 2B46     		mov	r3, r5
+  56 0018 FFF7FEFF 		bl	__aeabi_dmul
+  57              	.LVL3:
+  58 001c 0022     		movs	r2, #0
+  59 001e 084B     		ldr	r3, .L5+8
+  60 0020 FFF7FEFF 		bl	__aeabi_dadd
+  61              	.LVL4:
+  62 0024 FFF7FEFF 		bl	__aeabi_d2uiz
+  63              	.LVL5:
+  69:dds.c         ****     if ( (tmp < 1) || (tmp > TUNE_WORD_MAX) )  return 0; // fail -> exit if outside of the valid ra
+  64              		.loc 1 69 0
+  65 0028 0028     		cmp	r0, #0
+  66 002a 03DD     		ble	.L3
+  70:dds.c         ****           
+  71:dds.c         ****     //tune_word = tmp;
+  72:dds.c         ****     dds_inc = tmp; // set tune word
+  67              		.loc 1 72 0
+  68 002c 054B     		ldr	r3, .L5+12
+  69 002e 1860     		str	r0, [r3]
+  70              	.LVL6:
+  73:dds.c         ****         
+  74:dds.c         ****        
+  75:dds.c         ****     //SetFreq = freq; // backup value
+  76:dds.c         ****     result = 1;     // success
+  77:dds.c         ****         
+  78:dds.c         ****     
+  79:dds.c         ****     return result;
+  71              		.loc 1 79 0
+  72 0030 0120     		movs	r0, #1
+  73              	.LVL7:
+  74 0032 38BD     		pop	{r3, r4, r5, pc}
+  75              	.LVL8:
+  76              	.L3:
+  69:dds.c         ****           
+  77              		.loc 1 69 0
+  78 0034 0020     		movs	r0, #0
+  79              	.LVL9:
+  80:dds.c         **** }
+  80              		.loc 1 80 0
+  81 0036 38BD     		pop	{r3, r4, r5, pc}
+  82              	.L6:
+  83              		.align	2
+  84              	.L5:
+  85 0038 00000000 		.word	DDS_Clock_Freq
+  86 003c 0000F041 		.word	1106247680
+  87 0040 0000E03F 		.word	1071644672
+  88 0044 00000000 		.word	dds_inc
+  89              		.cfi_endproc
+  90              	.LFE64:
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 4
+
+
+  91              		.size	DDS_SetFrequency, .-DDS_SetFrequency
+  92              		.section	.text.DDS_Start,"ax",%progbits
+  93              		.align	2
+  94              		.global	DDS_Start
+  95              		.thumb
+  96              		.thumb_func
+  97              		.type	DDS_Start, %function
+  98              	DDS_Start:
+  99              	.LFB63:
+  45:dds.c         ****     // make record of the input clock frequency into period   
+ 100              		.loc 1 45 0
+ 101              		.cfi_startproc
+ 102              		@ args = 0, pretend = 0, frame = 0
+ 103              		@ frame_needed = 0, uses_anonymous_args = 0
+ 104 0000 08B5     		push	{r3, lr}
+ 105              		.cfi_def_cfa_offset 8
+ 106              		.cfi_offset 3, -8
+ 107              		.cfi_offset 14, -4
+  51:dds.c         **** 
+ 108              		.loc 1 51 0
+ 109 0002 0022     		movs	r2, #0
+ 110 0004 034B     		ldr	r3, .L9
+ 111 0006 1A60     		str	r2, [r3]
+  53:dds.c         **** }
+ 112              		.loc 1 53 0
+ 113 0008 0020     		movs	r0, #0
+ 114 000a 0349     		ldr	r1, .L9+4
+ 115 000c FFF7FEFF 		bl	DDS_SetFrequency
+ 116              	.LVL10:
+ 117 0010 08BD     		pop	{r3, pc}
+ 118              	.L10:
+ 119 0012 00BF     		.align	2
+ 120              	.L9:
+ 121 0014 00000000 		.word	dds_acc
+ 122 0018 00408F40 		.word	1083129856
+ 123              		.cfi_endproc
+ 124              	.LFE63:
+ 125              		.size	DDS_Start, .-DDS_Start
+ 126              		.section	.text.DDS_FillBuffer,"ax",%progbits
+ 127              		.align	2
+ 128              		.global	DDS_FillBuffer
+ 129              		.thumb
+ 130              		.thumb_func
+ 131              		.type	DDS_FillBuffer, %function
+ 132              	DDS_FillBuffer:
+ 133              	.LFB65:
+  81:dds.c         **** 
+  82:dds.c         **** 
+  83:dds.c         **** //==============================================================================
+  84:dds.c         **** // Fill buffer with output data
+  85:dds.c         **** //==============================================================================
+  86:dds.c         **** 
+  87:dds.c         **** void DDS_FillBuffer(uint16 start, uint16 length )
+  88:dds.c         **** {     
+ 134              		.loc 1 88 0
+ 135              		.cfi_startproc
+ 136              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 5
+
+
+ 137              		@ frame_needed = 0, uses_anonymous_args = 0
+ 138              		@ link register save eliminated.
+ 139              	.LVL11:
+ 140 0000 30B4     		push	{r4, r5}
+ 141              		.cfi_def_cfa_offset 8
+ 142              		.cfi_offset 4, -8
+ 143              		.cfi_offset 5, -4
+ 144              	.LVL12:
+  89:dds.c         ****     uint8  adr = 0;     // sine table address
+  90:dds.c         ****     uint8  val = 0;     // sine value
+  91:dds.c         ****     
+  92:dds.c         ****     uint16 i;
+  93:dds.c         ****     for (i=0; i<length; i++)
+ 145              		.loc 1 93 0
+ 146 0002 0022     		movs	r2, #0
+ 147 0004 0DE0     		b	.L12
+ 148              	.LVL13:
+ 149              	.L13:
+  94:dds.c         ****     {
+  95:dds.c         ****         dds_acc += dds_inc;
+ 150              		.loc 1 95 0 discriminator 3
+ 151 0006 094C     		ldr	r4, .L15
+ 152 0008 2568     		ldr	r5, [r4]
+ 153 000a 094B     		ldr	r3, .L15+4
+ 154 000c 1B68     		ldr	r3, [r3]
+ 155 000e 2B44     		add	r3, r3, r5
+ 156 0010 2360     		str	r3, [r4]
+  96:dds.c         ****         adr = (dds_acc >> 24);
+ 157              		.loc 1 96 0 discriminator 3
+ 158 0012 1B0E     		lsrs	r3, r3, #24
+ 159              	.LVL14:
+  97:dds.c         ****         val = sine8[adr];
+ 160              		.loc 1 97 0 discriminator 3
+ 161 0014 074C     		ldr	r4, .L15+8
+ 162 0016 E55C     		ldrb	r5, [r4, r3]	@ zero_extendqisi2
+ 163              	.LVL15:
+  98:dds.c         ****         //WaveGen_1_Buffer[start+i] = val;   
+  99:dds.c         ****         VDAC_Buffer[start+i] = val;
+ 164              		.loc 1 99 0 discriminator 3
+ 165 0018 8318     		adds	r3, r0, r2
+ 166              	.LVL16:
+ 167 001a 074C     		ldr	r4, .L15+12
+ 168 001c E554     		strb	r5, [r4, r3]
+  93:dds.c         ****     {
+ 169              		.loc 1 93 0 discriminator 3
+ 170 001e 0132     		adds	r2, r2, #1
+ 171              	.LVL17:
+ 172 0020 92B2     		uxth	r2, r2
+ 173              	.LVL18:
+ 174              	.L12:
+  93:dds.c         ****     {
+ 175              		.loc 1 93 0 is_stmt 0 discriminator 1
+ 176 0022 8A42     		cmp	r2, r1
+ 177 0024 EFD3     		bcc	.L13
+ 100:dds.c         ****     }    
+ 101:dds.c         ****         
+ 102:dds.c         **** }
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 6
+
+
+ 178              		.loc 1 102 0 is_stmt 1
+ 179 0026 30BC     		pop	{r4, r5}
+ 180              		.cfi_restore 5
+ 181              		.cfi_restore 4
+ 182              		.cfi_def_cfa_offset 0
+ 183 0028 7047     		bx	lr
+ 184              	.L16:
+ 185 002a 00BF     		.align	2
+ 186              	.L15:
+ 187 002c 00000000 		.word	dds_acc
+ 188 0030 00000000 		.word	dds_inc
+ 189 0034 00000000 		.word	.LANCHOR0
+ 190 0038 00000000 		.word	VDAC_Buffer
+ 191              		.cfi_endproc
+ 192              	.LFE65:
+ 193              		.size	DDS_FillBuffer, .-DDS_FillBuffer
+ 194              		.section	.text.DDS_FillHalfBuffer,"ax",%progbits
+ 195              		.align	2
+ 196              		.global	DDS_FillHalfBuffer
+ 197              		.thumb
+ 198              		.thumb_func
+ 199              		.type	DDS_FillHalfBuffer, %function
+ 200              	DDS_FillHalfBuffer:
+ 201              	.LFB66:
+ 103:dds.c         **** 
+ 104:dds.c         **** //==============================================================================
+ 105:dds.c         **** // Fill buffer with output data
+ 106:dds.c         **** //==============================================================================
+ 107:dds.c         **** 
+ 108:dds.c         **** void DDS_FillHalfBuffer()
+ 109:dds.c         **** {     
+ 202              		.loc 1 109 0
+ 203              		.cfi_startproc
+ 204              		@ args = 0, pretend = 0, frame = 0
+ 205              		@ frame_needed = 0, uses_anonymous_args = 0
+ 206              		@ link register save eliminated.
+ 207 0000 10B4     		push	{r4}
+ 208              		.cfi_def_cfa_offset 4
+ 209              		.cfi_offset 4, -4
+ 210              	.LVL19:
+ 110:dds.c         ****     uint8  adr = 0;     // sine table address
+ 111:dds.c         ****     uint8  val = 0;     // sine value
+ 112:dds.c         ****     
+ 113:dds.c         ****     uint16 i;
+ 114:dds.c         ****     for (i=0; i<BUF_NumRefHigh; i++)
+ 211              		.loc 1 114 0
+ 212 0002 0022     		movs	r2, #0
+ 213 0004 18E0     		b	.L18
+ 214              	.LVL20:
+ 215              	.L20:
+ 115:dds.c         ****     {
+ 116:dds.c         ****         dds_acc += dds_inc;
+ 216              		.loc 1 116 0
+ 217 0006 0E49     		ldr	r1, .L22
+ 218 0008 0868     		ldr	r0, [r1]
+ 219 000a 0E4B     		ldr	r3, .L22+4
+ 220 000c 1B68     		ldr	r3, [r3]
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 7
+
+
+ 221 000e 0344     		add	r3, r3, r0
+ 222 0010 0B60     		str	r3, [r1]
+ 117:dds.c         ****         adr = (dds_acc >> 24);
+ 223              		.loc 1 117 0
+ 224 0012 1B0E     		lsrs	r3, r3, #24
+ 225              	.LVL21:
+ 118:dds.c         ****         val = sine8[adr];
+ 226              		.loc 1 118 0
+ 227 0014 0C49     		ldr	r1, .L22+8
+ 228 0016 C85C     		ldrb	r0, [r1, r3]	@ zero_extendqisi2
+ 229              	.LVL22:
+ 119:dds.c         ****         //val = wave8[adr];
+ 120:dds.c         ****         * WriteBufferIndex++  = val; // populate buffer and advance position
+ 230              		.loc 1 120 0
+ 231 0018 0C4B     		ldr	r3, .L22+12
+ 232              	.LVL23:
+ 233 001a 1968     		ldr	r1, [r3]
+ 234 001c 4C1C     		adds	r4, r1, #1
+ 235 001e 1C60     		str	r4, [r3]
+ 236 0020 0870     		strb	r0, [r1]
+ 237              	.LVL24:
+ 121:dds.c         ****         if (WriteBufferIndex >= pBuffer + BUF_NumSamples) WriteBufferIndex = pBuffer;  // reset poi
+ 238              		.loc 1 121 0
+ 239 0022 0B49     		ldr	r1, .L22+16
+ 240 0024 0968     		ldr	r1, [r1]
+ 241 0026 01F58070 		add	r0, r1, #256
+ 242              	.LVL25:
+ 243 002a 1B68     		ldr	r3, [r3]
+ 244 002c 9842     		cmp	r0, r3
+ 245 002e 01D8     		bhi	.L19
+ 246              		.loc 1 121 0 is_stmt 0 discriminator 1
+ 247 0030 064B     		ldr	r3, .L22+12
+ 248 0032 1960     		str	r1, [r3]
+ 249              	.LVL26:
+ 250              	.L19:
+ 114:dds.c         ****     {
+ 251              		.loc 1 114 0 is_stmt 1 discriminator 2
+ 252 0034 0132     		adds	r2, r2, #1
+ 253              	.LVL27:
+ 254 0036 92B2     		uxth	r2, r2
+ 255              	.LVL28:
+ 256              	.L18:
+ 114:dds.c         ****     {
+ 257              		.loc 1 114 0 is_stmt 0 discriminator 1
+ 258 0038 7F2A     		cmp	r2, #127
+ 259 003a E4D9     		bls	.L20
+ 122:dds.c         ****     }    
+ 123:dds.c         ****         
+ 124:dds.c         **** }
+ 260              		.loc 1 124 0 is_stmt 1
+ 261 003c 10BC     		pop	{r4}
+ 262              		.cfi_restore 4
+ 263              		.cfi_def_cfa_offset 0
+ 264 003e 7047     		bx	lr
+ 265              	.L23:
+ 266              		.align	2
+ 267              	.L22:
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 8
+
+
+ 268 0040 00000000 		.word	dds_acc
+ 269 0044 00000000 		.word	dds_inc
+ 270 0048 00000000 		.word	.LANCHOR0
+ 271 004c 00000000 		.word	.LANCHOR1
+ 272 0050 00000000 		.word	pBuffer
+ 273              		.cfi_endproc
+ 274              	.LFE66:
+ 275              		.size	DDS_FillHalfBuffer, .-DDS_FillHalfBuffer
+ 276              		.global	WriteBufferIndex
+ 277              		.comm	pBuffer,4,4
+ 278              		.comm	VDAC_Buffer,256,4
+ 279              		.comm	DDS_Clock_Freq,8,8
+ 280              		.comm	dds_inc,4,4
+ 281              		.comm	dds_acc,4,4
+ 282              		.section	.rodata
+ 283              		.align	2
+ 284              		.set	.LANCHOR0,. + 0
+ 285              		.type	sine8, %object
+ 286              		.size	sine8, 256
+ 287              	sine8:
+ 288 0000 80       		.byte	-128
+ 289 0001 83       		.byte	-125
+ 290 0002 86       		.byte	-122
+ 291 0003 89       		.byte	-119
+ 292 0004 8C       		.byte	-116
+ 293 0005 8F       		.byte	-113
+ 294 0006 92       		.byte	-110
+ 295 0007 95       		.byte	-107
+ 296 0008 98       		.byte	-104
+ 297 0009 9B       		.byte	-101
+ 298 000a 9E       		.byte	-98
+ 299 000b A2       		.byte	-94
+ 300 000c A5       		.byte	-91
+ 301 000d A7       		.byte	-89
+ 302 000e AA       		.byte	-86
+ 303 000f AD       		.byte	-83
+ 304 0010 B0       		.byte	-80
+ 305 0011 B3       		.byte	-77
+ 306 0012 B6       		.byte	-74
+ 307 0013 B9       		.byte	-71
+ 308 0014 BC       		.byte	-68
+ 309 0015 BE       		.byte	-66
+ 310 0016 C1       		.byte	-63
+ 311 0017 C4       		.byte	-60
+ 312 0018 C6       		.byte	-58
+ 313 0019 C9       		.byte	-55
+ 314 001a CB       		.byte	-53
+ 315 001b CE       		.byte	-50
+ 316 001c D0       		.byte	-48
+ 317 001d D3       		.byte	-45
+ 318 001e D5       		.byte	-43
+ 319 001f D7       		.byte	-41
+ 320 0020 DA       		.byte	-38
+ 321 0021 DC       		.byte	-36
+ 322 0022 DE       		.byte	-34
+ 323 0023 E0       		.byte	-32
+ 324 0024 E2       		.byte	-30
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 9
+
+
+ 325 0025 E4       		.byte	-28
+ 326 0026 E6       		.byte	-26
+ 327 0027 E8       		.byte	-24
+ 328 0028 EA       		.byte	-22
+ 329 0029 EB       		.byte	-21
+ 330 002a ED       		.byte	-19
+ 331 002b EE       		.byte	-18
+ 332 002c F0       		.byte	-16
+ 333 002d F1       		.byte	-15
+ 334 002e F3       		.byte	-13
+ 335 002f F4       		.byte	-12
+ 336 0030 F5       		.byte	-11
+ 337 0031 F6       		.byte	-10
+ 338 0032 F8       		.byte	-8
+ 339 0033 F9       		.byte	-7
+ 340 0034 FA       		.byte	-6
+ 341 0035 FA       		.byte	-6
+ 342 0036 FB       		.byte	-5
+ 343 0037 FC       		.byte	-4
+ 344 0038 FD       		.byte	-3
+ 345 0039 FD       		.byte	-3
+ 346 003a FE       		.byte	-2
+ 347 003b FE       		.byte	-2
+ 348 003c FE       		.byte	-2
+ 349 003d FF       		.byte	-1
+ 350 003e FF       		.byte	-1
+ 351 003f FF       		.byte	-1
+ 352 0040 FF       		.byte	-1
+ 353 0041 FF       		.byte	-1
+ 354 0042 FF       		.byte	-1
+ 355 0043 FF       		.byte	-1
+ 356 0044 FE       		.byte	-2
+ 357 0045 FE       		.byte	-2
+ 358 0046 FE       		.byte	-2
+ 359 0047 FD       		.byte	-3
+ 360 0048 FD       		.byte	-3
+ 361 0049 FC       		.byte	-4
+ 362 004a FB       		.byte	-5
+ 363 004b FA       		.byte	-6
+ 364 004c FA       		.byte	-6
+ 365 004d F9       		.byte	-7
+ 366 004e F8       		.byte	-8
+ 367 004f F6       		.byte	-10
+ 368 0050 F5       		.byte	-11
+ 369 0051 F4       		.byte	-12
+ 370 0052 F3       		.byte	-13
+ 371 0053 F1       		.byte	-15
+ 372 0054 F0       		.byte	-16
+ 373 0055 EE       		.byte	-18
+ 374 0056 ED       		.byte	-19
+ 375 0057 EB       		.byte	-21
+ 376 0058 EA       		.byte	-22
+ 377 0059 E8       		.byte	-24
+ 378 005a E6       		.byte	-26
+ 379 005b E4       		.byte	-28
+ 380 005c E2       		.byte	-30
+ 381 005d E0       		.byte	-32
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 10
+
+
+ 382 005e DE       		.byte	-34
+ 383 005f DC       		.byte	-36
+ 384 0060 DA       		.byte	-38
+ 385 0061 D7       		.byte	-41
+ 386 0062 D5       		.byte	-43
+ 387 0063 D3       		.byte	-45
+ 388 0064 D0       		.byte	-48
+ 389 0065 CE       		.byte	-50
+ 390 0066 CB       		.byte	-53
+ 391 0067 C9       		.byte	-55
+ 392 0068 C6       		.byte	-58
+ 393 0069 C4       		.byte	-60
+ 394 006a C1       		.byte	-63
+ 395 006b BE       		.byte	-66
+ 396 006c BC       		.byte	-68
+ 397 006d B9       		.byte	-71
+ 398 006e B6       		.byte	-74
+ 399 006f B3       		.byte	-77
+ 400 0070 B0       		.byte	-80
+ 401 0071 AD       		.byte	-83
+ 402 0072 AA       		.byte	-86
+ 403 0073 A7       		.byte	-89
+ 404 0074 A5       		.byte	-91
+ 405 0075 A2       		.byte	-94
+ 406 0076 9E       		.byte	-98
+ 407 0077 9B       		.byte	-101
+ 408 0078 98       		.byte	-104
+ 409 0079 95       		.byte	-107
+ 410 007a 92       		.byte	-110
+ 411 007b 8F       		.byte	-113
+ 412 007c 8C       		.byte	-116
+ 413 007d 89       		.byte	-119
+ 414 007e 86       		.byte	-122
+ 415 007f 83       		.byte	-125
+ 416 0080 80       		.byte	-128
+ 417 0081 7C       		.byte	124
+ 418 0082 79       		.byte	121
+ 419 0083 76       		.byte	118
+ 420 0084 73       		.byte	115
+ 421 0085 70       		.byte	112
+ 422 0086 6D       		.byte	109
+ 423 0087 6A       		.byte	106
+ 424 0088 67       		.byte	103
+ 425 0089 64       		.byte	100
+ 426 008a 61       		.byte	97
+ 427 008b 5D       		.byte	93
+ 428 008c 5A       		.byte	90
+ 429 008d 58       		.byte	88
+ 430 008e 55       		.byte	85
+ 431 008f 52       		.byte	82
+ 432 0090 4F       		.byte	79
+ 433 0091 4C       		.byte	76
+ 434 0092 49       		.byte	73
+ 435 0093 46       		.byte	70
+ 436 0094 43       		.byte	67
+ 437 0095 41       		.byte	65
+ 438 0096 3E       		.byte	62
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 11
+
+
+ 439 0097 3B       		.byte	59
+ 440 0098 39       		.byte	57
+ 441 0099 36       		.byte	54
+ 442 009a 34       		.byte	52
+ 443 009b 31       		.byte	49
+ 444 009c 2F       		.byte	47
+ 445 009d 2C       		.byte	44
+ 446 009e 2A       		.byte	42
+ 447 009f 28       		.byte	40
+ 448 00a0 25       		.byte	37
+ 449 00a1 23       		.byte	35
+ 450 00a2 21       		.byte	33
+ 451 00a3 1F       		.byte	31
+ 452 00a4 1D       		.byte	29
+ 453 00a5 1B       		.byte	27
+ 454 00a6 19       		.byte	25
+ 455 00a7 17       		.byte	23
+ 456 00a8 15       		.byte	21
+ 457 00a9 14       		.byte	20
+ 458 00aa 12       		.byte	18
+ 459 00ab 11       		.byte	17
+ 460 00ac 0F       		.byte	15
+ 461 00ad 0E       		.byte	14
+ 462 00ae 0C       		.byte	12
+ 463 00af 0B       		.byte	11
+ 464 00b0 0A       		.byte	10
+ 465 00b1 09       		.byte	9
+ 466 00b2 07       		.byte	7
+ 467 00b3 06       		.byte	6
+ 468 00b4 05       		.byte	5
+ 469 00b5 05       		.byte	5
+ 470 00b6 04       		.byte	4
+ 471 00b7 03       		.byte	3
+ 472 00b8 02       		.byte	2
+ 473 00b9 02       		.byte	2
+ 474 00ba 01       		.byte	1
+ 475 00bb 01       		.byte	1
+ 476 00bc 01       		.byte	1
+ 477 00bd 00       		.byte	0
+ 478 00be 00       		.byte	0
+ 479 00bf 00       		.byte	0
+ 480 00c0 00       		.byte	0
+ 481 00c1 00       		.byte	0
+ 482 00c2 00       		.byte	0
+ 483 00c3 00       		.byte	0
+ 484 00c4 01       		.byte	1
+ 485 00c5 01       		.byte	1
+ 486 00c6 01       		.byte	1
+ 487 00c7 02       		.byte	2
+ 488 00c8 02       		.byte	2
+ 489 00c9 03       		.byte	3
+ 490 00ca 04       		.byte	4
+ 491 00cb 05       		.byte	5
+ 492 00cc 05       		.byte	5
+ 493 00cd 06       		.byte	6
+ 494 00ce 07       		.byte	7
+ 495 00cf 09       		.byte	9
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 12
+
+
+ 496 00d0 0A       		.byte	10
+ 497 00d1 0B       		.byte	11
+ 498 00d2 0C       		.byte	12
+ 499 00d3 0E       		.byte	14
+ 500 00d4 0F       		.byte	15
+ 501 00d5 11       		.byte	17
+ 502 00d6 12       		.byte	18
+ 503 00d7 14       		.byte	20
+ 504 00d8 15       		.byte	21
+ 505 00d9 17       		.byte	23
+ 506 00da 19       		.byte	25
+ 507 00db 1B       		.byte	27
+ 508 00dc 1D       		.byte	29
+ 509 00dd 1F       		.byte	31
+ 510 00de 21       		.byte	33
+ 511 00df 23       		.byte	35
+ 512 00e0 25       		.byte	37
+ 513 00e1 28       		.byte	40
+ 514 00e2 2A       		.byte	42
+ 515 00e3 2C       		.byte	44
+ 516 00e4 2F       		.byte	47
+ 517 00e5 31       		.byte	49
+ 518 00e6 34       		.byte	52
+ 519 00e7 36       		.byte	54
+ 520 00e8 39       		.byte	57
+ 521 00e9 3B       		.byte	59
+ 522 00ea 3E       		.byte	62
+ 523 00eb 41       		.byte	65
+ 524 00ec 43       		.byte	67
+ 525 00ed 46       		.byte	70
+ 526 00ee 49       		.byte	73
+ 527 00ef 4C       		.byte	76
+ 528 00f0 4F       		.byte	79
+ 529 00f1 52       		.byte	82
+ 530 00f2 55       		.byte	85
+ 531 00f3 58       		.byte	88
+ 532 00f4 5A       		.byte	90
+ 533 00f5 5D       		.byte	93
+ 534 00f6 61       		.byte	97
+ 535 00f7 64       		.byte	100
+ 536 00f8 67       		.byte	103
+ 537 00f9 6A       		.byte	106
+ 538 00fa 6D       		.byte	109
+ 539 00fb 70       		.byte	112
+ 540 00fc 73       		.byte	115
+ 541 00fd 76       		.byte	118
+ 542 00fe 79       		.byte	121
+ 543 00ff 7C       		.byte	124
+ 544              		.data
+ 545              		.align	2
+ 546              		.set	.LANCHOR1,. + 0
+ 547              		.type	WriteBufferIndex, %object
+ 548              		.size	WriteBufferIndex, 4
+ 549              	WriteBufferIndex:
+ 550 0000 00000000 		.word	VDAC_Buffer
+ 551              		.text
+ 552              	.Letext0:
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 13
+
+
+ 553              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 554              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 555              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 556              		.file 5 "./dds.h"
+ 557              		.file 6 "./WaveTable.h"
+ 558              		.file 7 "Generated_Source\\PSoC5/core_cm3.h"
+ 559              		.file 8 "./WaveGen.h"
+ 560              		.section	.debug_info,"",%progbits
+ 561              	.Ldebug_info0:
+ 562 0000 BB030000 		.4byte	0x3bb
+ 563 0004 0400     		.2byte	0x4
+ 564 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 565 000a 04       		.byte	0x4
+ 566 000b 01       		.uleb128 0x1
+ 567 000c 65000000 		.4byte	.LASF37
+ 568 0010 0C       		.byte	0xc
+ 569 0011 40010000 		.4byte	.LASF38
+ 570 0015 1A020000 		.4byte	.LASF39
+ 571 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 572 001d 00000000 		.4byte	0
+ 573 0021 00000000 		.4byte	.Ldebug_line0
+ 574 0025 02       		.uleb128 0x2
+ 575 0026 08       		.byte	0x8
+ 576 0027 04       		.byte	0x4
+ 577 0028 46010000 		.4byte	.LASF0
+ 578 002c 02       		.uleb128 0x2
+ 579 002d 01       		.byte	0x1
+ 580 002e 06       		.byte	0x6
+ 581 002f 0E020000 		.4byte	.LASF1
+ 582 0033 03       		.uleb128 0x3
+ 583 0034 00000000 		.4byte	.LASF5
+ 584 0038 02       		.byte	0x2
+ 585 0039 1D       		.byte	0x1d
+ 586 003a 3E000000 		.4byte	0x3e
+ 587 003e 02       		.uleb128 0x2
+ 588 003f 01       		.byte	0x1
+ 589 0040 08       		.byte	0x8
+ 590 0041 57000000 		.4byte	.LASF2
+ 591 0045 02       		.uleb128 0x2
+ 592 0046 02       		.byte	0x2
+ 593 0047 05       		.byte	0x5
+ 594 0048 4D010000 		.4byte	.LASF3
+ 595 004c 02       		.uleb128 0x2
+ 596 004d 02       		.byte	0x2
+ 597 004e 07       		.byte	0x7
+ 598 004f 18010000 		.4byte	.LASF4
+ 599 0053 03       		.uleb128 0x3
+ 600 0054 0A000000 		.4byte	.LASF6
+ 601 0058 02       		.byte	0x2
+ 602 0059 3F       		.byte	0x3f
+ 603 005a 5E000000 		.4byte	0x5e
+ 604 005e 02       		.uleb128 0x2
+ 605 005f 04       		.byte	0x4
+ 606 0060 05       		.byte	0x5
+ 607 0061 F9010000 		.4byte	.LASF7
+ 608 0065 02       		.uleb128 0x2
+ 609 0066 04       		.byte	0x4
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 14
+
+
+ 610 0067 07       		.byte	0x7
+ 611 0068 06010000 		.4byte	.LASF8
+ 612 006c 02       		.uleb128 0x2
+ 613 006d 08       		.byte	0x8
+ 614 006e 05       		.byte	0x5
+ 615 006f C0010000 		.4byte	.LASF9
+ 616 0073 02       		.uleb128 0x2
+ 617 0074 08       		.byte	0x8
+ 618 0075 07       		.byte	0x7
+ 619 0076 72010000 		.4byte	.LASF10
+ 620 007a 04       		.uleb128 0x4
+ 621 007b 04       		.byte	0x4
+ 622 007c 05       		.byte	0x5
+ 623 007d 696E7400 		.ascii	"int\000"
+ 624 0081 02       		.uleb128 0x2
+ 625 0082 04       		.byte	0x4
+ 626 0083 07       		.byte	0x7
+ 627 0084 65010000 		.4byte	.LASF11
+ 628 0088 03       		.uleb128 0x3
+ 629 0089 89010000 		.4byte	.LASF12
+ 630 008d 03       		.byte	0x3
+ 631 008e 18       		.byte	0x18
+ 632 008f 33000000 		.4byte	0x33
+ 633 0093 03       		.uleb128 0x3
+ 634 0094 AF010000 		.4byte	.LASF13
+ 635 0098 03       		.byte	0x3
+ 636 0099 2C       		.byte	0x2c
+ 637 009a 53000000 		.4byte	0x53
+ 638 009e 05       		.uleb128 0x5
+ 639 009f E7010000 		.4byte	.LASF14
+ 640 00a3 04       		.byte	0x4
+ 641 00a4 9201     		.2byte	0x192
+ 642 00a6 3E000000 		.4byte	0x3e
+ 643 00aa 05       		.uleb128 0x5
+ 644 00ab 57010000 		.4byte	.LASF15
+ 645 00af 04       		.byte	0x4
+ 646 00b0 9301     		.2byte	0x193
+ 647 00b2 4C000000 		.4byte	0x4c
+ 648 00b6 05       		.uleb128 0x5
+ 649 00b7 5E010000 		.4byte	.LASF16
+ 650 00bb 04       		.byte	0x4
+ 651 00bc 9401     		.2byte	0x194
+ 652 00be 65000000 		.4byte	0x65
+ 653 00c2 02       		.uleb128 0x2
+ 654 00c3 04       		.byte	0x4
+ 655 00c4 04       		.byte	0x4
+ 656 00c5 4C000000 		.4byte	.LASF17
+ 657 00c9 02       		.uleb128 0x2
+ 658 00ca 01       		.byte	0x1
+ 659 00cb 08       		.byte	0x8
+ 660 00cc CE010000 		.4byte	.LASF18
+ 661 00d0 02       		.uleb128 0x2
+ 662 00d1 08       		.byte	0x8
+ 663 00d2 04       		.byte	0x4
+ 664 00d3 02020000 		.4byte	.LASF19
+ 665 00d7 02       		.uleb128 0x2
+ 666 00d8 04       		.byte	0x4
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 15
+
+
+ 667 00d9 07       		.byte	0x7
+ 668 00da B7010000 		.4byte	.LASF20
+ 669 00de 06       		.uleb128 0x6
+ 670 00df 24000000 		.4byte	.LASF40
+ 671 00e3 01       		.byte	0x1
+ 672 00e4 3C       		.byte	0x3c
+ 673 00e5 9E000000 		.4byte	0x9e
+ 674 00e9 00000000 		.4byte	.LFB64
+ 675 00ed 48000000 		.4byte	.LFE64-.LFB64
+ 676 00f1 01       		.uleb128 0x1
+ 677 00f2 9C       		.byte	0x9c
+ 678 00f3 34010000 		.4byte	0x134
+ 679 00f7 07       		.uleb128 0x7
+ 680 00f8 E2010000 		.4byte	.LASF23
+ 681 00fc 01       		.byte	0x1
+ 682 00fd 3C       		.byte	0x3c
+ 683 00fe 25000000 		.4byte	0x25
+ 684 0102 00000000 		.4byte	.LLST0
+ 685 0106 08       		.uleb128 0x8
+ 686 0107 52000000 		.4byte	.LASF21
+ 687 010b 01       		.byte	0x1
+ 688 010c 3E       		.byte	0x3e
+ 689 010d 34010000 		.4byte	0x134
+ 690 0111 28000000 		.4byte	.LLST1
+ 691 0115 08       		.uleb128 0x8
+ 692 0116 91010000 		.4byte	.LASF22
+ 693 011a 01       		.byte	0x1
+ 694 011b 40       		.byte	0x40
+ 695 011c 9E000000 		.4byte	0x9e
+ 696 0120 40000000 		.4byte	.LLST2
+ 697 0124 09       		.uleb128 0x9
+ 698 0125 746D7000 		.ascii	"tmp\000"
+ 699 0129 01       		.byte	0x1
+ 700 012a 44       		.byte	0x44
+ 701 012b B6000000 		.4byte	0xb6
+ 702 012f 6C000000 		.4byte	.LLST3
+ 703 0133 00       		.byte	0
+ 704 0134 0A       		.uleb128 0xa
+ 705 0135 25000000 		.4byte	0x25
+ 706 0139 0B       		.uleb128 0xb
+ 707 013a 1A000000 		.4byte	.LASF26
+ 708 013e 01       		.byte	0x1
+ 709 013f 2C       		.byte	0x2c
+ 710 0140 00000000 		.4byte	.LFB63
+ 711 0144 1C000000 		.4byte	.LFE63-.LFB63
+ 712 0148 01       		.uleb128 0x1
+ 713 0149 9C       		.byte	0x9c
+ 714 014a 58010000 		.4byte	0x158
+ 715 014e 0C       		.uleb128 0xc
+ 716 014f 10000000 		.4byte	.LVL10
+ 717 0153 DE000000 		.4byte	0xde
+ 718 0157 00       		.byte	0
+ 719 0158 0D       		.uleb128 0xd
+ 720 0159 A0010000 		.4byte	.LASF41
+ 721 015d 01       		.byte	0x1
+ 722 015e 57       		.byte	0x57
+ 723 015f 00000000 		.4byte	.LFB65
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 16
+
+
+ 724 0163 3C000000 		.4byte	.LFE65-.LFB65
+ 725 0167 01       		.uleb128 0x1
+ 726 0168 9C       		.byte	0x9c
+ 727 0169 B3010000 		.4byte	0x1b3
+ 728 016d 0E       		.uleb128 0xe
+ 729 016e 14000000 		.4byte	.LASF24
+ 730 0172 01       		.byte	0x1
+ 731 0173 57       		.byte	0x57
+ 732 0174 AA000000 		.4byte	0xaa
+ 733 0178 01       		.uleb128 0x1
+ 734 0179 50       		.byte	0x50
+ 735 017a 0E       		.uleb128 0xe
+ 736 017b 76020000 		.4byte	.LASF25
+ 737 017f 01       		.byte	0x1
+ 738 0180 57       		.byte	0x57
+ 739 0181 AA000000 		.4byte	0xaa
+ 740 0185 01       		.uleb128 0x1
+ 741 0186 51       		.byte	0x51
+ 742 0187 09       		.uleb128 0x9
+ 743 0188 61647200 		.ascii	"adr\000"
+ 744 018c 01       		.byte	0x1
+ 745 018d 59       		.byte	0x59
+ 746 018e 9E000000 		.4byte	0x9e
+ 747 0192 99000000 		.4byte	.LLST4
+ 748 0196 09       		.uleb128 0x9
+ 749 0197 76616C00 		.ascii	"val\000"
+ 750 019b 01       		.byte	0x1
+ 751 019c 5A       		.byte	0x5a
+ 752 019d 9E000000 		.4byte	0x9e
+ 753 01a1 C7000000 		.4byte	.LLST5
+ 754 01a5 09       		.uleb128 0x9
+ 755 01a6 6900     		.ascii	"i\000"
+ 756 01a8 01       		.byte	0x1
+ 757 01a9 5C       		.byte	0x5c
+ 758 01aa AA000000 		.4byte	0xaa
+ 759 01ae E6000000 		.4byte	.LLST6
+ 760 01b2 00       		.byte	0
+ 761 01b3 0B       		.uleb128 0xb
+ 762 01b4 F3000000 		.4byte	.LASF27
+ 763 01b8 01       		.byte	0x1
+ 764 01b9 6C       		.byte	0x6c
+ 765 01ba 00000000 		.4byte	.LFB66
+ 766 01be 54000000 		.4byte	.LFE66-.LFB66
+ 767 01c2 01       		.uleb128 0x1
+ 768 01c3 9C       		.byte	0x9c
+ 769 01c4 F4010000 		.4byte	0x1f4
+ 770 01c8 09       		.uleb128 0x9
+ 771 01c9 61647200 		.ascii	"adr\000"
+ 772 01cd 01       		.byte	0x1
+ 773 01ce 6E       		.byte	0x6e
+ 774 01cf 9E000000 		.4byte	0x9e
+ 775 01d3 10010000 		.4byte	.LLST7
+ 776 01d7 09       		.uleb128 0x9
+ 777 01d8 76616C00 		.ascii	"val\000"
+ 778 01dc 01       		.byte	0x1
+ 779 01dd 6F       		.byte	0x6f
+ 780 01de 9E000000 		.4byte	0x9e
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 17
+
+
+ 781 01e2 3E010000 		.4byte	.LLST8
+ 782 01e6 09       		.uleb128 0x9
+ 783 01e7 6900     		.ascii	"i\000"
+ 784 01e9 01       		.byte	0x1
+ 785 01ea 71       		.byte	0x71
+ 786 01eb AA000000 		.4byte	0xaa
+ 787 01ef 69010000 		.4byte	.LLST9
+ 788 01f3 00       		.byte	0
+ 789 01f4 0F       		.uleb128 0xf
+ 790 01f5 04020000 		.4byte	0x204
+ 791 01f9 04020000 		.4byte	0x204
+ 792 01fd 10       		.uleb128 0x10
+ 793 01fe D7000000 		.4byte	0xd7
+ 794 0202 FF       		.byte	0xff
+ 795 0203 00       		.byte	0
+ 796 0204 0A       		.uleb128 0xa
+ 797 0205 88000000 		.4byte	0x88
+ 798 0209 11       		.uleb128 0x11
+ 799 020a 7D020000 		.4byte	.LASF28
+ 800 020e 05       		.byte	0x5
+ 801 020f 0D       		.byte	0xd
+ 802 0210 1A020000 		.4byte	0x21a
+ 803 0214 05       		.uleb128 0x5
+ 804 0215 03       		.byte	0x3
+ 805 0216 00000000 		.4byte	sine8
+ 806 021a 0A       		.uleb128 0xa
+ 807 021b F4010000 		.4byte	0x1f4
+ 808 021f 12       		.uleb128 0x12
+ 809 0220 35000000 		.4byte	.LASF29
+ 810 0224 06       		.byte	0x6
+ 811 0225 25       		.byte	0x25
+ 812 0226 2C030000 		.4byte	0x32c
+ 813 022a 0001     		.2byte	0x100
+ 814 022c B9       		.byte	0xb9
+ 815 022d DC       		.byte	0xdc
+ 816 022e E9       		.byte	0xe9
+ 817 022f DE       		.byte	0xde
+ 818 0230 C7       		.byte	0xc7
+ 819 0231 B1       		.byte	0xb1
+ 820 0232 A5       		.byte	0xa5
+ 821 0233 A5       		.byte	0xa5
+ 822 0234 AB       		.byte	0xab
+ 823 0235 B0       		.byte	0xb0
+ 824 0236 B0       		.byte	0xb0
+ 825 0237 AB       		.byte	0xab
+ 826 0238 A5       		.byte	0xa5
+ 827 0239 9F       		.byte	0x9f
+ 828 023a 9A       		.byte	0x9a
+ 829 023b 97       		.byte	0x97
+ 830 023c 95       		.byte	0x95
+ 831 023d 95       		.byte	0x95
+ 832 023e 98       		.byte	0x98
+ 833 023f 9D       		.byte	0x9d
+ 834 0240 A1       		.byte	0xa1
+ 835 0241 A0       		.byte	0xa0
+ 836 0242 9C       		.byte	0x9c
+ 837 0243 97       		.byte	0x97
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 18
+
+
+ 838 0244 96       		.byte	0x96
+ 839 0245 9C       		.byte	0x9c
+ 840 0246 A6       		.byte	0xa6
+ 841 0247 B0       		.byte	0xb0
+ 842 0248 B5       		.byte	0xb5
+ 843 0249 B7       		.byte	0xb7
+ 844 024a B8       		.byte	0xb8
+ 845 024b BD       		.byte	0xbd
+ 846 024c C7       		.byte	0xc7
+ 847 024d D4       		.byte	0xd4
+ 848 024e DE       		.byte	0xde
+ 849 024f E1       		.byte	0xe1
+ 850 0250 DD       		.byte	0xdd
+ 851 0251 D6       		.byte	0xd6
+ 852 0252 D3       		.byte	0xd3
+ 853 0253 D6       		.byte	0xd6
+ 854 0254 DE       		.byte	0xde
+ 855 0255 E5       		.byte	0xe5
+ 856 0256 E8       		.byte	0xe8
+ 857 0257 E6       		.byte	0xe6
+ 858 0258 E0       		.byte	0xe0
+ 859 0259 DB       		.byte	0xdb
+ 860 025a DA       		.byte	0xda
+ 861 025b DD       		.byte	0xdd
+ 862 025c E2       		.byte	0xe2
+ 863 025d E9       		.byte	0xe9
+ 864 025e EF       		.byte	0xef
+ 865 025f F6       		.byte	0xf6
+ 866 0260 FB       		.byte	0xfb
+ 867 0261 FE       		.byte	0xfe
+ 868 0262 FF       		.byte	0xff
+ 869 0263 FD       		.byte	0xfd
+ 870 0264 F8       		.byte	0xf8
+ 871 0265 F2       		.byte	0xf2
+ 872 0266 EE       		.byte	0xee
+ 873 0267 EA       		.byte	0xea
+ 874 0268 E8       		.byte	0xe8
+ 875 0269 E5       		.byte	0xe5
+ 876 026a E3       		.byte	0xe3
+ 877 026b E0       		.byte	0xe0
+ 878 026c DD       		.byte	0xdd
+ 879 026d DA       		.byte	0xda
+ 880 026e D7       		.byte	0xd7
+ 881 026f D4       		.byte	0xd4
+ 882 0270 D4       		.byte	0xd4
+ 883 0271 D6       		.byte	0xd6
+ 884 0272 DB       		.byte	0xdb
+ 885 0273 E0       		.byte	0xe0
+ 886 0274 E3       		.byte	0xe3
+ 887 0275 E2       		.byte	0xe2
+ 888 0276 DE       		.byte	0xde
+ 889 0277 DA       		.byte	0xda
+ 890 0278 DA       		.byte	0xda
+ 891 0279 DF       		.byte	0xdf
+ 892 027a E7       		.byte	0xe7
+ 893 027b EE       		.byte	0xee
+ 894 027c F1       		.byte	0xf1
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 19
+
+
+ 895 027d EF       		.byte	0xef
+ 896 027e E9       		.byte	0xe9
+ 897 027f E4       		.byte	0xe4
+ 898 0280 E1       		.byte	0xe1
+ 899 0281 E0       		.byte	0xe0
+ 900 0282 E0       		.byte	0xe0
+ 901 0283 DE       		.byte	0xde
+ 902 0284 DB       		.byte	0xdb
+ 903 0285 D5       		.byte	0xd5
+ 904 0286 CE       		.byte	0xce
+ 905 0287 C4       		.byte	0xc4
+ 906 0288 B7       		.byte	0xb7
+ 907 0289 A9       		.byte	0xa9
+ 908 028a A0       		.byte	0xa0
+ 909 028b 9F       		.byte	0x9f
+ 910 028c A7       		.byte	0xa7
+ 911 028d B5       		.byte	0xb5
+ 912 028e C4       		.byte	0xc4
+ 913 028f CB       		.byte	0xcb
+ 914 0290 CB       		.byte	0xcb
+ 915 0291 C7       		.byte	0xc7
+ 916 0292 C5       		.byte	0xc5
+ 917 0293 C8       		.byte	0xc8
+ 918 0294 D1       		.byte	0xd1
+ 919 0295 D9       		.byte	0xd9
+ 920 0296 DC       		.byte	0xdc
+ 921 0297 D7       		.byte	0xd7
+ 922 0298 CD       		.byte	0xcd
+ 923 0299 C3       		.byte	0xc3
+ 924 029a BD       		.byte	0xbd
+ 925 029b BA       		.byte	0xba
+ 926 029c B7       		.byte	0xb7
+ 927 029d B1       		.byte	0xb1
+ 928 029e A9       		.byte	0xa9
+ 929 029f A3       		.byte	0xa3
+ 930 02a0 A3       		.byte	0xa3
+ 931 02a1 A6       		.byte	0xa6
+ 932 02a2 A9       		.byte	0xa9
+ 933 02a3 A5       		.byte	0xa5
+ 934 02a4 97       		.byte	0x97
+ 935 02a5 84       		.byte	0x84
+ 936 02a6 71       		.byte	0x71
+ 937 02a7 65       		.byte	0x65
+ 938 02a8 62       		.byte	0x62
+ 939 02a9 66       		.byte	0x66
+ 940 02aa 6B       		.byte	0x6b
+ 941 02ab 6E       		.byte	0x6e
+ 942 02ac 71       		.byte	0x71
+ 943 02ad 74       		.byte	0x74
+ 944 02ae 78       		.byte	0x78
+ 945 02af 7A       		.byte	0x7a
+ 946 02b0 77       		.byte	0x77
+ 947 02b1 6E       		.byte	0x6e
+ 948 02b2 5F       		.byte	0x5f
+ 949 02b3 53       		.byte	0x53
+ 950 02b4 4F       		.byte	0x4f
+ 951 02b5 53       		.byte	0x53
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 20
+
+
+ 952 02b6 5C       		.byte	0x5c
+ 953 02b7 64       		.byte	0x64
+ 954 02b8 67       		.byte	0x67
+ 955 02b9 64       		.byte	0x64
+ 956 02ba 60       		.byte	0x60
+ 957 02bb 5E       		.byte	0x5e
+ 958 02bc 5E       		.byte	0x5e
+ 959 02bd 5D       		.byte	0x5d
+ 960 02be 58       		.byte	0x58
+ 961 02bf 51       		.byte	0x51
+ 962 02c0 49       		.byte	0x49
+ 963 02c1 47       		.byte	0x47
+ 964 02c2 4D       		.byte	0x4d
+ 965 02c3 56       		.byte	0x56
+ 966 02c4 5E       		.byte	0x5e
+ 967 02c5 5F       		.byte	0x5f
+ 968 02c6 59       		.byte	0x59
+ 969 02c7 51       		.byte	0x51
+ 970 02c8 4D       		.byte	0x4d
+ 971 02c9 50       		.byte	0x50
+ 972 02ca 57       		.byte	0x57
+ 973 02cb 5E       		.byte	0x5e
+ 974 02cc 5D       		.byte	0x5d
+ 975 02cd 54       		.byte	0x54
+ 976 02ce 43       		.byte	0x43
+ 977 02cf 30       		.byte	0x30
+ 978 02d0 20       		.byte	0x20
+ 979 02d1 14       		.byte	0x14
+ 980 02d2 0D       		.byte	0xd
+ 981 02d3 0A       		.byte	0xa
+ 982 02d4 0A       		.byte	0xa
+ 983 02d5 0B       		.byte	0xb
+ 984 02d6 0D       		.byte	0xd
+ 985 02d7 0E       		.byte	0xe
+ 986 02d8 0C       		.byte	0xc
+ 987 02d9 08       		.byte	0x8
+ 988 02da 05       		.byte	0x5
+ 989 02db 06       		.byte	0x6
+ 990 02dc 0D       		.byte	0xd
+ 991 02dd 17       		.byte	0x17
+ 992 02de 22       		.byte	0x22
+ 993 02df 29       		.byte	0x29
+ 994 02e0 2A       		.byte	0x2a
+ 995 02e1 28       		.byte	0x28
+ 996 02e2 26       		.byte	0x26
+ 997 02e3 25       		.byte	0x25
+ 998 02e4 27       		.byte	0x27
+ 999 02e5 2A       		.byte	0x2a
+ 1000 02e6 2D       		.byte	0x2d
+ 1001 02e7 2D       		.byte	0x2d
+ 1002 02e8 2A       		.byte	0x2a
+ 1003 02e9 26       		.byte	0x26
+ 1004 02ea 20       		.byte	0x20
+ 1005 02eb 1B       		.byte	0x1b
+ 1006 02ec 16       		.byte	0x16
+ 1007 02ed 13       		.byte	0x13
+ 1008 02ee 12       		.byte	0x12
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 21
+
+
+ 1009 02ef 11       		.byte	0x11
+ 1010 02f0 11       		.byte	0x11
+ 1011 02f1 0F       		.byte	0xf
+ 1012 02f2 0C       		.byte	0xc
+ 1013 02f3 07       		.byte	0x7
+ 1014 02f4 03       		.byte	0x3
+ 1015 02f5 03       		.byte	0x3
+ 1016 02f6 05       		.byte	0x5
+ 1017 02f7 0B       		.byte	0xb
+ 1018 02f8 12       		.byte	0x12
+ 1019 02f9 1A       		.byte	0x1a
+ 1020 02fa 22       		.byte	0x22
+ 1021 02fb 29       		.byte	0x29
+ 1022 02fc 30       		.byte	0x30
+ 1023 02fd 33       		.byte	0x33
+ 1024 02fe 33       		.byte	0x33
+ 1025 02ff 30       		.byte	0x30
+ 1026 0300 2D       		.byte	0x2d
+ 1027 0301 2D       		.byte	0x2d
+ 1028 0302 32       		.byte	0x32
+ 1029 0303 3A       		.byte	0x3a
+ 1030 0304 40       		.byte	0x40
+ 1031 0305 3F       		.byte	0x3f
+ 1032 0306 38       		.byte	0x38
+ 1033 0307 2E       		.byte	0x2e
+ 1034 0308 28       		.byte	0x28
+ 1035 0309 2A       		.byte	0x2a
+ 1036 030a 33       		.byte	0x33
+ 1037 030b 3D       		.byte	0x3d
+ 1038 030c 44       		.byte	0x44
+ 1039 030d 43       		.byte	0x43
+ 1040 030e 40       		.byte	0x40
+ 1041 030f 3E       		.byte	0x3e
+ 1042 0310 40       		.byte	0x40
+ 1043 0311 47       		.byte	0x47
+ 1044 0312 4E       		.byte	0x4e
+ 1045 0313 4F       		.byte	0x4f
+ 1046 0314 4A       		.byte	0x4a
+ 1047 0315 42       		.byte	0x42
+ 1048 0316 3C       		.byte	0x3c
+ 1049 0317 3B       		.byte	0x3b
+ 1050 0318 3E       		.byte	0x3e
+ 1051 0319 43       		.byte	0x43
+ 1052 031a 48       		.byte	0x48
+ 1053 031b 4A       		.byte	0x4a
+ 1054 031c 4B       		.byte	0x4b
+ 1055 031d 4C       		.byte	0x4c
+ 1056 031e 4C       		.byte	0x4c
+ 1057 031f 4C       		.byte	0x4c
+ 1058 0320 4B       		.byte	0x4b
+ 1059 0321 4B       		.byte	0x4b
+ 1060 0322 51       		.byte	0x51
+ 1061 0323 5B       		.byte	0x5b
+ 1062 0324 66       		.byte	0x66
+ 1063 0325 6A       		.byte	0x6a
+ 1064 0326 64       		.byte	0x64
+ 1065 0327 56       		.byte	0x56
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 22
+
+
+ 1066 0328 49       		.byte	0x49
+ 1067 0329 4A       		.byte	0x4a
+ 1068 032a 61       		.byte	0x61
+ 1069 032b 8A       		.byte	0x8a
+ 1070 032c 0A       		.uleb128 0xa
+ 1071 032d F4010000 		.4byte	0x1f4
+ 1072 0331 13       		.uleb128 0x13
+ 1073 0332 2B010000 		.4byte	.LASF30
+ 1074 0336 07       		.byte	0x7
+ 1075 0337 9606     		.2byte	0x696
+ 1076 0339 3D030000 		.4byte	0x33d
+ 1077 033d 14       		.uleb128 0x14
+ 1078 033e 93000000 		.4byte	0x93
+ 1079 0342 15       		.uleb128 0x15
+ 1080 0343 38010000 		.4byte	.LASF31
+ 1081 0347 05       		.byte	0x5
+ 1082 0348 24       		.byte	0x24
+ 1083 0349 B6000000 		.4byte	0xb6
+ 1084 034d 05       		.uleb128 0x5
+ 1085 034e 03       		.byte	0x3
+ 1086 034f 00000000 		.4byte	dds_acc
+ 1087 0353 15       		.uleb128 0x15
+ 1088 0354 83020000 		.4byte	.LASF32
+ 1089 0358 05       		.byte	0x5
+ 1090 0359 25       		.byte	0x25
+ 1091 035a B6000000 		.4byte	0xb6
+ 1092 035e 05       		.uleb128 0x5
+ 1093 035f 03       		.byte	0x3
+ 1094 0360 00000000 		.4byte	dds_inc
+ 1095 0364 15       		.uleb128 0x15
+ 1096 0365 D3010000 		.4byte	.LASF33
+ 1097 0369 05       		.byte	0x5
+ 1098 036a 28       		.byte	0x28
+ 1099 036b 25000000 		.4byte	0x25
+ 1100 036f 05       		.uleb128 0x5
+ 1101 0370 03       		.byte	0x3
+ 1102 0371 00000000 		.4byte	DDS_Clock_Freq
+ 1103 0375 0F       		.uleb128 0xf
+ 1104 0376 88000000 		.4byte	0x88
+ 1105 037a 85030000 		.4byte	0x385
+ 1106 037e 10       		.uleb128 0x10
+ 1107 037f D7000000 		.4byte	0xd7
+ 1108 0383 FF       		.byte	0xff
+ 1109 0384 00       		.byte	0
+ 1110 0385 15       		.uleb128 0x15
+ 1111 0386 ED010000 		.4byte	.LASF34
+ 1112 038a 08       		.byte	0x8
+ 1113 038b 14       		.byte	0x14
+ 1114 038c 75030000 		.4byte	0x375
+ 1115 0390 05       		.uleb128 0x5
+ 1116 0391 03       		.byte	0x3
+ 1117 0392 00000000 		.4byte	VDAC_Buffer
+ 1118 0396 15       		.uleb128 0x15
+ 1119 0397 98010000 		.4byte	.LASF35
+ 1120 039b 08       		.byte	0x8
+ 1121 039c 15       		.byte	0x15
+ 1122 039d A7030000 		.4byte	0x3a7
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 23
+
+
+ 1123 03a1 05       		.uleb128 0x5
+ 1124 03a2 03       		.byte	0x3
+ 1125 03a3 00000000 		.4byte	pBuffer
+ 1126 03a7 16       		.uleb128 0x16
+ 1127 03a8 04       		.byte	0x4
+ 1128 03a9 9E000000 		.4byte	0x9e
+ 1129 03ad 15       		.uleb128 0x15
+ 1130 03ae 3B000000 		.4byte	.LASF36
+ 1131 03b2 01       		.byte	0x1
+ 1132 03b3 0C       		.byte	0xc
+ 1133 03b4 A7030000 		.4byte	0x3a7
+ 1134 03b8 05       		.uleb128 0x5
+ 1135 03b9 03       		.byte	0x3
+ 1136 03ba 00000000 		.4byte	WriteBufferIndex
+ 1137 03be 00       		.byte	0
+ 1138              		.section	.debug_abbrev,"",%progbits
+ 1139              	.Ldebug_abbrev0:
+ 1140 0000 01       		.uleb128 0x1
+ 1141 0001 11       		.uleb128 0x11
+ 1142 0002 01       		.byte	0x1
+ 1143 0003 25       		.uleb128 0x25
+ 1144 0004 0E       		.uleb128 0xe
+ 1145 0005 13       		.uleb128 0x13
+ 1146 0006 0B       		.uleb128 0xb
+ 1147 0007 03       		.uleb128 0x3
+ 1148 0008 0E       		.uleb128 0xe
+ 1149 0009 1B       		.uleb128 0x1b
+ 1150 000a 0E       		.uleb128 0xe
+ 1151 000b 55       		.uleb128 0x55
+ 1152 000c 17       		.uleb128 0x17
+ 1153 000d 11       		.uleb128 0x11
+ 1154 000e 01       		.uleb128 0x1
+ 1155 000f 10       		.uleb128 0x10
+ 1156 0010 17       		.uleb128 0x17
+ 1157 0011 00       		.byte	0
+ 1158 0012 00       		.byte	0
+ 1159 0013 02       		.uleb128 0x2
+ 1160 0014 24       		.uleb128 0x24
+ 1161 0015 00       		.byte	0
+ 1162 0016 0B       		.uleb128 0xb
+ 1163 0017 0B       		.uleb128 0xb
+ 1164 0018 3E       		.uleb128 0x3e
+ 1165 0019 0B       		.uleb128 0xb
+ 1166 001a 03       		.uleb128 0x3
+ 1167 001b 0E       		.uleb128 0xe
+ 1168 001c 00       		.byte	0
+ 1169 001d 00       		.byte	0
+ 1170 001e 03       		.uleb128 0x3
+ 1171 001f 16       		.uleb128 0x16
+ 1172 0020 00       		.byte	0
+ 1173 0021 03       		.uleb128 0x3
+ 1174 0022 0E       		.uleb128 0xe
+ 1175 0023 3A       		.uleb128 0x3a
+ 1176 0024 0B       		.uleb128 0xb
+ 1177 0025 3B       		.uleb128 0x3b
+ 1178 0026 0B       		.uleb128 0xb
+ 1179 0027 49       		.uleb128 0x49
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 24
+
+
+ 1180 0028 13       		.uleb128 0x13
+ 1181 0029 00       		.byte	0
+ 1182 002a 00       		.byte	0
+ 1183 002b 04       		.uleb128 0x4
+ 1184 002c 24       		.uleb128 0x24
+ 1185 002d 00       		.byte	0
+ 1186 002e 0B       		.uleb128 0xb
+ 1187 002f 0B       		.uleb128 0xb
+ 1188 0030 3E       		.uleb128 0x3e
+ 1189 0031 0B       		.uleb128 0xb
+ 1190 0032 03       		.uleb128 0x3
+ 1191 0033 08       		.uleb128 0x8
+ 1192 0034 00       		.byte	0
+ 1193 0035 00       		.byte	0
+ 1194 0036 05       		.uleb128 0x5
+ 1195 0037 16       		.uleb128 0x16
+ 1196 0038 00       		.byte	0
+ 1197 0039 03       		.uleb128 0x3
+ 1198 003a 0E       		.uleb128 0xe
+ 1199 003b 3A       		.uleb128 0x3a
+ 1200 003c 0B       		.uleb128 0xb
+ 1201 003d 3B       		.uleb128 0x3b
+ 1202 003e 05       		.uleb128 0x5
+ 1203 003f 49       		.uleb128 0x49
+ 1204 0040 13       		.uleb128 0x13
+ 1205 0041 00       		.byte	0
+ 1206 0042 00       		.byte	0
+ 1207 0043 06       		.uleb128 0x6
+ 1208 0044 2E       		.uleb128 0x2e
+ 1209 0045 01       		.byte	0x1
+ 1210 0046 3F       		.uleb128 0x3f
+ 1211 0047 19       		.uleb128 0x19
+ 1212 0048 03       		.uleb128 0x3
+ 1213 0049 0E       		.uleb128 0xe
+ 1214 004a 3A       		.uleb128 0x3a
+ 1215 004b 0B       		.uleb128 0xb
+ 1216 004c 3B       		.uleb128 0x3b
+ 1217 004d 0B       		.uleb128 0xb
+ 1218 004e 27       		.uleb128 0x27
+ 1219 004f 19       		.uleb128 0x19
+ 1220 0050 49       		.uleb128 0x49
+ 1221 0051 13       		.uleb128 0x13
+ 1222 0052 11       		.uleb128 0x11
+ 1223 0053 01       		.uleb128 0x1
+ 1224 0054 12       		.uleb128 0x12
+ 1225 0055 06       		.uleb128 0x6
+ 1226 0056 40       		.uleb128 0x40
+ 1227 0057 18       		.uleb128 0x18
+ 1228 0058 9642     		.uleb128 0x2116
+ 1229 005a 19       		.uleb128 0x19
+ 1230 005b 01       		.uleb128 0x1
+ 1231 005c 13       		.uleb128 0x13
+ 1232 005d 00       		.byte	0
+ 1233 005e 00       		.byte	0
+ 1234 005f 07       		.uleb128 0x7
+ 1235 0060 05       		.uleb128 0x5
+ 1236 0061 00       		.byte	0
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 25
+
+
+ 1237 0062 03       		.uleb128 0x3
+ 1238 0063 0E       		.uleb128 0xe
+ 1239 0064 3A       		.uleb128 0x3a
+ 1240 0065 0B       		.uleb128 0xb
+ 1241 0066 3B       		.uleb128 0x3b
+ 1242 0067 0B       		.uleb128 0xb
+ 1243 0068 49       		.uleb128 0x49
+ 1244 0069 13       		.uleb128 0x13
+ 1245 006a 02       		.uleb128 0x2
+ 1246 006b 17       		.uleb128 0x17
+ 1247 006c 00       		.byte	0
+ 1248 006d 00       		.byte	0
+ 1249 006e 08       		.uleb128 0x8
+ 1250 006f 34       		.uleb128 0x34
+ 1251 0070 00       		.byte	0
+ 1252 0071 03       		.uleb128 0x3
+ 1253 0072 0E       		.uleb128 0xe
+ 1254 0073 3A       		.uleb128 0x3a
+ 1255 0074 0B       		.uleb128 0xb
+ 1256 0075 3B       		.uleb128 0x3b
+ 1257 0076 0B       		.uleb128 0xb
+ 1258 0077 49       		.uleb128 0x49
+ 1259 0078 13       		.uleb128 0x13
+ 1260 0079 02       		.uleb128 0x2
+ 1261 007a 17       		.uleb128 0x17
+ 1262 007b 00       		.byte	0
+ 1263 007c 00       		.byte	0
+ 1264 007d 09       		.uleb128 0x9
+ 1265 007e 34       		.uleb128 0x34
+ 1266 007f 00       		.byte	0
+ 1267 0080 03       		.uleb128 0x3
+ 1268 0081 08       		.uleb128 0x8
+ 1269 0082 3A       		.uleb128 0x3a
+ 1270 0083 0B       		.uleb128 0xb
+ 1271 0084 3B       		.uleb128 0x3b
+ 1272 0085 0B       		.uleb128 0xb
+ 1273 0086 49       		.uleb128 0x49
+ 1274 0087 13       		.uleb128 0x13
+ 1275 0088 02       		.uleb128 0x2
+ 1276 0089 17       		.uleb128 0x17
+ 1277 008a 00       		.byte	0
+ 1278 008b 00       		.byte	0
+ 1279 008c 0A       		.uleb128 0xa
+ 1280 008d 26       		.uleb128 0x26
+ 1281 008e 00       		.byte	0
+ 1282 008f 49       		.uleb128 0x49
+ 1283 0090 13       		.uleb128 0x13
+ 1284 0091 00       		.byte	0
+ 1285 0092 00       		.byte	0
+ 1286 0093 0B       		.uleb128 0xb
+ 1287 0094 2E       		.uleb128 0x2e
+ 1288 0095 01       		.byte	0x1
+ 1289 0096 3F       		.uleb128 0x3f
+ 1290 0097 19       		.uleb128 0x19
+ 1291 0098 03       		.uleb128 0x3
+ 1292 0099 0E       		.uleb128 0xe
+ 1293 009a 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 26
+
+
+ 1294 009b 0B       		.uleb128 0xb
+ 1295 009c 3B       		.uleb128 0x3b
+ 1296 009d 0B       		.uleb128 0xb
+ 1297 009e 11       		.uleb128 0x11
+ 1298 009f 01       		.uleb128 0x1
+ 1299 00a0 12       		.uleb128 0x12
+ 1300 00a1 06       		.uleb128 0x6
+ 1301 00a2 40       		.uleb128 0x40
+ 1302 00a3 18       		.uleb128 0x18
+ 1303 00a4 9742     		.uleb128 0x2117
+ 1304 00a6 19       		.uleb128 0x19
+ 1305 00a7 01       		.uleb128 0x1
+ 1306 00a8 13       		.uleb128 0x13
+ 1307 00a9 00       		.byte	0
+ 1308 00aa 00       		.byte	0
+ 1309 00ab 0C       		.uleb128 0xc
+ 1310 00ac 898201   		.uleb128 0x4109
+ 1311 00af 00       		.byte	0
+ 1312 00b0 11       		.uleb128 0x11
+ 1313 00b1 01       		.uleb128 0x1
+ 1314 00b2 31       		.uleb128 0x31
+ 1315 00b3 13       		.uleb128 0x13
+ 1316 00b4 00       		.byte	0
+ 1317 00b5 00       		.byte	0
+ 1318 00b6 0D       		.uleb128 0xd
+ 1319 00b7 2E       		.uleb128 0x2e
+ 1320 00b8 01       		.byte	0x1
+ 1321 00b9 3F       		.uleb128 0x3f
+ 1322 00ba 19       		.uleb128 0x19
+ 1323 00bb 03       		.uleb128 0x3
+ 1324 00bc 0E       		.uleb128 0xe
+ 1325 00bd 3A       		.uleb128 0x3a
+ 1326 00be 0B       		.uleb128 0xb
+ 1327 00bf 3B       		.uleb128 0x3b
+ 1328 00c0 0B       		.uleb128 0xb
+ 1329 00c1 27       		.uleb128 0x27
+ 1330 00c2 19       		.uleb128 0x19
+ 1331 00c3 11       		.uleb128 0x11
+ 1332 00c4 01       		.uleb128 0x1
+ 1333 00c5 12       		.uleb128 0x12
+ 1334 00c6 06       		.uleb128 0x6
+ 1335 00c7 40       		.uleb128 0x40
+ 1336 00c8 18       		.uleb128 0x18
+ 1337 00c9 9742     		.uleb128 0x2117
+ 1338 00cb 19       		.uleb128 0x19
+ 1339 00cc 01       		.uleb128 0x1
+ 1340 00cd 13       		.uleb128 0x13
+ 1341 00ce 00       		.byte	0
+ 1342 00cf 00       		.byte	0
+ 1343 00d0 0E       		.uleb128 0xe
+ 1344 00d1 05       		.uleb128 0x5
+ 1345 00d2 00       		.byte	0
+ 1346 00d3 03       		.uleb128 0x3
+ 1347 00d4 0E       		.uleb128 0xe
+ 1348 00d5 3A       		.uleb128 0x3a
+ 1349 00d6 0B       		.uleb128 0xb
+ 1350 00d7 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 27
+
+
+ 1351 00d8 0B       		.uleb128 0xb
+ 1352 00d9 49       		.uleb128 0x49
+ 1353 00da 13       		.uleb128 0x13
+ 1354 00db 02       		.uleb128 0x2
+ 1355 00dc 18       		.uleb128 0x18
+ 1356 00dd 00       		.byte	0
+ 1357 00de 00       		.byte	0
+ 1358 00df 0F       		.uleb128 0xf
+ 1359 00e0 01       		.uleb128 0x1
+ 1360 00e1 01       		.byte	0x1
+ 1361 00e2 49       		.uleb128 0x49
+ 1362 00e3 13       		.uleb128 0x13
+ 1363 00e4 01       		.uleb128 0x1
+ 1364 00e5 13       		.uleb128 0x13
+ 1365 00e6 00       		.byte	0
+ 1366 00e7 00       		.byte	0
+ 1367 00e8 10       		.uleb128 0x10
+ 1368 00e9 21       		.uleb128 0x21
+ 1369 00ea 00       		.byte	0
+ 1370 00eb 49       		.uleb128 0x49
+ 1371 00ec 13       		.uleb128 0x13
+ 1372 00ed 2F       		.uleb128 0x2f
+ 1373 00ee 0B       		.uleb128 0xb
+ 1374 00ef 00       		.byte	0
+ 1375 00f0 00       		.byte	0
+ 1376 00f1 11       		.uleb128 0x11
+ 1377 00f2 34       		.uleb128 0x34
+ 1378 00f3 00       		.byte	0
+ 1379 00f4 03       		.uleb128 0x3
+ 1380 00f5 0E       		.uleb128 0xe
+ 1381 00f6 3A       		.uleb128 0x3a
+ 1382 00f7 0B       		.uleb128 0xb
+ 1383 00f8 3B       		.uleb128 0x3b
+ 1384 00f9 0B       		.uleb128 0xb
+ 1385 00fa 49       		.uleb128 0x49
+ 1386 00fb 13       		.uleb128 0x13
+ 1387 00fc 02       		.uleb128 0x2
+ 1388 00fd 18       		.uleb128 0x18
+ 1389 00fe 00       		.byte	0
+ 1390 00ff 00       		.byte	0
+ 1391 0100 12       		.uleb128 0x12
+ 1392 0101 34       		.uleb128 0x34
+ 1393 0102 00       		.byte	0
+ 1394 0103 03       		.uleb128 0x3
+ 1395 0104 0E       		.uleb128 0xe
+ 1396 0105 3A       		.uleb128 0x3a
+ 1397 0106 0B       		.uleb128 0xb
+ 1398 0107 3B       		.uleb128 0x3b
+ 1399 0108 0B       		.uleb128 0xb
+ 1400 0109 49       		.uleb128 0x49
+ 1401 010a 13       		.uleb128 0x13
+ 1402 010b 1C       		.uleb128 0x1c
+ 1403 010c 03       		.uleb128 0x3
+ 1404 010d 00       		.byte	0
+ 1405 010e 00       		.byte	0
+ 1406 010f 13       		.uleb128 0x13
+ 1407 0110 34       		.uleb128 0x34
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 28
+
+
+ 1408 0111 00       		.byte	0
+ 1409 0112 03       		.uleb128 0x3
+ 1410 0113 0E       		.uleb128 0xe
+ 1411 0114 3A       		.uleb128 0x3a
+ 1412 0115 0B       		.uleb128 0xb
+ 1413 0116 3B       		.uleb128 0x3b
+ 1414 0117 05       		.uleb128 0x5
+ 1415 0118 49       		.uleb128 0x49
+ 1416 0119 13       		.uleb128 0x13
+ 1417 011a 3F       		.uleb128 0x3f
+ 1418 011b 19       		.uleb128 0x19
+ 1419 011c 3C       		.uleb128 0x3c
+ 1420 011d 19       		.uleb128 0x19
+ 1421 011e 00       		.byte	0
+ 1422 011f 00       		.byte	0
+ 1423 0120 14       		.uleb128 0x14
+ 1424 0121 35       		.uleb128 0x35
+ 1425 0122 00       		.byte	0
+ 1426 0123 49       		.uleb128 0x49
+ 1427 0124 13       		.uleb128 0x13
+ 1428 0125 00       		.byte	0
+ 1429 0126 00       		.byte	0
+ 1430 0127 15       		.uleb128 0x15
+ 1431 0128 34       		.uleb128 0x34
+ 1432 0129 00       		.byte	0
+ 1433 012a 03       		.uleb128 0x3
+ 1434 012b 0E       		.uleb128 0xe
+ 1435 012c 3A       		.uleb128 0x3a
+ 1436 012d 0B       		.uleb128 0xb
+ 1437 012e 3B       		.uleb128 0x3b
+ 1438 012f 0B       		.uleb128 0xb
+ 1439 0130 49       		.uleb128 0x49
+ 1440 0131 13       		.uleb128 0x13
+ 1441 0132 3F       		.uleb128 0x3f
+ 1442 0133 19       		.uleb128 0x19
+ 1443 0134 02       		.uleb128 0x2
+ 1444 0135 18       		.uleb128 0x18
+ 1445 0136 00       		.byte	0
+ 1446 0137 00       		.byte	0
+ 1447 0138 16       		.uleb128 0x16
+ 1448 0139 0F       		.uleb128 0xf
+ 1449 013a 00       		.byte	0
+ 1450 013b 0B       		.uleb128 0xb
+ 1451 013c 0B       		.uleb128 0xb
+ 1452 013d 49       		.uleb128 0x49
+ 1453 013e 13       		.uleb128 0x13
+ 1454 013f 00       		.byte	0
+ 1455 0140 00       		.byte	0
+ 1456 0141 00       		.byte	0
+ 1457              		.section	.debug_loc,"",%progbits
+ 1458              	.Ldebug_loc0:
+ 1459              	.LLST0:
+ 1460 0000 00000000 		.4byte	.LVL0
+ 1461 0004 0E000000 		.4byte	.LVL1
+ 1462 0008 0600     		.2byte	0x6
+ 1463 000a 50       		.byte	0x50
+ 1464 000b 93       		.byte	0x93
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 29
+
+
+ 1465 000c 04       		.uleb128 0x4
+ 1466 000d 51       		.byte	0x51
+ 1467 000e 93       		.byte	0x93
+ 1468 000f 04       		.uleb128 0x4
+ 1469 0010 0E000000 		.4byte	.LVL1
+ 1470 0014 48000000 		.4byte	.LFE64
+ 1471 0018 0600     		.2byte	0x6
+ 1472 001a F3       		.byte	0xf3
+ 1473 001b 03       		.uleb128 0x3
+ 1474 001c F5       		.byte	0xf5
+ 1475 001d 00       		.uleb128 0
+ 1476 001e 25       		.uleb128 0x25
+ 1477 001f 9F       		.byte	0x9f
+ 1478 0020 00000000 		.4byte	0
+ 1479 0024 00000000 		.4byte	0
+ 1480              	.LLST1:
+ 1481 0028 14000000 		.4byte	.LVL2
+ 1482 002c 1B000000 		.4byte	.LVL3-1
+ 1483 0030 0600     		.2byte	0x6
+ 1484 0032 50       		.byte	0x50
+ 1485 0033 93       		.byte	0x93
+ 1486 0034 04       		.uleb128 0x4
+ 1487 0035 51       		.byte	0x51
+ 1488 0036 93       		.byte	0x93
+ 1489 0037 04       		.uleb128 0x4
+ 1490 0038 00000000 		.4byte	0
+ 1491 003c 00000000 		.4byte	0
+ 1492              	.LLST2:
+ 1493 0040 14000000 		.4byte	.LVL2
+ 1494 0044 30000000 		.4byte	.LVL6
+ 1495 0048 0200     		.2byte	0x2
+ 1496 004a 30       		.byte	0x30
+ 1497 004b 9F       		.byte	0x9f
+ 1498 004c 30000000 		.4byte	.LVL6
+ 1499 0050 34000000 		.4byte	.LVL8
+ 1500 0054 0200     		.2byte	0x2
+ 1501 0056 31       		.byte	0x31
+ 1502 0057 9F       		.byte	0x9f
+ 1503 0058 34000000 		.4byte	.LVL8
+ 1504 005c 48000000 		.4byte	.LFE64
+ 1505 0060 0200     		.2byte	0x2
+ 1506 0062 30       		.byte	0x30
+ 1507 0063 9F       		.byte	0x9f
+ 1508 0064 00000000 		.4byte	0
+ 1509 0068 00000000 		.4byte	0
+ 1510              	.LLST3:
+ 1511 006c 28000000 		.4byte	.LVL5
+ 1512 0070 32000000 		.4byte	.LVL7
+ 1513 0074 0100     		.2byte	0x1
+ 1514 0076 50       		.byte	0x50
+ 1515 0077 32000000 		.4byte	.LVL7
+ 1516 007b 34000000 		.4byte	.LVL8
+ 1517 007f 0500     		.2byte	0x5
+ 1518 0081 03       		.byte	0x3
+ 1519 0082 00000000 		.4byte	dds_inc
+ 1520 0086 34000000 		.4byte	.LVL8
+ 1521 008a 36000000 		.4byte	.LVL9
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 30
+
+
+ 1522 008e 0100     		.2byte	0x1
+ 1523 0090 50       		.byte	0x50
+ 1524 0091 00000000 		.4byte	0
+ 1525 0095 00000000 		.4byte	0
+ 1526              	.LLST4:
+ 1527 0099 02000000 		.4byte	.LVL12
+ 1528 009d 06000000 		.4byte	.LVL13
+ 1529 00a1 0200     		.2byte	0x2
+ 1530 00a3 30       		.byte	0x30
+ 1531 00a4 9F       		.byte	0x9f
+ 1532 00a5 14000000 		.4byte	.LVL14
+ 1533 00a9 1A000000 		.4byte	.LVL16
+ 1534 00ad 0100     		.2byte	0x1
+ 1535 00af 53       		.byte	0x53
+ 1536 00b0 1A000000 		.4byte	.LVL16
+ 1537 00b4 22000000 		.4byte	.LVL18
+ 1538 00b8 0500     		.2byte	0x5
+ 1539 00ba 03       		.byte	0x3
+ 1540 00bb 03000000 		.4byte	dds_acc+3
+ 1541 00bf 00000000 		.4byte	0
+ 1542 00c3 00000000 		.4byte	0
+ 1543              	.LLST5:
+ 1544 00c7 02000000 		.4byte	.LVL12
+ 1545 00cb 06000000 		.4byte	.LVL13
+ 1546 00cf 0200     		.2byte	0x2
+ 1547 00d1 30       		.byte	0x30
+ 1548 00d2 9F       		.byte	0x9f
+ 1549 00d3 18000000 		.4byte	.LVL15
+ 1550 00d7 22000000 		.4byte	.LVL18
+ 1551 00db 0100     		.2byte	0x1
+ 1552 00dd 55       		.byte	0x55
+ 1553 00de 00000000 		.4byte	0
+ 1554 00e2 00000000 		.4byte	0
+ 1555              	.LLST6:
+ 1556 00e6 02000000 		.4byte	.LVL12
+ 1557 00ea 06000000 		.4byte	.LVL13
+ 1558 00ee 0200     		.2byte	0x2
+ 1559 00f0 30       		.byte	0x30
+ 1560 00f1 9F       		.byte	0x9f
+ 1561 00f2 06000000 		.4byte	.LVL13
+ 1562 00f6 20000000 		.4byte	.LVL17
+ 1563 00fa 0100     		.2byte	0x1
+ 1564 00fc 52       		.byte	0x52
+ 1565 00fd 22000000 		.4byte	.LVL18
+ 1566 0101 3C000000 		.4byte	.LFE65
+ 1567 0105 0100     		.2byte	0x1
+ 1568 0107 52       		.byte	0x52
+ 1569 0108 00000000 		.4byte	0
+ 1570 010c 00000000 		.4byte	0
+ 1571              	.LLST7:
+ 1572 0110 02000000 		.4byte	.LVL19
+ 1573 0114 06000000 		.4byte	.LVL20
+ 1574 0118 0200     		.2byte	0x2
+ 1575 011a 30       		.byte	0x30
+ 1576 011b 9F       		.byte	0x9f
+ 1577 011c 14000000 		.4byte	.LVL21
+ 1578 0120 1A000000 		.4byte	.LVL23
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 31
+
+
+ 1579 0124 0100     		.2byte	0x1
+ 1580 0126 53       		.byte	0x53
+ 1581 0127 1A000000 		.4byte	.LVL23
+ 1582 012b 22000000 		.4byte	.LVL24
+ 1583 012f 0500     		.2byte	0x5
+ 1584 0131 03       		.byte	0x3
+ 1585 0132 03000000 		.4byte	dds_acc+3
+ 1586 0136 00000000 		.4byte	0
+ 1587 013a 00000000 		.4byte	0
+ 1588              	.LLST8:
+ 1589 013e 02000000 		.4byte	.LVL19
+ 1590 0142 06000000 		.4byte	.LVL20
+ 1591 0146 0200     		.2byte	0x2
+ 1592 0148 30       		.byte	0x30
+ 1593 0149 9F       		.byte	0x9f
+ 1594 014a 18000000 		.4byte	.LVL22
+ 1595 014e 2A000000 		.4byte	.LVL25
+ 1596 0152 0100     		.2byte	0x1
+ 1597 0154 50       		.byte	0x50
+ 1598 0155 2A000000 		.4byte	.LVL25
+ 1599 0159 34000000 		.4byte	.LVL26
+ 1600 015d 0200     		.2byte	0x2
+ 1601 015f 74       		.byte	0x74
+ 1602 0160 7F       		.sleb128 -1
+ 1603 0161 00000000 		.4byte	0
+ 1604 0165 00000000 		.4byte	0
+ 1605              	.LLST9:
+ 1606 0169 02000000 		.4byte	.LVL19
+ 1607 016d 06000000 		.4byte	.LVL20
+ 1608 0171 0200     		.2byte	0x2
+ 1609 0173 30       		.byte	0x30
+ 1610 0174 9F       		.byte	0x9f
+ 1611 0175 06000000 		.4byte	.LVL20
+ 1612 0179 36000000 		.4byte	.LVL27
+ 1613 017d 0100     		.2byte	0x1
+ 1614 017f 52       		.byte	0x52
+ 1615 0180 38000000 		.4byte	.LVL28
+ 1616 0184 54000000 		.4byte	.LFE66
+ 1617 0188 0100     		.2byte	0x1
+ 1618 018a 52       		.byte	0x52
+ 1619 018b 00000000 		.4byte	0
+ 1620 018f 00000000 		.4byte	0
+ 1621              		.section	.debug_aranges,"",%progbits
+ 1622 0000 34000000 		.4byte	0x34
+ 1623 0004 0200     		.2byte	0x2
+ 1624 0006 00000000 		.4byte	.Ldebug_info0
+ 1625 000a 04       		.byte	0x4
+ 1626 000b 00       		.byte	0
+ 1627 000c 0000     		.2byte	0
+ 1628 000e 0000     		.2byte	0
+ 1629 0010 00000000 		.4byte	.LFB64
+ 1630 0014 48000000 		.4byte	.LFE64-.LFB64
+ 1631 0018 00000000 		.4byte	.LFB63
+ 1632 001c 1C000000 		.4byte	.LFE63-.LFB63
+ 1633 0020 00000000 		.4byte	.LFB65
+ 1634 0024 3C000000 		.4byte	.LFE65-.LFB65
+ 1635 0028 00000000 		.4byte	.LFB66
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 32
+
+
+ 1636 002c 54000000 		.4byte	.LFE66-.LFB66
+ 1637 0030 00000000 		.4byte	0
+ 1638 0034 00000000 		.4byte	0
+ 1639              		.section	.debug_ranges,"",%progbits
+ 1640              	.Ldebug_ranges0:
+ 1641 0000 00000000 		.4byte	.LFB64
+ 1642 0004 48000000 		.4byte	.LFE64
+ 1643 0008 00000000 		.4byte	.LFB63
+ 1644 000c 1C000000 		.4byte	.LFE63
+ 1645 0010 00000000 		.4byte	.LFB65
+ 1646 0014 3C000000 		.4byte	.LFE65
+ 1647 0018 00000000 		.4byte	.LFB66
+ 1648 001c 54000000 		.4byte	.LFE66
+ 1649 0020 00000000 		.4byte	0
+ 1650 0024 00000000 		.4byte	0
+ 1651              		.section	.debug_line,"",%progbits
+ 1652              	.Ldebug_line0:
+ 1653 0000 0B020000 		.section	.debug_str,"MS",%progbits,1
+ 1653      02007601 
+ 1653      00000201 
+ 1653      FB0E0D00 
+ 1653      01010101 
+ 1654              	.LASF5:
+ 1655 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 1655      6E74385F 
+ 1655      7400
+ 1656              	.LASF6:
+ 1657 000a 5F5F696E 		.ascii	"__int32_t\000"
+ 1657      7433325F 
+ 1657      7400
+ 1658              	.LASF24:
+ 1659 0014 73746172 		.ascii	"start\000"
+ 1659      7400
+ 1660              	.LASF26:
+ 1661 001a 4444535F 		.ascii	"DDS_Start\000"
+ 1661      53746172 
+ 1661      7400
+ 1662              	.LASF40:
+ 1663 0024 4444535F 		.ascii	"DDS_SetFrequency\000"
+ 1663      53657446 
+ 1663      72657175 
+ 1663      656E6379 
+ 1663      00
+ 1664              	.LASF29:
+ 1665 0035 4869626F 		.ascii	"Hibox\000"
+ 1665      7800
+ 1666              	.LASF36:
+ 1667 003b 57726974 		.ascii	"WriteBufferIndex\000"
+ 1667      65427566 
+ 1667      66657249 
+ 1667      6E646578 
+ 1667      00
+ 1668              	.LASF17:
+ 1669 004c 666C6F61 		.ascii	"float\000"
+ 1669      7400
+ 1670              	.LASF21:
+ 1671 0052 54646976 		.ascii	"Tdiv\000"
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 33
+
+
+ 1671      00
+ 1672              	.LASF2:
+ 1673 0057 756E7369 		.ascii	"unsigned char\000"
+ 1673      676E6564 
+ 1673      20636861 
+ 1673      7200
+ 1674              	.LASF37:
+ 1675 0065 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1675      43313120 
+ 1675      352E342E 
+ 1675      31203230 
+ 1675      31363036 
+ 1676 0098 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1676      20726576 
+ 1676      6973696F 
+ 1676      6E203233 
+ 1676      37373135 
+ 1677 00cb 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1677      66756E63 
+ 1677      74696F6E 
+ 1677      2D736563 
+ 1677      74696F6E 
+ 1678              	.LASF27:
+ 1679 00f3 4444535F 		.ascii	"DDS_FillHalfBuffer\000"
+ 1679      46696C6C 
+ 1679      48616C66 
+ 1679      42756666 
+ 1679      657200
+ 1680              	.LASF8:
+ 1681 0106 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1681      20756E73 
+ 1681      69676E65 
+ 1681      6420696E 
+ 1681      7400
+ 1682              	.LASF4:
+ 1683 0118 73686F72 		.ascii	"short unsigned int\000"
+ 1683      7420756E 
+ 1683      7369676E 
+ 1683      65642069 
+ 1683      6E7400
+ 1684              	.LASF30:
+ 1685 012b 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1685      52784275 
+ 1685      66666572 
+ 1685      00
+ 1686              	.LASF31:
+ 1687 0138 6464735F 		.ascii	"dds_acc\000"
+ 1687      61636300 
+ 1688              	.LASF38:
+ 1689 0140 6464732E 		.ascii	"dds.c\000"
+ 1689      6300
+ 1690              	.LASF0:
+ 1691 0146 646F7562 		.ascii	"double\000"
+ 1691      6C6500
+ 1692              	.LASF3:
+ 1693 014d 73686F72 		.ascii	"short int\000"
+ 1693      7420696E 
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 34
+
+
+ 1693      7400
+ 1694              	.LASF15:
+ 1695 0157 75696E74 		.ascii	"uint16\000"
+ 1695      313600
+ 1696              	.LASF16:
+ 1697 015e 75696E74 		.ascii	"uint32\000"
+ 1697      333200
+ 1698              	.LASF11:
+ 1699 0165 756E7369 		.ascii	"unsigned int\000"
+ 1699      676E6564 
+ 1699      20696E74 
+ 1699      00
+ 1700              	.LASF10:
+ 1701 0172 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1701      206C6F6E 
+ 1701      6720756E 
+ 1701      7369676E 
+ 1701      65642069 
+ 1702              	.LASF12:
+ 1703 0189 75696E74 		.ascii	"uint8_t\000"
+ 1703      385F7400 
+ 1704              	.LASF22:
+ 1705 0191 72657375 		.ascii	"result\000"
+ 1705      6C7400
+ 1706              	.LASF35:
+ 1707 0198 70427566 		.ascii	"pBuffer\000"
+ 1707      66657200 
+ 1708              	.LASF41:
+ 1709 01a0 4444535F 		.ascii	"DDS_FillBuffer\000"
+ 1709      46696C6C 
+ 1709      42756666 
+ 1709      657200
+ 1710              	.LASF13:
+ 1711 01af 696E7433 		.ascii	"int32_t\000"
+ 1711      325F7400 
+ 1712              	.LASF20:
+ 1713 01b7 73697A65 		.ascii	"sizetype\000"
+ 1713      74797065 
+ 1713      00
+ 1714              	.LASF9:
+ 1715 01c0 6C6F6E67 		.ascii	"long long int\000"
+ 1715      206C6F6E 
+ 1715      6720696E 
+ 1715      7400
+ 1716              	.LASF18:
+ 1717 01ce 63686172 		.ascii	"char\000"
+ 1717      00
+ 1718              	.LASF33:
+ 1719 01d3 4444535F 		.ascii	"DDS_Clock_Freq\000"
+ 1719      436C6F63 
+ 1719      6B5F4672 
+ 1719      657100
+ 1720              	.LASF23:
+ 1721 01e2 66726571 		.ascii	"freq\000"
+ 1721      00
+ 1722              	.LASF14:
+ 1723 01e7 75696E74 		.ascii	"uint8\000"
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccOu8oVZ.s 			page 35
+
+
+ 1723      3800
+ 1724              	.LASF34:
+ 1725 01ed 56444143 		.ascii	"VDAC_Buffer\000"
+ 1725      5F427566 
+ 1725      66657200 
+ 1726              	.LASF7:
+ 1727 01f9 6C6F6E67 		.ascii	"long int\000"
+ 1727      20696E74 
+ 1727      00
+ 1728              	.LASF19:
+ 1729 0202 6C6F6E67 		.ascii	"long double\000"
+ 1729      20646F75 
+ 1729      626C6500 
+ 1730              	.LASF1:
+ 1731 020e 7369676E 		.ascii	"signed char\000"
+ 1731      65642063 
+ 1731      68617200 
+ 1732              	.LASF39:
+ 1733 021a 433A5C55 		.ascii	"C:\\Users\\HPz420\\Documents\\GitHub\\land-boards\\"
+ 1733      73657273 
+ 1733      5C48507A 
+ 1733      3432305C 
+ 1733      446F6375 
+ 1734 0247 4F444153 		.ascii	"ODAS\\ODAS-PSOC5\\Projects\\DDS_WaveGen_01c.cydsn\000"
+ 1734      5C4F4441 
+ 1734      532D5053 
+ 1734      4F43355C 
+ 1734      50726F6A 
+ 1735              	.LASF25:
+ 1736 0276 6C656E67 		.ascii	"length\000"
+ 1736      746800
+ 1737              	.LASF28:
+ 1738 027d 73696E65 		.ascii	"sine8\000"
+ 1738      3800
+ 1739              	.LASF32:
+ 1740 0283 6464735F 		.ascii	"dds_inc\000"
+ 1740      696E6300 
+ 1741              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

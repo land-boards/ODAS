@@ -1,0 +1,543 @@
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccP8wa48.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"cymetadata.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	cy_metadata
+  20              		.global	cy_meta_flashprotect
+  21              		.global	cy_meta_wonvl
+  22              		.global	cy_meta_custnvl
+  23              		.global	cy_meta_configecc
+  24              		.section	.cyconfigecc,"a",%progbits
+  25              		.align	2
+  26              		.type	cy_meta_configecc, %object
+  27              		.size	cy_meta_configecc, 60
+  28              	cy_meta_configecc:
+  29 0000 02       		.byte	2
+  30 0001 40       		.byte	64
+  31 0002 01       		.byte	1
+  32 0003 40       		.byte	64
+  33 0004 01       		.byte	1
+  34 0005 41       		.byte	65
+  35 0006 01       		.byte	1
+  36 0007 40       		.byte	64
+  37 0008 01       		.byte	1
+  38 0009 42       		.byte	66
+  39 000a 01       		.byte	1
+  40 000b 40       		.byte	64
+  41 000c 01       		.byte	1
+  42 000d 43       		.byte	67
+  43 000e 01       		.byte	1
+  44 000f 40       		.byte	64
+  45 0010 03       		.byte	3
+  46 0011 48       		.byte	72
+  47 0012 01       		.byte	1
+  48 0013 40       		.byte	64
+  49 0014 02       		.byte	2
+  50 0015 51       		.byte	81
+  51 0016 01       		.byte	1
+  52 0017 40       		.byte	64
+  53 0018 3D       		.byte	61
+  54 0019 80       		.byte	-128
+  55 001a CE       		.byte	-50
+  56 001b 20       		.byte	32
+  57 001c A5       		.byte	-91
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccP8wa48.s 			page 2
+
+
+  58 001d 40       		.byte	64
+  59 001e A5       		.byte	-91
+  60 001f 40       		.byte	64
+  61 0020 A5       		.byte	-91
+  62 0021 40       		.byte	64
+  63 0022 25       		.byte	37
+  64 0023 40       		.byte	64
+  65 0024 A5       		.byte	-91
+  66 0025 40       		.byte	64
+  67 0026 C8       		.byte	-56
+  68 0027 20       		.byte	32
+  69 0028 00       		.byte	0
+  70 0029 01       		.byte	1
+  71 002a 10       		.byte	16
+  72 002b 02       		.byte	2
+  73 002c 00       		.byte	0
+  74 002d 0B       		.byte	11
+  75 002e 0B       		.byte	11
+  76 002f 00       		.byte	0
+  77 0030 00       		.byte	0
+  78 0031 00       		.byte	0
+  79 0032 00       		.byte	0
+  80 0033 00       		.byte	0
+  81 0034 00       		.byte	0
+  82 0035 00       		.byte	0
+  83 0036 00       		.byte	0
+  84 0037 00       		.byte	0
+  85 0038 00       		.byte	0
+  86 0039 00       		.byte	0
+  87 003a 10       		.byte	16
+  88 003b 00       		.byte	0
+  89              		.section	.cywolatch,"a",%progbits
+  90              		.align	2
+  91              		.type	cy_meta_wonvl, %object
+  92              		.size	cy_meta_wonvl, 4
+  93              	cy_meta_wonvl:
+  94 0000 BC       		.byte	-68
+  95 0001 90       		.byte	-112
+  96 0002 AC       		.byte	-84
+  97 0003 AF       		.byte	-81
+  98              		.section	.cycustnvl,"a",%progbits
+  99              		.align	2
+ 100              		.type	cy_meta_custnvl, %object
+ 101              		.size	cy_meta_custnvl, 4
+ 102              	cy_meta_custnvl:
+ 103 0000 00       		.byte	0
+ 104 0001 00       		.byte	0
+ 105 0002 40       		.byte	64
+ 106 0003 05       		.byte	5
+ 107              		.section	.cymeta,"a",%progbits
+ 108              		.align	2
+ 109              		.type	cy_metadata, %object
+ 110              		.size	cy_metadata, 12
+ 111              	cy_metadata:
+ 112 0000 00       		.byte	0
+ 113 0001 01       		.byte	1
+ 114 0002 2E       		.byte	46
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccP8wa48.s 			page 3
+
+
+ 115 0003 13       		.byte	19
+ 116 0004 30       		.byte	48
+ 117 0005 69       		.byte	105
+ 118 0006 00       		.byte	0
+ 119 0007 01       		.byte	1
+ 120 0008 00       		.byte	0
+ 121 0009 00       		.byte	0
+ 122 000a 00       		.byte	0
+ 123 000b 00       		.byte	0
+ 124              		.section	.cyflashprotect,"a",%progbits
+ 125              		.align	2
+ 126              		.type	cy_meta_flashprotect, %object
+ 127              		.size	cy_meta_flashprotect, 128
+ 128              	cy_meta_flashprotect:
+ 129 0000 00000000 		.space	128
+ 129      00000000 
+ 129      00000000 
+ 129      00000000 
+ 129      00000000 
+ 130              		.text
+ 131              	.Letext0:
+ 132              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 133              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 134              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
+ 135              		.section	.debug_info,"",%progbits
+ 136              	.Ldebug_info0:
+ 137 0000 30010000 		.4byte	0x130
+ 138 0004 0400     		.2byte	0x4
+ 139 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 140 000a 04       		.byte	0x4
+ 141 000b 01       		.uleb128 0x1
+ 142 000c 24000000 		.4byte	.LASF17
+ 143 0010 0C       		.byte	0xc
+ 144 0011 DA010000 		.4byte	.LASF18
+ 145 0015 7E010000 		.4byte	.LASF19
+ 146 0019 00000000 		.4byte	.Ldebug_line0
+ 147 001d 02       		.uleb128 0x2
+ 148 001e 01       		.byte	0x1
+ 149 001f 06       		.byte	0x6
+ 150 0020 72010000 		.4byte	.LASF0
+ 151 0024 03       		.uleb128 0x3
+ 152 0025 00000000 		.4byte	.LASF9
+ 153 0029 01       		.byte	0x1
+ 154 002a 1D       		.byte	0x1d
+ 155 002b 2F000000 		.4byte	0x2f
+ 156 002f 02       		.uleb128 0x2
+ 157 0030 01       		.byte	0x1
+ 158 0031 08       		.byte	0x8
+ 159 0032 16000000 		.4byte	.LASF1
+ 160 0036 02       		.uleb128 0x2
+ 161 0037 02       		.byte	0x2
+ 162 0038 05       		.byte	0x5
+ 163 0039 5F010000 		.4byte	.LASF2
+ 164 003d 02       		.uleb128 0x2
+ 165 003e 02       		.byte	0x2
+ 166 003f 07       		.byte	0x7
+ 167 0040 C4000000 		.4byte	.LASF3
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccP8wa48.s 			page 4
+
+
+ 168 0044 02       		.uleb128 0x2
+ 169 0045 04       		.byte	0x4
+ 170 0046 05       		.byte	0x5
+ 171 0047 69010000 		.4byte	.LASF4
+ 172 004b 02       		.uleb128 0x2
+ 173 004c 04       		.byte	0x4
+ 174 004d 07       		.byte	0x7
+ 175 004e B2000000 		.4byte	.LASF5
+ 176 0052 02       		.uleb128 0x2
+ 177 0053 08       		.byte	0x8
+ 178 0054 05       		.byte	0x5
+ 179 0055 51010000 		.4byte	.LASF6
+ 180 0059 02       		.uleb128 0x2
+ 181 005a 08       		.byte	0x8
+ 182 005b 07       		.byte	0x7
+ 183 005c 06010000 		.4byte	.LASF7
+ 184 0060 04       		.uleb128 0x4
+ 185 0061 04       		.byte	0x4
+ 186 0062 05       		.byte	0x5
+ 187 0063 696E7400 		.ascii	"int\000"
+ 188 0067 02       		.uleb128 0x2
+ 189 0068 04       		.byte	0x4
+ 190 0069 07       		.byte	0x7
+ 191 006a F9000000 		.4byte	.LASF8
+ 192 006e 03       		.uleb128 0x3
+ 193 006f 1D010000 		.4byte	.LASF10
+ 194 0073 02       		.byte	0x2
+ 195 0074 18       		.byte	0x18
+ 196 0075 24000000 		.4byte	0x24
+ 197 0079 05       		.uleb128 0x5
+ 198 007a 90000000 		.4byte	0x90
+ 199 007e 89000000 		.4byte	0x89
+ 200 0082 06       		.uleb128 0x6
+ 201 0083 89000000 		.4byte	0x89
+ 202 0087 3B       		.byte	0x3b
+ 203 0088 00       		.byte	0
+ 204 0089 02       		.uleb128 0x2
+ 205 008a 04       		.byte	0x4
+ 206 008b 07       		.byte	0x7
+ 207 008c 48010000 		.4byte	.LASF11
+ 208 0090 07       		.uleb128 0x7
+ 209 0091 6E000000 		.4byte	0x6e
+ 210 0095 08       		.uleb128 0x8
+ 211 0096 E7000000 		.4byte	.LASF12
+ 212 009a 03       		.byte	0x3
+ 213 009b 1F       		.byte	0x1f
+ 214 009c A6000000 		.4byte	0xa6
+ 215 00a0 05       		.uleb128 0x5
+ 216 00a1 03       		.byte	0x3
+ 217 00a2 00000000 		.4byte	cy_meta_configecc
+ 218 00a6 07       		.uleb128 0x7
+ 219 00a7 79000000 		.4byte	0x79
+ 220 00ab 05       		.uleb128 0x5
+ 221 00ac 90000000 		.4byte	0x90
+ 222 00b0 BB000000 		.4byte	0xbb
+ 223 00b4 06       		.uleb128 0x6
+ 224 00b5 89000000 		.4byte	0x89
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccP8wa48.s 			page 5
+
+
+ 225 00b9 03       		.byte	0x3
+ 226 00ba 00       		.byte	0
+ 227 00bb 08       		.uleb128 0x8
+ 228 00bc D7000000 		.4byte	.LASF13
+ 229 00c0 03       		.byte	0x3
+ 230 00c1 34       		.byte	0x34
+ 231 00c2 CC000000 		.4byte	0xcc
+ 232 00c6 05       		.uleb128 0x5
+ 233 00c7 03       		.byte	0x3
+ 234 00c8 00000000 		.4byte	cy_meta_custnvl
+ 235 00cc 07       		.uleb128 0x7
+ 236 00cd AB000000 		.4byte	0xab
+ 237 00d1 08       		.uleb128 0x8
+ 238 00d2 3A010000 		.4byte	.LASF14
+ 239 00d6 03       		.byte	0x3
+ 240 00d7 42       		.byte	0x42
+ 241 00d8 E2000000 		.4byte	0xe2
+ 242 00dc 05       		.uleb128 0x5
+ 243 00dd 03       		.byte	0x3
+ 244 00de 00000000 		.4byte	cy_meta_wonvl
+ 245 00e2 07       		.uleb128 0x7
+ 246 00e3 AB000000 		.4byte	0xab
+ 247 00e7 05       		.uleb128 0x5
+ 248 00e8 90000000 		.4byte	0x90
+ 249 00ec F7000000 		.4byte	0xf7
+ 250 00f0 06       		.uleb128 0x6
+ 251 00f1 89000000 		.4byte	0x89
+ 252 00f5 7F       		.byte	0x7f
+ 253 00f6 00       		.byte	0
+ 254 00f7 08       		.uleb128 0x8
+ 255 00f8 25010000 		.4byte	.LASF15
+ 256 00fc 03       		.byte	0x3
+ 257 00fd 50       		.byte	0x50
+ 258 00fe 08010000 		.4byte	0x108
+ 259 0102 05       		.uleb128 0x5
+ 260 0103 03       		.byte	0x3
+ 261 0104 00000000 		.4byte	cy_meta_flashprotect
+ 262 0108 07       		.uleb128 0x7
+ 263 0109 E7000000 		.4byte	0xe7
+ 264 010d 05       		.uleb128 0x5
+ 265 010e 90000000 		.4byte	0x90
+ 266 0112 1D010000 		.4byte	0x11d
+ 267 0116 06       		.uleb128 0x6
+ 268 0117 89000000 		.4byte	0x89
+ 269 011b 0B       		.byte	0xb
+ 270 011c 00       		.byte	0
+ 271 011d 08       		.uleb128 0x8
+ 272 011e 0A000000 		.4byte	.LASF16
+ 273 0122 03       		.byte	0x3
+ 274 0123 6D       		.byte	0x6d
+ 275 0124 2E010000 		.4byte	0x12e
+ 276 0128 05       		.uleb128 0x5
+ 277 0129 03       		.byte	0x3
+ 278 012a 00000000 		.4byte	cy_metadata
+ 279 012e 07       		.uleb128 0x7
+ 280 012f 0D010000 		.4byte	0x10d
+ 281 0133 00       		.byte	0
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccP8wa48.s 			page 6
+
+
+ 282              		.section	.debug_abbrev,"",%progbits
+ 283              	.Ldebug_abbrev0:
+ 284 0000 01       		.uleb128 0x1
+ 285 0001 11       		.uleb128 0x11
+ 286 0002 01       		.byte	0x1
+ 287 0003 25       		.uleb128 0x25
+ 288 0004 0E       		.uleb128 0xe
+ 289 0005 13       		.uleb128 0x13
+ 290 0006 0B       		.uleb128 0xb
+ 291 0007 03       		.uleb128 0x3
+ 292 0008 0E       		.uleb128 0xe
+ 293 0009 1B       		.uleb128 0x1b
+ 294 000a 0E       		.uleb128 0xe
+ 295 000b 10       		.uleb128 0x10
+ 296 000c 17       		.uleb128 0x17
+ 297 000d 00       		.byte	0
+ 298 000e 00       		.byte	0
+ 299 000f 02       		.uleb128 0x2
+ 300 0010 24       		.uleb128 0x24
+ 301 0011 00       		.byte	0
+ 302 0012 0B       		.uleb128 0xb
+ 303 0013 0B       		.uleb128 0xb
+ 304 0014 3E       		.uleb128 0x3e
+ 305 0015 0B       		.uleb128 0xb
+ 306 0016 03       		.uleb128 0x3
+ 307 0017 0E       		.uleb128 0xe
+ 308 0018 00       		.byte	0
+ 309 0019 00       		.byte	0
+ 310 001a 03       		.uleb128 0x3
+ 311 001b 16       		.uleb128 0x16
+ 312 001c 00       		.byte	0
+ 313 001d 03       		.uleb128 0x3
+ 314 001e 0E       		.uleb128 0xe
+ 315 001f 3A       		.uleb128 0x3a
+ 316 0020 0B       		.uleb128 0xb
+ 317 0021 3B       		.uleb128 0x3b
+ 318 0022 0B       		.uleb128 0xb
+ 319 0023 49       		.uleb128 0x49
+ 320 0024 13       		.uleb128 0x13
+ 321 0025 00       		.byte	0
+ 322 0026 00       		.byte	0
+ 323 0027 04       		.uleb128 0x4
+ 324 0028 24       		.uleb128 0x24
+ 325 0029 00       		.byte	0
+ 326 002a 0B       		.uleb128 0xb
+ 327 002b 0B       		.uleb128 0xb
+ 328 002c 3E       		.uleb128 0x3e
+ 329 002d 0B       		.uleb128 0xb
+ 330 002e 03       		.uleb128 0x3
+ 331 002f 08       		.uleb128 0x8
+ 332 0030 00       		.byte	0
+ 333 0031 00       		.byte	0
+ 334 0032 05       		.uleb128 0x5
+ 335 0033 01       		.uleb128 0x1
+ 336 0034 01       		.byte	0x1
+ 337 0035 49       		.uleb128 0x49
+ 338 0036 13       		.uleb128 0x13
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccP8wa48.s 			page 7
+
+
+ 339 0037 01       		.uleb128 0x1
+ 340 0038 13       		.uleb128 0x13
+ 341 0039 00       		.byte	0
+ 342 003a 00       		.byte	0
+ 343 003b 06       		.uleb128 0x6
+ 344 003c 21       		.uleb128 0x21
+ 345 003d 00       		.byte	0
+ 346 003e 49       		.uleb128 0x49
+ 347 003f 13       		.uleb128 0x13
+ 348 0040 2F       		.uleb128 0x2f
+ 349 0041 0B       		.uleb128 0xb
+ 350 0042 00       		.byte	0
+ 351 0043 00       		.byte	0
+ 352 0044 07       		.uleb128 0x7
+ 353 0045 26       		.uleb128 0x26
+ 354 0046 00       		.byte	0
+ 355 0047 49       		.uleb128 0x49
+ 356 0048 13       		.uleb128 0x13
+ 357 0049 00       		.byte	0
+ 358 004a 00       		.byte	0
+ 359 004b 08       		.uleb128 0x8
+ 360 004c 34       		.uleb128 0x34
+ 361 004d 00       		.byte	0
+ 362 004e 03       		.uleb128 0x3
+ 363 004f 0E       		.uleb128 0xe
+ 364 0050 3A       		.uleb128 0x3a
+ 365 0051 0B       		.uleb128 0xb
+ 366 0052 3B       		.uleb128 0x3b
+ 367 0053 0B       		.uleb128 0xb
+ 368 0054 49       		.uleb128 0x49
+ 369 0055 13       		.uleb128 0x13
+ 370 0056 3F       		.uleb128 0x3f
+ 371 0057 19       		.uleb128 0x19
+ 372 0058 02       		.uleb128 0x2
+ 373 0059 18       		.uleb128 0x18
+ 374 005a 00       		.byte	0
+ 375 005b 00       		.byte	0
+ 376 005c 00       		.byte	0
+ 377              		.section	.debug_aranges,"",%progbits
+ 378 0000 14000000 		.4byte	0x14
+ 379 0004 0200     		.2byte	0x2
+ 380 0006 00000000 		.4byte	.Ldebug_info0
+ 381 000a 04       		.byte	0x4
+ 382 000b 00       		.byte	0
+ 383 000c 0000     		.2byte	0
+ 384 000e 0000     		.2byte	0
+ 385 0010 00000000 		.4byte	0
+ 386 0014 00000000 		.4byte	0
+ 387              		.section	.debug_line,"",%progbits
+ 388              	.Ldebug_line0:
+ 389 0000 3D010000 		.section	.debug_str,"MS",%progbits,1
+ 389      02003701 
+ 389      00000201 
+ 389      FB0E0D00 
+ 389      01010101 
+ 390              	.LASF9:
+ 391 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccP8wa48.s 			page 8
+
+
+ 391      6E74385F 
+ 391      7400
+ 392              	.LASF16:
+ 393 000a 63795F6D 		.ascii	"cy_metadata\000"
+ 393      65746164 
+ 393      61746100 
+ 394              	.LASF1:
+ 395 0016 756E7369 		.ascii	"unsigned char\000"
+ 395      676E6564 
+ 395      20636861 
+ 395      7200
+ 396              	.LASF17:
+ 397 0024 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 397      43313120 
+ 397      352E342E 
+ 397      31203230 
+ 397      31363036 
+ 398 0057 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 398      20726576 
+ 398      6973696F 
+ 398      6E203233 
+ 398      37373135 
+ 399 008a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 399      66756E63 
+ 399      74696F6E 
+ 399      2D736563 
+ 399      74696F6E 
+ 400              	.LASF5:
+ 401 00b2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 401      20756E73 
+ 401      69676E65 
+ 401      6420696E 
+ 401      7400
+ 402              	.LASF3:
+ 403 00c4 73686F72 		.ascii	"short unsigned int\000"
+ 403      7420756E 
+ 403      7369676E 
+ 403      65642069 
+ 403      6E7400
+ 404              	.LASF13:
+ 405 00d7 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 405      6574615F 
+ 405      63757374 
+ 405      6E766C00 
+ 406              	.LASF12:
+ 407 00e7 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 407      6574615F 
+ 407      636F6E66 
+ 407      69676563 
+ 407      6300
+ 408              	.LASF8:
+ 409 00f9 756E7369 		.ascii	"unsigned int\000"
+ 409      676E6564 
+ 409      20696E74 
+ 409      00
+ 410              	.LASF7:
+ 411 0106 6C6F6E67 		.ascii	"long long unsigned int\000"
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccP8wa48.s 			page 9
+
+
+ 411      206C6F6E 
+ 411      6720756E 
+ 411      7369676E 
+ 411      65642069 
+ 412              	.LASF10:
+ 413 011d 75696E74 		.ascii	"uint8_t\000"
+ 413      385F7400 
+ 414              	.LASF15:
+ 415 0125 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 415      6574615F 
+ 415      666C6173 
+ 415      6870726F 
+ 415      74656374 
+ 416              	.LASF14:
+ 417 013a 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 417      6574615F 
+ 417      776F6E76 
+ 417      6C00
+ 418              	.LASF11:
+ 419 0148 73697A65 		.ascii	"sizetype\000"
+ 419      74797065 
+ 419      00
+ 420              	.LASF6:
+ 421 0151 6C6F6E67 		.ascii	"long long int\000"
+ 421      206C6F6E 
+ 421      6720696E 
+ 421      7400
+ 422              	.LASF2:
+ 423 015f 73686F72 		.ascii	"short int\000"
+ 423      7420696E 
+ 423      7400
+ 424              	.LASF4:
+ 425 0169 6C6F6E67 		.ascii	"long int\000"
+ 425      20696E74 
+ 425      00
+ 426              	.LASF0:
+ 427 0172 7369676E 		.ascii	"signed char\000"
+ 427      65642063 
+ 427      68617200 
+ 428              	.LASF19:
+ 429 017e 433A5C55 		.ascii	"C:\\Users\\HPz420\\Documents\\GitHub\\land-boards\\"
+ 429      73657273 
+ 429      5C48507A 
+ 429      3432305C 
+ 429      446F6375 
+ 430 01ab 4F444153 		.ascii	"ODAS\\ODAS-PSOC5\\Projects\\DDS_WaveGen_01c.cydsn\000"
+ 430      5C4F4441 
+ 430      532D5053 
+ 430      4F43355C 
+ 430      50726F6A 
+ 431              	.LASF18:
+ 432 01da 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 432      72617465 
+ 432      645F536F 
+ 432      75726365 
+ 432      5C50536F 
+ 433              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ARM GAS  C:\Users\HPz420\AppData\Local\Temp\ccP8wa48.s 			page 10
+
+
