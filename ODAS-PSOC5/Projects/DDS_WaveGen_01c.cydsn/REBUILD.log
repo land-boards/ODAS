@@ -1,4 +1,4 @@
---------------- Rebuild Started: 09/05/2022 11:06:10 Project: DDS_WaveGen_01c, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Rebuild Started: 09/05/2022 13:06:09 Project: DDS_WaveGen_01c, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\main.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\dds.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\WaveGen.o"
@@ -76,4 +76,4 @@ Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S C:\Users\HPz420\Documents\GitHub\land-boards\ODAS\ODAS-PSOC5\Projects\DDS_WaveGen_01c.cydsn\CortexM3\ARM_GCC_541\Debug\DDS_WaveGen_01c.elf
 Flash used: 4742 of 131072 bytes (3.6%).
 SRAM used: 2809 of 32768 bytes (8.6%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Rebuild Succeeded: 09/05/2022 11:06:27 ---------------
+--------------- Rebuild Succeeded: 09/05/2022 13:06:49 ---------------

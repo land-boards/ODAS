@@ -2,7 +2,7 @@
 --	Conversion of DDS_WaveGen_01c.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Sep 05 11:06:15 2022
+--	Mon Sep 05 13:06:28 2022
 --
 
 USE cypress.cypress.all;
